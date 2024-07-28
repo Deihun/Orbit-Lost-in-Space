@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://do3agr6u61b4u"]
+[gd_scene load_steps=4 format=3 uid="uid://do3agr6u61b4u"]
 
 [ext_resource type="Script" path="res://DropBox/DropBox.gd" id="1_qn0js"]
 [ext_resource type="Texture2D" uid="uid://cdmhmb0ssg4wr" path="res://DropBox/DropBoxTemporary.png" id="2_wq50o"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_t4s61"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea2xn"]
-size = Vector2(400, 312)
 
 [node name="DropBox" type="Node2D"]
 position = Vector2(300, 209)
@@ -21,10 +18,10 @@ metadata/_edit_lock_ = true
 action_name = "Submit"
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(12, -5)
-shape = SubResource("RectangleShape2D_ea2xn")
-metadata/_edit_lock_ = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea"]
+position = Vector2(-23, 12)
+scale = Vector2(1.6145, 1.6072)
+polygon = PackedVector2Array(-123.877, -18.666, -67.513, 111.374, 109.631, 108.885, 167.853, 0, 107.154, -126.929, -61.3191, -126.929)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-51, 90)
