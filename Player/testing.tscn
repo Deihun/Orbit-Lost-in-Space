@@ -1,20 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=6 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
 [ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/SmallBattery.tscn" id="4_kqgqa"]
-[ext_resource type="PackedScene" uid="uid://y326w2i8dtsu" path="res://UI_on_Hand/UI_On_Hand.tscn" id="5_j3y7q"]
 [ext_resource type="PackedScene" uid="uid://dn5kk434y66lu" path="res://Resources/Apple.tscn" id="5_wsk7q"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="6_aur0e"]
 
 [node name="TestingOnRun" type="Node2D"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_iye0m")]
-position = Vector2(1015, 163)
+position = Vector2(1052, 595)
 scale = Vector2(0.998853, 1)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("2_iye0m")]
-position = Vector2(1017, 369)
+position = Vector2(353, 34)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_kqgqa")]
 position = Vector2(291, 494)
@@ -22,20 +21,23 @@ position = Vector2(291, 494)
 [node name="Player" parent="." instance=ExtResource("1_qqdcd")]
 position = Vector2(471, 333)
 
-[node name="UI_On_Hand" parent="." instance=ExtResource("5_j3y7q")]
-offset_left = 500.0
-offset_top = 533.0
-offset_right = 500.0
-offset_bottom = 533.0
-
 [node name="Apple" parent="." instance=ExtResource("5_wsk7q")]
-position = Vector2(609, 335)
+position = Vector2(621, 203)
 
 [node name="Apple2" parent="." instance=ExtResource("5_wsk7q")]
-position = Vector2(671, 446)
+position = Vector2(202, 342)
 
 [node name="Apple3" parent="." instance=ExtResource("5_wsk7q")]
 position = Vector2(534, 470)
 
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
-position = Vector2(133, 142)
+position = Vector2(850, 365)
+
+[node name="Testing-Side-Barrier" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Testing-Side-Barrier"]
+polygon = PackedVector2Array(35, 6, -123, 79, -154, 463, -67, 813, 746, 845, 1440, 779, 1393, 126, 1366, -116, 578, -143, 39, 3, 75, -92, 618, -242, 1532, -188, 1561, 885, 627, 928, -273, 874, -309, 5, 69, -88)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_iye0m")]
+position = Vector2(981, -20)
+scale = Vector2(0.998853, 1)

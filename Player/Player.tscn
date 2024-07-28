@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=5 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
+[ext_resource type="PackedScene" uid="uid://y326w2i8dtsu" path="res://UI_on_Hand/UI_On_Hand.tscn" id="3_2olcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vqfp"]
 size = Vector2(60, 16)
@@ -22,3 +23,15 @@ metadata/_edit_lock_ = true
 position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_5vqfp")
 metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(1.5, 1.5)
+
+[node name="UI_On_Hand" parent="player/Camera2D" instance=ExtResource("3_2olcm")]
+z_index = 60
+offset_left = -224.0
+offset_top = 292.0
+offset_right = -224.0
+offset_bottom = 292.0
+scale = Vector2(2.705, 2.705)

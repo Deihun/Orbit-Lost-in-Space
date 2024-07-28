@@ -21,15 +21,17 @@ metadata/_edit_lock_ = true
 action_name = "Submit"
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea"]
-polygon = PackedVector2Array(-188, -14, -188, -4, -125, 151, 144, 148, 211, 12, 141, -148, -108, -151)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(12, -5)
+shape = SubResource("RectangleShape2D_ea2xn")
 metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-51, 90)
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(63, -95)
-shape = SubResource("RectangleShape2D_ea2xn")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(51, -90)
+polygon = PackedVector2Array(-188, -14, -188, -4, -125, 151, 144, 148, 211, 12, 141, -148, -108, -151)
 metadata/_edit_lock_ = true

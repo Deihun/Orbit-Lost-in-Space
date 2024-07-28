@@ -5,9 +5,9 @@ var inventory
 
 
 func _ready():
-	inventory = get_node("../UI_On_Hand")
+	inventory = get_node("../Player/player/Camera2D/UI_On_Hand")
 	if not inventory:
-		print("unable to detect")
+		print("unable to detect with battery")
 	interaction_area.interact = Callable(self,"interaction")
 	pass
 
