@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2p15eqhxcx4i"]
+
+[ext_resource type="Script" path="res://Scripts/Button_1.gd" id="1_qp5d8"]
+
+[node name="Event_UI" type="Node"]
+
+[node name="Title_label" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 165.0
+offset_right = 333.0
+offset_bottom = 188.0
+text = "Title_label"
+
+[node name="Desc_label" type="Label" parent="."]
+offset_left = 294.0
+offset_top = 194.0
+offset_right = 428.0
+offset_bottom = 220.0
+text = "Description_label"
+
+[node name="Button_1" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 384.0
+offset_right = 377.0
+offset_bottom = 427.0
+script = ExtResource("1_qp5d8")
+
+[node name="Button_2" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 384.0
+offset_right = 472.0
+offset_bottom = 427.0
+
+[node name="Button_3" type="Button" parent="."]
+offset_left = 477.0
+offset_top = 384.0
+offset_right = 566.0
+offset_bottom = 427.0
+
+[connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]

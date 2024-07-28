@@ -1,0 +1,41 @@
+[
+	{
+		"id" : 1,
+		"RandomTrue": true,
+		"Repeatable": true,
+		"name": "Help Wanted!",
+		"description": "A genius from the far land is trying to get a date",
+		"return": [0,0,0,0,0, "none"],
+		"followUp": [1]
+	},
+	{
+		"id" : 2,
+		"RandomTrue": false,
+		"Repeatable": true,
+		"name": "Asta in charge",
+		"description": "A genius from the far land is trying to get a date",
+		"return": [0,0,0,0,100, "Ductape"],
+
+		"followUp": [0]
+	},
+	{
+		"id" : 3,
+		"RandomTrue": true,
+		"Repeatable": true,
+		"name": "We are now in big big trouble!",
+		"description": "Blablablabla u stupid mother bitche",
+		"return": [0,0,0,0,100, "none"],
+
+		"followUp": [0]
+	},
+	{
+		"id" : 4,
+		"RandomTrue": true,
+		"Repeatable": true,
+		"name": "Idiot drives pt. 1",
+		"description": "We are now recruiting shit",
+		"return": [0,0,0,0,100, "none"],
+
+		"followUp": [0]
+	}
+]

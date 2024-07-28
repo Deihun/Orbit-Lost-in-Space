@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://do3agr6u61b4u"]
+
+[ext_resource type="Script" path="res://DropBox/DropBox.gd" id="1_qn0js"]
+[ext_resource type="Texture2D" uid="uid://cdmhmb0ssg4wr" path="res://DropBox/DropBoxTemporary.png" id="2_wq50o"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_t4s61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da8xx"]
+size = Vector2(632, 449)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea2xn"]
+size = Vector2(400, 312)
+
+[node name="DropBox" type="Node2D"]
+script = ExtResource("1_qn0js")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, 2)
+scale = Vector2(0.862, 0.914)
+texture = ExtResource("2_wq50o")
+metadata/_edit_lock_ = true
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_t4s61")]
+action_name = "Submit"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(11, -13)
+shape = SubResource("RectangleShape2D_da8xx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-51, 90)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(63, -95)
+shape = SubResource("RectangleShape2D_ea2xn")

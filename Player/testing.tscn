@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci0ganygmrv2x"]
+
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
+[ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
+[ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/SmallBattery.tscn" id="4_kqgqa"]
+[ext_resource type="PackedScene" uid="uid://y326w2i8dtsu" path="res://UI_on_Hand/UI_On_Hand.tscn" id="5_j3y7q"]
+[ext_resource type="PackedScene" uid="uid://dn5kk434y66lu" path="res://Resources/Apple.tscn" id="5_wsk7q"]
+[ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="6_aur0e"]
+
+[node name="TestingOnRun" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_iye0m")]
+position = Vector2(1015, 163)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_iye0m")]
+position = Vector2(1017, 369)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_kqgqa")]
+position = Vector2(291, 494)
+
+[node name="Player" parent="." instance=ExtResource("1_qqdcd")]
+position = Vector2(471, 333)
+
+[node name="UI_On_Hand" parent="." instance=ExtResource("5_j3y7q")]
+offset_left = 500.0
+offset_top = 533.0
+offset_right = 500.0
+offset_bottom = 533.0
+
+[node name="Apple" parent="." instance=ExtResource("5_wsk7q")]
+position = Vector2(609, 335)
+
+[node name="Apple2" parent="." instance=ExtResource("5_wsk7q")]
+position = Vector2(671, 446)
+
+[node name="Apple3" parent="." instance=ExtResource("5_wsk7q")]
+position = Vector2(534, 470)
+
+[node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
+position = Vector2(133, 142)

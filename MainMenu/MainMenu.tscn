@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba66l7nd6d7va"]
+
+[ext_resource type="Texture2D" uid="uid://cdaqautft1fif" path="res://MainMenu/Untitled-1-Recovered.png" id="1_0gvra"]
+[ext_resource type="Script" path="res://Player/MainMenuButtons.gd" id="1_gw4yy"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_gw4yy")
+
+[node name="Untitled-1-recovered" type="Sprite2D" parent="."]
+position = Vector2(578.25, 331)
+scale = Vector2(0.600781, 0.612963)
+texture = ExtResource("1_0gvra")
+
+[node name="Button" type="Button" parent="."]
+visibility_layer = 0
+offset_left = 68.0
+offset_top = 247.0
+offset_right = 237.0
+offset_bottom = 297.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

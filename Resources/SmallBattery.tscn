@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://d085vtooegqlb"]
+
+[ext_resource type="Script" path="res://Resources/SmallBattery.gd" id="1_xiaef"]
+[ext_resource type="Texture2D" uid="uid://cqhxle442rpuo" path="res://Resources/Small Battery.png" id="2_uylrl"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_l756a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfip7"]
+size = Vector2(147, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ishs"]
+size = Vector2(49.75, 17)
+
+[node name="Small Batteryu" type="Node2D"]
+script = ExtResource("1_xiaef")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 2)
+scale = Vector2(0.41, 0.36)
+texture = ExtResource("2_uylrl")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_l756a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(3.5, -0.5)
+shape = SubResource("RectangleShape2D_qfip7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.875, 10.5)
+shape = SubResource("RectangleShape2D_0ishs")

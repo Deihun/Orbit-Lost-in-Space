@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://y326w2i8dtsu"]
+
+[ext_resource type="Script" path="res://UI_on_Hand/Inventory.gd" id="1_dpxy0"]
+[ext_resource type="Texture2D" uid="uid://bhieq5bolrkgu" path="res://UI_on_Hand/Selection_Box_UI.png" id="1_hr640"]
+
+[node name="UI_On_Hand" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dpxy0")
+
+[node name="Hand_1" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_1"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_1"]
+light_mask = 2
+visibility_layer = 2
+
+[node name="Hand_2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_right = 82.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_2"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_2"]
+
+[node name="Hand_3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_right = 124.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_3"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_3"]
+
+[node name="Hand_4" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_right = 166.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_4"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_4"]
