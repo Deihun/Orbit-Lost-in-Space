@@ -1,5 +1,5 @@
 extends Button
-
+#THIS SCRIPT IS JUST LITERALLY SHIT, DONT MIND IT FOR NOW, IT WILL BE CHANGE LATER AS PART OF MAIN MENU TAS_K ASSIGN TO ANG
 
 func _ready():
 	pass # Replace with function body.
