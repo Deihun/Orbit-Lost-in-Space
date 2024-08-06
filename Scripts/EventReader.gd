@@ -1,5 +1,5 @@
 extends Node
-
+								#THIS SCRIPT IS ASSIGN TO ANDREI AND HAS NO PROPER ASSIGN COMMENTS YET
 var events = []
 var event_ui_instance
 @onready var Title = $Title

@@ -1,34 +1,34 @@
 extends Node
 
+#VARIABLES 
 const MAX_SLOTS = 4
 var inventory = []  
 
-func showItem():
+#VOID METHODS
+func showItem(): #DEBUG: Display each name of items in inventory array
 	print("Inventory: ", inventory)
 
 
-func _ready():
+func _ready(): #init inventory array
 	for i in range(MAX_SLOTS):
 		inventory.append([])
-	showItem()
+	showItem() 
 
 
-func addItem(itemType, slotsNeeded):
+func addItem(itemType, slotsNeeded): #Multiple checks to avoid debug when adding items
 	if slotsNeeded <= 0 or slotsNeeded > MAX_SLOTS:
 		print("Invalid number of slots needed.")
 		return false
 	var remainingSlots = getRemainingSlots()
-	print("1")
 	if slotsNeeded > remainingSlots:
 		print("Not enough space in the inventory.")
 		return false
 	var startIndex = findAvailableSlots(slotsNeeded)
-	print("2")
 	if startIndex == -1:
 		print("Could not find enough consecutive slots.")
 		return false
 		
-	for i in range(slotsNeeded):
+	for i in range(slotsNeeded): 
 		inventory[startIndex + i].append(itemType)
 	return true
 
@@ -51,6 +51,7 @@ func getRemainingSlots():
 		if inventory[i].size() > 0:
 			usedSlots += 1
 	return MAX_SLOTS - usedSlots
+
 
 func insertAllItems():
 	for i in range(MAX_SLOTS):
