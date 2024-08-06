@@ -1,12 +1,12 @@
 /*
 {
-    "id" : ID_value.
-    "RandomTrue": boolean   // check if it can be detected by random event on occation
-    "Repeatable" : boolean //check if it can be trigger more than once per game
-    "name": "Name of Event",
-    "description": "Description here"
-    "return": [oxygen_value, fuel_value, sparepart_value, chemical_value, Food Value, "ITEM_Name//Need to be one only"],
-    "followUp": []//Array, path it to event ID
+	"id" : ID_value.
+	"RandomTrue": boolean   // check if it can be detected by random event on occation
+	"Repeatable" : boolean //check if it can be trigger more than once per game
+	"name": "Name of Event",
+	"description": "Description here"
+	"return": [oxygen_value, fuel_value, sparepart_value, chemical_value, Food Value, "ITEM_Name//Need to be one only"],
+	"followUp": []//Array, path it to event ID
 }
 */
 
