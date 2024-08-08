@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://sffwouqas6s6"]
+
+[ext_resource type="Script" path="res://Resources/Small Biogene.gd" id="1_t7h7x"]
+[ext_resource type="Texture2D" uid="uid://ddd6ob8vyqx5g" path="res://Resources/Resource_Images/Unpickup_Small_Biogene_Variety1.png" id="2_2bwge"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_wlxv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlfuh"]
+size = Vector2(227.5, 234)
+
+[node name="SmallBiogene" type="Node2D"]
+script = ExtResource("1_t7h7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.233398, 0.283203)
+texture = ExtResource("2_2bwge")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_wlxv4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(3, 14)
+shape = SubResource("RectangleShape2D_mlfuh")

@@ -2,19 +2,21 @@
 
 [ext_resource type="Script" path="res://Resources/Resource.gd" id="1_3gbmv"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="2_5bn7h"]
-[ext_resource type="Texture2D" uid="uid://qgn3qla0kska" path="res://Resources/resources 1.png" id="3_q7irk"]
+[ext_resource type="Texture2D" uid="uid://ddr2eun7fonyi" path="res://Resources/Resource_Images/SmallFood_Unpickup_variety2.png" id="2_d4ymi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32cik"]
-size = Vector2(64, 56.5)
+size = Vector2(77.1133, 77.1877)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhtci"]
+radius = 19.0263
 
-[node name="Apple" type="Node2D"]
+[node name="SmallFood" type="Node2D"]
 script = ExtResource("1_3gbmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.428468, 0.456)
-texture = ExtResource("3_q7irk")
+position = Vector2(3, -6.00001)
+scale = Vector2(0.198047, 0.190141)
+texture = ExtResource("2_d4ymi")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_5bn7h")]
 light_mask = 2
@@ -22,7 +24,7 @@ visibility_layer = 2
 action_name = "Apple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -1)
+position = Vector2(2.86102e-06, -2.45832)
 scale = Vector2(1.29268, 1.33333)
 shape = SubResource("RectangleShape2D_32cik")
 
