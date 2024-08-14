@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Texture2D" uid="uid://cmslymmnugx2x" path="res://Scenes/cabin room.png" id="1_twwka"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
+[ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
 [ext_resource type="Texture2D" uid="uid://bamk1ij1a1uao" path="res://Scenes/Crafting Area.png" id="4_s8gdh"]
 [ext_resource type="Texture2D" uid="uid://c3yjwpyapvx67" path="res://Scenes/event1.png" id="5_6cguh"]
-[ext_resource type="Script" path="res://Scripts/EventReader.gd" id="6_2mwlk"]
-[ext_resource type="Texture2D" uid="uid://c6lobk618i8ts" path="res://Scenes/eventUIScreen.png" id="6_dd8me"]
+[ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,24 +25,19 @@ metadata/_edit_lock_ = true
 [node name="cam2d" type="Camera2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="CraftingArea" type="Sprite2D" parent="."]
-position = Vector2(-1216.38, -1.00002)
-scale = Vector2(0.650651, 0.614815)
-texture = ExtResource("4_s8gdh")
-
-[node name="Button_navigation_node_parent" type="Node2D" parent="."]
+[node name="Button_navigation_node_parent" type="Node2D" parent="cam2d"]
 z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
 
-[node name="LeftButton_UI" type="TextureButton" parent="Button_navigation_node_parent"]
+[node name="LeftButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
 offset_right = 255.0
 offset_bottom = 255.0
 scale = Vector2(0.998006, 1)
 texture_normal = ExtResource("2_c3qtk")
 metadata/_edit_lock_ = true
 
-[node name="RightButton_UI" type="TextureButton" parent="Button_navigation_node_parent"]
+[node name="RightButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
 offset_left = 1125.74
 offset_top = 225.497
 offset_right = 1380.74
@@ -52,43 +47,32 @@ scale = Vector2(0.998006, 1)
 texture_normal = ExtResource("2_c3qtk")
 metadata/_edit_lock_ = true
 
+[node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
+wait_time = 0.3
+
+[node name="NextDay_Button" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
+offset_left = -22.545
+offset_top = -455.5
+offset_right = 489.455
+offset_bottom = 56.5001
+scale = Vector2(0.517161, 0.470855)
+texture_normal = ExtResource("4_3ysvw")
+
+[node name="CraftingArea" type="Sprite2D" parent="."]
+position = Vector2(-1216.38, -1.00002)
+scale = Vector2(0.650651, 0.614815)
+texture = ExtResource("4_s8gdh")
+
 [node name="Event1" type="Sprite2D" parent="."]
 position = Vector2(1187, -2)
 scale = Vector2(0.603125, 0.615741)
 texture = ExtResource("5_6cguh")
 
-[node name="EventUIScreenNode" type="Node2D" parent="."]
-position = Vector2(1186.5, -4.00002)
-scale = Vector2(0.601562, 0.616667)
-script = ExtResource("6_2mwlk")
+[node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
+position = Vector2(510, -352)
+scale = Vector2(0.715464, 0.662831)
 
-[node name="Description2" type="RichTextLabel" parent="EventUIScreenNode"]
-z_index = 1
-offset_left = -372.0
-offset_top = -225.0
-offset_right = 215.0
-offset_bottom = 402.0
-scale = Vector2(1.26611, 0.907385)
-theme_override_colors/default_color = Color(0.168627, 0.168627, 0.168627, 1)
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "Description"
-fit_content = true
-deselect_on_focus_loss_enabled = false
-
-[node name="Title" type="RichTextLabel" parent="EventUIScreenNode"]
-z_index = 1
-offset_left = -361.558
-offset_top = -319.459
-offset_right = 323.442
-offset_bottom = -249.459
-theme_override_colors/default_color = Color(0.152941, 0.152941, 0.152941, 1)
-theme_override_font_sizes/normal_font_size = 40
-text = "Title"
-
-[node name="EventUiScreen" type="Sprite2D" parent="EventUIScreenNode"]
-texture = ExtResource("6_dd8me")
-metadata/_edit_lock_ = true
-
-[connection signal="pressed" from="Button_navigation_node_parent/LeftButton_UI" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Button_navigation_node_parent/RightButton_UI" to="." method="_on_right_button_ui_pressed"]
+[connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="." method="_on_right_button_ui_pressed"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
+[connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
