@@ -1,5 +1,6 @@
 extends Node
 
+@onready var getResources = $"/root/GlobalResources"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,51 +12,56 @@ func _process(delta: float) -> void:
 	pass
 
 var craftingItems
-var GetSpareParts
-var GetOxygen
-var GetBiogene
-var GetFoodRation
 
 func craft():
 	match craftingItems:
 		"SpaceSuit":
-			if GetSpareParts >= 300 && GetOxygen <= 100:
+			if getResources.spareparts >= 300 && getResources.oxygen <= 100:
+				getResources.spareparts -= 300
+				getResources.oxygen -= 100
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"HazmatSuit":
-			if GetSpareParts >= 400:
+			if getResources.spareparts >= 400:
+				getResources.spareparts -= 400
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"Crowbar":
-			if GetSpareParts >= 350:
+			if getResources.spareparts >= 350:
+				getResources.spareparts -= 350
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"LaserGun":
-			if GetSpareParts >= 350 && GetBiogene >= 20:
+			if getResources.spareparts >= 350 && getResources.biogene >= 20:
+				getResources.spareparts -= 350
+				getResources.biogene -= 20
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"MedkitCharge":
-			if GetBiogene >= 150:
+			if getResources.biogene >= 150:
+				getResources.biogene -= 150
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"DehySpaceFood":
-			if GetBiogene >= 100:
+			if getResources.biogene >= 100:
+				getResources.biogene -= 150
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"FreDriSpaceFood":
-			if GetFoodRation >= 20:
+			if getResources.ration >= 20:
+				getResources.ration -= 20
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")

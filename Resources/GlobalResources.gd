@@ -1,11 +1,14 @@
 extends Node
 
 #VARIABLES
-var food = 0
+var ration = 0
 var fuel = 0
 var spareparts = 50
 var biogene = 0
 var ductape = 0
+var oxygen = 0
+var emergencyOxy = 0
+var emergencyFuel = 0
 var GameEffects = [] 
 var uniqueItems = []
 
@@ -13,7 +16,7 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 	match(item_type):
 		"Small Food":
 			print("submitted apple")
-			food += 10
+			ration += 10
 		"Small Fuel":
 
 			print("submitted fuel")
@@ -27,7 +30,7 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 
 
 func showTotalItems(): #For DEBUG only
-	print("Food: ",food," Fuel: ", fuel," Spareparts: ", spareparts, " biogene: ", biogene, " Ductape: ", ductape)
+	print("Ration: ",ration," Fuel: ", fuel," Spareparts: ", spareparts, " biogene: ", biogene, " Ductape: ", ductape)
 
 func getSpareparts():
 	return spareparts
@@ -51,4 +54,3 @@ func checkEffect(effect_name):
 
 func removeEffect(effect_name):
 	GameEffects.erase(effect_name)
-

@@ -100,5 +100,3 @@ func getUsedSlots(): #Returns used slots
 
 func getSpeedPenalty(): #Return penalty speed, Carrying more items decrease player movement speed
 	return (getRemainingSlots() * 20) - (MAX_SLOTS * 20)
-
-
