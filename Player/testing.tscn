@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=7 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
 [ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/SmallBattery.tscn" id="4_kqgqa"]
 [ext_resource type="PackedScene" uid="uid://dn5kk434y66lu" path="res://Resources/Apple.tscn" id="5_wsk7q"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="6_aur0e"]
+[ext_resource type="Script" path="res://SaveAndLoad/Saving_Loading.gd" id="6_coyjh"]
 
 [node name="TestingOnRun" type="Node2D"]
 
@@ -41,3 +42,22 @@ polygon = PackedVector2Array(35, 6, -123, 79, -154, 463, -67, 813, 746, 845, 144
 [node name="StaticBody2D4" parent="." instance=ExtResource("2_iye0m")]
 position = Vector2(981, -20)
 scale = Vector2(0.998853, 1)
+
+[node name="save" type="Button" parent="."]
+offset_left = 130.0
+offset_top = 164.0
+offset_right = 205.0
+offset_bottom = 176.0
+text = "Save"
+script = ExtResource("6_coyjh")
+
+[node name="load" type="Button" parent="."]
+offset_left = 130.0
+offset_top = 201.0
+offset_right = 205.0
+offset_bottom = 213.0
+text = "Load"
+script = ExtResource("6_coyjh")
+
+[connection signal="pressed" from="save" to="save" method="SaveGame"]
+[connection signal="pressed" from="load" to="load" method="LoadGame"]

@@ -1,4 +1,4 @@
-extends Node
+class_name Player extends Node
 
 const MAX_SLOTS = 4
 var inventory = []  
@@ -55,4 +55,3 @@ func getRemainingSlots():
 func insertAllItems():
 	for i in range(MAX_SLOTS):
 		inventory[i].clear()
-

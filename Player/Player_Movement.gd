@@ -14,4 +14,3 @@ func _physics_process(delta):
 	else:
 		velocity = v.move_toward(Vector2.ZERO, Friction * delta)
 	move_and_slide()
-
