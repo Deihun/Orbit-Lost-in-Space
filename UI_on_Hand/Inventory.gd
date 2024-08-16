@@ -1,21 +1,26 @@
 extends Control
 const MAX_SLOTS = 4
+
+#Extension Scripts
 @onready var Hand1 = $Hand_1/Sprite2D
 @onready var Hand2 = $Hand_2/Sprite2D
 @onready var Hand3 = $Hand_3/Sprite2D
 @onready var Hand4 = $Hand_4/Sprite2D
 @onready var resource = GlobalResources
 
-var battery_texture = load("res://Resources/Small Battery.png")
+#Texture Packages
+var battery_texture = load("res://Resources/Small_Fuel_1_unpickup.png")
 var apple_texture = load("res://Resources/resources 1.png")
+
 var inventory = []  
 
+
 func _ready():
-	for i in range(MAX_SLOTS):
+	for i in range(MAX_SLOTS): #Declaration of inventory size
 		inventory.append([])
 	showItem()
 
-func _insert_all_items():
+func _insert_all_items(): #Declaration of inventory size
 	print("1")
 	for i in range(MAX_SLOTS):
 		for item in inventory[i]:
@@ -31,7 +36,7 @@ func showItem():
 		hand.texture = null
 		
 	for i in range(MAX_SLOTS):
-		if i < hands.size() and "Small Battery" in inventory[i]:
+		if i < hands.size() and "Small Fuel" in inventory[i]:
 			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = battery_texture
 			print("Detected battery in slot ", i + 2)
@@ -73,14 +78,27 @@ func findAvailableSlots(slotsNeeded):
 			return i
 	return -1
 
+func insertAllItems():
+	for i in range(MAX_SLOTS):
+		inventory[i].clear()
 
-func getRemainingSlots():
+
+#NONE VOID METHODS
+func getRemainingSlots(): #Returns remaining slots
 	var usedSlots = 0
 	for i in range(MAX_SLOTS):
 		if inventory[i].size() > 0:
 			usedSlots += 1
 	return MAX_SLOTS - usedSlots
 
-func insertAllItems():
+func getUsedSlots(): #Returns used slots
+	var usedSlots = 0
 	for i in range(MAX_SLOTS):
-		inventory[i].clear()
+		if inventory[i].size() > 0:
+			usedSlots += 1
+	return usedSlots
+
+func getSpeedPenalty(): #Return penalty speed, Carrying more items decrease player movement speed
+	return (getRemainingSlots() * 20) - (MAX_SLOTS * 20)
+
+

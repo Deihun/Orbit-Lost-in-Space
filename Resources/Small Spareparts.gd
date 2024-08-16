@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 #EXTENSION VARIABLES
 @onready var interaction_area: InteractionArea = $InteractionArea
@@ -9,7 +9,7 @@ var inventory
 
 
 #VOID METHODS
-func _ready():#Initialize the inventory var
+func _ready(): #Initialize the inventory var
 	inventory = get_node("root/TestingOnRun/player/player/Camera2D/UI_On_Hand")
 
 
@@ -17,18 +17,13 @@ func _process(delta): #Call the inventory repeatedly until the correct path is d
 	if not inventory:
 		inventory = get_node("/root/TestingOnRun/Player/player/Camera2D/UI_On_Hand")
 		if inventory:
-			print("Fuel Already detected and initialize")
+			print("Sparepats already initialize")
 			set_process(false)
 	interaction_area.interact = Callable(self,"interaction") #Callable to make sure interaction methods are able to access by others
-
-
+	
 
 func interaction():
-	if inventory.addItem("Small Fuel",2):
+	if inventory.addItem("Small Spareparts",1):
 		inventory.showItem()
 		interaction_manager.unregister_area(interaction_area)
 		queue_free()
-
-
-
-

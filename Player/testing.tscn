@@ -1,63 +1,381 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=11 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
-[ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/SmallBattery.tscn" id="4_kqgqa"]
-[ext_resource type="PackedScene" uid="uid://dn5kk434y66lu" path="res://Resources/Apple.tscn" id="5_wsk7q"]
+[ext_resource type="Script" path="res://Player/CountDown_Script.gd" id="4_0bin4"]
+[ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/Small Fuel.tscn" id="4_kqgqa"]
+[ext_resource type="PackedScene" uid="uid://dn5kk434y66lu" path="res://Resources/SmallFood.tscn" id="5_wsk7q"]
+[ext_resource type="Script" path="res://Resource Spawner.gd" id="5_xvjps"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="6_aur0e"]
-[ext_resource type="Script" path="res://SaveAndLoad/Saving_Loading.gd" id="6_coyjh"]
+[ext_resource type="PackedScene" uid="uid://d0bu2bmlsdson" path="res://Resources/small_spareparts.tscn" id="8_547km"]
+[ext_resource type="PackedScene" uid="uid://sffwouqas6s6" path="res://Resources/Small Biogene.tscn" id="8_c11pp"]
+[ext_resource type="PackedScene" uid="uid://cwl2d5xnndn76" path="res://Resources/Ductape.tscn" id="10_m6e5r"]
 
 [node name="TestingOnRun" type="Node2D"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_iye0m")]
-position = Vector2(1052, 595)
+position = Vector2(219, 172)
 scale = Vector2(0.998853, 1)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("2_iye0m")]
-position = Vector2(353, 34)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("4_kqgqa")]
-position = Vector2(291, 494)
+position = Vector2(63, 827)
 
 [node name="Player" parent="." instance=ExtResource("1_qqdcd")]
-position = Vector2(471, 333)
+position = Vector2(504, 346)
 
-[node name="Apple" parent="." instance=ExtResource("5_wsk7q")]
-position = Vector2(621, 203)
-
-[node name="Apple2" parent="." instance=ExtResource("5_wsk7q")]
-position = Vector2(202, 342)
-
-[node name="Apple3" parent="." instance=ExtResource("5_wsk7q")]
-position = Vector2(534, 470)
+[node name="Timer" type="Timer" parent="Player"]
+script = ExtResource("4_0bin4")
 
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
 position = Vector2(850, 365)
+metadata/_edit_lock_ = true
 
 [node name="Testing-Side-Barrier" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Testing-Side-Barrier"]
-polygon = PackedVector2Array(35, 6, -123, 79, -154, 463, -67, 813, 746, 845, 1440, 779, 1393, 126, 1366, -116, 578, -143, 39, 3, 75, -92, 618, -242, 1532, -188, 1561, 885, 627, 928, -273, 874, -309, 5, 69, -88)
-
 [node name="StaticBody2D4" parent="." instance=ExtResource("2_iye0m")]
-position = Vector2(981, -20)
+position = Vector2(1287, 229)
 scale = Vector2(0.998853, 1)
 
-[node name="save" type="Button" parent="."]
-offset_left = 130.0
-offset_top = 164.0
-offset_right = 205.0
-offset_bottom = 176.0
-text = "Save"
-script = ExtResource("6_coyjh")
+[node name="Node Resource Spawner" type="Node2D" parent="."]
+script = ExtResource("5_xvjps")
+fuel = ExtResource("4_kqgqa")
+food = ExtResource("5_wsk7q")
+biogene = ExtResource("8_c11pp")
+spareparts = ExtResource("8_547km")
+ductapes = ExtResource("10_m6e5r")
+number_of_resources = 30
+metadata/_edit_lock_ = true
 
-[node name="load" type="Button" parent="."]
-offset_left = 130.0
-offset_top = 201.0
-offset_right = 205.0
-offset_bottom = 213.0
-text = "Load"
-script = ExtResource("6_coyjh")
+[node name="Position2DNodes_1" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(276, 306)
 
-[connection signal="pressed" from="save" to="save" method="SaveGame"]
-[connection signal="pressed" from="load" to="load" method="LoadGame"]
+[node name="Position2DNodes_2" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(207, 402)
+
+[node name="Position2DNodes_3" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-180, 790)
+
+[node name="Position2DNodes_4" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(546, 344)
+
+[node name="Position2DNodes_5" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1320, 555)
+
+[node name="Position2DNodes_6" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1295, 831)
+
+[node name="Position2DNodes_7" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(421, 713)
+
+[node name="Position2DNodes_8" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(224, 508)
+
+[node name="Position2DNodes_9" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(155, 604)
+
+[node name="Position2DNodes_10" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(311, 670)
+
+[node name="Position2DNodes_11" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1089, 876)
+
+[node name="Position2DNodes_12" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(957, 857)
+
+[node name="Position2DNodes_13" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(794, 659)
+
+[node name="Position2DNodes_14" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(502, 846)
+
+[node name="Position2DNodes_16" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(600, 36)
+
+[node name="Position2DNodes_17" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1251, 25)
+
+[node name="Position2DNodes_19" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1074, 58)
+
+[node name="Position2DNodes_20" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1273, 104)
+
+[node name="Position2DNodes_21" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1164, 181)
+
+[node name="Position2DNodes_22" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(617, 142)
+
+[node name="Position2DNodes_23" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(975, 28)
+
+[node name="Position2DNodes_24" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1343, 435)
+
+[node name="Position2DNodes_25" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(861, 853)
+
+[node name="Position2DNodes_26" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-349, 781)
+
+[node name="Position2DNodes_27" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1406, 314)
+
+[node name="Position2DNodes_28" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-358, 77)
+
+[node name="Position2DNodes_29" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1124, 426)
+
+[node name="Position2DNodes_30" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1055, 522)
+
+[node name="Position2DNodes_36" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1072, 628)
+
+[node name="Position2DNodes_37" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1003, 724)
+
+[node name="Position2DNodes_38" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1214, 666)
+
+[node name="Position2DNodes_15" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-480, 203)
+
+[node name="Position2DNodes_18" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-329, 282)
+
+[node name="Position2DNodes_31" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-265, 489)
+
+[node name="Position2DNodes_32" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-55, 170)
+
+[node name="Position2DNodes_33" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(135, 386)
+
+[node name="Position2DNodes_34" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(334, 432)
+
+[node name="Position2DNodes_35" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(46, 432)
+
+[node name="Position2DNodes_39" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-454, 417)
+
+[node name="Position2DNodes_40" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-461, 660)
+
+[node name="Position2DNodes_41" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-99, 859)
+
+[node name="Position2DNodes_42" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-52, 508)
+
+[node name="Position2DNodes_43" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(83, 588)
+
+[node name="Position2DNodes_44" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-283, 628)
+
+[node name="Position2DNodes_45" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-6, 634)
+
+[node name="Position2DNodes_46" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(54, -2)
+
+[node name="Position2DNodes_47" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(210, 64)
+
+[node name="Position2DNodes_48" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(528, 20)
+
+[node name="Position2DNodes_49" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(727, 66)
+
+[node name="Position2DNodes_50" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(296, 5)
+
+[node name="Position2DNodes_51" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-195, 94)
+
+[node name="Position2DNodes_52" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-489, -6)
+
+[node name="Position2DNodes_53" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(6, 309)
+
+[node name="Position2DNodes_54" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(341, 142)
+
+[node name="Position2DNodes_55" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(888, 142)
+
+[node name="Position2DNodes_56" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1146, 281)
+
+[node name="Position2DNodes_57" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-179, 396)
+
+[node name="Position2DNodes_58" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-164, 286)
+
+[node name="Position2DNodes_59" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(1135, 793)
+
+[node name="Position2DNodes_60" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(647, 830)
+
+[node name="Position2DNodes_61" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(283, 865)
+
+[node name="Position2DNodes_62" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(724, 863)
+
+[node name="NodeGroupBarrier_ForTesting" type="Node2D" parent="."]
+
+[node name="StaticBody2D2" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(421, 979)
+
+[node name="StaticBody2D3" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(549, 978)
+
+[node name="StaticBody2D4" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(681, 989)
+
+[node name="StaticBody2D5" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(809, 988)
+
+[node name="StaticBody2D6" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(929, 991)
+
+[node name="StaticBody2D7" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1057, 990)
+
+[node name="StaticBody2D8" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1189, 1001)
+
+[node name="StaticBody2D9" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1317, 1000)
+
+[node name="StaticBody2D10" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-599, 960)
+
+[node name="StaticBody2D11" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-471, 959)
+
+[node name="StaticBody2D12" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-339, 970)
+
+[node name="StaticBody2D13" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-211, 969)
+
+[node name="StaticBody2D14" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-91, 972)
+
+[node name="StaticBody2D15" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(37, 971)
+
+[node name="StaticBody2D16" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(169, 982)
+
+[node name="StaticBody2D17" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(297, 981)
+
+[node name="StaticBody2D18" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-602, 824)
+
+[node name="StaticBody2D19" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-604, 688)
+
+[node name="StaticBody2D20" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-607, 552)
+
+[node name="StaticBody2D21" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-615, 415)
+
+[node name="StaticBody2D22" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-618, 279)
+
+[node name="StaticBody2D23" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-620, 143)
+
+[node name="StaticBody2D24" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-623, 7)
+
+[node name="StaticBody2D25" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1435, 984)
+
+[node name="StaticBody2D26" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1432, 848)
+
+[node name="StaticBody2D27" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1430, 712)
+
+[node name="StaticBody2D28" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1427, 576)
+
+[node name="StaticBody2D29" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1419, 439)
+
+[node name="StaticBody2D30" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1416, 303)
+
+[node name="StaticBody2D31" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1414, 167)
+
+[node name="StaticBody2D32" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1411, 31)
+
+[node name="StaticBody2D33" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(404, -94)
+
+[node name="StaticBody2D34" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(532, -95)
+
+[node name="StaticBody2D35" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(664, -84)
+
+[node name="StaticBody2D36" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(792, -85)
+
+[node name="StaticBody2D37" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(912, -82)
+
+[node name="StaticBody2D38" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1040, -83)
+
+[node name="StaticBody2D39" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1172, -72)
+
+[node name="StaticBody2D40" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1300, -73)
+
+[node name="StaticBody2D41" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-616, -113)
+
+[node name="StaticBody2D42" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-488, -114)
+
+[node name="StaticBody2D43" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-356, -103)
+
+[node name="StaticBody2D44" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-228, -104)
+
+[node name="StaticBody2D45" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(-108, -101)
+
+[node name="StaticBody2D46" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(20, -102)
+
+[node name="StaticBody2D47" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(152, -91)
+
+[node name="StaticBody2D48" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(280, -92)
+
+[node name="StaticBody2D49" parent="NodeGroupBarrier_ForTesting" instance=ExtResource("2_iye0m")]
+position = Vector2(1418, -89)
+
+[connection signal="timeout" from="Player/Timer" to="Player/Timer" method="_on_timeout"]
