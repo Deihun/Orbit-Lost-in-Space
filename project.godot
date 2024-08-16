@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Orbit Loss in Space"
-run/main_scene="res://Player/testing.tscn"
+run/main_scene="res://Scenes/TestingInteriorScene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,9 +19,13 @@ config/icon="res://icon.svg"
 
 InteractionManager="*res://Interaction/InteractionManager.tscn"
 GlobalResources="*res://Resources/GlobalResources.gd"
+IngameStoredProcessSetting="*res://Ingame_storedProcessSetting.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

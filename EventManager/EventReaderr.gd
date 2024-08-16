@@ -1,12 +1,13 @@
 extends Node
-
+								#THIS SCRIPT IS ASSIGN TO ANDREI AND HAS NO PROPER ASSIGN COMMENTS YET
 var events = []
 var event_ui_instance
 @onready var Title = $Title
 @onready var Description = $Description2
 
+
 func _ready():
-	print("initializing")
+	#print("initializing")
 	var file_path = "res://Scripts/Events.json"
 	if(FileAccess.file_exists(file_path)):
 		var file = FileAccess.open(file_path,FileAccess.READ)
@@ -15,7 +16,6 @@ func _ready():
 		events = parse_json(json_text)
 	else: 
 		print("Failed to locate")
-	
 	process_random_event()
 
 func parse_json(json_text):
@@ -36,7 +36,6 @@ func process_random_event():
 
 func process_event(event):
 	if (event["RandomTrue"] != true): #check if not supporting event
-		print("Retrigger event")
 		process_random_event()
 		return
 	var name = event["name"]

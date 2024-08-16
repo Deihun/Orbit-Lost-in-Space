@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqhxle442rpuo"
-path="res://.godot/imported/Small Battery.png-62a3734784d58d995ef52e3dda57df91.ctex"
+uid="uid://ddr2eun7fonyi"
+path="res://.godot/imported/SmallFood_Unpickup_variety2.png-7fe6d21560b985bf81ff2da0998f3af1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Small Battery.png"
-dest_files=["res://.godot/imported/Small Battery.png-62a3734784d58d995ef52e3dda57df91.ctex"]
+source_file="res://Resources/Resource_Images/SmallFood_Unpickup_variety2.png"
+dest_files=["res://.godot/imported/SmallFood_Unpickup_variety2.png-7fe6d21560b985bf81ff2da0998f3af1.ctex"]
 
 [params]
 
