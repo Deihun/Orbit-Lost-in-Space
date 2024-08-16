@@ -15,6 +15,7 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 			print("submitted apple")
 			food += 10
 		"Small Fuel":
+
 			print("submitted fuel")
 			fuel += 13
 		"Small Spareparts":
