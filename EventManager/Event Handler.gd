@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var eventReader = $Event_UI
 @onready var Cycle = $"/root/IngameStoredProcessSetting"
+@onready var test = $""
 
 
 var rawEvent = []
@@ -40,7 +41,7 @@ func _loadGameStart(eventLoads):
 
 func startAddNextEvent():
 	self.visible = true
-	var numbers_of_event =  int(2 + (randf() * (Cycle.getCycle()*0.03)))
+	var numbers_of_event =  int(1 + (randf() * (Cycle.getCycle()*0.08)))
 	
 	while(Priority_Event.size() > 0 && numbers_of_event > 0):
 		var priority_key = Priority_Event.pop_front()

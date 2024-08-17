@@ -56,4 +56,3 @@ func getRemainingSlots():
 func insertAllItems():
 	for i in range(MAX_SLOTS):
 		inventory[i].clear()
-

@@ -50,4 +50,3 @@ func checkEffect(effect_name):
 
 func removeEffect(effect_name):
 	GameEffects.erase(effect_name)
-
