@@ -16,52 +16,59 @@ var craftingItems
 func craft():
 	match craftingItems:
 		"SpaceSuit":
-			if getResources.spareparts >= 300 && getResources.oxygen <= 100:
+			if getResources.spareparts >= 300 && getResources.oxygen <= 100 && getResources.fuel <= 10:
 				getResources.spareparts -= 300
 				getResources.oxygen -= 100
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"HazmatSuit":
-			if getResources.spareparts >= 400:
+			if getResources.spareparts >= 400 && getResources.fuel <= 10:
 				getResources.spareparts -= 400
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"Crowbar":
-			if getResources.spareparts >= 350:
+			if getResources.spareparts >= 350 && getResources.fuel <= 10:
 				getResources.spareparts -= 350
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"LaserGun":
-			if getResources.spareparts >= 350 && getResources.biogene >= 20:
+			if getResources.spareparts >= 350 && getResources.biogene >= 20 && getResources.fuel <= 10:
 				getResources.spareparts -= 350
 				getResources.biogene -= 20
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"MedkitCharge":
-			if getResources.biogene >= 150:
+			if getResources.biogene >= 150 && getResources.fuel <= 10:
 				getResources.biogene -= 150
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"DehySpaceFood":
-			if getResources.biogene >= 100:
+			if getResources.biogene >= 100 && getResources.fuel <= 10:
 				getResources.biogene -= 150
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
 			
 		"FreDriSpaceFood":
-			if getResources.ration >= 20:
+			if getResources.ration >= 20 && getResources.fuel <= 10:
 				getResources.ration -= 20
+				getResources.fuel -= 10
 				print("Successfully Made!")
 			else:
 				print("Insufficient Items!")
