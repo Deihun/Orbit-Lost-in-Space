@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=14 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Texture2D" uid="uid://cmslymmnugx2x" path="res://Scenes/cabin room.png" id="1_twwka"]
@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
+[ext_resource type="Texture2D" uid="uid://b72m5ni8snr5k" path="res://InteriorScene/Storage Scene.png" id="11_dyr30"]
+[ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
+size = Vector2(1920, 1076.27)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -27,6 +32,14 @@ script = ExtResource("2_uajib")
 z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
+
+[node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
+wait_time = 2.0
+one_shot = true
+
+[node name="EndCycleTimer" type="Timer" parent="cam2d/Button_navigation_node_parent"]
+wait_time = 2.0
+one_shot = true
 
 [node name="LeftButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
 offset_left = -383.264
@@ -46,10 +59,6 @@ rotation = -3.13541
 scale = Vector2(0.998006, 1)
 texture_normal = ExtResource("2_c3qtk")
 metadata/_edit_use_anchors_ = true
-
-[node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
-wait_time = 1.3
-one_shot = true
 
 [node name="NextDay_Button" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
 offset_left = -401.3
@@ -89,7 +98,11 @@ scale = Vector2(0.715464, 0.662831)
 [node name="WholeInteriorScene" type="Sprite2D" parent="."]
 position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
-metadata/_edit_lock_ = true
+
+[node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WholeInteriorScene/Button_ToStorageRoom"]
+polygon = PackedVector2Array(-2858, 541, -2861, -316, -2358, -319, -2349, 538)
 
 [node name="OnCameraMovingDesign" type="Node2D" parent="."]
 position = Vector2(2, -193)
@@ -109,7 +122,27 @@ texture = ExtResource("10_7sn4k")
 
 [node name="Right_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
 
+[node name="StorageScene" type="Sprite2D" parent="."]
+position = Vector2(-3000, 1500)
+scale = Vector2(1.03854, 1.09907)
+texture = ExtResource("11_dyr30")
+
+[node name="CycleReport" type="Sprite2D" parent="."]
+position = Vector2(-3000, 3000)
+scale = Vector2(1.05, 1.07315)
+texture = ExtResource("12_3y1g3")
+
+[node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
+position = Vector2(0.951904, -0.466064)
+shape = SubResource("RectangleShape2D_kb8bw")
+
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
-[connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
+[connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
+[connection signal="input_event" from="CycleReport/ClickAnywhereButton" to="cam2d" method="_on_click_anywhere_button_input_event"]

@@ -8,10 +8,8 @@ extends Control
 @onready var EventHandler = $EventHandler
 
 
-
 #VARIABLES
-			#Camera Varible
-
+var ClickTrue = true
 
 #VOID METHODS // CAMERA CONTROLS - SETTINGS
 func _process(delta):
@@ -25,31 +23,41 @@ func _ready():
 	pass 
 
 
-
-
 func getButtonPosition():
 	return camera.position + Vector2(-550,100)
-
-
 
 
 #GAME SETTINGS
 func _newGameStart():
 	pass
 
+
 func _loadGameStart(load_json):
 	pass
 
 
+func GameOver(OtherCommands):
+	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
+	pass
+
+
 func _on_next_day_button_pressed():
-	#Switch to Event View
-	camera.ChangeSpecificScene(2)
-	#Handle Mini Event (PRIORITY 1)
-	#Handle UI Cycle
-	CycleSetting.endCycle()
-	print("Cycle: ",CycleSetting.getCycle())
-	#Handle Event
-	EventHandler._removeAllEvent()
-	EventHandler.startAddNextEvent()
-	EventHandler.ActivateEvent()
-	
+	var EventHandler = $EventHandler
+	print(EventHandler.eventID.size()," CONDITIONS: ",  EventHandler.eventID.size() < 0)
+	if EventHandler.isEventVisible != true:
+		#Switch to Event View
+		camera.ChangeSpecificScene(4)
+		#Handle Mini Event (PRIORITY 1)
+		#Handle UI Cycle
+		CycleSetting.endCycle()
+		print("Cycle: ",CycleSetting.getCycle())
+		#Handle Event
+		EventHandler._removeAllEvent()
+		EventHandler.startAddNextEvent()
+		EventHandler.ActivateEvent()
+		ClickCD.start()
+
+
+
+func _on_click_cooldown_timeout() -> void:
+	ClickTrue = true
