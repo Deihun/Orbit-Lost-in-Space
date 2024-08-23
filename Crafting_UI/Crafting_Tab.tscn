@@ -1,3 +1,103 @@
-[gd_scene format=3 uid="uid://b5ib6052yah38"]
+[gd_scene load_steps=2 format=3 uid="uid://b5ib6052yah38"]
+
+[ext_resource type="Script" path="res://Crafting_UI/Crafting.gd" id="1_uivi2"]
 
 [node name="CraftingTab" type="Node2D"]
+script = ExtResource("1_uivi2")
+
+[node name="CraftButton" type="Button" parent="."]
+offset_left = 145.0
+offset_top = 463.0
+offset_right = 376.0
+offset_bottom = 529.0
+action_mode = 0
+text = "Craft
+"
+
+[node name="SpaceSuit" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -303.0
+offset_right = 236.0
+offset_bottom = -237.0
+action_mode = 0
+text = "Space Suit"
+
+[node name="HazmatSuit" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -141.0
+offset_right = 232.0
+offset_bottom = -75.0
+text = "Hazmat Suit
+"
+
+[node name="Crowbar" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = -305.0
+offset_right = 479.0
+offset_bottom = -239.0
+text = "Crowbar
+"
+
+[node name="MedkitCharge" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = -222.0
+offset_right = 484.0
+offset_bottom = -156.0
+text = "MedkitCharge
+"
+
+[node name="DehySpaceFood" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -219.0
+offset_right = 236.0
+offset_bottom = -153.0
+text = "DehySpaceFood"
+
+[node name="LaserGun" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = -306.0
+offset_right = 735.0
+offset_bottom = -240.0
+text = "LaserGun"
+
+[node name="FreDriSpaceFood" type="Button" parent="CraftButton"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = -222.0
+offset_right = 735.0
+offset_bottom = -156.0
+text = "FreDriSpaceFood"
+
+[node name="addRes" type="Button" parent="."]
+offset_left = 411.0
+offset_top = 460.0
+offset_right = 642.0
+offset_bottom = 526.0
+action_mode = 0
+text = "AddRes
+"
+
+[node name="CheckRes" type="Button" parent="."]
+offset_left = 666.0
+offset_top = 461.0
+offset_right = 897.0
+offset_bottom = 527.0
+action_mode = 0
+text = "CheckRes"
+
+[connection signal="pressed" from="CraftButton" to="." method="craft_button_pressed"]
+[connection signal="pressed" from="CraftButton/SpaceSuit" to="." method="space_suit_pressed"]
+[connection signal="pressed" from="CraftButton/HazmatSuit" to="." method="hazmat_suit_pressed"]
+[connection signal="pressed" from="CraftButton/Crowbar" to="." method="crowbar_pressed"]
+[connection signal="pressed" from="CraftButton/MedkitCharge" to="." method="medkit_charge_pressed"]
+[connection signal="pressed" from="CraftButton/DehySpaceFood" to="." method="_on_dehy_space_food_pressed"]
+[connection signal="pressed" from="CraftButton/LaserGun" to="." method="laser_gun_pressed"]
+[connection signal="pressed" from="CraftButton/FreDriSpaceFood" to="." method="fre_dri_space_food_pressed"]
+[connection signal="pressed" from="addRes" to="." method="add_res_pressed"]
+[connection signal="pressed" from="CheckRes" to="." method="check_res_pressed"]
