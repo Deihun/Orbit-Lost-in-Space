@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=4 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
 [ext_resource type="Texture2D" uid="uid://cdaqautft1fif" path="res://MainMenu/Untitled-1-Recovered.png" id="2_b48ty"]
+[ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="3_xdu3v"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -26,6 +27,7 @@ offset_bottom = -216.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_b48ty")
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -34,20 +36,21 @@ anchor_left = -0.330729
 anchor_top = -0.330247
 anchor_right = 1.33594
 anchor_bottom = 1.33025
-offset_left = -2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 2.0
+offset_left = 474.0
+offset_top = 101.667
+offset_right = 474.0
+offset_bottom = 101.667
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 140
+theme_override_constants/separation = 325
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -67,7 +70,7 @@ theme_override_constants/separation = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 9
+theme_override_constants/separation = 14
 alignment = 1
 
 [node name="Seperator 2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -92,7 +95,7 @@ text = "Load Game
 [node name="Seperator 4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Settings_Buton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Settings_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Settings
@@ -107,7 +110,15 @@ theme_override_font_sizes/font_size = 60
 text = "Quit
 "
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+zoom = Vector2(0.785, 0.8)
+
+[node name="Settings_Menu" parent="." instance=ExtResource("3_xdu3v")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New_Game_Button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load_Game_Button" to="." method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings_Buton" to="." method="_on_settings_buton_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
