@@ -1,56 +1,66 @@
 extends Control
 
-var navigation_score = 0
-
+#EXTENSION VARIABLES
 @onready var camera = $cam2d
-@onready var buttonUI = $Button_navigation_node_parent
+@onready var buttonUI = $cam2d/Button_navigation_node_parent
+@onready var ClickCD = $cam2d/Button_navigation_node_parent/ClickCooldown
+@onready var CycleSetting = $"/root/IngameStoredProcessSetting"
+@onready var EventHandler = $EventHandler
 
+
+#VARIABLES
+var ClickTrue = true
+
+#VOID METHODS // CAMERA CONTROLS - SETTINGS
 func _process(delta):
-	if Input.is_key_pressed(KEY_LEFT):
-		if navigation_score > -2:
-				navigation_score -= 1
-	elif Input.is_key_pressed(KEY_RIGHT):
-		if navigation_score < 1:
-			navigation_score += 1
-	change_UI()
-
-
+	pass
 
 
 func _ready():
-	change_UI()
+	CycleSetting.newGame()
+	EventHandler.startAddNextEvent()
+	EventHandler.ActivateEvent()
 	pass 
 
 
-func _on_texture_button_pressed():
-	if navigation_score > -2:
-		navigation_score -= 1
-		change_UI()
-
-func _on_right_button_ui_pressed():
-	if navigation_score < 1:
-		navigation_score += 1
-		change_UI()
-
-
-func change_UI():
-	match navigation_score:
-		-1:
-			
-			camera.position = Vector2(-1200,0)
-			buttonUI.position = getButtonPosition()
-		0:
-			camera.position = Vector2(0,0)
-			buttonUI.position = getButtonPosition()
-		1:
-			camera.position = Vector2(1200,0)
-			buttonUI.position = getButtonPosition()
-		2: 
-			camera.position = Vector2(2400,0)
-			buttonUI.position = getButtonPosition()
-			
 func getButtonPosition():
 	return camera.position + Vector2(-550,100)
 
 
+#GAME SETTINGS
+func _newGameStart():
+	pass
 
+
+func _loadGameStart(load_json):
+	pass
+
+
+func GameOver(OtherCommands):
+	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
+	pass
+
+
+func _on_next_day_button_pressed():
+	var EventHandler = $EventHandler
+	print(EventHandler.eventID.size()," CONDITIONS: ",  EventHandler.eventID.size() < 0)
+	if EventHandler.isEventVisible != true:
+		#Switch to Event View
+		camera.ChangeSpecificScene(4)
+		#Handle Mini Event (PRIORITY 1)
+		#Handle UI Cycle
+		CycleSetting.endCycle()
+		print("Cycle: ",CycleSetting.getCycle())
+		#Handle Event
+		EventHandler._removeAllEvent()
+		EventHandler.startAddNextEvent()
+		EventHandler.ActivateEvent()
+		ClickCD.start()
+	else:
+		camera.ChangeSpecificScene(2)
+		
+
+
+
+func _on_click_cooldown_timeout() -> void:
+	ClickTrue = true
