@@ -3,6 +3,7 @@ var EventID = []
 var event
 var buttonCounts = 0
 var button_index = 1
+var temp_choice_data = []
 
 
 @onready var title = $Title
@@ -65,15 +66,18 @@ func processNextEvent():			#PLAY NEXT EVENT
 func HandleButton(Event):
 	var HasNoChoice = true
 	button_index = 1
+	temp_choice_data = []
 	clear_container(button_container)
 	while Event.has("Choice-"+str(button_index)):
 		HasNoChoice = false
 		var choice_data = Event["Choice-"+str(button_index)]
 		_create_choice_button(choice_data, button_index)
 		button_index += 1
+		temp_choice_data.append(choice_data)
 	
 	if HasNoChoice:
 		_create_choice_button(["","","Okay"], 1)
+		temp_choice_data.append(["","","Okay"])
 		pass
 
 func HiddenChoice(Event):
@@ -85,6 +89,7 @@ func HiddenChoice(Event):
 				if globalResources.hasItem(Event["HiddenChoice"][0][1][0],Event["HiddenChoice"][0][1][1]):
 					_create_choice_button(Event["HiddenChoice"][1], button_index)
 					button_index += 1
+					temp_choice_data.append(Event["HiddenChoice"][1])
 		pass
 
 
@@ -217,3 +222,14 @@ func _can_satisfy_choice(choice_data):
 		var condition1 = Global_resources.hasItem(item[0],item[1])
 		condition = condition1 != false
 	return condition #DEFAULT, ONLY FOR DEBUGGING PURPOSES 
+
+
+func _reupdate_button():
+	clear_container(button_container)
+	var index = 1
+	if temp_choice_data == null:
+		return
+	for data in temp_choice_data:
+		_create_choice_button(data, index)
+		index += 1
+	pass

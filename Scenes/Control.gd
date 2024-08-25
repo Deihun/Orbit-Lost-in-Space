@@ -56,6 +56,9 @@ func _on_next_day_button_pressed():
 		EventHandler.startAddNextEvent()
 		EventHandler.ActivateEvent()
 		ClickCD.start()
+	else:
+		camera.ChangeSpecificScene(2)
+		
 
 
 

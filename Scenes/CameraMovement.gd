@@ -95,7 +95,8 @@ func ChangeLocaton(smoothMovement):
 
 
 func ChangeSpecificScene(_LocationKey):
-	if _LocationKey < 5 and _LocationKey > 0:
+	print(_LocationKey)
+	if _LocationKey < 5 and _LocationKey > -1:
 		if !nonCommonPanningRooms.has(self.position) and !nonCommonPanningRooms.has(SpecificLocation[_LocationKey]):
 			LocationKey = _LocationKey
 			ChangeLocaton(true)
