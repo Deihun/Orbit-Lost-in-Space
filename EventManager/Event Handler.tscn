@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmojd3msv3ms0"]
+
+[ext_resource type="Script" path="res://EventManager/Event Handler.gd" id="1_jnq3i"]
+[ext_resource type="Script" path="res://EventManager/EventReader.gd" id="2_nkt3i"]
+[ext_resource type="Texture2D" uid="uid://f4stsxkea1gm" path="res://EventManager/temporary_eventUI.png" id="2_qyjc8"]
+
+[node name="EventHandler" type="Node2D"]
+script = ExtResource("1_jnq3i")
+
+[node name="Event_UI" type="Node2D" parent="."]
+script = ExtResource("2_nkt3i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Event_UI"]
+position = Vector2(968, 549)
+texture = ExtResource("2_qyjc8")
+
+[node name="Title" type="Label" parent="Event_UI"]
+z_index = 20
+offset_left = 613.0
+offset_top = 178.0
+offset_right = 1256.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 66
+text = "title"
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="Event_UI"]
+z_index = 20
+offset_left = 598.0
+offset_top = 310.0
+offset_right = 1325.0
+offset_bottom = 847.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "description
+"
+autowrap_mode = 3
+
+[node name="Container" type="Node2D" parent="Event_UI"]
+position = Vector2(1702, -65)

@@ -30,4 +30,3 @@ func _process(delta):
 func interaction(): #Interaction method for InteractionManagement Class
 	inventory._insert_all_items()
 	res.showTotalItems()
-

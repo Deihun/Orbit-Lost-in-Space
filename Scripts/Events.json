@@ -1,41 +1,97 @@
 [
-	{
-		"id" : 1,
-		"RandomTrue": true,
-		"Repeatable": true,
-		"name": "Help Wanted!",
-		"description": "A genius from the far land is trying to get a date",
-		"return": [0,0,0,0,0, "none"],
-		"followUp": [1]
-	},
-	{
-		"id" : 2,
-		"RandomTrue": false,
-		"Repeatable": true,
-		"name": "Asta in charge",
-		"description": "A genius from the far land is trying to get a date",
-		"return": [0,0,0,0,100, "Ductape"],
-
-		"followUp": [0]
-	},
-	{
-		"id" : 3,
-		"RandomTrue": true,
-		"Repeatable": true,
-		"name": "We are now in big big trouble!",
-		"description": "Blablablabla u stupid mother bitche",
-		"return": [0,0,0,0,100, "none"],
-
-		"followUp": [0]
-	},
-	{
-		"id" : 4,
-		"RandomTrue": true,
-		"Repeatable": true,
-		"name": "Idiot drives pt. 1",
-		"description": "We are now recruiting shit",
-		"return": [0,0,0,0,100, "none"],
-
-		"followUp": [0]
-	}
+{
+	"id" : 1,
+	"RandomTrue": true,	
+	"Repeatable": true,
+	"Conditions": ["EXIST_effects",["Gas-Leak-Penalty"]],
+	"name": "Gas LEAK!", 
+	"description": "Theres a leak happening inside your station that needs to be fix immediately",
+	"return": [0,0,0,0,0, "none"], 
+	"Choice-1": [3, [["SPAREPARTS", 20]],"This will cost 20 spareparts \n Spareparts:@SPAREPARTS()/20"],
+	"Choice-2": [2, [["SPAREPARTS", 5]],"Attempt to be cheap, only cost 5 spareparts \n Spareparts:@SPAREPARTS()/5"],
+	"Choice-3": [4, [null],"Do nothing"]
+},
+{
+	"id" : 2,
+	"RandomTrue": false,
+	"Repeatable": false,
+	"Probability": [
+		[40, ["@ADD_EFFECTS Gas-Leak-Penalty", "@TITLE Repairing Failed", "@DESCRIPTION With all your efforts done and with the power of might. You've managed to fix the Gas Leak but suddenly it burst and made it much worse."]],
+		[60, ["@TITLE Success!", "@DESCRIPTION Congratulations! You've saved 15 spareparts!"]]
+		],
+	"name": "DEBUG",
+	"description": "Something wrong if this doesnt change"
+},
+{
+	"id" : 3,
+	"RandomTrue": false,
+	"Repeatable": false,
+	"name": "Repair Successful!",
+	"description": "Thanks to your effort, your ship is now fully intact! Atleast for now..."
+},
+{
+	"id" : 4,
+	"RandomTrue": false,
+	"Repeatable": false,
+	"name": "GAME OVER",
+	"description": "It is trully a game over",
+	"Command" : ["@GAMEOVER"]
+},
+{
+	"id" : 5,
+	"RandomTrue": false,
+	"Repeatable": false,
+	"name": "Testing Event non repeatable",
+	"description": "Why oh why"
+	
+},
+{
+	"id" : 6,
+	"RandomTrue": false,
+	"Repeatable": true,
+	"name" : "testing repeating",
+	"description": "Repeatable thingy",
+	"Command" : ["@ANOTHER_EVENT 8"]
+},
+{
+	"id" : 7,
+	"RandomTrue": false,
+	"Repeatable": false,
+	"FollowUp" : ["Leak-O-Leak-Bonus"],
+	"name": "Leak Machine",
+	"description": "Is today is your lucky day? Well welcome to this newly work of art! Today we will witness how lucky you are if you are indeed lucky but not really that lucky but indeed lucky but oh well maybe dont talk like that but in fact extremely lucky!"
+},
+{
+	"id" : 8,
+	"RandomTrue": false,
+	"Repeatable": false,
+	"Conditions": ["FOLLOW-UP",["Leak-O-Leak-Bonus"]],
+	"name": "Leak Machine...",
+	"description": "Lucky machine Fails... You are now in debt of Leaky-Mr.Bicky ready to perform a Quciky. Lost - ALL YOUR SPAREPARTS - Cause your Greedy~",
+	"Command": ["@RESET SPAREPARTS"]
+},
+{
+	"id" : 9,
+	"RandomTrue": true,
+	"Repeatable" : true,
+	"name" : "TestngForHiddenChoice",
+	"description" : "Description",
+	"Choice-1" : [10,[["SPAREPARTS",50]], "This will cost 50 Spareparts to repair \nSpareparts:@SPAREPARTS()/50"],
+	"HiddenChoice" : [["HAS",["DUCTAPE",1]] , [10,[["DUCTAPE",1]], "This will cost 1 Ductape to repair \nDuctape:@DUCTAPE()/1"]]
+},
+{
+	"id" : 10,
+	"RandomTrue": false,
+	"Repeatable" : false,
+	"name" : "Repaired Successfully!",
+	"description" : "Repair Successfuly description"
+},
+{
+	"id" : 11,
+	"RandomTrue": true,
+	"Repeatable" : true,
+	"name" : "IN THE NAME OF PRESERVATION!",
+	"description" : "Witness, the final calamity",
+	"Choice-1" : [10,[["SPAREPARTS",50]], "Wanna see some fireworks? You should know what and when is your place! This is my place therefore this is my time! If you cant afford it? Goodbye! \nSpareparts:@SPAREPARTS()/50"]
+}
 ]
