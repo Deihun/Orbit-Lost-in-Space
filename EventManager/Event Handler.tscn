@@ -37,8 +37,5 @@ text = "description
 "
 autowrap_mode = 3
 
-[node name="Button_Container" type="VBoxContainer" parent="Event_UI"]
-offset_left = 1468.0
-offset_top = 20.0
-offset_right = 1912.0
-offset_bottom = 1076.0
+[node name="Container" type="Node2D" parent="Event_UI"]
+position = Vector2(1702, -65)

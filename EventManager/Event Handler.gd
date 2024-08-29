@@ -3,13 +3,16 @@ extends Node2D
 @onready var eventReader = $Event_UI
 @onready var Cycle = $"/root/IngameStoredProcessSetting"
 
-
+var Critical_Event = []
 var rawEvent = []
 var alreadyTriggeredEvent = []
 var Priority_Event = []
 var eventID = []
+var isEventVisible = true
 
 
+					#NON RETURNING METHODS
+#SETUP ZONES
 func _ready():
 	var file_path = "res://Scripts/Events.json"
 	if(FileAccess.file_exists(file_path)):
@@ -18,6 +21,8 @@ func _ready():
 		rawEvent = parse_json(json_text)
 	else: 
 		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
+	startAddNextEvent()
+	ActivateEvent()
 
 
 func parse_json(json_text):
@@ -29,20 +34,28 @@ func parse_json(json_text):
 	return json.get_data()
 
 
-func _process(delta):
-	pass
-
 func _newGameStart():
 	pass
+
 
 func _loadGameStart(eventLoads):
 	pass
 
-func startAddNextEvent():
+
+#EVENTS METHODS
+func startAddNextEvent(): #ADD EVENT ON QUEUE
 	self.visible = true
-	var numbers_of_event =  int(2 + (randf() * (Cycle.getCycle()*0.03)))
+	var numbers_of_event =  int(1 + (randf() * (Cycle.getCycle()*0.08)))
 	
-	while(Priority_Event.size() > 0 && numbers_of_event > 0):
+	#_CRITICAL EVENT
+	while(Critical_Event.size() > 0):
+		var Critical_key = Critical_Event.pop_front()
+		for eachEvent in rawEvent:
+			if eachEvent.has("Conditions"):
+				if eachEvent["Conditions"][0] == "CRITICAL" && eachEvent["Conditions"][1].has(Critical_key):
+					eventID.append(eachEvent["id"])
+	#PRIORITIZE EVENTS THAT WITHIN PRIORITY ARRAY
+	while(Priority_Event.size() > 0 && numbers_of_event > 0): 
 		var priority_key = Priority_Event.pop_front()
 		for eachEvent in rawEvent:
 			if eachEvent.has("Conditions"):
@@ -50,33 +63,47 @@ func startAddNextEvent():
 					eventID.append(eachEvent["id"])
 					numbers_of_event -= 1
 	
-	for i in numbers_of_event:
+	#ADD EVENTS BASE ON LIMIT PER CYCLE
+	for i in numbers_of_event: 
+		#ADD EVENTS BASE ON LIMIT PER CYCLE
 		_addNextEvent()
+
 
 func _addNextEvent():
 	var event_index_random = randi() % rawEvent.size()
 	var event = rawEvent[event_index_random]
-	if event["RandomTrue"] != true:
+	var globalResources = $"/root/GlobalResources"
+	
+	if event["RandomTrue"] != true: #FILTER IF EVENTS CAN BE ACTIVATED
 		_addNextEvent()
 		return
-	if event["Repeatable"] == false:
+	if event["Repeatable"] == false: #FILTER IF EVENTS CAN BE REPEATED
 		if !alreadyTriggeredEvent.has(event["id"]):
 			alreadyTriggeredEvent.append(event["id"])
 		else:
 			_addNextEvent()
 			return
+	if event.has("Conditions"): #FILTER IF EVENT HAS CONDITIONS AND IF IT WAS SATISFIED
+		if event["Conditions"][0] == ("PLACE"):
+			if !event["Conditions"][1][0].has(globalResources.place):
+				_addNextEvent()
+				return
 	eventID.append(event["id"])
 
 
-func ActivateEvent():
+func ActivateEvent(): #ACTIVATE QUEUE EVENT
 	if eventID.front() == null:
 		self.visible = false
+		isEventVisible = false
 		return
+	isEventVisible = true
 	eventReader.setEventID(eventID.pop_front())
 	eventReader.processNextEvent()
 
-func _removeAllEvent():
+
+func _removeAllEvent(): #CLEAR ALL EVENT
 	eventID.clear()
+
 
 #RETURNING METHODS
 func getAllEventIDHierarchy():

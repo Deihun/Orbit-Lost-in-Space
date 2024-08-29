@@ -9,13 +9,13 @@ extends Node2D
 var inventory 
 
 
-
 #VOID METHODS
 func _ready():	#onStart, Initialize the inventory paths
 	inventory = get_node("root/TestingOnRun/player/player/Camera2D/UI_On_Hand")
 	if not inventory: #Debugging for paths
 		print("Unable to detect with dropbox: UI On Hand")
 	set_process(true)
+	pass
 
 
 func _process(delta):
