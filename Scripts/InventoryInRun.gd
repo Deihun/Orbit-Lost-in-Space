@@ -1,4 +1,4 @@
-extends Node
+class_name Player extends Node
 
 #VARIABLES 
 const MAX_SLOTS = 4
