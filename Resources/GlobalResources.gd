@@ -7,7 +7,6 @@ var oxygen = 0
 var spareparts = 100
 var biogene = 0
 var ductape = 0
-var oxygen = 0
 var emergencyOxy = 0
 var emergencyFuel = 0
 
@@ -35,7 +34,7 @@ func hasItem(item_type: String, quantity: int) -> bool:
 	var returningValue = false
 	match(item_type):
 		"FOOD":
-			returningValue = food >= quantity 
+			returningValue = ration >= quantity 
 		"FUEL":
 			returningValue = fuel >= quantity
 		"SPAREPARTS":
@@ -60,7 +59,7 @@ func subtractItem(conditions,item_name, amount):
 			"SPAREPARTS":
 				spareparts -= amount
 			"FOOD":
-				food -= amount 
+				ration -= amount 
 			"FUEL":
 				fuel -= amount 
 			"BIOGENE":
@@ -75,7 +74,7 @@ func reset(item_type):
 		"SPAREPARTS":
 			spareparts = 0
 		"FOOD":
-			food = 0 
+			ration = 0 
 		"FUEL":
 			fuel = 0 
 		"BIOGENE":
