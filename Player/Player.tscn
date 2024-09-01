@@ -14,6 +14,25 @@ position = Vector2(39, 42)
 collision_layer = 2
 script = ExtResource("1_5ung8")
 
+[node name="AllUIParents" type="CanvasLayer" parent="player"]
+
+[node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
+z_index = 60
+offset_left = 665.0
+offset_top = 931.0
+offset_right = -1087.0
+offset_bottom = -105.0
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="player/AllUIParents"]
+offset_left = 889.0
+offset_top = 77.0
+offset_right = 947.0
+offset_bottom = 147.0
+scale = Vector2(1.74, 1.74)
+theme_override_font_sizes/font_size = 46
+text = "60"
+
 [node name="Player2" type="Sprite2D" parent="player"]
 position = Vector2(0, -54.5)
 scale = Vector2(1, 1.85156)
@@ -28,22 +47,5 @@ scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="UI_On_Hand" parent="player/Camera2D" instance=ExtResource("3_2olcm")]
-z_index = 60
-offset_left = -564.0
-offset_top = 754.0
-offset_right = -564.0
-offset_bottom = 754.0
-scale = Vector2(7.11, 7.11)
-
-[node name="Label" type="Label" parent="player/Camera2D/UI_On_Hand"]
-layout_mode = 0
-offset_left = 56.5401
-offset_top = -261.603
-offset_right = 114.54
-offset_bottom = -191.603
-theme_override_font_sizes/font_size = 46
-text = "60"
-
-[node name="Timer_OverTimeColorChanger" type="Timer" parent="player/Camera2D/UI_On_Hand"]
+[node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2

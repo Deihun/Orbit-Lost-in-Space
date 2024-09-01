@@ -1,12 +1,15 @@
 extends Node
 
 #VARIABLES
-var food = 0
+var ration = 0
 var fuel = 0
 var oxygen = 0
 var spareparts = 100
 var biogene = 0
-var ductape = 20
+var ductape = 0
+var emergencyOxy = 0
+var emergencyFuel = 0
+
 var GameEffects = [] 
 var uniqueItems = []
 
@@ -16,7 +19,7 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 	match(item_type):
 		"Small Food":
 			print("submitted apple")
-			food += 10
+			ration += 10
 		"Small Fuel":
 			print("submitted fuel")
 			fuel += 13
@@ -31,7 +34,7 @@ func hasItem(item_type: String, quantity: int) -> bool:
 	var returningValue = false
 	match(item_type):
 		"FOOD":
-			returningValue = food >= quantity 
+			returningValue = ration >= quantity 
 		"FUEL":
 			returningValue = fuel >= quantity
 		"SPAREPARTS":
@@ -45,7 +48,7 @@ func hasItem(item_type: String, quantity: int) -> bool:
 	return returningValue
 
 func showTotalItems(): #For DEBUG only
-	print("Food: ",food," Fuel: ", fuel," Spareparts: ", spareparts, " biogene: ", biogene, " Ductape: ", ductape)
+	print("Ration: ",ration," Fuel: ", fuel," Spareparts: ", spareparts, " biogene: ", biogene, " Ductape: ", ductape)
 
 func getSpareparts():
 	return spareparts
@@ -56,7 +59,7 @@ func subtractItem(conditions,item_name, amount):
 			"SPAREPARTS":
 				spareparts -= amount
 			"FOOD":
-				food -= amount 
+				ration -= amount 
 			"FUEL":
 				fuel -= amount 
 			"BIOGENE":
@@ -71,7 +74,7 @@ func reset(item_type):
 		"SPAREPARTS":
 			spareparts = 0
 		"FOOD":
-			food = 0 
+			ration = 0 
 		"FUEL":
 			fuel = 0 
 		"BIOGENE":

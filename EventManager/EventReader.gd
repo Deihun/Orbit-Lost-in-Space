@@ -13,6 +13,7 @@ var temp_choice_data = []
 
 
 func _ready():
+	print(button_container.position)
 	var file_path = "res://Scripts/Events.json"
 	if(FileAccess.file_exists(file_path)):
 		var file = FileAccess.open(file_path,FileAccess.READ)
@@ -68,7 +69,11 @@ func HandleButton(Event):
 	button_index = 1
 	temp_choice_data = []
 	clear_container(button_container)
+	
+	print("CHILD CONTAINER AFTER READING: ",button_container.get_child_count())
+	
 	while Event.has("Choice-"+str(button_index)):
+		print("IN WHILE DEBUG")
 		HasNoChoice = false
 		var choice_data = Event["Choice-"+str(button_index)]
 		_create_choice_button(choice_data, button_index)
@@ -79,6 +84,9 @@ func HandleButton(Event):
 		_create_choice_button(["","","Okay"], 1)
 		temp_choice_data.append(["","","Okay"])
 		pass
+	
+	_reupdate_button()
+
 
 func HiddenChoice(Event):
 	var globalResources = $"/root/GlobalResources"
@@ -148,8 +156,12 @@ func RunKeyWord(Command):
 
 
 func clear_container(container: Node2D):
-	for child in container.get_children():
+	print("DELETING CHILD INITIALIZE")
+	for i in range(container.get_child_count() - 1, -1, -1):
+		var child = container.get_child(i)
+		print("DELETING CHILD: ", child.name)
 		child.queue_free()
+
 
 func _create_choice_button(choice_data, index):
 	var button = Button.new() #CREATE AND HANDLES BUTTON
@@ -167,8 +179,8 @@ func _create_choice_button(choice_data, index):
 	button.connect("pressed", Callable(self, "_on_choice_button_pressed").bind(choice_data))
 	button.mouse_filter = Control.MOUSE_FILTER_PASS
 	
-	var current_position = Vector2(0, button_container.get_child_count() * (un_touch_label.size.y + 50))
-	current_position -= Vector2(0,400)
+	print("BUTTON CREATED")
+	var current_position = Vector2(0, (index - 1) * (un_touch_label.size.y + 10))
 	un_touch_label.position = current_position
 	
 	button.modulate.a = 0

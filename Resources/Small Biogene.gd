@@ -9,12 +9,12 @@ var inventory
 
 #VOID METHODS
 func _ready():#Initialize the inventory var
-	inventory = get_node("root/TestingOnRun/player/player/Camera2D/UI_On_Hand")
+	inventory = get_node("/root/TestingOnRun/Player/player/AllUIParents/UI_On_Hand")
 
 
 func _process(delta):#Call the inventory repeatedly until the correct path is detected
 	if not inventory:
-		inventory = get_node("/root/TestingOnRun/Player/player/Camera2D/UI_On_Hand")
+		inventory = get_node("/root/TestingOnRun/Player/player/AllUIParents/UI_On_Hand")
 		if inventory:
 			print("Small Biogene already initialize")
 			set_process(false)
