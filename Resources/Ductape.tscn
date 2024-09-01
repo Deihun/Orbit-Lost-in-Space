@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwl2d5xnndn76"]
+[gd_scene load_steps=5 format=3 uid="uid://cwl2d5xnndn76"]
 
+[ext_resource type="Script" path="res://Resources/ductape.gd" id="1_bugs8"]
 [ext_resource type="Texture2D" uid="uid://bqx17afm5w5de" path="res://Resources/Resource_Images/Ductape_UnpickedUp.png" id="1_vq3xc"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="2_ncyvr"]
 
@@ -7,6 +8,7 @@
 size = Vector2(631.56, 454.294)
 
 [node name="Ductape" type="Node2D"]
+script = ExtResource("1_bugs8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.00002, 5.99998)
@@ -19,5 +21,4 @@ scale = Vector2(0.228516, 0.265625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(16.8013, -23.8529)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1me7f")

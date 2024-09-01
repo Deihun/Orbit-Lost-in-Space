@@ -8,7 +8,7 @@ var inventory
 
 #VOID METHODS
 func _ready():	#OnStart, 
-	inventory = get_node("Camera2D/UI_On_Hand")
+	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 
 
 func _physics_process(delta):
@@ -28,4 +28,6 @@ func _physics_process(delta):
 
 
 func update_label(text_content, isColor): #Set the child label node 
-	$Camera2D/UI_On_Hand/Label.text = str(text_content)
+	var label = get_parent().get_node("player/AllUIParents/Label")
+	label.text = str(text_content)
+

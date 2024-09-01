@@ -38,6 +38,11 @@ func _process(delta):
 		label.hide()
 
 func _sort_by_distance_to_player(area1, area2):
+	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+		if player == null:
+			return false
+	
 	var area1_to_player = player.global_position.distance_to(area1.global_position)
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player
