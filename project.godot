@@ -12,9 +12,8 @@ config_version=5
 
 config/name="Orbit Loss in Space"
 run/main_scene="res://MainMenu/main_menu.tscn"
-
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Icon_OrbitLost_in_Space.svg"
 
 [autoload]
 

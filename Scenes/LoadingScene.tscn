@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6145wlhsyafa"]
+
+[ext_resource type="Script" path="res://Scenes/loading_scene.gd" id="1_a1gkc"]
+[ext_resource type="Texture2D" uid="uid://gm472idldrq5" path="res://Scenes/LoadingExample.png" id="1_h6phg"]
+
+[node name="LoadingScene" type="Node2D"]
+script = ExtResource("1_a1gkc")
+
+[node name="LoadingBackground" type="Sprite2D" parent="."]
+position = Vector2(942, 542)
+scale = Vector2(1.02344, 1.0213)
+texture = ExtResource("1_h6phg")
+
+[node name="LoadingPoints" type="Label" parent="."]
+offset_left = 892.0
+offset_top = 569.0
+offset_right = 943.0
+offset_bottom = 615.0
+scale = Vector2(5.525, 5.525)
+text = "00%"

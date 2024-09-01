@@ -1,13 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmojd3msv3ms0"]
+[gd_scene load_steps=5 format=3 uid="uid://dmojd3msv3ms0"]
 
 [ext_resource type="Script" path="res://EventManager/Event Handler.gd" id="1_jnq3i"]
 [ext_resource type="Script" path="res://EventManager/EventReader.gd" id="2_nkt3i"]
 [ext_resource type="Texture2D" uid="uid://f4stsxkea1gm" path="res://EventManager/temporary_eventUI.png" id="2_qyjc8"]
+[ext_resource type="SpriteFrames" uid="uid://py3fqsiy6vfj" path="res://EventManager/OpeningEventUI.tres" id="4_coms2"]
 
 [node name="EventHandler" type="Node2D"]
 script = ExtResource("1_jnq3i")
 
+[node name="EventUIAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(955, 525)
+sprite_frames = ExtResource("4_coms2")
+animation = &"ClosingAnimation"
+frame = 21
+frame_progress = 1.0
+
 [node name="Event_UI" type="Node2D" parent="."]
+visible = false
 script = ExtResource("2_nkt3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Event_UI"]
@@ -38,4 +47,6 @@ text = "description
 autowrap_mode = 3
 
 [node name="Container" type="Node2D" parent="Event_UI"]
-position = Vector2(1702, -65)
+position = Vector2(1645, 112)
+
+[connection signal="animation_finished" from="EventUIAnimation" to="." method="_on_opening_ui_scene_animation_finished"]

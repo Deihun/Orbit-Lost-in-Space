@@ -92,12 +92,13 @@ metadata/_edit_lock_ = true
 
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
-position = Vector2(2244, -544)
-scale = Vector2(0.715464, 0.662831)
+position = Vector2(1672.74, -550)
+scale = Vector2(1.101, 1.02)
 
 [node name="WholeInteriorScene" type="Sprite2D" parent="."]
 position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
+metadata/_edit_lock_ = true
 
 [node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
 

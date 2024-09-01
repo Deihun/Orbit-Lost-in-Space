@@ -2,13 +2,16 @@ extends Node2D
 
 @onready var eventReader = $Event_UI
 @onready var Cycle = $"/root/IngameStoredProcessSetting"
+@onready var OpeningAnimation = $EventUIAnimation
 
+var Active = true
 var Critical_Event = []
 var rawEvent = []
 var alreadyTriggeredEvent = []
 var Priority_Event = []
 var eventID = []
-var isEventVisible = true
+var isEventVisible = false
+var onlyOnceTrigger = true
 
 
 					#NON RETURNING METHODS
@@ -33,6 +36,22 @@ func parse_json(json_text):
 		return []
 	return json.get_data()
 
+func switchIt():
+	isEventVisible = !isEventVisible
+	if isEventVisible == true:
+		OpeningAnimation.visible = true
+		OpeningAnimation.play("OpeningAnimation")
+	elif isEventVisible == false:
+		OpeningAnimation.visible = true
+		eventReader.visible = false
+		OpeningAnimation.play("ClosingAnimation")
+	pass
+
+func _on_opening_ui_scene_animation_finished() -> void:
+	if isEventVisible:
+		eventReader.visible = true
+	OpeningAnimation.visible = false
+
 
 func _newGameStart():
 	pass
@@ -44,6 +63,7 @@ func _loadGameStart(eventLoads):
 
 #EVENTS METHODS
 func startAddNextEvent(): #ADD EVENT ON QUEUE
+	onlyOnceTrigger = true
 	self.visible = true
 	var numbers_of_event =  int(1 + (randf() * (Cycle.getCycle()*0.08)))
 	
@@ -93,10 +113,8 @@ func _addNextEvent():
 
 func ActivateEvent(): #ACTIVATE QUEUE EVENT
 	if eventID.front() == null:
-		self.visible = false
-		isEventVisible = false
+		switchIt()
 		return
-	isEventVisible = true
 	eventReader.setEventID(eventID.pop_front())
 	eventReader.processNextEvent()
 

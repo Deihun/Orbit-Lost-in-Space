@@ -3,6 +3,7 @@ extends Camera2D
 @onready var ArrowButton = [$Button_navigation_node_parent/LeftButton_UI,$Button_navigation_node_parent/RightButton_UI]
 @onready var ObjectLeft = Node2D
 @onready var EndButton = get_parent().get_node("cam2d/Button_navigation_node_parent/NextDay_Button")
+@onready var EventUI = get_parent().get_node("EventHandler")
 
 var tween = create_tween()
 var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000)]
@@ -66,14 +67,24 @@ func ChangeLocaton(smoothMovement):
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = true
 		2:#DrivingsRoom
+			var TimerFilter = false
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
+				TimerFilter = true
 			else:
 				tween.kill()
 				self.position = SpecificLocation[LocationKey]
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = false
 			EndButton.visible = true
+			
+			if TimerFilter:
+				await get_tree().create_timer(1.5).timeout
+			
+			if EventUI.eventID.is_empty() and EventUI.onlyOnceTrigger == true:
+				EventUI.switchIt()
+				EventUI.onlyOnceTrigger = false
+				pass
 		3: #StorageRoom
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)

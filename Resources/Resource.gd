@@ -17,7 +17,7 @@ var inventory
 
 #VOID METHODS
 func _ready():#
-	inventory = get_node("root/TestingOnRun/player/player/Camera2D/UI_On_Hand")
+	inventory = get_node("/root/TestingOnRun/Player/player/AllUIParents/UI_On_Hand")
 	if not inventory: #DEBUG incase path got change or updated
 		print("SmallFood: Unable to path UI_ON_HAND")
 	set_process(true)
@@ -34,7 +34,7 @@ func _ready():#
 
 func _process(delta): #Repeatedly set a path until a correct path is detected
 	if not inventory: 
-		inventory = get_node("/root/TestingOnRun/Player/player/Camera2D/UI_On_Hand")
+		inventory = get_node("/root/TestingOnRun/Player/player/AllUIParents/UI_On_Hand")
 		if inventory:
 			print("Fuel Already detected and initialize")
 			set_process(false)
@@ -46,8 +46,3 @@ func interaction():
 		inventory.showItem()
 		interaction_manager.unregister_area(interaction_area)
 		queue_free()
-
-
-
-
-
