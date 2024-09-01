@@ -30,3 +30,4 @@ func _physics_process(delta):
 func update_label(text_content, isColor): #Set the child label node 
 	var label = get_parent().get_node("player/AllUIParents/Label")
 	label.text = str(text_content)
+
