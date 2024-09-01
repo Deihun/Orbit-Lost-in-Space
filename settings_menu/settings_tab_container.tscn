@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://0navo5cmv2ab"]
+[gd_scene load_steps=4 format=3 uid="uid://0navo5cmv2ab"]
+
+[ext_resource type="PackedScene" uid="uid://cs1oawlbvecy8" path="res://settings_menu/hotkey_rebind_button.tscn" id="1_orr2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rx88v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2ixo"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -20,9 +26,10 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -113,7 +120,6 @@ layout_mode = 2
 text = "Graphic 5"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -131,30 +137,25 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
 layout_mode = 2
-text = "Control 1"
+theme_override_constants/separation = 8
 
-[node name="Label2" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Control 2"
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_rx88v")
 
-[node name="Label3" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_orr2h")]
 layout_mode = 2
-text = "Control 3"
 
-[node name="Label4" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Control 4"
-
-[node name="Label5" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Control 5"
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_x2ixo")
 
 [node name="Accessibility" type="TabBar" parent="TabContainer"]
 visible = false
