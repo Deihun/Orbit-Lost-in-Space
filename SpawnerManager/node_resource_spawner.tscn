@@ -1,0 +1,32 @@
+[gd_scene load_steps=14 format=3 uid="uid://bo23icrofd40r"]
+
+[ext_resource type="Script" path="res://Resource Spawner.gd" id="1_2rhg8"]
+[ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/Small_Fuel/Small Fuel.tscn" id="2_iwsqb"]
+[ext_resource type="PackedScene" uid="uid://cleem5f6dxwl4" path="res://Resources/SmallFoodCan/SmallCan_Variety1.tscn" id="2_qciir"]
+[ext_resource type="PackedScene" uid="uid://dn5kk434y66lu" path="res://Resources/SmallFood.tscn" id="3_h1bd4"]
+[ext_resource type="PackedScene" uid="uid://b4yvmesq7ajf7" path="res://Resources/SmallFoodCan/SmallCan_Variety2.tscn" id="3_sotln"]
+[ext_resource type="PackedScene" uid="uid://sffwouqas6s6" path="res://Resources/Small_Biogene/Small Biogene.tscn" id="4_1e2dx"]
+[ext_resource type="PackedScene" uid="uid://bjdj7xsx3gmwo" path="res://Resources/SmallFoodCan/SmallCan_Variety3.tscn" id="4_sh0i5"]
+[ext_resource type="PackedScene" uid="uid://dnccscv45adfj" path="res://Resources/SmallFoodCan/TripleFoodCan.tscn" id="5_3ecsi"]
+[ext_resource type="PackedScene" uid="uid://cg2e3j7q32we0" path="res://Resources/SmallOxygenGas/Small_OxygenTank.tscn" id="5_36qkf"]
+[ext_resource type="PackedScene" uid="uid://d0bu2bmlsdson" path="res://Resources/small_spareparts.tscn" id="5_bfvwt"]
+[ext_resource type="PackedScene" uid="uid://v1jdjh7bs30" path="res://Resources/Spareparts/Spareparts_Variety1.tscn" id="6_bu8s1"]
+[ext_resource type="PackedScene" uid="uid://cwl2d5xnndn76" path="res://Resources/Ductape.tscn" id="6_von65"]
+[ext_resource type="PackedScene" uid="uid://d4j5shfi1sldf" path="res://Resources/FirstAidKit/MedicinePack.tscn" id="8_pndfl"]
+
+[node name="Node Resource Spawner" type="Node2D"]
+z_index = 1
+script = ExtResource("1_2rhg8")
+SmallCanVariety1 = ExtResource("2_qciir")
+SmallCanVariety2 = ExtResource("3_sotln")
+SmallCanVariety3 = ExtResource("4_sh0i5")
+StackedCan = ExtResource("5_3ecsi")
+SmallGasTank = ExtResource("5_36qkf")
+spareparts_variety1 = ExtResource("6_bu8s1")
+medicinepack = ExtResource("8_pndfl")
+fuel = ExtResource("2_iwsqb")
+food = ExtResource("3_h1bd4")
+biogene = ExtResource("4_1e2dx")
+spareparts = ExtResource("5_bfvwt")
+ductapes = ExtResource("6_von65")
+number_of_resources = 30

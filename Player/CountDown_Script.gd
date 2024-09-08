@@ -23,9 +23,8 @@ func _on_timeout(): #Simple recursion everytime the timer stops, update the UI t
 
 
 func checkForPlayer(): #Access dropbox hitboxes, if players inside, change scene; otherwise _______
-	var isPlayerInside = get_node("/root/TestingOnRun/DropBox/Player_Final_Count")
+	var isPlayerInside = NodeFinder.find_node_by_name(get_tree().current_scene, "Player_Final_Count")
 	if isPlayerInside.getIsPlayerInsideCondition():
 		get_tree().change_scene_to_file("res://Scenes/TestingInteriorScene.tscn")
 	else:
-		print("Nasa Labas")
-		countdown_status = false
+		get_tree().reload_current_scene()

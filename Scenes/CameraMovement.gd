@@ -38,7 +38,7 @@ func ChangeLocationToLeft():
 
 func ChangeLocationToRight():
 	if canBeClick == true:
-		if LocationKey < 3 and LocationKey > -1:
+		if LocationKey < 2 and LocationKey > -1:
 			canBeClick = false
 			LocationKey += 1
 			ChangeLocaton(true)

@@ -1,20 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=7 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
+[ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="2_od3ng"]
 [ext_resource type="PackedScene" uid="uid://y326w2i8dtsu" path="res://UI_on_Hand/UI_On_Hand.tscn" id="3_2olcm"]
+[ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vqfp"]
 size = Vector2(121, 16)
 
 [node name="player" type="Node2D" groups=["player"]]
+y_sort_enabled = true
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(39, 42)
+y_sort_enabled = true
+position = Vector2(0, 8)
 collision_layer = 2
+collision_mask = 54
 script = ExtResource("1_5ung8")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
+
+[node name="PauseMenu" parent="player/AllUIParents" instance=ExtResource("2_od3ng")]
+offset_left = 368.0
+offset_top = 104.0
+offset_right = 368.0
+offset_bottom = 104.0
 
 [node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
 z_index = 60
@@ -23,6 +34,7 @@ offset_top = 931.0
 offset_right = -1087.0
 offset_bottom = -105.0
 scale = Vector2(3, 3)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="player/AllUIParents"]
 offset_left = 889.0
@@ -32,20 +44,42 @@ offset_bottom = 147.0
 scale = Vector2(1.74, 1.74)
 theme_override_font_sizes/font_size = 46
 text = "60"
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause_Button" type="Button" parent="player/AllUIParents"]
+offset_left = 1794.0
+offset_top = 24.0
+offset_right = 1901.0
+offset_bottom = 121.0
+
+[node name="Sprite2D" type="Sprite2D" parent="player/AllUIParents/Pause_Button"]
+position = Vector2(55, 50)
+scale = Vector2(0.704902, 0.681373)
+texture = ExtResource("3_my03n")
 
 [node name="Player2" type="Sprite2D" parent="player"]
-position = Vector2(0, -54.5)
+y_sort_enabled = true
+position = Vector2(1, -4.00001)
 scale = Vector2(1, 1.85156)
 texture = ExtResource("1_8a5wi")
+offset = Vector2(0, -64.35)
 
 [node name="Player" type="CollisionShape2D" parent="player"]
-position = Vector2(-2.5, 49)
+y_sort_enabled = true
+position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_5vqfp")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="PlayerCamera" type="Camera2D" parent="player"]
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="PickUpCooldown" type="Timer" parent="player"]
+wait_time = 0.5
+one_shot = true
+
 [node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
+
+[connection signal="button_down" from="player/AllUIParents/Pause_Button" to="player" method="_on_pause_button_button_down"]
+[connection signal="timeout" from="player/PickUpCooldown" to="player" method="ReadyToRun"]

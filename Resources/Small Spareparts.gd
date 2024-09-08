@@ -10,12 +10,12 @@ var inventory
 
 #VOID METHODS
 func _ready(): #Initialize the inventory var
-	inventory = get_node("/root/TestingOnRun/Player/player/AllUIParents/UI_On_Hand")
+	inventory = NodeFinder.find_node_by_name(get_tree().current_scene, "UI_On_Hand")
 
 
 func _process(delta): #Call the inventory repeatedly until the correct path is detected
 	if not inventory:
-		inventory = get_node("/root/TestingOnRun/Player/player/AllUIParents/UI_On_Hand")
+		inventory = NodeFinder.find_node_by_name(get_tree().current_scene, "UI_On_Hand")
 		if inventory:
 			print("Sparepats already initialize")
 			set_process(false)

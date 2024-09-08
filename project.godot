@@ -20,6 +20,7 @@ config/icon="res://Icon_OrbitLost_in_Space.svg"
 InteractionManager="*res://Interaction/InteractionManager.tscn"
 GlobalResources="*res://Resources/GlobalResources.gd"
 IngameStoredProcessSetting="*res://Ingame_storedProcessSetting.gd"
+NodeFinder="*res://NodeFinder/NodeFinder.gd"
 
 [display]
 
@@ -59,11 +60,14 @@ Interact={
 
 2d_render/layer_1="Player"
 2d_render/layer_9="Item_Drops"
-2d_physics/layer_1="world"
+2d_physics/layer_1="Static"
 2d_physics/layer_2="player"
-2d_physics/layer_3="item"
+2d_physics/layer_3="Movable"
 2d_physics/layer_4="player_hitbox"
 2d_physics/layer_5="player_hurtbox"
+2d_physics/layer_6="Pushable_object"
+2d_physics/layer_7="Imovable"
+2d_physics/layer_8="Battery"
 
 [rendering]
 

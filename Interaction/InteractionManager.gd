@@ -28,12 +28,15 @@ func _input(event):
 
 func _process(delta):
 	if active_area.size() > 0 && can_interact:
-		active_area.sort_custom(_sort_by_distance_to_player)
-		label.text = base_text + active_area[0].action_name
-		label.global_position = active_area[0].global_position
-		label.global_position.y -= 36
-		label.global_position.x -= label.size.x / 2
-		label.show()
+		if _sort_by_distance_to_player:
+			active_area.sort_custom(_sort_by_distance_to_player)
+			label.text = base_text + active_area[0].action_name
+			label.global_position = active_area[0].global_position
+			label.global_position.y -= 36
+			label.global_position.x -= label.size.x / 2
+			label.show()
+		else:
+			label.hide()
 	else:
 		label.hide()
 

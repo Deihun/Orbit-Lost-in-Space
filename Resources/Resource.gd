@@ -1,9 +1,9 @@
 extends Node2D
 
 #EXTENSION VARIABLE
-@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var interaction_area: InteractionArea = $RigidBody2D/InteractionArea
 @onready var interaction_manager = InteractionManager
-@onready var sprite = $Sprite2D
+@onready var sprite = $RigidBody2D/Sprite2D
 
 #TEXTURE VARIABLE
 var variety_1 = load("res://Resources/Resource_Images/SmallFood_Unpickup_variety2.png")
