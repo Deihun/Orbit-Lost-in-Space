@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw0we378vo0h2"]
+
+[ext_resource type="Texture2D" uid="uid://c0pyrkb81fuba" path="res://Resources/Small_Biogene/SmallBiogene_Broken_Puddle.png" id="1_0033s"]
+[ext_resource type="Script" path="res://Resources/Small_Biogene/broken_biogene.gd" id="1_k7vr6"]
+[ext_resource type="Texture2D" uid="uid://d3odyqj4pj6p3" path="res://Resources/Small_Biogene/GlassShard_SmallBiogene.png" id="3_y8rwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbxqw"]
+size = Vector2(25, 24)
+
+[node name="BrokenBiogene" type="Node2D"]
+script = ExtResource("1_k7vr6")
+
+[node name="Puddle" type="Sprite2D" parent="."]
+position = Vector2(-4, -12)
+scale = Vector2(0.34473, 0.395711)
+texture = ExtResource("1_0033s")
+metadata/_edit_lock_ = true
+
+[node name="GlassShard1" type="RigidBody2D" parent="."]
+position = Vector2(57, 21)
+collision_layer = 64
+collision_mask = 64
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassShard1"]
+position = Vector2(-30, 0)
+shape = SubResource("RectangleShape2D_lbxqw")
+
+[node name="glassshard" type="Sprite2D" parent="GlassShard1"]
+position = Vector2(-30, -11)
+scale = Vector2(0.51, 0.585)
+texture = ExtResource("3_y8rwe")
+
+[node name="GlassShard2" type="RigidBody2D" parent="."]
+position = Vector2(57, 21)
+collision_layer = 64
+collision_mask = 64
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassShard2"]
+position = Vector2(-88, -9)
+shape = SubResource("RectangleShape2D_lbxqw")
+
+[node name="glassshard2" type="Sprite2D" parent="GlassShard2"]
+position = Vector2(-87.9288, -19.6043)
+scale = Vector2(0.399, 0.526)
+texture = ExtResource("3_y8rwe")
+
+[node name="GlassShard3" type="RigidBody2D" parent="."]
+position = Vector2(57, 21)
+collision_layer = 64
+collision_mask = 64
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="glassshard3" type="Sprite2D" parent="GlassShard3"]
+position = Vector2(-60, -32)
+scale = Vector2(0.469, 0.619)
+texture = ExtResource("3_y8rwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassShard3"]
+position = Vector2(-57, -23)
+shape = SubResource("RectangleShape2D_lbxqw")

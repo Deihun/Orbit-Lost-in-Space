@@ -1,22 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0bu2bmlsdson"]
+[gd_scene load_steps=6 format=3 uid="uid://d0bu2bmlsdson"]
 
 [ext_resource type="Texture2D" uid="uid://bf3ux2qjmr8qs" path="res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png" id="1_lab0l"]
 [ext_resource type="Script" path="res://Resources/Small Spareparts.gd" id="1_lo412"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="2_pkvo6"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_aod3d"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjmb5"]
 size = Vector2(146.75, 116)
 
-[node name="Small_Spareparts" type="Node2D"]
+[node name="Small_Spareparts" type="RigidBody2D"]
+y_sort_enabled = true
+collision_layer = 64
+collision_mask = 64
+mass = 0.25
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 5.0
 script = ExtResource("1_lo412")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -5)
+shape = SubResource("CircleShape2D_aod3d")
+
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(11, -11)
+y_sort_enabled = true
+position = Vector2(-6, -4)
 scale = Vector2(0.445098, 0.586275)
 texture = ExtResource("1_lab0l")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_pkvo6")]
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(12.625, -17)
+y_sort_enabled = true
+position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_jjmb5")

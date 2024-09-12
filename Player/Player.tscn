@@ -1,49 +1,164 @@
-[gd_scene load_steps=5 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=12 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
+[ext_resource type="PackedScene" uid="uid://cul7r04u1uv6" path="res://Player/FullInventory_Indicator.tscn" id="2_1yavb"]
+[ext_resource type="Script" path="res://TutorialUI/TutorialAssets.gd" id="2_7naq2"]
+[ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="2_od3ng"]
 [ext_resource type="PackedScene" uid="uid://y326w2i8dtsu" path="res://UI_on_Hand/UI_On_Hand.tscn" id="3_2olcm"]
+[ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="3_ay1c7"]
+[ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
+[ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
+[ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vqfp"]
 size = Vector2(121, 16)
 
 [node name="player" type="Node2D" groups=["player"]]
+y_sort_enabled = true
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(39, 42)
+y_sort_enabled = true
+position = Vector2(0, 8)
 collision_layer = 2
+collision_mask = 54
 script = ExtResource("1_5ung8")
 
+[node name="AllUIParents" type="CanvasLayer" parent="player"]
+
+[node name="FullInventoryIndicator" parent="player/AllUIParents" instance=ExtResource("2_1yavb")]
+position = Vector2(750, 879)
+scale = Vector2(2.065, 2.065)
+
+[node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
+z_index = 200
+script = ExtResource("2_7naq2")
+
+[node name="MoveControl1" type="Sprite2D" parent="player/AllUIParents/TutorialAssets"]
+position = Vector2(300, 463)
+scale = Vector2(1.8098, 1.88431)
+texture = ExtResource("3_n65bk")
+
+[node name="Interact" type="Sprite2D" parent="player/AllUIParents/TutorialAssets"]
+position = Vector2(1612, 430)
+scale = Vector2(1.8098, 1.88431)
+texture = ExtResource("4_t2mgb")
+
+[node name="INTERACT" type="Label" parent="player/AllUIParents/TutorialAssets"]
+z_index = 2
+offset_left = 1592.0
+offset_top = 507.0
+offset_right = 1612.0
+offset_bottom = 529.0
+scale = Vector2(2.62, 2.62)
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_fonts/font = ExtResource("3_ay1c7")
+text = "e"
+
+[node name="DOWN" type="Label" parent="player/AllUIParents/TutorialAssets"]
+z_index = 1
+offset_left = 272.0
+offset_top = 498.0
+offset_right = 292.0
+offset_bottom = 520.0
+scale = Vector2(2.62, 2.62)
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_fonts/font = ExtResource("3_ay1c7")
+text = "S"
+
+[node name="LEFT" type="Label" parent="player/AllUIParents/TutorialAssets"]
+z_index = 1
+offset_left = 163.0
+offset_top = 498.0
+offset_right = 183.0
+offset_bottom = 520.0
+scale = Vector2(2.62, 2.62)
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_fonts/font = ExtResource("3_ay1c7")
+text = "A"
+
+[node name="RIGHT" type="Label" parent="player/AllUIParents/TutorialAssets"]
+z_index = 1
+offset_left = 371.0
+offset_top = 497.0
+offset_right = 391.0
+offset_bottom = 519.0
+scale = Vector2(2.62, 2.62)
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_fonts/font = ExtResource("3_ay1c7")
+text = "D"
+
+[node name="UP" type="Label" parent="player/AllUIParents/TutorialAssets"]
+z_index = 1
+offset_left = 271.0
+offset_top = 406.0
+offset_right = 291.0
+offset_bottom = 428.0
+scale = Vector2(2.62, 2.62)
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_fonts/font = ExtResource("3_ay1c7")
+text = "W"
+
+[node name="PauseMenu" parent="player/AllUIParents" instance=ExtResource("2_od3ng")]
+visible = false
+offset_left = 368.0
+offset_top = 104.0
+offset_right = 368.0
+offset_bottom = 104.0
+
+[node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
+z_index = 60
+offset_left = 665.0
+offset_top = 931.0
+offset_right = -1087.0
+offset_bottom = -105.0
+scale = Vector2(3, 3)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="player/AllUIParents"]
+offset_left = 889.0
+offset_top = 77.0
+offset_right = 947.0
+offset_bottom = 147.0
+scale = Vector2(1.74, 1.74)
+theme_override_font_sizes/font_size = 46
+text = "60"
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause_Button" type="Button" parent="player/AllUIParents"]
+offset_left = 1794.0
+offset_top = 24.0
+offset_right = 1901.0
+offset_bottom = 121.0
+
+[node name="Sprite2D" type="Sprite2D" parent="player/AllUIParents/Pause_Button"]
+position = Vector2(55, 50)
+scale = Vector2(0.704902, 0.681373)
+texture = ExtResource("3_my03n")
+
 [node name="Player2" type="Sprite2D" parent="player"]
-position = Vector2(0, -54.5)
+y_sort_enabled = true
+position = Vector2(1, -4.00001)
 scale = Vector2(1, 1.85156)
 texture = ExtResource("1_8a5wi")
+offset = Vector2(0, -64.35)
 
 [node name="Player" type="CollisionShape2D" parent="player"]
-position = Vector2(-2.5, 49)
+y_sort_enabled = true
+position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_5vqfp")
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="PlayerCamera" type="Camera2D" parent="player"]
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="UI_On_Hand" parent="player/Camera2D" instance=ExtResource("3_2olcm")]
-z_index = 60
-offset_left = -564.0
-offset_top = 754.0
-offset_right = -564.0
-offset_bottom = 754.0
-scale = Vector2(7.11, 7.11)
+[node name="PickUpCooldown" type="Timer" parent="player"]
+wait_time = 0.5
+one_shot = true
 
-[node name="Label" type="Label" parent="player/Camera2D/UI_On_Hand"]
-layout_mode = 0
-offset_left = 56.5401
-offset_top = -261.603
-offset_right = 114.54
-offset_bottom = -191.603
-theme_override_font_sizes/font_size = 46
-text = "60"
-
-[node name="Timer_OverTimeColorChanger" type="Timer" parent="player/Camera2D/UI_On_Hand"]
+[node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
+
+[connection signal="button_down" from="player/AllUIParents/Pause_Button" to="player" method="_on_pause_button_button_down"]
+[connection signal="timeout" from="player/PickUpCooldown" to="player" method="ReadyToRun"]

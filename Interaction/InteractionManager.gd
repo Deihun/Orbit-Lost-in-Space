@@ -23,21 +23,30 @@ func _input(event):
 			label.hide()
 			
 			await active_area[0].interact.call()
-			
+			var timer = NodeFinder.find_node_by_name(get_tree().current_scene, "countDown_mainTimer")
+			timer.GameStart()
 			can_interact = true
 
 func _process(delta):
 	if active_area.size() > 0 && can_interact:
-		active_area.sort_custom(_sort_by_distance_to_player)
-		label.text = base_text + active_area[0].action_name
-		label.global_position = active_area[0].global_position
-		label.global_position.y -= 36
-		label.global_position.x -= label.size.x / 2
-		label.show()
+		if _sort_by_distance_to_player:
+			active_area.sort_custom(_sort_by_distance_to_player)
+			label.text = base_text + active_area[0].action_name
+			label.global_position = active_area[0].global_position
+			label.global_position.y -= 36
+			label.global_position.x -= label.size.x / 2
+			label.show()
+		else:
+			label.hide()
 	else:
 		label.hide()
 
 func _sort_by_distance_to_player(area1, area2):
+	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+		if player == null:
+			return false
+	
 	var area1_to_player = player.global_position.distance_to(area1.global_position)
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player

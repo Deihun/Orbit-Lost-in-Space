@@ -1,4 +1,4 @@
-extends Node
+class_name Player extends Node
 
 #VARIABLES 
 const MAX_SLOTS = 4
@@ -21,7 +21,7 @@ func addItem(itemType, slotsNeeded): #Multiple checks to avoid debug when adding
 		return false
 	var remainingSlots = getRemainingSlots()
 	if slotsNeeded > remainingSlots:
-		print("Not enough space in the inventory.")
+		print("INVENTORY FULL")
 		return false
 	var startIndex = findAvailableSlots(slotsNeeded)
 	if startIndex == -1:
@@ -56,4 +56,3 @@ func getRemainingSlots():
 func insertAllItems():
 	for i in range(MAX_SLOTS):
 		inventory[i].clear()
-

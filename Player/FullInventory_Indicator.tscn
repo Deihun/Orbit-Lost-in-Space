@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cul7r04u1uv6"]
+
+[ext_resource type="Script" path="res://Player/full_inventory_indicator.gd" id="1_q3ke0"]
+[ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="2_sv4s0"]
+
+[node name="FullInventoryIndicator" type="Node2D"]
+script = ExtResource("1_q3ke0")
+
+[node name="Animation" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Expiration" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 154.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0.510256, 0.443869, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sv4s0")
+text = "Inventory Full!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_right = 154.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.651522, 0, 0.170423, 1)
+theme_override_fonts/font = ExtResource("2_sv4s0")
+text = "Inventory Full!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Animation" to="." method="_on_animation_timeout"]
+[connection signal="timeout" from="Expiration" to="." method="_on_expiration_timeout"]

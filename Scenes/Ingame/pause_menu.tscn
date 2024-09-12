@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb52e7f7m0hvb"]
+
+[ext_resource type="Script" path="res://Scenes/Ingame/pause_menu.gd" id="1_cu0fw"]
+[ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_jhi0i"]
+[ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="3_qbxds"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmgc2"]
+shader = ExtResource("3_qbxds")
+shader_parameter/amount = 1.966
+
+[node name="PauseMenu" type="Control"]
+z_index = 200
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cu0fw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 200
+layout_mode = 0
+offset_left = 81.0
+offset_top = -19.0
+offset_right = 1037.0
+offset_bottom = 806.0
+texture = ExtResource("1_jhi0i")
+region_rect = Rect2(0, 0, 255, 255)
+patch_margin_left = 70
+patch_margin_top = 70
+patch_margin_right = 70
+patch_margin_bottom = 70
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 150
+material = SubResource("ShaderMaterial_wmgc2")
+layout_mode = 0
+offset_left = -790.0
+offset_top = -424.0
+offset_right = -726.0
+offset_bottom = -339.0
+scale = Vector2(44.12, 19.92)
+
+[node name="RESUME" type="Button" parent="."]
+z_index = 201
+layout_mode = 0
+offset_left = 290.0
+offset_top = 73.0
+offset_right = 798.0
+offset_bottom = 120.0
+text = "RESUME
+"
+
+[node name="RESTART" type="Button" parent="."]
+z_index = 201
+layout_mode = 0
+offset_left = 289.0
+offset_top = 127.0
+offset_right = 797.0
+offset_bottom = 169.0
+text = "RESTART
+"
+
+[node name="MAIN_MENU" type="Button" parent="."]
+z_index = 201
+layout_mode = 0
+offset_left = 289.0
+offset_top = 174.0
+offset_right = 797.0
+offset_bottom = 214.0
+text = "MAIN MENU
+"
+
+[node name="QUIT" type="Button" parent="."]
+z_index = 201
+layout_mode = 0
+offset_left = 289.0
+offset_top = 222.0
+offset_right = 797.0
+offset_bottom = 261.0
+text = "EXIT
+"
+
+[node name="PauseTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="button_down" from="RESUME" to="." method="RESUME"]
+[connection signal="button_up" from="RESUME" to="." method="RESUME"]
+[connection signal="button_up" from="RESTART" to="." method="RESTART"]
+[connection signal="button_up" from="MAIN_MENU" to="." method="MAIN_MENU"]
+[connection signal="button_up" from="QUIT" to="." method="QUIT"]
+[connection signal="timeout" from="PauseTimer" to="." method="READY_TO_PAUSE"]

@@ -12,12 +12,24 @@ size = Vector2(638, 513)
 position = Vector2(300, 209)
 script = ExtResource("1_qn0js")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(-51, 90)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(51, -90)
+polygon = PackedVector2Array(-188, -14, -188, -4, -125, 151, 144, 148, 211, 12, 141, -148, -108, -151)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(10, 2)
 scale = Vector2(0.862, 0.914)
 texture = ExtResource("2_wq50o")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_t4s61")]
+collision_layer = 2
 action_name = "Submit"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea"]
@@ -25,17 +37,9 @@ position = Vector2(-23, 12)
 scale = Vector2(1.6145, 1.6072)
 polygon = PackedVector2Array(-123.877, -18.666, -67.513, 111.374, 109.631, 108.885, 167.853, 0, 107.154, -126.929, -61.3191, -126.929)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-51, 90)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-position = Vector2(51, -90)
-polygon = PackedVector2Array(-188, -14, -188, -4, -125, 151, 144, 148, 211, 12, 141, -148, -108, -151)
-
 [node name="Player_Final_Count" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 35
 script = ExtResource("4_cp7mb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Final_Count"]

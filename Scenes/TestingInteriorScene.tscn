@@ -1,12 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=16 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Texture2D" uid="uid://cmslymmnugx2x" path="res://Scenes/cabin room.png" id="1_twwka"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
+[ext_resource type="Script" path="res://Scenes/CameraMovement.gd" id="2_uajib"]
+[ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="3_h4mnh"]
+[ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
+[ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
 [ext_resource type="Texture2D" uid="uid://bamk1ij1a1uao" path="res://Scenes/Crafting Area.png" id="4_s8gdh"]
 [ext_resource type="Texture2D" uid="uid://c3yjwpyapvx67" path="res://Scenes/event1.png" id="5_6cguh"]
-[ext_resource type="Script" path="res://Scripts/EventReader.gd" id="6_2mwlk"]
-[ext_resource type="Texture2D" uid="uid://c6lobk618i8ts" path="res://Scenes/eventUIScreen.png" id="6_dd8me"]
+[ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
+[ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
+[ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
+[ext_resource type="Texture2D" uid="uid://b72m5ni8snr5k" path="res://InteriorScene/Storage Scene.png" id="11_dyr30"]
+[ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
+size = Vector2(1920, 1076.27)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,78 +27,147 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
 
-[node name="CabinRoom" type="Sprite2D" parent="."]
-scale = Vector2(0.601302, 0.6125)
-texture = ExtResource("1_twwka")
-metadata/_edit_lock_ = true
-
 [node name="cam2d" type="Camera2D" parent="."]
-metadata/_edit_lock_ = true
+script = ExtResource("2_uajib")
+
+[node name="Pause_Button" type="Button" parent="cam2d"]
+z_index = 150
+offset_left = 778.0
+offset_top = -508.0
+offset_right = 877.0
+offset_bottom = -406.0
+
+[node name="Sprite2D" type="Sprite2D" parent="cam2d/Pause_Button"]
+z_index = 150
+position = Vector2(51, 53)
+scale = Vector2(0.704902, 0.681373)
+texture = ExtResource("3_nae67")
+
+[node name="PauseMenu" parent="cam2d" instance=ExtResource("3_h4mnh")]
+visible = false
+offset_left = -457.0
+offset_top = -410.0
+offset_right = -457.0
+offset_bottom = -410.0
+
+[node name="Button_navigation_node_parent" type="Node2D" parent="cam2d"]
+z_index = 1
+position = Vector2(-567.5, 78.4998)
+scale = Vector2(0.998006, 1)
+
+[node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
+wait_time = 2.2
+one_shot = true
+
+[node name="EndCycleTimer" type="Timer" parent="cam2d/Button_navigation_node_parent"]
+wait_time = 2.0
+one_shot = true
+
+[node name="LeftButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
+offset_left = -383.264
+offset_top = 203.5
+offset_right = -128.264
+offset_bottom = 458.5
+scale = Vector2(0.998006, 1)
+texture_normal = ExtResource("2_c3qtk")
+metadata/_edit_use_anchors_ = true
+
+[node name="RightButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
+offset_left = 1489.47
+offset_top = 447.5
+offset_right = 1744.47
+offset_bottom = 702.5
+rotation = -3.13541
+scale = Vector2(0.998006, 1)
+texture_normal = ExtResource("2_c3qtk")
+metadata/_edit_use_anchors_ = true
+
+[node name="NextDay_Button" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
+offset_left = -401.3
+offset_top = -673.5
+offset_right = 110.7
+offset_bottom = -161.5
+scale = Vector2(0.517161, 0.470855)
+texture_normal = ExtResource("4_3ysvw")
+metadata/_edit_use_anchors_ = true
+
+[node name="UI_G" type="Control" parent="cam2d/Button_navigation_node_parent"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CraftingArea" type="Sprite2D" parent="."]
 position = Vector2(-1216.38, -1.00002)
 scale = Vector2(0.650651, 0.614815)
 texture = ExtResource("4_s8gdh")
 
-[node name="Button_navigation_node_parent" type="Node2D" parent="."]
-z_index = 1
-position = Vector2(-567.5, 78.4998)
-scale = Vector2(0.998006, 1)
-
-[node name="LeftButton_UI" type="TextureButton" parent="Button_navigation_node_parent"]
-offset_right = 255.0
-offset_bottom = 255.0
-scale = Vector2(0.998006, 1)
-texture_normal = ExtResource("2_c3qtk")
-metadata/_edit_lock_ = true
-
-[node name="RightButton_UI" type="TextureButton" parent="Button_navigation_node_parent"]
-offset_left = 1125.74
-offset_top = 225.497
-offset_right = 1380.74
-offset_bottom = 480.497
-rotation = -3.13541
-scale = Vector2(0.998006, 1)
-texture_normal = ExtResource("2_c3qtk")
-metadata/_edit_lock_ = true
-
 [node name="Event1" type="Sprite2D" parent="."]
 position = Vector2(1187, -2)
 scale = Vector2(0.603125, 0.615741)
 texture = ExtResource("5_6cguh")
 
-[node name="EventUIScreenNode" type="Node2D" parent="."]
-position = Vector2(1186.5, -4.00002)
-scale = Vector2(0.601562, 0.616667)
-script = ExtResource("6_2mwlk")
-
-[node name="Description2" type="RichTextLabel" parent="EventUIScreenNode"]
-z_index = 1
-offset_left = -372.0
-offset_top = -225.0
-offset_right = 215.0
-offset_bottom = 402.0
-scale = Vector2(1.26611, 0.907385)
-theme_override_colors/default_color = Color(0.168627, 0.168627, 0.168627, 1)
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "Description"
-fit_content = true
-deselect_on_focus_loss_enabled = false
-
-[node name="Title" type="RichTextLabel" parent="EventUIScreenNode"]
-z_index = 1
-offset_left = -361.558
-offset_top = -319.459
-offset_right = 323.442
-offset_bottom = -249.459
-theme_override_colors/default_color = Color(0.152941, 0.152941, 0.152941, 1)
-theme_override_font_sizes/normal_font_size = 40
-text = "Title"
-
-[node name="EventUiScreen" type="Sprite2D" parent="EventUIScreenNode"]
-texture = ExtResource("6_dd8me")
+[node name="CabinRoom" type="Sprite2D" parent="."]
+scale = Vector2(0.601302, 0.6125)
+texture = ExtResource("1_twwka")
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="Button_navigation_node_parent/LeftButton_UI" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Button_navigation_node_parent/RightButton_UI" to="." method="_on_right_button_ui_pressed"]
+[node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
+z_index = 1
+position = Vector2(1672.74, -550)
+scale = Vector2(1.101, 1.02)
+metadata/_edit_lock_ = true
+
+[node name="WholeInteriorScene" type="Sprite2D" parent="."]
+position = Vector2(-56, -2)
+texture = ExtResource("8_4grje")
+metadata/_edit_lock_ = true
+
+[node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WholeInteriorScene/Button_ToStorageRoom"]
+polygon = PackedVector2Array(-2858, 541, -2861, -316, -2358, -319, -2349, 538)
+
+[node name="OnCameraMovingDesign" type="Node2D" parent="."]
+position = Vector2(2, -193)
+
+[node name="Left_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
+position = Vector2(-1900, -600)
+
+[node name="TestingOnly" type="Sprite2D" parent="OnCameraMovingDesign/Left_Groups_of_Objects"]
+position = Vector2(88.1252, 299.5)
+scale = Vector2(1.63281, 4.13281)
+texture = ExtResource("10_7sn4k")
+
+[node name="TestingOnly2" type="Sprite2D" parent="OnCameraMovingDesign/Left_Groups_of_Objects"]
+position = Vector2(-100.875, 381.5)
+scale = Vector2(0.251953, 5.35547)
+texture = ExtResource("10_7sn4k")
+
+[node name="Right_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
+
+[node name="StorageScene" type="Sprite2D" parent="."]
+position = Vector2(-3000, 1500)
+scale = Vector2(1.03854, 1.09907)
+texture = ExtResource("11_dyr30")
+
+[node name="CycleReport" type="Sprite2D" parent="."]
+position = Vector2(-3000, 3000)
+scale = Vector2(1.05, 1.07315)
+texture = ExtResource("12_3y1g3")
+
+[node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
+position = Vector2(0.951904, -0.466064)
+shape = SubResource("RectangleShape2D_kb8bw")
+
+[connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
+[connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
+[connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
+[connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
+[connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
+[connection signal="input_event" from="CycleReport/ClickAnywhereButton" to="cam2d" method="_on_click_anywhere_button_input_event"]

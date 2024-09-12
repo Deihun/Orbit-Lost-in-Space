@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4j5shfi1sldf"]
+
+[ext_resource type="Script" path="res://Resources/FirstAidKit/medicine_pack.gd" id="1_chu3v"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="2_djjw0"]
+[ext_resource type="Texture2D" uid="uid://b4fve6i6w6tcn" path="res://Resources/FirstAidKit/FirstAidKit_unpickup.png" id="3_mbql4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpw34"]
+size = Vector2(109, 96)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqvfn"]
+radius = 36.1991
+
+[node name="MedicinePack" type="RigidBody2D"]
+y_sort_enabled = true
+collision_mask = 19
+mass = 0.5
+gravity_scale = 0.0
+linear_damp = 5.0
+script = ExtResource("1_chu3v")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_djjw0")]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_bpw34")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2, 16)
+scale = Vector2(0.442, 0.459)
+texture = ExtResource("3_mbql4")
+offset = Vector2(0, -52.99)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-0.999996, 0.999994)
+scale = Vector2(0.442, 0.459)
+shape = SubResource("CircleShape2D_qqvfn")

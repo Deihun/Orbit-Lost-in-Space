@@ -11,6 +11,9 @@ const MAX_SLOTS = 4
 #Texture Packages
 var battery_texture = load("res://Resources/Small_Fuel_1_unpickup.png")
 var apple_texture = load("res://Resources/resources 1.png")
+var small_biogene_texture = load("res://Resources/Resource_Images/SmallBiogene_OnHand.png")
+var spareparts_texture = load("res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png")
+var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/Small_SmallOxygenGas.png")
 
 var inventory = []  
 
@@ -40,10 +43,16 @@ func showItem():
 			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = battery_texture
 			print("Detected battery in slot ", i + 2)
-		elif i < hands.size() and "Apple" in inventory[i]:
+		elif i < hands.size() and "Small Spareparts" in inventory[i]:
 			hands[i].scale = Vector2(0.45,0.45)
-			hands[i].texture = apple_texture
+			hands[i].texture = spareparts_texture
 			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Small Biogene" in inventory[i]:
+			hands[i].scale = Vector2(0.30,0.30)
+			hands[i].texture = small_biogene_texture
+		elif i < hands.size() and "Small Gastank" in inventory[i]:
+			hands[i].scale = Vector2(0.30,0.30)
+			hands[i].texture = oxygenGasTank_small
 		else:
 			hands[i].texture = null
 	
@@ -56,6 +65,8 @@ func addItem(itemType, slotsNeeded):
 		return false
 	var remainingSlots = getRemainingSlots()
 	if slotsNeeded > remainingSlots:
+		var indicator = NodeFinder.find_node_by_name(get_tree().current_scene, "FullInventoryIndicator")
+		indicator.onStart()
 		print("Not enough space in the inventory.")
 		return false
 	var startIndex = findAvailableSlots(slotsNeeded)
@@ -100,5 +111,3 @@ func getUsedSlots(): #Returns used slots
 
 func getSpeedPenalty(): #Return penalty speed, Carrying more items decrease player movement speed
 	return (getRemainingSlots() * 20) - (MAX_SLOTS * 20)
-
-
