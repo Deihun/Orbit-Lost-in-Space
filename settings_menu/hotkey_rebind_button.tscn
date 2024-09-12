@@ -36,18 +36,23 @@ theme_override_constants/separation = 14
 
 [node name="InputButton" parent="MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_ugg1w")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="InputButton2" parent="MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_ugg1w")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="InputButton3" parent="MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_ugg1w")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="InputButton4" parent="MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_ugg1w")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="InputButton5" parent="MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("1_ugg1w")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -55,5 +60,15 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 40
 text = "Reset to Default
 "
+metadata/_edit_lock_ = true
+
+[node name="AlreadyTakenIndicator" type="PopupPanel" parent="MarginContainer/VBoxContainer"]
+title = "This key is already taken"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/AlreadyTakenIndicator"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

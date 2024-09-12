@@ -1,15 +1,23 @@
 extends Timer
 
 #VARIABLE
-const countdown_start = 60
+const countdown_start = 90
 var countdown_status = true
+var isGameStart = false
 var countdown_live
 
 
 #VOID METHODS
 func _ready(): #Set-up the timer to start 
 	countdown_live = countdown_start + 1 
-	start()
+
+func GameStart():
+	if !isGameStart:
+		var tutorial_ui = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialAssets")
+		tutorial_ui.fadeOut()
+		start()
+		isGameStart = true
+	pass
 
 
 func _on_timeout(): #Simple recursion everytime the timer stops, update the UI till it hits zero

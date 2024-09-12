@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=16 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Texture2D" uid="uid://cmslymmnugx2x" path="res://Scenes/cabin room.png" id="1_twwka"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
 [ext_resource type="Script" path="res://Scenes/CameraMovement.gd" id="2_uajib"]
+[ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="3_h4mnh"]
+[ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
 [ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
 [ext_resource type="Texture2D" uid="uid://bamk1ij1a1uao" path="res://Scenes/Crafting Area.png" id="4_s8gdh"]
 [ext_resource type="Texture2D" uid="uid://c3yjwpyapvx67" path="res://Scenes/event1.png" id="5_6cguh"]
@@ -28,13 +30,33 @@ script = ExtResource("1_m612p")
 [node name="cam2d" type="Camera2D" parent="."]
 script = ExtResource("2_uajib")
 
+[node name="Pause_Button" type="Button" parent="cam2d"]
+z_index = 150
+offset_left = 778.0
+offset_top = -508.0
+offset_right = 877.0
+offset_bottom = -406.0
+
+[node name="Sprite2D" type="Sprite2D" parent="cam2d/Pause_Button"]
+z_index = 150
+position = Vector2(51, 53)
+scale = Vector2(0.704902, 0.681373)
+texture = ExtResource("3_nae67")
+
+[node name="PauseMenu" parent="cam2d" instance=ExtResource("3_h4mnh")]
+visible = false
+offset_left = -457.0
+offset_top = -410.0
+offset_right = -457.0
+offset_bottom = -410.0
+
 [node name="Button_navigation_node_parent" type="Node2D" parent="cam2d"]
 z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
 
 [node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
-wait_time = 2.0
+wait_time = 2.2
 one_shot = true
 
 [node name="EndCycleTimer" type="Timer" parent="cam2d/Button_navigation_node_parent"]
@@ -94,6 +116,7 @@ metadata/_edit_lock_ = true
 z_index = 1
 position = Vector2(1672.74, -550)
 scale = Vector2(1.101, 1.02)
+metadata/_edit_lock_ = true
 
 [node name="WholeInteriorScene" type="Sprite2D" parent="."]
 position = Vector2(-56, -2)
@@ -139,6 +162,7 @@ texture = ExtResource("12_3y1g3")
 position = Vector2(0.951904, -0.466064)
 shape = SubResource("RectangleShape2D_kb8bw")
 
+[connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
