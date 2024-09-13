@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ib6052yah38"]
+[gd_scene load_steps=8 format=3 uid="uid://b5ib6052yah38"]
 
 [ext_resource type="Script" path="res://Crafting_UI/Crafting.gd" id="1_uivi2"]
+[ext_resource type="Script" path="res://SaveAndLoad/Save_n_Load.gd" id="2_6ddse"]
 [ext_resource type="VideoStream" path="res://Crafting_UI/UI_Screen_assets/Full_crafting_UI_animated.ogv" id="2_6m3we"]
 [ext_resource type="Texture2D" uid="uid://bp4x1ghrrbhg4" path="res://Crafting_UI/UI_Screen_assets/frame.png" id="3_8b0nl"]
 [ext_resource type="Texture2D" uid="uid://c07avbbfc8h3q" path="res://Crafting_UI/UI_Screen_assets/screen_off.png" id="4_rv1pw"]
@@ -10,8 +11,37 @@
 [node name="CraftingTab" type="Node2D"]
 script = ExtResource("1_uivi2")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_6ddse")
+
+[node name="SaveButtonDebug" type="Button" parent="Control"]
+z_index = 6
+layout_mode = 0
+offset_left = 639.0
+offset_top = 580.0
+offset_right = 870.0
+offset_bottom = 646.0
+action_mode = 0
+text = "save
+"
+
+[node name="LoadButtonDebug" type="Button" parent="Control"]
+z_index = 6
+layout_mode = 0
+offset_left = 638.0
+offset_top = 658.0
+offset_right = 869.0
+offset_bottom = 724.0
+action_mode = 0
+text = "load"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
 z_index = 2
+layout_mode = 0
 offset_left = 152.0
 offset_top = 51.0
 offset_right = 836.0
@@ -21,9 +51,10 @@ autoplay = true
 expand = true
 metadata/_edit_lock_ = true
 
-[node name="CraftButton" type="Button" parent="."]
+[node name="CraftButton" type="Button" parent="Control"]
 z_index = 13
 z_as_relative = false
+layout_mode = 0
 offset_left = 192.0
 offset_top = 433.0
 offset_right = 423.0
@@ -32,8 +63,9 @@ action_mode = 0
 text = "Craft
 "
 
-[node name="addRes" type="Button" parent="."]
+[node name="addRes" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 386.0
 offset_top = 581.0
 offset_right = 617.0
@@ -42,8 +74,9 @@ action_mode = 0
 text = "AddRes
 "
 
-[node name="CheckRes" type="Button" parent="."]
+[node name="CheckRes" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 130.0
 offset_top = 580.0
 offset_right = 361.0
@@ -51,8 +84,9 @@ offset_bottom = 646.0
 action_mode = 0
 text = "CheckRes"
 
-[node name="SpaceSuit" type="Button" parent="."]
+[node name="SpaceSuit" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 191.0
 offset_top = 90.0
 offset_right = 422.0
@@ -60,8 +94,9 @@ offset_bottom = 156.0
 action_mode = 0
 text = "Space Suit"
 
-[node name="HazmatSuit" type="Button" parent="."]
+[node name="HazmatSuit" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 191.0
 offset_top = 240.0
 offset_right = 422.0
@@ -69,8 +104,9 @@ offset_bottom = 306.0
 text = "Hazmat Suit
 "
 
-[node name="Crowbar" type="Button" parent="."]
+[node name="Crowbar" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 435.0
 offset_top = 89.0
 offset_right = 666.0
@@ -78,8 +114,9 @@ offset_bottom = 155.0
 text = "Crowbar
 "
 
-[node name="MedkitCharge" type="Button" parent="."]
+[node name="MedkitCharge" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 436.0
 offset_top = 164.0
 offset_right = 667.0
@@ -87,63 +124,68 @@ offset_bottom = 230.0
 text = "MedkitCharge
 "
 
-[node name="DehySpaceFood" type="Button" parent="."]
+[node name="DehySpaceFood" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 191.0
 offset_top = 164.0
 offset_right = 422.0
 offset_bottom = 230.0
 text = "DehySpaceFood"
 
-[node name="LaserGun" type="Button" parent="."]
+[node name="LaserGun" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 191.0
 offset_top = 316.0
 offset_right = 422.0
 offset_bottom = 382.0
 text = "LaserGun"
 
-[node name="FreDriSpaceFood" type="Button" parent="."]
+[node name="FreDriSpaceFood" type="Button" parent="Control"]
 z_index = 6
+layout_mode = 0
 offset_left = 435.0
 offset_top = 241.0
 offset_right = 666.0
 offset_bottom = 307.0
 text = "FreDriSpaceFood"
 
-[node name="Frame" type="Sprite2D" parent="."]
+[node name="Frame" type="Sprite2D" parent="Control"]
 z_index = 4
 position = Vector2(495, 295)
 scale = Vector2(0.189062, 0.189062)
 texture = ExtResource("3_8b0nl")
 metadata/_edit_lock_ = true
 
-[node name="ScreenOff" type="Sprite2D" parent="."]
+[node name="ScreenOff" type="Sprite2D" parent="Control"]
 position = Vector2(492, 292)
 scale = Vector2(0.188971, 0.188971)
 texture = ExtResource("4_rv1pw")
 metadata/_edit_lock_ = true
 
-[node name="ScreenOn" type="Sprite2D" parent="."]
+[node name="ScreenOn" type="Sprite2D" parent="Control"]
 z_index = 1
 position = Vector2(494.861, 295.875)
 scale = Vector2(0.180974, 0.180974)
 texture = ExtResource("5_a0vgm")
 metadata/_edit_lock_ = true
 
-[node name="GrimeScreen" type="Sprite2D" parent="."]
+[node name="GrimeScreen" type="Sprite2D" parent="Control"]
 z_index = 10
 position = Vector2(493.801, 290.438)
 scale = Vector2(0.188649, 0.188649)
 texture = ExtResource("6_23vmr")
 
-[connection signal="pressed" from="CraftButton" to="." method="craft_button_pressed"]
-[connection signal="pressed" from="addRes" to="." method="add_res_pressed"]
-[connection signal="pressed" from="CheckRes" to="." method="check_res_pressed"]
-[connection signal="pressed" from="SpaceSuit" to="." method="space_suit_pressed"]
-[connection signal="pressed" from="HazmatSuit" to="." method="hazmat_suit_pressed"]
-[connection signal="pressed" from="Crowbar" to="." method="crowbar_pressed"]
-[connection signal="pressed" from="MedkitCharge" to="." method="medkit_charge_pressed"]
-[connection signal="pressed" from="DehySpaceFood" to="." method="_on_dehy_space_food_pressed"]
-[connection signal="pressed" from="LaserGun" to="." method="laser_gun_pressed"]
-[connection signal="pressed" from="FreDriSpaceFood" to="." method="fre_dri_space_food_pressed"]
+[connection signal="pressed" from="Control/SaveButtonDebug" to="." method="_on_save_button_debug_pressed"]
+[connection signal="pressed" from="Control/LoadButtonDebug" to="." method="_on_load_button_debug_pressed"]
+[connection signal="pressed" from="Control/CraftButton" to="." method="craft_button_pressed"]
+[connection signal="pressed" from="Control/addRes" to="." method="add_res_pressed"]
+[connection signal="pressed" from="Control/CheckRes" to="." method="check_res_pressed"]
+[connection signal="pressed" from="Control/SpaceSuit" to="." method="space_suit_pressed"]
+[connection signal="pressed" from="Control/HazmatSuit" to="." method="hazmat_suit_pressed"]
+[connection signal="pressed" from="Control/Crowbar" to="." method="crowbar_pressed"]
+[connection signal="pressed" from="Control/MedkitCharge" to="." method="medkit_charge_pressed"]
+[connection signal="pressed" from="Control/DehySpaceFood" to="." method="_on_dehy_space_food_pressed"]
+[connection signal="pressed" from="Control/LaserGun" to="." method="laser_gun_pressed"]
+[connection signal="pressed" from="Control/FreDriSpaceFood" to="." method="fre_dri_space_food_pressed"]

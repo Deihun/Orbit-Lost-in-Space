@@ -1,15 +1,7 @@
 extends Node
 
 @onready var getResources = $"/root/GlobalResources"
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+@onready var SaveLoadGame = $Control
 var craftingItems
 
 func craft_button_pressed() -> void:
@@ -131,3 +123,12 @@ func hazmat_suit_pressed() -> void:
 	craftingItems = "HazmatSuit"
 	print("Selected HazmatSuit")
 	pass # Replace with function body.
+
+
+func _on_save_button_debug_pressed() -> void:
+	#var isPlayerInside = NodeFinder.find_node_by_name(get.tree().current_scene, "Player_Final_Count")
+	SaveLoadGame.save()
+		
+	
+func _on_load_button_debug_pressed() -> void:
+	SaveLoadGame.load()
