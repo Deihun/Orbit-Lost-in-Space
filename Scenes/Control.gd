@@ -6,12 +6,13 @@ extends Control
 @onready var ClickCD = $cam2d/Button_navigation_node_parent/ClickCooldown
 @onready var CycleSetting = $"/root/IngameStoredProcessSetting"
 @onready var EventHandler = $EventHandler
-
+@onready var craftingtab = $CraftingTab
+@onready var putResources = $"/root/GlobalResources"
 
 #VARIABLES
 var ClickTrue = true
 
-#VOID METHODS // CAMERA CONTROLS - SETTINGS
+#VOID METHODS // CAMERA CONTROLS - SETTINGS		
 func _process(delta):
 	pass
 
@@ -51,6 +52,9 @@ func _on_next_day_button_pressed():
 		#Handle UI Cycle
 		CycleSetting.endCycle()
 		print("Cycle: ",CycleSetting.getCycle())
+		#crafting
+		craftingtab.ongoingCraft = false
+		putResources.uniqueItems.append(craftingtab.currentlycrafting)
 		#Handle Event
 		EventHandler._removeAllEvent()
 		EventHandler.startAddNextEvent()
@@ -59,8 +63,5 @@ func _on_next_day_button_pressed():
 	else:
 		camera.ChangeSpecificScene(2)
 		
-
-
-
 func _on_click_cooldown_timeout() -> void:
 	ClickTrue = true

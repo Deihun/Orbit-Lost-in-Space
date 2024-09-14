@@ -2,76 +2,88 @@ extends Node
 
 @onready var getResources = $"/root/GlobalResources"
 @onready var SaveLoadGame = $Control
+@onready var cycleData = $Ingame_storedProcessSetting
+@onready var checkCycle = $TestingInteriorScene
 var craftingItems
+var ongoingCraft = false
+var currentlycrafting
 
 func craft_button_pressed() -> void:
-	match craftingItems:
-		"SpaceSuit":
-			if getResources.spareparts >= 300 && getResources.oxygen >= 100 && getResources.fuel >= 10:
-				getResources.spareparts -= 300
-				getResources.oxygen -= 100
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
+	if (ongoingCraft == false):
+		match craftingItems:
+			"SpaceSuit":
+				if getResources.spareparts >= 300 && getResources.oxygen >= 100 && getResources.fuel >= 10:
+					getResources.spareparts -= 300
+					getResources.oxygen -= 100
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true
+				else:
+					print("Insufficient Items!")
 			
-		"HazmatSuit":
-			if getResources.spareparts >= 400 && getResources.fuel >= 10:
-				getResources.spareparts -= 400
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
+			"HazmatSuit":
+				if getResources.spareparts >= 400 && getResources.fuel >= 10:
+					getResources.spareparts -= 400
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true
+					print("Successfully Made!")
+				else:
+					print("Insufficient Items!")
 			
-		"Crowbar":
-			if getResources.spareparts >= 350 && getResources.fuel >= 10:
-				getResources.spareparts -= 350
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
+			"Crowbar":
+				if getResources.spareparts >= 350 && getResources.fuel >= 10:
+					getResources.spareparts -= 350
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true	
+					print("Successfully Made!")
+				else:
+					print("Insufficient Items!")
 			
-		"LaserGun":
-			if getResources.spareparts >= 350 && getResources.biogene >= 20 && getResources.fuel >= 10:
-				getResources.spareparts -= 350
-				getResources.biogene -= 20
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
+			"LaserGun":
+				if getResources.spareparts >= 350 && getResources.biogene >= 20 && getResources.fuel >= 10:
+					getResources.spareparts -= 350
+					getResources.biogene -= 20
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true
+					print("Successfully Made!")
+				else:
+					print("Insufficient Items!")
 			
-		"MedkitCharge":
-			if getResources.biogene >= 150 && getResources.fuel >= 10:
-				getResources.biogene -= 150
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
+			"MedkitCharge":
+				if getResources.biogene >= 150 && getResources.fuel >= 10:
+					getResources.biogene -= 150
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true
+					print("Successfully Made!")
+				else:
+					print("Insufficient Items!")
 			
-		"DehySpaceFood":
-			if getResources.biogene >= 100 && getResources.fuel >= 10:
-				getResources.biogene -= 150
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
+			"DehySpaceFood":
+				if getResources.biogene >= 100 && getResources.fuel >= 10:
+					getResources.biogene -= 150
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true
+					print("Successfully Made!")
+				else:
+					print("Insufficient Items!")
 			
-		"FreDriSpaceFood":
-			if getResources.ration >= 20 && getResources.fuel >= 10:
-				getResources.ration -= 20
-				getResources.fuel -= 10
-				getResources.uniqueItems.append(craftingItems)
-				print("Successfully Made!")
-			else:
-				print("Insufficient Items!")
-		_:
-			print("Select a Item")
+			"FreDriSpaceFood":
+				if getResources.ration >= 20 && getResources.fuel >= 10:
+					getResources.ration -= 20
+					getResources.fuel -= 10
+					currentlycrafting = craftingItems
+					ongoingCraft = true
+					print("Successfully Made!")
+				else:
+					print("Insufficient Items!")
+				print("Select a Item")
+	else:
+		print("Currently Crafting a Item")
 	pass
 
 
@@ -125,9 +137,13 @@ func hazmat_suit_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_save_button_debug_pressed() -> void:
-	#var isPlayerInside = NodeFinder.find_node_by_name(get.tree().current_scene, "Player_Final_Count")
 	SaveLoadGame.save()
-		
-	
+
 func _on_load_button_debug_pressed() -> void:
 	SaveLoadGame.load()
+
+func _on_check_crafting_pressed() -> void:
+	if (ongoingCraft == true):
+		print ("currently crafting")
+	else:
+		print ("not crafting")

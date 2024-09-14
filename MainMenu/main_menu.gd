@@ -10,6 +10,8 @@ extends Control
 @onready var start_game = load("res://Scenes/LoadingScene.tscn") as PackedScene
 @onready var LoadGame = $"root/Save_n_Load"
 
+var SavePath = "Settings.json"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	handler_connect_signals()
@@ -41,3 +43,9 @@ func handler_connect_signals() -> void:
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	settings_menu.back_settings_menu.connect(on_back_settings_menu)
+
+func savesettings():
+	var save_dict = {
+		
+	}
+	return save_dict

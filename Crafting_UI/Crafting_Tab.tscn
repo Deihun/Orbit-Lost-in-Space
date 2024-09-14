@@ -39,6 +39,16 @@ offset_bottom = 724.0
 action_mode = 0
 text = "load"
 
+[node name="CheckCrafting" type="Button" parent="Control"]
+z_index = 6
+layout_mode = 0
+offset_left = 387.0
+offset_top = 660.0
+offset_right = 618.0
+offset_bottom = 726.0
+action_mode = 0
+text = "CheckCrafting"
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
 z_index = 2
 layout_mode = 0
@@ -179,6 +189,7 @@ texture = ExtResource("6_23vmr")
 
 [connection signal="pressed" from="Control/SaveButtonDebug" to="." method="_on_save_button_debug_pressed"]
 [connection signal="pressed" from="Control/LoadButtonDebug" to="." method="_on_load_button_debug_pressed"]
+[connection signal="pressed" from="Control/CheckCrafting" to="." method="_on_check_crafting_pressed"]
 [connection signal="pressed" from="Control/CraftButton" to="." method="craft_button_pressed"]
 [connection signal="pressed" from="Control/addRes" to="." method="add_res_pressed"]
 [connection signal="pressed" from="Control/CheckRes" to="." method="check_res_pressed"]
