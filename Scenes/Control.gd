@@ -44,7 +44,7 @@ func GameOver(OtherCommands):
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
 	print(EventHandler.eventID.size()," CONDITIONS: ",  EventHandler.eventID.size() < 0)
-	if EventHandler.isEventVisible != true:
+	if EventHandler.currentActiveQueue <= 0:
 		#Switch to Event View
 		camera.ChangeSpecificScene(4)
 		#Handle Mini Event (PRIORITY 1)
@@ -52,6 +52,7 @@ func _on_next_day_button_pressed():
 		CycleSetting.endCycle()
 		print("Cycle: ",CycleSetting.getCycle())
 		#Handle Event
+		
 		EventHandler._removeAllEvent()
 		EventHandler.startAddNextEvent()
 		EventHandler.ActivateEvent()

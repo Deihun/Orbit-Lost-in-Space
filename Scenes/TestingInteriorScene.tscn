@@ -1,19 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=15 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
-[ext_resource type="Texture2D" uid="uid://cmslymmnugx2x" path="res://Scenes/cabin room.png" id="1_twwka"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
 [ext_resource type="Script" path="res://Scenes/CameraMovement.gd" id="2_uajib"]
 [ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="3_h4mnh"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
 [ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
-[ext_resource type="Texture2D" uid="uid://bamk1ij1a1uao" path="res://Scenes/Crafting Area.png" id="4_s8gdh"]
-[ext_resource type="Texture2D" uid="uid://c3yjwpyapvx67" path="res://Scenes/event1.png" id="5_6cguh"]
+[ext_resource type="Texture2D" uid="uid://bsb3mkmhlb03u" path="res://Scenes/Ingame/Event_Notification_UI.png" id="5_00itk"]
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
 [ext_resource type="Texture2D" uid="uid://b72m5ni8snr5k" path="res://InteriorScene/Storage Scene.png" id="11_dyr30"]
 [ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
+[ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
@@ -54,6 +53,12 @@ offset_bottom = -410.0
 z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
+
+[node name="EventSprite_NotifyerUI" type="Sprite2D" parent="cam2d/Button_navigation_node_parent"]
+z_index = 150
+position = Vector2(1420.33, -133.5)
+scale = Vector2(1.002, 1)
+texture = ExtResource("5_00itk")
 
 [node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
 wait_time = 2.2
@@ -96,21 +101,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="CraftingArea" type="Sprite2D" parent="."]
-position = Vector2(-1216.38, -1.00002)
-scale = Vector2(0.650651, 0.614815)
-texture = ExtResource("4_s8gdh")
-
-[node name="Event1" type="Sprite2D" parent="."]
-position = Vector2(1187, -2)
-scale = Vector2(0.603125, 0.615741)
-texture = ExtResource("5_6cguh")
-
-[node name="CabinRoom" type="Sprite2D" parent="."]
-scale = Vector2(0.601302, 0.6125)
-texture = ExtResource("1_twwka")
-metadata/_edit_lock_ = true
 
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
@@ -161,6 +151,33 @@ texture = ExtResource("12_3y1g3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
 position = Vector2(0.951904, -0.466064)
 shape = SubResource("RectangleShape2D_kb8bw")
+
+[node name="TutorialPanel" parent="." instance=ExtResource("15_mu6oi")]
+visible = false
+offset_left = -503.0
+offset_top = -392.0
+offset_right = 370.0
+offset_bottom = 349.0
+tutorialDescription = Array[String](["Welcome to Orbit: Lost in Space! Thankfully you manage to get-out in time however celebration is a little too early for that. You and/or your other crew need a food ration in order to survive but not only that, another important thing in surviving space is Oxygen. It may seem that wherever direction you look at it theres nothing, you'll find other ways to obtain resources. Right now, be caution on how you'll manage your resources.", "Use the arrow at the bottom of your screen to navigate between rooms! ", "Use the arrow at the bottom of your screen to navigate between rooms! The rooms are divided into 4 parts; The Cockpit, Lobby, CraftingRoom, and StorageRoom", "The Cycle at the top left of your screen means the full 24hrs base count time. You can end the cycle early but make sure all the events are done and the crew are already taken care of during that cycle. "])
+textureLink = Array[String](["res://Player/Pause_Button.png", "res://Player/Pause_Button.png", "res://Player/Pause_Button.png", "res://Player/Pause_Button.png"])
+
+[node name="TutorialPanel3" parent="." instance=ExtResource("15_mu6oi")]
+visible = false
+offset_left = -3509.0
+offset_top = -358.0
+offset_right = -2636.0
+offset_bottom = 383.0
+tutorialDescription = Array[String](["Welcome to Crafting Room, where you can synthesize or convert resources. One way survive is to be resourcesful! Use any resources available to increase the chance of your own survivability", "Crafting takes time and require fuel! Be mindful of what resources you want to craft as everything is limited!"])
+textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
+
+[node name="TutorialPanel2" parent="." instance=ExtResource("15_mu6oi")]
+visible = false
+offset_left = 2500.0
+offset_top = -427.0
+offset_right = 3373.0
+offset_bottom = 314.0
+tutorialDescription = Array[String](["The console flickers to life as the ship's systems come online. Before the commander, the Event Console displays key events that will alter the course of their journey. Every decision made here determines the fate of the ship, while the stars outside reflect the vast unknown awaiting them.", "The Event Screen: Here where fate lies between your hand. Every decision matters. Sometimes you we're offer with choice but sometimes we pray fate is on us."])
+textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
 
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
