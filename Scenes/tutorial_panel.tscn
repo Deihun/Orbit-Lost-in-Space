@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6n7qothsjasc"]
+
+[ext_resource type="Script" path="res://Scenes/tutorial_panel.gd" id="1_a5dl1"]
+[ext_resource type="Texture2D" uid="uid://3ee4eoonedq" path="res://TutorialUI/TutorialTab.png" id="2_jtoje"]
+[ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="2_lj6s1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s2j88"]
+shader = ExtResource("2_lj6s1")
+shader_parameter/amount = 1.966
+
+[node name="TutorialPanel" type="Control"]
+z_index = 200
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 877.0
+offset_bottom = 733.0
+script = ExtResource("1_a5dl1")
+Const_MAXSIZE_Sprite2D = Vector2(500, 350)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_s2j88")
+layout_mode = 0
+offset_left = -781.0
+offset_top = -445.0
+offset_right = -717.0
+offset_bottom = -360.0
+scale = Vector2(44.12, 19.92)
+
+[node name="Next" type="Button" parent="."]
+z_index = 30
+layout_mode = 0
+offset_left = 668.0
+offset_top = 644.0
+offset_right = 814.0
+offset_bottom = 697.0
+text = "Next"
+
+[node name="Back" type="Button" parent="."]
+z_index = 30
+layout_mode = 0
+offset_left = 509.0
+offset_top = 644.0
+offset_right = 655.0
+offset_bottom = 697.0
+text = "Back"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+z_index = 100
+layout_mode = 0
+offset_left = 58.0
+offset_top = 663.0
+offset_right = 216.0
+offset_bottom = 694.0
+text = "Dont show again"
+
+[node name="sprite_TutorialPanel" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(441, 203)
+
+[node name="Label_Description_Tutorial" type="Label" parent="."]
+z_index = 20
+layout_mode = 0
+offset_left = 77.0
+offset_top = 379.0
+offset_right = 663.0
+offset_bottom = 571.0
+scale = Vector2(1.295, 1.295)
+text = "<Description>"
+autowrap_mode = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 876.0
+offset_bottom = 758.0
+texture = ExtResource("2_jtoje")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Next" to="." method="_on_next_button_pressed"]
+[connection signal="button_up" from="Back" to="." method="_on_back_button_pressed"]

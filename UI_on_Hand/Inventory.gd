@@ -24,11 +24,10 @@ func _ready():
 	showItem()
 
 func _insert_all_items(): #Declaration of inventory size
-	print("1")
 	for i in range(MAX_SLOTS):
 		for item in inventory[i]:
-			print("1 in ", i, " // ", inventory[i])
-			resource.add_item(item)
+			var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
+			r.add_item(item)    #CHANGE THIS
 	insertAllItems()
 	showItem()
 
@@ -55,8 +54,7 @@ func showItem():
 			hands[i].texture = oxygenGasTank_small
 		else:
 			hands[i].texture = null
-	
-	print("Inventory: ", inventory)
+
 
 
 func addItem(itemType, slotsNeeded):

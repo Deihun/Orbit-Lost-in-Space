@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=13 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 [ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
+[ext_resource type="Script" path="res://Player/UI_Resources_InRun.gd" id="10_bg53w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vqfp"]
 size = Vector2(121, 16)
@@ -27,6 +28,7 @@ script = ExtResource("1_5ung8")
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
 
 [node name="FullInventoryIndicator" parent="player/AllUIParents" instance=ExtResource("2_1yavb")]
+z_index = 200
 position = Vector2(750, 879)
 scale = Vector2(2.065, 2.065)
 
@@ -115,14 +117,16 @@ offset_bottom = -105.0
 scale = Vector2(3, 3)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="player/AllUIParents"]
+[node name="Label_Timer" type="Label" parent="player/AllUIParents"]
 offset_left = 889.0
 offset_top = 77.0
 offset_right = 947.0
 offset_bottom = 147.0
 scale = Vector2(1.74, 1.74)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 46
-text = "60"
+text = "90"
 metadata/_edit_use_anchors_ = true
 
 [node name="Pause_Button" type="Button" parent="player/AllUIParents"]
@@ -135,6 +139,62 @@ offset_bottom = 121.0
 position = Vector2(55, 50)
 scale = Vector2(0.704902, 0.681373)
 texture = ExtResource("3_my03n")
+
+[node name="ResourceUI_InRun" type="Node2D" parent="player/AllUIParents"]
+position = Vector2(750, 879)
+scale = Vector2(2.065, 2.065)
+script = ExtResource("10_bg53w")
+
+[node name="Label_Spareparts" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -249.395
+offset_top = -396.61
+offset_right = -146.395
+offset_bottom = -373.61
+text = "Spareparts: 0
+"
+
+[node name="Label_Food" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -346.731
+offset_top = -379.661
+offset_right = -290.731
+offset_bottom = -356.661
+text = "Food: 0"
+
+[node name="Label_Biogene" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -251.332
+offset_top = -417.433
+offset_right = -170.332
+offset_bottom = -394.433
+text = "Biogene: 0
+"
+
+[node name="Label_Oxygen" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -347.7
+offset_top = -418.402
+offset_right = -271.7
+offset_bottom = -395.402
+text = "Oxygen: 0"
+
+[node name="Label_Fuel" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -347.7
+offset_top = -400.484
+offset_right = -296.7
+offset_bottom = -377.484
+text = "Fuel: 0"
+
+[node name="Label_Ductape" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -124.455
+offset_top = -416.465
+offset_right = -41.4552
+offset_bottom = -393.465
+text = "Ductape: 0"
+
+[node name="Label_Medicine" type="Label" parent="player/AllUIParents/ResourceUI_InRun"]
+offset_left = -124.939
+offset_top = -396.61
+offset_right = -36.9395
+offset_bottom = -373.61
+text = "Medicine: 0"
 
 [node name="Player2" type="Sprite2D" parent="player"]
 y_sort_enabled = true

@@ -9,7 +9,7 @@ var tween = create_tween()
 var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000)]
 var nonCommonPanningRooms = [Vector2(-3000,1500), Vector2(-3000,3000)]
 
-
+var EventTutorial : bool = true
 var LocationKey = 1
 var canBeClick = true
 
@@ -46,8 +46,7 @@ func ChangeLocationToRight():
 			ClickCD.start()
 
 func ChangeLocaton(smoothMovement):
-
-		
+	$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = false
 	
 	match(LocationKey):
 		0:#CraftingRoom
@@ -57,6 +56,13 @@ func ChangeLocaton(smoothMovement):
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = true
 			EndButton.visible = true
+			
+			if(EventUI.currentActiveQueue > 0):
+				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
+			
+			await get_tree().create_timer(2.0).timeout 
+			if($"../TutorialPanel3"):
+				$"../TutorialPanel3".visible = true
 		1:#Lobby
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
@@ -66,6 +72,9 @@ func ChangeLocaton(smoothMovement):
 				self.position = SpecificLocation[LocationKey]
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = true
+			if(EventUI.currentActiveQueue > 0):
+				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
+			print(EventUI.currentActiveQueue <= 0, EventUI.currentActiveQueue)
 		2:#DrivingsRoom
 			var TimerFilter = false
 			if smoothMovement:
@@ -77,9 +86,10 @@ func ChangeLocaton(smoothMovement):
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = false
 			EndButton.visible = true
-			
 			if TimerFilter:
 				await get_tree().create_timer(1.5).timeout
+				if($"../TutorialPanel2"):
+					$"../TutorialPanel2".visible = true
 			
 			if EventUI.eventID.is_empty() and EventUI.onlyOnceTrigger == true:
 				EventUI.switchIt()

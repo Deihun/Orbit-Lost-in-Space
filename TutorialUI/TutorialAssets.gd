@@ -8,6 +8,7 @@ var fade_duration = 2.0 # Duration for the fade-out in seconds
 var start_alpha = 1.0
 var end_alpha = 0.0
 var elapsed_time = 0.0
+var alreadyCalledStart : bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +32,10 @@ func cutAKey(ui_map : String):
 
 
 func fadeOut():
+	
+	if !alreadyCalledStart:
+		$"../..".gameStart()
+		alreadyCalledStart = true
 	set_process(true)
 	pass
 

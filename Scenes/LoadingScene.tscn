@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6145wlhsyafa"]
+[gd_scene load_steps=5 format=3 uid="uid://c6145wlhsyafa"]
 
 [ext_resource type="Script" path="res://Scenes/loading_scene.gd" id="1_a1gkc"]
-[ext_resource type="Texture2D" uid="uid://gm472idldrq5" path="res://Scenes/LoadingExample.png" id="1_h6phg"]
+[ext_resource type="Texture2D" uid="uid://djx3e7yn6myo7" path="res://Scenes/LoadingScreen.png" id="2_cf8ws"]
+[ext_resource type="FontFile" uid="uid://dwfbmrl27h8y0" path="res://Button_Textures/DEARBORN type.ttf" id="3_giauu"]
+[ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="4_2qidk"]
 
 [node name="LoadingScene" type="Node2D"]
 script = ExtResource("1_a1gkc")
@@ -9,12 +11,38 @@ script = ExtResource("1_a1gkc")
 [node name="LoadingBackground" type="Sprite2D" parent="."]
 position = Vector2(942, 542)
 scale = Vector2(1.02344, 1.0213)
-texture = ExtResource("1_h6phg")
+texture = ExtResource("2_cf8ws")
+
+[node name="TapAnywhere_LoadingScreen_Label" type="Label" parent="."]
+offset_left = 1350.0
+offset_top = 996.0
+offset_right = 1631.0
+offset_bottom = 1018.0
+scale = Vector2(1.985, 1.985)
+theme_override_fonts/font = ExtResource("3_giauu")
+text = "Click anywhere to continue"
 
 [node name="LoadingPoints" type="Label" parent="."]
-offset_left = 892.0
-offset_top = 569.0
-offset_right = 943.0
-offset_bottom = 615.0
-scale = Vector2(5.525, 5.525)
+offset_left = 1768.0
+offset_top = 989.0
+offset_right = 1801.0
+offset_bottom = 1012.0
+scale = Vector2(2.51, 2.51)
 text = "00%"
+
+[node name="PressAnywhere" type="Button" parent="."]
+visibility_layer = 0
+offset_left = -25.0
+offset_right = 1918.0
+offset_bottom = 1075.0
+
+[node name="TutorialPanel" parent="." instance=ExtResource("4_2qidk")]
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1373.0
+offset_bottom = 831.0
+tutorialDescription = Array[String](["You are given a 90s until the meteor hits the earth, Collect as many resources as you can and carefully choose which crew and how many crew should you tag along! All of this will affect your survability when transversing through space!", "Some items are much harder to carry, taking lot more space of your inventory and slowing you down! . Think carefully of what you'll bring for your ship", "Resources can be split into 6 categories! Spareparts: which use for crafting and reparing; Food for survability; Gas for your crew to breath; Fuel for your ship to last long; Biogene for crafting edibles and other chemicals stuff; and other Miscellaneous "])
+textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png", "res://TutorialUI/test.png"])
+Closable = false
+
+[connection signal="pressed" from="PressAnywhere" to="." method="_on_press_anywhere_pressed"]

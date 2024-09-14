@@ -12,6 +12,8 @@ func onStart():
 	$Label.visible = true
 	$Label2.visible = false
 	repeatCount = 0
+	ani.stop()
+	exp.stop()
 	ani.start()
 	exp.start()
 
