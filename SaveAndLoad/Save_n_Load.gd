@@ -1,6 +1,7 @@
 extends Node
 
 @onready var resources = GlobalResources
+@onready var events = $"Event Handler"
 var SavePath = "Saves/GameSave.json"
 
 func savedata():
@@ -15,13 +16,18 @@ func savedata():
 		"emergencyFuel" : resources.emergencyFuel,
 		"GameEffects" : resources.GameEffects,
 		"uniqueItems" : resources.uniqueItems,
-		"Location" : resources.Location
+		"Location" : resources.Location,
+		"Critical_Event" : events.Critical_Event,
+		"rawEvent" : events.rawEvent,
+		"alreadyTriggeredEvent" : events.alreadyTriggeredEvent,
+		"Priority_Event" : events.Priority_Event,
+		"eventID" : events.eventID
 	}
 	return save_dict
 
 func save():
 	print("saved")
-	var file = FileAccess.open(SavePath, FileAccess.WRITE)
+	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
 	
@@ -29,7 +35,7 @@ func save():
 func load():
 	if not FileAccess.file_exists(SavePath):
 		return
-	var file = FileAccess.open(SavePath, FileAccess.READ)
+	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
 		
 	while file.get_position() < file.get_length():
 		var json_string = file.get_line()
@@ -48,3 +54,9 @@ func load():
 		resources.GameEffects = node_data["GameEffects"]
 		resources.uniqueItems = node_data["uniqueItems"]
 		resources.Location = node_data["Location"]
+		events.Critical_Event = node_data["Critical_Event"]
+		events.rawEvent = node_data["rawEvent"]
+		events.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
+		events.Priority_Event = node_data["Priority_Event"]
+		events.eventID = node_data["eventID"]
+	print("loaded")

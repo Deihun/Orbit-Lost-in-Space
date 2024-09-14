@@ -124,7 +124,6 @@ func hazmat_suit_pressed() -> void:
 	print("Selected HazmatSuit")
 	pass # Replace with function body.
 
-
 func _on_save_button_debug_pressed() -> void:
 	#var isPlayerInside = NodeFinder.find_node_by_name(get.tree().current_scene, "Player_Final_Count")
 	SaveLoadGame.save()
