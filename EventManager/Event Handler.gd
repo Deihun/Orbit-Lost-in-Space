@@ -13,7 +13,6 @@ var eventID = []
 var isEventVisible = false
 var onlyOnceTrigger = true
 
-
 					#NON RETURNING METHODS
 #SETUP ZONES
 func _ready():
