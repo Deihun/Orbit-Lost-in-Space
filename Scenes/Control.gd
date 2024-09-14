@@ -65,3 +65,9 @@ func _on_next_day_button_pressed():
 		
 func _on_click_cooldown_timeout() -> void:
 	ClickTrue = true
+
+
+func PAUSE() -> void:
+	var pause = $cam2d/PauseMenu
+	pause._pause()
+	pass # Replace with function body.

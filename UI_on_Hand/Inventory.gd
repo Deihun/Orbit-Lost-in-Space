@@ -65,6 +65,8 @@ func addItem(itemType, slotsNeeded):
 		return false
 	var remainingSlots = getRemainingSlots()
 	if slotsNeeded > remainingSlots:
+		var indicator = NodeFinder.find_node_by_name(get_tree().current_scene, "FullInventoryIndicator")
+		indicator.onStart()
 		print("Not enough space in the inventory.")
 		return false
 	var startIndex = findAvailableSlots(slotsNeeded)

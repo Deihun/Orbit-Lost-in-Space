@@ -23,7 +23,8 @@ func _input(event):
 			label.hide()
 			
 			await active_area[0].interact.call()
-			
+			var timer = NodeFinder.find_node_by_name(get_tree().current_scene, "countDown_mainTimer")
+			timer.GameStart()
 			can_interact = true
 
 func _process(delta):

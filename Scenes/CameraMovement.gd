@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 func ChangeLocationToLeft():
 	if canBeClick == true:
-		if LocationKey > -1 and LocationKey < 3:
+		if LocationKey > 0 and LocationKey < 3:
 			canBeClick = false
 			LocationKey -= 1
 			ChangeLocaton(true)
