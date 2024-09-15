@@ -1,7 +1,7 @@
 extends Timer
 
 #VARIABLE
-const countdown_start : int= 90
+@export var countdown_start : int= 90
 var countdown_status : bool = true
 var isGameStart : bool = false
 var countdown_live : int
@@ -34,11 +34,12 @@ func _on_timeout(): #Simple recursion everytime the timer stops, update the UI t
 
 func checkForPlayer(): #Access dropbox hitboxes, if players inside, change scene; otherwise _______
 	var isPlayerInside = NodeFinder.find_node_by_name(get_tree().current_scene, "Player_Final_Count")
+	var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
 	if isPlayerInside.getIsPlayerInsideCondition():
 		var db = NodeFinder.find_node_by_name(get_tree().current_scene, "DropBox")
 		db.interaction()
 		var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
 		r.updateGlobalResource()
-		get_tree().change_scene_to_file("res://Scenes/TestingInteriorScene.tscn")
+		player.endScene()
 	else:
 		get_tree().reload_current_scene()

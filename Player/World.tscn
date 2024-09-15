@@ -1,7 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=19 format=3 uid="uid://ci0ganygmrv2x"]
 
+[ext_resource type="AudioStream" uid="uid://d0tn3ridnsuis" path="res://Sounds/Music/Despicable Me_ Minion Rush OST - Minion March.mp3" id="1_geu27"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
+[ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
 [ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
+[ext_resource type="Texture2D" uid="uid://cflgbn34nmnu1" path="res://Scenes/WideshotScenePanaroma.png" id="2_og4ji"]
+[ext_resource type="Texture2D" uid="uid://prju7pqu8no5" path="res://Scenes/Rocket_LaunchScene.png" id="2_ybnrr"]
 [ext_resource type="Script" path="res://Player/CountDown_Script.gd" id="4_0bin4"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="5_08kc6"]
 [ext_resource type="PackedScene" uid="uid://b2onu2klyecou" path="res://AmbiencePurposes/Paper_Collidable/PaperAmbienceGeneration.tscn" id="5_bvoa8"]
@@ -658,8 +662,27 @@ sources/0 = SubResource("TileSetAtlasSource_ooq2l")
 sources/1 = SubResource("TileSetAtlasSource_tq8rl")
 sources/2 = SubResource("TileSetAtlasSource_lnr81")
 
-[node name="TestingOnRun" type="Node2D"]
+[node name="World" type="Node2D"]
 y_sort_enabled = true
+
+[node name="tobeRemove" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(4368, 400)
+stream = ExtResource("1_geu27")
+volume_db = 5.0
+max_distance = 2155.0
+parameters/looping = false
+
+[node name="IntroductionCamera" type="Camera2D" parent="."]
+position = Vector2(989, -3748)
+script = ExtResource("1_sfe6y")
+
+[node name="RocketLaunchCutscene" type="Sprite2D" parent="."]
+position = Vector2(4000, -3800)
+texture = ExtResource("2_ybnrr")
+
+[node name="WideShotBackground" type="Sprite2D" parent="."]
+position = Vector2(990, -2133)
+texture = ExtResource("2_og4ji")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_iye0m")]
 z_index = 20
@@ -911,6 +934,126 @@ position = Vector2(1526, 671)
 [node name="Node2D30" type="Node2D" parent="Node Resource Spawner"]
 y_sort_enabled = true
 position = Vector2(1782, 664)
+
+[node name="Node2D31" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3748, 281)
+
+[node name="Node2D32" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2960, 884)
+
+[node name="Node2D33" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3511, 704)
+
+[node name="Node2D34" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3769, 407)
+
+[node name="Node2D35" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3464, 409)
+
+[node name="Node2D36" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3200, 867)
+
+[node name="Node2D37" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3384, 865)
+
+[node name="Node2D38" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3646, 414)
+
+[node name="Node2D39" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2651, 846)
+
+[node name="Node2D40" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3888, 402)
+
+[node name="Node2D41" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2339, 819)
+
+[node name="Node2D42" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2522, 528)
+
+[node name="Node2D43" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2510, 987)
+
+[node name="Node2D44" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2500, 251)
+
+[node name="Node2D45" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2542, 680)
+
+[node name="Node2D46" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3642, 284)
+
+[node name="Node2D47" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3898, 277)
+
+[node name="Node2D48" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(2334, 532)
+
+[node name="Node2D49" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3746, 548)
+
+[node name="Node2D50" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3767, 674)
+
+[node name="Node2D51" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3644, 681)
+
+[node name="Node2D52" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3886, 669)
+
+[node name="Node2D53" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3640, 551)
+
+[node name="Node2D54" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3896, 544)
+
+[node name="Node2D55" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3746, 787)
+
+[node name="Node2D56" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3767, 913)
+
+[node name="Node2D57" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3644, 920)
+
+[node name="Node2D58" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3886, 908)
+
+[node name="Node2D59" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3640, 790)
+
+[node name="Node2D60" type="Node2D" parent="Node Resource Spawner"]
+y_sort_enabled = true
+position = Vector2(3896, 783)
 
 [node name="World" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

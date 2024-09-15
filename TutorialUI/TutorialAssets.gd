@@ -14,7 +14,6 @@ var alreadyCalledStart : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_process(false)
-	visible = true
 	up.text = cutAKey("ui_up")
 	down.text = cutAKey("ui_down")
 	left.text = cutAKey("ui_left")
@@ -34,7 +33,6 @@ func cutAKey(ui_map : String):
 func fadeOut():
 	
 	if !alreadyCalledStart:
-		$"../..".gameStart()
 		alreadyCalledStart = true
 	set_process(true)
 	pass
