@@ -1,10 +1,17 @@
 extends Node
 
 @onready var resources = GlobalResources
-@onready var events = $"Event Handler"
+@onready var events = get_parent().get_node("EventHandler")
 var SavePath = "Saves/GameSave.json"
+var configfile = "settings_menu/config_file.ini"
 
+func _process(delta: float) -> void:
+	if !events:
+		events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
+		
 func savedata():
+	if !events :
+		print("null")
 	var save_dict = {
 		"ration" : resources.ration,
 		"oxygen" : resources.oxygen,
@@ -59,4 +66,5 @@ func load():
 		events.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
 		events.Priority_Event = node_data["Priority_Event"]
 		events.eventID = node_data["eventID"]
+
 	print("loaded")

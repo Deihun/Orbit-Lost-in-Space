@@ -45,6 +45,7 @@ func _create_action_list():
 
 		action_list.add_child(button)
 		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		
 func _on_input_button_pressed(button, action):
 	if !is_remapping:
 		is_remapping = true
@@ -106,7 +107,6 @@ func keyChecker(event_string : String):
 		var key_name = event_string.substr(start_index, end_index - start_index)
 		return key_name
 		
-
 func fixMouse(mouse_StringEvent : String):
 	if mouse_StringEvent == "Left Mouse Button":
 		return "button_index=1"
