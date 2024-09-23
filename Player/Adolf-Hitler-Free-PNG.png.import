@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tti702qwehc6"
-path="res://.godot/imported/test.png-d93193d8a67b3d15221a7b17aa30de61.ctex"
+uid="uid://ckv5km0kep1p3"
+path="res://.godot/imported/Adolf-Hitler-Free-PNG.png-3758ac57aabcd468f99892996e1809f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TutorialUI/test.png"
-dest_files=["res://.godot/imported/test.png-d93193d8a67b3d15221a7b17aa30de61.ctex"]
+source_file="res://Player/Adolf-Hitler-Free-PNG.png"
+dest_files=["res://.godot/imported/Adolf-Hitler-Free-PNG.png-3758ac57aabcd468f99892996e1809f5.ctex"]
 
 [params]
 

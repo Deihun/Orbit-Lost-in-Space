@@ -4,7 +4,6 @@ var secondsTransition : float = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"../tobeRemove".play()
 	make_current()
 	await get_tree().create_timer(1.2).timeout 
 	var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")

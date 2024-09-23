@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=17 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
 [ext_resource type="Texture2D" uid="uid://b72m5ni8snr5k" path="res://InteriorScene/Storage Scene.png" id="11_dyr30"]
 [ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
+[ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
+[ext_resource type="PackedScene" uid="uid://dcb5l6014oa70" path="res://Scenes/Cycle_Report/CycleReport_Bar.tscn" id="15_640qk"]
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
@@ -26,8 +28,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
 
+[node name="TutorialPanel_Folder" type="Node2D" parent="."]
+z_index = 200
+
+[node name="TutorialPanel" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
+offset_left = -503.0
+offset_top = -392.0
+offset_right = 370.0
+offset_bottom = 349.0
+tutorialDescription = Array[String](["Welcome to Orbit: Lost in Space! Thankfully you manage to get-out in time however celebration is a little too early for that. You and/or your other crew need a food ration in order to survive but not only that, another important thing in surviving space is Oxygen. It may seem that wherever direction you look at it theres nothing, you'll find other ways to obtain resources. Right now, be caution on how you'll manage your resources.", "Use the arrow at the bottom of your screen to navigate between rooms! ", "Use the arrow at the bottom of your screen to navigate between rooms! The rooms are divided into 4 parts; The Cockpit, Lobby, CraftingRoom, and StorageRoom", "The Cycle at the top left of your screen means the full 24hrs base count time. You can end the cycle early but make sure all the events are done and the crew are already taken care of during that cycle. "])
+textureLink = Array[String](["res://Player/Pause_Button.png", "res://Player/Pause_Button.png", "res://Player/Pause_Button.png", "res://Player/Pause_Button.png"])
+
+[node name="TutorialPanel3" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
+visible = false
+offset_left = -3509.0
+offset_top = -358.0
+offset_right = -2636.0
+offset_bottom = 383.0
+tutorialDescription = Array[String](["Welcome to Crafting Room, where you can synthesize or convert resources. One way survive is to be resourcesful! Use any resources available to increase the chance of your own survivability", "Crafting takes time and require fuel! Be mindful of what resources you want to craft as everything is limited!"])
+textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
+
+[node name="TutorialPanel2" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
+visible = false
+offset_left = 2500.0
+offset_top = -427.0
+offset_right = 3373.0
+offset_bottom = 314.0
+tutorialDescription = Array[String](["The console flickers to life as the ship's systems come online. Before the commander, the Event Console displays key events that will alter the course of their journey. Every decision made here determines the fate of the ship, while the stars outside reflect the vast unknown awaiting them.", "The Event Screen: Here where fate lies between your hand. Every decision matters. Sometimes you we're offer with choice but sometimes we pray fate is on us."])
+textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
+
 [node name="cam2d" type="Camera2D" parent="."]
+z_index = 100
 script = ExtResource("2_uajib")
+
+[node name="PauseMenu" parent="cam2d" instance=ExtResource("3_h4mnh")]
+visible = false
+offset_left = -457.0
+offset_top = -410.0
+offset_right = -457.0
+offset_bottom = -410.0
 
 [node name="Pause_Button" type="Button" parent="cam2d"]
 z_index = 150
@@ -41,13 +80,6 @@ z_index = 150
 position = Vector2(51, 53)
 scale = Vector2(0.704902, 0.681373)
 texture = ExtResource("3_nae67")
-
-[node name="PauseMenu" parent="cam2d" instance=ExtResource("3_h4mnh")]
-visible = false
-offset_left = -457.0
-offset_top = -410.0
-offset_right = -457.0
-offset_bottom = -410.0
 
 [node name="Button_navigation_node_parent" type="Node2D" parent="cam2d"]
 z_index = 1
@@ -141,43 +173,38 @@ position = Vector2(-3000, 1500)
 scale = Vector2(1.03854, 1.09907)
 texture = ExtResource("11_dyr30")
 
+[node name="ClickOnLeft" type="Area2D" parent="StorageScene"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/ClickOnLeft"]
+polygon = PackedVector2Array(887.785, 381.231, 587.363, 444.922, 105.918, 544.096, 964.816, 541.367, 961.927, 283.876)
+
 [node name="CycleReport" type="Sprite2D" parent="."]
 position = Vector2(-3000, 3000)
 scale = Vector2(1.05, 1.07315)
 texture = ExtResource("12_3y1g3")
 
 [node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
+visible = false
 position = Vector2(0.951904, -0.466064)
 shape = SubResource("RectangleShape2D_kb8bw")
 
-[node name="TutorialPanel" parent="." instance=ExtResource("15_mu6oi")]
-visible = false
-offset_left = -503.0
-offset_top = -392.0
-offset_right = 370.0
-offset_bottom = 349.0
-tutorialDescription = Array[String](["Welcome to Orbit: Lost in Space! Thankfully you manage to get-out in time however celebration is a little too early for that. You and/or your other crew need a food ration in order to survive but not only that, another important thing in surviving space is Oxygen. It may seem that wherever direction you look at it theres nothing, you'll find other ways to obtain resources. Right now, be caution on how you'll manage your resources.", "Use the arrow at the bottom of your screen to navigate between rooms! ", "Use the arrow at the bottom of your screen to navigate between rooms! The rooms are divided into 4 parts; The Cockpit, Lobby, CraftingRoom, and StorageRoom", "The Cycle at the top left of your screen means the full 24hrs base count time. You can end the cycle early but make sure all the events are done and the crew are already taken care of during that cycle. "])
-textureLink = Array[String](["res://Player/Pause_Button.png", "res://Player/Pause_Button.png", "res://Player/Pause_Button.png", "res://Player/Pause_Button.png"])
+[node name="CycleReport_ScrollContainer" type="ScrollContainer" parent="CycleReport"]
+offset_left = -800.0
+offset_top = -330.802
+offset_right = -199.0
+offset_bottom = 271.198
+script = ExtResource("14_u3w1g")
+ReportTab = ExtResource("15_640qk")
+rangeDistance = 125
 
-[node name="TutorialPanel3" parent="." instance=ExtResource("15_mu6oi")]
-visible = false
-offset_left = -3509.0
-offset_top = -358.0
-offset_right = -2636.0
-offset_bottom = 383.0
-tutorialDescription = Array[String](["Welcome to Crafting Room, where you can synthesize or convert resources. One way survive is to be resourcesful! Use any resources available to increase the chance of your own survivability", "Crafting takes time and require fuel! Be mindful of what resources you want to craft as everything is limited!"])
-textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
-
-[node name="TutorialPanel2" parent="." instance=ExtResource("15_mu6oi")]
-visible = false
-offset_left = 2500.0
-offset_top = -427.0
-offset_right = 3373.0
-offset_bottom = 314.0
-tutorialDescription = Array[String](["The console flickers to life as the ship's systems come online. Before the commander, the Event Console displays key events that will alter the course of their journey. Every decision made here determines the fate of the ship, while the stars outside reflect the vast unknown awaiting them.", "The Event Screen: Here where fate lies between your hand. Every decision matters. Sometimes you we're offer with choice but sometimes we pray fate is on us."])
-textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
+[node name="VBoxContainer" type="VBoxContainer" parent="CycleReport/CycleReport_ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+alignment = 2
 
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
@@ -187,4 +214,5 @@ textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
+[connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
 [connection signal="input_event" from="CycleReport/ClickAnywhereButton" to="cam2d" method="_on_click_anywhere_button_input_event"]

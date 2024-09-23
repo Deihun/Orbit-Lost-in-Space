@@ -5,34 +5,45 @@ var readyToPause : bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.visible = false
+	set_process_input(true)
 	pass # Replace with function body.
 
+func _input(event):
+	if Input.is_key_pressed(KEY_ESCAPE) and readyToPause:
+		_TOGGLE_ESCAPE()
+		readyToPause = false
+		$PauseTimer.start()
+
+
 func _TOGGLE_ESCAPE():
+	var Pause_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Pause_Button")
 	if !readyToPause:
 		return
 	if visible:
-		visible = false
-		Engine.time_scale = 1
+		RESUME()
 	else:
-		visible = true
-		Engine.time_scale = 0
-	$PauseTimer.start()
-	readyToPause = false
+		_pause()
+
 
 func _pause():
 	visible = true
 	Engine.time_scale = 0
+	var TutorialUI = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")
+	var Pause_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Pause_Button")
+	if Pause_button:
+		Pause_button.visible = false
+	if TutorialUI:
+		TutorialUI.visible = false
 	set_process(true)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_ESCAPE):
-		_TOGGLE_ESCAPE()
-	pass
 
 
 func RESUME() -> void:
-	print("TESTING???")
+	var TutorialUI = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")
+	var Pause_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Pause_Button")
+	if Pause_button:
+		Pause_button.visible = true
+	if TutorialUI:
+		TutorialUI.visible = true
 	Engine.time_scale = 1
 	visible = false
 	pass # Replace with function body.

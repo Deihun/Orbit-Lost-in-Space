@@ -9,6 +9,8 @@ extends Control
 
 
 #VARIABLES
+
+#VARIABLE_FUNCTIONS
 var ClickTrue = true
 
 #VOID METHODS // CAMERA CONTROLS - SETTINGS
@@ -43,8 +45,16 @@ func GameOver(OtherCommands):
 
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
-	print(EventHandler.eventID.size()," CONDITIONS: ",  EventHandler.eventID.size() < 0)
-	if EventHandler.currentActiveQueue <= 0:
+	if EventHandler.currentActiveQueue <= 0 and !$EventHandler.visible:
+		#DELETE THIS TAB LATER, FOR TESTING PURPOSES
+		print("ADDING FUEL")
+		GlobalResources.subtractItem(true,"FUEL",10)
+		print("ADDING OXYGEN")
+		GlobalResources.subtractItem(true, "OXYGEN", 25)
+		print("ADDING SPAREPARTS")
+		GlobalResources.subtractItem(true, "SPAREPARTS", 25)
+		
+		
 		#Switch to Event View
 		camera.ChangeSpecificScene(4)
 		#Handle Mini Event (PRIORITY 1)
@@ -71,3 +81,6 @@ func PAUSE() -> void:
 	var pause = $cam2d/PauseMenu
 	pause._pause()
 	pass # Replace with function body.
+
+
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

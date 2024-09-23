@@ -79,7 +79,7 @@ func startUI():
 	$AllUIParents/StartUI_label.visible = false
 	await get_tree().create_timer(0.1).timeout 
 	$AllUIParents/StartUI_label.visible = true
-	await get_tree().create_timer(2.6).timeout 
+	await get_tree().create_timer(1.5).timeout 
 	$AllUIParents/StartUI_label.visible = false
 	$AllUIParents/Label_Timer.visible = true
 	$AllUIParents/Globe_Timer_Sprite.visible =true
@@ -92,6 +92,7 @@ func startUI():
 	pass
 
 func endScene():
+	canMove = false
 	if endAnimationOnce:
 		$AllUIParents/BlackTransition.play("default")
 		$AllUIParents/BlackTransition.visible = true

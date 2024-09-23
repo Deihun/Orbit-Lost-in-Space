@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=161 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
 [ext_resource type="Texture2D" uid="uid://48fa0ct25py2" path="res://Player/Meteor_Spritesheet.png" id="11_lrphj"]
 [ext_resource type="Texture2D" uid="uid://dkdyiogfvnfmr" path="res://Scenes/StartText.png" id="15_up6st"]
+[ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l85dg"]
 atlas = ExtResource("2_6y3nk")
@@ -1018,6 +1019,7 @@ size = Vector2(121, 16)
 
 [node name="player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
+position = Vector2(-2, 0)
 
 [node name="player" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
@@ -1140,7 +1142,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Label_Timer" type="Label" parent="player/AllUIParents"]
 visible = false
 anchors_preset = -1
-anchor_top = 0.037037
+anchor_left = -0.003125
+anchor_top = 0.0157407
 anchor_right = -0.003125
 anchor_bottom = 0.0157407
 offset_left = 50.0
@@ -1246,6 +1249,14 @@ position = Vector2(1, -4.00001)
 scale = Vector2(1, 1.85156)
 texture = ExtResource("1_8a5wi")
 offset = Vector2(0, -64.35)
+
+[node name="Player3" type="Sprite2D" parent="player"]
+visible = false
+y_sort_enabled = true
+position = Vector2(6, -16)
+scale = Vector2(0.810317, 0.725014)
+texture = ExtResource("17_85y4g")
+offset = Vector2(0, -124.89)
 
 [node name="Player" type="CollisionShape2D" parent="player"]
 y_sort_enabled = true

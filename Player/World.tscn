@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=18 format=3 uid="uid://ci0ganygmrv2x"]
 
-[ext_resource type="AudioStream" uid="uid://d0tn3ridnsuis" path="res://Sounds/Music/Despicable Me_ Minion Rush OST - Minion March.mp3" id="1_geu27"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
 [ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
@@ -664,13 +663,6 @@ sources/2 = SubResource("TileSetAtlasSource_lnr81")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
-
-[node name="tobeRemove" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(4368, 400)
-stream = ExtResource("1_geu27")
-volume_db = 5.0
-max_distance = 2155.0
-parameters/looping = false
 
 [node name="IntroductionCamera" type="Camera2D" parent="."]
 position = Vector2(989, -3748)
