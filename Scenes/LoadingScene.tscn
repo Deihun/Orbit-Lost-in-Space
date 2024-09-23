@@ -14,6 +14,7 @@ scale = Vector2(1.02344, 1.0213)
 texture = ExtResource("2_cf8ws")
 
 [node name="TapAnywhere_LoadingScreen_Label" type="Label" parent="."]
+visible = false
 offset_left = 1350.0
 offset_top = 996.0
 offset_right = 1631.0

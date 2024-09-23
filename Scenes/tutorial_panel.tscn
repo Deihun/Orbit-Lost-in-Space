@@ -20,6 +20,7 @@ script = ExtResource("1_a5dl1")
 Const_MAXSIZE_Sprite2D = Vector2(500, 350)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_s2j88")
 layout_mode = 0
 offset_left = -781.0
@@ -29,7 +30,7 @@ offset_bottom = -360.0
 scale = Vector2(44.12, 19.92)
 
 [node name="Next" type="Button" parent="."]
-z_index = 30
+z_index = 100
 layout_mode = 0
 offset_left = 668.0
 offset_top = 644.0
@@ -38,7 +39,7 @@ offset_bottom = 697.0
 text = "Next"
 
 [node name="Back" type="Button" parent="."]
-z_index = 30
+z_index = 100
 layout_mode = 0
 offset_left = 509.0
 offset_top = 644.0
@@ -56,11 +57,11 @@ offset_bottom = 694.0
 text = "Dont show again"
 
 [node name="sprite_TutorialPanel" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 100
 position = Vector2(441, 203)
 
 [node name="Label_Description_Tutorial" type="Label" parent="."]
-z_index = 20
+z_index = 100
 layout_mode = 0
 offset_left = 77.0
 offset_top = 379.0
@@ -71,6 +72,7 @@ text = "<Description>"
 autowrap_mode = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 99
 layout_mode = 0
 offset_right = 876.0
 offset_bottom = 758.0

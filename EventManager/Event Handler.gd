@@ -43,14 +43,17 @@ func switchIt():
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("OpeningAnimation")
 	elif isEventVisible == false:
-		OpeningAnimation.visible = true
 		eventReader.visible = false
+		OpeningAnimation.visible = true
 		OpeningAnimation.play("ClosingAnimation")
 	pass
 
 func _on_opening_ui_scene_animation_finished() -> void:
 	if isEventVisible:
+		visible = true
 		eventReader.visible = true
+	else: 
+		visible = false
 	OpeningAnimation.visible = false
 
 

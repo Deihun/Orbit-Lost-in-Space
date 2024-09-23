@@ -92,6 +92,7 @@ func updateKeyIdentifyerArray():
 	for ui_map in input_actions:
 		var input_event = InputMap.action_get_events(ui_map)  # Assuming this method or similar exists
 		var event_string = str(input_event[0])
+		print(ui_map)
 		alreadyTakenKey.append(keyChecker(event_string))
 
 func keyChecker(event_string : String):
