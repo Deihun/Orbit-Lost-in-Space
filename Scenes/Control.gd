@@ -8,6 +8,7 @@ extends Control
 @onready var EventHandler = $EventHandler
 @onready var craftingtab = $CraftingTab
 @onready var putResources = $"/root/GlobalResources"
+@onready var SaveGame = SaveNLoad
 
 #VARIABLES
 var ClickTrue = true
@@ -16,31 +17,25 @@ var ClickTrue = true
 func _process(delta):
 	pass
 
-
 func _ready():
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
 	EventHandler.ActivateEvent()
 	pass 
 
-
 func getButtonPosition():
 	return camera.position + Vector2(-550,100)
-
 
 #GAME SETTINGS
 func _newGameStart():
 	pass
 
-
 func _loadGameStart(load_json):
 	pass
-
 
 func GameOver(OtherCommands):
 	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
 	pass
-
 
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
@@ -52,6 +47,8 @@ func _on_next_day_button_pressed():
 		#Handle UI Cycle
 		CycleSetting.endCycle()
 		print("Cycle: ",CycleSetting.getCycle())
+		#Auto Save
+		SaveGame.save()
 		#crafting
 		craftingtab.ongoingCraft = false
 		putResources.uniqueItems.append(craftingtab.currentlycrafting)

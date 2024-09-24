@@ -8,7 +8,7 @@ extends Control
 @onready var margin_container = $MarginContainer as MarginContainer
 @onready var quit_button = $MarginContainer/HBoxContainer/VBoxContainer/Quit_Button as Button
 @onready var start_game = load("res://Scenes/LoadingScene.tscn") as PackedScene
-@onready var LoadGame = $"root/Save_n_Load"
+@onready var LoadGame = SaveNLoad
 
 
 # Called when the node enters the scene tree for the first time.
