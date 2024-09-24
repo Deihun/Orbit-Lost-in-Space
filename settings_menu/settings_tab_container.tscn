@@ -200,3 +200,5 @@ text = "Access 4"
 [node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Access 5"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]

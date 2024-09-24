@@ -3,7 +3,6 @@ extends Node
 @onready var resources = GlobalResources
 @onready var events = get_parent().get_node("EventHandler")
 var SavePath = "Saves/GameSave.json"
-var configfile = "settings_menu/config_file.ini"
 
 func _process(delta: float) -> void:
 	if !events:
