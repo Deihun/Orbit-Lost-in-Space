@@ -163,6 +163,7 @@ offset_right = 778.0
 offset_bottom = 211.0
 
 [node name="Button_add" type="Button" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 59.0
 offset_right = 222.0
@@ -172,6 +173,7 @@ theme_override_font_sizes/font_size = 10
 text = "Add Item "
 
 [node name="Label_IDGuide4" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 4.0
 offset_right = 75.0
@@ -180,6 +182,7 @@ theme_override_font_sizes/font_size = 10
 text = "Conditions"
 
 [node name="LineEdit_Item" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
 offset_left = 79.0
 offset_top = 23.0
 offset_right = 147.0
@@ -188,6 +191,7 @@ theme_override_font_sizes/font_size = 10
 placeholder_text = "item"
 
 [node name="LineEdit_Condition" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 23.0
 offset_right = 75.0
@@ -196,6 +200,7 @@ theme_override_font_sizes/font_size = 10
 placeholder_text = "e.g HAS"
 
 [node name="LineEdit_Amount" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 23.0
 offset_right = 219.0
@@ -204,6 +209,7 @@ theme_override_font_sizes/font_size = 10
 placeholder_text = "#amount"
 
 [node name="Label_IDGuide5" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
 offset_left = 82.0
 offset_top = 4.0
 offset_right = 150.0
@@ -214,6 +220,7 @@ text = "Item
 
 [node name="ScrollContainer_CodePreview_HiddenCondition" type="ScrollContainer" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
 z_index = 20
+layout_mode = 0
 offset_left = 13.0
 offset_top = 59.0
 offset_right = 147.0
@@ -231,6 +238,7 @@ autowrap_mode = 1
 
 [node name="ScrollContainer_CodePreview_ChoicePreview" type="ScrollContainer" parent="Panel_ButtonGeneration"]
 z_index = 20
+layout_mode = 0
 offset_left = 782.0
 offset_top = 10.0
 offset_right = 961.0
@@ -248,6 +256,7 @@ autowrap_mode = 1
 
 [node name="ScrollContainer_CodePreview_Item" type="ScrollContainer" parent="Panel_ButtonGeneration"]
 z_index = 20
+layout_mode = 0
 offset_left = 313.0
 offset_top = 113.0
 offset_right = 521.0
@@ -280,12 +289,14 @@ offset_bottom = 44.0
 text = "On Click, it goes to > "
 
 [node name="Label_IDGuide3" type="Label" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 4.0
 offset_right = 171.0
 offset_bottom = 23.0
 text = "ADD CHOICE BUTTON"
 
 [node name="Label_IDGuide2" type="Label" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 317.0
 offset_top = 3.0
 offset_right = 477.0
@@ -293,6 +304,7 @@ offset_bottom = 26.0
 text = "It will subtract:"
 
 [node name="Button_add_item" type="Button" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 317.0
 offset_top = 80.0
 offset_right = 388.0
@@ -301,6 +313,7 @@ theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 text = "ADD"
 
 [node name="Button_clear_item" type="Button" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 400.0
 offset_top = 81.0
 offset_right = 471.0
@@ -318,6 +331,7 @@ theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 text = "ADD"
 
 [node name="TextEdit_Description" type="TextEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 69.0
 offset_right = 287.0
@@ -325,6 +339,7 @@ offset_bottom = 210.0
 placeholder_text = "DESCRIPTION"
 
 [node name="LineEdit_amount" type="LineEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 426.0
 offset_top = 28.0
 offset_right = 531.0
@@ -333,6 +348,7 @@ theme_override_colors/caret_color = Color(1, 1, 1, 1)
 placeholder_text = "#AMOUNT"
 
 [node name="LineEdit_item" type="LineEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
 offset_left = 316.0
 offset_top = 28.0
 offset_right = 421.0
