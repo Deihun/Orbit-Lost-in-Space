@@ -23,6 +23,7 @@ IngameStoredProcessSetting="*res://Ingame_storedProcessSetting.gd"
 NodeFinder="*res://NodeFinder/NodeFinder.gd"
 SaveNLoad="*res://SaveAndLoad/Save_n_Load.gd"
 SaveConfig="*res://settings_menu/SaveConfig.gd"
+ConfigFileHandler="*res://Scripts/ConfigFileHandler.gd"
 
 [display]
 

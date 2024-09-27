@@ -10,7 +10,6 @@ extends Control
 @onready var start_game = load("res://Scenes/LoadingScene.tscn") as PackedScene
 @onready var LoadGame = SaveNLoad
 @onready var updatesave = NodeFinder.find_node_by_name(get_parent().get_tree().current_scene, "Hotkey_Rebind_Button")
-@onready var saveNloadConfig = SaveConfig
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,7 +26,7 @@ func _on_load_game_button_pressed():
 	LoadGame.load()
 
 func _on_settings_button_pressed():
-	
+	#saveNloadConfig.loadconfig()
 	margin_container.visible = false
 	settings_menu.set_process(true)
 	settings_menu.visible = true
@@ -38,15 +37,11 @@ func _on_quit_button_pressed() -> void:
 func on_back_settings_menu() -> void:
 	margin_container.visible = true
 	settings_menu.visible = false
-	#save settings
-	if !updatesave :
-		print("null")
-	else: 
-		updatesave.updateKeyIdentifyerArray()
-		saveNloadConfig.saveconfig()
 	
 func handler_connect_signals() -> void:
 	new_game_button.pressed.connect(_on_new_game_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	settings_menu.back_settings_menu.connect(on_back_settings_menu)
+
+	
