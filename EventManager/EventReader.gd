@@ -11,9 +11,7 @@ var temp_choice_data = []
 @onready var button_container = $Container
 
 
-
 func _ready():
-	print(button_container.position)
 	var file_path = "res://Scripts/Events.json"
 	if(FileAccess.file_exists(file_path)):
 		var file = FileAccess.open(file_path,FileAccess.READ)
@@ -35,10 +33,12 @@ func parse_json(json_text):
 func setEventID(Event):
 	EventID = int(Event)
 
+
 func find_by_id(id):
 	for entry in event:
 		if entry["id"] == id:
 			return entry
+
 
 func processNextEvent():			#PLAY NEXT EVENT
 	var CurrentID = EventID
@@ -70,10 +70,7 @@ func HandleButton(Event):
 	temp_choice_data = []
 	clear_container(button_container)
 	
-	print("CHILD CONTAINER AFTER READING: ",button_container.get_child_count())
-	
 	while Event.has("Choice-"+str(button_index)):
-		print("IN WHILE DEBUG")
 		HasNoChoice = false
 		var choice_data = Event["Choice-"+str(button_index)]
 		_create_choice_button(choice_data, button_index)
@@ -84,7 +81,6 @@ func HandleButton(Event):
 		_create_choice_button(["","","Okay"], 1)
 		temp_choice_data.append(["","","Okay"])
 		pass
-	
 	_reupdate_button()
 
 
@@ -151,15 +147,17 @@ func RunKeyWord(Command):
 		_command.strip_edges()
 		var parent = get_parent()
 		parent.Critical_Event.append(_command)
+	elif _command.begins_with("@ADD_PROBABILITY_FACTIONS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@ADD_PROBABILITY_FACTIONS".length(), _command.length() - "@ADD_PROBABILITY_FACTIONS".length())
+		_command.strip_edges()
+		#IngameStoredProcessSetting.Factions_Probability
 	else:
 		print("Unable to identify Keyword in the context: '",_command,"'")
 
 
 func clear_container(container: Node2D):
-	print("DELETING CHILD INITIALIZE")
 	for i in range(container.get_child_count() - 1, -1, -1):
 		var child = container.get_child(i)
-		print("DELETING CHILD: ", child.name)
 		child.queue_free()
 
 
@@ -178,8 +176,6 @@ func _create_choice_button(choice_data, index):
 	un_touch_label.add_child(button)
 	button.connect("pressed", Callable(self, "_on_choice_button_pressed").bind(choice_data))
 	button.mouse_filter = Control.MOUSE_FILTER_PASS
-	
-	print("BUTTON CREATED")
 	var current_position = Vector2(0, (index - 1) * (un_touch_label.size.y + 10))
 	un_touch_label.position = current_position
 	
@@ -198,6 +194,8 @@ func translate_description_to_gettedProcess(text):
 		value = text.replace("@DUCTAPE()", str(global_var.ductape))
 	elif "@FUEL" in text: 
 		value = text.replace("@FUEL()", str(global_var.fuel))
+	elif "@OXYGEN" in text:
+		value = text.replace("@OXYGEN()", str(global_var.oxygen))
 	return value
 
 func _on_choice_button_pressed(choice_data):
@@ -205,6 +203,7 @@ func _on_choice_button_pressed(choice_data):
 	var parent = get_parent()
 	
 	if choice_data[2] == "Okay":
+		parent.currentActiveQueue -= 1
 		parent.ActivateEvent()
 		return
 	
@@ -216,6 +215,7 @@ func _on_choice_button_pressed(choice_data):
 			
 			setEventID(choice_data[0])
 			processNextEvent()
+			
 		else:
 			setEventID(choice_data[0])
 			processNextEvent()

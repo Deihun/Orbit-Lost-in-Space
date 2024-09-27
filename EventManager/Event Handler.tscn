@@ -16,7 +16,6 @@ frame = 21
 frame_progress = 1.0
 
 [node name="Event_UI" type="Node2D" parent="."]
-visible = false
 script = ExtResource("2_nkt3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Event_UI"]

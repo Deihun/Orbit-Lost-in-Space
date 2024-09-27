@@ -12,6 +12,7 @@ var Priority_Event = []
 var eventID = []
 var isEventVisible = false
 var onlyOnceTrigger = true
+var currentActiveQueue : int = 0
 
 					#NON RETURNING METHODS
 #SETUP ZONES
@@ -41,14 +42,17 @@ func switchIt():
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("OpeningAnimation")
 	elif isEventVisible == false:
-		OpeningAnimation.visible = true
 		eventReader.visible = false
+		OpeningAnimation.visible = true
 		OpeningAnimation.play("ClosingAnimation")
 	pass
 
 func _on_opening_ui_scene_animation_finished() -> void:
 	if isEventVisible:
+		visible = true
 		eventReader.visible = true
+	else: 
+		visible = false
 	OpeningAnimation.visible = false
 
 
@@ -65,7 +69,7 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 	onlyOnceTrigger = true
 	self.visible = true
 	var numbers_of_event =  int(1 + (randf() * (Cycle.getCycle()*0.08)))
-	
+	currentActiveQueue = numbers_of_event
 	#_CRITICAL EVENT
 	while(Critical_Event.size() > 0):
 		var Critical_key = Critical_Event.pop_front()

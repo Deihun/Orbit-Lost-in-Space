@@ -93,5 +93,14 @@
 	"name" : "IN THE NAME OF PRESERVATION!",
 	"description" : "Witness, the final calamity",
 	"Choice-1" : [10,[["SPAREPARTS",50]], "Wanna see some fireworks? You should know what and when is your place! This is my place therefore this is my time! If you cant afford it? Goodbye! \nSpareparts:@SPAREPARTS()/50"]
+},
+{
+	"id" : 12,
+	"RandomTrue": true,
+	"Repeatable" : true,
+	"name" : "You are what you are",
+	"description" : "One of your crew simply want to express their freedome through breathing, will you let that crew breath more air than usual?",
+	"Choice-1" : [10,[["OXYGEN",10]], "Let the freedome commence! \nOxygen:@OXYGEN()/10"],
+	"Choice-2" : [10,[["SPAREPARTS",10]], "Let the anger out! This will cause your crew to commit chaos, damaging your ship\nSpareparts:@SPAREPARTS()/10"]
 }
 ]

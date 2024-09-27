@@ -9,13 +9,13 @@ shader = ExtResource("3_qbxds")
 shader_parameter/amount = 1.966
 
 [node name="PauseMenu" type="Control"]
-z_index = 200
+z_index = 500
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cu0fw")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-z_index = 200
+z_index = 1
 layout_mode = 0
 offset_left = 81.0
 offset_top = -19.0
@@ -29,7 +29,6 @@ patch_margin_right = 70
 patch_margin_bottom = 70
 
 [node name="ColorRect" type="ColorRect" parent="."]
-z_index = 150
 material = SubResource("ShaderMaterial_wmgc2")
 layout_mode = 0
 offset_left = -790.0
@@ -39,7 +38,7 @@ offset_bottom = -339.0
 scale = Vector2(44.12, 19.92)
 
 [node name="RESUME" type="Button" parent="."]
-z_index = 201
+z_index = 2
 layout_mode = 0
 offset_left = 290.0
 offset_top = 73.0
@@ -49,7 +48,7 @@ text = "RESUME
 "
 
 [node name="RESTART" type="Button" parent="."]
-z_index = 201
+z_index = 2
 layout_mode = 0
 offset_left = 289.0
 offset_top = 127.0
@@ -59,7 +58,7 @@ text = "RESTART
 "
 
 [node name="MAIN_MENU" type="Button" parent="."]
-z_index = 201
+z_index = 2
 layout_mode = 0
 offset_left = 289.0
 offset_top = 174.0
@@ -69,7 +68,7 @@ text = "MAIN MENU
 "
 
 [node name="QUIT" type="Button" parent="."]
-z_index = 201
+z_index = 2
 layout_mode = 0
 offset_left = 289.0
 offset_top = 222.0

@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://do3agr6u61b4u"]
+[gd_scene load_steps=8 format=3 uid="uid://do3agr6u61b4u"]
 
 [ext_resource type="Script" path="res://DropBox/DropBox.gd" id="1_qn0js"]
 [ext_resource type="Texture2D" uid="uid://cdmhmb0ssg4wr" path="res://DropBox/DropBoxTemporary.png" id="2_wq50o"]
+[ext_resource type="Script" path="res://DropBox/LastMinuteDropbox_indicator.gd" id="3_oh65s"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_t4s61"]
+[ext_resource type="Texture2D" uid="uid://cwk0mlnr1okh6" path="res://DropBox/TemporaryDropboxWarning.png" id="4_2le4n"]
 [ext_resource type="Script" path="res://DropBox/Player_Final_Count.gd" id="4_cp7mb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgxwq"]
 size = Vector2(638, 513)
 
 [node name="DropBox" type="Node2D"]
-position = Vector2(300, 209)
+y_sort_enabled = true
+position = Vector2(2, 3)
 script = ExtResource("1_qn0js")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -20,20 +23,35 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(51, -90)
+position = Vector2(29, -91)
 polygon = PackedVector2Array(-188, -14, -188, -4, -125, 151, 144, 148, 211, 12, 141, -148, -108, -151)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, 2)
+y_sort_enabled = true
+position = Vector2(13, 1.395)
 scale = Vector2(0.862, 0.914)
 texture = ExtResource("2_wq50o")
+offset = Vector2(-27.025, -1.69)
+
+[node name="LastMinute_Dropbox_indicator" type="Node2D" parent="."]
+visible = false
+script = ExtResource("3_oh65s")
+
+[node name="Sprite2D" type="Sprite2D" parent="LastMinute_Dropbox_indicator"]
+position = Vector2(17, -29)
+scale = Vector2(2.56078, 2.31373)
+texture = ExtResource("4_2le4n")
+
+[node name="LastMinuteBlinking" type="Timer" parent="LastMinute_Dropbox_indicator"]
+wait_time = 0.1
+one_shot = true
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_t4s61")]
 collision_layer = 2
 action_name = "Submit"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea"]
-position = Vector2(-23, 12)
+position = Vector2(-43, 12)
 scale = Vector2(1.6145, 1.6072)
 polygon = PackedVector2Array(-123.877, -18.666, -67.513, 111.374, 109.631, 108.885, 167.853, 0, 107.154, -126.929, -61.3191, -126.929)
 
@@ -43,8 +61,9 @@ collision_mask = 35
 script = ExtResource("4_cp7mb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Final_Count"]
-position = Vector2(13, -10)
+position = Vector2(-16, -8)
 shape = SubResource("RectangleShape2D_mgxwq")
 
+[connection signal="timeout" from="LastMinute_Dropbox_indicator/LastMinuteBlinking" to="LastMinute_Dropbox_indicator" method="_on_last_minute_blinking_timeout"]
 [connection signal="body_entered" from="Player_Final_Count" to="Player_Final_Count" method="_on_body_entered"]
 [connection signal="body_exited" from="Player_Final_Count" to="Player_Final_Count" method="_on_body_exited"]

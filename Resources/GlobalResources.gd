@@ -1,10 +1,11 @@
 extends Node
 
+
 #VARIABLES
 var ration = 0
 var fuel = 0
-var oxygen = 0
-var spareparts = 100
+var oxygen = 1000
+var spareparts = 10000000
 var biogene = 0
 var ductape : int = 0
 var emergencyOxy = 0
@@ -57,16 +58,22 @@ func subtractItem(conditions,item_name, amount):
 	if conditions:
 		match(item_name):
 			"SPAREPARTS":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", amount))
 				spareparts -= amount
 			"FOOD":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Food -", amount))
 				ration -= amount 
 			"FUEL":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Fuel -", amount))
 				fuel -= amount 
 			"BIOGENE":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Biogene -", amount))
 				biogene -= amount 
 			"DUCTAPE":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Ductape -", amount))
 				ductape -= amount 
 			"OXYGEN":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
 				oxygen -= amount
 
 func reset(item_type):
