@@ -124,5 +124,107 @@ func addOnCycleReportList(report : String):
 	else:
 		Cycle_ReportList.append([name, int(value)])
 	pass
-	
-	print(Cycle_ReportList)
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#								CREW
+var _relationship = { #SAVE
+	"Regina" : 0.5,
+	"Maxim"  : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
+}
+var _current_hunger = { #SAVE
+	"Regina" : 0.5,
+	"Maxim"  : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
+}
+var _rationConsumes = { #SAVE
+	"Regina" : 5,
+	"Maxim" : 10,
+	"Nashir" : 5,
+	"Fumiko" : 5
+}
+var _sanity = { #SAVE
+	"Regina" : 0.5,
+	"Maxim"  : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
+}
+var _health = { #SAVE
+	"Regina" : 0.5,
+	"Maxim"  : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
+}
+var _disease = { #SAVE
+	"Regina" : 0.0,
+	"Maxim"  : 0.0,
+	"Nashir" : 0.0,
+	"Fumiko" : 0.0
+}
+var _Survivability = { #SAVE
+	"Regina" : 0.3,
+	"Maxim" : 0.6,
+	"Nashir" : 0.3,
+	"Fumiko" : 0.3
+}
+var _LootCapability = { #SAVE
+	"Regina" : 0.5,
+	"Maxim" : 0.3,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.6
+}
+var _Knowledge = { #SAVE
+	"Regina" : 1,
+	"Maxim" : 1,
+	"Nashir" : 1,
+	"Fumiko" : 1
+}
+var _reginaRelationship = { #SAVE
+	"Maxim"  : 0.0,
+	"Nashir" : 0.0,
+	"Fumiko" : 0.0
+}
+var _MaximRelationship = { #SAVE
+	"Regina" : 0.0,
+	"Nashir" : 0.0,
+	"Fumiko" : 0.0
+}
+var _NashirRelationship = { #SAVE
+	"Regina" : 0.0,
+	"Maxim"  : 0.0,
+	"Fumiko" : 0.0
+}
+var _FumikoRelationship = { #SAVE
+	"Regina" : 0.0,
+	"Maxim"  : 0.0,
+	"Nashir" : 0.0,
+	"Fumiko" : 0.0
+}
+func addRelationshipBetweenCrew(FromCrewName : String,ToCrewName_CAPS, value : bool):
+	match (ToCrewName_CAPS):
+		"MAXIM": 
+			for crew in _MaximRelationship.keys():
+				if crew == FromCrewName:
+					_MaximRelationship[crew] += value
+		"REGINA": 
+			for crew in _reginaRelationship.keys():
+				if crew == FromCrewName:
+					_reginaRelationship[crew] += value
+		"NASHIR": 
+			for crew in _NashirRelationship.keys():
+				if crew == FromCrewName:
+					_NashirRelationship[crew] += value
+		"FUMIKO": 
+			for crew in _FumikoRelationship.keys():
+				if crew == FromCrewName:
+					_FumikoRelationship[crew] += value
+		"JERRY": 
+			for crew in _relationship.keys():
+				if crew == FromCrewName:
+					_relationship[crew] += value
+func crewEat(CrewName : String, foodValue : int)  -> int:
+	if foodValue < _rationConsumes[CrewName]:
+		return foodValue
+	_current_hunger[CrewName] = 100
+	return foodValue - _rationConsumes[CrewName]

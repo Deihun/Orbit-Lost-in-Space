@@ -184,7 +184,6 @@ scale = Vector2(1.05, 1.07315)
 texture = ExtResource("12_3y1g3")
 
 [node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
 visible = false
