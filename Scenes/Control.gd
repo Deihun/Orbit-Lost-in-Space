@@ -6,17 +6,18 @@ extends Control
 @onready var ClickCD = $cam2d/Button_navigation_node_parent/ClickCooldown
 @onready var CycleSetting = $"/root/IngameStoredProcessSetting"
 @onready var EventHandler = $EventHandler
-
+@onready var craftingtab = $CraftingTab
+@onready var putResources = $"/root/GlobalResources"
+@onready var SaveGame = SaveNLoad
 
 #VARIABLES
 
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
 
-#VOID METHODS // CAMERA CONTROLS - SETTINGS
+#VOID METHODS // CAMERA CONTROLS - SETTINGS		
 func _process(delta):
 	pass
-
 
 func _ready():
 	CycleSetting.newGame()
@@ -24,24 +25,19 @@ func _ready():
 	EventHandler.ActivateEvent()
 	pass 
 
-
 func getButtonPosition():
 	return camera.position + Vector2(-550,100)
-
 
 #GAME SETTINGS
 func _newGameStart():
 	pass
 
-
 func _loadGameStart(load_json):
 	pass
-
 
 func GameOver(OtherCommands):
 	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
 	pass
-
 
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
@@ -61,6 +57,11 @@ func _on_next_day_button_pressed():
 		#Handle UI Cycle
 		CycleSetting.endCycle()
 		print("Cycle: ",CycleSetting.getCycle())
+		#Auto Save
+		SaveGame.save()
+		#crafting
+		craftingtab.ongoingCraft = false
+		putResources.uniqueItems.append(craftingtab.currentlycrafting)
 		#Handle Event
 		
 		EventHandler._removeAllEvent()
@@ -70,9 +71,6 @@ func _on_next_day_button_pressed():
 	else:
 		camera.ChangeSpecificScene(2)
 		
-
-
-
 func _on_click_cooldown_timeout() -> void:
 	ClickTrue = true
 

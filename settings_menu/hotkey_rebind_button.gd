@@ -20,10 +20,17 @@ var input_actions = {
 }
 
 func _ready():
+	_load_keybindings_from_settings()
 	_create_action_list()
 
+func _load_keybindings_from_settings():
+	var keybindings = ConfigFileHandler.load_keybindings()
+	for action in keybindings.keys():
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, keybindings[action])
+
 func _create_action_list():
-	InputMap.load_from_project_settings()
+	#InputMap.load_from_project_settings()
 
 	for item in action_list.get_children():
 		item.queue_free()
@@ -45,6 +52,7 @@ func _create_action_list():
 
 		action_list.add_child(button)
 		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		
 func _on_input_button_pressed(button, action):
 	if !is_remapping:
 		is_remapping = true
@@ -69,14 +77,14 @@ func _input(event):
 				show_key_already_used_popup(event)
 				return
 			
-			InputMap.action_erase_events(action_to_remap)
+			#InputMap.action_erase_events(action_to_remap)
 			InputMap.action_add_event(action_to_remap, event)
+			ConfigFileHandler.save_keybinding(action_to_remap, event)
 			update_action_list(remapping_button, event)
 			
 			is_remapping = false
 			action_to_remap = null
 			remapping_button = null
-			
 			accept_event()
 			 
 func update_action_list(button, event):
@@ -85,12 +93,17 @@ func update_action_list(button, event):
 
 
 func _on_reset_button_pressed() -> void:
+	InputMap.load_from_project_settings()
+	for action in input_actions:
+		var events = InputMap.action_get_events(action)
+		if events.size() > 0:
+			ConfigFileHandler.save_keybinding(action, events[0])
 	_create_action_list()
 
 func updateKeyIdentifyerArray():
 	alreadyTakenKey.clear()
 	for ui_map in input_actions:
-		var input_event = InputMap.action_get_events(ui_map)  # Assuming this method or similar exists
+		var input_event = InputMap.action_get_events(ui_map)
 		var event_string = str(input_event[0])
 		print(ui_map)
 		alreadyTakenKey.append(keyChecker(event_string))
@@ -107,7 +120,6 @@ func keyChecker(event_string : String):
 		var key_name = event_string.substr(start_index, end_index - start_index)
 		return key_name
 		
-
 func fixMouse(mouse_StringEvent : String):
 	if mouse_StringEvent == "Left Mouse Button":
 		return "button_index=1"
