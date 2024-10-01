@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=18 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
@@ -12,13 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
 [ext_resource type="Texture2D" uid="uid://b72m5ni8snr5k" path="res://InteriorScene/Storage Scene.png" id="11_dyr30"]
 [ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
-
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
-
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
 [ext_resource type="PackedScene" uid="uid://dcb5l6014oa70" path="res://Scenes/Cycle_Report/CycleReport_Bar.tscn" id="15_640qk"]
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
@@ -194,10 +191,6 @@ visible = false
 position = Vector2(0.951904, -0.466064)
 shape = SubResource("RectangleShape2D_kb8bw")
 
-
-[node name="CraftingTab" parent="." instance=ExtResource("13_10a7a")]
-position = Vector2(-3982, -471)
-
 [node name="CycleReport_ScrollContainer" type="ScrollContainer" parent="CycleReport"]
 offset_left = -800.0
 offset_top = -330.802
@@ -213,6 +206,8 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 50
 alignment = 2
 
+[node name="CraftingTab" parent="." instance=ExtResource("13_10a7a")]
+position = Vector2(-3982, -471)
 
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]

@@ -33,7 +33,8 @@ func savedata():
 
 func save():
 	print("saved")
-	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
+	var file = FileAccess.open(SavePath, FileAccess.WRITE)
+	#var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
 	
@@ -41,7 +42,8 @@ func save():
 func load():
 	if not FileAccess.file_exists(SavePath):
 		return
-	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
+	var file = FileAccess.open(SavePath, FileAccess.WRITE)
+	#var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
 		
 	while file.get_position() < file.get_length():
 		var json_string = file.get_line()
@@ -65,5 +67,4 @@ func load():
 		events.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
 		events.Priority_Event = node_data["Priority_Event"]
 		events.eventID = node_data["eventID"]
-
-	print("loaded")
+		print(node_data)

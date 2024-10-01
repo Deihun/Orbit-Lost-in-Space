@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvcnq4atloy4"]
+
+[ext_resource type="PackedScene" uid="uid://dk2kxa66njx2e" path="res://settings_menu/options_display_button.tscn" id="1_fw46j"]
+[ext_resource type="Script" path="res://settings_menu/window_mode_button.gd" id="2_wnc4h"]
+
+[node name="Window_Mode_Button" instance=ExtResource("1_fw46j")]
+script = ExtResource("2_wnc4h")
