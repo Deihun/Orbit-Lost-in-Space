@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0navo5cmv2ab"]
+[gd_scene load_steps=6 format=3 uid="uid://0navo5cmv2ab"]
 
+[ext_resource type="PackedScene" uid="uid://dbvcnq4atloy4" path="res://settings_menu/window_mode_button.tscn" id="1_loh7i"]
 [ext_resource type="PackedScene" uid="uid://cs1oawlbvecy8" path="res://settings_menu/hotkey_rebind_button.tscn" id="1_orr2h"]
+[ext_resource type="PackedScene" uid="uid://bsjysdqt2fih" path="res://settings_menu/resolution_mode_button.tscn" id="2_g6a2k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rx88v"]
 
@@ -92,6 +94,19 @@ theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Window_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_loh7i")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_g6a2k")]
+layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false

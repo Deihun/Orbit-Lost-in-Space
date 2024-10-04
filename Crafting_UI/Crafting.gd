@@ -2,8 +2,7 @@ extends Node
 
 @onready var getResources = $"/root/GlobalResources"
 @onready var SaveLoadGame = $Control
-@onready var cycleData = $Ingame_storedProcessSetting
-@onready var checkCycle = $TestingInteriorScene
+
 var craftingItems
 var ongoingCraft = false
 var currentlycrafting

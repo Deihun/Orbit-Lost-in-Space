@@ -22,13 +22,16 @@ GlobalResources="*res://Resources/GlobalResources.gd"
 IngameStoredProcessSetting="*res://Ingame_storedProcessSetting.gd"
 NodeFinder="*res://NodeFinder/NodeFinder.gd"
 SaveNLoad="*res://SaveAndLoad/Save_n_Load.gd"
-ConfigFileHandler="*res://Scripts/ConfigFileHandler.gd"
 SimpleMovement="*res://TweenClass/SimpleMovement.gd"
+SettingsSignalBus="*res://settings_menu/SettingsSignalBus.gd"
+SettingsDataContainer="*res://settings_menu/SettingsDataContainer.gd"
+SaveManager="*res://Scripts/SaveManager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]
