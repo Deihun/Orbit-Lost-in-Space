@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfbmlq5cvh1ok"]
+
+[ext_resource type="Script" path="res://Dialogue/button.gd" id="1_xxubr"]
+
+[node name="BiologistDialogue" type="Node2D"]
+script = ExtResource("1_xxubr")
+
+[node name="Area2D" type="Area2D" parent="."]

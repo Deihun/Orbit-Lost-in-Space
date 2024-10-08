@@ -1,0 +1,19 @@
+~ First_Meetup
+Regina: Heya Captain, name's Regina but you can call me Gina
+Regina: Thanks for picking me up, if you need these biologist's hand for your task, you can talk to me.
+- Nice to meet you Regina
+	Jerry: Hey, it's nice to meet you and if you need MY help you could do the same
+- I could use those hands if you know what I mean
+	Jerry: I could use those hands if you know what I mean 
+	Regina: Ugh, Pervert.
+- Start again => First_Meetup
+- Got to go => END
+Regina: See ya, Captain!
+=> END
+
+~ Second_Meetup
+Regina: Oh Hey Captain, What's up?
+- Nothing
+	Jerry: Nothing much, just checking up on you
+Regina: Don't worry bout' me. I'm doing good
+Jerry: Alright, if you say so. => END

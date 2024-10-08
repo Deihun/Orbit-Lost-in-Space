@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfbmlq5cvh1ok"]
+
+[ext_resource type="Script" path="res://Dialogue/button.gd" id="1_xxubr"]
+
+[node name="BiologistDialogue" type="Node2D"]
+script = ExtResource("1_xxubr")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 862.0
+offset_top = 391.0
+offset_right = 978.0
+offset_bottom = 501.0
+script = ExtResource("1_xxubr")
