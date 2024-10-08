@@ -2,6 +2,9 @@ extends Node
 
 
 func find_node_by_name(root_node: Node, node_name: String) -> Node:
+	if !root_node:
+		print("ERROR NODE FINDER: INVALID ROOT NODE")
+		return
 	if root_node.name == node_name:
 		return root_node
 	for child in root_node.get_children():

@@ -1,7 +1,7 @@
 extends Timer
 
 #VARIABLE
-@export var countdown_start : int= 90
+@export var countdown_start : int= 3
 var countdown_status : bool = true
 var isGameStart : bool = false
 var countdown_live : int

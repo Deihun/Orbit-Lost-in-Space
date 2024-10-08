@@ -46,7 +46,7 @@ func processNextEvent():			#PLAY NEXT EVENT
 	var parent = get_parent()
 	
 	title.text = currentEvent["name"] 
-	desc.text =  currentEvent["description"] 
+	desc.text = currentEvent["description"] 
 	
 	if currentEvent.has("FollowUp"):
 		for follow_up_event in currentEvent["FollowUp"]:

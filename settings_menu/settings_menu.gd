@@ -11,4 +11,5 @@ func _ready():
 
 func on_back_pressed() -> void:
 	back_settings_menu.emit()
+	SettingsSignalBus.emit_set_settings_dictionary(SettingsDataContainer.create_storage_dictionary())
 	set_process(false)
