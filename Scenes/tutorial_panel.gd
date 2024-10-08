@@ -3,24 +3,33 @@ extends Control
 @onready var next_button = $Next
 @onready var texture_sprite = $sprite_TutorialPanel
 @onready var description_label = $Label_Description_Tutorial
+@onready var Title = $Label_Title
 @onready var Colorrect = $ColorRect
 
+@export var tutorialTitle : Array[String]
 @export var tutorialDescription : Array[String] 
 @export var textureLink : Array[String] 
 @export var Const_MAXSIZE_Sprite2D : Vector2
 @export var Closable: bool = true
 
+
 var noShowAgain: bool = false
 var TutorialModeOn: bool = true
 var current_index: int = 0
-
+var parentsScript
 
 
 func _ready():
+	parentsScript = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")
+	if parentsScript:
+		Engine.time_scale = 0
+	
 	if !TutorialModeOn:
 		queue_free()
 	instantiate()
 	update_content()
+	if !Closable:
+		$CheckBox.process_mode = Node.PROCESS_MODE_DISABLED
 
 func instantiate():
 	pass
@@ -29,8 +38,11 @@ func update_content():
 	if current_index >= 0 and current_index < tutorialDescription.size():
 		description_label.text = tutorialDescription[current_index]
 		description_label.visible = true
+		Title.text = tutorialTitle[current_index]
+		Title.visible = true
 	else:
 		description_label.visible = false
+		Title.visible = false
 	if current_index >= 0 and current_index < textureLink.size():
 		var texture = load(textureLink[current_index])
 		if texture:
@@ -68,6 +80,9 @@ func _on_next_button_pressed():
 		if noShowAgain:
 			print("will call the settings")
 			pass
+		if parentsScript:
+			process_mode = Node.PROCESS_MODE_ALWAYS
+			Engine.time_scale = 1
 		queue_free()
 
 func _on_back_button_pressed():

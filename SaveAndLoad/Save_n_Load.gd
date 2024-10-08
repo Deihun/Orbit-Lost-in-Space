@@ -1,13 +1,14 @@
 extends Node
 
 @onready var resources = GlobalResources
-@onready var events = get_parent().get_node("EventHandler")
+@onready var events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 var SavePath = "Saves/GameSave.json"
 
 func _process(delta: float) -> void:
 	if !events:
 		events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
-		
+
+
 func savedata():
 	if !events :
 		print("null")

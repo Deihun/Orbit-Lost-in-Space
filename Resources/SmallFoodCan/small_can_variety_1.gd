@@ -4,6 +4,7 @@ extends RigidBody2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var interaction_manager = InteractionManager
 @onready var animationSprite = $AnimatedSprite2D
+@onready var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
 
 #VARIABLE
 var inventory 
@@ -40,6 +41,7 @@ func _process(delta): #Repeatedly set a path until a correct path is detected
 
 func interaction():
 	if inventory.addItem("Small Food",1):
+		player.pickup()
 		inventory.showItem()
 		interaction_manager.unregister_area(interaction_area)
 		queue_free()

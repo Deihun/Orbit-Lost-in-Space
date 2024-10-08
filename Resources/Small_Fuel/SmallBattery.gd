@@ -5,6 +5,8 @@ extends Node2D
 @onready var interaction_manager = InteractionManager
 @onready var animation_battery = $Battery
 @onready var Animation_Lightning = $LightningEffect
+@onready var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
+
 #VARIABLES
 var inventory 
 
@@ -28,6 +30,7 @@ func _process(delta): #Call the inventory repeatedly until the correct path is d
 
 func interaction():
 	if inventory.addItem("Small Fuel",2):
+		player.pickup()
 		inventory.showItem()
 		interaction_manager.unregister_area(interaction_area)
 		queue_free()

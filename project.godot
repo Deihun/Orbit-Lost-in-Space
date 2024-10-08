@@ -13,7 +13,7 @@ config_version=5
 config/name="Orbit Loss in Space"
 run/main_scene="res://MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Icon_OrbitLost_in_Space.svg"
+config/icon="res://Icon (1) (1).svg"
 
 [autoload]
 
@@ -21,13 +21,10 @@ InteractionManager="*res://Interaction/InteractionManager.tscn"
 GlobalResources="*res://Resources/GlobalResources.gd"
 IngameStoredProcessSetting="*res://Ingame_storedProcessSetting.gd"
 NodeFinder="*res://NodeFinder/NodeFinder.gd"
-
 SaveNLoad="*res://SaveAndLoad/Save_n_Load.gd"
 SaveConfig="*res://settings_menu/SaveConfig.gd"
 ConfigFileHandler="*res://Scripts/ConfigFileHandler.gd"
-
 SimpleMovement="*res://TweenClass/SimpleMovement.gd"
-
 
 [display]
 

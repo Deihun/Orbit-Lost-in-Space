@@ -115,6 +115,7 @@ func _addNextEvent():
 
 
 func ActivateEvent(): #ACTIVATE QUEUE EVENT
+	print( "already instantiate: ",alreadyTriggeredEvent)
 	if eventID.front() == null:
 		switchIt()
 		return

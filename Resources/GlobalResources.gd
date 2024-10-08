@@ -76,6 +76,28 @@ func subtractItem(conditions,item_name, amount):
 				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
 				oxygen -= amount
 
+func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
+	if conditions:
+		match(item_name):
+			"SPAREPARTS":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", amount))
+				spareparts += amount
+			"FOOD":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Food -", amount))
+				ration += amount 
+			"FUEL":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Fuel -", amount))
+				fuel += amount 
+			"BIOGENE":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Biogene -", amount))
+				biogene += amount 
+			"DUCTAPE":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Ductape -", amount))
+				ductape += amount 
+			"OXYGEN":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
+				oxygen += amount
+
 func reset(item_type):
 	match(item_type):
 		"SPAREPARTS":

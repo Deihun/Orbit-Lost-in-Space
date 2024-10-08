@@ -36,17 +36,16 @@ anchor_left = -0.330729
 anchor_top = -0.330247
 anchor_right = 1.33594
 anchor_bottom = 1.33025
-offset_left = 474.0
-offset_top = 101.667
-offset_right = 474.0
-offset_bottom = 101.667
+offset_left = 470.0
+offset_top = 53.6668
+offset_right = 470.0
+offset_bottom = 53.6667
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
-metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -54,15 +53,6 @@ theme_override_constants/separation = 325
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 24
-theme_override_font_sizes/font_size = 64
-text = "Orbit Lost in 
-Space"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -76,39 +66,14 @@ alignment = 1
 [node name="Seperator 2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="New_Game_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-text = "New Game
-"
-
 [node name="Seperator 3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Load_Game_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Load Game
-"
 
 [node name="Seperator 4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Settings_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Settings
-"
-
 [node name="Seperator 5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Quit
-"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
@@ -118,7 +83,65 @@ zoom = Vector2(0.785, 0.8)
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New_Game_Button" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load_Game_Button" to="." method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
+[node name="DeveloperOption" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1548.0
+offset_top = 960.0
+offset_right = 1914.0
+offset_bottom = 1068.0
+text = "EVENT MANAGER <DEV TOOL>"
+
+[node name="New_Game_Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = -112.0
+offset_top = 367.0
+offset_right = 223.0
+offset_bottom = 458.0
+scale = Vector2(1.05035, 1.05598)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "New Game
+"
+
+[node name="Load_Game_Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = -115.0
+offset_top = 495.0
+offset_right = 220.0
+offset_bottom = 586.0
+scale = Vector2(1.06487, 0.964602)
+theme_override_font_sizes/font_size = 60
+text = "Load Game
+"
+
+[node name="Settings_Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = -115.0
+offset_top = 614.0
+offset_right = 220.0
+offset_bottom = 705.0
+scale = Vector2(1.06338, 0.978837)
+theme_override_font_sizes/font_size = 60
+text = "Settings
+"
+
+[node name="Quit_Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = -122.0
+offset_top = 835.0
+offset_right = 213.0
+offset_bottom = 926.0
+scale = Vector2(1.0841, 1)
+theme_override_font_sizes/font_size = 60
+text = "Quit
+"
+
+[connection signal="pressed" from="DeveloperOption" to="." method="_on_developer_option_pressed"]
+[connection signal="pressed" from="New_Game_Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Load_Game_Button" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

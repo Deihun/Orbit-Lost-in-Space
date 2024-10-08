@@ -43,17 +43,26 @@ func add_new_event():
 	var new_event = {
 		"id" : get_next_event_id(),
 		"name": name_input,
-		"description_input": description_input,
+		"description": description_input,
 		"RandomTrue": $CheckButton_Active.is_pressed(),
 		"Repeatable": $CheckButton_Repeatable.is_pressed()
 	}
 	for choice_id in TemporaryChoices.keys():
 		new_event[choice_id] = TemporaryChoices[choice_id]
-	
+	if CommandList.size() > 0:
+		new_event["Command"] = CommandList
+	if !$Panel_Conditions/LineEdit_Command_Value.text == "" and _Condition_ValueGroup.size() > 0:
+		new_event["Conditions"] = [$Panel_Conditions/LineEdit_Command_Conditions.text,_Condition_ValueGroup]
 	event_data.append(new_event)
+	if _probabilityGroup.size()> 0:
+		var a = _probabilityGroup.duplicate(true)
+		new_event["Probability"] = a
+		_probabilityGroup.clear()
+		_RemoveCommand_Probability()
 	save_json_file()
 	update_UI()
 	reset_items()
+	_ConditionGroupsReset()
 
 func save_json_file():
 	var file = FileAccess.open(json_file_path, FileAccess.WRITE)
@@ -74,11 +83,23 @@ func get_next_event_id() -> int:
 
 func update_UI():
 	var json_string = JSON.stringify(event_data)
-	var formatted_string = json_string.replace("},", "},\n").replace("[", "[\n").replace("]", "\n]")
+	var formatted_string = json_string.replace("},", "},\n").replace("[", "[\n").replace("]", "\n]").replace("Repeatable", "\nRepeatable").replace("description","\ndescription").replace("id","\nid")
 	var label = $ScrollContainer_CodePreview/VScrollBar_CodePreview/Label
 	$Label_id.text = str("ID: ", get_next_event_id())
 	label.text = str(formatted_string)
 	label.autowrap_mode = true
+	$Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.autowrap_mode = true
+	$Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text = str(current_Items)
+	$Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.text = str(TemporaryChoices)
+	$Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.autowrap_mode = true
+	$Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text = str(CommandList)
+	$Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.autowrap_mode = true
+	$Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.text = str(_Condition_ValueGroup)
+	$Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.autowrap_mode = true
+	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview/Label.text = str(_Probability_Command)
+	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview/Label.autowrap_mode = true
+	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview/Label.text = str(_probabilityGroup)
+	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview/Label.autowrap_mode
 	var font_size = label.get_theme_font_size("font_size")  # Get the font size from the theme
 	var line_count = label.get_line_count()  # Get the number of lines
 	#label.custom_minimum_size = Vector2(0, font_size * line_count)
@@ -88,6 +109,7 @@ func update_UI():
 var current_Items = []
 var current_choice_id = 0
 var TemporaryChoices = {}
+
 func _on_line_edit_text_changed(new_text: String) -> void:
 	var list_Number = ["0","1","2","3","4","5","6","7","8","9",]
 	var filtered_text = ""
@@ -107,9 +129,8 @@ func add_items():
 	var item_amount= int($Panel_ButtonGeneration/LineEdit_amount.text.strip_edges())
 	current_Items.append([item_name, int(item_amount)])
 	print(current_Items)
-	label.text = str(current_Items)
-	label.autowrap_mode = true
 	clear_item_UI()
+	update_UI()
 
 func reset_items():
 	current_Items.clear()
@@ -121,11 +142,98 @@ func clear_item_UI():
 
 func on_finalize_choice_button():
 	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
-	TemporaryChoices["choice-"+str(current_choice_id+1)] = [
-		int(current_choice_id),
-		current_Items,
-		description
-	]
-	current_choice_id +=1
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.text = str(TemporaryChoices)
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.autowrap_mode = true
+	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
+		TemporaryChoices["choice-"+str(current_choice_id+1)] = [
+			int(current_choice_id),
+			current_Items,
+			description
+		]
+		current_choice_id +=1
+	else:
+		if TemporaryChoices.keys().has("HiddenChoice"):
+			print("ERROR: HiddenChoice can only be called once")
+			return
+		TemporaryChoices["HiddenChoice"] = [[[str($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Condition.text).capitalize(),[str($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Item.text).capitalize(), int($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Amount.text)]]],[int(current_choice_id),current_Items,	description
+		]
+		]
+	update_UI()
+
+func _Hidden_Choice_Toggle() -> void:
+	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
+		$Panel_ButtonGeneration/Panel_HiddenChoice.visible = false
+	else: 
+		$Panel_ButtonGeneration/Panel_HiddenChoice.visible = true
+	pass # Replace with function body.
+
+
+func _ClearItems() -> void:
+	current_Items.clear()
+	update_UI()
+	pass # Replace with function body.
+
+
+func _RESET_TemporaryITEM() -> void:
+	TemporaryChoices.clear()
+	update_UI()
+	pass # Replace with function body.
+
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#						COMMAND TAB
+var CommandList = []
+func _EnterCommand() -> void:
+	var line = str($Panel_Command/LineEdit_Command.text).capitalize()
+	CommandList.append(line)
+	update_UI()
+	pass # Replace with function body.
+
+
+func _ClearCommand() -> void:
+	CommandList.clear()
+	update_UI()
+	pass # Replace with function body.
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#						ConditionTab
+var _Condition_ValueGroup = []
+
+
+func _AddValue() -> void:
+	_Condition_ValueGroup.append($Panel_Conditions/LineEdit_Command_Value.text)
+	update_UI()
+	pass # Replace with function body.
+
+
+func _ConditionGroupsReset() -> void:
+	_Condition_ValueGroup.clear()
+	update_UI()
+	pass # Replace with function body.
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+#						Probability
+var _Probability_Command = []
+var _probabilityGroup = []
+
+
+func _AddCommand_Probability() -> void:
+	if $Panel_Probability/LineEdit_Probability_Command.text == "":
+		return
+	_Probability_Command.append($Panel_Probability/LineEdit_Probability_Command.text)
+	$Panel_Probability/LineEdit_Probability_Command.text = ""
+	update_UI()
+	pass # Replace with function body.
+
+
+func _RemoveCommand_Probability() -> void:
+	_Probability_Command.clear()
+	update_UI()
+	pass # Replace with function body.
+
+
+func _ProbabilityAddGroup() -> void:
+	var value = [
+		int($Panel_Probability/LineEdit_Probability_Probability.text),
+		_Probability_Command
+		]
+	
+	_probabilityGroup.append(value)
+	print("DEBUG COMPARISON: ", value," : ", _probabilityGroup)
+	update_UI()
+	pass # Replace with function body.

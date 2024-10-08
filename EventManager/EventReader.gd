@@ -113,6 +113,7 @@ func Probability(Event):
 
 
 func RunKeyWord(Command):
+	var numbers = ["0","1","2","3","4","5","6","7","8","9","-","."]
 	var global_resource = $"/root/GlobalResources"
 	var _command = Command
 	
@@ -120,6 +121,19 @@ func RunKeyWord(Command):
 		_command = _command.substr("@ADD_EFFECTS".length(), _command.length() - "@ADD_EFFECTS".length())
 		_command.strip_edges()
 		global_resource.addGameEffect(_command)
+	elif _command.begins_with("@ADD_MATERIALS"):
+		_command = _command.substr("@ADD_MATERIALS".length(), _command.length() - "@ADD_MATERIALS".length())
+		_command.strip_edges()
+		var item_name = ""
+		var amount = 0
+		for i in range (_command.length()):
+			var char = _command[i]
+			if numbers.has(char):
+				item_name = _command.substr(0,i)
+				amount = int(_command.substr(i, _command.length() - i))
+		GlobalResources.AddItem(true,item_name,amount)
+	elif _command.begins_with("@RELATIONSHIP_INCREASE"):	#INCOMPLETE
+		pass
 	elif _command.begins_with("@TITLE"):
 		_command = _command.substr("@TITLE".length(), _command.length() - "@TITLE".length())
 		_command.strip_edges()

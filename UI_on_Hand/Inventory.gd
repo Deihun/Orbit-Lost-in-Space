@@ -14,6 +14,8 @@ var apple_texture = load("res://Resources/resources 1.png")
 var small_biogene_texture = load("res://Resources/Resource_Images/SmallBiogene_OnHand.png")
 var spareparts_texture = load("res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png")
 var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/Small_SmallOxygenGas.png")
+var KeyCard = load("res://Scenes/Tutorial/KeyCard.png")
+var teddyBear = load("res://Resources/Resource_Images/TeddyBear Icon.png")
 
 var inventory = []  
 
@@ -52,6 +54,12 @@ func showItem():
 		elif i < hands.size() and "Small Gastank" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)
 			hands[i].texture = oxygenGasTank_small
+		elif i < hands.size() and "KeyCard" in inventory[i]:
+			hands[i].scale = Vector2(0.30,0.30)
+			hands[i].texture = KeyCard
+		elif i < hands.size() and "TeddyBear" in inventory[i]:
+			hands[i].scale = Vector2(0.30,0.30)
+			hands[i].texture = teddyBear
 		else:
 			hands[i].texture = null
 

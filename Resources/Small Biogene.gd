@@ -5,6 +5,7 @@ extends RigidBody2D
 @onready var interaction_manager = InteractionManager
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $RandomAnimationTimer
+@onready var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
 
 @export var brokenBiogene: PackedScene
 
@@ -28,6 +29,7 @@ func _process(delta):#Call the inventory repeatedly until the correct path is de
 
 func interaction():
 	if inventory.addItem("Small Biogene",1):
+		player.pickup()
 		inventory.showItem()
 		interaction_manager.unregister_area(interaction_area)
 		queue_free()

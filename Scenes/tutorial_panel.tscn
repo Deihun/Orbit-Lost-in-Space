@@ -17,20 +17,22 @@ offset_top = -8.0
 offset_right = 877.0
 offset_bottom = 733.0
 script = ExtResource("1_a5dl1")
+tutorialTitle = Array[String](["TestingTitle", "AgonyTitle"])
+tutorialDescription = Array[String](["TestingDesc1", "AgonyTitle1"])
+textureLink = Array[String](["res://TutorialUI/test.png", "res://TutorialUI/test.png"])
 Const_MAXSIZE_Sprite2D = Vector2(500, 350)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-z_index = 1
 material = SubResource("ShaderMaterial_s2j88")
 layout_mode = 0
 offset_left = -781.0
-offset_top = -445.0
+offset_top = -461.0
 offset_right = -717.0
-offset_bottom = -360.0
+offset_bottom = -376.0
 scale = Vector2(44.12, 19.92)
 
 [node name="Next" type="Button" parent="."]
-z_index = 100
+z_index = 2
 layout_mode = 0
 offset_left = 668.0
 offset_top = 644.0
@@ -39,7 +41,7 @@ offset_bottom = 697.0
 text = "Next"
 
 [node name="Back" type="Button" parent="."]
-z_index = 100
+z_index = 2
 layout_mode = 0
 offset_left = 509.0
 offset_top = 644.0
@@ -48,31 +50,48 @@ offset_bottom = 697.0
 text = "Back"
 
 [node name="CheckBox" type="CheckBox" parent="."]
-z_index = 100
+z_index = 2
 layout_mode = 0
 offset_left = 58.0
 offset_top = 663.0
 offset_right = 216.0
 offset_bottom = 694.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Dont show again"
 
 [node name="sprite_TutorialPanel" type="Sprite2D" parent="."]
-z_index = 100
+z_index = 2
 position = Vector2(441, 203)
 
 [node name="Label_Description_Tutorial" type="Label" parent="."]
-z_index = 100
+z_index = 2
 layout_mode = 0
-offset_left = 77.0
-offset_top = 379.0
-offset_right = 663.0
-offset_bottom = 571.0
+offset_left = 64.0
+offset_top = 400.0
+offset_right = 650.0
+offset_bottom = 577.0
 scale = Vector2(1.295, 1.295)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "<Description>"
 autowrap_mode = 3
+clip_text = true
+
+[node name="Label_Title" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 355.0
+offset_top = 321.0
+offset_right = 484.0
+offset_bottom = 376.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "<TITLE>"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-z_index = 99
+z_index = 1
 layout_mode = 0
 offset_right = 876.0
 offset_bottom = 758.0

@@ -11,7 +11,7 @@ var newScene
 func _ready() -> void:
 	$TutorialPanel.Colorrect.visible = false
 	$PressAnywhere.disabled = true
-	sceneName = "res://Scenes/Ingame/Ingame_Start.tscn"
+	sceneName = "res://Player/World.tscn"
 	ResourceLoader.load_threaded_request(sceneName)
 
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkj080jgpw6yj"]
+
+[ext_resource type="Script" path="res://Scenes/Tutorial/teddy_bear.gd" id="1_i20gh"]
+[ext_resource type="Texture2D" uid="uid://tas0howqhu6k" path="res://Scenes/Tutorial/TeddyBearCollecting.png" id="2_3egw6"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_rx06k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3m08n"]
+radius = 14.0357
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bybgw"]
+radius = 152.003
+
+[node name="TeddyBear" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(2868, 602)
+collision_layer = 33
+collision_mask = 19
+script = ExtResource("1_i20gh")
+
+[node name="TeddyBear_sprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 32)
+texture = ExtResource("2_3egw6")
+offset = Vector2(0, -31.47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 18)
+shape = SubResource("CircleShape2D_3m08n")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_rx06k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_bybgw")

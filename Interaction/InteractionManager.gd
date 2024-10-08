@@ -22,6 +22,7 @@ func _input(event):
 		if active_area.size() > 0:
 			can_interact = false
 			label.hide()
+			var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
 			var tutorial_ui = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialAssets")
 			if tutorial_ui:
 				tutorial_ui.fadeOut()
