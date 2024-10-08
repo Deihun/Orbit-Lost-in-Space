@@ -3,6 +3,7 @@ extends Node
 @onready var resources = GlobalResources
 @onready var events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 var SavePath = "Saves/GameSave.json"
+var isLoadGame : bool
 
 func _process(delta: float) -> void:
 	if !events:
@@ -10,6 +11,7 @@ func _process(delta: float) -> void:
 
 
 func savedata():
+	#print("test")
 	if !events :
 		print("null")
 	var save_dict = {
@@ -34,7 +36,8 @@ func savedata():
 
 func save():
 	print("saved")
-	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
+	var file = FileAccess.open(SavePath, FileAccess.WRITE)
+	#var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
 	
@@ -42,7 +45,8 @@ func save():
 func load():
 	if not FileAccess.file_exists(SavePath):
 		return
-	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
+	var file = FileAccess.open(SavePath, FileAccess.READ)
+	#var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
 		
 	while file.get_position() < file.get_length():
 		var json_string = file.get_line()
@@ -66,5 +70,3 @@ func load():
 		events.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
 		events.Priority_Event = node_data["Priority_Event"]
 		events.eventID = node_data["eventID"]
-
-	print("loaded")

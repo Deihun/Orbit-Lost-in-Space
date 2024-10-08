@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=5 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
 [ext_resource type="Texture2D" uid="uid://cdaqautft1fif" path="res://MainMenu/Untitled-1-Recovered.png" id="2_b48ty"]
 [ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="3_xdu3v"]
+[ext_resource type="AudioStream" uid="uid://cir657n81xry8" path="res://Music/Erika-German-Song-Sound-Effect.mp3" id="4_hxbdb"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -145,3 +146,12 @@ text = "Quit
 [connection signal="pressed" from="Load_Game_Button" to="." method="_on_load_game_button_pressed"]
 [connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
+[node name="MusicStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hxbdb")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New_Game_Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load_Game_Button" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
