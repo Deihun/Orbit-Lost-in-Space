@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="PlayerKeybindResource" load_steps=7 format=3 uid="uid://qa22fwpsq5qf"]
+
+[ext_resource type="Script" path="res://settings_menu/PlayerKeybindResource.gd" id="1_hgpke"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_lap2p"]
+device = -1
+physical_keycode = 69
+unicode = 101
+
+[sub_resource type="InputEventKey" id="InputEventKey_6hmee"]
+device = -1
+physical_keycode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id="InputEventKey_bubkb"]
+device = -1
+physical_keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_vl1xx"]
+device = -1
+physical_keycode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id="InputEventKey_jmwkc"]
+device = -1
+physical_keycode = 87
+unicode = 119
+
+[resource]
+script = ExtResource("1_hgpke")
+DEFAULT_MOVE_LEFT_KEY = SubResource("InputEventKey_bubkb")
+DEFAULT_MOVE_RIGHT_KEY = SubResource("InputEventKey_vl1xx")
+DEFAULT_MOVE_UP_KEY = SubResource("InputEventKey_jmwkc")
+DEFAULT_MOVE_DOWN_KEY = SubResource("InputEventKey_6hmee")
+DEFAULT_INTERACT_KEY = SubResource("InputEventKey_lap2p")

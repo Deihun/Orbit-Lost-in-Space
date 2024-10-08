@@ -3,12 +3,14 @@ extends Node
 @onready var resources = GlobalResources
 @onready var events = get_parent().get_node("EventHandler")
 var SavePath = "Saves/GameSave.json"
+var isLoadGame : bool
 
 func _process(delta: float) -> void:
 	if !events:
 		events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 		
 func savedata():
+	#print("test")
 	if !events :
 		print("null")
 	var save_dict = {
@@ -23,11 +25,11 @@ func savedata():
 		"GameEffects" : resources.GameEffects,
 		"uniqueItems" : resources.uniqueItems,
 		"Location" : resources.Location,
-		#"Critical_Event" : events.Critical_Event,
-		#"rawEvent" : events.rawEvent,
-		#"alreadyTriggeredEvent" : events.alreadyTriggeredEvent,
-		#"Priority_Event" : events.Priority_Event,
-		#"eventID" : events.eventID
+		"Critical_Event" : events.Critical_Event,
+		"rawEvent" : events.rawEvent,
+		"alreadyTriggeredEvent" : events.alreadyTriggeredEvent,
+		"Priority_Event" : events.Priority_Event,
+		"eventID" : events.eventID
 	}
 	return save_dict
 
@@ -62,9 +64,8 @@ func load():
 		resources.GameEffects = node_data["GameEffects"]
 		resources.uniqueItems = node_data["uniqueItems"]
 		resources.Location = node_data["Location"]
-		#events.Critical_Event = node_data["Critical_Event"]
-		#events.rawEvent = node_data["rawEvent"]
-		#events.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
-		#events.Priority_Event = node_data["Priority_Event"]
-		#events.eventID = node_data["eventID"]
-		print(node_data)
+		events.Critical_Event = node_data["Critical_Event"]
+		events.rawEvent = node_data["rawEvent"]
+		events.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
+		events.Priority_Event = node_data["Priority_Event"]
+		events.eventID = node_data["eventID"]

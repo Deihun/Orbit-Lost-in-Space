@@ -10,8 +10,10 @@ extends Control
 @onready var putResources = $"/root/GlobalResources"
 @onready var SaveGame = SaveNLoad
 
-#VARIABLES
 
+#VARIABLES
+var resources 
+var events
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
 
@@ -23,7 +25,10 @@ func _ready():
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
 	EventHandler.ActivateEvent()
-	pass 
+	if SaveGame.isLoadGame:
+		_loadGameStart()
+	else:
+		_newGameStart()
 
 func getButtonPosition():
 	return camera.position + Vector2(-550,100)
@@ -32,8 +37,10 @@ func getButtonPosition():
 func _newGameStart():
 	pass
 
-func _loadGameStart(load_json):
-	pass
+func _loadGameStart():
+	SaveGame.load()
+	resources = SaveGame.resources
+	events = SaveGame.events
 
 func GameOver(OtherCommands):
 	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
@@ -79,6 +86,3 @@ func PAUSE() -> void:
 	var pause = $cam2d/PauseMenu
 	pause._pause()
 	pass # Replace with function body.
-
-
-#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -1,7 +1,7 @@
 extends Node
 
 @onready var getResources = $"/root/GlobalResources"
-@onready var SaveLoadGame = $Control
+@onready var SaveLoadGame = SaveNLoad
 
 var craftingItems
 var ongoingCraft = false

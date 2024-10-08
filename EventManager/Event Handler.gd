@@ -14,6 +14,7 @@ var isEventVisible = false
 var onlyOnceTrigger = true
 var currentActiveQueue : int = 0
 
+
 					#NON RETURNING METHODS
 #SETUP ZONES
 func _ready():

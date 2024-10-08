@@ -7,7 +7,6 @@ var scene_load_status = 0
 var newScene
 
 
-
 func _ready() -> void:
 	$TutorialPanel.Colorrect.visible = false
 	$PressAnywhere.disabled = true
