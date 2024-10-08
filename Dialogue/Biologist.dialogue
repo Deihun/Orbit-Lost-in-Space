@@ -4,11 +4,11 @@ Regina: Thanks for picking me up, if you need these biologist's hand for your ta
 - Nice to meet you Regina
 	Jerry: Hey, it's nice to meet you and if you need MY help you could do the same
 - I could use those hands if you know what I mean
-	Jerry: I could use those hands if you know what I mean 
-	Regina: Ugh, Pervert.
+	Jerry: I could use those hands if you know what I mean.
+	Regina: Ugh, Pervert. Get out of my room! => END
 - Start again => First_Meetup
 - Got to go => END
-Regina: See ya, Captain!
+Regina: See ya, Captain.
 => END
 
 ~ Second_Meetup

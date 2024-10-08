@@ -49,6 +49,3 @@ func _ready():	#init array, get all child spawn into array.
 					resource_instance = biogene.instantiate()
 		resource_instance.position = positions[i].position
 		add_child(resource_instance)
-
-
-
