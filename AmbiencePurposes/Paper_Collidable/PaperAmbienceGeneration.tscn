@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2onu2klyecou"]
+
+[ext_resource type="Script" path="res://AmbiencePurposes/Paper_Collidable/paper_ambience_generation.gd" id="1_5p7gt"]
+[ext_resource type="PackedScene" uid="uid://chdvqj1gl2shu" path="res://AmbiencePurposes/Paper_Collidable/Paper_Ambience.tscn" id="2_smbvb"]
+
+[node name="PaperAmbienceGeneration" type="Node2D"]
+script = ExtResource("1_5p7gt")
+Paper = ExtResource("2_smbvb")

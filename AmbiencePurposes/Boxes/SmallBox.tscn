@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://l3oth153v8dv"]
+
+[ext_resource type="Texture2D" uid="uid://cj4w00cxpq0as" path="res://AmbiencePurposes/Boxes/SmallBoxes.png" id="1_v4nfs"]
+
+[node name="SmallBox" type="RigidBody2D"]
+y_sort_enabled = true
+collision_mask = 19
+mass = 500.0
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(30, 57)
+texture = ExtResource("1_v4nfs")
+offset = Vector2(-14.36, -81.7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, 43, -14, 64, 39, 67, 74, 68, 59, 43)

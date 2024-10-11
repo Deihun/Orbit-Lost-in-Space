@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcb5l6014oa70"]
+
+[ext_resource type="Script" path="res://Scenes/Cycle_Report/cycle_report_bar.gd" id="1_beqlf"]
+
+[node name="CycleReportBar" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1273.0
+offset_bottom = -1003.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_beqlf")
+
+[node name="CycleReportBar_Label_Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 2.0
+offset_right = 659.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<Test>"

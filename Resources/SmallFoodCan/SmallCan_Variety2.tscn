@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4yvmesq7ajf7"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dexjcuegpaetd" path="res://Resources/SmallFoodCan/Friction.tres" id="1_gmrke"]
+[ext_resource type="Script" path="res://Resources/SmallFoodCan/small_can_variety_1.gd" id="2_83xum"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_303oq"]
+[ext_resource type="Texture2D" uid="uid://dtga6xl40slyx" path="res://Resources/SmallFoodCan/SmallFood_unpick_variety3_spritesheet.png" id="4_6wjqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou0d8"]
+size = Vector2(322, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjufs"]
+atlas = ExtResource("4_6wjqi")
+region = Rect2(255, 0, 255, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgt07"]
+atlas = ExtResource("4_6wjqi")
+region = Rect2(510, 0, 255, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2y6f"]
+atlas = ExtResource("4_6wjqi")
+region = Rect2(765, 0, 255, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkqoi"]
+atlas = ExtResource("4_6wjqi")
+region = Rect2(0, 0, 255, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6scw"]
+atlas = ExtResource("4_6wjqi")
+region = Rect2(1020, 0, 255, 255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yiba"]
+atlas = ExtResource("4_6wjqi")
+region = Rect2(1275, 0, 255, 255)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psu2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjufs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgt07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2y6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkqoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6scw")
+}],
+"loop": true,
+"name": &"Can_Rolling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yiba")
+}],
+"loop": true,
+"name": &"Can_Standing",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8kp4"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3c5y"]
+radius = 29.934
+
+[node name="SmallCanVariety1" type="RigidBody2D"]
+collision_mask = 19
+mass = 0.2
+physics_material_override = ExtResource("1_gmrke")
+gravity_scale = 0.0
+lock_rotation = true
+freeze_mode = 1
+linear_damp = 7.0
+script = ExtResource("2_83xum")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_303oq")]
+scale = Vector2(0.56, 0.56)
+collision_layer = 2
+action_name = "get Can Food"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-6, -1)
+scale = Vector2(0.56, 0.56)
+shape = SubResource("RectangleShape2D_ou0d8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -0.999992)
+scale = Vector2(0.38, 0.38)
+sprite_frames = SubResource("SpriteFrames_psu2t")
+animation = &"Can_Standing"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 12)
+scale = Vector2(0.56, 0.56)
+shape = SubResource("CircleShape2D_l8kp4")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.56, 0.56)
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12.5, 19.6429)
+shape = SubResource("CircleShape2D_a3c5y")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

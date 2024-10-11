@@ -1,15 +1,22 @@
 extends Timer
 
 #VARIABLE
-const countdown_start = 60
-var countdown_status = true
-var countdown_live
+@export var countdown_start : int= 3
+var countdown_status : bool = true
+var isGameStart : bool = false
+var countdown_live : int
+var dropBoxWarningStart : bool = false
 
 
 #VOID METHODS
 func _ready(): #Set-up the timer to start 
 	countdown_live = countdown_start + 1 
-	start()
+
+func GameStart():
+	if !isGameStart:
+		start()
+		isGameStart = true
+	pass
 
 
 func _on_timeout(): #Simple recursion everytime the timer stops, update the UI till it hits zero
@@ -20,12 +27,21 @@ func _on_timeout(): #Simple recursion everytime the timer stops, update the UI t
 		start()
 	elif countdown_status: 
 		checkForPlayer()
-
+	if!dropBoxWarningStart and countdown_live < 11:
+		var redUI = NodeFinder.find_node_by_name(get_tree().current_scene,"Red_UI_Indicator")
+		var dropboxWarning = NodeFinder.find_node_by_name(get_tree().current_scene, "LastMinute_Dropbox_indicator")
+		dropboxWarning.start()
+		dropBoxWarningStart = true
+		redUI.visible = true
 
 func checkForPlayer(): #Access dropbox hitboxes, if players inside, change scene; otherwise _______
-	var isPlayerInside = get_node("/root/TestingOnRun/DropBox/Player_Final_Count")
+	var isPlayerInside = NodeFinder.find_node_by_name(get_tree().current_scene, "Player_Final_Count")
+	var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
 	if isPlayerInside.getIsPlayerInsideCondition():
-		get_tree().change_scene_to_file("res://Scenes/TestingInteriorScene.tscn")
+		var db = NodeFinder.find_node_by_name(get_tree().current_scene, "DropBox")
+		db.interaction()
+		var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
+		r.updateGlobalResource()
+		player.endScene()
 	else:
-		print("Nasa Labas")
-		countdown_status = false
+		get_tree().reload_current_scene()

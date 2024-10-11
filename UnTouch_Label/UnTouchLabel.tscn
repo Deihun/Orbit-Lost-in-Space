@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxuf67du585m1"]
+
+[ext_resource type="Script" path="res://UnTouch_Label/un_touch_label.gd" id="1_yolfp"]
+[ext_resource type="FontFile" uid="uid://dwfbmrl27h8y0" path="res://Button_Textures/DEARBORN type.ttf" id="2_0rls4"]
+[ext_resource type="Texture2D" uid="uid://d2jh7ljbwodci" path="res://Button_Textures/ChoiceButton_UI.png" id="3_s221y"]
+
+[node name="UnTouchLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_yolfp")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+layout_mode = 2
+offset_left = 22.0
+offset_top = 15.0
+offset_right = 138.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.243338, 0.172258, 0.0773733, 1)
+theme_override_fonts/font = ExtResource("2_0rls4")
+theme_override_font_sizes/font_size = 25
+text = "[Text]"
+autowrap_mode = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 5
+layout_mode = 2
+offset_right = 176.0
+offset_bottom = 80.0
+texture = ExtResource("3_s221y")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 50

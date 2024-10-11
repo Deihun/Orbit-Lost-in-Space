@@ -1,34 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn5kk434y66lu"]
+[gd_scene load_steps=7 format=3 uid="uid://dn5kk434y66lu"]
 
 [ext_resource type="Script" path="res://Resources/Resource.gd" id="1_3gbmv"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="2_5bn7h"]
 [ext_resource type="Texture2D" uid="uid://ddr2eun7fonyi" path="res://Resources/Resource_Images/SmallFood_Unpickup_variety2.png" id="2_d4ymi"]
+[ext_resource type="Script" path="res://Resources/Push_Script.gd" id="2_d8hlj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32cik"]
 size = Vector2(77.1133, 77.1877)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uhtci"]
-radius = 19.0263
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jfdj"]
+radius = 91.0396
 
 [node name="SmallFood" type="Node2D"]
 script = ExtResource("1_3gbmv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(3, -6.00001)
-scale = Vector2(0.198047, 0.190141)
-texture = ExtResource("2_d4ymi")
+scale = Vector2(1, 0.96)
+collision_layer = 32
+collision_mask = 32
+gravity_scale = 0.0
+script = ExtResource("2_d8hlj")
 
-[node name="InteractionArea" parent="." instance=ExtResource("2_5bn7h")]
+[node name="InteractionArea" parent="RigidBody2D" instance=ExtResource("2_5bn7h")]
 light_mask = 2
 visibility_layer = 2
-action_name = "Apple"
+position = Vector2(-15.1479, 31.5556)
+scale = Vector2(11.174, 11.64)
+action_name = "Get Chicken Can"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(2.86102e-06, -2.45832)
-scale = Vector2(1.29268, 1.33333)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/InteractionArea"]
+position = Vector2(1.44513, -1.99504)
+scale = Vector2(0.144, 0.15)
 shape = SubResource("RectangleShape2D_32cik")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.144, 0.15)
+texture = ExtResource("2_d4ymi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("CircleShape2D_uhtci")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 12.5)
+scale = Vector2(0.144, 0.15)
+shape = SubResource("CircleShape2D_8jfdj")
+
+[connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]

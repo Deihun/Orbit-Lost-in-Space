@@ -1,0 +1,590 @@
+[gd_scene load_steps=2 format=3 uid="uid://biebc6r1spt82"]
+
+[ext_resource type="Script" path="res://Scripts/event_manager_not_ingame.gd" id="1_vywad"]
+
+[node name="EventManagerNotIngame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vywad")
+
+[node name="Panel_MainBColor" type="Panel" parent="."]
+modulate = Color(0.47788, 0.47788, 0.47788, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 1918.0
+offset_bottom = 1067.0
+
+[node name="Panel_CodePreviewBColor" type="Panel" parent="."]
+visibility_layer = 512
+layout_mode = 0
+offset_left = 40.0
+offset_top = 96.0
+offset_right = 889.0
+offset_bottom = 496.0
+
+[node name="Panel_Command" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 925.0
+offset_top = 505.0
+offset_right = 1151.0
+offset_bottom = 649.0
+
+[node name="Button_Clear" type="Button" parent="Panel_Command"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 1.0
+offset_right = 216.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+text = "CLEAR
+"
+
+[node name="Button_Add" type="Button" parent="Panel_Command"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 1.0
+offset_right = 176.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+text = "ADD"
+
+[node name="ScrollContainer_CodePreview_Item" type="ScrollContainer" parent="Panel_Command"]
+z_index = 20
+layout_mode = 0
+offset_left = 13.0
+offset_top = 71.0
+offset_right = 221.0
+offset_bottom = 132.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Command/ScrollContainer_CodePreview_Item"]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview"]
+z_index = 10
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="Label_Command_Guide" type="Label" parent="Panel_Command"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Command
+"
+
+[node name="LineEdit_Command" type="LineEdit" parent="Panel_Command"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 21.0
+offset_right = 220.0
+offset_bottom = 52.0
+placeholder_text = "Enter a  @Command"
+
+[node name="Panel_Conditions" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1156.0
+offset_top = 506.0
+offset_right = 1346.0
+offset_bottom = 649.0
+
+[node name="ScrollContainer_CodePreview_ChoicePreview" type="ScrollContainer" parent="Panel_Conditions"]
+z_index = 20
+layout_mode = 0
+offset_left = 9.0
+offset_top = 80.0
+offset_right = 181.0
+offset_bottom = 135.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview"]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview"]
+z_index = 10
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="Label_Conditions_Guide" type="Label" parent="Panel_Conditions"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Conditions
+"
+
+[node name="LineEdit_Command_Conditions" type="LineEdit" parent="Panel_Conditions"]
+layout_mode = 0
+offset_left = 91.0
+offset_right = 179.0
+offset_bottom = 31.0
+placeholder_text = "conditions"
+
+[node name="LineEdit_Command_Value" type="LineEdit" parent="Panel_Conditions"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 31.0
+offset_right = 103.0
+offset_bottom = 77.0
+placeholder_text = "Value"
+
+[node name="Button_Conditions_AddGroups" type="Button" parent="Panel_Conditions"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 31.0
+offset_right = 176.0
+offset_bottom = 53.0
+tooltip_text = "Add Specific Value in condition groups"
+theme_override_font_sizes/font_size = 10
+text = "ADD"
+
+[node name="Button_Condition_ResetValueGroup" type="Button" parent="Panel_Conditions"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 53.0
+offset_right = 176.0
+offset_bottom = 75.0
+tooltip_text = "Reset the container of value as group"
+theme_override_font_sizes/font_size = 10
+text = "RESET
+"
+
+[node name="Button3" type="Button" parent="Panel_Conditions"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Panel_Probability" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1353.0
+offset_top = 507.0
+offset_right = 1696.0
+offset_bottom = 644.0
+
+[node name="Button_AddGroup" type="Button" parent="Panel_Probability"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 24.0
+offset_right = 322.0
+offset_bottom = 60.0
+theme_override_colors/font_hover_color = Color(0.377167, 0.847477, 1.92523e-06, 1)
+theme_override_font_sizes/font_size = 10
+text = "ADD
+GROUP"
+
+[node name="Button_RemoveCommands2" type="Button" parent="Panel_Probability"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 60.0
+offset_right = 134.0
+offset_bottom = 96.0
+theme_override_colors/font_hover_color = Color(0.377167, 0.847477, 1.92523e-06, 1)
+theme_override_font_sizes/font_size = 10
+text = "REMOVE
+COMMAND"
+
+[node name="Button_AddCommands" type="Button" parent="Panel_Probability"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 59.0
+offset_right = 70.0
+offset_bottom = 95.0
+theme_override_colors/font_hover_color = Color(0.377167, 0.847477, 1.92523e-06, 1)
+theme_override_font_sizes/font_size = 10
+text = "ADD
+ COMMAND"
+
+[node name="Label_Probability_Guide" type="Label" parent="Panel_Probability"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 91.0
+offset_bottom = 25.0
+text = "Probability
+"
+
+[node name="LineEdit_Probability_Command" type="LineEdit" parent="Panel_Probability"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 26.0
+offset_right = 136.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "@Command"
+
+[node name="LineEdit_Probability_Probability" type="LineEdit" parent="Panel_Probability"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 26.0
+offset_right = 250.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "%Probability"
+
+[node name="ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup" type="ScrollContainer" parent="Panel_Probability"]
+z_index = 20
+layout_mode = 0
+offset_left = 9.0
+offset_top = 96.0
+offset_right = 133.0
+offset_bottom = 135.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup"]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview"]
+z_index = 10
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup" type="ScrollContainer" parent="Panel_Probability"]
+z_index = 20
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 320.0
+offset_bottom = 130.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup"]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview"]
+z_index = 10
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="ScrollContainer_CodePreview" type="ScrollContainer" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 40.0
+offset_top = 95.0
+offset_right = 886.0
+offset_bottom = 468.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="ScrollContainer_CodePreview"]
+z_index = 2
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer_CodePreview/VScrollBar_CodePreview"]
+z_index = 3
+custom_minimum_size = Vector2(800, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="Label_EventManager" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 4.0
+offset_right = 347.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.956863)
+theme_override_font_sizes/font_size = 46
+text = "Event Manager"
+
+[node name="Label_id" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1727.0
+offset_top = 24.0
+offset_right = 1873.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.956863)
+theme_override_font_sizes/font_size = 25
+text = "ID: <VALUE>"
+
+[node name="Label_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 22.0
+offset_right = 1074.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.956863)
+theme_override_font_sizes/font_size = 25
+text = "Name:
+"
+
+[node name="LineEdit" type="LineEdit" parent="Label_name"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 5.0
+offset_right = 703.0
+offset_bottom = 36.0
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+
+[node name="CheckButton_Repeatable" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 1739.0
+offset_top = 91.0
+offset_right = 1875.0
+offset_bottom = 122.0
+tooltip_text = "Allows event to be repeat again if its already been trigger"
+text = "Repeatable"
+
+[node name="CheckButton_Active" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 1739.0
+offset_top = 64.0
+offset_right = 1875.0
+offset_bottom = 95.0
+tooltip_text = "Allows event to be trigger on start randomly"
+text = "Active"
+
+[node name="Label_description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 61.0
+offset_right = 1074.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.956863)
+theme_override_font_sizes/font_size = 25
+text = "Description: 
+"
+
+[node name="TextEdit" type="TextEdit" parent="Label_description"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 3.0
+offset_right = 701.0
+offset_bottom = 185.0
+
+[node name="Button_AddEvent" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1674.0
+offset_top = 994.0
+offset_right = 1903.0
+offset_bottom = 1066.0
+text = "ADD EVENT"
+
+[node name="Button_Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1403.0
+offset_top = 993.0
+offset_right = 1632.0
+offset_bottom = 1065.0
+text = "CLEAR"
+
+[node name="Panel_ButtonGeneration" type="Panel" parent="."]
+z_index = 20
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.16
+anchor_top = 0.266
+anchor_right = 1.472
+anchor_bottom = 0.332
+offset_left = -1302.2
+offset_top = -15.28
+offset_right = -933.24
+offset_bottom = 134.44
+
+[node name="CheckButton_Hidden" type="CheckButton" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 1.0
+offset_right = 652.0
+offset_bottom = 32.0
+text = "Hidden"
+
+[node name="Panel_HiddenChoice" type="Panel" parent="Panel_ButtonGeneration"]
+visible = false
+layout_mode = 0
+offset_left = 550.0
+offset_top = 29.0
+offset_right = 778.0
+offset_bottom = 103.0
+
+[node name="Label_IDGuide4" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 75.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 10
+text = "Conditions"
+
+[node name="LineEdit_Item" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 23.0
+offset_right = 147.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "item"
+
+[node name="LineEdit_Condition" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 23.0
+offset_right = 75.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "e.g HAS"
+
+[node name="LineEdit_Amount" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 23.0
+offset_right = 219.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "#amount"
+
+[node name="Label_IDGuide5" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 4.0
+offset_right = 150.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 10
+text = "Item
+"
+
+[node name="ScrollContainer_CodePreview_ChoicePreview" type="ScrollContainer" parent="Panel_ButtonGeneration"]
+z_index = 20
+layout_mode = 0
+offset_left = 782.0
+offset_top = 10.0
+offset_right = 961.0
+offset_bottom = 170.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview"]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview"]
+z_index = 10
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="ScrollContainer_CodePreview_Item" type="ScrollContainer" parent="Panel_ButtonGeneration"]
+z_index = 20
+layout_mode = 0
+offset_left = 313.0
+offset_top = 113.0
+offset_right = 521.0
+offset_bottom = 211.0
+
+[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_ButtonGeneration/ScrollContainer_CodePreview_Item"]
+z_index = 10
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview"]
+z_index = 10
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="LineEdit_ID" type="LineEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 11.0
+offset_right = 282.0
+offset_bottom = 61.0
+placeholder_text = "#ID"
+
+[node name="Label_IDGuide" type="Label" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 21.0
+offset_right = 162.0
+offset_bottom = 44.0
+text = "On Click, it goes to > "
+
+[node name="Label_IDGuide3" type="Label" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 171.0
+offset_bottom = 23.0
+text = "ADD CHOICE BUTTON"
+
+[node name="Label_IDGuide2" type="Label" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 3.0
+offset_right = 477.0
+offset_bottom = 26.0
+text = "It will subtract:"
+
+[node name="Button_add_item" type="Button" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 80.0
+offset_right = 388.0
+offset_bottom = 111.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+text = "ADD"
+
+[node name="Button_clear_item" type="Button" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 81.0
+offset_right = 471.0
+offset_bottom = 112.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+text = "RESET"
+
+[node name="Button_add" type="Button" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 176.0
+offset_right = 941.0
+offset_bottom = 207.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+text = "ADD"
+
+[node name="TextEdit_Description" type="TextEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 69.0
+offset_right = 287.0
+offset_bottom = 210.0
+placeholder_text = "DESCRIPTION"
+
+[node name="LineEdit_amount" type="LineEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 28.0
+offset_right = 531.0
+offset_bottom = 71.0
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+placeholder_text = "#AMOUNT"
+
+[node name="LineEdit_item" type="LineEdit" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 28.0
+offset_right = 421.0
+offset_bottom = 71.0
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+placeholder_text = "ITEM"
+
+[node name="Button" type="Button" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 177.0
+offset_right = 861.0
+offset_bottom = 204.0
+text = "RESET"
+
+[connection signal="pressed" from="Panel_Command/Button_Clear" to="." method="_ClearCommand"]
+[connection signal="pressed" from="Panel_Command/Button_Add" to="." method="_EnterCommand"]
+[connection signal="pressed" from="Panel_Conditions/Button_Conditions_AddGroups" to="." method="_AddValue"]
+[connection signal="pressed" from="Panel_Conditions/Button_Condition_ResetValueGroup" to="." method="_ConditionGroupsReset"]
+[connection signal="pressed" from="Panel_Probability/Button_AddGroup" to="." method="_ProbabilityAddGroup"]
+[connection signal="pressed" from="Panel_Probability/Button_RemoveCommands2" to="." method="_RemoveCommand_Probability"]
+[connection signal="pressed" from="Panel_Probability/Button_AddCommands" to="." method="_AddCommand_Probability"]
+[connection signal="pressed" from="Button_AddEvent" to="." method="add_new_event"]
+[connection signal="pressed" from="Panel_ButtonGeneration/CheckButton_Hidden" to="." method="_Hidden_Choice_Toggle"]
+[connection signal="text_changed" from="Panel_ButtonGeneration/LineEdit_ID" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Panel_ButtonGeneration/Button_add_item" to="." method="add_items"]
+[connection signal="pressed" from="Panel_ButtonGeneration/Button_clear_item" to="." method="_ClearItems"]
+[connection signal="pressed" from="Panel_ButtonGeneration/Button_add" to="." method="on_finalize_choice_button"]
+[connection signal="pressed" from="Panel_ButtonGeneration/Button" to="." method="_RESET_TemporaryITEM"]
