@@ -134,7 +134,7 @@ offset_right = 131.0
 offset_bottom = 25.0
 tooltip_text = "Add Specific Value in condition groups"
 theme_override_font_sizes/font_size = 10
-text = "ADD"
+text = "SET"
 
 [node name="Button_Condition_ResetValueGroup" type="Button" parent="Panel_Conditions"]
 layout_mode = 0
@@ -152,39 +152,46 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 
+[node name="LineEdit_Value" type="LineEdit" parent="Panel_Conditions"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 54.0
+offset_right = 149.0
+offset_bottom = 85.0
+placeholder_text = "Value"
+
 [node name="Conditional_OptionButton" type="OptionButton" parent="Panel_Conditions"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 21.0
 offset_right = 150.0
 offset_bottom = 52.0
+scale = Vector2(0.580556, 0.872727)
 selected = 0
-item_count = 3
+item_count = 12
 popup/item_0/text = "HAS"
 popup/item_1/text = "PLACE"
 popup/item_1/id = 1
-popup/item_2/text = "RELATIONSHIP"
+popup/item_2/text = "RELATIONSHIP_MAX_WITH_ME"
 popup/item_2/id = 2
-
-[node name="HiddenChoice_Item_OptionButton" type="OptionButton" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 55.0
-offset_right = 147.0
-offset_bottom = 86.0
-selected = 0
-item_count = 6
-popup/item_0/text = "Spareparts"
-popup/item_1/text = "Biogene"
-popup/item_1/id = 1
-popup/item_2/text = "Food"
-popup/item_2/id = 2
-popup/item_3/text = "Medicine"
+popup/item_3/text = "RELATIONSHIP_HIGH_75%_WITH_ME"
 popup/item_3/id = 3
-popup/item_4/text = "Oxygen"
-popup/item_4/id = 4
-popup/item_5/text = "Fuel"
+popup/item_4/text = "RELATIONSHIP_LOWER_25%_WITH_ME"
+popup/item_4/id = 5
+popup/item_5/text = "RELATIONSHIP_LOWER_0%_WITH_ME"
 popup/item_5/id = 5
+popup/item_6/text = "SANITY_100%"
+popup/item_6/id = 6
+popup/item_7/text = "SANITY_75%"
+popup/item_7/id = 7
+popup/item_8/text = "SANITY_25%"
+popup/item_8/id = 8
+popup/item_9/text = "SANITY_0%"
+popup/item_9/id = 9
+popup/item_10/text = "HAS_INGAME_EFFECTS"
+popup/item_10/id = 10
+popup/item_11/text = "HAS_UNIQUE_ITEM"
+popup/item_11/id = 11
 
 [node name="Panel_Probability" type="Panel" parent="."]
 layout_mode = 0

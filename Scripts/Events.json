@@ -246,26 +246,5 @@
 		"description": "Testing Description",
 		"id": 13,
 		"name": "Testing"
-	},
-	{
-		"Conditions": [
-			"HAS",
-			[
-				"@SPAREPARTS",
-				"@SPAREPARTS"
-			]
-		],
-		"RandomTrue": false,
-		"Repeatable": false,
-		"description_input": "Testing Conditions",
-		"id": 14,
-		"name": "testing Name"
-	},
-	{
-		"RandomTrue": true,
-		"Repeatable": false,
-		"description": "testing 15",
-		"id": 15,
-		"name": "test"
 	}
 ]

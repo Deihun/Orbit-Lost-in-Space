@@ -51,8 +51,9 @@ func add_new_event():
 		new_event[choice_id] = TemporaryChoices[choice_id]
 	if CommandList.size() > 0:
 		new_event["Command"] = CommandList
-	if !$Panel_Conditions/HiddenChoice_Item_OptionButton.text == "" and _Condition_ValueGroup.size() > 0:
-		new_event["Conditions"] = [$Panel_Conditions/Conditional_OptionButton.text,_Condition_ValueGroup]
+	if _Condition_ValueGroup.size() > 0:
+		print("more than shit")
+		new_event["Conditions"] = _Condition_ValueGroup.duplicate(true)
 	event_data.append(new_event)
 	if _probabilityGroup.size()> 0:
 		var a = _probabilityGroup.duplicate(true)
@@ -196,7 +197,12 @@ var _Condition_ValueGroup = []
 
 
 func _AddValue() -> void:
+	_ConditionGroupsReset()
+	#_Condition_ValueGroup[0][0] = $Panel_Conditions/Conditional_OptionButton.text
+	#_Condition_ValueGroup[0][1] = $Panel_Conditions/LineEdit_Value.text
+	#_Condition_ValueGroup = [[$Panel_Conditions/Conditional_OptionButton.text][$Panel_Conditions/LineEdit_Value.text]]
 	_Condition_ValueGroup.append($Panel_Conditions/Conditional_OptionButton.text)
+	_Condition_ValueGroup.append($Panel_Conditions/LineEdit_Value.text)
 	update_UI()
 	pass # Replace with function body.
 
