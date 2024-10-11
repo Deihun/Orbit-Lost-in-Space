@@ -13,7 +13,7 @@ var eventID = []
 var isEventVisible = false
 var onlyOnceTrigger = true
 var currentActiveQueue : int = 0
-
+var onceTutorial : bool = false
 
 					#NON RETURNING METHODS
 #SETUP ZONES
@@ -46,6 +46,12 @@ func switchIt():
 		eventReader.visible = false
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("ClosingAnimation")
+		if !onceTutorial:
+			var tutorialEnd = NodeFinder.find_node_by_name(get_tree().current_scene,"TutorialPanel4")
+			onceTutorial = true
+			if tutorialEnd:
+				tutorialEnd.visible = true
+			
 	pass
 
 func _on_opening_ui_scene_animation_finished() -> void:

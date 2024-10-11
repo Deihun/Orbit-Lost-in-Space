@@ -9,7 +9,11 @@ var master_volume : float = 0.0
 var music_volume : float = 0.0
 var sfx_volume : float = 0.0
 var tutorial_set : bool = true
-
+var tutorialScene: bool 
+var tutorialPanel_1 : bool
+var tutorialPanel_2 : bool 
+var tutorialPanel_3 : bool 
+var tutorialPanel_4 : bool 
 var loaded_data : Dictionary = {}
 
 func _ready() -> void:
@@ -23,7 +27,12 @@ func create_storage_dictionary() -> Dictionary:
 		"master_volume" : master_volume,
 		"music_volume" : music_volume,
 		"sfx_volume" : sfx_volume,
-		"keybinds" : create_keybind_dictionary()
+		"keybinds" : create_keybind_dictionary(),
+		"TutorialScene" : tutorialScene,
+		"TutorialPanel1" : tutorialPanel_1,
+		"TutorialPanel2" : tutorialPanel_2,
+		"TutorialPanel3" : tutorialPanel_3,
+		"TutorialPanel4" : tutorialPanel_4
 	}
 	return settings_container_dict
 

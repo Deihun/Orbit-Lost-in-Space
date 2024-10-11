@@ -28,9 +28,11 @@ func _on_timeout(): #Simple recursion everytime the timer stops, update the UI t
 	elif countdown_status: 
 		checkForPlayer()
 	if!dropBoxWarningStart and countdown_live < 11:
+		var redUI = NodeFinder.find_node_by_name(get_tree().current_scene,"Red_UI_Indicator")
 		var dropboxWarning = NodeFinder.find_node_by_name(get_tree().current_scene, "LastMinute_Dropbox_indicator")
 		dropboxWarning.start()
 		dropBoxWarningStart = true
+		redUI.visible = true
 
 func checkForPlayer(): #Access dropbox hitboxes, if players inside, change scene; otherwise _______
 	var isPlayerInside = NodeFinder.find_node_by_name(get_tree().current_scene, "Player_Final_Count")

@@ -8,8 +8,10 @@ var oxygen = 1000
 var spareparts = 10000000
 var biogene = 0
 var ductape : int = 0
+var medicine: int = 0
 var emergencyOxy = 0
 var emergencyFuel = 0
+
 
 var GameEffects = [] 
 var uniqueItems = []

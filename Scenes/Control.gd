@@ -16,9 +16,12 @@ var resources
 var events
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
+var eventHandler
 
 #VOID METHODS // CAMERA CONTROLS - SETTINGS		
 func _process(delta):
+	if !eventHandler:
+		eventHandler = NodeFinder.find_node_by_name(get_tree().current_scene, "EventHandler")
 	pass
 
 func _ready():
@@ -40,7 +43,17 @@ func _newGameStart():
 func _loadGameStart():
 	SaveGame.load()
 	resources = SaveGame.resources
-	events = SaveGame.events
+	await get_tree().create_timer(0.05).timeout
+	if eventHandler:
+		print("it exist")
+	eventHandler.Critical_Event = SaveGame.critical
+	eventHandler.rawEvent = SaveGame.rawEvent
+	eventHandler.alreadyTriggeredEvent = SaveGame.alreadyTriggeredEvent
+	eventHandler.eventID = SaveGame.eventID
+	
+	var test = []
+	var abc = test
+
 
 func GameOver(OtherCommands):
 	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME

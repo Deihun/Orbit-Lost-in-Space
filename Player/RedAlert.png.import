@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpoeki66yyjkf"
-path="res://.godot/imported/StartText.png-0cd3db8eff5aa48b9d860a1aec7d6182.ctex"
+uid="uid://b58dt7l7pk8hc"
+path="res://.godot/imported/RedAlert.png-a3fcd68586fa3fa6e9cd2c892e628c98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/StartText.png"
-dest_files=["res://.godot/imported/StartText.png-0cd3db8eff5aa48b9d860a1aec7d6182.ctex"]
+source_file="res://Player/RedAlert.png"
+dest_files=["res://.godot/imported/RedAlert.png-a3fcd68586fa3fa6e9cd2c892e628c98.ctex"]
 
 [params]
 

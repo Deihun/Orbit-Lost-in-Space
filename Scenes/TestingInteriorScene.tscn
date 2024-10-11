@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=24 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -11,12 +11,23 @@
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
-[ext_resource type="Texture2D" uid="uid://b72m5ni8snr5k" path="res://InteriorScene/Storage Scene.png" id="11_dyr30"]
 [ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
+[ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
+[ext_resource type="Script" path="res://Scenes/storage_scene.gd" id="14_dtqtq"]
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
+[ext_resource type="Script" path="res://Scenes/Spareparts.gd" id="14_vw57t"]
 [ext_resource type="PackedScene" uid="uid://dcb5l6014oa70" path="res://Scenes/Cycle_Report/CycleReport_Bar.tscn" id="15_640qk"]
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55a4j"]
+size = Vector2(267.869, 259.306)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyq57"]
+size = Vector2(340.863, 155.586)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unwh2"]
+size = Vector2(354.529, 149.668)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
@@ -42,6 +53,7 @@ offset_bottom = 349.0
 tutorialTitle = Array[String](["Inside the Shuttle"])
 tutorialDescription = Array[String](["Welcome to the Shuttle. Navigate the shuttle by using each arrow at the bottom corners."])
 textureLink = Array[String](["res://Player/Pause_Button.png"])
+tutorialPanel_ID = 1
 
 [node name="TutorialPanel3" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
 visible = false
@@ -52,6 +64,7 @@ offset_bottom = 383.0
 tutorialTitle = Array[String](["Crafting Resources"])
 tutorialDescription = Array[String](["Welcome to the Crafting room. You can craft different kinds of resources using fuel and other materials. It takes 1 cycle to finish the crafting process."])
 textureLink = Array[String](["res://TutorialUI/test.png"])
+tutorialPanel_ID = 3
 
 [node name="TutorialPanel2" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
 visible = false
@@ -62,6 +75,7 @@ offset_bottom = 314.0
 tutorialTitle = Array[String](["Encountering Events"])
 tutorialDescription = Array[String](["Welcome to the cockpit. The screen will display events that happens to your ship and crew. You will be presented with different choices that either consumes or gives resources."])
 textureLink = Array[String](["res://TutorialUI/test.png"])
+tutorialPanel_ID = 2
 
 [node name="TutorialPanel4" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
 visible = false
@@ -72,6 +86,7 @@ offset_bottom = 344.0
 tutorialTitle = Array[String](["Ending Cycles"])
 tutorialDescription = Array[String](["After finishing the event, you can end the cycle. After ending the cycle, a set amount of resource is consumed and random events may happen to you and your crew."])
 textureLink = Array[String](["res://TutorialUI/test.png"])
+tutorialPanel_ID = 4
 
 [node name="cam2d" type="Camera2D" parent="."]
 z_index = 100
@@ -187,12 +202,101 @@ texture = ExtResource("10_7sn4k")
 [node name="StorageScene" type="Sprite2D" parent="."]
 position = Vector2(-3000, 1500)
 scale = Vector2(1.03854, 1.09907)
-texture = ExtResource("11_dyr30")
+texture = ExtResource("13_mblje")
+script = ExtResource("14_dtqtq")
 
 [node name="ClickOnLeft" type="Area2D" parent="StorageScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/ClickOnLeft"]
 polygon = PackedVector2Array(887.785, 381.231, 587.363, 444.922, 105.918, 544.096, 964.816, 541.367, 961.927, 283.876)
+
+[node name="CheckSpareparts" type="Area2D" parent="StorageScene"]
+script = ExtResource("14_vw57t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/CheckSpareparts"]
+polygon = PackedVector2Array(430.412, 127.38, 363.01, 176.513, 361.084, 332.099, 614.324, 327.55, 668.246, 272.958, 666.32, 129.2)
+
+[node name="Spareparts" type="Label" parent="StorageScene/CheckSpareparts"]
+visible = false
+offset_left = 445.0
+offset_top = 96.0
+offset_right = 568.0
+offset_bottom = 125.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Spareparts: 0/0"
+
+[node name="CheckingMedicine" type="Area2D" parent="StorageScene"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StorageScene/CheckingMedicine"]
+position = Vector2(589.196, -201.532)
+shape = SubResource("RectangleShape2D_55a4j")
+
+[node name="Medicine" type="Label" parent="StorageScene/CheckingMedicine"]
+visible = false
+offset_left = 732.759
+offset_top = -238.383
+offset_right = 855.759
+offset_bottom = -209.383
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Spareparts: 0/0"
+
+[node name="CheckingBiogene" type="Area2D" parent="StorageScene"]
+
+[node name="Biogene" type="Label" parent="StorageScene/CheckingBiogene"]
+visible = false
+offset_left = 290.793
+offset_top = -111.913
+offset_right = 413.793
+offset_bottom = -80.9128
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Spareparts: 0/0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StorageScene/CheckingBiogene"]
+position = Vector2(107.844, -122.376)
+shape = SubResource("RectangleShape2D_gyq57")
+
+[node name="CheckingRation" type="Area2D" parent="StorageScene"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StorageScene/CheckingRation"]
+position = Vector2(106.788, 227.24)
+shape = SubResource("RectangleShape2D_unwh2")
+
+[node name="Ration" type="Label" parent="StorageScene/CheckingRation"]
+visible = false
+offset_left = 18.2948
+offset_top = 309.352
+offset_right = 141.295
+offset_bottom = 338.352
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Spareparts: 0/0"
+
+[node name="CheckingFuel" type="Area2D" parent="StorageScene"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/CheckingFuel"]
+polygon = PackedVector2Array(-719.279, -447.651, -653.802, -545.916, -188.727, -559.564, -148.285, -427.634, -141.545, 273.868, -247.463, 341.198, -241.685, 370.313, -493, 439.463, -518.998, 394.879, -588.326, 401.248, -674.023, 356.665, -699.058, 339.378, -629.73, 177.423, -635.508, -51.8621, -725.056, -210.178)
+
+[node name="Fuel" type="Label" parent="StorageScene/CheckingFuel"]
+visible = false
+offset_left = -120.361
+offset_top = 162.865
+offset_right = 2.63861
+offset_bottom = 191.865
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Spareparts: 0/0"
+
+[node name="CheckingOxygen" type="Area2D" parent="StorageScene"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/CheckingOxygen"]
+polygon = PackedVector2Array(-976.371, -527.719, -814.605, -501.333, -793.421, -283.876, -723.131, -204.719, -636.47, -48.2225, -632.619, 185.611, -699.058, 335.738, -758.758, 376.682, -805.939, 384.871, -794.384, 425.815, -841.566, 439.463, -879.119, 414.896, -872.378, 399.429, -967.705, 412.167)
+
+[node name="Oxygen" type="Label" parent="StorageScene/CheckingOxygen"]
+visible = false
+offset_left = -695.207
+offset_top = 244.752
+offset_right = -572.207
+offset_bottom = 273.752
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Spareparts: 0/0"
 
 [node name="CycleReport" type="Sprite2D" parent="."]
 position = Vector2(-3000, 3000)
@@ -224,6 +328,7 @@ alignment = 2
 [node name="CraftingTab" parent="." instance=ExtResource("13_10a7a")]
 position = Vector2(-3982, -471)
 
+[connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
@@ -233,4 +338,16 @@ position = Vector2(-3982, -471)
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
 [connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
+[connection signal="mouse_entered" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="StorageScene/CheckingMedicine" to="StorageScene" method="_on_checking_medicine_mouse_entered"]
+[connection signal="mouse_exited" from="StorageScene/CheckingMedicine" to="StorageScene" method="_on_checking_medicine_mouse_exited"]
+[connection signal="mouse_entered" from="StorageScene/CheckingBiogene" to="StorageScene" method="_on_checking_biogene_mouse_entered"]
+[connection signal="mouse_exited" from="StorageScene/CheckingBiogene" to="StorageScene" method="_on_checking_biogene_mouse_exited"]
+[connection signal="mouse_entered" from="StorageScene/CheckingRation" to="StorageScene" method="_on_checking_ration_mouse_entered"]
+[connection signal="mouse_exited" from="StorageScene/CheckingRation" to="StorageScene" method="_on_checking_ration_mouse_exited"]
+[connection signal="mouse_entered" from="StorageScene/CheckingFuel" to="StorageScene" method="_on_checking_fuel_mouse_entered"]
+[connection signal="mouse_exited" from="StorageScene/CheckingFuel" to="StorageScene" method="_on_checking_fuel_mouse_exited"]
+[connection signal="mouse_entered" from="StorageScene/CheckingOxygen" to="StorageScene" method="_on_checking_oxygen_mouse_entered"]
+[connection signal="mouse_exited" from="StorageScene/CheckingOxygen" to="StorageScene" method="_on_checking_oxygen_mouse_exited"]
 [connection signal="input_event" from="CycleReport/ClickAnywhereButton" to="cam2d" method="_on_click_anywhere_button_input_event"]

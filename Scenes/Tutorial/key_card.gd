@@ -13,7 +13,6 @@ func _process(delta):#Call the inventory repeatedly until the correct path is de
 	if not inventory:
 		inventory = NodeFinder.find_node_by_name(get_tree().current_scene, "UI_On_Hand")
 		if inventory:
-			print("Small Biogene already initialize")
 			set_process(false)
 	interaction_area.interact = Callable(self,"interaction") #Callable to make sure interaction methods are able to access by others
 

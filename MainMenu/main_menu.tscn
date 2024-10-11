@@ -141,17 +141,13 @@ theme_override_font_sizes/font_size = 60
 text = "Quit
 "
 
-[connection signal="pressed" from="DeveloperOption" to="." method="_on_developer_option_pressed"]
-[connection signal="pressed" from="New_Game_Button" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="Load_Game_Button" to="." method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
 [node name="MusicStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hxbdb")
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/New_Game_Button" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load_Game_Button" to="." method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="DeveloperOption" to="." method="_on_developer_option_pressed"]
+[connection signal="pressed" from="New_Game_Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Load_Game_Button" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

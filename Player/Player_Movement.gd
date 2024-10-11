@@ -142,6 +142,7 @@ func endScene():
 		$AllUIParents/BlackTransition.visible = true
 		endAnimationOnce = false
 	await get_tree().create_timer(5).timeout 
+	$AllUIParents/Red_UI_Indicator.visible = false
 	$AllUIParents/BlackTransition.visible = false
 	$AllUIParents/UI_On_Hand.visible = false
 	$AllUIParents/Label_Timer.visible =false

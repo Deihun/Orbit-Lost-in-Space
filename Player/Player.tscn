@@ -1,4 +1,4 @@
-[gd_scene load_steps=278 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=280 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -10,12 +10,14 @@
 [ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="3_ay1c7"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 [ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
+[ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
+[ext_resource type="Texture2D" uid="uid://b58dt7l7pk8hc" path="res://Player/RedAlert.png" id="5_uu3ny"]
 [ext_resource type="FontFile" uid="uid://c7uhqrt01aycb" path="res://Player/Dashhorizon-eZ5wg.otf" id="9_38whn"]
 [ext_resource type="Script" path="res://Player/UI_Resources_InRun.gd" id="10_bg53w"]
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
 [ext_resource type="Texture2D" uid="uid://48fa0ct25py2" path="res://Player/Meteor_Spritesheet.png" id="11_lrphj"]
-[ext_resource type="Texture2D" uid="uid://dkdyiogfvnfmr" path="res://Scenes/StartText.png" id="15_up6st"]
+[ext_resource type="Texture2D" uid="uid://cpoeki66yyjkf" path="res://Scenes/StartText.png" id="15_up6st"]
 [ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
 
@@ -1887,6 +1889,18 @@ texture = ExtResource("15_up6st")
 
 [node name="StartUI_timer" type="Timer" parent="player/AllUIParents/StartUI_label"]
 
+[node name="Red_UI_Indicator" type="Node2D" parent="player/AllUIParents"]
+visible = false
+script = ExtResource("4_q5jjs")
+
+[node name="Red" type="Sprite2D" parent="player/AllUIParents/Red_UI_Indicator"]
+position = Vector2(958, 540)
+texture = ExtResource("5_uu3ny")
+
+[node name="_Red_UI_Indicator_timer" type="Timer" parent="player/AllUIParents/Red_UI_Indicator"]
+wait_time = 0.1
+autostart = true
+
 [node name="FullInventoryIndicator" parent="player/AllUIParents" instance=ExtResource("2_1yavb")]
 visible = false
 z_index = 200
@@ -1894,6 +1908,7 @@ position = Vector2(419, 875)
 scale = Vector2(2.065, 2.065)
 
 [node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
+visible = false
 z_index = 200
 script = ExtResource("2_7naq2")
 
@@ -1962,79 +1977,6 @@ theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
 theme_override_fonts/font = ExtResource("3_ay1c7")
 text = "W"
 
-[node name="PauseMenu" parent="player/AllUIParents" instance=ExtResource("2_od3ng")]
-visible = false
-offset_left = 368.0
-offset_top = 104.0
-offset_right = 368.0
-offset_bottom = 104.0
-
-[node name="Game in EarlyProgress" type="Label" parent="player/AllUIParents"]
-offset_left = 1515.0
-offset_top = 1038.0
-offset_right = 1902.0
-offset_bottom = 1061.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "GAME IS STILL IN EARLY DEVELOPMENT PROGRESS"
-
-[node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
-visible = false
-z_index = 60
-offset_left = 330.0
-offset_top = 927.0
-offset_right = -1422.0
-offset_bottom = -109.0
-scale = Vector2(3, 3)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label_Timer" type="Label" parent="player/AllUIParents"]
-visible = false
-anchors_preset = -1
-anchor_left = -0.003125
-anchor_top = 0.0157407
-anchor_right = -0.003125
-anchor_bottom = 0.0157407
-offset_left = 50.0
-offset_top = 861.0
-offset_right = 221.0
-offset_bottom = 1031.0
-scale = Vector2(1.105, 1.105)
-theme_override_colors/font_color = Color(1, 0.920667, 0.32, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("9_38whn")
-theme_override_font_sizes/font_size = 146
-text = "90"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Globe_Timer_Sprite" type="Sprite2D" parent="player/AllUIParents"]
-visible = false
-z_index = -134
-position = Vector2(146.788, 942.463)
-scale = Vector2(1.25657, 1.26637)
-texture = ExtResource("10_cjn85")
-
-[node name="Meteor_animated" type="AnimatedSprite2D" parent="player/AllUIParents/Globe_Timer_Sprite"]
-visible = false
-position = Vector2(-2.21835, -5.10323)
-rotation = -0.698132
-sprite_frames = SubResource("SpriteFrames_b1bq1")
-animation = &"idle_meteor"
-frame_progress = 0.290633
-offset = Vector2(0, -138.62)
-
-[node name="Pause_Button" type="Button" parent="player/AllUIParents"]
-offset_left = 1794.0
-offset_top = 24.0
-offset_right = 1901.0
-offset_bottom = 121.0
-
-[node name="Sprite2D" type="Sprite2D" parent="player/AllUIParents/Pause_Button"]
-position = Vector2(55, 50)
-scale = Vector2(0.704902, 0.681373)
-texture = ExtResource("3_my03n")
-
 [node name="ResourceUI_InRun" type="Node2D" parent="player/AllUIParents"]
 visible = false
 position = Vector2(750, 879)
@@ -2099,6 +2041,79 @@ offset_bottom = -373.61
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Medicine: 0"
 
+[node name="Game in EarlyProgress" type="Label" parent="player/AllUIParents"]
+offset_left = 1515.0
+offset_top = 1038.0
+offset_right = 1902.0
+offset_bottom = 1061.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "GAME IS STILL IN EARLY DEVELOPMENT PROGRESS"
+
+[node name="Label_Timer" type="Label" parent="player/AllUIParents"]
+visible = false
+anchors_preset = -1
+anchor_left = -0.003125
+anchor_top = 0.0157407
+anchor_right = -0.003125
+anchor_bottom = 0.0157407
+offset_left = 50.0
+offset_top = 861.0
+offset_right = 221.0
+offset_bottom = 1031.0
+scale = Vector2(1.105, 1.105)
+theme_override_colors/font_color = Color(1, 0.920667, 0.32, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_38whn")
+theme_override_font_sizes/font_size = 146
+text = "90"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="player/AllUIParents" instance=ExtResource("2_od3ng")]
+visible = false
+offset_left = 368.0
+offset_top = 104.0
+offset_right = 368.0
+offset_bottom = 104.0
+
+[node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
+visible = false
+z_index = 60
+offset_left = 330.0
+offset_top = 927.0
+offset_right = -1422.0
+offset_bottom = -109.0
+scale = Vector2(3, 3)
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause_Button" type="Button" parent="player/AllUIParents"]
+offset_left = 1794.0
+offset_top = 24.0
+offset_right = 1901.0
+offset_bottom = 121.0
+
+[node name="Sprite2D" type="Sprite2D" parent="player/AllUIParents/Pause_Button"]
+position = Vector2(55, 50)
+scale = Vector2(0.704902, 0.681373)
+texture = ExtResource("3_my03n")
+
+[node name="Globe_Timer_Sprite" type="Sprite2D" parent="player/AllUIParents"]
+visible = false
+z_index = -134
+position = Vector2(146.788, 942.463)
+scale = Vector2(1.25657, 1.26637)
+texture = ExtResource("10_cjn85")
+
+[node name="Meteor_animated" type="AnimatedSprite2D" parent="player/AllUIParents/Globe_Timer_Sprite"]
+visible = false
+position = Vector2(-2.21835, -5.10323)
+rotation = -0.698132
+sprite_frames = SubResource("SpriteFrames_b1bq1")
+animation = &"idle_meteor"
+frame_progress = 0.290633
+offset = Vector2(0, -138.62)
+
 [node name="Player2" type="Sprite2D" parent="player"]
 visible = false
 y_sort_enabled = true
@@ -2143,6 +2158,7 @@ wait_time = 0.2
 
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
 [connection signal="body_exited" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_exited"]
+[connection signal="timeout" from="player/AllUIParents/Red_UI_Indicator/_Red_UI_Indicator_timer" to="player/AllUIParents/Red_UI_Indicator" method="_on__red_ui_indicator_timer_timeout"]
 [connection signal="button_down" from="player/AllUIParents/Pause_Button" to="player" method="_on_pause_button_button_down"]
 [connection signal="animation_finished" from="player/Player4" to="player" method="_on_player_4_animation_finished"]
 [connection signal="timeout" from="player/PickUpCooldown" to="player" method="ReadyToRun"]
