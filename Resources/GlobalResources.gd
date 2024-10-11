@@ -1,7 +1,7 @@
 extends Node
 
 
-#VARIABLES
+#VARIABLES 
 var ration = 0
 var fuel = 0
 var oxygen = 1000
@@ -12,6 +12,15 @@ var medicine: int = 0
 var emergencyOxy = 0
 var emergencyFuel = 0
 
+#EVENT VARIABLES
+var Critical_Event = []
+var alreadyTriggeredEvent = []
+var Priority_Event = []
+var eventID = []
+var currentActiveQueue : int = 0
+
+
+#
 
 var GameEffects = [] 
 var uniqueItems = []

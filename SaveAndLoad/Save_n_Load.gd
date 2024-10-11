@@ -34,11 +34,10 @@ func savedata():
 		"GameEffects" : resources.GameEffects,
 		"uniqueItems" : resources.uniqueItems,
 		"Location" : resources.Location,
-		"Critical_Event" : events.Critical_Event,
-		"rawEvent" : events.rawEvent,
-		"alreadyTriggeredEvent" : events.alreadyTriggeredEvent,
-		"Priority_Event" : events.Priority_Event,
-		"eventID" : events.eventID
+		"Critical_Event" : resources.Critical_Event,
+		"alreadyTriggeredEvent" : resources.alreadyTriggeredEvent,
+		"Priority_Event" : resources.Priority_Event,
+		"eventID" : resources.eventID
 	}
 	return save_dict
 
@@ -73,8 +72,7 @@ func load():
 		resources.GameEffects = node_data["GameEffects"]
 		resources.uniqueItems = node_data["uniqueItems"]
 		resources.Location = node_data["Location"]
-		critical = node_data["Critical_Event"]
-		rawEvent = node_data["rawEvent"]
-		alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
-		Priority_Event = node_data["Priority_Event"]
-		eventID = node_data["eventID"]
+		resources.Critical_Event = node_data["Critical_Event"]
+		resources.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
+		resources.Priority_Event = node_data["Priority_Event"]
+		resources.eventID = node_data["eventID"]

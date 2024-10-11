@@ -61,7 +61,7 @@ func GameOver(OtherCommands):
 
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
-	if EventHandler.currentActiveQueue <= 0 and !$EventHandler.visible:
+	if GlobalResources.currentActiveQueue <= 0 and !$EventHandler.visible:
 		#DELETE THIS TAB LATER, FOR TESTING PURPOSES
 		print("ADDING FUEL")
 		GlobalResources.subtractItem(true,"FUEL",10)

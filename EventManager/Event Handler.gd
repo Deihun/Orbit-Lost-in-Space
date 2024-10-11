@@ -4,15 +4,9 @@ extends Node2D
 @onready var Cycle = $"/root/IngameStoredProcessSetting"
 @onready var OpeningAnimation = $EventUIAnimation
 
-var Active = true
-var Critical_Event = []
 var rawEvent = []
-var alreadyTriggeredEvent = []
-var Priority_Event = []
-var eventID = []
 var isEventVisible = false
-var onlyOnceTrigger = true
-var currentActiveQueue : int = 0
+var onlyOnceTrigger : bool = true
 var onceTutorial : bool = false
 
 					#NON RETURNING METHODS
@@ -76,21 +70,23 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 	onlyOnceTrigger = true
 	self.visible = true
 	var numbers_of_event =  int(1 + (randf() * (Cycle.getCycle()*0.08)))
-	currentActiveQueue = numbers_of_event
+	GlobalResources.currentActiveQueue = numbers_of_event
+	
 	#_CRITICAL EVENT
-	while(Critical_Event.size() > 0):
-		var Critical_key = Critical_Event.pop_front()
+	while(GlobalResources.Critical_Event.size() > 0):
+		var Critical_key = GlobalResources.Critical_Event.pop_front()
 		for eachEvent in rawEvent:
 			if eachEvent.has("Conditions"):
 				if eachEvent["Conditions"][0] == "CRITICAL" && eachEvent["Conditions"][1].has(Critical_key):
-					eventID.append(eachEvent["id"])
+					GlobalResources.eventID.append(eachEvent["id"])
+					
 	#PRIORITIZE EVENTS THAT WITHIN PRIORITY ARRAY
-	while(Priority_Event.size() > 0 && numbers_of_event > 0): 
-		var priority_key = Priority_Event.pop_front()
+	while(GlobalResources.Priority_Event.size() > 0 && numbers_of_event > 0): 
+		var priority_key = GlobalResources.Priority_Event.pop_front()
 		for eachEvent in rawEvent:
 			if eachEvent.has("Conditions"):
 				if eachEvent["Conditions"][0] == "FOLLOW-UP" && eachEvent["Conditions"][1].has(priority_key):
-					eventID.append(eachEvent["id"])
+					GlobalResources.eventID.append(eachEvent["id"])
 					numbers_of_event -= 1
 	
 	#ADD EVENTS BASE ON LIMIT PER CYCLE
@@ -108,8 +104,8 @@ func _addNextEvent():
 		_addNextEvent()
 		return
 	if event["Repeatable"] == false: #FILTER IF EVENTS CAN BE REPEATED
-		if !alreadyTriggeredEvent.has(event["id"]):
-			alreadyTriggeredEvent.append(event["id"])
+		if !GlobalResources.alreadyTriggeredEvent.has(event["id"]):
+			GlobalResources.alreadyTriggeredEvent.append(event["id"])
 		else:
 			_addNextEvent()
 			return
@@ -118,25 +114,25 @@ func _addNextEvent():
 			if !event["Conditions"][1][0].has(globalResources.place):
 				_addNextEvent()
 				return
-	eventID.append(event["id"])
+	GlobalResources.eventID.append(event["id"])
 
 
 func ActivateEvent(): #ACTIVATE QUEUE EVENT
-	print( "already instantiate: ",alreadyTriggeredEvent)
-	if eventID.front() == null:
+	print( "already instantiate: ",GlobalResources.alreadyTriggeredEvent)
+	if GlobalResources.eventID.front() == null:
 		switchIt()
 		return
-	eventReader.setEventID(eventID.pop_front())
+	eventReader.setEventID(GlobalResources.eventID.pop_front())
 	eventReader.processNextEvent()
 
 
 func _removeAllEvent(): #CLEAR ALL EVENT
-	eventID.clear()
+	GlobalResources.eventID.clear()
 
 
 #RETURNING METHODS
 func getAllEventIDHierarchy():
-	eventReader.setEventID(eventID)
+	eventReader.setEventID(GlobalResources.eventID)
 
 func addFollowUpEvent(event):
-	Priority_Event.append(event)
+	GlobalResources.Priority_Event.append(event)

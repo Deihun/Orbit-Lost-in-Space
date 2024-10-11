@@ -141,8 +141,7 @@ func RunKeyWord(Command):
 	elif _command.begins_with("@ANOTHER_EVENT"):#Use ID for this case
 		_command = _command.substr("@ANOTHER_EVENT".length(), _command.length() - "@ANOTHER_EVENT".length())
 		_command.strip_edges()
-		var parent = get_parent()
-		parent.eventID.append(int(_command))
+		GlobalResources.eventID.append(int(_command))
 	elif _command.begins_with("@DESCRIPTION"):
 		_command = _command.substr("@DESCRIPTION".length(), _command.length() - "@DESCRIPTION".length())
 		_command.strip_edges()
@@ -159,8 +158,7 @@ func RunKeyWord(Command):
 	elif _command.begins_with("@CRITICAL"):
 		_command = _command.substr("@CRITICAL".length(), _command.length() - "@CRITICAL".length())
 		_command.strip_edges()
-		var parent = get_parent()
-		parent.Critical_Event.append(_command)
+		GlobalResources.Critical_Event.append(_command)
 	elif _command.begins_with("@ADD_PROBABILITY_FACTIONS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		_command = _command.substr("@ADD_PROBABILITY_FACTIONS".length(), _command.length() - "@ADD_PROBABILITY_FACTIONS".length())
 		_command.strip_edges()
@@ -217,7 +215,7 @@ func _on_choice_button_pressed(choice_data):
 	var parent = get_parent()
 	
 	if choice_data[2] == "Okay":
-		parent.currentActiveQueue -= 1
+		GlobalResources.currentActiveQueue -= 1
 		parent.ActivateEvent()
 		return
 	
