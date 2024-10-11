@@ -27,6 +27,14 @@ offset_top = 96.0
 offset_right = 889.0
 offset_bottom = 496.0
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1864.0
+offset_top = -2.0
+offset_right = 1909.0
+offset_bottom = 29.0
+text = "Back"
+
 [node name="Panel_Command" type="Panel" parent="."]
 layout_mode = 2
 offset_left = 925.0
@@ -118,37 +126,22 @@ offset_bottom = 23.0
 text = "Conditions
 "
 
-[node name="LineEdit_Command_Conditions" type="LineEdit" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 91.0
-offset_right = 179.0
-offset_bottom = 31.0
-placeholder_text = "conditions"
-
-[node name="LineEdit_Command_Value" type="LineEdit" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 31.0
-offset_right = 103.0
-offset_bottom = 77.0
-placeholder_text = "Value"
-
 [node name="Button_Conditions_AddGroups" type="Button" parent="Panel_Conditions"]
 layout_mode = 0
-offset_left = 109.0
-offset_top = 31.0
-offset_right = 176.0
-offset_bottom = 53.0
+offset_left = 83.0
+offset_top = 3.0
+offset_right = 131.0
+offset_bottom = 25.0
 tooltip_text = "Add Specific Value in condition groups"
 theme_override_font_sizes/font_size = 10
 text = "ADD"
 
 [node name="Button_Condition_ResetValueGroup" type="Button" parent="Panel_Conditions"]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 53.0
-offset_right = 176.0
-offset_bottom = 75.0
+offset_left = 129.0
+offset_top = 2.0
+offset_right = 174.0
+offset_bottom = 24.0
 tooltip_text = "Reset the container of value as group"
 theme_override_font_sizes/font_size = 10
 text = "RESET
@@ -158,6 +151,38 @@ text = "RESET
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="Conditional_OptionButton" type="OptionButton" parent="Panel_Conditions"]
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 150.0
+offset_bottom = 52.0
+selected = 0
+item_count = 3
+popup/item_0/text = "HAS"
+popup/item_1/text = "PLACE"
+popup/item_1/id = 1
+popup/item_2/text = "RELATIONSHIP"
+popup/item_2/id = 2
+
+[node name="HiddenChoice_Item_OptionButton" type="OptionButton" parent="Panel_Conditions"]
+offset_left = 5.0
+offset_top = 55.0
+offset_right = 147.0
+offset_bottom = 86.0
+selected = 0
+item_count = 6
+popup/item_0/text = "Spareparts"
+popup/item_1/text = "Biogene"
+popup/item_1/id = 1
+popup/item_2/text = "Food"
+popup/item_2/id = 2
+popup/item_3/text = "Medicine"
+popup/item_3/id = 3
+popup/item_4/text = "Oxygen"
+popup/item_4/id = 4
+popup/item_5/text = "Fuel"
+popup/item_5/id = 5
 
 [node name="Panel_Probability" type="Panel" parent="."]
 layout_mode = 0
@@ -292,10 +317,10 @@ text = "Event Manager"
 
 [node name="Label_id" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1727.0
-offset_top = 24.0
-offset_right = 1873.0
-offset_bottom = 66.0
+offset_left = 1757.0
+offset_top = 28.0
+offset_right = 1903.0
+offset_bottom = 70.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.956863)
 theme_override_font_sizes/font_size = 25
 text = "ID: <VALUE>"
@@ -321,19 +346,19 @@ theme_override_colors/caret_color = Color(1, 1, 1, 1)
 
 [node name="CheckButton_Repeatable" type="CheckButton" parent="."]
 layout_mode = 0
-offset_left = 1739.0
-offset_top = 91.0
-offset_right = 1875.0
-offset_bottom = 122.0
+offset_left = 1769.0
+offset_top = 95.0
+offset_right = 1905.0
+offset_bottom = 126.0
 tooltip_text = "Allows event to be repeat again if its already been trigger"
 text = "Repeatable"
 
 [node name="CheckButton_Active" type="CheckButton" parent="."]
 layout_mode = 0
-offset_left = 1739.0
-offset_top = 64.0
-offset_right = 1875.0
-offset_bottom = 95.0
+offset_left = 1769.0
+offset_top = 68.0
+offset_right = 1905.0
+offset_bottom = 99.0
 tooltip_text = "Allows event to be trigger on start randomly"
 text = "Active"
 
@@ -393,12 +418,11 @@ offset_bottom = 32.0
 text = "Hidden"
 
 [node name="Panel_HiddenChoice" type="Panel" parent="Panel_ButtonGeneration"]
-visible = false
 layout_mode = 0
 offset_left = 550.0
 offset_top = 29.0
 offset_right = 778.0
-offset_bottom = 103.0
+offset_bottom = 178.0
 
 [node name="Label_IDGuide4" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
 layout_mode = 0
@@ -409,42 +433,58 @@ offset_bottom = 18.0
 theme_override_font_sizes/font_size = 10
 text = "Conditions"
 
-[node name="LineEdit_Item" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
-layout_mode = 0
-offset_left = 79.0
-offset_top = 23.0
-offset_right = 147.0
-offset_bottom = 54.0
-theme_override_font_sizes/font_size = 10
-placeholder_text = "item"
-
-[node name="LineEdit_Condition" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 23.0
-offset_right = 75.0
-offset_bottom = 54.0
-theme_override_font_sizes/font_size = 10
-placeholder_text = "e.g HAS"
-
 [node name="LineEdit_Amount" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 23.0
-offset_right = 219.0
-offset_bottom = 54.0
+offset_left = 154.0
+offset_top = 74.0
+offset_right = 222.0
+offset_bottom = 105.0
 theme_override_font_sizes/font_size = 10
 placeholder_text = "#amount"
 
 [node name="Label_IDGuide5" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 4.0
-offset_right = 150.0
-offset_bottom = 18.0
+offset_left = 17.0
+offset_top = 59.0
+offset_right = 85.0
+offset_bottom = 73.0
 theme_override_font_sizes/font_size = 10
 text = "Item
 "
+
+[node name="Conditional_OptionButton" type="OptionButton" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 150.0
+offset_bottom = 52.0
+selected = 0
+item_count = 3
+popup/item_0/text = "HAS"
+popup/item_1/text = "PLACE"
+popup/item_1/id = 1
+popup/item_2/text = "RELATIONSHIP"
+popup/item_2/id = 2
+
+[node name="HiddenChoice_Item_OptionButton" type="OptionButton" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 150.0
+offset_bottom = 103.0
+selected = 0
+item_count = 6
+popup/item_0/text = "Spareparts"
+popup/item_1/text = "Biogene"
+popup/item_1/id = 1
+popup/item_2/text = "Food"
+popup/item_2/id = 2
+popup/item_3/text = "Medicine"
+popup/item_3/id = 3
+popup/item_4/text = "Oxygen"
+popup/item_4/id = 4
+popup/item_5/text = "Fuel"
+popup/item_5/id = 5
 
 [node name="ScrollContainer_CodePreview_ChoicePreview" type="ScrollContainer" parent="Panel_ButtonGeneration"]
 z_index = 20
@@ -550,21 +590,12 @@ placeholder_text = "DESCRIPTION"
 
 [node name="LineEdit_amount" type="LineEdit" parent="Panel_ButtonGeneration"]
 layout_mode = 0
-offset_left = 426.0
+offset_left = 432.0
 offset_top = 28.0
-offset_right = 531.0
+offset_right = 537.0
 offset_bottom = 71.0
 theme_override_colors/caret_color = Color(1, 1, 1, 1)
 placeholder_text = "#AMOUNT"
-
-[node name="LineEdit_item" type="LineEdit" parent="Panel_ButtonGeneration"]
-layout_mode = 0
-offset_left = 316.0
-offset_top = 28.0
-offset_right = 421.0
-offset_bottom = 71.0
-theme_override_colors/caret_color = Color(1, 1, 1, 1)
-placeholder_text = "ITEM"
 
 [node name="Button" type="Button" parent="Panel_ButtonGeneration"]
 layout_mode = 0
@@ -574,6 +605,29 @@ offset_right = 861.0
 offset_bottom = 204.0
 text = "RESET"
 
+[node name="ItemType_OptionButton" type="OptionButton" parent="Panel_ButtonGeneration"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 32.0
+offset_right = 431.0
+offset_bottom = 70.0
+selected = 0
+item_count = 7
+popup/item_0/text = "Spareparts"
+popup/item_1/text = "Food"
+popup/item_1/id = 1
+popup/item_2/text = "Oxygen"
+popup/item_2/id = 2
+popup/item_3/text = "Fuel"
+popup/item_3/id = 3
+popup/item_4/text = "Biogene"
+popup/item_4/id = 4
+popup/item_5/text = "Ductape"
+popup/item_5/id = 5
+popup/item_6/text = "Medicine"
+popup/item_6/id = 6
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel_Command/Button_Clear" to="." method="_ClearCommand"]
 [connection signal="pressed" from="Panel_Command/Button_Add" to="." method="_EnterCommand"]
 [connection signal="pressed" from="Panel_Conditions/Button_Conditions_AddGroups" to="." method="_AddValue"]
