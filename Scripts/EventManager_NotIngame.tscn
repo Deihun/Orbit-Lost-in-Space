@@ -153,6 +153,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="Conditional_OptionButton" type="OptionButton" parent="Panel_Conditions"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 21.0
 offset_right = 150.0
@@ -166,6 +167,7 @@ popup/item_2/text = "RELATIONSHIP"
 popup/item_2/id = 2
 
 [node name="HiddenChoice_Item_OptionButton" type="OptionButton" parent="Panel_Conditions"]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 55.0
 offset_right = 147.0

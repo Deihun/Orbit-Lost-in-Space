@@ -19,9 +19,9 @@ func getCycle():
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #HANDLING FACTIONS
-var current_Factions : String = "None"
+var current_Factions : String = "SPACE"
 var TravelPerSections : int = 1
-var Target_factions : String = "None"
+var Target_factions : String = "SPACE"
 var TotalProbabilityForFactionsToFound : float = 0.0
 var Factions_Probability = {
 	"Faction1" : 0.0,
@@ -41,10 +41,8 @@ var SubFactions_Probability = {
 
 func move_space(move_number : int = 1): #INCOMPLETE
 	TravelPerSections += move_number
-	print("Space Move: ",TravelPerSections)
 	if TravelPerSections == 3:
 		Target_factions = set_Factions()
-		print("FACTIONS: ",Target_factions)
 		current_Factions = Target_factions
 		TravelPerSections = 1
 	
@@ -202,6 +200,72 @@ var _FumikoRelationship = { #SAVE
 	"Nashir" : 0.0,
 	"Fumiko" : 0.0
 }
+func isRelationship(name: String, value : float, isGreaterThan : bool = true) -> bool:
+	var conditionState = false
+	if isGreaterThan:
+		match(name):
+			"FUMIKO":
+				if _relationship["Fumiko"] >= value:
+					conditionState = true
+			"REGINA":
+				if _relationship["Regina"] >= value:
+					conditionState = true
+			"MAXIM":
+				if _relationship["Maxim"] >= value:
+					conditionState = true
+			"NASHIR":
+				if _relationship["Nashir"] >= value:
+					conditionState = true
+		return conditionState
+	else:
+		match(name):
+			"FUMIKO":
+				if _relationship["Fumiko"] <= value:
+					conditionState = true
+			"REGINA":
+				if _relationship["Regina"] <= value:
+					conditionState = true
+			"MAXIM":
+				if _relationship["Maxim"] <= value:
+					conditionState = true
+			"NASHIR":
+				if _relationship["Nashir"] <= value:
+					conditionState = true
+		return conditionState
+
+func isSanity(name: String, value: float, isGreaterThan: bool = true) -> bool:
+	var conditionState =false
+	if isGreaterThan:
+		match(name):
+			"FUMIKO":
+				if _sanity["Fumiko"] >= value:
+					conditionState = true
+			"REGINA":
+				if _sanity["Regina"] >= value:
+					conditionState = true
+			"MAXIM":
+				if _sanity["Maxim"] >= value:
+					conditionState = true
+			"NASHIR":
+				if _sanity["Nashir"] >= value:
+					conditionState = true
+		return conditionState
+	else:
+		match(name):
+			"FUMIKO":
+				if _sanity["Fumiko"] <= value:
+					conditionState = true
+			"REGINA":
+				if _sanity["Regina"] <= value:
+					conditionState = true
+			"MAXIM":
+				if _sanity["Maxim"] <= value:
+					conditionState = true
+			"NASHIR":
+				if _sanity["Nashir"] <= value:
+					conditionState = true
+	return conditionState
+
 func addRelationshipBetweenCrew(FromCrewName : String,ToCrewName_CAPS, value : bool):
 	match (ToCrewName_CAPS):
 		"MAXIM": 
