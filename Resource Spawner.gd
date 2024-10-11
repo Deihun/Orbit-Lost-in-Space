@@ -75,6 +75,7 @@ func _ready():	#init array, get all child spawn into array.
 		resource_instance.position = positions[i].position
 		add_child(resource_instance)
 
+
 func getSmallCanVariety():
 	if randf() * 1.0 < 0.05:
 		return StackedCan.instantiate()
