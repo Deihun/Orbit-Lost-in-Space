@@ -18,7 +18,7 @@ func _process(delta):#Call the inventory repeatedly until the correct path is de
 	interaction_area.interact = Callable(self,"interaction") #Callable to make sure interaction methods are able to access by others
 
 func interaction():
-	$"..".open_door()
-	if $"../InteractionArea2":
-		$"../InteractionArea2".process_mode =Node.PROCESS_MODE_DISABLED
-	pass
+	if inventory.hasItem("KeyCard"):
+		$"..".open_door()
+		if $"../InteractionArea2":
+			$"../InteractionArea2".process_mode =Node.PROCESS_MODE_DISABLED

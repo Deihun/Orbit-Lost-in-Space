@@ -29,4 +29,3 @@ func emit_on_music_sound_set(value: float) -> void:
 
 func emit_on_sfx_sound_set(value: float) -> void:
 	on_sfx_sound_set.emit(value)
-	

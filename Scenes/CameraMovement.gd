@@ -60,7 +60,7 @@ func ChangeLocaton(smoothMovement:bool):
 			ArrowButton[1].visible = true
 			EndButton.visible = true
 			
-			if(EventUI.currentActiveQueue > 0):
+			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			
 			await get_tree().create_timer(2.0).timeout 
@@ -75,7 +75,7 @@ func ChangeLocaton(smoothMovement:bool):
 				self.position = SpecificLocation[LocationKey]
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = true
-			if(EventUI.currentActiveQueue > 0):
+			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			
 		2:#DrivingsRoom
@@ -96,7 +96,7 @@ func ChangeLocaton(smoothMovement:bool):
 				if($"../TutorialPanel_Folder/TutorialPanel2"):
 					$"../TutorialPanel_Folder/TutorialPanel2".visible = true
 			
-			if EventUI.eventID.is_empty() and EventUI.onlyOnceTrigger == true:
+			if GlobalResources.eventID.is_empty() and EventUI.onlyOnceTrigger == true:
 				EventUI.switchIt()
 				EventUI.onlyOnceTrigger = false
 				pass

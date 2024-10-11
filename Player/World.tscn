@@ -724,6 +724,7 @@ position = Vector2(936, 402)
 
 [node name="countDown_mainTimer" type="Timer" parent="Player"]
 script = ExtResource("4_0bin4")
+countdown_start = 90
 
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
 z_index = 1

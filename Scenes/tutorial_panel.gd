@@ -11,20 +11,19 @@ extends Control
 @export var textureLink : Array[String] 
 @export var Const_MAXSIZE_Sprite2D : Vector2
 @export var Closable: bool = true
+@export var tutorialPanel_ID : int 
 
 
 var noShowAgain: bool = false
-var TutorialModeOn: bool = true
+var TutorialModeOn: bool = getTutorialData()
 var current_index: int = 0
 var parentsScript
 
-
 func _ready():
+	TutorialModeOn = getTutorialData()
 	parentsScript = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")
-	if parentsScript:
-		Engine.time_scale = 0
 	
-	if !TutorialModeOn:
+	if !TutorialModeOn or TutorialModeOn == null:
 		queue_free()
 	instantiate()
 	update_content()
@@ -33,6 +32,22 @@ func _ready():
 
 func instantiate():
 	pass
+
+func getTutorialData():
+	print("ID : ",tutorialPanel_ID)
+	match(tutorialPanel_ID ):
+		1:
+			return SettingsDataContainer.tutorialPanel_1
+		2:
+			return SettingsDataContainer.tutorialPanel_2
+		3:
+			return SettingsDataContainer.tutorialPanel_3
+		4:
+			return SettingsDataContainer.tutorialPanel_4
+		null:
+			return false
+		_:
+			return true
 
 func update_content():
 	if current_index >= 0 and current_index < tutorialDescription.size():
@@ -81,8 +96,8 @@ func _on_next_button_pressed():
 			print("will call the settings")
 			pass
 		if parentsScript:
+			parentsScript.addData(tutorialPanel_ID ,$CheckBox.is_pressed())
 			process_mode = Node.PROCESS_MODE_ALWAYS
-			Engine.time_scale = 1
 		queue_free()
 
 func _on_back_button_pressed():

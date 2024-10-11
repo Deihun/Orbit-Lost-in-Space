@@ -7,6 +7,7 @@ func _ready() -> void:
 	var tutorialAssets = $Player/player/AllUIParents/TutorialAssets
 	var inventory = $Player/player/AllUIParents/UI_On_Hand
 	
+	
 	inventory.visible = true
 	player.canMove = true
 	tutorialAssets.visible = true
