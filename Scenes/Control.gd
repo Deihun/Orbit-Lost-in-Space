@@ -62,13 +62,6 @@ func GameOver(OtherCommands):
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
 	if GlobalResources.currentActiveQueue <= 0 and !$EventHandler.visible:
-		#DELETE THIS TAB LATER, FOR TESTING PURPOSES
-		print("ADDING FUEL")
-		GlobalResources.subtractItem(true,"FUEL",10)
-		print("ADDING OXYGEN")
-		GlobalResources.subtractItem(true, "OXYGEN", 25)
-		print("ADDING SPAREPARTS")
-		GlobalResources.subtractItem(true, "SPAREPARTS", 25)
 		
 		
 		#Switch to Event View
@@ -77,6 +70,8 @@ func _on_next_day_button_pressed():
 		#Handle UI Cycle
 		CycleSetting.endCycle()
 		print("Cycle: ",CycleSetting.getCycle())
+		IngameStoredProcessSetting.move_space()
+		$WholeInteriorScene/FactionLabel_willBeRemove.text = str("FactionCurrently: ",IngameStoredProcessSetting.current_Factions)
 		#Auto Save
 		SaveGame.save()
 		#crafting
@@ -98,4 +93,10 @@ func _on_click_cooldown_timeout() -> void:
 func PAUSE() -> void:
 	var pause = $cam2d/PauseMenu
 	pause._pause()
+	pass # Replace with function body.
+
+
+func _on_expedition_button_button_down() -> void:
+	camera.ChangeSpecificScene(5)
+	camera.ChangeLocaton(false)
 	pass # Replace with function body.

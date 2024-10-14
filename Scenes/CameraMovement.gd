@@ -4,9 +4,9 @@ extends Camera2D
 @onready var ObjectLeft = Node2D
 @onready var EndButton = get_parent().get_node("cam2d/Button_navigation_node_parent/NextDay_Button")
 @onready var EventUI = get_parent().get_node("EventHandler")
+@onready var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000), $"../ExpeditionSelection".position]
 
 var tween = create_tween()
-var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000)]
 var nonCommonPanningRooms = [Vector2(-3000,1500), Vector2(-3000,3000)]
 
 var EventTutorial : bool = true
@@ -117,11 +117,14 @@ func ChangeLocaton(smoothMovement:bool):
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = false
 			EndButton.visible = false
+		5: #ExpeditionRoom
+			position = SpecificLocation[LocationKey]
+			pass
 	#print("DEBUGGING LOCATION// KEY LOCATION:", LocationKey,"// position: ", self.position)
 
 
 func ChangeSpecificScene(_LocationKey):
-	if _LocationKey < 5 and _LocationKey > -1:
+	if _LocationKey < 6 and _LocationKey > -1:
 		if !nonCommonPanningRooms.has(self.position) and !nonCommonPanningRooms.has(SpecificLocation[_LocationKey]):
 			LocationKey = _LocationKey
 			ChangeLocaton(true)

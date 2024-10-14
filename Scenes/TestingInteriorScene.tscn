@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=25 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
+[ext_resource type="Texture2D" uid="uid://dpt3p0eq40v4v" path="res://Scenes/ExpeditionSelection/Expedition Selection.png" id="13_t2sia"]
 [ext_resource type="Script" path="res://Scenes/storage_scene.gd" id="14_dtqtq"]
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
 [ext_resource type="Script" path="res://Scenes/Spareparts.gd" id="14_vw57t"]
@@ -176,6 +177,22 @@ position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
 metadata/_edit_lock_ = true
 
+[node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
+offset_left = 3497.0
+offset_top = -33.0
+offset_right = 3627.0
+offset_bottom = -10.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "FactionCurrently: "
+
+[node name="ExpeditionButton" type="Button" parent="WholeInteriorScene"]
+offset_left = 3490.0
+offset_top = 4.0
+offset_right = 3727.0
+offset_bottom = 63.0
+text = "EXPEDITION BUTTON
+"
+
 [node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WholeInteriorScene/Button_ToStorageRoom"]
@@ -198,6 +215,11 @@ scale = Vector2(0.251953, 5.35547)
 texture = ExtResource("10_7sn4k")
 
 [node name="Right_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
+
+[node name="ExpeditionSelection" type="Sprite2D" parent="."]
+position = Vector2(-269.5, 2987.5)
+scale = Vector2(1.06094, 1.04907)
+texture = ExtResource("13_t2sia")
 
 [node name="StorageScene" type="Sprite2D" parent="."]
 position = Vector2(-3000, 1500)
@@ -336,6 +358,7 @@ position = Vector2(-3982, -471)
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
+[connection signal="button_down" from="WholeInteriorScene/ExpeditionButton" to="." method="_on_expedition_button_button_down"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
 [connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
 [connection signal="mouse_entered" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_entered"]

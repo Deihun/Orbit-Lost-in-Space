@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsvjtk7jx5ih1"]
+
+[ext_resource type="Texture2D" uid="uid://bun2vl1xdaesm" path="res://Scenes/SceneAssets/LavenderWallColorSet/CompleteWallHorizontal.png" id="1_kuush"]
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_lyktp"]
+
+[node name="AbandonSatelite" type="Node2D"]
+
+[node name="MainRoom" type="Node2D" parent="."]
+
+[node name="WallSet" type="Node2D" parent="MainRoom"]
+y_sort_enabled = true
+
+[node name="Wall" type="NinePatchRect" parent="MainRoom/WallSet"]
+y_sort_enabled = true
+offset_left = 411.0
+offset_top = -264.0
+offset_right = 1264.0
+offset_bottom = -6.0
+texture = ExtResource("1_kuush")
+patch_margin_left = 50
+patch_margin_top = 100
+patch_margin_right = 50
+patch_margin_bottom = 100
+
+[node name="player" parent="." instance=ExtResource("2_lyktp")]
+position = Vector2(474, -192)
+show_timer = false
+cameraZoom = 0.0

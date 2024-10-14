@@ -1,7 +1,8 @@
-[gd_scene load_steps=280 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=281 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
+[ext_resource type="Script" path="res://Player/player_Default.gd" id="1_mhmxe"]
 [ext_resource type="PackedScene" uid="uid://cul7r04u1uv6" path="res://Player/FullInventory_Indicator.tscn" id="2_1yavb"]
 [ext_resource type="Texture2D" uid="uid://blyf5lab2oo6i" path="res://Scenes/TransitionClosing.png" id="2_6y3nk"]
 [ext_resource type="Script" path="res://TutorialUI/TutorialAssets.gd" id="2_7naq2"]
@@ -1857,6 +1858,7 @@ radius = 29.0
 [node name="player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
+script = ExtResource("1_mhmxe")
 
 [node name="player" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
@@ -2042,6 +2044,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Medicine: 0"
 
 [node name="Game in EarlyProgress" type="Label" parent="player/AllUIParents"]
+visible = false
 offset_left = 1515.0
 offset_top = 1038.0
 offset_right = 1902.0
@@ -2050,7 +2053,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "GAME IS STILL IN EARLY DEVELOPMENT PROGRESS"
 
 [node name="Label_Timer" type="Label" parent="player/AllUIParents"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.003125
 anchor_top = 0.0157407
@@ -2106,7 +2108,6 @@ scale = Vector2(1.25657, 1.26637)
 texture = ExtResource("10_cjn85")
 
 [node name="Meteor_animated" type="AnimatedSprite2D" parent="player/AllUIParents/Globe_Timer_Sprite"]
-visible = false
 position = Vector2(-2.21835, -5.10323)
 rotation = -0.698132
 sprite_frames = SubResource("SpriteFrames_b1bq1")
@@ -2147,7 +2148,7 @@ shape = SubResource("CircleShape2D_dsf36")
 [node name="PlayerCamera" type="Camera2D" parent="player"]
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 1.0
+position_smoothing_speed = 1.5
 
 [node name="PickUpCooldown" type="Timer" parent="player"]
 wait_time = 0.5

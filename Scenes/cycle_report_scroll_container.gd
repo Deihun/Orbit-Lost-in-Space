@@ -13,7 +13,6 @@ func onCall():
 		#instance.position = Vector2(instance.position.x , instance.position.y - (distance * rangeDistance))
 		instance.set_data(str(Info[0], " (",Info[1],")"))
 		container.add_child(instance)
-		print(distance, " : this is being instantiate")
 
 
 func deleteChild():
