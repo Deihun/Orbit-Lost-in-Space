@@ -1,6 +1,6 @@
 extends Node2D
 
-enum _rotation_enum { HORIZONTAL = 0, VERTICAL = 1, SLANT1 = 2, SLANT2 = 3}
+enum _rotation_enum { HORIZONTAL = 1, VERTICAL = 2, SLANT1 = 3, SLANT2 = 4}
 
 @export var isOpen : bool = false
 @export var wallRotation: _rotation_enum = _rotation_enum.HORIZONTAL
@@ -22,11 +22,31 @@ func _ready() -> void:
 			print("DOWN selected")
 
 func open_door():
-	$Door.play("Opening")
-	$DoorStatic.process_mode = Node.PROCESS_MODE_DISABLED
-	isOpen = true
+	match(wallRotation):
+		1: #HORIZONTAL
+			$Door.play("Opening_horizontal")
+			$DoorStatic.process_mode = Node.PROCESS_MODE_DISABLED
+			isOpen = true
+			$DoorStatic/Vertical.process_mode = Node.PROCESS_MODE_DISABLED
+			$DoorStatic/CollisionShape2D.process_mode = Node.PROCESS_MODE_INHERIT
+		2: #VERTICAL
+			$Door.play("Opening")
+			$DoorStatic.process_mode = Node.PROCESS_MODE_DISABLED
+			isOpen = true
+			$DoorStatic/Vertical.process_mode = Node.PROCESS_MODE_INHERIT
+			$DoorStatic/CollisionShape2D.process_mode = Node.PROCESS_MODE_DISABLED
 
 func close_door():
-	$Door.play("Closing")
 	$DoorStatic.process_mode = Node.PROCESS_MODE_INHERIT
-	isOpen = false
+	match(wallRotation):
+		1:
+			$Door.play("Closing_Horizontal")
+			$DoorStatic/Vertical.disabled = true
+			$DoorStatic/CollisionShape2D.disabled = false
+			pass
+		2:
+			$Door.play("Closing")
+			$DoorStatic/Vertical.disabled = false
+			$DoorStatic/CollisionShape2D.disabled = true
+
+			isOpen = false

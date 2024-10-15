@@ -26,6 +26,7 @@ func _TOGGLE_ESCAPE():
 
 
 func _pause():
+	
 	visible = true
 	Engine.time_scale = 0
 	var TutorialUI = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")

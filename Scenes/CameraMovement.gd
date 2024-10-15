@@ -4,9 +4,9 @@ extends Camera2D
 @onready var ObjectLeft = Node2D
 @onready var EndButton = get_parent().get_node("cam2d/Button_navigation_node_parent/NextDay_Button")
 @onready var EventUI = get_parent().get_node("EventHandler")
+@onready var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000), $"../ExpeditionSelection".position]
 
 var tween = create_tween()
-var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000)]
 var nonCommonPanningRooms = [Vector2(-3000,1500), Vector2(-3000,3000)]
 
 var EventTutorial : bool = true
@@ -47,7 +47,7 @@ func ChangeLocationToRight():
 
 func ChangeLocaton(smoothMovement:bool):
 	$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = false
-	
+	$Button_navigation_node_parent/MeteorCyce.hide()
 	match(LocationKey):
 		0:#CraftingRoom
 			if smoothMovement:
@@ -56,10 +56,11 @@ func ChangeLocaton(smoothMovement:bool):
 			else:
 				tween.kill()
 				self.position = SpecificLocation[LocationKey]
+			$Button_navigation_node_parent/MeteorCyce.hide()
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = true
 			EndButton.visible = true
-			
+			$Button_navigation_node_parent/MeteorCyce.show()
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			
@@ -73,12 +74,14 @@ func ChangeLocaton(smoothMovement:bool):
 			else:
 				tween.kill()
 				self.position = SpecificLocation[LocationKey]
+			$Button_navigation_node_parent/MeteorCyce.show()
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = true
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			
 		2:#DrivingsRoom
+			$Button_navigation_node_parent/MeteorCyce.show()
 			if position == SpecificLocation[2]:
 				return
 			var TimerFilter = false
@@ -106,6 +109,7 @@ func ChangeLocaton(smoothMovement:bool):
 			else:
 				tween.kill()
 				self.position = SpecificLocation[LocationKey]
+			$Button_navigation_node_parent/MeteorCyce.show()
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = false
 		4: #Cycle Report
@@ -113,15 +117,18 @@ func ChangeLocaton(smoothMovement:bool):
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
 			else:
 				self.position = SpecificLocation[LocationKey]
-			$"../CycleReport/CycleReport_ScrollContainer".onCall()
+			$"../CycleReport/ClickAnywhereButton/CycleReport_ScrollContainer".onCall()
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = false
 			EndButton.visible = false
+		5: #ExpeditionRoom
+			position = SpecificLocation[LocationKey]
+			pass
 	#print("DEBUGGING LOCATION// KEY LOCATION:", LocationKey,"// position: ", self.position)
 
 
 func ChangeSpecificScene(_LocationKey):
-	if _LocationKey < 5 and _LocationKey > -1:
+	if _LocationKey < 6 and _LocationKey > -1:
 		if !nonCommonPanningRooms.has(self.position) and !nonCommonPanningRooms.has(SpecificLocation[_LocationKey]):
 			LocationKey = _LocationKey
 			ChangeLocaton(true)
@@ -160,13 +167,17 @@ func _on_button_to_storage_room_input_event(viewport: Node, event: InputEvent, s
 
 
 func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	var cycleReport_container = $"../CycleReport/ClickAnywhereButton/CycleReport_ScrollContainer"
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-			$"../CycleReport/CycleReport_ScrollContainer".deleteChild()
-			IngameStoredProcessSetting.Cycle_ReportList.clear()
-			LocationKey = 2
-			ChangeLocaton(false)
-			$"../EventHandler".visible = true
-			#$"../EventHandler".switchIt()
+		if !cycleReport_container._isDoneShowing:
+			cycleReport_container._Delay = 0.2
+			return
+		$"../EventHandler".isEventVisible = true
+		cycleReport_container.deleteChild()
+		IngameStoredProcessSetting.Cycle_ReportList.clear()
+		LocationKey = 2
+		ChangeLocaton(false)
+		$"../EventHandler".switchIt()
 
 
 func _on_end_cycle_timer_timeout() -> void:
