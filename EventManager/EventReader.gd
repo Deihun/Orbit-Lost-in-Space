@@ -216,6 +216,7 @@ func _on_choice_button_pressed(choice_data):
 	
 	if choice_data[2] == "Okay":
 		GlobalResources.currentActiveQueue -= 1
+		clear_container(button_container)
 		parent.ActivateEvent()
 		return
 	

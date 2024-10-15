@@ -11,11 +11,12 @@ script = ExtResource("1_jnq3i")
 [node name="EventUIAnimation" type="AnimatedSprite2D" parent="."]
 position = Vector2(955, 525)
 sprite_frames = ExtResource("4_coms2")
-animation = &"ClosingAnimation"
-frame = 21
+animation = &"OpeningAnimation"
+frame = 28
 frame_progress = 1.0
 
 [node name="Event_UI" type="Node2D" parent="."]
+visible = false
 script = ExtResource("2_nkt3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Event_UI"]

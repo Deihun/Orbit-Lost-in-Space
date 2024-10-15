@@ -65,7 +65,7 @@ func showTotalItems(): #For DEBUG only
 func getSpareparts():
 	return spareparts
 
-func subtractItem(conditions,item_name, amount):
+func subtractItem(conditions : bool,item_name : String, amount : int):
 	if conditions:
 		match(item_name):
 			"SPAREPARTS":

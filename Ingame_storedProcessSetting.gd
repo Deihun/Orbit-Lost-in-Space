@@ -1,7 +1,10 @@
 extends Node
 
+
+
 #VARIABLE 
 var Cycle = 0
+var Scenes : String= ""
 
 
 func newGame():

@@ -26,14 +26,17 @@ func _on_new_game_button_pressed() -> void:
 	if SettingsDataContainer.tutorialScene or SettingsDataContainer.tutorialScene == null:
 		SettingsDataContainer.tutorialScene = false
 		SettingsSignalBus.emit_set_settings_dictionary(SettingsDataContainer.create_storage_dictionary())
-		get_tree().change_scene_to_packed(tutorialScene)
+		IngameStoredProcessSetting.Scenes = "tutorial"
+		get_tree().change_scene_to_packed(start_game)
 		pass
 	else:
+		IngameStoredProcessSetting.Scenes = "newgame"
 		get_tree().change_scene_to_packed(start_game)
 
 func _on_load_game_button_pressed():
 	SaveNLoad.isLoadGame = true
-	get_tree().change_scene_to_packed(load_game)
+	get_tree().change_scene_to_packed(start_game)
+	IngameStoredProcessSetting.Scenes = "loadgame"
 
 func _on_settings_button_pressed():
 	margin_container.visible = false

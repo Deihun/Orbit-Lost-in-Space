@@ -1927,9 +1927,9 @@ build_mode = 1
 polygon = PackedVector2Array(-36, 149, -34, 366, -365, 365, -351, 795, -36, 793, -35, 1302, 1383, 1303, 1383, 588, 1922, 588, 1925, 1306, 3342, 1301, 3348, 749, 3516, 591, 3699, 591, 3866, 749, 3873, 1299, 4036, 1301, 5287, 1302, 5287, 793, 5820, 800, 5820, 359, 5289, 364, 5288, 152, 5130, 151.888, 4467.33, 151.418, 4137.08, 151.184, 3948.47, 151.05, 3878, 151, 3704, 361, 3510, 367, 3348, 189, 3346, 151, 2284, 149, 2283, 163, 2214, 164, 2213, 149, 1928, 148, 1926, 365, 1369, 367, 1371, 154)
 
 [node name="DoorWay" parent="Background" instance=ExtResource("5_aclcj")]
-y_sort_enabled = true
 position = Vector2(1484, 429)
 scale = Vector2(1.13636, 0.921488)
+wallRotation = 2
 
 [node name="InteractionArea2" parent="Background/DoorWay" instance=ExtResource("2_u50ix")]
 action_name = "Insert keycard"
@@ -1965,7 +1965,6 @@ sprite_frames = SubResource("SpriteFrames_ootfe")
 polygon = PackedVector2Array(-99, 42, -69, 67, -34, 74, 39, 74, 74, 66, 93, 48, 99, 35, 73, -3, 35, -16, -19, -20, -58, -10, -89, 10)
 
 [node name="DoorWay" parent="2ndRoom" instance=ExtResource("5_aclcj")]
-y_sort_enabled = true
 position = Vector2(3601, 433)
 scale = Vector2(1, 0.92)
 
