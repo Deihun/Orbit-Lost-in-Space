@@ -12,16 +12,24 @@ var alreadyTriggeredEvent
 var Priority_Event
 var eventID
 
-
 func _process(delta: float) -> void:
 	if !events:
 		events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 
+func LoadSave(SaveName : String) -> void:
+	SavePath = "Saves/" + SaveName +".json"
+	loadsave()
+	print(SavePath)
+
+func SaveGame(SaveName : String):
+	SavePath = "Saves/" + SaveName +".json"
+	save()
+	print(SavePath)
 
 func savedata():
 	#print("test")
 	if !events :
-		print("null")
+		print("null save")
 	var save_dict = {
 		"ration" : resources.ration,
 		"oxygen" : resources.oxygen,
@@ -48,9 +56,9 @@ func save():
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
 	
-	
-func load():
+func loadsave():
 	if not FileAccess.file_exists(SavePath):
+		print("file exsit")
 		return
 	var file = FileAccess.open(SavePath, FileAccess.READ)
 	#var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")

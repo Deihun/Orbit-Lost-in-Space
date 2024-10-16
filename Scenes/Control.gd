@@ -10,7 +10,6 @@ extends Control
 @onready var putResources = $"/root/GlobalResources"
 @onready var SaveGame = SaveNLoad
 
-
 #VARIABLES
 var resources 
 var events
@@ -18,7 +17,7 @@ var events
 var ClickTrue = true
 var eventHandler
 
-#VOID METHODS // CAMERA CONTROLS - SETTINGS		
+#VOID METHODS // CAMERA CONTROLS - SETTINGS
 func _process(delta):
 	if !eventHandler:
 		eventHandler = NodeFinder.find_node_by_name(get_tree().current_scene, "EventHandler")
@@ -44,7 +43,7 @@ func _newGameStart():
 func _loadGameStart():
 	pass
 
-
+	
 func GameOver(OtherCommands):
 	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
 	pass
