@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Ingame/pause_menu.gd" id="1_cu0fw"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_jhi0i"]
-[ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="3_d1w0n"]
+[ext_resource type="PackedScene" path="res://SaveAndLoad/save_ui.tscn" id="3_d1w0n"]
 [ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="3_qbxds"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wmgc2"]
@@ -18,10 +18,10 @@ script = ExtResource("1_cu0fw")
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_wmgc2")
 layout_mode = 2
-offset_left = 359.0
-offset_top = 593.5
-offset_right = 759.0
-offset_bottom = 593.5
+offset_left = -1016.0
+offset_top = -423.0
+offset_right = 2346.0
+offset_bottom = 1351.0
 grow_horizontal = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

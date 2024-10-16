@@ -429,7 +429,6 @@ texture = ExtResource("17_8py32")
 
 [node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
 z_index = 500
-scale = Vector2(1, 1)
 
 [node name="Panel" type="Panel" parent="CycleReport/ClickAnywhereButton"]
 z_as_relative = false
@@ -465,7 +464,6 @@ alignment = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
 z_index = 10
 position = Vector2(0.951904, -0.466064)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kb8bw")
 
 [node name="CraftingTab" parent="." instance=ExtResource("13_10a7a")]
