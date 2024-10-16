@@ -139,7 +139,7 @@ func _on_save_button_debug_pressed() -> void:
 	SaveLoadGame.save()
 
 func _on_load_button_debug_pressed() -> void:
-	SaveLoadGame.load()
+	SaveLoadGame.loadsave()
 
 func _on_check_crafting_pressed() -> void:
 	if (ongoingCraft == true):
