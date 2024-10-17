@@ -4,6 +4,7 @@ extends Control
 @onready var v_box_container: VBoxContainer = $NinePatchRect/MarginContainer2/ScrollContainer/VBoxContainer
 @onready var SaveNode = $"res://SaveAndLoad/save_node.gd"
 @onready var naming: Control = $Naming
+@onready var panel: Panel = $NinePatchRect/Panel
 
 var Files = []
 var numFiles = 0
@@ -51,3 +52,5 @@ func _on_back_button_up() -> void:
 		visiblepause.show()
 	self.visible = false
 	
+func _on_message_delay_timeout() -> void:
+	panel.hide()
