@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=23 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
-[ext_resource type="PackedScene" uid="uid://b5taosgvg6u4c" path="res://Resources/block.tscn" id="2_iye0m"]
 [ext_resource type="Texture2D" uid="uid://ce0kw7ceb80dk" path="res://Scenes/WideshotScenePanaroma.png" id="2_og4ji"]
 [ext_resource type="Texture2D" uid="uid://prju7pqu8no5" path="res://Scenes/Rocket_LaunchScene.png" id="2_ybnrr"]
 [ext_resource type="Script" path="res://Player/CountDown_Script.gd" id="4_0bin4"]
@@ -712,11 +711,6 @@ position = Vector2(36, -1828)
 sprite_frames = SubResource("SpriteFrames_0a1hs")
 autoplay = "default"
 frame_progress = 0.340232
-
-[node name="StaticBody2D" parent="." instance=ExtResource("2_iye0m")]
-z_index = 20
-position = Vector2(219, 172)
-scale = Vector2(0.998853, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_qqdcd")]
 z_index = 1

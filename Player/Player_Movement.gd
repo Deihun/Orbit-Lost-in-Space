@@ -153,7 +153,8 @@ func endScene():
 	introCam.position = Vector2(4000,-3800)
 	introCam.make_current()
 	await get_tree().create_timer(3).timeout 
-	get_tree().change_scene_to_file("res://Scenes/TestingInteriorScene.tscn")
+	IngameStoredProcessSetting.Scenes = "interiorscene"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
 	pass
 
 
