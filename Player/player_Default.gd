@@ -1,8 +1,13 @@
 extends Node2D
-@export var show_timer : bool = true
-@export var cameraZoom : float
-@export var Smoothing_CameraTrack : bool = true
+
+@export_group("PlayerSettings")
 @export var can_Move : bool = true
+@export var Smoothing_CameraTrack : bool = true
+@export var crew_icon_bar_Show : bool = false
+
+@export_group("UI_Settings")
+@export var cameraZoom : float
+@export var show_timer : bool = true
 
 func _ready() -> void:
 	showTimer(show_timer)

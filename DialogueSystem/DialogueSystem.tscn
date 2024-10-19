@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddpq6yrbhntj"]
+
+[ext_resource type="Script" path="res://DialogueSystem/dialogue_system.gd" id="1_mx3fv"]
+[ext_resource type="Resource" uid="uid://c6ex2sg412cti" path="res://DialogueSystem/EventDialogue/Dialogue_interact.dialogue" id="2_6kcvt"]
+
+[node name="DialogueSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx3fv")
+_dialogueManager = ExtResource("2_6kcvt")
+_dialogue_start = "interaction"
+
+[node name="2ndPersonView" type="Sprite2D" parent="."]

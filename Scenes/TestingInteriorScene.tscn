@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=27 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
+[ext_resource type="Script" path="res://Scenes/lobby.gd" id="12_qmdri"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
 [ext_resource type="Texture2D" uid="uid://dpt3p0eq40v4v" path="res://Scenes/ExpeditionSelection/Expedition Selection.png" id="13_t2sia"]
@@ -39,6 +40,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = 95.0
+offset_right = -52.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
@@ -194,6 +199,44 @@ metadata/_edit_lock_ = true
 position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
 metadata/_edit_lock_ = true
+
+[node name="Lobby" type="Control" parent="WholeInteriorScene"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1003.0
+offset_top = -552.0
+offset_right = 1253.0
+offset_bottom = 554.0
+mouse_filter = 2
+script = ExtResource("12_qmdri")
+
+[node name="Maxim" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 242.0
+offset_right = 565.0
+offset_bottom = 946.0
+
+[node name="Fumiko" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 164.0
+offset_right = 891.0
+offset_bottom = 868.0
+
+[node name="Regina" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 1199.0
+offset_top = 164.0
+offset_right = 1485.0
+offset_bottom = 868.0
+
+[node name="Nashir" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 1497.0
+offset_top = 288.0
+offset_right = 1783.0
+offset_bottom = 992.0
 
 [node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
 offset_left = 3497.0
@@ -486,6 +529,10 @@ offset_bottom = -410.0
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Maxim" to="WholeInteriorScene/Lobby" method="_on_maxim_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Fumiko" to="WholeInteriorScene/Lobby" method="_on_fumiko_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Regina" to="WholeInteriorScene/Lobby" method="_on_regina_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Nashir" to="WholeInteriorScene/Lobby" method="_on_nashir_button_down"]
 [connection signal="button_down" from="WholeInteriorScene/ExpeditionButton" to="." method="_on_expedition_button_button_down"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
 [connection signal="pressed" from="ExpeditionSelection/Embark_button" to="." method="_on_embark_button_pressed"]

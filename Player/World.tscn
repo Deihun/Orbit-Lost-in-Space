@@ -833,6 +833,7 @@ position = Vector2(1736, 487)
 [node name="Node Resource Spawner" parent="." instance=ExtResource("5_08kc6")]
 y_sort_enabled = true
 food = ExtResource("6_mx32n")
+allowCrew_Spawn = true
 number_of_resources = 100
 
 [node name="Timer" type="Timer" parent="Node Resource Spawner"]

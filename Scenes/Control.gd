@@ -24,6 +24,7 @@ func _process(delta):
 	pass
 
 func _ready():
+	print("LIST OF CREW", IngameStoredProcessSetting.crew_in_ship)
 	if SaveGame.isLoadGame:
 		_loadGameStart()
 	else:
@@ -54,6 +55,8 @@ func _on_next_day_button_pressed():
 		GlobalResources.subtractItem(true, "OXYGEN", 10)
 		GlobalResources.subtractItem(true, "FUEL", 10)
 		
+		
+		$WholeInteriorScene/Lobby.setRandomPosition()
 		#Switch to Event View
 		camera.ChangeSpecificScene(4)
 		#Handle Mini Event (PRIORITY 1)

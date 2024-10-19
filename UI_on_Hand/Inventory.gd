@@ -17,6 +17,9 @@ var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/Small_SmallOxygen
 var KeyCard = load("res://Scenes/Tutorial/KeyCard.png")
 var teddyBear = load("res://Resources/Resource_Images/TeddyBear Icon.png")
 
+var _regina_icon = load("res://Resources/CREW/REGINA PICK UP.png")
+var _maxim_icon = load("res://Resources/CREW/MAXIM.png")
+
 var inventory = []  
 
 
@@ -60,6 +63,12 @@ func showItem():
 		elif i < hands.size() and "TeddyBear" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)
 			hands[i].texture = teddyBear
+		elif i < hands.size() and "Regina" in inventory[i]:
+			hands[i].scale = Vector2(0.15,0.15)
+			hands[i].texture = _regina_icon
+		elif i < hands.size() and "Maxim" in inventory[i]:
+			hands[i].scale = Vector2(0.15,0.15)
+			hands[i].texture = _maxim_icon
 		else:
 			hands[i].texture = null
 

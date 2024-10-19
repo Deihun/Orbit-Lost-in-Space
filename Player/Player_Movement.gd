@@ -130,6 +130,7 @@ func startUI():
 	$AllUIParents/UI_On_Hand.visible = true
 	$AllUIParents/TutorialAssets.visible = true
 	$AllUIParents/ResourceUI_InRun.visible = true
+	$AllUIParents/Crew_Show.show()
 	canMove = true
 	var timer = NodeFinder.find_node_by_name(get_tree().current_scene, "countDown_mainTimer")
 	timer.GameStart()

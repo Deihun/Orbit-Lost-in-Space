@@ -1,22 +1,24 @@
 extends Node2D
 @onready var exp = $Expiration
 @onready var ani =$Animation
+
 var repeatCount = 0
 
 func _ready() -> void:
 	visible = false
 	pass
 
-func onStart():
+func onStart(message : String = "Inventory Full!"):
 	visible = true
 	$Label.visible = true
 	$Label2.visible = false
+	$Label.text = message
+	$Label2.text = message
 	repeatCount = 0
 	ani.stop()
 	exp.stop()
 	ani.start()
 	exp.start()
-
 
 func _on_expiration_timeout() -> void:
 	print($Label.visible, $Label2.visible, visible, repeatCount)

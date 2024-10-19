@@ -12,8 +12,13 @@ func newGame():
 
 
 func endCycle():
+	_recent_events_adjust()
 	Cycle += 1
 	move_space()
+	doDisease()
+	doHealthChecker()
+	doHunger()
+	resetPerDay()
 
 
 func getCycle():
@@ -108,6 +113,7 @@ func addSubFactionsCriticalEvent():#INCOMPLETE - MISSING MATCH TYPE CONDITION AN
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #								HANDLING REPORT_CYCLES
 var Cycle_ReportList = [] #FirstDimesion = TextContent, #SecondDimension = Image
+var recent_events = [] # Such as crew deaths something like that
 
 func addOnCycleReportList(report : String):
 	var split = report.split(" ")
@@ -128,14 +134,49 @@ func addOnCycleReportList(report : String):
 	else:
 		Cycle_ReportList.append([name, int(value)])
 	pass
+
+func _recent_events_adjust():
+	var adjusting_recentEvent = []
+	if recent_events.has("DEATH"): adjusting_recentEvent.append("2DAYDEATH")
+	if recent_events.has("2DAYDEATH"): adjusting_recentEvent.append("3DAYDEATH")
+	recent_events.clear()
+	recent_events = adjusting_recentEvent.duplicate()
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #								CREW
+var crew_in_ship = []
+
+
 var _relationship = { #SAVE
 	"Regina" : 0.5,
 	"Maxim"  : 0.5,
 	"Nashir" : 0.5,
 	"Fumiko" : 0.5
 }
+var already_eaten = { #SAVE
+	"Regina" : false,
+	"Maxim"  : false,
+	"Nashir" : false,
+	"Fumiko" : false
+}
+var already_medicine = { #SAVE
+	"Regina" : false,
+	"Maxim"  : false,
+	"Nashir" : false,
+	"Fumiko" : false
+}
+var already_talk = { #SAVE
+	"Regina" : false,
+	"Maxim"  : false,
+	"Nashir" : false,
+	"Fumiko" : false
+}
+var already_vitamins = { #SAVE
+	"Regina" : false,
+	"Maxim"  : false,
+	"Nashir" : false,
+	"Fumiko" : false
+}
+
 var _current_hunger = { #SAVE
 	"Regina" : 0.5,
 	"Maxim"  : 0.5,
@@ -232,3 +273,62 @@ func crewEat(CrewName : String, foodValue : int)  -> int:
 		return foodValue
 	_current_hunger[CrewName] = 100
 	return foodValue - _rationConsumes[CrewName]
+
+func reduceFood(value : int):
+	GlobalResources.ration = value
+
+func doHunger():
+	for crew in crew_in_ship:
+		if _current_hunger.has(crew):
+			_current_hunger[crew] -=randf() * 0.3 + 0.1
+			if _current_hunger[crew] < 0.0 : _current_hunger[crew] = 0.0
+
+func doHealthChecker():
+	for crew in crew_in_ship:
+		if _health.has(crew):
+			if _current_hunger[crew] == 0.0:
+				_health[crew] -= 0.2
+			if _disease[crew] == 1.0:
+				_health[crew] -= 0.2
+			if _health[crew] <= 0.0:#DEATH, KULANG PA
+				crew_in_ship.erase(crew)
+				recent_events.append("DEATH")
+
+func doSanity():
+	for crew in crew_in_ship:
+		if _sanity.has(crew):
+			var grief = 0.0
+			if recent_events.has("DEATH") or recent_events.has("2DAYDEATH") or recent_events.has("3DAYDEATH"): grief = 0.25
+			_sanity[crew] -= (randf()*0.035) + 0.01 + grief
+
+func doDisease():
+	for crew in crew_in_ship:
+		if _disease[crew] != 0.0:
+			var immunity = 0.0
+			if already_vitamins[crew]: immunity = 0.05
+			var disease_progression = (randf() * 0.2 + (getNumberOfDisease() * 0.04)) - immunity
+			if disease_progression < 0.0: disease_progression = 0.0
+			_disease[crew] += disease_progression
+		elif getNumberOfDisease() > 0:
+			var immunity = 0.0
+			if already_vitamins[crew]: immunity = 0.15
+			var chance = randf() * 1.0
+			if chance > (0.8 + immunity): _disease[crew] = 0.0001
+
+func getNumberOfDisease() -> int:
+	var disease_count = 0
+	for crew in crew_in_ship:
+		if _disease[crew] == 0.0:
+			disease_count += 1
+	return disease_count
+
+func resetPerDay():
+	for i in already_talk.keys():
+		already_talk[i] = false
+	for i in already_eaten.keys():
+		already_eaten[i] = false
+	for i in already_medicine.keys():
+		already_medicine[i] = false
+
+####DIALOGUE DATA
+var AlreadyTriggeredDialogueEvent = []

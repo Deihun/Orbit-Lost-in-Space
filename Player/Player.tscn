@@ -1,4 +1,4 @@
-[gd_scene load_steps=281 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=282 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
 [ext_resource type="Texture2D" uid="uid://b58dt7l7pk8hc" path="res://Player/RedAlert.png" id="5_uu3ny"]
+[ext_resource type="Script" path="res://Player/crew_show.gd" id="7_2xvw1"]
 [ext_resource type="FontFile" uid="uid://c7uhqrt01aycb" path="res://Player/Dashhorizon-eZ5wg.otf" id="9_38whn"]
 [ext_resource type="Script" path="res://Player/UI_Resources_InRun.gd" id="10_bg53w"]
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
@@ -1877,8 +1878,8 @@ shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="BlackTransition" type="AnimatedSprite2D" parent="player/AllUIParents"]
 visible = false
-position = Vector2(965, 525)
-scale = Vector2(1.01, 1.01)
+position = Vector2(964.805, 533.8)
+scale = Vector2(1.0102, 1.0263)
 sprite_frames = SubResource("SpriteFrames_dgrpv")
 frame = 99
 frame_progress = 1.0
@@ -1893,6 +1894,7 @@ texture = ExtResource("15_up6st")
 
 [node name="Red_UI_Indicator" type="Node2D" parent="player/AllUIParents"]
 visible = false
+scale = Vector2(1.01833, 1.02692)
 script = ExtResource("4_q5jjs")
 
 [node name="Red" type="Sprite2D" parent="player/AllUIParents/Red_UI_Indicator"]
@@ -1903,10 +1905,27 @@ texture = ExtResource("5_uu3ny")
 wait_time = 0.1
 autostart = true
 
+[node name="Crew_Show" type="Control" parent="player/AllUIParents"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1369.0
+offset_top = 1021.0
+offset_right = 1897.0
+offset_bottom = 1110.0
+script = ExtResource("7_2xvw1")
+
+[node name="Crew_container" type="HBoxContainer" parent="player/AllUIParents/Crew_Show"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 560.0
+offset_bottom = 128.0
+theme_override_constants/separation = 154
+
 [node name="FullInventoryIndicator" parent="player/AllUIParents" instance=ExtResource("2_1yavb")]
 visible = false
 z_index = 200
-position = Vector2(419, 875)
+position = Vector2(327, 875)
 scale = Vector2(2.065, 2.065)
 
 [node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
@@ -2080,7 +2099,6 @@ offset_right = 368.0
 offset_bottom = 104.0
 
 [node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
-visible = false
 z_index = 60
 offset_left = 330.0
 offset_top = 927.0
