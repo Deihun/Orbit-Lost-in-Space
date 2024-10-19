@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb52e7f7m0hvb"]
+[gd_scene load_steps=7 format=3 uid="uid://cb52e7f7m0hvb"]
 
 [ext_resource type="Script" path="res://Scenes/Ingame/pause_menu.gd" id="1_cu0fw"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_jhi0i"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="3_d1w0n"]
 [ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="3_qbxds"]
+[ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="5_5ab7f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wmgc2"]
 shader = ExtResource("3_qbxds")
@@ -14,6 +15,62 @@ z_index = 500
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cu0fw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 359.0
+offset_top = 130.5
+offset_right = 759.0
+offset_bottom = 590.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="RESUME" type="Button" parent="VBoxContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "RESUME
+"
+
+[node name="RESTART" type="Button" parent="VBoxContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "RESTART
+"
+
+[node name="MAIN_MENU" type="Button" parent="VBoxContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "MAIN MENU
+"
+
+[node name="SETTINGS" type="Button" parent="VBoxContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="SAVE" type="Button" parent="VBoxContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "SAVE / LOAD"
+
+[node name="QUIT" type="Button" parent="VBoxContainer"]
+z_index = 4
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "EXIT
+"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_wmgc2")
@@ -42,57 +99,8 @@ patch_margin_bottom = 70
 wait_time = 0.3
 one_shot = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 359.0
-offset_top = 203.5
-offset_right = 759.0
-offset_bottom = 583.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="RESUME" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "RESUME
-"
-
-[node name="RESTART" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "RESTART
-"
-
-[node name="MAIN_MENU" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "MAIN MENU
-"
-
-[node name="SAVE" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "SAVE / LOAD"
-
-[node name="QUIT" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "EXIT
-"
-
 [node name="SaveUI" parent="." instance=ExtResource("3_d1w0n")]
+visible = false
 z_index = 1
 layout_mode = 2
 anchors_preset = 0
@@ -103,10 +111,21 @@ offset_top = -4.0
 offset_right = 402.0
 offset_bottom = -4.0
 
-[connection signal="timeout" from="PauseTimer" to="." method="READY_TO_PAUSE"]
+[node name="Settings_Menu" parent="." instance=ExtResource("5_5ab7f")]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1000, 700)
+layout_mode = 1
+offset_left = 24.0
+offset_top = 43.0
+offset_right = 1024.0
+offset_bottom = 743.0
+
 [connection signal="button_down" from="VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="VBoxContainer/RESTART" to="." method="RESTART"]
 [connection signal="button_up" from="VBoxContainer/MAIN_MENU" to="." method="MAIN_MENU"]
+[connection signal="pressed" from="VBoxContainer/SETTINGS" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/SAVE" to="." method="_on_save_pressed"]
 [connection signal="button_up" from="VBoxContainer/QUIT" to="." method="QUIT"]
+[connection signal="timeout" from="PauseTimer" to="." method="READY_TO_PAUSE"]

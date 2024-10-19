@@ -51,6 +51,6 @@ func _on_back_button_up() -> void:
 	if visiblepause:
 		visiblepause.show()
 	self.visible = false
-	
+
 func _on_message_delay_timeout() -> void:
 	panel.hide()

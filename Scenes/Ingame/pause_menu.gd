@@ -2,6 +2,7 @@ extends Control
 
 @onready var save_ui = $SaveUI
 @onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var settings_menu = $Settings_Menu as SettingsMenu
 
 var readyToPause : bool = true
 
@@ -69,3 +70,8 @@ func _on_save_pressed() -> void:
 	else:
 		save_ui.visible = true
 		v_box_container.visible = false
+
+
+func _on_settings_pressed() -> void:
+	settings_menu.visible = true
+	settings_menu.set_process(true)
