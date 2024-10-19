@@ -16,7 +16,6 @@ func set_action_name() -> void:
 	SaveName = label.text
 
 func _on_button_pressed() -> void:
-	print(SaveName)
 	SaveGame.LoadSave(SaveName)
 	SaveNLoad.isLoadGame = true
 	get_tree().change_scene_to_packed(load_game)
