@@ -16,6 +16,21 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cu0fw")
 
+[node name="Settings_Menu" parent="." instance=ExtResource("5_5ab7f")]
+visible = false
+z_index = 8
+custom_minimum_size = Vector2(1000, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -28.0
+offset_right = 1201.0
+offset_bottom = 898.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 1
 layout_mode = 1
@@ -110,16 +125,6 @@ offset_left = 2.0
 offset_top = -4.0
 offset_right = 402.0
 offset_bottom = -4.0
-
-[node name="Settings_Menu" parent="." instance=ExtResource("5_5ab7f")]
-visible = false
-z_index = 1
-custom_minimum_size = Vector2(1000, 700)
-layout_mode = 1
-offset_left = 24.0
-offset_top = 43.0
-offset_right = 1024.0
-offset_bottom = 743.0
 
 [connection signal="button_down" from="VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="VBoxContainer/RESUME" to="." method="RESUME"]
