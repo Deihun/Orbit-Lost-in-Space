@@ -6,7 +6,7 @@ extends CanvasLayer
 
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
-
+@onready var portrait = $Balloon/Portrait
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -21,28 +21,12 @@ var will_hide_balloon: bool = false
 
 var _locale: String = TranslationServer.get_locale()
 
-
-###AllImage
-var Fumiko = []
-var Maxim = []
-var Regina = []
-var Jerry = []
-var Nahsir = []
-
-enum mood {
-	HAPPY=1, 
-	NEUTRAL=2,
-	SAD=3,
-	ANGRY=4, 
-	BORED=5
-	}
-
 ## The current line
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
 		is_waiting_for_input = false
-		balloon.focus_mode = Control.FOCUS_ALL
-		balloon.grab_focus()
+		#balloon.focus_mode = Control.FOCUS_ALL
+		#balloon.grab_focus()
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
@@ -57,6 +41,9 @@ var dialogue_line: DialogueLine:
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
+		var portrait_path: = load("res://Resources/CREW/MAXIM.png")
+		if dialogue_line.character == "Maxim":
+			$Balloon/Portrait.texture = portrait_path
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line

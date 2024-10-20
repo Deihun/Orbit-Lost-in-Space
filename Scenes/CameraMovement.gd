@@ -178,6 +178,7 @@ func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, sh
 		LocationKey = 2
 		ChangeLocaton(false)
 		$"../EventHandler".switchIt()
+		$"../WholeInteriorScene/Lobby".set_initialDialogue()
 
 
 func _on_end_cycle_timer_timeout() -> void:

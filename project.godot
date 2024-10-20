@@ -31,8 +31,9 @@ DialogueCommand="*res://DialogueSystem/DialogueCommand.gd"
 
 [dialogue_manager]
 
-general/balloon_path="res://DialogueSystem/balloon.tscn"
+general/balloon_path="res://DialogueSystem/DialogueBalloon/balloon.tscn"
 general/states=["GlobalResources", "IngameStoredProcessSetting", "DialogueCommand"]
+general/export_characters_in_translation=false
 
 [display]
 
@@ -75,7 +76,7 @@ Interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://DialogueSystem/Dialogue.dialogue", "res://DialogueSystem/EventDialogue/Dialogue_interact.dialogue")
+locale/translations_pot_files=PackedStringArray("res://DialogueSystem/Dialogue.dialogue", "res://DialogueSystem/EventDialogue/Dialogue_interact.dialogue", "res://DialogueSystem/EventDialogue/FirstDay_Dialogue.dialogue")
 
 [layer_names]
 

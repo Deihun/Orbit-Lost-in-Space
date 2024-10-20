@@ -24,11 +24,14 @@ func _process(delta):
 	pass
 
 func _ready():
+	$WholeInteriorScene/Lobby.initializeJSONFILE()
+	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
 	print("LIST OF CREW", IngameStoredProcessSetting.crew_in_ship)
 	if SaveGame.isLoadGame:
 		_loadGameStart()
 	else:
 		_newGameStart()
+		
 	updateUI()
 
 func getButtonPosition():
@@ -39,6 +42,7 @@ func _newGameStart():
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
 	EventHandler.ActivateEvent()
+	$WholeInteriorScene/Lobby.set_initialDialogue()
 	pass
 
 func _loadGameStart():
@@ -68,6 +72,7 @@ func _on_next_day_button_pressed():
 		EventHandler.ActivateEvent()
 		ClickCD.start()
 		$WholeInteriorScene/Lobby.setRandomPosition()
+		$WholeInteriorScene/Lobby.set_initialDialogue()
 		updateUI()
 		camera.ChangeSpecificScene(4)
 	else:

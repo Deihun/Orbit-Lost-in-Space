@@ -17,6 +17,7 @@ func _input(event):
 		readyToPause = false
 		$PauseTimer.start()
 
+
 func _TOGGLE_ESCAPE():
 	var Pause_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Pause_Button")
 	if !readyToPause:
@@ -26,8 +27,8 @@ func _TOGGLE_ESCAPE():
 	else:
 		_pause()
 
+
 func _pause():
-	
 	visible = true
 	Engine.time_scale = 0
 	var TutorialUI = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")

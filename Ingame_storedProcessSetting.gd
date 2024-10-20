@@ -156,10 +156,10 @@ var crew_in_ship = []
 
 
 var _relationship = { #SAVE
-	"Regina" : 0.5,
-	"Maxim"  : 0.5,
-	"Nashir" : 0.5,
-	"Fumiko" : 0.5
+	"Regina" : 0.65,
+	"Maxim"  : 0.65,
+	"Nashir" : 0.65,
+	"Fumiko" : 0.65
 }
 var already_eaten = { #SAVE
 	"Regina" : false,
@@ -205,10 +205,10 @@ var _sanity = { #SAVE
 	"Fumiko" : 0.5
 }
 var _health = { #SAVE
-	"Regina" : 0.5,
-	"Maxim"  : 0.5,
-	"Nashir" : 0.5,
-	"Fumiko" : 0.5
+	"Regina" : 1.0,
+	"Maxim"  : 1.0,
+	"Nashir" : 1.0,
+	"Fumiko" : 1.0
 }
 var _disease = { #SAVE
 	"Regina" : 0.0,
@@ -235,25 +235,25 @@ var _Knowledge = { #SAVE
 	"Fumiko" : 1
 }
 var _reginaRelationship = { #SAVE
-	"Maxim"  : 0.0,
-	"Nashir" : 0.0,
-	"Fumiko" : 0.0
+	"Maxim"  : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
 }
 var _MaximRelationship = { #SAVE
-	"Regina" : 0.0,
-	"Nashir" : 0.0,
-	"Fumiko" : 0.0
+	"Regina" : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
 }
 var _NashirRelationship = { #SAVE
-	"Regina" : 0.0,
-	"Maxim"  : 0.0,
-	"Fumiko" : 0.0
+	"Regina" : 0.5,
+	"Maxim"  : 0.5,
+	"Fumiko" : 0.5
 }
 var _FumikoRelationship = { #SAVE
-	"Regina" : 0.0,
-	"Maxim"  : 0.0,
-	"Nashir" : 0.0,
-	"Fumiko" : 0.0
+	"Regina" : 0.5,
+	"Maxim"  : 0.5,
+	"Nashir" : 0.5,
+	"Fumiko" : 0.5
 }
 func addRelationshipBetweenCrew(FromCrewName : String,ToCrewName_CAPS, value : bool):
 	match (ToCrewName_CAPS):

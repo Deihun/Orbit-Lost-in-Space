@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
 
-[ext_resource type="Script" path="res://DialogueSystem/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" path="res://DialogueSystem/DialogueBalloon/balloon.gd" id="1_36de5"]
+[ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="2_8dc0q"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://bsjlpehei1cau" path="res://DialogueSystem/Message.png" id="4_g6i1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -64,6 +64,10 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq2ny"]
+shader = ExtResource("2_8dc0q")
+shader_parameter/amount = 1.966
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -78,8 +82,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="Character" type="Sprite2D" parent="Balloon"]
-position = Vector2(-21, 30)
+[node name="ColorRect" type="ColorRect" parent="Balloon"]
+material = SubResource("ShaderMaterial_iq2ny")
+layout_mode = 0
+offset_left = -1012.0
+offset_top = -423.0
+offset_right = 2350.0
+offset_bottom = 1351.0
+mouse_filter = 2
+
+[node name="Portrait" type="Sprite2D" parent="Balloon"]
+position = Vector2(154, 582)
 
 [node name="Panel" type="Panel" parent="Balloon"]
 clip_children = 2
@@ -88,8 +101,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 117.0
-offset_top = -281.0
+offset_left = 21.0
+offset_top = -183.0
 offset_right = -19.0
 offset_bottom = -19.0
 grow_horizontal = 2
@@ -130,13 +143,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 316.0
-offset_top = -596.0
-offset_right = 957.0
-offset_bottom = -315.0
+offset_left = 323.0
+offset_top = -575.0
+offset_right = 964.0
+offset_bottom = -171.0
 grow_horizontal = 2
 grow_vertical = 0
-rotation = -0.00392815
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
@@ -149,7 +161,6 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
-icon = ExtResource("4_g6i1h")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
