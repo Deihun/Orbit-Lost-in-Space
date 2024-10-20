@@ -10,6 +10,10 @@ func set_data(description : String):
 		$Panel.add_theme_stylebox_override("panel",negative)
 		$Icon_Sign.texture = icon_negative
 		pass
+	elif description.contains("has gone missing..."):
+		$Panel.add_theme_stylebox_override("panel",negative)
+		var split = description.split(" ")
+		description = split[0] + " has gone missing..."
 	else: 
 		$Panel.add_theme_stylebox_override("panel",positive)
 		$Icon_Sign.texture = icon_positive

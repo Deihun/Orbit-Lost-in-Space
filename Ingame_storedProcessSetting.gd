@@ -18,7 +18,12 @@ func endCycle():
 	doDisease()
 	doHealthChecker()
 	doHunger()
+	doOxygen()
 	resetPerDay()
+	
+	#DELETE THIS LATER
+	var a = str("Crew_in_ship:",crew_in_ship,"\nHunger:",_current_hunger,"\nHealth:",_health,"\nSanity:",_sanity,"\nDisease:",_disease)
+	print(a)
 
 
 func getCycle():
@@ -118,19 +123,23 @@ var recent_events = [] # Such as crew deaths something like that
 func addOnCycleReportList(report : String):
 	var split = report.split(" ")
 	var name = split[0]
-	print("Report: ",report)
 	var value = split[1]
 	var index : int = 0
+	if report.contains("has gone missing..."):
+		name = report
+		value = ""
 	for each in Cycle_ReportList:
 		if each[0] == name:
 			break
 		else:
 			index += 1
-	if Cycle_ReportList.size() > 0:
+	if Cycle_ReportList.size() > 0 and value != "":
 		if Cycle_ReportList[0].has(name):
 			Cycle_ReportList[index][1] += int(value)
 		else:
 			Cycle_ReportList.append([name, int(value)])
+	elif Cycle_ReportList.size() > 0 and value == "":
+		Cycle_ReportList.append([name, null])
 	else:
 		Cycle_ReportList.append([name, int(value)])
 	pass
@@ -280,7 +289,7 @@ func reduceFood(value : int):
 func doHunger():
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
-			_current_hunger[crew] -=randf() * 0.3 + 0.1
+			_current_hunger[crew] -=randf() * 0.3 + 0.12
 			if _current_hunger[crew] < 0.0 : _current_hunger[crew] = 0.0
 
 func doHealthChecker():
@@ -291,8 +300,11 @@ func doHealthChecker():
 			if _disease[crew] == 1.0:
 				_health[crew] -= 0.2
 			if _health[crew] <= 0.0:#DEATH, KULANG PA
+				var message = crew + " has gone missing..."
+				addOnCycleReportList(message)
 				crew_in_ship.erase(crew)
 				recent_events.append("DEATH")
+
 
 func doSanity():
 	for crew in crew_in_ship:
@@ -303,7 +315,7 @@ func doSanity():
 
 func doDisease():
 	for crew in crew_in_ship:
-		if _disease[crew] != 0.0:
+		if _disease[crew] != 0.0 or _disease[crew] != 0:
 			var immunity = 0.0
 			if already_vitamins[crew]: immunity = 0.05
 			var disease_progression = (randf() * 0.2 + (getNumberOfDisease() * 0.04)) - immunity
@@ -315,10 +327,45 @@ func doDisease():
 			var chance = randf() * 1.0
 			if chance > (0.8 + immunity): _disease[crew] = 0.0001
 
+func doOxygen():
+	for crew in crew_in_ship:
+		if GlobalResources.oxygen <= 0:  # If no oxygen is left
+			if GlobalResources.emergencyOxy <= 0: 
+				pass # GAME OVER
+			else:
+				addOnCycleReportList("EmergencyOxygen -5")
+				GlobalResources.emergencyFuel -= 5
+				if GlobalResources.emergencyFuel < 0: GlobalResources.emergencyFuel = 0
+		else:
+			var oxygen_consumption = 5  # How much oxygen is consumed each cycle
+			GlobalResources.oxygen -= oxygen_consumption  # Subtract from oxygen
+			if GlobalResources.oxygen >= 0:  # If there's still oxygen left (or zero)
+				var oxygen_report =  "Oxygen -" + str(oxygen_consumption)
+				addOnCycleReportList(oxygen_report)
+			else:  # If oxygen goes negative, handle the excess consumption
+				var excessConsumption = GlobalResources.oxygen * -1  # Convert to positive excess
+				GlobalResources.oxygen = 0  # Set oxygen to 0 since it's depleted
+				
+				var oxygen_report = "Oxygen -" + str(oxygen_consumption - excessConsumption)
+				addOnCycleReportList(oxygen_report)
+				
+				# Handle excess by using emergency oxygen
+				if GlobalResources.emergencyOxy > 0 and excessConsumption > 0:
+					var emergency_report = "EmergencyOxygen -" + str(excessConsumption)
+					addOnCycleReportList(emergency_report)
+					
+					GlobalResources.emergencyOxy -= excessConsumption  # Subtract excess from emergency oxygen
+					
+					if GlobalResources.emergencyOxy < 0:  # Ensure emergency oxygen doesn't go negative
+						GlobalResources.emergencyOxy = 0
+					if GlobalResources.emergencyOxy <= 0:
+						pass ## Handle game over here if needed
+	print(Cycle_ReportList)
+
 func getNumberOfDisease() -> int:
 	var disease_count = 0
 	for crew in crew_in_ship:
-		if _disease[crew] == 0.0:
+		if _disease[crew] != 0.0 or _disease[crew] != 0:
 			disease_count += 1
 	return disease_count
 

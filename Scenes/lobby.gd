@@ -4,7 +4,7 @@ var positionRandom = []
 var _button
 
 func _ready() -> void:
-	IngameStoredProcessSetting.crew_in_ship = ["Nashir","Fumiko"]
+	IngameStoredProcessSetting.crew_in_ship = ["Maxim"]
 	setRandomPosition()
 
 func setRandomPosition():

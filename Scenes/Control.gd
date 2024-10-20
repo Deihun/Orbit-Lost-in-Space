@@ -52,16 +52,10 @@ func GameOver(OtherCommands):
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
 	if GlobalResources.currentActiveQueue <= 0 and !$EventHandler.visible:
-		GlobalResources.subtractItem(true, "OXYGEN", 10)
-		GlobalResources.subtractItem(true, "FUEL", 10)
-		
-		
-		$WholeInteriorScene/Lobby.setRandomPosition()
-		#Switch to Event View
-		camera.ChangeSpecificScene(4)
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
 		CycleSetting.endCycle()
+
 		#Auto Save
 		SaveGame.save()
 		#crafting
@@ -73,9 +67,9 @@ func _on_next_day_button_pressed():
 		EventHandler.startAddNextEvent()
 		EventHandler.ActivateEvent()
 		ClickCD.start()
-		
+		$WholeInteriorScene/Lobby.setRandomPosition()
 		updateUI()
-		
+		camera.ChangeSpecificScene(4)
 	else:
 		camera.ChangeSpecificScene(2)
 

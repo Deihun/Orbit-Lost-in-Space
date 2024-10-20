@@ -18,6 +18,9 @@ if !already_talk["Maxim"]
 			Maxim: Thankyou very much!
 		else
 			set already_talk["Maxim"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Maxim"] = false
+		=> END
 else
 	Jerry: I already talk with him...
 => END
