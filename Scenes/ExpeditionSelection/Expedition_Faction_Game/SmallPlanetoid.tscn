@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqs5a2e3u4d8a"]
+
+[ext_resource type="Texture2D" uid="uid://d033rk5yt6g0n" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SmallPlanetoid_MapLayout.png" id="1_ihuds"]
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_ymmy4"]
+[ext_resource type="PackedScene" uid="uid://c2ivqlxyu5lj" path="res://Scenes/SceneAssets/door_way.tscn" id="3_ohaaf"]
+
+[node name="SmallPlanetoid" type="Node2D"]
+
+[node name="MapLayout" type="Sprite2D" parent="."]
+position = Vector2(2320, 1392)
+scale = Vector2(3.76749, 3.94409)
+texture = ExtResource("1_ihuds")
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="MapLayout"]
+position = Vector2(-892.454, -208.635)
+scale = Vector2(0.472198, 0.409089)
+collision_layer = 33
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapLayout/Wall"]
+position = Vector2(1722, 481)
+scale = Vector2(6.74345, 4.99926)
+build_mode = 1
+polygon = PackedVector2Array(36.9247, 158.824, 36.9247, 87.213, -89.7167, 86.8129, -89.5684, 82.6123, -28.7687, 83.0124, -28.6204, 30.2045, -25.6545, 30.4045, -25.0614, 83.2124, 36.3315, 82.6123, 36.6281, -61.0091, -25.9511, -60.8091, -25.3579, 2.40035, -28.3238, 2.60039, -28.4721, -64.8096, 36.6281, -64.6096, 36.3315, -157.823, -66.4348, -157.423, -66.2866, -65.0097, -54.2749, -64.8096, -53.3851, -60.409, -112.109, -61.2091, -112.405, 38.6057, -115.223, 38.8058, -115.52, -60.609, -133.759, -60.8091, -134.204, -64.8096, -69.6973, -65.0097, -69.549, -158.024, -170.684, -158.024, -170.684, -64.6096, -156.003, -64.6096, -156.003, -61.2091, -170.684, -61.0091, -171.277, 82.0122, -156.596, 82.0122, -156.596, 85.8128, -171.722, 86.0128, -171.426, 158.424, -114.926, 158.624, -115.075, 86.0128, -134.649, 85.8128, -134.501, 82.8123, -115.075, 82.6123, -114.778, 66.6099, -112.554, 66.6099, -112.554, 159.024, -48.0466, 158.824, -48.0466, 107.416, -45.674, 107.416, -45.674, 158.824)
+metadata/_edit_lock_ = true
+
+[node name="DoorWay" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(293, 792)
+scale = Vector2(0.575, 0.575)
+
+[node name="DoorWay2" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(271, 2079)
+rotation = -3.1342
+scale = Vector2(0.575, 0.575)
+
+[node name="DoorWay3" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(798, 2066)
+rotation = 3.14574
+scale = Vector2(0.603009, 0.603009)
+
+[node name="DoorWay4" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(1742, 1484)
+rotation = -4.71745
+scale = Vector2(0.525, 0.525)
+
+[node name="DoorWay5" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(1493, 2134)
+rotation = 1.55346
+scale = Vector2(0.39, 0.39)
+
+[node name="DoorWay6" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(1535, 781)
+rotation = -0.00180006
+scale = Vector2(0.69321, 0.607064)
+
+[node name="DoorWay7" parent="." instance=ExtResource("3_ohaaf")]
+position = Vector2(615, 1764)
+rotation = -1.59354
+scale = Vector2(0.545261, 0.477501)
+
+[node name="player" parent="." instance=ExtResource("2_ymmy4")]
+position = Vector2(750, 1661)
