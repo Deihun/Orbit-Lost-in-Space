@@ -5,7 +5,7 @@ var balloon
 var _button
 
 func _ready() -> void:
-	IngameStoredProcessSetting.crew_in_ship = ["Maxim","Regina","Fumiko"]
+	#IngameStoredProcessSetting.crew_in_ship = ["Maxim","Regina","Fumiko"]
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	setRandomPosition()

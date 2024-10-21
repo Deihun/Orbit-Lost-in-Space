@@ -80,19 +80,19 @@ Jerry:
 => END
 
 ~ Jerry_Only_1
-Jerry: Si mave mukhang tite
+Jerry: Jerry_only
 => END 
 
 ~ Jerry_Only_2
-Jerry: Si mave mukhang burat
+Jerry: Jerry_only
 => END 
 
 ~ Jerry_Only_3
-Jerry: Si mave mukhang tubol
+Jerry: Jerry_only
 => END 
 
 ~ Jerry_Only_4
-Jerry: Si mave mukhang nigger
+Jerry: Jerry_only
 => END 
 
 #MAKE IT NEUTRAL THAT EVEN IF THEIR RELATIONSHIP ARE LOW, THEY CAN STILL TALK 
@@ -346,9 +346,6 @@ Jerry: Si mave mukhang nigger
 => END 
 ~ sanity_good_nashir2
 => END 
-
-
-
 
 ############LEAVE THIS NULL
 ~ null 
