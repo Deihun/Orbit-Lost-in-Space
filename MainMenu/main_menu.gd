@@ -13,6 +13,8 @@ extends Control
 @onready var a = preload("res://Scripts/EventManager_NotIngame.tscn") as PackedScene
 @onready var tutorialScene = preload("res://Scenes/Tutorial/TutorialScene.tscn")
 @onready var LoadGame = SaveNLoad
+@onready var credits: Control = $Credits
+
 
 func _on_new_game_button_pressed() -> void:
 	if SettingsDataContainer.tutorialScene or SettingsDataContainer.tutorialScene == null:
@@ -50,3 +52,10 @@ func _on_developer_option_pressed() -> void:
 	get_tree().change_scene_to_packed(a)
 	pass # Replace with function body.
 	
+
+func _on_credits_button_pressed() -> void:
+	if credits.visible == true:
+		credits.visible = false
+		print("open")
+	else:
+		credits.visible = true
