@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=7 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
 [ext_resource type="Texture2D" uid="uid://cdaqautft1fif" path="res://MainMenu/Untitled-1-Recovered.png" id="2_b48ty"]
 [ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="3_xdu3v"]
+[ext_resource type="PackedScene" uid="uid://cunvpo4f1ww16" path="res://Credits.tscn" id="4_e2ov8"]
 [ext_resource type="AudioStream" uid="uid://cir657n81xry8" path="res://Music/Erika-German-Song-Sound-Effect.mp3" id="4_hxbdb"]
 [ext_resource type="PackedScene" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
 
@@ -130,6 +131,17 @@ theme_override_font_sizes/font_size = 60
 text = "Settings
 "
 
+[node name="Credits_Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -115.0
+offset_top = 729.0
+offset_right = 220.0
+offset_bottom = 820.0
+scale = Vector2(1.06338, 0.978837)
+theme_override_font_sizes/font_size = 60
+text = "Credits"
+
 [node name="Quit_Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -141,6 +153,16 @@ scale = Vector2(1.0841, 1)
 theme_override_font_sizes/font_size = 60
 text = "Quit
 "
+
+[node name="Credits" parent="." instance=ExtResource("4_e2ov8")]
+visible = false
+z_index = 5
+layout_mode = 1
+offset_left = 282.0
+offset_top = 94.0
+offset_right = -899.0
+offset_bottom = -404.0
+scale = Vector2(2, 2)
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hxbdb")
@@ -159,4 +181,5 @@ offset_bottom = -121.0
 [connection signal="pressed" from="New_Game_Button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="Load_Game_Button" to="." method="_on_load_game_button_pressed"]
 [connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Credits_Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
