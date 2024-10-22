@@ -1913,6 +1913,7 @@ frame_progress = 0.71547
 [node name="Player" parent="." instance=ExtResource("2_pi7qp")]
 z_index = 1
 position = Vector2(630, 474)
+useGlobeTimerUI = false
 
 [node name="Background" type="Node2D" parent="."]
 

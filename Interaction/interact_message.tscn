@@ -15,6 +15,7 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
 [node name="interact_message" type="Node2D"]
+visible = false
 script = ExtResource("1_j6q2q")
 
 [node name="Timer" type="Timer" parent="."]

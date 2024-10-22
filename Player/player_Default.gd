@@ -8,9 +8,17 @@ extends Node2D
 @export_group("UI_Settings")
 @export var cameraZoom : float
 @export var show_timer : bool = true
+@export var show_crewInventoryUI: bool = true
+@export var show_inventoryUI : bool = true
+@export var show_tutorialTip : bool = true
+@export var useGlobeTimerUI : bool = true
 
 @export_group("Game Settings")
+@export_subgroup("Time Limit")
+@export var activate_timeLimit : bool = true
+@export var delayBeforeGameStart : float = 6.0
 @export var limitTimeDuration : int = 90
+
 
 func _ready() -> void:
 	showTimer(show_timer)

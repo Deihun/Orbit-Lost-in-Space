@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=22 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
 [ext_resource type="Texture2D" uid="uid://ce0kw7ceb80dk" path="res://Scenes/WideshotScenePanaroma.png" id="2_og4ji"]
 [ext_resource type="Texture2D" uid="uid://prju7pqu8no5" path="res://Scenes/Rocket_LaunchScene.png" id="2_ybnrr"]
-[ext_resource type="Script" path="res://Player/CountDown_Script.gd" id="4_0bin4"]
 [ext_resource type="Texture2D" uid="uid://cwuvkfw0gpv8x" path="res://Scenes/spritesheet (12).png" id="4_icatl"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="5_08kc6"]
 [ext_resource type="PackedScene" uid="uid://b2onu2klyecou" path="res://AmbiencePurposes/Paper_Collidable/PaperAmbienceGeneration.tscn" id="5_bvoa8"]
@@ -717,10 +716,8 @@ z_index = 1
 position = Vector2(936, 402)
 can_Move = false
 show_timer = false
-
-[node name="countDown_mainTimer" type="Timer" parent="Player"]
-script = ExtResource("4_0bin4")
-countdown_start = 90
+delayBeforeGameStart = 4.0
+limitTimeDuration = 10
 
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
 z_index = 1
@@ -1109,10 +1106,9 @@ collision_layer = 33
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2_TEMPORARY"]
-polygon = PackedVector2Array(-70, -7, 4185, -3, 4212, 1258, -5, 1315, -9, 994, 4087, 990, 4102, 76, -81, 91)
+polygon = PackedVector2Array(-70, -7, 4185, -3, 4212, 1258, 1733.02, 1291.51, -5, 1315, -9, 994, 4087, 990, 4102, 76, -81, 91)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2_TEMPORARY"]
 polygon = PackedVector2Array(45, 68, 70, 1283, -109, 1212, -62, 50)
 
-[connection signal="timeout" from="Player/countDown_mainTimer" to="Player/countDown_mainTimer" method="_on_timeout"]
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]

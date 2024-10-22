@@ -5,6 +5,7 @@ extends Node
 #VARIABLE 
 var Cycle = 0
 var Scenes : String= ""
+var Ending : String= "null"
 
 
 func newGame():
@@ -289,7 +290,7 @@ func reduceFood(value : int):
 func doHunger():
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
-			_current_hunger[crew] -=randf() * 0.3 + 0.12
+			_current_hunger[crew] -=randf() * 0.3 + 0.15
 			if _current_hunger[crew] < 0.0 : _current_hunger[crew] = 0.0
 
 func doHealthChecker():

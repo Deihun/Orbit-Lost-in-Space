@@ -1869,6 +1869,10 @@ collision_layer = 2
 collision_mask = 54
 script = ExtResource("1_5ung8")
 
+[node name="_GameTimerLimit" type="Timer" parent="player"]
+one_shot = true
+script = ExtResource("23_rapkq")
+
 [node name="CheckingFor_OnHitEffect" type="Area2D" parent="player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/CheckingFor_OnHitEffect"]
@@ -2179,9 +2183,7 @@ one_shot = true
 [node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
 
-[node name="_GameTimerLimit" type="Timer" parent="player"]
-script = ExtResource("23_rapkq")
-
+[connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
 [connection signal="body_exited" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_exited"]
 [connection signal="timeout" from="player/AllUIParents/Red_UI_Indicator/_Red_UI_Indicator_timer" to="player/AllUIParents/Red_UI_Indicator" method="_on__red_ui_indicator_timer_timeout"]
