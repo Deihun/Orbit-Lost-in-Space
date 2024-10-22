@@ -124,6 +124,7 @@ func startUI():
 	$AllUIParents/StartUI_label.visible = true
 	await get_tree().create_timer(1.5).timeout 
 	$AllUIParents/StartUI_label.visible = false
+	$AllUIParents/Crew_Show.show()
 	$AllUIParents/Label_Timer.visible = true
 	$AllUIParents/Globe_Timer_Sprite.visible =true
 	$AllUIParents/Globe_Timer_Sprite/Meteor_animated.visible= true
@@ -150,6 +151,7 @@ func endScene():
 	$AllUIParents/Globe_Timer_Sprite.visible = false
 	$AllUIParents/Globe_Timer_Sprite/Meteor_animated.visible = false
 	$AllUIParents/Label_Timer.visible = false
+	$AllUIParents/Crew_Show.hide()
 	var introCam = NodeFinder.find_node_by_name(get_tree().current_scene, "IntroductionCamera")
 	introCam.position = Vector2(4000,-3800)
 	introCam.make_current()

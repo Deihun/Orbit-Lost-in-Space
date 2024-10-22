@@ -19,6 +19,8 @@ var teddyBear = load("res://Resources/Resource_Images/TeddyBear Icon.png")
 
 var _regina_icon = load("res://Resources/CREW/REGINA PICK UP.png")
 var _maxim_icon = load("res://Resources/CREW/MAXIM.png")
+var _fumiko_icon = load("res://Resources/CREW/Fumiko PickUp.png")
+var _nashir_icon = load("res://Resources/CREW/Nashir_pickup.png")
 
 var inventory = []  
 
@@ -69,6 +71,12 @@ func showItem():
 		elif i < hands.size() and "Maxim" in inventory[i]:
 			hands[i].scale = Vector2(0.15,0.15)
 			hands[i].texture = _maxim_icon
+		elif i < hands.size() and "Nashir" in inventory[i]:
+			hands[i].scale = Vector2(0.15,0.15)
+			hands[i].texture = _nashir_icon
+		elif i < hands.size() and "Fumiko" in inventory[i]:
+			hands[i].scale = Vector2(0.15,0.15)
+			hands[i].texture = _fumiko_icon
 		else:
 			hands[i].texture = null
 

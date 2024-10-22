@@ -715,6 +715,8 @@ frame_progress = 0.340232
 [node name="Player" parent="." instance=ExtResource("1_qqdcd")]
 z_index = 1
 position = Vector2(936, 402)
+can_Move = false
+show_timer = false
 
 [node name="countDown_mainTimer" type="Timer" parent="Player"]
 script = ExtResource("4_0bin4")

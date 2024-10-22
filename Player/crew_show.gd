@@ -2,8 +2,8 @@ extends Control
 
 var _maxim = load("res://Resources/CREW/MAXIM.png")
 var _regina = load("res://Resources/CREW/REGINA PICK UP.png")
-var _fumiko = load("res://Resources/CREW/REGINA PICK UP.png")
-var _nashir = load("res://Resources/CREW/REGINA PICK UP.png")
+var _fumiko = load("res://Resources/CREW/Fumiko PickUp.png")
+var _nashir = load("res://Resources/CREW/Nashir_pickup.png")
 var _nonOccupy = load("res://Resources/CREW/NotOccupy.png")
 var inventory
 

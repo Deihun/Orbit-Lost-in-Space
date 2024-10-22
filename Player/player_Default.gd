@@ -9,6 +9,9 @@ extends Node2D
 @export var cameraZoom : float
 @export var show_timer : bool = true
 
+@export_group("Game Settings")
+@export var limitTimeDuration : int = 90
+
 func _ready() -> void:
 	showTimer(show_timer)
 	canMove(can_Move)

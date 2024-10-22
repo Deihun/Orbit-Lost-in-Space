@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Ingame/pause_menu.gd" id="1_cu0fw"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_jhi0i"]
-[ext_resource type="PackedScene" path="res://SaveAndLoad/save_ui.tscn" id="3_d1w0n"]
+[ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="3_d1w0n"]
 [ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="3_qbxds"]
 [ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="5_5ab7f"]
 
@@ -15,77 +15,7 @@ z_index = 500
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cu0fw")
-
-[node name="Settings_Menu" parent="." instance=ExtResource("5_5ab7f")]
-visible = false
-z_index = 8
-custom_minimum_size = Vector2(1000, 700)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -28.0
-offset_right = 1201.0
-offset_bottom = 898.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 359.0
-offset_top = 130.5
-offset_right = 759.0
-offset_bottom = 590.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="RESUME" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "RESUME
-"
-
-[node name="RESTART" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "RESTART
-"
-
-[node name="MAIN_MENU" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "MAIN MENU
-"
-
-[node name="SETTINGS" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "SETTINGS"
-
-[node name="SAVE" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "SAVE / LOAD"
-
-[node name="QUIT" type="Button" parent="VBoxContainer"]
-z_index = 4
-custom_minimum_size = Vector2(400, 60)
-layout_mode = 2
-text = "EXIT
-"
+metadata/_edit_vertical_guides_ = [132.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_wmgc2")
@@ -96,13 +26,13 @@ offset_right = 2346.0
 offset_bottom = 1351.0
 grow_horizontal = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 81.0
-offset_top = -19.0
-offset_right = 1037.0
-offset_bottom = 806.0
+offset_left = 1097.0
+offset_top = 404.0
+offset_right = 2053.0
+offset_bottom = 1229.0
 mouse_filter = 0
 texture = ExtResource("1_jhi0i")
 region_rect = Rect2(0, 0, 255, 255)
@@ -111,27 +41,113 @@ patch_margin_top = 70
 patch_margin_right = 70
 patch_margin_bottom = 70
 
-[node name="PauseTimer" type="Timer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -333.5
+offset_right = 94.0
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="RESUME" type="Button" parent="ColorRect/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "RESUME
+"
+
+[node name="RESTART" type="Button" parent="ColorRect/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "RESTART
+"
+
+[node name="MAIN_MENU" type="Button" parent="ColorRect/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "MAIN MENU
+"
+
+[node name="SETTINGS" type="Button" parent="ColorRect/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="SAVE" type="Button" parent="ColorRect/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "SAVE / LOAD"
+
+[node name="QUIT" type="Button" parent="ColorRect/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+text = "EXIT
+"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ColorRect"]
+visible = false
+z_index = 2
+offset_left = 1094.0
+offset_top = 405.0
+offset_right = 2050.0
+offset_bottom = 1230.0
+mouse_filter = 0
+texture = ExtResource("1_jhi0i")
+region_rect = Rect2(0, 0, 255, 255)
+patch_margin_left = 70
+patch_margin_top = 70
+patch_margin_right = 70
+patch_margin_bottom = 70
+
+[node name="Settings_Menu" parent="ColorRect/NinePatchRect2" instance=ExtResource("5_5ab7f")]
+z_index = 8
+custom_minimum_size = Vector2(1000, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -523.0
+offset_top = -323.5
+offset_right = 477.0
+offset_bottom = 376.5
+
+[node name="PauseTimer" type="Timer" parent="ColorRect"]
 wait_time = 0.3
 one_shot = true
 
-[node name="SaveUI" parent="." instance=ExtResource("3_d1w0n")]
+[node name="SaveUI" parent="ColorRect" instance=ExtResource("3_d1w0n")]
 visible = false
 z_index = 1
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 2.0
-offset_top = -4.0
-offset_right = 402.0
-offset_bottom = -4.0
+offset_left = 1018.0
+offset_top = 419.0
+offset_right = 1418.0
+offset_bottom = 419.0
 
-[connection signal="button_down" from="VBoxContainer/RESUME" to="." method="RESUME"]
-[connection signal="button_up" from="VBoxContainer/RESUME" to="." method="RESUME"]
-[connection signal="button_up" from="VBoxContainer/RESTART" to="." method="RESTART"]
-[connection signal="button_up" from="VBoxContainer/MAIN_MENU" to="." method="MAIN_MENU"]
-[connection signal="pressed" from="VBoxContainer/SETTINGS" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/SAVE" to="." method="_on_save_pressed"]
-[connection signal="button_up" from="VBoxContainer/QUIT" to="." method="QUIT"]
-[connection signal="timeout" from="PauseTimer" to="." method="READY_TO_PAUSE"]
+[connection signal="button_down" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/RESTART" to="." method="RESTART"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/MAIN_MENU" to="." method="MAIN_MENU"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/SETTINGS" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/SAVE" to="." method="_on_save_pressed"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/QUIT" to="." method="QUIT"]
+[connection signal="visibility_changed" from="ColorRect/NinePatchRect2/Settings_Menu" to="." method="_on_settings_menu_visibility_changed"]
+[connection signal="timeout" from="ColorRect/PauseTimer" to="." method="READY_TO_PAUSE"]

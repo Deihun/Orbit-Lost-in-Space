@@ -1,4 +1,4 @@
-[gd_scene load_steps=282 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=283 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpoeki66yyjkf" path="res://Scenes/StartText.png" id="15_up6st"]
 [ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
+[ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
@@ -1906,6 +1907,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Crew_Show" type="Control" parent="player/AllUIParents"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1369.0
@@ -2072,6 +2074,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "GAME IS STILL IN EARLY DEVELOPMENT PROGRESS"
 
 [node name="Label_Timer" type="Label" parent="player/AllUIParents"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.003125
 anchor_top = 0.0157407
@@ -2099,6 +2102,7 @@ offset_right = 368.0
 offset_bottom = 104.0
 
 [node name="UI_On_Hand" parent="player/AllUIParents" instance=ExtResource("3_2olcm")]
+visible = false
 z_index = 60
 offset_left = 330.0
 offset_top = 927.0
@@ -2174,6 +2178,9 @@ one_shot = true
 
 [node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
+
+[node name="_GameTimerLimit" type="Timer" parent="player"]
+script = ExtResource("23_rapkq")
 
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
 [connection signal="body_exited" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_exited"]

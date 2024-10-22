@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx15ig4galgsi"
-path="res://.godot/imported/TUTORIALSCENES.png-fc0a8c2456b2735728422253626a2e2b.ctex"
+uid="uid://n134cwmob2ho"
+path="res://.godot/imported/Nashir_pickup.png-854e7eab51cea71d09899822b879c884.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Tutorial/TUTORIALSCENES.png"
-dest_files=["res://.godot/imported/TUTORIALSCENES.png-fc0a8c2456b2735728422253626a2e2b.ctex"]
+source_file="res://Resources/CREW/Nashir_pickup.png"
+dest_files=["res://.godot/imported/Nashir_pickup.png-854e7eab51cea71d09899822b879c884.ctex"]
 
 [params]
 

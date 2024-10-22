@@ -1,8 +1,8 @@
 extends Control
 
-@onready var save_ui = $SaveUI
-@onready var v_box_container: VBoxContainer = $VBoxContainer
-@onready var settings_menu = $Settings_Menu as SettingsMenu
+@onready var save_ui = $ColorRect/SaveUI
+@onready var v_box_container: VBoxContainer = $ColorRect/VBoxContainer
+@onready var settings_menu = $ColorRect/NinePatchRect2
 
 var readyToPause : bool = true
 
@@ -16,7 +16,7 @@ func _input(event):
 	if Input.is_key_pressed(KEY_ESCAPE) and readyToPause:
 		_TOGGLE_ESCAPE()
 		readyToPause = false
-		$PauseTimer.start()
+		$ColorRect/PauseTimer.start()
 
 
 func _TOGGLE_ESCAPE():
@@ -76,4 +76,11 @@ func _on_save_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	settings_menu.visible = true
+	$ColorRect/NinePatchRect2/Settings_Menu.show()
 	settings_menu.set_process(true)
+
+
+func _on_settings_menu_visibility_changed() -> void:
+	if $ColorRect/NinePatchRect2/Settings_Menu.visible == false:
+		$ColorRect/NinePatchRect2.hide()
+	pass # Replace with function body.
