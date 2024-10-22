@@ -6,11 +6,31 @@ var sceneName
 var scene_load_status = 0
 var newScene
 
+var _newGameWorld = "res://Player/World.tscn"
+var _tutorial = "res://Scenes/Tutorial/TutorialScene.tscn"
+var _abandonShip = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.tscn"
+var interiorScene = "res://Scenes/TestingInteriorScene.tscn"
 
 func _ready() -> void:
+	var a = IngameStoredProcessSetting.Scenes
+	print(a)
+	match (a):
+		"newgame":
+			$TutorialPanel.show()
+			sceneName = _newGameWorld
+		"loadgame":
+			sceneName = interiorScene
+		"tutorial":
+			sceneName = _tutorial
+		"abandonship":
+			sceneName = _abandonShip	
+		"interiorscene":
+			sceneName = interiorScene
+		_:
+			sceneName = "res://Player/World.tscn"
+	
 	$TutorialPanel.Colorrect.visible = false
 	$PressAnywhere.disabled = true
-	sceneName = "res://Player/World.tscn"
 	ResourceLoader.load_threaded_request(sceneName)
 
 

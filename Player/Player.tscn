@@ -1,7 +1,8 @@
-[gd_scene load_steps=280 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=283 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
+[ext_resource type="Script" path="res://Player/player_Default.gd" id="1_mhmxe"]
 [ext_resource type="PackedScene" uid="uid://cul7r04u1uv6" path="res://Player/FullInventory_Indicator.tscn" id="2_1yavb"]
 [ext_resource type="Texture2D" uid="uid://blyf5lab2oo6i" path="res://Scenes/TransitionClosing.png" id="2_6y3nk"]
 [ext_resource type="Script" path="res://TutorialUI/TutorialAssets.gd" id="2_7naq2"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
 [ext_resource type="Texture2D" uid="uid://b58dt7l7pk8hc" path="res://Player/RedAlert.png" id="5_uu3ny"]
+[ext_resource type="Script" path="res://Player/crew_show.gd" id="7_2xvw1"]
 [ext_resource type="FontFile" uid="uid://c7uhqrt01aycb" path="res://Player/Dashhorizon-eZ5wg.otf" id="9_38whn"]
 [ext_resource type="Script" path="res://Player/UI_Resources_InRun.gd" id="10_bg53w"]
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
@@ -20,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpoeki66yyjkf" path="res://Scenes/StartText.png" id="15_up6st"]
 [ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
+[ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
@@ -1857,6 +1860,7 @@ radius = 29.0
 [node name="player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
+script = ExtResource("1_mhmxe")
 
 [node name="player" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
@@ -1864,6 +1868,10 @@ position = Vector2(62, 239)
 collision_layer = 2
 collision_mask = 54
 script = ExtResource("1_5ung8")
+
+[node name="_GameTimerLimit" type="Timer" parent="player"]
+one_shot = true
+script = ExtResource("23_rapkq")
 
 [node name="CheckingFor_OnHitEffect" type="Area2D" parent="player"]
 
@@ -1875,8 +1883,8 @@ shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="BlackTransition" type="AnimatedSprite2D" parent="player/AllUIParents"]
 visible = false
-position = Vector2(965, 525)
-scale = Vector2(1.01, 1.01)
+position = Vector2(964.805, 533.8)
+scale = Vector2(1.0102, 1.0263)
 sprite_frames = SubResource("SpriteFrames_dgrpv")
 frame = 99
 frame_progress = 1.0
@@ -1891,6 +1899,7 @@ texture = ExtResource("15_up6st")
 
 [node name="Red_UI_Indicator" type="Node2D" parent="player/AllUIParents"]
 visible = false
+scale = Vector2(1.01833, 1.02692)
 script = ExtResource("4_q5jjs")
 
 [node name="Red" type="Sprite2D" parent="player/AllUIParents/Red_UI_Indicator"]
@@ -1901,10 +1910,28 @@ texture = ExtResource("5_uu3ny")
 wait_time = 0.1
 autostart = true
 
+[node name="Crew_Show" type="Control" parent="player/AllUIParents"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1369.0
+offset_top = 1021.0
+offset_right = 1897.0
+offset_bottom = 1110.0
+script = ExtResource("7_2xvw1")
+
+[node name="Crew_container" type="HBoxContainer" parent="player/AllUIParents/Crew_Show"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 560.0
+offset_bottom = 128.0
+theme_override_constants/separation = 154
+
 [node name="FullInventoryIndicator" parent="player/AllUIParents" instance=ExtResource("2_1yavb")]
 visible = false
 z_index = 200
-position = Vector2(419, 875)
+position = Vector2(327, 875)
 scale = Vector2(2.065, 2.065)
 
 [node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
@@ -2042,6 +2069,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Medicine: 0"
 
 [node name="Game in EarlyProgress" type="Label" parent="player/AllUIParents"]
+visible = false
 offset_left = 1515.0
 offset_top = 1038.0
 offset_right = 1902.0
@@ -2106,7 +2134,6 @@ scale = Vector2(1.25657, 1.26637)
 texture = ExtResource("10_cjn85")
 
 [node name="Meteor_animated" type="AnimatedSprite2D" parent="player/AllUIParents/Globe_Timer_Sprite"]
-visible = false
 position = Vector2(-2.21835, -5.10323)
 rotation = -0.698132
 sprite_frames = SubResource("SpriteFrames_b1bq1")
@@ -2147,7 +2174,7 @@ shape = SubResource("CircleShape2D_dsf36")
 [node name="PlayerCamera" type="Camera2D" parent="player"]
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 1.0
+position_smoothing_speed = 1.5
 
 [node name="PickUpCooldown" type="Timer" parent="player"]
 wait_time = 0.5
@@ -2156,6 +2183,7 @@ one_shot = true
 [node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
 
+[connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
 [connection signal="body_exited" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_exited"]
 [connection signal="timeout" from="player/AllUIParents/Red_UI_Indicator/_Red_UI_Indicator_timer" to="player/AllUIParents/Red_UI_Indicator" method="_on__red_ui_indicator_timer_timeout"]

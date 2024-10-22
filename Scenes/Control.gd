@@ -10,7 +10,6 @@ extends Control
 @onready var putResources = $"/root/GlobalResources"
 @onready var SaveGame = SaveNLoad
 
-
 #VARIABLES
 var resources 
 var events
@@ -18,43 +17,38 @@ var events
 var ClickTrue = true
 var eventHandler
 
-#VOID METHODS // CAMERA CONTROLS - SETTINGS		
+#VOID METHODS // CAMERA CONTROLS - SETTINGS
 func _process(delta):
 	if !eventHandler:
 		eventHandler = NodeFinder.find_node_by_name(get_tree().current_scene, "EventHandler")
 	pass
 
 func _ready():
-	CycleSetting.newGame()
-	EventHandler.startAddNextEvent()
-	EventHandler.ActivateEvent()
+	$WholeInteriorScene/Lobby.initializeJSONFILE()
+	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
+	print("LIST OF CREW", IngameStoredProcessSetting.crew_in_ship)
 	if SaveGame.isLoadGame:
 		_loadGameStart()
 	else:
 		_newGameStart()
+		
+	updateUI()
 
 func getButtonPosition():
 	return camera.position + Vector2(-550,100)
 
 #GAME SETTINGS
 func _newGameStart():
+	CycleSetting.newGame()
+	EventHandler.startAddNextEvent()
+	EventHandler.ActivateEvent()
+	$WholeInteriorScene/Lobby.set_initialDialogue()
 	pass
 
 func _loadGameStart():
-	SaveGame.load()
-	resources = SaveGame.resources
-	await get_tree().create_timer(0.05).timeout
-	if eventHandler:
-		print("it exist")
-	eventHandler.Critical_Event = SaveGame.critical
-	eventHandler.rawEvent = SaveGame.rawEvent
-	eventHandler.alreadyTriggeredEvent = SaveGame.alreadyTriggeredEvent
-	eventHandler.eventID = SaveGame.eventID
+	pass
+
 	
-	var test = []
-	var abc = test
-
-
 func GameOver(OtherCommands):
 	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
 	pass
@@ -62,21 +56,10 @@ func GameOver(OtherCommands):
 func _on_next_day_button_pressed():
 	var EventHandler = $EventHandler
 	if GlobalResources.currentActiveQueue <= 0 and !$EventHandler.visible:
-		#DELETE THIS TAB LATER, FOR TESTING PURPOSES
-		print("ADDING FUEL")
-		GlobalResources.subtractItem(true,"FUEL",10)
-		print("ADDING OXYGEN")
-		GlobalResources.subtractItem(true, "OXYGEN", 25)
-		print("ADDING SPAREPARTS")
-		GlobalResources.subtractItem(true, "SPAREPARTS", 25)
-		
-		
-		#Switch to Event View
-		camera.ChangeSpecificScene(4)
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
 		CycleSetting.endCycle()
-		print("Cycle: ",CycleSetting.getCycle())
+
 		#Auto Save
 		SaveGame.save()
 		#crafting
@@ -88,14 +71,44 @@ func _on_next_day_button_pressed():
 		EventHandler.startAddNextEvent()
 		EventHandler.ActivateEvent()
 		ClickCD.start()
+		$WholeInteriorScene/Lobby.setRandomPosition()
+		$WholeInteriorScene/Lobby.set_initialDialogue()
+		updateUI()
+		camera.ChangeSpecificScene(4)
 	else:
 		camera.ChangeSpecificScene(2)
-		
+
+
+func updateUI():
+	$WholeInteriorScene/FactionLabel_willBeRemove.text = str("FactionCurrently: ",IngameStoredProcessSetting.current_Factions)
+	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
+	if IngameStoredProcessSetting.current_Factions == "None":$WholeInteriorScene/ExpeditionButton.hide()
+	else:$WholeInteriorScene/ExpeditionButton.show()
+
+
 func _on_click_cooldown_timeout() -> void:
 	ClickTrue = true
 
 
 func PAUSE() -> void:
-	var pause = $cam2d/PauseMenu
+	var pause = $PauseMenu
+	pause.position = $cam2d.position + Vector2(-500, -350)
 	pause._pause()
+	pass # Replace with function body.
+
+
+func _on_expedition_button_button_down() -> void:
+	camera.ChangeSpecificScene(5)
+	camera.ChangeLocaton(false)
+	pass # Replace with function body.
+
+
+func _on_embark_button_pressed() -> void: #WHEN EMBARK
+	print(IngameStoredProcessSetting.current_Factions, " = Abandon Ship")
+	match (IngameStoredProcessSetting.current_Factions):
+		"AbandonShip":
+			IngameStoredProcessSetting.Scenes = "abandonship"
+			pass
+	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
+	get_tree().change_scene_to_packed(loadingScreen)
 	pass # Replace with function body.

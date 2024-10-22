@@ -17,7 +17,7 @@ var currentAnimation = ""
 #VOID METHODS
 func _ready():	#OnStart, 
 	play_animation("Idle_animation")
-	$AllUIParents/Label_Timer.visible = false
+	$AllUIParents/Label_Timer.hide()
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 
@@ -25,9 +25,6 @@ func _ready():	#OnStart,
 func _physics_process(delta):
 	if !isPicking and canMove:
 		movement(delta)
-	
-	
-	
 
 func movement(delta):
 	var animationFramesSlowness = (24 - (3 - (((maxSpeed - slow + inventory.getSpeedPenalty()))/50)))/24
@@ -109,9 +106,13 @@ func removeTutorialUI_onCertainCondition():
 	pass
 
 func gameStart():
-	startUI()
-	pass
-	
+	if $"..".activate_timeLimit:
+		await get_tree().create_timer($"..".delayBeforeGameStart).timeout
+		$PlayerCamera.make_current()
+		startUI()
+	else: canMove = true
+
+
 func startUI():
 	$AllUIParents/StartUI_label.visible = true
 	await get_tree().create_timer(0.1).timeout 
@@ -123,16 +124,10 @@ func startUI():
 	await get_tree().create_timer(0.1).timeout 
 	$AllUIParents/StartUI_label.visible = true
 	await get_tree().create_timer(1.5).timeout 
-	$AllUIParents/StartUI_label.visible = false
-	$AllUIParents/Label_Timer.visible = true
-	$AllUIParents/Globe_Timer_Sprite.visible =true
-	$AllUIParents/Globe_Timer_Sprite/Meteor_animated.visible= true
-	$AllUIParents/UI_On_Hand.visible = true
-	$AllUIParents/TutorialAssets.visible = true
-	$AllUIParents/ResourceUI_InRun.visible = true
+	showUIUpon()
+	$AllUIParents/StartUI_label.hide()
 	canMove = true
-	var timer = NodeFinder.find_node_by_name(get_tree().current_scene, "countDown_mainTimer")
-	timer.GameStart()
+	$_GameTimerLimit.GameStart()
 	pass
 
 func endScene():
@@ -149,12 +144,34 @@ func endScene():
 	$AllUIParents/Globe_Timer_Sprite.visible = false
 	$AllUIParents/Globe_Timer_Sprite/Meteor_animated.visible = false
 	$AllUIParents/Label_Timer.visible = false
+	$AllUIParents/Crew_Show.hide()
 	var introCam = NodeFinder.find_node_by_name(get_tree().current_scene, "IntroductionCamera")
 	introCam.position = Vector2(4000,-3800)
 	introCam.make_current()
 	await get_tree().create_timer(3).timeout 
-	get_tree().change_scene_to_file("res://Scenes/TestingInteriorScene.tscn")
+	IngameStoredProcessSetting.Scenes = "interiorscene"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
 	pass
+
+func showUIUpon():
+	if $"..".useGlobeTimerUI:
+		$AllUIParents/Label_Timer.show()
+		$AllUIParents/Globe_Timer_Sprite.show()
+		$AllUIParents/Globe_Timer_Sprite/Meteor_animated.show()
+	else:
+		pass
+
+	if $"..".show_crewInventoryUI:
+		$AllUIParents/Crew_Show.show()
+
+	if $"..".show_inventoryUI:
+		$AllUIParents/UI_On_Hand.show()
+		$AllUIParents/ResourceUI_InRun.show()
+
+	if $"..".show_tutorialTip:
+		$AllUIParents/TutorialAssets.show()
+
+
 
 
 func _on_checking_for_on_hit_effect_body_entered(body: Node2D) -> void:

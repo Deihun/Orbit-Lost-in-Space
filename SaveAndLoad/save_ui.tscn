@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmavgmmgqtmb0"]
+
+[ext_resource type="PackedScene" uid="uid://dc6ynl8fpo7vk" path="res://SaveAndLoad/naming.tscn" id="1_22kad"]
+[ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_bclxw"]
+[ext_resource type="Script" path="res://SaveAndLoad/save_ui.gd" id="1_oynrs"]
+[ext_resource type="PackedScene" uid="uid://cof0iw8v45lk3" path="res://SaveAndLoad/save_node.tscn" id="2_grgno"]
+
+[node name="SaveUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oynrs")
+saveNode = ExtResource("2_grgno")
+
+[node name="Naming" parent="." instance=ExtResource("1_22kad")]
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 338.0
+offset_top = 676.0
+offset_right = 338.0
+offset_bottom = 676.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -19.0
+offset_right = 1037.0
+offset_bottom = 806.0
+texture = ExtResource("1_bclxw")
+region_rect = Rect2(0, 0, 255, 255)
+patch_margin_left = 70
+patch_margin_top = 70
+patch_margin_right = 70
+patch_margin_bottom = 70
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 72.0
+offset_right = 111.0
+offset_bottom = 112.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/MarginContainer2"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Panel" type="Panel" parent="NinePatchRect"]
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+offset_left = 378.0
+offset_top = 362.5
+offset_right = 578.0
+offset_bottom = 462.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageDelay" type="Timer" parent="NinePatchRect/Panel"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Label" type="Label" parent="NinePatchRect/Panel"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "ERROR: Name shouldn't be blank"
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 678.0
+offset_right = 233.0
+offset_bottom = 720.0
+text = "Back
+"
+
+[connection signal="timeout" from="NinePatchRect/Panel/MessageDelay" to="." method="_on_message_delay_timeout"]
+[connection signal="button_up" from="Back" to="." method="_on_back_button_up"]

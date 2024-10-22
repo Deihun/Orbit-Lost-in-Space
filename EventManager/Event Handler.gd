@@ -32,11 +32,12 @@ func parse_json(json_text):
 	return json.get_data()
 
 func switchIt():
-	isEventVisible = !isEventVisible
 	if isEventVisible == true:
+		print("Event SHOWING;")
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("OpeningAnimation")
 	elif isEventVisible == false:
+		print("Event Hiding;")
 		eventReader.visible = false
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("ClosingAnimation")
@@ -50,6 +51,7 @@ func switchIt():
 
 func _on_opening_ui_scene_animation_finished() -> void:
 	if isEventVisible:
+		print("DAPAT LUMABAS KA HAYOP KA")
 		visible = true
 		eventReader.visible = true
 	else: 
@@ -156,6 +158,8 @@ func _conditions(eachEvent):
 
 
 func _addNextEvent():
+	print("is it visible debugging: ", $".".is_visible_in_tree(), $".".visible == true, isEventVisible,$Event_UI.visible == true )
+	
 	var event_index_random = randi() % rawEvent.size()
 	var event = rawEvent[event_index_random]
 	var globalResources = $"/root/GlobalResources"
@@ -178,10 +182,12 @@ func _addNextEvent():
 
 
 func ActivateEvent(): #ACTIVATE QUEUE EVENT
-	print( "already instantiate: ",GlobalResources.alreadyTriggeredEvent)
+	print("DEBUG: " ,GlobalResources.eventID)
 	if GlobalResources.eventID.front() == null:
+		isEventVisible = false
 		switchIt()
 		return
+	isEventVisible = true
 	eventReader.setEventID(GlobalResources.eventID.pop_front())
 	eventReader.processNextEvent()
 

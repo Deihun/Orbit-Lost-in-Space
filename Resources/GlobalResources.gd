@@ -9,8 +9,8 @@ var spareparts = 10000000
 var biogene = 0
 var ductape : int = 0
 var medicine: int = 0
-var emergencyOxy = 0
-var emergencyFuel = 0
+var emergencyOxy = 100
+var emergencyFuel = 100
 
 #EVENT VARIABLES
 var Critical_Event = []
@@ -65,7 +65,7 @@ func showTotalItems(): #For DEBUG only
 func getSpareparts():
 	return spareparts
 
-func subtractItem(conditions,item_name, amount):
+func subtractItem(conditions : bool,item_name : String, amount : int):
 	if conditions:
 		match(item_name):
 			"SPAREPARTS":

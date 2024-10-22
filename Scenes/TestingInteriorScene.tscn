@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=27 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -8,17 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
 [ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
 [ext_resource type="Texture2D" uid="uid://bsb3mkmhlb03u" path="res://Scenes/Ingame/Event_Notification_UI.png" id="5_00itk"]
+[ext_resource type="Texture2D" uid="uid://b2ytbiutos4vv" path="res://Scenes/Cycle_Report/Meteor_Cyce.png" id="6_scv0j"]
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
-[ext_resource type="Texture2D" uid="uid://blayfmsxviwcq" path="res://InteriorScene/CycleReport.png" id="12_3y1g3"]
+[ext_resource type="Script" path="res://Scenes/lobby.gd" id="12_qmdri"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
+[ext_resource type="Texture2D" uid="uid://dpt3p0eq40v4v" path="res://Scenes/ExpeditionSelection/Expedition Selection.png" id="13_t2sia"]
 [ext_resource type="Script" path="res://Scenes/storage_scene.gd" id="14_dtqtq"]
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
 [ext_resource type="Script" path="res://Scenes/Spareparts.gd" id="14_vw57t"]
 [ext_resource type="PackedScene" uid="uid://dcb5l6014oa70" path="res://Scenes/Cycle_Report/CycleReport_Bar.tscn" id="15_640qk"]
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
+[ext_resource type="Texture2D" uid="uid://dw6ae7xyyamkp" path="res://Scenes/Cycle_Report/ExpeditionReportBG.png" id="17_8py32"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55a4j"]
 size = Vector2(267.869, 259.306)
@@ -37,11 +40,16 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = 95.0
+offset_right = -52.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
 
 [node name="TutorialPanel_Folder" type="Node2D" parent="."]
+visible = false
 z_index = 500
 script = ExtResource("2_0dkme")
 
@@ -89,15 +97,8 @@ textureLink = Array[String](["res://TutorialUI/test.png"])
 tutorialPanel_ID = 4
 
 [node name="cam2d" type="Camera2D" parent="."]
-z_index = 100
+z_index = 500
 script = ExtResource("2_uajib")
-
-[node name="PauseMenu" parent="cam2d" instance=ExtResource("3_h4mnh")]
-visible = false
-offset_left = -457.0
-offset_top = -410.0
-offset_right = -457.0
-offset_bottom = -410.0
 
 [node name="Pause_Button" type="Button" parent="cam2d"]
 z_index = 150
@@ -106,9 +107,9 @@ offset_top = -508.0
 offset_right = 877.0
 offset_bottom = -406.0
 
-[node name="Sprite2D" type="Sprite2D" parent="cam2d/Pause_Button"]
+[node name="Cycle" type="Sprite2D" parent="cam2d"]
 z_index = 150
-position = Vector2(51, 53)
+position = Vector2(829, -455)
 scale = Vector2(0.704902, 0.681373)
 texture = ExtResource("3_nae67")
 
@@ -116,6 +117,29 @@ texture = ExtResource("3_nae67")
 z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
+
+[node name="MeteorCyce" type="Sprite2D" parent="cam2d/Button_navigation_node_parent"]
+z_index = 1
+position = Vector2(-255.008, -529.5)
+scale = Vector2(1.002, 1)
+texture = ExtResource("6_scv0j")
+
+[node name="Cycle_number" type="Label" parent="cam2d/Button_navigation_node_parent/MeteorCyce"]
+offset_left = -56.0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 56
+text = "100"
+horizontal_alignment = 1
+
+[node name="Cycle_text_design" type="Label" parent="cam2d/Button_navigation_node_parent/MeteorCyce"]
+offset_left = -52.0
+offset_top = -59.0
+offset_right = 55.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 36
+text = "Cycle"
 
 [node name="EventSprite_NotifyerUI" type="Sprite2D" parent="cam2d/Button_navigation_node_parent"]
 z_index = 150
@@ -151,10 +175,10 @@ texture_normal = ExtResource("2_c3qtk")
 metadata/_edit_use_anchors_ = true
 
 [node name="NextDay_Button" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
-offset_left = -401.3
-offset_top = -673.5
-offset_right = 110.7
-offset_bottom = -161.5
+offset_left = -229.959
+offset_top = -649.5
+offset_right = 282.041
+offset_bottom = -137.5
 scale = Vector2(0.517161, 0.470855)
 texture_normal = ExtResource("4_3ysvw")
 metadata/_edit_use_anchors_ = true
@@ -175,6 +199,61 @@ metadata/_edit_lock_ = true
 position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
 metadata/_edit_lock_ = true
+
+[node name="Lobby" type="Control" parent="WholeInteriorScene"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1003.0
+offset_top = -552.0
+offset_right = 1253.0
+offset_bottom = 554.0
+mouse_filter = 2
+script = ExtResource("12_qmdri")
+
+[node name="Maxim" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 242.0
+offset_right = 565.0
+offset_bottom = 946.0
+
+[node name="Fumiko" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 164.0
+offset_right = 891.0
+offset_bottom = 868.0
+
+[node name="Regina" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 1199.0
+offset_top = 164.0
+offset_right = 1485.0
+offset_bottom = 868.0
+
+[node name="Nashir" type="Button" parent="WholeInteriorScene/Lobby"]
+layout_mode = 0
+offset_left = 1497.0
+offset_top = 288.0
+offset_right = 1783.0
+offset_bottom = 992.0
+
+[node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
+offset_left = 3497.0
+offset_top = -33.0
+offset_right = 3627.0
+offset_bottom = -10.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "FactionCurrently: "
+
+[node name="ExpeditionButton" type="Button" parent="WholeInteriorScene"]
+visible = false
+offset_left = 3490.0
+offset_top = 4.0
+offset_right = 3727.0
+offset_bottom = 63.0
+text = "EXPEDITION BUTTON
+"
 
 [node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
 
@@ -198,6 +277,94 @@ scale = Vector2(0.251953, 5.35547)
 texture = ExtResource("10_7sn4k")
 
 [node name="Right_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
+
+[node name="ExpeditionSelection" type="Sprite2D" parent="."]
+position = Vector2(-269.5, 2987.5)
+scale = Vector2(1.06094, 1.04907)
+texture = ExtResource("13_t2sia")
+
+[node name="Crew_toChoose" type="Control" parent="ExpeditionSelection"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -964.0
+offset_top = -535.0
+offset_right = 546.0
+offset_bottom = 533.0
+
+[node name="Crew_1" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
+layout_mode = 2
+offset_top = 116.0
+offset_right = 387.0
+offset_bottom = 1062.0
+
+[node name="Crew_2" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
+layout_mode = 2
+offset_left = 395.0
+offset_top = 116.0
+offset_right = 768.0
+offset_bottom = 1049.0
+
+[node name="Crew_3" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
+layout_mode = 2
+offset_left = 775.017
+offset_top = 115.104
+offset_right = 1117.02
+offset_bottom = 1059.1
+
+[node name="Crew_4" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
+layout_mode = 2
+offset_left = 1123.0
+offset_top = 113.953
+offset_right = 1498.0
+offset_bottom = 1059.95
+
+[node name="Details_Container" type="Control" parent="ExpeditionSelection"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 546.0
+offset_top = -539.0
+offset_right = 960.0
+offset_bottom = 417.0
+mouse_filter = 2
+
+[node name="Requirement_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 67.1355
+offset_top = 49.5188
+offset_right = 238.135
+offset_bottom = 110.519
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Requirements:
+"
+
+[node name="Crew_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 186.0
+offset_bottom = 241.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<Name>
+
+"
+
+[node name="Description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 64.3078
+offset_top = 223.006
+offset_right = 235.308
+offset_bottom = 284.006
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<Description>
+
+"
+
+[node name="Embark_button" type="Button" parent="ExpeditionSelection"]
+offset_left = 611.25
+offset_top = 432.288
+offset_right = 881.25
+offset_bottom = 504.288
+text = "EMBARK"
 
 [node name="StorageScene" type="Sprite2D" parent="."]
 position = Vector2(-3000, 1500)
@@ -301,32 +468,58 @@ text = "Spareparts: 0/0"
 [node name="CycleReport" type="Sprite2D" parent="."]
 position = Vector2(-3000, 3000)
 scale = Vector2(1.05, 1.07315)
-texture = ExtResource("12_3y1g3")
+texture = ExtResource("17_8py32")
 
 [node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
+z_index = 500
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
-visible = false
-position = Vector2(0.951904, -0.466064)
-shape = SubResource("RectangleShape2D_kb8bw")
+[node name="Panel" type="Panel" parent="CycleReport/ClickAnywhereButton"]
+z_as_relative = false
+offset_left = -900.0
+offset_top = -450.0
+offset_right = 895.0
+offset_bottom = 464.0
+mouse_filter = 2
 
-[node name="CycleReport_ScrollContainer" type="ScrollContainer" parent="CycleReport"]
-offset_left = -800.0
-offset_top = -330.802
-offset_right = -199.0
-offset_bottom = 271.198
+[node name="Click_anywhere" type="Label" parent="CycleReport/ClickAnywhereButton"]
+offset_left = 623.809
+offset_top = 410.008
+offset_right = 881.809
+offset_bottom = 474.008
+theme_override_font_sizes/font_size = 30
+text = "Click Anywhere..."
+
+[node name="CycleReport_ScrollContainer" type="ScrollContainer" parent="CycleReport/ClickAnywhereButton"]
+offset_left = -892.38
+offset_top = -427.713
+offset_right = -184.38
+offset_bottom = 395.287
 script = ExtResource("14_u3w1g")
 ReportTab = ExtResource("15_640qk")
 rangeDistance = 125
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CycleReport/CycleReport_ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CycleReport/ClickAnywhereButton/CycleReport_ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 50
+theme_override_constants/separation = 75
 alignment = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
+z_index = 10
+position = Vector2(0.951904, -0.466064)
+shape = SubResource("RectangleShape2D_kb8bw")
 
 [node name="CraftingTab" parent="." instance=ExtResource("13_10a7a")]
 position = Vector2(-3982, -471)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_h4mnh")]
+visible = false
+top_level = true
+z_index = 700
+offset_left = -457.0
+offset_top = -410.0
+offset_right = -457.0
+offset_bottom = -410.0
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
@@ -336,7 +529,13 @@ position = Vector2(-3982, -471)
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Maxim" to="WholeInteriorScene/Lobby" method="_on_maxim_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Fumiko" to="WholeInteriorScene/Lobby" method="_on_fumiko_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Regina" to="WholeInteriorScene/Lobby" method="_on_regina_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Nashir" to="WholeInteriorScene/Lobby" method="_on_nashir_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/ExpeditionButton" to="." method="_on_expedition_button_button_down"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
+[connection signal="pressed" from="ExpeditionSelection/Embark_button" to="." method="_on_embark_button_pressed"]
 [connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
 [connection signal="mouse_entered" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_exited"]

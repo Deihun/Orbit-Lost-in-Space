@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://cof0iw8v45lk3"]
+
+[ext_resource type="Script" path="res://SaveAndLoad/save_node.gd" id="1_wc7al"]
+
+[node name="SaveNode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wc7al")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+offset_right = 800.0
+offset_bottom = 70.0
+color = Color(0.0313726, 0.0313726, 0.0313726, 0.662745)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -25.0
+offset_right = 372.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "SaveGameName"
+text_overrun_behavior = 1
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Load"
+
+[node name="delete" type="Button" parent="ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Delete"
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/delete" to="." method="_on_delete_pressed"]

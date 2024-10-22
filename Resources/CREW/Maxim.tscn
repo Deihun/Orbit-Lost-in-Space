@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://rolc4sisy7y7"]
+
+[ext_resource type="Texture2D" uid="uid://bysggcwbnhjr5" path="res://Resources/CREW/MAXIM.png" id="1_c6mok"]
+[ext_resource type="Script" path="res://Resources/CREW/maxim.gd" id="1_ert0a"]
+[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="1_ippnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rf1oy"]
+size = Vector2(175.5, 144.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ab11"]
+size = Vector2(728.571, 657.143)
+
+[node name="Maxim" type="CharacterBody2D"]
+collision_layer = 33
+collision_mask = 0
+script = ExtResource("1_ert0a")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_ippnn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_rf1oy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
+position = Vector2(-0.499999, -6)
+scale = Vector2(0.07, 0.07)
+shape = SubResource("RectangleShape2D_4ab11")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999998, -7)
+scale = Vector2(0.246667, 0.263333)
+texture = ExtResource("1_c6mok")
