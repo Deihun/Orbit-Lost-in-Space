@@ -37,15 +37,7 @@
 		"Repeatable": true,
 		"description": "Theres a leak happening inside your station that needs to be fix immediately",
 		"id": 1,
-		"name": "Gas LEAK!",
-		"return": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			"none"
-		]
+		"name": "Gas LEAK!"
 	},
 	{
 		"Probability": [
@@ -246,5 +238,59 @@
 		"description": "Testing Description",
 		"id": 13,
 		"name": "Testing"
+	},
+	{
+		"Command": [
+			"@RESET FOOD "
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Achieving her life goals and dream, Regina is now living at the fullest\nthanks to your contribution!",
+		"id": 14,
+		"name": "Regina is now a happy woman"
+	},
+	{
+		"Command": [
+			"@RESET FOOD "
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Regina is now a sad person. Who knows what will she do next? Oh\nright. Regina will eat everything in her path!",
+		"id": 15,
+		"name": "Regina is sad"
+	},
+	{
+		"RandomTrue": true,
+		"Repeatable": false,
+		"Choice-1": [
+			15,
+			[
+				[
+					"Spareparts",
+					0
+				]
+			],
+			"Who cares about that? Let her cry! WOMP WOMP WOMP"
+		],
+		"Choice-2": [
+			14,
+			[
+				[
+					"Spareparts",
+					0
+				]
+			],
+			"I care about here... Not a simp tho..."
+		],
+		"description": "She was stunned as she discover the idea of turning a biogene into\na toy! Now she is invested but simply wants your permission. \nWill you let her join you or will you ignore her?",
+		"id": 16,
+		"name": "Oh dear regina"
+	},
+	{
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "dasad",
+		"id": 17,
+		"name": "For me to allow not being null"
 	}
 ]

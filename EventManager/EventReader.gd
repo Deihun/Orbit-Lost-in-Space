@@ -44,9 +44,12 @@ func processNextEvent():			#PLAY NEXT EVENT
 	var CurrentID = EventID
 	var currentEvent = find_by_id(CurrentID)
 	var parent = get_parent()
+	print(currentEvent["id"])
 	
 	title.text = currentEvent["name"] 
 	desc.text = currentEvent["description"] 
+	
+	print(currentEvent["name"], "\ndescription: ", currentEvent["description"])
 	
 	if currentEvent.has("FollowUp"):
 		for follow_up_event in currentEvent["FollowUp"]:
@@ -133,6 +136,16 @@ func RunKeyWord(Command):
 				amount = int(_command.substr(i, _command.length() - i))
 		GlobalResources.AddItem(true,item_name,amount)
 	elif _command.begins_with("@RELATIONSHIP_INCREASE"):	#INCOMPLETE
+		_command = _command.substr("@ADD_MATERIALS".length(), _command.length() - "@ADD_MATERIALS".length())
+		_command.strip_edges()
+		var crew_name = ""
+		var value : float = 0.0
+		for i in range (_command.length()):
+			var char = _command[i]
+			if numbers.has(char):
+				crew_name = _command.substr(0,i)
+				value = float(_command.substr(i, _command.length() - i))
+		IngameStoredProcessSetting.addRelationshipBetweenCrew(crew_name,"JERRY",value)
 		pass
 	elif _command.begins_with("@TITLE"):
 		_command = _command.substr("@TITLE".length(), _command.length() - "@TITLE".length())

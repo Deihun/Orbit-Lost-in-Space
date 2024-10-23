@@ -113,11 +113,11 @@ func _conditions(eachEvent):
 			if IngameStoredProcessSetting.isRelationship(data, 0.75):
 				GlobalResources.eventID.append(eachEvent["id"])
 				return
-		elif eachEvent["Condition"][0] == "RELATIONSHIP_LOWER_25%_WITH_ME":
+		elif eachEvent["Conditions"][0] == "RELATIONSHIP_LOWER_25%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data,0.25,false):
 				GlobalResources.eventID.append(eachEvent["id"])
 				return
-		elif eachEvent["Condition"][0] == "RELATIONSHIP_LOWER_0%_WITH_ME":
+		elif eachEvent["Conditions"][0] == "RELATIONSHIP_LOWER_0%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data,0.0,false):
 				GlobalResources.eventID.append(eachEvent["id"])
 				return
@@ -158,13 +158,13 @@ func _conditions(eachEvent):
 
 
 func _addNextEvent():
-	print("is it visible debugging: ", $".".is_visible_in_tree(), $".".visible == true, isEventVisible,$Event_UI.visible == true )
 	
 	var event_index_random = randi() % rawEvent.size()
 	var event = rawEvent[event_index_random]
 	var globalResources = $"/root/GlobalResources"
-	
+	print(event["RandomTrue"], " id: ", event["id"]," - ", event["Repeatable"] == false," - " ,event.has("Conditions"))
 	if event["RandomTrue"] != true: #FILTER IF EVENTS CAN BE ACTIVATED
+		
 		_addNextEvent()
 		return
 	if event["Repeatable"] == false: #FILTER IF EVENTS CAN BE REPEATED
@@ -175,9 +175,6 @@ func _addNextEvent():
 			return
 	if event.has("Conditions"): #FILTER IF EVENT HAS CONDITIONS AND IF IT WAS SATISFIED
 		_conditions(event)
-	else:
-		_addNextEvent()
-		return
 	GlobalResources.eventID.append(event["id"])
 
 

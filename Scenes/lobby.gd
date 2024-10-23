@@ -36,7 +36,7 @@ func setRandomPosition():
 func set_initialDialogue():
 	setTag()
 	var getDialogueTitle : String = _getRandomEvent()
-	print("CHOSEN DIALOGUE EVENT: ", getDialogueTitle)
+	#print("CHOSEN DIALOGUE EVENT: ", getDialogueTitle)
 	DialogueManager.show_dialogue_balloon(FirstDayDialogue, getDialogueTitle)
 
 
@@ -95,7 +95,7 @@ func _getRandomEvent() -> String:
 	if Tag.has("FIRSTDAY"):
 		if !event["TAG"].has("FIRSTDAY"):
 			return _getRandomEvent()
-	print(str(event["TAG"]), Tag ,_random(event))
+	#print(str(event["TAG"]), Tag ,_random(event))
 	if recursion_check > 900:
 		recursion_check = 0
 		return "null"

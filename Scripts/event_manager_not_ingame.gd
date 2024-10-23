@@ -143,7 +143,7 @@ func clear_item_UI():
 func on_finalize_choice_button():
 	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
 	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
-		TemporaryChoices["choice-"+str(current_choice_id+1)] = [
+		TemporaryChoices["Choice-"+str(current_choice_id+1)] = [
 			int(current_choice_id),
 			current_Items,
 			description
@@ -173,6 +173,7 @@ func _ClearItems() -> void:
 
 
 func _RESET_TemporaryITEM() -> void:
+	current_choice_id = 0
 	TemporaryChoices.clear()
 	update_UI()
 	pass # Replace with function body.
@@ -181,7 +182,7 @@ func _RESET_TemporaryITEM() -> void:
 #						COMMAND TAB
 var CommandList = []
 func _EnterCommand() -> void:
-	var line = str($Panel_Command/LineEdit_Command.text).capitalize()
+	var line = str($Panel_Command/LineEdit_Command.text)
 	CommandList.append(line)
 	update_UI()
 	pass # Replace with function body.

@@ -164,11 +164,11 @@ placeholder_text = "Value"
 layout_mode = 0
 offset_left = 4.0
 offset_top = 21.0
-offset_right = 150.0
+offset_right = 330.0
 offset_bottom = 52.0
 scale = Vector2(0.580556, 0.872727)
 selected = 0
-item_count = 12
+item_count = 14
 popup/item_0/text = "HAS"
 popup/item_1/text = "PLACE"
 popup/item_1/id = 1
@@ -192,6 +192,10 @@ popup/item_10/text = "HAS_INGAME_EFFECTS"
 popup/item_10/id = 10
 popup/item_11/text = "HAS_UNIQUE_ITEM"
 popup/item_11/id = 11
+popup/item_12/text = "CRITICAL"
+popup/item_12/id = 12
+popup/item_13/text = "FOLLOW-UP"
+popup/item_13/id = 13
 
 [node name="Panel_Probability" type="Panel" parent="."]
 layout_mode = 0
@@ -299,10 +303,10 @@ autowrap_mode = 1
 [node name="ScrollContainer_CodePreview" type="ScrollContainer" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 40.0
-offset_top = 95.0
-offset_right = 886.0
-offset_bottom = 468.0
+offset_left = 37.0
+offset_top = 109.0
+offset_right = 883.0
+offset_bottom = 482.0
 
 [node name="VScrollBar_CodePreview" type="VBoxContainer" parent="ScrollContainer_CodePreview"]
 z_index = 2
@@ -468,12 +472,13 @@ offset_top = 21.0
 offset_right = 150.0
 offset_bottom = 52.0
 selected = 0
-item_count = 3
+item_count = 4
 popup/item_0/text = "HAS"
 popup/item_1/text = "PLACE"
 popup/item_1/id = 1
 popup/item_2/text = "RELATIONSHIP"
 popup/item_2/id = 2
+popup/item_3/id = 3
 
 [node name="HiddenChoice_Item_OptionButton" type="OptionButton" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
 layout_mode = 0
@@ -621,7 +626,7 @@ offset_top = 32.0
 offset_right = 431.0
 offset_bottom = 70.0
 selected = 0
-item_count = 7
+item_count = 8
 popup/item_0/text = "Spareparts"
 popup/item_1/text = "Food"
 popup/item_1/id = 1
@@ -635,6 +640,70 @@ popup/item_5/text = "Ductape"
 popup/item_5/id = 5
 popup/item_6/text = "Medicine"
 popup/item_6/id = 6
+popup/item_7/text = "NULL"
+popup/item_7/id = 7
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 554.0
+offset_right = 715.0
+offset_bottom = 1027.0
+theme_override_font_sizes/font_size = 10
+text = "Commands
+
+@ADD_MATERIALS - add value to the resources
+eg @ADD_MATERIALS SPAREPARTS 10
+
+@RELATIONSHIP_INCREASE - Add relationship of crew base on
+float numbers of 0.0 > 1.0 
+@RELATIONSHIP_INCREASE Regina 0.08
+
+@TITLE - set the current event title
+@TITLE <name>
+
+@DESCRIPTION - set the current description event
+@DESCRIPTION <description>
+
+@RESET - set the selected resource value to zero
+@RESET SPAREPARTS
+
+@GAMEOVER - End the game and set its ending State
+@GAMEOVER <EndingSceneNameString>
+
+@ANOTHER_EVENT - run another event after ending the current event immediately
+@ANOTHER_EVENT <ID_onlyOfSelectedEvent>
+
+@CRITICAL - Add critical event for next cycle that ignore event limit and on 
+high priority : @CRITICAL <Name of CriticalEvent>
+
+
+"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 550.0
+offset_right = 695.0
+offset_bottom = 802.0
+theme_override_font_sizes/font_size = 10
+text = "Conditions
+HAS - Check  if it beholds that item
+eg. HAS SPAREPARTS, if it has equal or 
+more than 1 spareparts
+
+PLACE - Faction eg PLACE Asteroid
+
+CRITICAL -Turn this event into critical, 
+check if this event has queue on Critical
+list, if it is on the list, it will given the 
+highest priority event to show first ignoring
+Event limits per cycle
+
+FOLLOW-UP - Similar to CRITICAL but it follows
+event limit rule per cycle
+"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel_Command/Button_Clear" to="." method="_ClearCommand"]
