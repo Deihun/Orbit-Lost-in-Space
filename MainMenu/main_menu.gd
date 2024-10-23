@@ -50,7 +50,6 @@ func on_back_settings_menu() -> void:
 	
 func _on_developer_option_pressed() -> void:
 	get_tree().change_scene_to_packed(a)
-	pass # Replace with function body.
 	
 
 func _on_credits_button_pressed() -> void:
