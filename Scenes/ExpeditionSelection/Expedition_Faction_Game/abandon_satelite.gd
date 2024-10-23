@@ -46,4 +46,4 @@ func _randomizeSatelite():
 			_player.position = $Satelite_4/player_position.position
 			$Satelite_4.add_child(_player)
 			pass
-	print(randomStart)
+	_player.gameStart()

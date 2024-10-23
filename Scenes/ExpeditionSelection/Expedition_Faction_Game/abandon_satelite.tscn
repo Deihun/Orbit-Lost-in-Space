@@ -108,7 +108,11 @@ polygon = PackedVector2Array(-1476.26, -1441.94, -1217.68, -1434.2, -1063.07, -1
 
 [node name="player" parent="." instance=ExtResource("4_168wx")]
 position = Vector2(3090, 937)
-show_timer = false
 Smoothing_CameraTrack = false
+show_crewInventoryUI = false
+show_tutorialTip = false
+useGlobeTimerUI = false
+delayBeforeGameStart = 0.0
+limitTimeDuration = 20
 
 [node name="Node2D" type="Node2D" parent="."]

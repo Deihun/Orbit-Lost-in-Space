@@ -60,7 +60,7 @@ func movement(delta):
 	if input_vector != Vector2.ZERO: 
 		distanceCurrentLimit += 1 if distanceCurrentLimit < 51 else 0
 		removeTutorialUI_onCertainCondition()
-		velocity = input_vector * ((maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta*100)
+		velocity = input_vector * ($"..".AdditionalPlayerSpeed + (maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta*100)
 	else:
 		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
 	anim_player.speed_scale = animationFramesSlowness
