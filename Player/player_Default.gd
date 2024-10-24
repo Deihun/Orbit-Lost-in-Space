@@ -4,6 +4,7 @@ extends Node2D
 @export var can_Move : bool = true
 @export var Smoothing_CameraTrack : bool = true
 @export var crew_icon_bar_Show : bool = false
+@export var AdditionalPlayerSpeed : int = 0
 
 @export_group("UI_Settings")
 @export var cameraZoom : float
@@ -47,3 +48,6 @@ func canMove(value : bool):
 
 func _smoothCameraTrack(value : bool):
 	$player/PlayerCamera.position_smoothing_enabled = value
+
+func gameStart():
+	$player.gameStart()

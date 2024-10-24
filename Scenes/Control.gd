@@ -82,7 +82,7 @@ func _on_next_day_button_pressed():
 func updateUI():
 	$WholeInteriorScene/FactionLabel_willBeRemove.text = str("FactionCurrently: ",IngameStoredProcessSetting.current_Factions)
 	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
-	if IngameStoredProcessSetting.current_Factions == "None":$WholeInteriorScene/ExpeditionButton.hide()
+	if IngameStoredProcessSetting.current_Factions == "SPACE" or "None":$WholeInteriorScene/ExpeditionButton.hide()
 	else:$WholeInteriorScene/ExpeditionButton.show()
 
 
@@ -104,7 +104,6 @@ func _on_expedition_button_button_down() -> void:
 
 
 func _on_embark_button_pressed() -> void: #WHEN EMBARK
-	print(IngameStoredProcessSetting.current_Factions, " = Abandon Ship")
 	match (IngameStoredProcessSetting.current_Factions):
 		"AbandonShip":
 			IngameStoredProcessSetting.Scenes = "abandonship"
