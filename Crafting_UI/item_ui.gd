@@ -1,7 +1,7 @@
 extends Control
 
 @onready var getResources = $"/root/GlobalResources"
-@onready var crafting_tab: Node2D = $".."
+@onready var crafting_tab: Node2D = get_parent().get_parent()
 @onready var item_description_label: RichTextLabel = $Panel/Item_Description/Item_DescriptionLabel
 @onready var item_effect_label: RichTextLabel = $Panel/Item_Effect/Item_EffectLabel
 @onready var item_requirements_label: RichTextLabel = $Panel/Item_Requirements/Item_RequirementsLabel
@@ -9,9 +9,6 @@ extends Control
 
 var ongoingCraft = false
 var currentlycrafting
-
-func _ready() -> void:
-	pass
 
 func _on_craft_button_pressed() -> void:
 	if (ongoingCraft == false):
@@ -91,4 +88,4 @@ func _on_craft_button_pressed() -> void:
 		print("Currently Crafting a Item")
 
 func _on_cancel_button_pressed() -> void:
-	self.visible = false
+	crafting_tab.closeScreen()

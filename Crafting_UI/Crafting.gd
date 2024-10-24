@@ -2,8 +2,27 @@ extends Node
 
 @onready var getResources = $"/root/GlobalResources"
 @onready var item_title = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_Title")
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var control: Control = $Control
 
 var craftingItems
+var recentAnimation = ""
+
+func openScreen() -> void:
+	sprite_2d.visible = true
+	sprite_2d.play("Open")
+	recentAnimation = "Open"
+	
+func closeScreen() -> void:
+	control.visible = false
+	sprite_2d.play("Close")
+	recentAnimation = "Close"
+	
+func _on_sprite_2d_animation_finished() -> void:
+	if recentAnimation == "Open":
+		control.visible = true
+	else:
+		sprite_2d.visible = false
 
 func space_suit_pressed() -> void:
 	craftingItems = "SpaceSuit"
