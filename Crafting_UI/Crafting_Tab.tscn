@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5ib6052yah38"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ib6052yah38"]
 
 [ext_resource type="Script" path="res://Crafting_UI/Crafting.gd" id="1_uivi2"]
 [ext_resource type="Script" path="res://SaveAndLoad/Save_n_Load.gd" id="2_6ddse"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c07avbbfc8h3q" path="res://Crafting_UI/UI_Screen_assets/screen_off.png" id="4_rv1pw"]
 [ext_resource type="Texture2D" uid="uid://dbtyqffmngk2t" path="res://Crafting_UI/UI_Screen_assets/Screen_on.png" id="5_a0vgm"]
 [ext_resource type="Texture2D" uid="uid://2fp5s3n0anlm" path="res://Crafting_UI/UI_Screen_assets/Grime_screen.png" id="6_23vmr"]
+[ext_resource type="PackedScene" uid="uid://bqjlvrwl7jpbg" path="res://Crafting_UI/item_ui.tscn" id="8_k5b2a"]
 
 [node name="CraftingTab" type="Node2D"]
 script = ExtResource("1_uivi2")
@@ -17,37 +18,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_6ddse")
-
-[node name="SaveButtonDebug" type="Button" parent="Control"]
-z_index = 6
-layout_mode = 0
-offset_left = 639.0
-offset_top = 580.0
-offset_right = 870.0
-offset_bottom = 646.0
-action_mode = 0
-text = "save
-"
-
-[node name="LoadButtonDebug" type="Button" parent="Control"]
-z_index = 6
-layout_mode = 0
-offset_left = 638.0
-offset_top = 658.0
-offset_right = 869.0
-offset_bottom = 724.0
-action_mode = 0
-text = "load"
-
-[node name="CheckCrafting" type="Button" parent="Control"]
-z_index = 6
-layout_mode = 0
-offset_left = 387.0
-offset_top = 660.0
-offset_right = 618.0
-offset_bottom = 726.0
-action_mode = 0
-text = "CheckCrafting"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
 z_index = 2
@@ -60,39 +30,6 @@ stream = ExtResource("2_6m3we")
 autoplay = true
 expand = true
 metadata/_edit_lock_ = true
-
-[node name="CraftButton" type="Button" parent="Control"]
-z_index = 13
-z_as_relative = false
-layout_mode = 0
-offset_left = 192.0
-offset_top = 433.0
-offset_right = 423.0
-offset_bottom = 499.0
-action_mode = 0
-text = "Craft
-"
-
-[node name="addRes" type="Button" parent="Control"]
-z_index = 6
-layout_mode = 0
-offset_left = 386.0
-offset_top = 581.0
-offset_right = 617.0
-offset_bottom = 647.0
-action_mode = 0
-text = "AddRes
-"
-
-[node name="CheckRes" type="Button" parent="Control"]
-z_index = 6
-layout_mode = 0
-offset_left = 130.0
-offset_top = 580.0
-offset_right = 361.0
-offset_bottom = 646.0
-action_mode = 0
-text = "CheckRes"
 
 [node name="SpaceSuit" type="Button" parent="Control"]
 z_index = 6
@@ -187,12 +124,13 @@ position = Vector2(493.801, 290.438)
 scale = Vector2(0.188649, 0.188649)
 texture = ExtResource("6_23vmr")
 
-[connection signal="pressed" from="Control/SaveButtonDebug" to="." method="_on_save_button_debug_pressed"]
-[connection signal="pressed" from="Control/LoadButtonDebug" to="." method="_on_load_button_debug_pressed"]
-[connection signal="pressed" from="Control/CheckCrafting" to="." method="_on_check_crafting_pressed"]
-[connection signal="pressed" from="Control/CraftButton" to="." method="craft_button_pressed"]
-[connection signal="pressed" from="Control/addRes" to="." method="add_res_pressed"]
-[connection signal="pressed" from="Control/CheckRes" to="." method="check_res_pressed"]
+[node name="Item_UI" parent="." instance=ExtResource("8_k5b2a")]
+offset_left = 893.0
+offset_top = 49.0
+offset_right = 893.0
+offset_bottom = 49.0
+scale = Vector2(0.513413, 0.513413)
+
 [connection signal="pressed" from="Control/SpaceSuit" to="." method="space_suit_pressed"]
 [connection signal="pressed" from="Control/HazmatSuit" to="." method="hazmat_suit_pressed"]
 [connection signal="pressed" from="Control/Crowbar" to="." method="crowbar_pressed"]
