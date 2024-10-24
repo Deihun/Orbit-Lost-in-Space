@@ -337,7 +337,6 @@ frame = 19
 frame_progress = 1.0
 
 [node name="Control" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -360,7 +359,7 @@ offset_left = 184.0
 offset_top = 332.0
 offset_right = 415.0
 offset_bottom = 398.0
-text = "LeadUpMod
+text = "Lead Suit Reinforcement
 "
 
 [node name="Crowbar" type="Button" parent="Control"]
@@ -380,7 +379,7 @@ offset_left = 185.0
 offset_top = 486.0
 offset_right = 416.0
 offset_bottom = 552.0
-text = "MedkitCharge
+text = "Medkit Charge
 "
 
 [node name="DehySpaceFood" type="Button" parent="Control"]
@@ -390,7 +389,7 @@ offset_left = 184.0
 offset_top = 256.0
 offset_right = 415.0
 offset_bottom = 322.0
-text = "DehySpaceFood"
+text = "Dehydrated Space Food"
 
 [node name="FreDriSpaceFood" type="Button" parent="Control"]
 z_index = 6
@@ -399,7 +398,7 @@ offset_left = 184.0
 offset_top = 563.0
 offset_right = 415.0
 offset_bottom = 629.0
-text = "FreDriSpaceFood"
+text = "Freeze-Dried Space Food"
 
 [node name="Item_UI" parent="Control" instance=ExtResource("8_k5b2a")]
 layout_mode = 1
