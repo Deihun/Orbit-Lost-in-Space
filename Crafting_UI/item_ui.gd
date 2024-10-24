@@ -13,7 +13,7 @@ var currentlycrafting
 func _on_craft_button_pressed() -> void:
 	if (ongoingCraft == false):
 		match crafting_tab.craftingItems:
-			"SpaceSuit":
+			"A.C.E.S":
 				if getResources.spareparts >= 300 && getResources.oxygen >= 100 && getResources.fuel >= 10:
 					getResources.spareparts -= 300
 					getResources.oxygen -= 100
@@ -23,7 +23,7 @@ func _on_craft_button_pressed() -> void:
 				else:
 					print("Insufficient Items!")
 			
-			"HazmatSuit":
+			"LeadSuitUp":
 				if getResources.spareparts >= 400 && getResources.fuel >= 10:
 					getResources.spareparts -= 400
 					getResources.fuel -= 10

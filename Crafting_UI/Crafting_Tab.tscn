@@ -351,7 +351,7 @@ offset_top = 182.0
 offset_right = 415.0
 offset_bottom = 248.0
 action_mode = 0
-text = "Space Suit"
+text = "A.C.E.S"
 
 [node name="HazmatSuit" type="Button" parent="Control"]
 z_index = 6
@@ -360,16 +360,16 @@ offset_left = 184.0
 offset_top = 332.0
 offset_right = 415.0
 offset_bottom = 398.0
-text = "Hazmat Suit
+text = "LeadUpMod
 "
 
 [node name="Crowbar" type="Button" parent="Control"]
 z_index = 6
 layout_mode = 0
 offset_left = 184.0
-offset_top = 483.0
+offset_top = 411.0
 offset_right = 415.0
-offset_bottom = 549.0
+offset_bottom = 477.0
 text = "Crowbar
 "
 
@@ -377,9 +377,9 @@ text = "Crowbar
 z_index = 6
 layout_mode = 0
 offset_left = 185.0
-offset_top = 558.0
+offset_top = 486.0
 offset_right = 416.0
-offset_bottom = 624.0
+offset_bottom = 552.0
 text = "MedkitCharge
 "
 
@@ -392,22 +392,13 @@ offset_right = 415.0
 offset_bottom = 322.0
 text = "DehySpaceFood"
 
-[node name="LaserGun" type="Button" parent="Control"]
-z_index = 6
-layout_mode = 0
-offset_left = 184.0
-offset_top = 408.0
-offset_right = 415.0
-offset_bottom = 474.0
-text = "LaserGun"
-
 [node name="FreDriSpaceFood" type="Button" parent="Control"]
 z_index = 6
 layout_mode = 0
 offset_left = 184.0
-offset_top = 635.0
+offset_top = 563.0
 offset_right = 415.0
-offset_bottom = 701.0
+offset_bottom = 629.0
 text = "FreDriSpaceFood"
 
 [node name="Item_UI" parent="Control" instance=ExtResource("8_k5b2a")]
@@ -424,5 +415,4 @@ scale = Vector2(0.668844, 0.668844)
 [connection signal="pressed" from="Control/Crowbar" to="." method="crowbar_pressed"]
 [connection signal="pressed" from="Control/MedkitCharge" to="." method="medkit_charge_pressed"]
 [connection signal="pressed" from="Control/DehySpaceFood" to="." method="_on_dehy_space_food_pressed"]
-[connection signal="pressed" from="Control/LaserGun" to="." method="laser_gun_pressed"]
 [connection signal="pressed" from="Control/FreDriSpaceFood" to="." method="fre_dri_space_food_pressed"]

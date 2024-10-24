@@ -46,6 +46,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 40
 text = "ITEM_TITLE"
 
 [node name="Item_Description" type="Panel" parent="Panel"]
@@ -57,12 +58,15 @@ offset_right = 1500.0
 offset_bottom = 504.0
 
 [node name="Item_DescriptionLabel" type="RichTextLabel" parent="Panel/Item_Description"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 13.0
-offset_right = 966.0
-offset_bottom = 482.0
+layout_mode = 2
+offset_left = 10.0001
+offset_top = 10.0
+offset_right = 969.0
+offset_bottom = 484.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
 text = "ITEM DESCRIPTION"
+visible_characters_behavior = 1
 
 [node name="Item_Effect" type="Panel" parent="Panel"]
 custom_minimum_size = Vector2(500, 0)
@@ -78,6 +82,7 @@ offset_left = 11.0
 offset_top = 13.0
 offset_right = 489.0
 offset_bottom = 363.0
+theme_override_font_sizes/normal_font_size = 25
 text = "ITEM EFFECT DESCRIPTION"
 
 [node name="Item_Requirements" type="Panel" parent="Panel"]
@@ -94,6 +99,7 @@ offset_left = 11.0
 offset_top = 13.0
 offset_right = 966.0
 offset_bottom = 143.0
+theme_override_font_sizes/normal_font_size = 30
 text = "ITEM MATERIAL REQUIREMENTS"
 
 [node name="Craft_Button" type="Button" parent="Panel"]
