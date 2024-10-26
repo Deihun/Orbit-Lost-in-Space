@@ -1,11 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc0h431h7nqe6"]
+[gd_scene load_steps=14 format=3 uid="uid://cc0h431h7nqe6"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.gd" id="1_styhv"]
 [ext_resource type="Texture2D" uid="uid://b1yewkdhl72xc" path="res://Scenes/SceneAssets/LavenderWallColorSet/Space.png" id="2_462ea"]
 [ext_resource type="Texture2D" uid="uid://bwedfanh7n3bq" path="res://Scenes/SceneAssets/LavenderWallColorSet/SpaceSatelite.png" id="3_drt7d"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="4_168wx"]
 [ext_resource type="PackedScene" uid="uid://c2ivqlxyu5lj" path="res://Scenes/SceneAssets/door_way.tscn" id="4_ocmvt"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/satelite_2.gd" id="4_vxoaw"]
+[ext_resource type="Texture2D" uid="uid://c8en36ge4eq1u" path="res://Scenes/SceneAssets/KeyCard.png" id="5_d2hjc"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="5_naert"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5oyq"]
+atlas = ExtResource("5_d2hjc")
+region = Rect2(0, 252, 252, 252)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjcwa"]
+atlas = ExtResource("5_d2hjc")
+region = Rect2(0, 504, 252, 252)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvo13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5oyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjcwa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yurs"]
+size = Vector2(259.268, 244.194)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0bs0"]
 size = Vector2(259.398, 242.058)
@@ -38,22 +65,23 @@ polygon = PackedVector2Array(-1474, -1162, -1102, -1151, -1052, -1176, -1045, -1
 position = Vector2(11460, 2378)
 scale = Vector2(1.4618, 1.421)
 texture = ExtResource("3_drt7d")
+script = ExtResource("4_vxoaw")
+
+[node name="Keycard" type="AnimatedSprite2D" parent="Satelite_2"]
+position = Vector2(959.092, 903.589)
+scale = Vector2(0.296402, 0.271009)
+sprite_frames = SubResource("SpriteFrames_bvo13")
+frame_progress = 0.22444
+
+[node name="InteractionArea" parent="Satelite_2/Keycard" instance=ExtResource("5_naert")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Satelite_2/Keycard/InteractionArea"]
+position = Vector2(8.55273, 7.38916)
+shape = SubResource("RectangleShape2D_4yurs")
 
 [node name="player_position" type="Node2D" parent="Satelite_2"]
 position = Vector2(625.257, -1527.8)
 scale = Vector2(0.684088, 0.70373)
-
-[node name="DoorWay" parent="Satelite_2" instance=ExtResource("4_ocmvt")]
-position = Vector2(-627.309, -664.321)
-scale = Vector2(1.09181, 1.09895)
-wallRotation = 2
-
-[node name="InteractionArea" parent="Satelite_2/DoorWay" instance=ExtResource("5_naert")]
-action_name = "Requires KeyCard"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Satelite_2/DoorWay/InteractionArea"]
-position = Vector2(-6.89307, 52.5101)
-shape = SubResource("RectangleShape2D_j0bs0")
 
 [node name="WallStaticBody" type="StaticBody2D" parent="Satelite_2"]
 position = Vector2(7.52496, 254.75)
@@ -69,14 +97,11 @@ position = Vector2(2812, 8607)
 scale = Vector2(1.4618, 1.421)
 texture = ExtResource("3_drt7d")
 
-[node name="DoorWay" parent="Satelite_3" instance=ExtResource("4_ocmvt")]
-position = Vector2(576.001, -497.537)
-scale = Vector2(0.618664, 0.710928)
-
 [node name="player_position" type="Node2D" parent="Satelite_3"]
 position = Vector2(580.107, -1498.24)
 
 [node name="WallStaticBody" type="StaticBody2D" parent="Satelite_3"]
+y_sort_enabled = true
 position = Vector2(7.52496, 254.75)
 collision_layer = 33
 collision_mask = 0
@@ -90,14 +115,11 @@ position = Vector2(11661, 8627)
 scale = Vector2(1.4618, 1.421)
 texture = ExtResource("3_drt7d")
 
-[node name="DoorWay" parent="Satelite_4" instance=ExtResource("4_ocmvt")]
-position = Vector2(-103.296, 11.9634)
-scale = Vector2(0.972637, 1)
-
 [node name="player_position" type="Node2D" parent="Satelite_4"]
 position = Vector2(425.503, -1515.83)
 
 [node name="WallStaticBody" type="StaticBody2D" parent="Satelite_4"]
+y_sort_enabled = true
 position = Vector2(7.52496, 254.75)
 collision_layer = 33
 collision_mask = 0
@@ -107,12 +129,32 @@ build_mode = 1
 polygon = PackedVector2Array(-1476.26, -1441.94, -1217.68, -1434.2, -1063.07, -1444.05, -1040.5, -1510.2, -833.22, -1511.61, -836.64, -1320.2, -831.851, -1209.01, -783.281, -1146.38, -692.982, -1137.93, -688.193, -995.074, -597.893, -992.259, -584.896, -1187.19, -573.266, -1401.83, -240.799, -1816.33, 201.122, -1812.1, 199.754, -1857.85, 650.568, -1860.66, 988.508, -1533.43, 986.456, -729.768, 680.668, -731.879, 674.511, -629.134, 999.453, -627.023, 996.717, 686.84, 326.994, 698.804, 324.258, -109.782, 722.397, -111.189, 729.922, -194.229, 62.2521, -197.748, 67.0407, -88.67, 226.433, -87.2625, 224.381, 667.839, -1468.05, 645.32, -1480.37, -96.411, -333.835, -87.9662, -333.151, -196.341, -1478.31, -202.674, -1486.52, -659.395, 443.289, -661.506, 438.501, -726.249, -1486.52, -736.805)
 
 [node name="player" parent="." instance=ExtResource("4_168wx")]
-position = Vector2(3090, 937)
+position = Vector2(2490, 2510)
 Smoothing_CameraTrack = false
 show_crewInventoryUI = false
 show_tutorialTip = false
 useGlobeTimerUI = false
 delayBeforeGameStart = 0.0
 limitTimeDuration = 20
+
+[node name="DoorWay" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(10543, 1434)
+scale = Vector2(1.59601, 1.56161)
+wallRotation = 2
+
+[node name="InteractionArea" parent="DoorWay" instance=ExtResource("5_naert")]
+action_name = "Requires KeyCard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWay/InteractionArea"]
+position = Vector2(-6.89307, 52.5101)
+shape = SubResource("RectangleShape2D_j0bs0")
+
+[node name="DoorWay2" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(3654, 7900)
+scale = Vector2(0.904363, 1.01023)
+
+[node name="DoorWay3" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(11510, 8644)
+scale = Vector2(1.4218, 1.421)
 
 [node name="Node2D" type="Node2D" parent="."]

@@ -15,6 +15,7 @@ extends Node2D
 @export var useGlobeTimerUI : bool = true
 
 @export_group("Game Settings")
+@export var canRestartOnGameOver : bool = false
 @export_subgroup("Time Limit")
 @export var activate_timeLimit : bool = true
 @export var delayBeforeGameStart : float = 6.0

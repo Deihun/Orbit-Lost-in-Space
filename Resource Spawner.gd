@@ -23,7 +23,15 @@ extends Node2D
 @export var Regina : PackedScene
 
 @export_group("Chance or Conditions")
-@export var foodChance : float = 10
+@export var resource_chances := {
+	"Food": 0.4,
+	"Biogene": 0.55,
+	"SpareParts": 0.55,
+	"Medicine": 0.12,
+	"Oxygen": 0.4,
+	"Fuel": 0.4,
+	"DuctTape": 0.001
+}
 
 
 @onready var timer = $Timer
@@ -43,93 +51,148 @@ var crew = {
 
 func _ready():	#init array, get all child spawn into array.
 	var positions = []
-	for child in get_children():
-		if child is Node2D:
-			positions.append(child)
-	
 	var guaranteed_resources = [fuel, getSmallCanVariety()] #Make sure fuel and food will spawn 
 	var remaining_resources = number_of_resources - guaranteed_resources.size() * 3
 	var resources_to_spawn = []
-	
+
+	for child in get_children():
+		if child is Node2D:
+			positions.append(child.position)
+
+	number_of_resources = min(number_of_resources, positions.size())
+
 	if allowCrew_Spawn == false:
 		crew["regina"] = true
 		crew["maxim"] = true
 		crew["nashir"] = true
 		crew["fumiko"] = true
-	
+
 	for resource in guaranteed_resources:
 		for i in range(3):
 			resources_to_spawn.append(resource)
-	
 	number_of_resources = min(number_of_resources,positions.size())
 	positions.shuffle()
-	
-	for i in range(number_of_resources):
+
+
+	for i in range(number_of_resources -1):
 		var resource_instance
 		var rand = int(randf() * 100)
-		
 		if crew["regina"] == false:
 			resource_instance = Regina.instantiate()
 			crew["regina"] = true
-			resource_instance.position = positions[i].position
+			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
 		elif crew["maxim"] == false:
 			resource_instance = Maxim.instantiate()
 			crew["maxim"] = true
-			resource_instance.position = positions[i].position
+			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
 		elif crew["nashir"] == false:
 			resource_instance = Nashir.instantiate()
 			crew["nashir"] = true
-			resource_instance.position = positions[i].position
+			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
 		elif crew["fumiko"] == false:
 			resource_instance = Fumiko.instantiate()
 			crew["fumiko"] = true
-			resource_instance.position = positions[i].position
+			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
-		
 
-		if rand < 3 :
+
+		var total_chance = 0.0
+		for chance in resource_chances.values():
+			total_chance += chance
+		var random_value = randf() * total_chance
+		for resource_name in resource_chances.keys():
+			random_value -= resource_chances[resource_name]
+			if random_value <= 0:
+				resource_instance = initiateItem(resource_name)
+				break
+		
+		if resource_instance:
+			resource_instance.position = positions[i]
+			add_child(resource_instance)
+
+
+
+	
+	
+		#if rand < 3 :
+		#	match int(randf()*2):
+		#		0:
+		#			resource_instance = ductapes.instantiate()
+		#		1:
+		#			resource_instance = medicinepack.instantiate()
+		#elif rand > 1 && rand < 50:
+		#	match int(randf() * 3):
+		#		0:
+		#			resource_instance = fuel.instantiate()
+		#			var unique_id = str(rng.randf_range(0, 1000000))
+		#			resource_instance.name = "Small Battery" + "_" + unique_id
+		#			
+		#		1:
+		#			resource_instance = getSmallCanVariety()
+		#		2:
+		#			resource_instance = SmallGasTank.instantiate()
+		#else:
+		#	match int(randf() * 2):
+		#		0: 
+		#			match int(randf()*2):
+		#				0:
+		#					resource_instance = spareparts.instantiate()
+		#				1:
+		#					resource_instance = spareparts_variety1.instantiate()
+		#			
+		#		1:
+		#			resource_instance = biogene.instantiate()
+		#resource_instance.position = positions[i].position
+		#add_child(resource_instance)
+
+
+
+func initiateItem(item_name : String):
+	var resource_instance
+	match item_name:
+		"Food":
+			resource_instance = getSmallCanVariety()
+			pass
+		"Biogene":
+			resource_instance = biogene.instantiate()
+			pass 
+		"SpareParts": 
 			match int(randf()*2):
 				0:
-					resource_instance = ductapes.instantiate()
+					resource_instance = spareparts.instantiate()
 				1:
-					resource_instance = medicinepack.instantiate()
-		elif rand > 1 && rand < 50:
-			match int(randf() * 3):
-				0:
-					resource_instance = fuel.instantiate()
-					var unique_id = str(rng.randf_range(0, 1000000))
-					resource_instance.name = "Small Battery" + "_" + unique_id
-					
-				1:
-					resource_instance = getSmallCanVariety()
-				2:
-					resource_instance = SmallGasTank.instantiate()
-		else:
-			match int(randf() * 2):
-				0: 
-					match int(randf()*2):
-						0:
-							resource_instance = spareparts.instantiate()
-						1:
-							resource_instance = spareparts_variety1.instantiate()
-					
-				1:
-					resource_instance = biogene.instantiate()
-		resource_instance.position = positions[i].position
-		add_child(resource_instance)
+					resource_instance = spareparts_variety1.instantiate()
+			pass
+		"Medicine":
+			resource_instance = medicinepack.instantiate()
+			pass 
+		"Oxygen":
+			resource_instance = SmallGasTank.instantiate()
+			pass 
+		"Fuel": 
+			resource_instance = fuel.instantiate()
+			var unique_id = str(rng.randf_range(0, 1000000))
+			resource_instance.name = "Small Battery" + "_" + unique_id
+			pass
+		"DuctTape":
+			resource_instance = ductapes.instantiate()
+			pass 
+	return resource_instance
+
+
+
 
 func getSmallCanVariety():
 	if randf() * 1.0 < 0.05:
 		return StackedCan.instantiate()
 	var random = int(randf() * 3)
-	print(random)
 	match random:
 		0:
 			return SmallCanVariety1.instantiate()

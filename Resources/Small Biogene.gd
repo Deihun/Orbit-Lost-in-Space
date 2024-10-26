@@ -41,11 +41,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_random_animation_timer_timeout() -> void:
 	timer.wait_time = int(randf() * 8)
-	match(int(randf() * 3)):
+	match(int(randf() * 5)):
 		1:
 			animation.play("Bubbly")
 		2: 
 			animation.play("Shiny")
+		3:
+			animation.play("Bubbly_2")
+		4:
+			animation.play("Bubbly_3")
 	timer.start()
 
 
@@ -55,5 +59,5 @@ func _on_break_area_entered(area: Area2D) -> void:
 	if glass_fragileness < 0:
 		var brokenGlass = brokenBiogene.instantiate()
 		brokenGlass.position = position
-		get_tree().current_scene.add_child(brokenGlass)
+		get_parent().add_child(brokenGlass)
 		queue_free()

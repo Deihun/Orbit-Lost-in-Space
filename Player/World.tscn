@@ -47,6 +47,7 @@ animations = [{
 y_sort_enabled = true
 
 [node name="World" type="Node2D" parent="."]
+z_index = -5
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="World"]
@@ -73,12 +74,13 @@ autoplay = "default"
 frame_progress = 0.340232
 
 [node name="Player" parent="." instance=ExtResource("1_qqdcd")]
-z_index = 1
+z_index = 2
 position = Vector2(885, 1619)
 can_Move = false
 AdditionalPlayerSpeed = 100
 show_timer = false
-delayBeforeGameStart = 0.0
+canRestartOnGameOver = true
+delayBeforeGameStart = 4.0
 
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
 z_index = 1
@@ -89,6 +91,7 @@ z_index = 20
 position = Vector2(-51, 1217)
 
 [node name="PaperAmbienceGeneration" parent="." instance=ExtResource("5_bvoa8")]
+z_index = 2
 position = Vector2(-51, 1217)
 minimum_x = 100.0
 minimum_y = 200.0
@@ -317,11 +320,12 @@ position = Vector2(-504, 3662)
 rotation = 0.261799
 
 [node name="Node Resource Spawner" parent="." instance=ExtResource("5_08kc6")]
+z_index = 2
 y_sort_enabled = true
 position = Vector2(-51, 1217)
 food = ExtResource("6_mx32n")
 allowCrew_Spawn = true
-number_of_resources = 100
+number_of_resources = 200
 
 [node name="Timer" type="Timer" parent="Node Resource Spawner"]
 wait_time = 0.2
@@ -643,56 +647,57 @@ position = Vector2(2886, 4236)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 33
 collision_mask = 0
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(122, 1574, 528, 1298, 1516, 1292, 1521, 1321, 1560, 1333, 1590, 1320, 1597, 1306, 1957, 1524, 1961, 2408, 1447, 2412, 1451, 3312, 1567, 3314, 1565, 2484, 2767, 2482, 2759, 3988, 1563, 3982, 1553, 3574, 1449, 3574, 1463, 4134, 3399, 4108, 3395, 4538, 1399, 4542, 1401, 4708, 3391, 4696, 3381, 6022, 992, 6020, 988, 4663, 1074, 4679, 1074, 4546, 749, 4540, 735, 4693, 879, 4676, 893, 6017, -1146, 6025, -1158, 4670, 406, 4682, 409, 4566, -1146, 4574, -1152, 1559, 121, 1575, 127, 1212, -1379, 1196, -1349, 6334, 3658, 6334, 3635, 3540, 2329, 1154, 137, 1025)
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-build_mode = 1
-polygon = PackedVector2Array(209, 1580, 591, 1302, 1523, 1292, 1518, 1315, 1562, 1321, 1601, 1337, 1922, 1560, 1929, 2395, 1468, 2397, 1462, 3302, 1585, 3299, 1578, 2490, 2761, 2491, 2765, 3984, 1564, 3995, 1564, 3581, 1460, 3578, 1460, 4087, 3392, 4095, 3392, 4556, 1411, 4562, 1411, 4679, 3390, 4687, 3389, 6029, 982, 6020, 991, 4678, 1067, 4681, 1072, 4552, 768, 4557, 760, 4685, 901, 4681, 894, 6010, -1147, 6013, -1147, 4683, 420, 4681, 423, 4540, -1137, 4552, -1147, 1579, 83, 1584, 78, 2376, -736, 2400, -736, 3579, -650, 3577, -657, 2481, 894, 2483, 887, 3439, 972, 3432, 938, 2406, 205, 2416)
-metadata/_edit_lock_ = true
+polygon = PackedVector2Array(97, 1564, 135, 1561, 139, 2406, 957, 2404, 953, 3419, 900, 3425, 908, 2480, -679, 2485, -681, 3593, -740, 3582, -736, 2400, 93, 2400)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-build_mode = 1
-polygon = PackedVector2Array(-734, 3739, -674, 3741, -672, 3995, 888, 3993, 886, 3672, 960, 3667, 962, 4098, -731, 4083)
-metadata/_edit_lock_ = true
+polygon = PackedVector2Array(-745, 3736, -664, 3739, -666, 3992, 901, 3993, 901, 3670, 970, 3670, 956, 4079, -750, 4088)
 
 [node name="SmallBox" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(985, 2402)
+z_index = 2
+position = Vector2(178, 2262)
 
 [node name="SmallBox2" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1059, 2429)
+z_index = 2
+position = Vector2(803, 4718)
 
 [node name="SmallBox3" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1004, 2470)
+z_index = 2
+position = Vector2(1591, 2566)
 
 [node name="SmallBox4" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1152, 2428)
+z_index = 2
+position = Vector2(180, 2318)
 
 [node name="SmallBox5" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1394, 3228)
+z_index = 2
+position = Vector2(902, 3448)
 
 [node name="SmallBox6" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1392, 3167)
+z_index = 2
+position = Vector2(906, 3529)
+scale = Vector2(0.966084, 0.955802)
+collision_mask = 49
 
 [node name="SmallBox7" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1125, 2481)
+z_index = 2
+position = Vector2(811, 4674)
 
 [node name="SmallBox8" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1028, 2534)
+z_index = 2
+position = Vector2(906, 3595)
 
 [node name="SmallBox9" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(983, 2613)
+z_index = 2
+position = Vector2(896, 3396)
 
 [node name="SmallBox10" parent="." instance=ExtResource("14_dh8q3")]
-z_index = 1
-position = Vector2(1121, 2533)
+z_index = 2
+position = Vector2(1590, 2523)
 
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]

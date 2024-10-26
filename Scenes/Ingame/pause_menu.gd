@@ -51,9 +51,8 @@ func RESUME() -> void:
 	visible = false
 
 func RESTART() -> void:
-	visible = false
-	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	$ColorRect/Restart.show()
+	$ColorRect/VBoxContainer.hide()
 
 func QUIT() -> void:
 	get_tree().quit()
@@ -84,3 +83,18 @@ func _on_settings_menu_visibility_changed() -> void:
 	if $ColorRect/NinePatchRect2/Settings_Menu.visible == false:
 		$ColorRect/NinePatchRect2.hide()
 	pass # Replace with function body.
+
+
+
+#RESTART CONFIRMATION
+func _on_yes_button_up() -> void:
+	Engine.time_scale = 1
+	IngameStoredProcessSetting.is_previous_restart = true
+	IngameStoredProcessSetting.Scenes = "newgame"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	pass # Replace with function body.
+
+
+func _on_no_button_down() -> void:
+	$ColorRect/Restart.hide()
+	$ColorRect/VBoxContainer.show()

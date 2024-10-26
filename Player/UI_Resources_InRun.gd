@@ -6,6 +6,7 @@ var fuel = 0
 var spareparts = 0
 var biogene = 0
 var ductape = 0
+var medicine = 0
 var crew_availability = 3
 
 var crew ={ 
@@ -36,7 +37,9 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 		"Small Biogene":
 			biogene += 15
 			$Label_Biogene.text =str("Biogene: " ,  biogene)
-			
+		"Medicine Pack":
+			medicine += 1
+			$Label_Medicine.text =str("Medicine: " ,  medicine)
 		"Ductape":
 			ductape += 1
 			$Label_Ductape.text = str("Ductape: " , ductape)

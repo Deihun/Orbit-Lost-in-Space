@@ -19,7 +19,7 @@ func _on_mouse_to_crafting_interaction_mouse_entered() -> void:
 
 
 func _on_mouse_to_crafting_interaction_mouse_exited() -> void:
-	if !ai.is_playing() or (ai.is_playing() and ai.animation == "Blinking"):
+	if !ai.is_playing() or (ai.is_playing() and ai.animation == "HoverBlinking"):
 		RecentAnimation = "HoveringOut"
 		ai.play("HoveringOut")
 	isMouseInside = false
@@ -30,9 +30,12 @@ func _on_crafting_animation_animation_finished() -> void:
 	if RecentAnimation == "HoveringOut":
 		ai.play("Sleeping")
 		RecentAnimation = "Sleeping"
-	if isMouseInside == false and (RecentAnimation == "HoveringIn" or RecentAnimation == "HoverBlinking"):
+	elif isMouseInside == false and (RecentAnimation == "HoveringIn" or RecentAnimation == "HoverBlinking"):
 		ai.play("HoveringOut")
 		RecentAnimation = "HoveringOut"
+	elif isMouseInside and (RecentAnimation == "HoveringOut" or "Sleeping") and (RecentAnimation != "HoveringIn"):
+		ai.play("HoveringIn")
+		RecentAnimation = "HoveringIn"
 
 	pass # Replace with function body.
 

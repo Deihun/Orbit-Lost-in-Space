@@ -1,11 +1,21 @@
 extends Control
+@onready var crew1 : Button = $Crew_1
+@onready var crew2 : Button = $Crew_2
+@onready var crew3 : Button = $Crew_3
+@onready var crew4 : Button = $Crew_4
+
 var consPosition = [Vector2(279,242), Vector2(605,164),Vector2(1199,164),Vector2(1497,288)]
+var button_array = []
+var crew = []
+var getcrew = []
 var positionRandom = []
 var balloon 
 var _button
 
 func _ready() -> void:
-	#IngameStoredProcessSetting.crew_in_ship = ["Maxim","Regina","Fumiko"]
+	button_array = [crew1,crew2,crew3,crew4]
+	IngameStoredProcessSetting.crew_in_ship = ["Maxim","Regina","Fumiko"]
+	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	setRandomPosition()
@@ -16,22 +26,21 @@ func _ready() -> void:
 func setRandomPosition():
 	positionRandom = consPosition.duplicate()
 	positionRandom.shuffle()
-	$Maxim.position = positionRandom.pop_front()
-	$Fumiko.position = positionRandom.pop_front()
-	$Regina.position = positionRandom.pop_front()
-	$Nashir.position = positionRandom.pop_front()
-	
-	if IngameStoredProcessSetting.crew_in_ship.has("Regina") : $Regina.show()
-	else: $Regina.hide()
-	if IngameStoredProcessSetting.crew_in_ship.has("Maxim") : $Maxim.show()
-	else: $Maxim.hide()
-	if IngameStoredProcessSetting.crew_in_ship.has("Nashir") : $Nashir.show()
-	else: $Nashir.hide()
-	if IngameStoredProcessSetting.crew_in_ship.has("Fumiko") : $Fumiko.show()
-	else: $Fumiko.hide()
+	$Crew_1.position = positionRandom.pop_front()
+	$Crew_2.position = positionRandom.pop_front()
+	$Crew_3.position = positionRandom.pop_front()
+	$Crew_4.position = positionRandom.pop_front()
+
+	print(getcrew[4] if 4 < getcrew.size() else null)
+	for i in range(button_array.size()):
+		var crew_member = getcrew[i] if i < getcrew.size() else null
+		button_array[i].visible = crew_member != null
+
 
 
 ################################################# INTERACTION DIALOGUE
+func assignCrew():
+	crew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 
 func set_initialDialogue():
 	setTag()
@@ -41,27 +50,44 @@ func set_initialDialogue():
 
 
 
-func _on_maxim_button_down() -> void:
-	DialogueManager.show_dialogue_balloon(maxim_initialDialogue,"interaction_maxim")
-	#balloon.start(maxim_initialDialogue, "interaction_maxim")
-	pass # Replace with function body.
+func _on_maxim_button_down() -> void: 
+	var a = _getInteractionDialogue(getcrew[0])
+	if a == null: return
+	DialogueManager.show_dialogue_balloon(maxim_initialDialogue,a)
 
 
 func _on_fumiko_button_down() -> void:
-	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, "interaction_fumiko")
-	pass # Replace with function body.
+	var a = _getInteractionDialogue(getcrew[1])
+	if a == null: return
+	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
+
 
 
 func _on_regina_button_down() -> void:
-	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, "interaction_regina")
-	pass # Replace with function body.
+	var a = _getInteractionDialogue(getcrew[2])
+	if a == null: return
+	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
+
 
 
 func _on_nashir_button_down() -> void:
-	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, "interaction_nashir")
-	pass # Replace with function body.
+	var a = _getInteractionDialogue(getcrew[3])
+	if a == null: return
+	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
 
 
+func _getInteractionDialogue(value : String):
+	match value:
+		"Maxim":
+			return "interaction_maxim"
+		"Fumiko":
+			return "interaction_fumiko" 
+		"Regina":
+			return "interaction_regina"
+		"Nashir":
+			return "interaction_nashir"
+		_:
+			return null
 
 
 ################################################# EVENT DIALOGUE

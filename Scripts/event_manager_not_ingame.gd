@@ -126,8 +126,9 @@ func add_items():
 	var target_id = int($Panel_ButtonGeneration/LineEdit_ID.text.strip_edges())
 	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
 	var items = []
-	var item_name = $Panel_ButtonGeneration/ItemType_OptionButton.text.capitalize()
+	var item_name = $Panel_ButtonGeneration/ItemType_OptionButton.text.to_upper()
 	var item_amount= int($Panel_ButtonGeneration/LineEdit_amount.text.strip_edges())
+	
 	current_Items.append([item_name, int(item_amount)])
 	print(current_Items)
 	clear_item_UI()
@@ -142,9 +143,10 @@ func clear_item_UI():
 
 func on_finalize_choice_button():
 	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
+	var targetId = int($Panel_ButtonGeneration/LineEdit_ID.text)
 	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
 		TemporaryChoices["Choice-"+str(current_choice_id+1)] = [
-			int(current_choice_id),
+			targetId,
 			current_Items,
 			description
 		]
@@ -153,7 +155,14 @@ func on_finalize_choice_button():
 		if TemporaryChoices.keys().has("HiddenChoice"):
 			print("ERROR: HiddenChoice can only be called once")
 			return
-		TemporaryChoices["HiddenChoice"] = [[[str($Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text).capitalize(),[str($Panel_ButtonGeneration/Panel_HiddenChoice/HiddenChoice_Item_OptionButton.text).capitalize(), int($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Amount.text)]]],[int(current_choice_id),current_Items,	description
+		#if $Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text == "HAS_UNIQUE_ITEM":
+		TemporaryChoices["HiddenChoice"] = [
+			[
+				[str($Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text),
+				[str($Panel_ButtonGeneration/Panel_HiddenChoice/_ItemName.text.to_upper()), 
+				int($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Amount.text)
+			]]],
+			[targetId ,current_Items,	description
 		]
 		]
 	update_UI()

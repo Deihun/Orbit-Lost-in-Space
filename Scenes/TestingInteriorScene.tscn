@@ -1,14 +1,16 @@
-[gd_scene load_steps=100 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=124 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
+[ext_resource type="Texture2D" uid="uid://bood1yhkad03s" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png" id="2_66wyx"]
 [ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
 [ext_resource type="Script" path="res://Scenes/CameraMovement.gd" id="2_uajib"]
 [ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="3_h4mnh"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
-[ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
 [ext_resource type="Texture2D" uid="uid://bsb3mkmhlb03u" path="res://Scenes/Ingame/Event_Notification_UI.png" id="5_00itk"]
+[ext_resource type="Script" path="res://Scenes/end_cycle.gd" id="6_rquqo"]
 [ext_resource type="Texture2D" uid="uid://b2ytbiutos4vv" path="res://Scenes/Cycle_Report/Meteor_Cyce.png" id="6_scv0j"]
+[ext_resource type="Texture2D" uid="uid://bag5mgeqm47sn" path="res://Scenes/UI/EndCycle_Enable.png" id="7_ke8mh"]
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
@@ -17,7 +19,6 @@
 [ext_resource type="Script" path="res://Scenes/lobby.gd" id="12_qmdri"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
-[ext_resource type="Texture2D" uid="uid://dpt3p0eq40v4v" path="res://Scenes/ExpeditionSelection/Expedition Selection.png" id="13_t2sia"]
 [ext_resource type="Script" path="res://Scenes/craft_button.gd" id="14_boj56"]
 [ext_resource type="Script" path="res://Scenes/storage_scene.gd" id="14_dtqtq"]
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
@@ -27,6 +28,15 @@
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 [ext_resource type="Texture2D" uid="uid://dw6ae7xyyamkp" path="res://Scenes/Cycle_Report/ExpeditionReportBG.png" id="17_8py32"]
 [ext_resource type="Texture2D" uid="uid://c5wxf42th7rbc" path="res://Scenes/Between Wall.png" id="17_raxb3"]
+[ext_resource type="Texture2D" uid="uid://hj48j1tcj24y" path="res://Scenes/ExpeditionSelection/Expedition.png" id="19_hgekd"]
+[ext_resource type="Texture2D" uid="uid://cc1k8exi08mao" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/NormalSpace.png" id="19_veuuq"]
+[ext_resource type="Texture2D" uid="uid://bos6vw3go366u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonShipAnimation.png" id="20_8oew0"]
+[ext_resource type="Script" path="res://Scenes/expedition_selection.gd" id="21_iriww"]
+[ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
+[ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
+size = Vector2(159.5, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h45yn"]
 size = Vector2(170, 130)
@@ -527,6 +537,124 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2reso"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2sua"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5al8"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n7hy"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6uwx"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbcvj"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(404, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkogs"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(0, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2jga"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(202, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv5ng"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(404, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg0j2"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(606, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wjoc"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(606, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qexn0"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(606, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vwb4"]
+atlas = ExtResource("20_8oew0")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4y7q"]
+atlas = ExtResource("20_8oew0")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej6sa"]
+atlas = ExtResource("20_8oew0")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km7gi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2reso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2sua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5al8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n7hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6uwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbcvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkogs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2jga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv5ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg0j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wjoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qexn0")
+}],
+"loop": true,
+"name": &"Space",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vwb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4y7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej6sa")
+}],
+"loop": true,
+"name": &"abandonship",
+"speed": 1.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55a4j"]
 size = Vector2(267.869, 259.306)
 
@@ -544,10 +672,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = 95.0
-offset_right = -80.0
-offset_bottom = 95.0
+offset_left = -458.0
+offset_top = 271.0
+offset_right = -458.0
+offset_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
@@ -622,6 +750,21 @@ z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
 
+[node name="EndCycle" type="Area2D" parent="cam2d/Button_navigation_node_parent"]
+position = Vector2(-255.008, -529.5)
+scale = Vector2(1.002, 1)
+script = ExtResource("6_rquqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cam2d/Button_navigation_node_parent/EndCycle"]
+position = Vector2(176.249, -1.99986)
+scale = Vector2(0.999998, 1)
+shape = SubResource("RectangleShape2D_g5rh8")
+
+[node name="Sprite2D" type="Sprite2D" parent="cam2d/Button_navigation_node_parent/EndCycle"]
+position = Vector2(174.874, -4.99988)
+scale = Vector2(0.675925, 0.748)
+texture = ExtResource("7_ke8mh")
+
 [node name="MeteorCyce" type="Sprite2D" parent="cam2d/Button_navigation_node_parent"]
 z_index = 1
 position = Vector2(-255.008, -529.5)
@@ -678,15 +821,6 @@ scale = Vector2(0.998006, 1)
 texture_normal = ExtResource("2_c3qtk")
 metadata/_edit_use_anchors_ = true
 
-[node name="NextDay_Button" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
-offset_left = -229.959
-offset_top = -649.5
-offset_right = 282.041
-offset_bottom = -137.5
-scale = Vector2(0.517161, 0.470855)
-texture_normal = ExtResource("4_3ysvw")
-metadata/_edit_use_anchors_ = true
-
 [node name="UI_G" type="Control" parent="cam2d/Button_navigation_node_parent"]
 layout_mode = 3
 anchors_preset = 0
@@ -695,11 +829,11 @@ offset_bottom = 40.0
 
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
-position = Vector2(1672.74, -550)
-scale = Vector2(1.101, 1.02)
-metadata/_edit_lock_ = true
+position = Vector2(1931, -556)
+scale = Vector2(1, 1.05)
 
 [node name="WholeInteriorScene" type="Sprite2D" parent="."]
+z_index = -11
 position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
 metadata/_edit_lock_ = true
@@ -707,9 +841,10 @@ metadata/_edit_lock_ = true
 [node name="Lobby2" type="Sprite2D" parent="WholeInteriorScene"]
 position = Vector2(-65, -3)
 texture = ExtResource("12_nbaaq")
+metadata/_edit_lock_ = true
 
 [node name="Craft" type="Sprite2D" parent="WholeInteriorScene"]
-position = Vector2(-3065, -1)
+position = Vector2(-3065, 1)
 texture = ExtResource("12_krim2")
 script = ExtResource("14_boj56")
 
@@ -743,48 +878,58 @@ mouse_filter = 2
 script = ExtResource("12_qmdri")
 metadata/_edit_lock_ = true
 
-[node name="Maxim" type="Button" parent="WholeInteriorScene/Lobby"]
+[node name="Crew_1" type="Button" parent="WholeInteriorScene/Lobby"]
 layout_mode = 0
 offset_left = 277.0
 offset_top = 333.0
 offset_right = 563.0
 offset_bottom = 1037.0
 
-[node name="Fumiko" type="Button" parent="WholeInteriorScene/Lobby"]
+[node name="Crew_2" type="Button" parent="WholeInteriorScene/Lobby"]
 layout_mode = 0
 offset_left = 605.0
 offset_top = 242.0
 offset_right = 891.0
 offset_bottom = 946.0
 
-[node name="Regina" type="Button" parent="WholeInteriorScene/Lobby"]
+[node name="Crew_3" type="Button" parent="WholeInteriorScene/Lobby"]
 layout_mode = 0
 offset_left = 1123.0
 offset_top = 223.0
 offset_right = 1409.0
 offset_bottom = 927.0
 
-[node name="Nashir" type="Button" parent="WholeInteriorScene/Lobby"]
+[node name="Crew_4" type="Button" parent="WholeInteriorScene/Lobby"]
 layout_mode = 0
 offset_left = 1404.0
 offset_top = 362.0
 offset_right = 1690.0
 offset_bottom = 1066.0
 
+[node name="Cockpit" type="Sprite2D" parent="WholeInteriorScene"]
+position = Vector2(3040, 0)
+texture = ExtResource("2_66wyx")
+
+[node name="ExpeditionScreen" type="AnimatedSprite2D" parent="WholeInteriorScene/Cockpit"]
+position = Vector2(-204.5, 145)
+scale = Vector2(1.25248, 0.732673)
+sprite_frames = SubResource("SpriteFrames_km7gi")
+animation = &"abandonship"
+
 [node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
-offset_left = 3497.0
-offset_top = -33.0
-offset_right = 3627.0
-offset_bottom = -10.0
+offset_left = 2711.0
+offset_top = 73.0
+offset_right = 2849.0
+offset_bottom = 96.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "FactionCurrently: "
 
 [node name="ExpeditionButton" type="Button" parent="WholeInteriorScene"]
 visible = false
-offset_left = 3490.0
-offset_top = 4.0
-offset_right = 3727.0
-offset_bottom = 63.0
+offset_left = 2688.0
+offset_top = 50.0
+offset_right = 2972.0
+offset_bottom = 222.0
 text = "EXPEDITION BUTTON
 "
 
@@ -819,7 +964,104 @@ texture = ExtResource("10_7sn4k")
 [node name="ExpeditionSelection" type="Sprite2D" parent="."]
 position = Vector2(-269.5, 2987.5)
 scale = Vector2(1.06094, 1.04907)
-texture = ExtResource("13_t2sia")
+texture = ExtResource("19_hgekd")
+script = ExtResource("21_iriww")
+
+[node name="SelectedCrewExpedition" type="Sprite2D" parent="ExpeditionSelection"]
+position = Vector2(278.527, -403.691)
+scale = Vector2(0.94256, 0.953225)
+texture = ExtResource("25_vreag")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ExpeditionSelection"]
+offset_left = 967.0
+offset_top = -470.0
+offset_right = 1476.0
+offset_bottom = 396.0
+texture = ExtResource("22_fdhp7")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Details_Container" type="Control" parent="ExpeditionSelection"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 991.0
+offset_top = -449.0
+offset_right = 1441.0
+offset_bottom = 366.0
+mouse_filter = 2
+
+[node name="Requirement_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 16.1257
+offset_top = 23.3849
+offset_right = 187.125
+offset_bottom = 84.3851
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Requirements:
+"
+
+[node name="Crew_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 17.0683
+offset_top = 125.38
+offset_right = 139.068
+offset_bottom = 174.38
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<Name>
+
+"
+
+[node name="Description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 15.1831
+offset_top = 177.808
+offset_right = 425.183
+offset_bottom = 322.808
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<Description>
+
+"
+autowrap_mode = 2
+justification_flags = 171
+clip_text = true
+
+[node name="Planet_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 20.8385
+offset_top = 333.183
+offset_right = 139.839
+offset_bottom = 356.183
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<planet_name>"
+
+[node name="Planet_description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 23.6662
+offset_top = 370.359
+offset_right = 443.666
+offset_bottom = 516.359
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<planetdesc>
+"
+autowrap_mode = 2
+clip_text = true
+
+[node name="cancel_button" type="Button" parent="ExpeditionSelection/Details_Container"]
+offset_left = 8.58522
+offset_top = 748.789
+offset_right = 438.585
+offset_bottom = 820.789
+text = "BACK
+"
+
+[node name="Embark_button" type="Button" parent="ExpeditionSelection/Details_Container"]
+offset_left = 8.58523
+offset_top = 668.719
+offset_right = 438.585
+offset_bottom = 740.719
+text = "EMBARK"
 
 [node name="Crew_toChoose" type="Control" parent="ExpeditionSelection"]
 layout_mode = 3
@@ -828,81 +1070,35 @@ offset_left = -964.0
 offset_top = -535.0
 offset_right = 546.0
 offset_bottom = 533.0
+metadata/_edit_lock_ = true
 
 [node name="Crew_1" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_top = 116.0
-offset_right = 387.0
-offset_bottom = 1062.0
+layout_mode = 0
+offset_left = 54.0
+offset_top = 142.0
+offset_right = 385.0
+offset_bottom = 1043.0
 
 [node name="Crew_2" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_left = 395.0
-offset_top = 116.0
-offset_right = 768.0
-offset_bottom = 1049.0
+layout_mode = 0
+offset_left = 396.107
+offset_top = 150.374
+offset_right = 711.107
+offset_bottom = 1051.37
 
 [node name="Crew_3" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_left = 775.017
-offset_top = 115.104
-offset_right = 1117.02
-offset_bottom = 1059.1
+layout_mode = 0
+offset_left = 721.291
+offset_top = 151.327
+offset_right = 1070.29
+offset_bottom = 1052.33
 
 [node name="Crew_4" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_left = 1123.0
-offset_top = 113.953
-offset_right = 1498.0
-offset_bottom = 1059.95
-
-[node name="Details_Container" type="Control" parent="ExpeditionSelection"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 546.0
-offset_top = -539.0
-offset_right = 960.0
-offset_bottom = 417.0
-mouse_filter = 2
-
-[node name="Requirement_label" type="Label" parent="ExpeditionSelection/Details_Container"]
 layout_mode = 0
-offset_left = 67.1355
-offset_top = 49.5188
-offset_right = 238.135
-offset_bottom = 110.519
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Requirements:
-"
-
-[node name="Crew_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 192.0
-offset_right = 186.0
-offset_bottom = 241.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "<Name>
-
-"
-
-[node name="Description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
-layout_mode = 0
-offset_left = 64.3078
-offset_top = 223.006
-offset_right = 235.308
-offset_bottom = 284.006
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "<Description>
-
-"
-
-[node name="Embark_button" type="Button" parent="ExpeditionSelection"]
-offset_left = 611.25
-offset_top = 432.288
-offset_right = 881.25
-offset_bottom = 504.288
-text = "EMBARK"
+offset_left = 1081.0
+offset_top = 148.0
+offset_right = 1406.0
+offset_bottom = 1053.0
 
 [node name="StorageScene" type="Sprite2D" parent="."]
 position = Vector2(-3000, 1500)
@@ -1054,31 +1250,38 @@ position = Vector2(-3982, -471)
 visible = false
 top_level = true
 z_index = 700
-offset_left = -457.0
-offset_top = -410.0
-offset_right = -457.0
-offset_bottom = -410.0
+offset_left = -1091.0
+offset_top = -89.0
+offset_right = -1091.0
+offset_bottom = -89.0
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
+[connection signal="input_event" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_input_event"]
+[connection signal="mouse_entered" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_exited"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
 [connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
-[connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
 [connection signal="input_event" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_input_event"]
 [connection signal="mouse_entered" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_entered"]
 [connection signal="mouse_exited" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_exited"]
 [connection signal="animation_finished" from="WholeInteriorScene/Craft/CraftingAnimation" to="WholeInteriorScene/Craft" method="_on_crafting_animation_animation_finished"]
 [connection signal="timeout" from="WholeInteriorScene/Craft/CraftingAnimation/BlinkTimer" to="WholeInteriorScene/Craft" method="_on_blink_timer_timeout"]
-[connection signal="button_down" from="WholeInteriorScene/Lobby/Maxim" to="WholeInteriorScene/Lobby" method="_on_maxim_button_down"]
-[connection signal="button_down" from="WholeInteriorScene/Lobby/Fumiko" to="WholeInteriorScene/Lobby" method="_on_fumiko_button_down"]
-[connection signal="button_down" from="WholeInteriorScene/Lobby/Regina" to="WholeInteriorScene/Lobby" method="_on_regina_button_down"]
-[connection signal="button_down" from="WholeInteriorScene/Lobby/Nashir" to="WholeInteriorScene/Lobby" method="_on_nashir_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_1" to="WholeInteriorScene/Lobby" method="_on_maxim_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_2" to="WholeInteriorScene/Lobby" method="_on_fumiko_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_3" to="WholeInteriorScene/Lobby" method="_on_regina_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_4" to="WholeInteriorScene/Lobby" method="_on_nashir_button_down"]
 [connection signal="button_down" from="WholeInteriorScene/ExpeditionButton" to="." method="_on_expedition_button_button_down"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
-[connection signal="pressed" from="ExpeditionSelection/Embark_button" to="." method="_on_embark_button_pressed"]
+[connection signal="button_up" from="ExpeditionSelection/Details_Container/cancel_button" to="." method="_on_cancel_button_button_up"]
+[connection signal="pressed" from="ExpeditionSelection/Details_Container/Embark_button" to="." method="_on_embark_button_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_1" to="ExpeditionSelection" method="_on_crew_1_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_2" to="ExpeditionSelection" method="_on_crew_2_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_3" to="ExpeditionSelection" method="_on_crew_3_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_4" to="ExpeditionSelection" method="_on_crew_4_pressed"]
 [connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
 [connection signal="mouse_entered" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_exited"]

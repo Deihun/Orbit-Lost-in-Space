@@ -1,7 +1,7 @@
 extends Area2D
 
 #VARIABLES
-var _isPlayerInside = false #Boolean for checking if player is touching the hitbox
+var _isPlayerInside : bool = false #Boolean for checking if player is touching the hitbox
 
 
 #VOID METHODS

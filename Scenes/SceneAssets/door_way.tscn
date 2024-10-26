@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://62yigvg4kt4j" path="res://Scenes/SceneAssets/DoorSpriteSheet.png" id="2_traou"]
 [ext_resource type="Texture2D" uid="uid://cf0cx3isgguf2" path="res://Scenes/SceneAssets/DoorOpeningSpriteSheet_Horizontal.png" id="3_6ivha"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4x0y"]
-size = Vector2(478, 109)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gixgm"]
 atlas = ExtResource("2_traou")
 region = Rect2(0, 0, 500, 500)
@@ -292,12 +289,26 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4x0y"]
+size = Vector2(478, 109)
+
 [node name="DoorWay" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-2, -2)
 script = ExtResource("1_feqrt")
 
+[node name="Door" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-15, 106)
+scale = Vector2(1, 0.936)
+sprite_frames = SubResource("SpriteFrames_twx84")
+animation = &"Closing_Horizontal"
+frame = 8
+frame_progress = 1.0
+offset = Vector2(0, -177.05)
+
 [node name="DoorStatic" type="StaticBody2D" parent="."]
+position = Vector2(5, -9.4614)
 collision_layer = 33
 collision_mask = 0
 
@@ -309,11 +320,3 @@ polygon = PackedVector2Array(-23, -69, -20, 172, 8, 172, 7, -70)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorStatic"]
 position = Vector2(-19, 84)
 shape = SubResource("RectangleShape2D_c4x0y")
-
-[node name="Door" type="AnimatedSprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-20, -121)
-scale = Vector2(1, 0.936)
-sprite_frames = SubResource("SpriteFrames_twx84")
-animation = &"Closing"
-offset = Vector2(0, 79.685)

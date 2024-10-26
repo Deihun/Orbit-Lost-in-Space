@@ -88,12 +88,22 @@ func HandleButton(Event):
 
 
 func HiddenChoice(Event):
-	var globalResources = $"/root/GlobalResources"
+	var globalResources : GlobalResources = $"/root/GlobalResources"
 	if Event.has("HiddenChoice"):
-		var condition = Event["HiddenChoice"][0][0]
+		var inner_array = Event["HiddenChoice"][0]
+		var conditionArray = inner_array[0]
+		var condition = conditionArray[0]
+		
+		print("Debug: // HAS = ", condition, " HAS_UNIQUE_ITEM = ", condition, Event["HiddenChoice"][0])
+		
 		match(condition):
 			"HAS":
-				if globalResources.hasItem(Event["HiddenChoice"][0][1][0],Event["HiddenChoice"][0][1][1]):
+				if globalResources.hasItem(Event["HiddenChoice"][0][0][1][0],Event["HiddenChoice"][0][1][1]):
+					_create_choice_button(Event["HiddenChoice"][1], button_index)
+					button_index += 1
+					temp_choice_data.append(Event["HiddenChoice"][1])
+			"HAS_UNIQUE_ITEM":
+				if globalResources.uniqueItems.has(Event["HiddenChoice"][0][0][1][0]):
 					_create_choice_button(Event["HiddenChoice"][1], button_index)
 					button_index += 1
 					temp_choice_data.append(Event["HiddenChoice"][1])
