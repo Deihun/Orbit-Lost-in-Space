@@ -6,7 +6,7 @@ extends Control
 @onready var ClickCD = $cam2d/Button_navigation_node_parent/ClickCooldown
 @onready var CycleSetting = $"/root/IngameStoredProcessSetting"
 @onready var EventHandler = $EventHandler
-@onready var craftingtab = $CraftingTab
+@onready var craftingtab = ItemUi
 @onready var putResources = $"/root/GlobalResources"
 @onready var SaveGame = SaveNLoad
 
