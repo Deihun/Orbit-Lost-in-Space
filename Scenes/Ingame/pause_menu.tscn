@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wmgc2"]
 shader = ExtResource("3_qbxds")
-shader_parameter/amount = 1.966
+shader_parameter/amount = 1.095
 
 [node name="PauseMenu" type="Control"]
 z_index = 500
@@ -100,6 +100,7 @@ text = "EXIT
 [node name="NinePatchRect2" type="NinePatchRect" parent="ColorRect"]
 visible = false
 z_index = 2
+layout_mode = 0
 offset_left = 1094.0
 offset_top = 405.0
 offset_right = 2050.0
@@ -142,6 +143,66 @@ offset_top = 419.0
 offset_right = 1418.0
 offset_bottom = 419.0
 
+[node name="Restart" type="ColorRect" parent="ColorRect"]
+visible = false
+z_index = 1
+material = SubResource("ShaderMaterial_wmgc2")
+offset_left = -83.0
+offset_top = 12.0
+offset_right = 3279.0
+offset_bottom = 1786.0
+color = Color(1, 1, 1, 0)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/Restart"]
+z_index = 1
+offset_left = 1285.0
+offset_top = 594.0
+offset_right = 2032.0
+offset_bottom = 963.0
+mouse_filter = 0
+texture = ExtResource("1_jhi0i")
+region_rect = Rect2(0, 0, 255, 255)
+patch_margin_left = 70
+patch_margin_top = 70
+patch_margin_right = 70
+patch_margin_bottom = 70
+
+[node name="YES" type="Button" parent="ColorRect/Restart/NinePatchRect"]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 223.0
+offset_right = 349.0
+offset_bottom = 274.0
+text = "YES
+"
+
+[node name="NO" type="Button" parent="ColorRect/Restart/NinePatchRect"]
+offset_left = 379.0
+offset_top = 224.0
+offset_right = 574.0
+offset_bottom = 274.0
+text = "NO
+"
+
+[node name="Label_1" type="Label" parent="ColorRect/Restart/NinePatchRect"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 90.0
+offset_right = 530.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.281187, 0.281187, 0.281187, 1)
+theme_override_font_sizes/font_size = 41
+text = "ARE YOU SURE?"
+
+[node name="Label_2" type="Label" parent="ColorRect/Restart/NinePatchRect"]
+offset_left = 165.0
+offset_top = 159.0
+offset_right = 604.0
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.281187, 0.281187, 0.281187, 1)
+theme_override_font_sizes/font_size = 20
+text = "Restarting this will lose your current progress"
+
 [connection signal="button_down" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/RESTART" to="." method="RESTART"]
@@ -151,3 +212,5 @@ offset_bottom = 419.0
 [connection signal="button_up" from="ColorRect/VBoxContainer/QUIT" to="." method="QUIT"]
 [connection signal="visibility_changed" from="ColorRect/NinePatchRect2/Settings_Menu" to="." method="_on_settings_menu_visibility_changed"]
 [connection signal="timeout" from="ColorRect/PauseTimer" to="." method="READY_TO_PAUSE"]
+[connection signal="button_up" from="ColorRect/Restart/NinePatchRect/YES" to="." method="_on_yes_button_up"]
+[connection signal="button_down" from="ColorRect/Restart/NinePatchRect/NO" to="." method="_on_no_button_down"]

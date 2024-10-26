@@ -437,6 +437,13 @@ offset_top = 29.0
 offset_right = 778.0
 offset_bottom = 178.0
 
+[node name="_ItemName" type="LineEdit" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 75.0
+offset_right = 136.0
+offset_bottom = 106.0
+
 [node name="Label_IDGuide4" type="Label" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
 layout_mode = 0
 offset_left = 7.0
@@ -478,27 +485,8 @@ popup/item_1/text = "PLACE"
 popup/item_1/id = 1
 popup/item_2/text = "RELATIONSHIP"
 popup/item_2/id = 2
+popup/item_3/text = "HAS_UNIQUE_ITEM"
 popup/item_3/id = 3
-
-[node name="HiddenChoice_Item_OptionButton" type="OptionButton" parent="Panel_ButtonGeneration/Panel_HiddenChoice"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 72.0
-offset_right = 150.0
-offset_bottom = 103.0
-selected = 0
-item_count = 6
-popup/item_0/text = "Spareparts"
-popup/item_1/text = "Biogene"
-popup/item_1/id = 1
-popup/item_2/text = "Food"
-popup/item_2/id = 2
-popup/item_3/text = "Medicine"
-popup/item_3/id = 3
-popup/item_4/text = "Oxygen"
-popup/item_4/id = 4
-popup/item_5/text = "Fuel"
-popup/item_5/id = 5
 
 [node name="ScrollContainer_CodePreview_ChoicePreview" type="ScrollContainer" parent="Panel_ButtonGeneration"]
 z_index = 20
@@ -510,6 +498,7 @@ offset_bottom = 170.0
 
 [node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview"]
 z_index = 10
+custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview"]

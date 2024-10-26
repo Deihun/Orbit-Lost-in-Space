@@ -10,10 +10,12 @@ const MAX_SLOTS = 4
 
 #Texture Packages
 var battery_texture = load("res://Resources/Small_Fuel_1_unpickup.png")
-var apple_texture = load("res://Resources/resources 1.png")
-var small_biogene_texture = load("res://Resources/Resource_Images/SmallBiogene_OnHand.png")
-var spareparts_texture = load("res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png")
-var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/Small_SmallOxygenGas.png")
+var smallfood = load("res://Resources/SmallFoodCan/SmallFood_PickUp.png")
+var ductape = load("res://Resources/DuctapePickup.png")
+var medicine = load("res://Resources/FirstAidKit/Medicine_Pickup.png")
+var small_biogene_texture = load("res://Resources/Small_Biogene/BiogenePickup.png")
+var spareparts_texture = load("res://Resources/Spareparts/SparepartsPickup.png")
+var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/OxygenPickup.png")
 var KeyCard = load("res://Scenes/Tutorial/KeyCard.png")
 var teddyBear = load("res://Resources/Resource_Images/TeddyBear Icon.png")
 
@@ -50,14 +52,26 @@ func showItem():
 			hands[i].texture = battery_texture
 			print("Detected battery in slot ", i + 2)
 		elif i < hands.size() and "Small Spareparts" in inventory[i]:
-			hands[i].scale = Vector2(0.45,0.45)
+			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = spareparts_texture
+			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Small Food" in inventory[i]:
+			hands[i].scale = Vector2(0.2,0.2)
+			hands[i].texture = smallfood
+			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Ductape" in inventory[i]:
+			hands[i].scale = Vector2(0.45,0.45)
+			hands[i].texture = ductape
+			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Medicine Pack" in inventory[i]:
+			hands[i].scale = Vector2(0.2,0.2)
+			hands[i].texture = medicine
 			print("Detected apple in slot ", i + 1)
 		elif i < hands.size() and "Small Biogene" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)
 			hands[i].texture = small_biogene_texture
 		elif i < hands.size() and "Small Gastank" in inventory[i]:
-			hands[i].scale = Vector2(0.30,0.30)
+			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = oxygenGasTank_small
 		elif i < hands.size() and "KeyCard" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)

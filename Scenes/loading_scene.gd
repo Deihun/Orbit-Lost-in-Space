@@ -7,6 +7,7 @@ var scene_load_status = 0
 var newScene
 
 var _newGameWorld = "res://Player/World.tscn"
+var mainmenu = "res://MainMenu/main_menu.tscn"
 var _tutorial = "res://Scenes/Tutorial/TutorialScene.tscn"
 var _abandonShip = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.tscn"
 var interiorScene = "res://Scenes/TestingInteriorScene.tscn"
@@ -26,6 +27,8 @@ func _ready() -> void:
 			sceneName = _abandonShip	
 		"interiorscene":
 			sceneName = interiorScene
+		"mainmenu":
+			sceneName = mainmenu
 		_:
 			sceneName = "res://Player/World.tscn"
 	

@@ -2,7 +2,7 @@ extends Camera2D
 
 @onready var ArrowButton = [$Button_navigation_node_parent/LeftButton_UI,$Button_navigation_node_parent/RightButton_UI]
 @onready var ObjectLeft = Node2D
-@onready var EndButton = get_parent().get_node("cam2d/Button_navigation_node_parent/NextDay_Button")
+@onready var EndButton = $Button_navigation_node_parent/EndCycle
 @onready var EventUI = get_parent().get_node("EventHandler")
 @onready var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000), $"../ExpeditionSelection".position]
 
@@ -28,28 +28,34 @@ func _process(delta: float) -> void:
 
 
 func ChangeLocationToLeft():
+	$"..".EndCycle_Can_Be_Click_ = false
 	if canBeClick == true:
 		if LocationKey > 0 and LocationKey < 3:
 			canBeClick = false
 			LocationKey -= 1
+			EndButton.disable()
 			ChangeLocaton(true)
-			EndButton.visible = false
 			ClickCD.start()
 
 func ChangeLocationToRight():
+	$"..".EndCycle_Can_Be_Click_ = false
 	if canBeClick == true:
 		if LocationKey < 2 and LocationKey > -1:
 			canBeClick = false
 			LocationKey += 1
+			EndButton.disable()
 			ChangeLocaton(true)
-			EndButton.visible = false
 			ClickCD.start()
 
 func ChangeLocaton(smoothMovement:bool):
 	$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = false
 	$Button_navigation_node_parent/MeteorCyce.hide()
+	EndButton.visible = true
 	match(LocationKey):
 		0:#CraftingRoom
+			if GlobalResources.currentActiveQueue > 0:
+				$"../EventHandler".isEventVisible = false
+				$"../EventHandler".switchIt(false)
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
 				MoveObjectSmoothly(ObjectLeft,Vector2(-1500,-600),1.5)
@@ -59,15 +65,20 @@ func ChangeLocaton(smoothMovement:bool):
 			$Button_navigation_node_parent/MeteorCyce.hide()
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = true
-			EndButton.visible = true
+			EndButton.enable()
 			$Button_navigation_node_parent/MeteorCyce.show()
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
-			
+			EndButton.disable()
 			await get_tree().create_timer(2.0).timeout 
+			EndButton.enable()
 			if($"../TutorialPanel_Folder/TutorialPanel3"):
 				$"../TutorialPanel_Folder/TutorialPanel3".visible = true
+			
 		1:#Lobby
+			if GlobalResources.currentActiveQueue > 0:
+				$"../EventHandler".isEventVisible = false
+				$"../EventHandler".switchIt(false)
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
 				MoveObjectSmoothly(ObjectLeft,Vector2(-1950,-600),1.5)
@@ -77,8 +88,13 @@ func ChangeLocaton(smoothMovement:bool):
 			$Button_navigation_node_parent/MeteorCyce.show()
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = true
+			EndButton.enable()
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
+			EndButton.disable()
+			await get_tree().create_timer(2.0).timeout 
+			EndButton.enable()
+
 			
 		2:#DrivingsRoom
 			$Button_navigation_node_parent/MeteorCyce.show()
@@ -93,17 +109,22 @@ func ChangeLocaton(smoothMovement:bool):
 				self.position = SpecificLocation[LocationKey]
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = false
-			EndButton.visible = true
 			if TimerFilter:
 				await get_tree().create_timer(1.5).timeout
 				if($"../TutorialPanel_Folder/TutorialPanel2"):
 					$"../TutorialPanel_Folder/TutorialPanel2".visible = true
-			
-			if GlobalResources.eventID.is_empty() and EventUI.onlyOnceTrigger == true:
-				EventUI.switchIt()
-				EventUI.onlyOnceTrigger = false
 				pass
+			if GlobalResources.currentActiveQueue > 0:
+				EndButton.disable()
+				await get_tree().create_timer(0.5).timeout
+				$"../EventHandler".isEventVisible = true
+				$"../EventHandler".switchIt()
+			else: EndButton.enable()
+
+
+
 		3: #StorageRoom
+			EndButton.enable()
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
 			else:
@@ -112,6 +133,8 @@ func ChangeLocaton(smoothMovement:bool):
 			$Button_navigation_node_parent/MeteorCyce.show()
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = false
+
+
 		4: #Cycle Report
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
@@ -121,9 +144,14 @@ func ChangeLocaton(smoothMovement:bool):
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = false
 			EndButton.visible = false
+
+
 		5: #ExpeditionRoom
+			$"../ExpeditionSelection".uponCall()
+			EndButton.enable()
 			position = SpecificLocation[LocationKey]
 			pass
+	$"..".EndCycle_Can_Be_Click_ = true
 	#print("DEBUGGING LOCATION// KEY LOCATION:", LocationKey,"// position: ", self.position)
 
 
@@ -177,12 +205,9 @@ func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, sh
 		IngameStoredProcessSetting.Cycle_ReportList.clear()
 		LocationKey = 2
 		ChangeLocaton(false)
-		$"../EventHandler".switchIt()
+		#$"../EventHandler".switchIt()
 		$"../WholeInteriorScene/Lobby".set_initialDialogue()
 
-
-func _on_end_cycle_timer_timeout() -> void:
-	pass # Replace with function body.
 
 
 func _on_click_on_left_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

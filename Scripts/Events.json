@@ -57,8 +57,8 @@
 				]
 			]
 		],
-		"RandomTrue": false,
-		"Repeatable": false,
+		"RandomTrue": true,
+		"Repeatable": true,
 		"description": "Something wrong if this doesnt change",
 		"id": 2,
 		"name": "DEBUG"
@@ -153,7 +153,7 @@
 				"This will cost 1 Ductape to repair \nDuctape:@DUCTAPE()/1"
 			]
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "Description",
 		"id": 9,
@@ -177,7 +177,7 @@
 			],
 			"Wanna see some fireworks? You should know what and when is your place! This is my place therefore this is my time! If you cant afford it? Goodbye! \nSpareparts:@SPAREPARTS()/50"
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "Witness, the final calamity",
 		"id": 11,
@@ -204,14 +204,14 @@
 			],
 			"Let the anger out! This will cause your crew to commit chaos, damaging your ship\nSpareparts:@SPAREPARTS()/10"
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "One of your crew simply want to express their freedome through breathing, will you let that crew breath more air than usual?",
 		"id": 12,
 		"name": "You are what you are"
 	},
 	{
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"choice-1": [
 			0,
@@ -260,8 +260,6 @@
 		"name": "Regina is sad"
 	},
 	{
-		"RandomTrue": true,
-		"Repeatable": false,
 		"Choice-1": [
 			15,
 			[
@@ -282,15 +280,55 @@
 			],
 			"I care about here... Not a simp tho..."
 		],
+		"RandomTrue": false,
+		"Repeatable": false,
 		"description": "She was stunned as she discover the idea of turning a biogene into\na toy! Now she is invested but simply wants your permission. \nWill you let her join you or will you ignore her?",
 		"id": 16,
 		"name": "Oh dear regina"
 	},
 	{
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "dasad",
 		"id": 17,
 		"name": "For me to allow not being null"
+	},
+	{
+		"Choice-1": [
+			1,
+			[
+				[
+					"SPAREPARTS",
+					0
+				]
+			],
+			"Tite tite na supot"
+		],
+		"HiddenChoice": [
+			[
+				[
+					"HAS_UNIQUE_ITEM",
+					[
+						"BURNIK",
+						1
+					]
+				]
+			],
+			[
+				1,
+				[
+					[
+						"SPAREPARTS",
+						0
+					]
+				],
+				"Tite"
+			]
+		],
+		"RandomTrue": false,
+		"Repeatable": true,
+		"description": "testtestttest",
+		"id": 18,
+		"name": "Testing Unique Item"
 	}
 ]

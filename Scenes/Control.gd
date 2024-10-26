@@ -13,6 +13,7 @@ extends Control
 #VARIABLES
 var resources 
 var events
+var EndCycle_Can_Be_Click_ : bool = true
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
 var eventHandler
@@ -26,7 +27,6 @@ func _process(delta):
 func _ready():
 	$WholeInteriorScene/Lobby.initializeJSONFILE()
 	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
-	print("LIST OF CREW", IngameStoredProcessSetting.crew_in_ship)
 	if SaveGame.isLoadGame:
 		_loadGameStart()
 	else:
@@ -54,8 +54,10 @@ func GameOver(OtherCommands):
 	pass
 
 func _on_next_day_button_pressed():
+	if !EndCycle_Can_Be_Click_: return
 	var EventHandler = $EventHandler
-	if GlobalResources.currentActiveQueue <= 0 and !$EventHandler.visible:
+	EndCycle_Can_Be_Click_ = false
+	if GlobalResources.currentActiveQueue <= 0:
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
 		CycleSetting.endCycle()
@@ -75,6 +77,7 @@ func _on_next_day_button_pressed():
 		$WholeInteriorScene/Lobby.set_initialDialogue()
 		updateUI()
 		camera.ChangeSpecificScene(4)
+		
 	else:
 		camera.ChangeSpecificScene(2)
 
@@ -82,8 +85,9 @@ func _on_next_day_button_pressed():
 func updateUI():
 	$WholeInteriorScene/FactionLabel_willBeRemove.text = str("FactionCurrently: ",IngameStoredProcessSetting.current_Factions)
 	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
-	if IngameStoredProcessSetting.current_Factions == "SPACE" or "None":$WholeInteriorScene/ExpeditionButton.hide()
+	if IngameStoredProcessSetting.current_Factions == "SPACE" or IngameStoredProcessSetting.current_Factions == "None":$WholeInteriorScene/ExpeditionButton.hide()
 	else:$WholeInteriorScene/ExpeditionButton.show()
+	_updateUIExpeditionScreen()
 
 
 func _on_click_cooldown_timeout() -> void:
@@ -110,4 +114,16 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 			pass
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
 	get_tree().change_scene_to_packed(loadingScreen)
+
+func _updateUIExpeditionScreen():
+	var expScreen = $WholeInteriorScene/Cockpit/ExpeditionScreen
+	if IngameStoredProcessSetting.current_Factions == "None" or IngameStoredProcessSetting.current_Factions == "SPACE":
+		expScreen.play("Space")
+	elif "AbandonShip":
+		expScreen.play("abandonship")
+
+
+func _on_cancel_button_button_up() -> void:
+	$cam2d.ChangeSpecificScene(2)
+	$cam2d.ChangeLocaton(false)
 	pass # Replace with function body.
