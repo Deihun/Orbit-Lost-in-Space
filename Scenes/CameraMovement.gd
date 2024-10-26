@@ -77,6 +77,7 @@ func ChangeLocaton(smoothMovement:bool):
 			
 		1:#Lobby
 			if GlobalResources.currentActiveQueue > 0:
+				await get_tree().create_timer(0.2).timeout
 				$"../EventHandler".isEventVisible = false
 				$"../EventHandler".switchIt(false)
 			if smoothMovement:

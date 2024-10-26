@@ -8,6 +8,11 @@ var Scenes : String= ""
 var Ending : String= "null"
 var is_previous_restart : bool = false
 
+#EXPEDITIONVALUE
+var selectedCrew = "Jerry"
+var speed = 0
+var inventory = 4
+var BonusMultiplyer = 1
 
 func newGame():
 	Cycle = 1
@@ -34,7 +39,7 @@ func getCycle():
 var current_Factions : String = "SPACE"
 var TravelPerSections : int = 1
 var Target_factions : String = "SPACE"
-var TotalProbabilityForFactionsToFound : float = 0.0
+var TotalProbabilityForFactionsToFound : float = 0.006
 var Factions_Probability = {
 	"Radonti" : 0.75,
 	"Faction2" : 0.0,
@@ -43,10 +48,10 @@ var Factions_Probability = {
 	"Faction5" : 0.0
 }
 var SubFactions_Probability = {
-	"Asteroid" : 0.15,
-	"Blackhole" : 0.01,
-	"AbandonShip" : 0.3,
-	"SmallPlanetoid" : 0.05,
+	"Asteroid" : 0.01,
+	"Blackhole" : 0.005,
+	"AbandonShip" : 0.35,
+	"SmallPlanetoid" : 0.0
 }
 
 
@@ -74,8 +79,8 @@ func set_Factions():
 			cumulative_probability += Factions_Probability[faction]
 			if random_pick < cumulative_probability:
 				return faction
-		TotalProbabilityForFactionsToFound -= 0.025
-	elif 0.75 > (randf() * 1.0):
+		TotalProbabilityForFactionsToFound = 0.1
+	elif 0.25 > (randf() * 1.0):
 		var total_FactionPicker_probability : float = 0.0
 		for probability in SubFactions_Probability.values():
 			total_FactionPicker_probability += probability
@@ -85,7 +90,7 @@ func set_Factions():
 			cumulative_probability += SubFactions_Probability[faction]
 			if random_pick < cumulative_probability:
 				return faction
-		TotalProbabilityForFactionsToFound += 0.05
+		TotalProbabilityForFactionsToFound = TotalProbabilityForFactionsToFound + 0.07 if Cycle >= 20 else TotalProbabilityForFactionsToFound
 	else:
 		TotalProbabilityForFactionsToFound += 0.1
 		return "None"

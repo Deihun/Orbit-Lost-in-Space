@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=125 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="3_h4mnh"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
 [ext_resource type="Texture2D" uid="uid://bsb3mkmhlb03u" path="res://Scenes/Ingame/Event_Notification_UI.png" id="5_00itk"]
+[ext_resource type="Script" path="res://Scenes/Command_Live.gd" id="5_ntf38"]
 [ext_resource type="Script" path="res://Scenes/end_cycle.gd" id="6_rquqo"]
 [ext_resource type="Texture2D" uid="uid://b2ytbiutos4vv" path="res://Scenes/Cycle_Report/Meteor_Cyce.png" id="6_scv0j"]
 [ext_resource type="Texture2D" uid="uid://bag5mgeqm47sn" path="res://Scenes/UI/EndCycle_Enable.png" id="7_ke8mh"]
@@ -672,10 +673,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -458.0
-offset_top = 271.0
-offset_right = -458.0
-offset_bottom = 271.0
+offset_left = 2162.0
+offset_top = 615.0
+offset_right = 2162.0
+offset_bottom = 615.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
@@ -731,6 +732,28 @@ tutorialPanel_ID = 4
 [node name="cam2d" type="Camera2D" parent="."]
 z_index = 500
 script = ExtResource("2_uajib")
+
+[node name="Command" type="Panel" parent="cam2d"]
+visible = false
+z_index = 500
+offset_left = -1072.0
+offset_top = -547.0
+offset_right = 1053.0
+offset_bottom = 542.0
+mouse_filter = 1
+script = ExtResource("5_ntf38")
+
+[node name="_Command" type="TextEdit" parent="cam2d/Command"]
+z_index = 200
+layout_mode = 0
+offset_left = 123.0
+offset_top = 8.0
+offset_right = 2011.0
+offset_bottom = 48.0
+
+[node name="CommandCooldown" type="Timer" parent="cam2d/Command"]
+wait_time = 0.2
+one_shot = true
 
 [node name="Pause_Button" type="Button" parent="cam2d"]
 z_index = 150
@@ -948,6 +971,7 @@ texture = ExtResource("17_raxb3")
 position = Vector2(2, -193)
 
 [node name="Left_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
+visible = false
 position = Vector2(-1900, -600)
 
 [node name="TestingOnly" type="Sprite2D" parent="OnCameraMovingDesign/Left_Groups_of_Objects"]
@@ -1050,6 +1074,7 @@ autowrap_mode = 2
 clip_text = true
 
 [node name="cancel_button" type="Button" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
 offset_left = 8.58522
 offset_top = 748.789
 offset_right = 438.585
@@ -1058,6 +1083,7 @@ text = "BACK
 "
 
 [node name="Embark_button" type="Button" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
 offset_left = 8.58523
 offset_top = 668.719
 offset_right = 438.585
@@ -1252,12 +1278,13 @@ metadata/_edit_lock_ = true
 visible = false
 top_level = true
 z_index = 700
-offset_left = -1091.0
-offset_top = -89.0
-offset_right = -1091.0
-offset_bottom = -89.0
+offset_left = 1584.0
+offset_top = 231.0
+offset_right = 1584.0
+offset_bottom = 231.0
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
+[connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="input_event" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_input_event"]
 [connection signal="mouse_entered" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_entered"]

@@ -37,7 +37,7 @@ func switchIt(value : bool = true):
 		recentAnimation = "OpeningAnimation"
 
 	else: #CLOSING
-		eventReader.visible = false
+		eventReader.hide()
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("ClosingAnimation")
 		recentAnimation = "ClosingAnimation"

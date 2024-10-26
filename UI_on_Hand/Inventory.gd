@@ -1,11 +1,13 @@
 extends Control
-const MAX_SLOTS = 4
+var MAX_SLOTS : int = 4
 
 #Extension Scripts
 @onready var Hand1 = $Hand_1/Sprite2D
 @onready var Hand2 = $Hand_2/Sprite2D
 @onready var Hand3 = $Hand_3/Sprite2D
 @onready var Hand4 = $Hand_4/Sprite2D
+@onready var Hand5 = $Hand_5/Sprite2D
+@onready var Hand6 = $Hand_6/Sprite2D
 @onready var resource = GlobalResources
 
 #Texture Packages
@@ -28,9 +30,22 @@ var inventory = []
 
 
 func _ready():
+	MAX_SLOTS = IngameStoredProcessSetting.inventory
+	MAX_SLOTS = 6 if MAX_SLOTS > 6 else MAX_SLOTS
+	
 	for i in range(MAX_SLOTS): #Declaration of inventory size
 		inventory.append([])
 	showItem()
+	match MAX_SLOTS:
+		4:
+			$Hand_5.hide()
+			$Hand_6.hide()
+		5:
+			$Hand_5.show()
+			$Hand_6.hide()
+		6:
+			$Hand_5.show()
+			$Hand_6.show()
 
 func _insert_all_items(): #Declaration of inventory size
 	for i in range(MAX_SLOTS):
@@ -41,7 +56,7 @@ func _insert_all_items(): #Declaration of inventory size
 	showItem()
 
 func showItem():
-	var hands = [Hand1, Hand2, Hand3, Hand4]
+	var hands = [Hand1, Hand2, Hand3, Hand4, Hand5, Hand6]
 	
 	for hand in hands:
 		hand.texture = null

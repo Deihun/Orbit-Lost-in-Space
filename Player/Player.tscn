@@ -1862,7 +1862,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsf36"]
 radius = 29.0
 
-[node name="player" type="Node2D" groups=["player"]]
+[node name="Player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
 script = ExtResource("1_mhmxe")
@@ -1915,7 +1915,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
-text = "Stay at the dropbox before the times run out!"
+text = "Your planet got destroyed and you along with it!"
 
 [node name="_Retry" type="Button" parent="player/AllUIParents/GameOver"]
 layout_mode = 0

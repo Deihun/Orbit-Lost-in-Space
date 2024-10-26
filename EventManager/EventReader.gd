@@ -139,11 +139,12 @@ func RunKeyWord(Command):
 		_command.strip_edges()
 		var item_name = ""
 		var amount = 0
-		for i in range (_command.length()):
+		for i in range(_command.length()):
 			var char = _command[i]
 			if numbers.has(char):
-				item_name = _command.substr(0,i)
-				amount = int(_command.substr(i, _command.length() - i))
+				item_name = _command.substr(0, i).strip_edges()  # Get the item name and strip edges.
+				amount = int(_command.substr(i, _command.length() - i))  # Get the amount as an integer.
+				break 
 		GlobalResources.AddItem(true,item_name,amount)
 	elif _command.begins_with("@RELATIONSHIP_INCREASE"):	#INCOMPLETE
 		_command = _command.substr("@ADD_MATERIALS".length(), _command.length() - "@ADD_MATERIALS".length())

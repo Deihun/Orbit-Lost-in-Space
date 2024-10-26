@@ -147,6 +147,7 @@ offset_bottom = 419.0
 visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_wmgc2")
+layout_mode = 0
 offset_left = -83.0
 offset_top = 12.0
 offset_right = 3279.0
@@ -155,6 +156,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/Restart"]
 z_index = 1
+layout_mode = 0
 offset_left = 1285.0
 offset_top = 594.0
 offset_right = 2032.0
@@ -177,6 +179,7 @@ text = "YES
 "
 
 [node name="NO" type="Button" parent="ColorRect/Restart/NinePatchRect"]
+layout_mode = 0
 offset_left = 379.0
 offset_top = 224.0
 offset_right = 574.0
@@ -195,6 +198,7 @@ theme_override_font_sizes/font_size = 41
 text = "ARE YOU SURE?"
 
 [node name="Label_2" type="Label" parent="ColorRect/Restart/NinePatchRect"]
+layout_mode = 0
 offset_left = 165.0
 offset_top = 159.0
 offset_right = 604.0

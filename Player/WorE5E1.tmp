@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=16 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
-[ext_resource type="VideoStream" path="res://Scenes/EndScenes/Gallery_Endings/FGUtji7wRD1S.ogv" id="2_kva43"]
 [ext_resource type="Texture2D" uid="uid://ce0kw7ceb80dk" path="res://Scenes/WideshotScenePanaroma.png" id="2_og4ji"]
+[ext_resource type="Texture2D" uid="uid://prju7pqu8no5" path="res://Scenes/Rocket_LaunchScene.png" id="2_ybnrr"]
 [ext_resource type="Texture2D" uid="uid://cwuvkfw0gpv8x" path="res://Scenes/spritesheet (12).png" id="4_icatl"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="5_08kc6"]
 [ext_resource type="PackedScene" uid="uid://b2onu2klyecou" path="res://AmbiencePurposes/Paper_Collidable/PaperAmbienceGeneration.tscn" id="5_bvoa8"]
@@ -13,9 +13,6 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cnxy7"]
 load_path = "res://.godot/imported/GatheringPhase.png-7ce96ac76f2a31c5b3c8875489fcff09.ctex"
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6puyf"]
-bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pwnx"]
 atlas = ExtResource("4_icatl")
@@ -62,19 +59,9 @@ metadata/_edit_lock_ = true
 position = Vector2(989, -3748)
 script = ExtResource("1_sfe6y")
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 2673.0
-offset_top = -4621.0
-offset_right = 6360.0
-offset_bottom = -2117.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_6puyf")
-
-[node name="RocketLaunchCutscene" type="VideoStreamPlayer" parent="."]
-offset_left = 3046.0
-offset_top = -4350.0
-offset_right = 5023.0
-offset_bottom = -3262.0
-stream = ExtResource("2_kva43")
+[node name="RocketLaunchCutscene" type="Sprite2D" parent="."]
+position = Vector2(4000, -3800)
+texture = ExtResource("2_ybnrr")
 
 [node name="WideShotBackground" type="Sprite2D" parent="."]
 position = Vector2(990, -2133)
@@ -94,7 +81,6 @@ AdditionalPlayerSpeed = 100
 show_timer = false
 canRestartOnGameOver = true
 delayBeforeGameStart = 4.0
-limitTimeDuration = 2
 
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
 z_index = 1

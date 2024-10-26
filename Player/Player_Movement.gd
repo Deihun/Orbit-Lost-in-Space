@@ -30,6 +30,8 @@ func _ready():	#OnStart,
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 
+
+
 func _physics_process(delta):
 	if !isPicking and canMove:
 		movement(delta)

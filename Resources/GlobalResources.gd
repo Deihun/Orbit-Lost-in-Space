@@ -2,11 +2,11 @@ extends Node
 
 
 #VARIABLES 
-var ration = 0
+var ration = 10000
 var fuel = 0
 var oxygen = 1000
 var spareparts = 10000000
-var biogene = 0
+var biogene : int= 0
 var ductape : int = 0
 var medicine: int = 0
 var emergencyOxy = 100
@@ -90,6 +90,7 @@ func subtractItem(conditions : bool,item_name : String, amount : int):
 				oxygen -= amount
 
 func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
+	print(item_name,amount)
 	if conditions:
 		match(item_name):
 			"SPAREPARTS":
@@ -110,6 +111,8 @@ func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
 			"OXYGEN":
 				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
 				oxygen += amount
+			_:
+				print("unrecognize item ", item_name)
 
 func reset(item_type):
 	match(item_type):

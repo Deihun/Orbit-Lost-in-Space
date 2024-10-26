@@ -72,18 +72,39 @@ func _on_crew_4_pressed() -> void:
 func selectionCrew(value : String):
 	var _name = ""
 	var _description = ""
-	match value:
-		"Maxim":
+	match value.to_upper():
+		"MAXIM":
+			_name = "Maxim"
+			IngameStoredProcessSetting.selectedCrew = "Maxim"
+			IngameStoredProcessSetting.speed = -50
+			IngameStoredProcessSetting.inventory = 6
+			IngameStoredProcessSetting.BonusMultiplyer = 1
 			pass
-		"Regina":
+		"REGINA":
+			_name = "Regina"
+			IngameStoredProcessSetting.selectedCrew = "Regina"
+			IngameStoredProcessSetting.speed = 50
+			IngameStoredProcessSetting.inventory = 4
+			IngameStoredProcessSetting.BonusMultiplyer = 2.5
 			pass
-		"Jerry":
+		"JERRY":
+			IngameStoredProcessSetting.selectedCrew = "Jerry"
 			_name = "Jerry"
 			_description = "Your standard guy for exploration! Jerry has a standard movement speed, item slot and no bonuses to him"
 			pass
-		"Fumiko":
+		"FUMIKO":
+			_name = "Fumiko"
+			IngameStoredProcessSetting.selectedCrew = "Fumiko"
+			IngameStoredProcessSetting.speed = 200
+			IngameStoredProcessSetting.inventory = 4
+			IngameStoredProcessSetting.BonusMultiplyer = 1.2
 			pass
-		"Nashir":
+		"NASHIR":
+			_name = "Nashir"
+			IngameStoredProcessSetting.selectedCrew = "Nashir"
+			IngameStoredProcessSetting.BonusMultiplyer = 1.75
+			IngameStoredProcessSetting.speed = 120
+			IngameStoredProcessSetting.inventory = 4
 			pass
 	
 	$Details_Container/Crew_name_label.text = _name

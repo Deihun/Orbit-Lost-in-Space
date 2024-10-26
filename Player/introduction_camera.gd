@@ -15,8 +15,6 @@ func _ready() -> void:
 	player_cb._set_game_win_condition(Callable(self,"gameWin"))
 
 	gameStart()
-
-
 func gameOver() -> void:
 	player_cb.retry()
 
@@ -38,8 +36,10 @@ func gameWin() -> void:
 	if introCam:
 		introCam.position = Vector2(4000,-3800)
 		introCam.make_current()
-	await get_tree().create_timer(3).timeout 
+	$"../RocketLaunchCutscene".play()
+	await get_tree().create_timer(2.5).timeout 
 	IngameStoredProcessSetting.Scenes = "interiorscene"
+	Engine.time_scale = 1.0
 	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
 	pass
 
