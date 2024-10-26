@@ -118,5 +118,116 @@ offset_right = 1184.0
 offset_bottom = 916.0
 text = "Cancel"
 
+[node name="Warning" type="Panel" parent="Panel"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -163.0
+offset_right = 232.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CraftingTimer" type="Timer" parent="Panel/Warning"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Label" type="Label" parent="Panel/Warning"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = -70.5
+offset_right = 217.0
+offset_bottom = 70.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Currently Crafting
+ an Item"
+horizontal_alignment = 1
+
+[node name="NowCrafting" type="Panel" parent="Panel"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -327.0
+offset_top = -163.0
+offset_right = 327.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NowCraftingtimer" type="Timer" parent="Panel/NowCrafting"]
+wait_time = 2.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/NowCrafting"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/NowCrafting/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Item is currently
+being crafted!"
+horizontal_alignment = 1
+
+[node name="WarningInsufficient" type="Panel" parent="Panel"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -327.0
+offset_top = -163.0
+offset_right = 327.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="warningtimer" type="Timer" parent="Panel/WarningInsufficient"]
+wait_time = 2.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/WarningInsufficient"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/WarningInsufficient/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Insufficient Materials
+to Craft Item!"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Panel/Craft_Button" to="." method="_on_craft_button_pressed"]
 [connection signal="pressed" from="Panel/Cancel_Button" to="." method="_on_cancel_button_pressed"]
+[connection signal="timeout" from="Panel/Warning/CraftingTimer" to="." method="_on_crafting_timer_timeout"]
+[connection signal="timeout" from="Panel/NowCrafting/NowCraftingtimer" to="." method="_on_now_craftingtimer_timeout"]
+[connection signal="timeout" from="Panel/WarningInsufficient/warningtimer" to="." method="_on_warningtimer_timeout"]
