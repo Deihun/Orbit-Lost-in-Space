@@ -18,3 +18,5 @@ offset_right = 162.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 25
 text = "ItemName"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
