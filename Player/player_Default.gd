@@ -15,22 +15,29 @@ extends Node2D
 @export var useGlobeTimerUI : bool = true
 
 @export_group("Game Settings")
+@export var canRestartOnGameOver : bool = false
 @export_subgroup("Time Limit")
 @export var activate_timeLimit : bool = true
 @export var delayBeforeGameStart : float = 6.0
 @export var limitTimeDuration : int = 90
 
-
 func _ready() -> void:
 	showTimer(show_timer)
 	canMove(can_Move)
 	_smoothCameraTrack(Smoothing_CameraTrack)
+	setStats()
 	pass # Replace with function body.
 
+func setStats():
+	if IngameStoredProcessSetting.selectedCrew == "" or "Jerry":
+		AdditionalPlayerSpeed = 100
+		$player/AllUIParents/UI_On_Hand.MAX_SLOTS = 4
+		IngameStoredProcessSetting.BonusMultiplyer = 1
+	AdditionalPlayerSpeed = IngameStoredProcessSetting.speed
+	
+	
+	print("Crew ", IngameStoredProcessSetting.selectedCrew + "//Speed ",IngameStoredProcessSetting.speed, "//Multiplyer ", IngameStoredProcessSetting.BonusMultiplyer, "// InventorySize ", IngameStoredProcessSetting.inventory)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func showTimer(value : bool):
 	if value:

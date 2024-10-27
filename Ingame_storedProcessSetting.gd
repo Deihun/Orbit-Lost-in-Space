@@ -3,10 +3,16 @@ extends Node
 
 
 #VARIABLE 
-var Cycle = 0
+var Cycle : int = 0
 var Scenes : String= ""
 var Ending : String= "null"
+var is_previous_restart : bool = false
 
+#EXPEDITIONVALUE
+var selectedCrew = "Jerry"
+var speed = 0
+var inventory = 4
+var BonusMultiplyer = 1
 
 func newGame():
 	Cycle = 1
@@ -21,10 +27,7 @@ func endCycle():
 	doHunger()
 	doOxygen()
 	resetPerDay()
-	
-	#DELETE THIS LATER
-	var a = str("Crew_in_ship:",crew_in_ship,"\nHunger:",_current_hunger,"\nHealth:",_health,"\nSanity:",_sanity,"\nDisease:",_disease)
-	print(a)
+
 
 
 func getCycle():
@@ -36,20 +39,19 @@ func getCycle():
 var current_Factions : String = "SPACE"
 var TravelPerSections : int = 1
 var Target_factions : String = "SPACE"
-var TotalProbabilityForFactionsToFound : float = 0.0
+var TotalProbabilityForFactionsToFound : float = 0.006
 var Factions_Probability = {
-	"Faction1" : 0.0,
+	"Radonti" : 0.75,
 	"Faction2" : 0.0,
 	"Faction3" : 0.0,
 	"Faction4" : 0.0,
 	"Faction5" : 0.0
 }
 var SubFactions_Probability = {
-	"Asteroid" : 0.15,
-	"Blackhole" : 0.01,
-	"AbandonShip" : 0.3,
-	"SmallPlanetoid" : 0.05,
-	"UnnameFactions" : 0.0
+	"Asteroid" : 0.01,
+	"Blackhole" : 0.005,
+	"AbandonShip" : 0.35,
+	"SmallPlanetoid" : 0.0
 }
 
 
@@ -77,7 +79,7 @@ func set_Factions():
 			cumulative_probability += Factions_Probability[faction]
 			if random_pick < cumulative_probability:
 				return faction
-		TotalProbabilityForFactionsToFound -= 0.025
+		TotalProbabilityForFactionsToFound = 0.1
 	elif 0.25 > (randf() * 1.0):
 		var total_FactionPicker_probability : float = 0.0
 		for probability in SubFactions_Probability.values():
@@ -88,9 +90,9 @@ func set_Factions():
 			cumulative_probability += SubFactions_Probability[faction]
 			if random_pick < cumulative_probability:
 				return faction
-		TotalProbabilityForFactionsToFound += 0.05
+		TotalProbabilityForFactionsToFound = TotalProbabilityForFactionsToFound + 0.05 if Cycle >= 20 else TotalProbabilityForFactionsToFound
 	else:
-		TotalProbabilityForFactionsToFound += 0.1
+		TotalProbabilityForFactionsToFound += 0.12 if Cycle >= 20 else TotalProbabilityForFactionsToFound
 		return "None"
 	return "None"
 
@@ -354,16 +356,16 @@ func reduceFood(value : int):
 func doHunger():
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
-			_current_hunger[crew] -=randf() * 0.3 + 0.15
+			_current_hunger[crew] -= (randf() * 0.1) + 0.2
 			if _current_hunger[crew] < 0.0 : _current_hunger[crew] = 0.0
 
 func doHealthChecker():
 	for crew in crew_in_ship:
 		if _health.has(crew):
 			if _current_hunger[crew] == 0.0:
-				_health[crew] -= 0.2
+				_health[crew] -= 0.35
 			if _disease[crew] == 1.0:
-				_health[crew] -= 0.2
+				_health[crew] -= 0.15
 			if _health[crew] <= 0.0:#DEATH, KULANG PA
 				var message = crew + " has gone missing..."
 				addOnCycleReportList(message)
@@ -425,7 +427,6 @@ func doOxygen():
 						GlobalResources.emergencyOxy = 0
 					if GlobalResources.emergencyOxy <= 0:
 						pass ## Handle game over here if needed
-	print(Cycle_ReportList)
 
 func getNumberOfDisease() -> int:
 	var disease_count = 0

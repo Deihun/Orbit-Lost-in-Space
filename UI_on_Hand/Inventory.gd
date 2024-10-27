@@ -1,19 +1,23 @@
 extends Control
-const MAX_SLOTS = 4
+var MAX_SLOTS : int = 4
 
 #Extension Scripts
 @onready var Hand1 = $Hand_1/Sprite2D
 @onready var Hand2 = $Hand_2/Sprite2D
 @onready var Hand3 = $Hand_3/Sprite2D
 @onready var Hand4 = $Hand_4/Sprite2D
+@onready var Hand5 = $Hand_5/Sprite2D
+@onready var Hand6 = $Hand_6/Sprite2D
 @onready var resource = GlobalResources
 
 #Texture Packages
 var battery_texture = load("res://Resources/Small_Fuel_1_unpickup.png")
-var apple_texture = load("res://Resources/resources 1.png")
-var small_biogene_texture = load("res://Resources/Resource_Images/SmallBiogene_OnHand.png")
-var spareparts_texture = load("res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png")
-var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/Small_SmallOxygenGas.png")
+var smallfood = load("res://Resources/SmallFoodCan/SmallFood_PickUp.png")
+var ductape = load("res://Resources/DuctapePickup.png")
+var medicine = load("res://Resources/FirstAidKit/Medicine_Pickup.png")
+var small_biogene_texture = load("res://Resources/Small_Biogene/BiogenePickup.png")
+var spareparts_texture = load("res://Resources/Spareparts/SparepartsPickup.png")
+var oxygenGasTank_small = load("res://Resources/SmallOxygenGas/OxygenPickup.png")
 var KeyCard = load("res://Scenes/Tutorial/KeyCard.png")
 var teddyBear = load("res://Resources/Resource_Images/TeddyBear Icon.png")
 
@@ -26,9 +30,22 @@ var inventory = []
 
 
 func _ready():
+	MAX_SLOTS = IngameStoredProcessSetting.inventory
+	MAX_SLOTS = 6 if MAX_SLOTS > 6 else MAX_SLOTS
+	
 	for i in range(MAX_SLOTS): #Declaration of inventory size
 		inventory.append([])
 	showItem()
+	match MAX_SLOTS:
+		4:
+			$Hand_5.hide()
+			$Hand_6.hide()
+		5:
+			$Hand_5.show()
+			$Hand_6.hide()
+		6:
+			$Hand_5.show()
+			$Hand_6.show()
 
 func _insert_all_items(): #Declaration of inventory size
 	for i in range(MAX_SLOTS):
@@ -39,7 +56,7 @@ func _insert_all_items(): #Declaration of inventory size
 	showItem()
 
 func showItem():
-	var hands = [Hand1, Hand2, Hand3, Hand4]
+	var hands = [Hand1, Hand2, Hand3, Hand4, Hand5, Hand6]
 	
 	for hand in hands:
 		hand.texture = null
@@ -50,14 +67,26 @@ func showItem():
 			hands[i].texture = battery_texture
 			print("Detected battery in slot ", i + 2)
 		elif i < hands.size() and "Small Spareparts" in inventory[i]:
-			hands[i].scale = Vector2(0.45,0.45)
+			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = spareparts_texture
+			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Small Food" in inventory[i]:
+			hands[i].scale = Vector2(0.2,0.2)
+			hands[i].texture = smallfood
+			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Ductape" in inventory[i]:
+			hands[i].scale = Vector2(0.45,0.45)
+			hands[i].texture = ductape
+			print("Detected apple in slot ", i + 1)
+		elif i < hands.size() and "Medicine Pack" in inventory[i]:
+			hands[i].scale = Vector2(0.2,0.2)
+			hands[i].texture = medicine
 			print("Detected apple in slot ", i + 1)
 		elif i < hands.size() and "Small Biogene" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)
 			hands[i].texture = small_biogene_texture
 		elif i < hands.size() and "Small Gastank" in inventory[i]:
-			hands[i].scale = Vector2(0.30,0.30)
+			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = oxygenGasTank_small
 		elif i < hands.size() and "KeyCard" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)

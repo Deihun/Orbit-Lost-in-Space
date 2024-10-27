@@ -6,6 +6,7 @@ var fuel = 0
 var spareparts = 0
 var biogene = 0
 var ductape = 0
+var medicine = 0
 var crew_availability = 3
 
 var crew ={ 
@@ -24,24 +25,26 @@ func _ready() -> void:
 func add_item(item_type):#Use to direct add items, used by other objects such as dropbox to add items
 	match(item_type):
 		"Small Food":
-			ration += 10
+			ration += int(10 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Food.text = str("Ration: " , ration)
 		"Small Fuel":
-			fuel += 13
+			fuel += int(13 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Fuel.text = str("Fuel: " , fuel)
 		"Small Spareparts":
-			spareparts += 15
+			spareparts += int(15 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Spareparts.text =str("Spareparts: " ,  spareparts)
 			
 		"Small Biogene":
-			biogene += 15
+			biogene += int(15 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Biogene.text =str("Biogene: " ,  biogene)
-			
+		"Medicine Pack":
+			medicine += int(1 * IngameStoredProcessSetting.BonusMultiplyer)
+			$Label_Medicine.text =str("Medicine: " ,  medicine)
 		"Ductape":
-			ductape += 1
+			ductape += int(1 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Ductape.text = str("Ductape: " , ductape)
 		"Small Gastank":
-			gas += 15
+			gas += int(15 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Oxygen.text = str("Oxygen: ", gas)
 		"Regina":
 			print("regina is added for some reason")
@@ -74,10 +77,4 @@ func updateGlobalResource():
 	if crew["maxim"] == true and !b.crew_in_ship.has("Maxim"): b.crew_in_ship.append("Maxim")
 	if crew["fumiko"] == true and !b.crew_in_ship.has("Fumiko"): b.crew_in_ship.append("Fumiko")
 	if crew["nashir"] == true and !b.crew_in_ship.has("Nashir"): b.crew_in_ship.append("Nashir")
-	pass
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass

@@ -66,7 +66,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iq2ny"]
 shader = ExtResource("2_8dc0q")
-shader_parameter/amount = 1.966
+shader_parameter/amount = 5.0
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100

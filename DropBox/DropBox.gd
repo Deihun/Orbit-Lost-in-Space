@@ -26,6 +26,8 @@ func _process(delta):
 			set_process(false)  #Stop the recursion at all of this object
 	interaction_area.interact = Callable(self,"interaction") #Call Interaction callable for other accessors
 
+func getIsPlayerInsideCondition() -> bool:
+	return $Player_Final_Count._isPlayerInside
 
 func interaction(): #Interaction method for InteractionManagement Class
 	var crew_ui = NodeFinder.find_node_by_name(get_tree().current_scene,"Crew_Show")

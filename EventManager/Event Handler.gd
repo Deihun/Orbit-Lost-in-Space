@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var eventReader = $Event_UI
+@onready var eventReader = $EventReader
 @onready var Cycle = $"/root/IngameStoredProcessSetting"
 @onready var OpeningAnimation = $EventUIAnimation
 
@@ -8,6 +8,7 @@ var rawEvent = []
 var isEventVisible = false
 var onlyOnceTrigger : bool = true
 var onceTutorial : bool = false
+var recentAnimation = ""
 
 					#NON RETURNING METHODS
 #SETUP ZONES
@@ -19,8 +20,6 @@ func _ready():
 		rawEvent = parse_json(json_text)
 	else: 
 		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
-	startAddNextEvent()
-	ActivateEvent()
 
 
 func parse_json(json_text):
@@ -31,32 +30,30 @@ func parse_json(json_text):
 		return []
 	return json.get_data()
 
-func switchIt():
-	if isEventVisible == true:
-		print("Event SHOWING;")
-		OpeningAnimation.visible = true
+func switchIt(value : bool = true):
+	if value:	#OPENING
+		OpeningAnimation.show()
 		OpeningAnimation.play("OpeningAnimation")
-	elif isEventVisible == false:
-		print("Event Hiding;")
-		eventReader.visible = false
+		recentAnimation = "OpeningAnimation"
+
+	else: #CLOSING
+		eventReader.hide()
 		OpeningAnimation.visible = true
 		OpeningAnimation.play("ClosingAnimation")
+		recentAnimation = "ClosingAnimation"
 		if !onceTutorial:
 			var tutorialEnd = NodeFinder.find_node_by_name(get_tree().current_scene,"TutorialPanel4")
 			onceTutorial = true
 			if tutorialEnd:
 				tutorialEnd.visible = true
-			
-	pass
 
 func _on_opening_ui_scene_animation_finished() -> void:
 	if isEventVisible:
-		print("DAPAT LUMABAS KA HAYOP KA")
-		visible = true
+		OpeningAnimation.show()
 		eventReader.visible = true
 	else: 
-		visible = false
-	OpeningAnimation.visible = false
+		OpeningAnimation.hide()
+		OpeningAnimation.visible = false
 
 
 func _newGameStart():
@@ -91,98 +88,96 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 					numbers_of_event -= 1
 	
 	#ADD EVENTS BASE ON LIMIT PER CYCLE
-	for i in numbers_of_event: 
+	for i in numbers_of_event:
 		#ADD EVENTS BASE ON LIMIT PER CYCLE
 		_addNextEvent()
 
 
-func _conditions(eachEvent):
+func _conditions(eachEvent) -> bool:
+	var condition = true
 	if eachEvent.has("Conditions"):
 		var data = str(eachEvent["Conditions"][1]).capitalize()
 		#HAS CONDITION
 		if eachEvent["Conditions"][0] == "HAS":
 			if GlobalResources.hasItem(eachEvent["Conditions"][1],1):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		#RELATIONSHIP CONDITION
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_MAX_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data, 1.0):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_HIGH_75%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data, 0.75):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_LOWER_25%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data,0.25,false):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_LOWER_0%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data,0.0,false):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		#SANITY
 		elif eachEvent["Conditions"][0] == "SANITY_100%":
 			if IngameStoredProcessSetting.isSanity(data,1.0):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		elif eachEvent["Conditions"][0] == "SANITY_75%":
 			if IngameStoredProcessSetting.isSanity(data,0.75):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		elif eachEvent["Conditions"][0] == "SANITY_25%":
 			if IngameStoredProcessSetting.isSanity(data, 0.25,false):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		elif eachEvent["Conditions"][0] == "SANITY_0%":
 			if IngameStoredProcessSetting.isSanity(data,0.0, false):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		#PLACE
 		elif eachEvent["Conditions"][0] == "PLACE":
 			if IngameStoredProcessSetting.current_Factions == str(data):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		#HAS INGAME EFFECTS
 		elif eachEvent["Conditions"][0] == "HAS_INGAME_EFFECTS":
 			if GlobalResources.GameEffects.has(data):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
+				return condition
 		#HAS UNIQUE ITEMS
 		elif eachEvent["Conditions"][0] == "HAS_UNIQUE_ITEM":
 			if GlobalResources.uniqueItems.has(data):
 				GlobalResources.eventID.append(eachEvent["id"])
-				return
-	_addNextEvent()
+				return condition
+	return false
 
 
 
 func _addNextEvent():
-	
-	var event_index_random = randi() % rawEvent.size()
-	var event = rawEvent[event_index_random]
-	var globalResources = $"/root/GlobalResources"
-	print(event["RandomTrue"], " id: ", event["id"]," - ", event["Repeatable"] == false," - " ,event.has("Conditions"))
-	if event["RandomTrue"] != true: #FILTER IF EVENTS CAN BE ACTIVATED
-		
-		_addNextEvent()
-		return
-	if event["Repeatable"] == false: #FILTER IF EVENTS CAN BE REPEATED
-		if !GlobalResources.alreadyTriggeredEvent.has(event["id"]):
-			GlobalResources.alreadyTriggeredEvent.append(event["id"])
-		else:
-			_addNextEvent()
-			return
-	if event.has("Conditions"): #FILTER IF EVENT HAS CONDITIONS AND IF IT WAS SATISFIED
-		_conditions(event)
-	GlobalResources.eventID.append(event["id"])
+	var _event
+	while true:
+		var event_index_random = randi() % rawEvent.size()
+		var event = rawEvent[event_index_random]
+		var globalResources = $"/root/GlobalResources"
+		_event = event
+		if event["RandomTrue"] == true:
+			if event["Repeatable"] == true or !GlobalResources.alreadyTriggeredEvent.has(event["id"]):
+				if event.has("Conditions"):
+					if _conditions(event):
+						break  # Exit loop if the event is valid
+				else:
+					break  # Exit loop if there are no conditions
+	GlobalResources.eventID.append(_event["id"])
+	if _event["Repeatable"] == false:
+		GlobalResources.alreadyTriggeredEvent.append(_event["id"])
 
 
 func ActivateEvent(): #ACTIVATE QUEUE EVENT
-	print("DEBUG: " ,GlobalResources.eventID)
 	if GlobalResources.eventID.front() == null:
 		isEventVisible = false
-		switchIt()
+		switchIt(false)
 		return
 	isEventVisible = true
 	eventReader.setEventID(GlobalResources.eventID.pop_front())

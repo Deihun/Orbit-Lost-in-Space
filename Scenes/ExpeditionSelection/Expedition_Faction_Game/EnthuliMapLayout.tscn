@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfndi1rmcs7gj"]
+
+[ext_resource type="Texture2D" uid="uid://cmnaywa3o3si2" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Enthuli.png" id="1_icy4i"]
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_jec0x"]
+
+[node name="EnthuliMapLayout" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(912, 1076)
+scale = Vector2(3.62225, 3.62225)
+texture = ExtResource("1_icy4i")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+collision_layer = 33
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+position = Vector2(1083, 174)
+polygon = PackedVector2Array(308, 1326, 304, 1054, 635, 1059, 642, 921, 908, 926, 930, 1050, 1224, 1052, 1222, 624, 302, 611, 306, 364, 638, 365, 906, 363, 913, 252, 905, -211, 317, -226, 309, -476, -28, -477, -16, -253, -8, -27, -34, -24, -36, -194, -263, -374, -605, -369, -805, -181, -805, 128, -639, 326, -496, 335, -512, 938, -429, 950, -426, 1063, -205, 1085, -194, 1530, -551, 1530, -568, 1098, -1014, 1098, -998, 652, -772, 642, -777, 164, -823, 109, -1357, 113, -1363, 637, -1196, 642, -1195, 842, -1464, 842, -1482, 1301, -1099, 1306, -1086, 1230, -975, 1235, -973, 1771, -1382, 1766, -1385, 2228, -1015, 2228, -1018, 2088, -971, 2087, -577, 2093, -567, 1696, -195, 1699, -556, 1712, -557, 2096, -431, 2086, -436, 2239, -115, 2239, -119, 2023, 107, 2026, 107, 2270, 901, 2264, 907, 2169, 1078, 2166, 1085, 1832, 910, 1832, 885, 1950, 307, 1953, 294, 1705, -74, 1702, -74, 1680, 311, 1687, 321, 1918, 866, 1926, 879, 1766, 1210, 1763, 1202, 1627, 882, 1630, 882, 1214, 359, 1220, 357, 1335)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wall"]
+position = Vector2(155, -238)
+polygon = PackedVector2Array(845, 560, 838, 614, 901, 787, 1101, 794, 1108, 1003, 571, 994, 580, 758, 691, 742, 838, 616, 903, 794, 919, 751, 921, 565)
+
+[node name="player" parent="." instance=ExtResource("2_jec0x")]
+position = Vector2(892, 1583)

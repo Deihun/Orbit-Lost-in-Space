@@ -1,4 +1,4 @@
-[gd_scene load_steps=283 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=285 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="3_ay1c7"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 [ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
+[ext_resource type="Shader" path="res://Player/BlackandWhite.gdshader" id="4_ov5gh"]
 [ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
 [ext_resource type="Texture2D" uid="uid://b58dt7l7pk8hc" path="res://Player/RedAlert.png" id="5_uu3ny"]
@@ -26,6 +27,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50fry"]
+shader = ExtResource("4_ov5gh")
+shader_parameter/amount = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l85dg"]
 atlas = ExtResource("2_6y3nk")
@@ -1857,7 +1862,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsf36"]
 radius = 29.0
 
-[node name="player" type="Node2D" groups=["player"]]
+[node name="Player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
 script = ExtResource("1_mhmxe")
@@ -1880,6 +1885,55 @@ position = Vector2(8, -39)
 shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
+
+[node name="GameOver" type="ColorRect" parent="player/AllUIParents"]
+visible = false
+material = SubResource("ShaderMaterial_50fry")
+offset_right = 1917.0
+offset_bottom = 1091.0
+color = Color(0, 0, 0, 0.945098)
+
+[node name="Label" type="Label" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 263.0
+offset_right = 1245.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "Try Again?"
+
+[node name="Label2" type="Label" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 443.0
+offset_right = 1518.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Your planet got destroyed and you along with it!"
+
+[node name="_Retry" type="Button" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 580.0
+offset_right = 1449.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 61
+text = "Retry"
+
+[node name="_Quit" type="Button" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 687.0
+offset_right = 1452.0
+offset_bottom = 779.0
+theme_override_font_sizes/font_size = 61
+text = "Main Menu"
 
 [node name="BlackTransition" type="AnimatedSprite2D" parent="player/AllUIParents"]
 visible = false
@@ -2069,7 +2123,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Medicine: 0"
 
 [node name="Game in EarlyProgress" type="Label" parent="player/AllUIParents"]
-visible = false
 offset_left = 1515.0
 offset_top = 1038.0
 offset_right = 1902.0
@@ -2186,6 +2239,8 @@ wait_time = 0.2
 [connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
 [connection signal="body_exited" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_exited"]
+[connection signal="pressed" from="player/AllUIParents/GameOver/_Retry" to="player" method="_on__retry_pressed"]
+[connection signal="pressed" from="player/AllUIParents/GameOver/_Quit" to="player" method="_on__quit_pressed"]
 [connection signal="timeout" from="player/AllUIParents/Red_UI_Indicator/_Red_UI_Indicator_timer" to="player/AllUIParents/Red_UI_Indicator" method="_on__red_ui_indicator_timer_timeout"]
 [connection signal="button_down" from="player/AllUIParents/Pause_Button" to="player" method="_on_pause_button_button_down"]
 [connection signal="animation_finished" from="player/Player4" to="player" method="_on_player_4_animation_finished"]

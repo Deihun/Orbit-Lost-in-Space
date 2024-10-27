@@ -39,14 +39,21 @@ func _on_timeout(): #Simple recursion everytime the timer stops, update the UI t
 		redUI.visible = true
 
 func checkForPlayer(): #Access dropbox hitboxes, if players inside, change scene; otherwise _______
-	var isPlayerInside = NodeFinder.find_node_by_name(get_tree().current_scene, "Player_Final_Count")
-	var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
+	var isPlayerInside = NodeFinder.find_node_by_name(get_tree().current_scene, "DropBox")
 	if isPlayerInside:
 		if isPlayerInside.getIsPlayerInsideCondition():
-			var db = NodeFinder.find_node_by_name(get_tree().current_scene, "DropBox")
-			db.interaction()
+			isPlayerInside.interaction()
 			var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
 			r.updateGlobalResource()
-			player.endScene()
+			$"..".gameWin()
 		else:
-			get_tree().reload_current_scene()
+			$".."._game_over()
+			#if $"../..".canRestartOnGameOver:
+				#$"../AllUIParents/GameOver".show()
+				#$"../AllUIParents/Pause_Button".hide()
+				#$"..".hideallUI()
+				#$"..".canMove = false
+				#var tutorial = NodeFinder.find_node_by_name(get_tree().current_scene,"TutorialAssets")
+				#if tutorial: tutorial.queue_free()
+				#Engine.time_scale = 0.0
+			#get_tree().reload_current_scene()
