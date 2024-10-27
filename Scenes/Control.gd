@@ -87,7 +87,25 @@ func updateUI():
 	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
 	if IngameStoredProcessSetting.current_Factions == "SPACE" or IngameStoredProcessSetting.current_Factions == "None":$WholeInteriorScene/ExpeditionButton.hide()
 	else:$WholeInteriorScene/ExpeditionButton.show()
+	updateCockpit()
 	_updateUIExpeditionScreen()
+
+
+func updateCockpit():
+	var a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+	match IngameStoredProcessSetting.current_Factions:
+		"SPACE":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+			
+		"None":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+			pass
+		"Radonti":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+			
+		"Abandonship":
+			pass
+	$WholeInteriorScene/Cockpit.texture = a
 
 
 func _on_click_cooldown_timeout() -> void:

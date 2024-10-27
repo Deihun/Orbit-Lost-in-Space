@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bybkjeuilnrek"]
+
+[ext_resource type="Texture2D" uid="uid://dgunnx5sqq4tm" path="res://Resources/CREW/CrewLobby/FumikoReaction/Fumiko Lobby.png" id="1_gifoy"]
+[ext_resource type="Script" path="res://Resources/CREW/CrewLobby/fumiko.gd" id="2_85qsl"]
+[ext_resource type="Texture2D" uid="uid://p8outnefv8jb" path="res://Resources/CREW/CrewLobby/FumikoReaction/Fumiko Lobby_Sick.png" id="3_70kml"]
+[ext_resource type="Texture2D" uid="uid://kjron6syxaf8" path="res://Resources/CREW/CrewLobby/FumikoReaction/Fumiko Lobby_Neutral.png" id="3_uanmr"]
+
+[node name="Fumiko" type="Sprite2D"]
+position = Vector2(-23, 4.00002)
+texture = ExtResource("1_gifoy")
+script = ExtResource("2_85qsl")
+
+[node name="Reactions" type="Sprite2D" parent="."]
+texture = ExtResource("3_uanmr")
+
+[node name="Sick" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_70kml")

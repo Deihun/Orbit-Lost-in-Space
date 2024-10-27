@@ -39,6 +39,43 @@ func updateSelectionButton():
 			crew_button[i].visible = true
 		else:
 			crew_button[i].visible = false
+	
+	var pos = Vector2(80,400)
+	if crew.size() < 1: return
+	for child in $Crew_toChoose/Crew_1.get_children():
+		child.queue_free()
+	var resource = $"../WholeInteriorScene/Lobby".getScene(crew[0])
+	resource = resource.instantiate()
+	resource.scale = Vector2(0.5,0.5)
+	resource.position += pos
+	$Crew_toChoose/Crew_1.add_child(resource)
+
+	if crew.size() < 2: return
+	for child in $Crew_toChoose/Crew_2.get_children():
+		child.queue_free()
+	var resource_2 = $"../WholeInteriorScene/Lobby".getScene(crew[1])
+	resource_2 = resource_2.instantiate()
+	resource_2.scale = Vector2(0.5,0.5)
+	resource_2.position += pos
+	$Crew_toChoose/Crew_2.add_child(resource_2)
+
+	if crew.size() < 3: return
+	for child in $Crew_toChoose/Crew_3.get_children():
+		child.queue_free()
+	var resource_3 = $"../WholeInteriorScene/Lobby".getScene(crew[2])
+	resource_3 = resource_3.instantiate()
+	resource_3.scale = Vector2(0.5,0.5)
+	resource_3.position += pos
+	$Crew_toChoose/Crew_3.add_child(resource_3)
+
+	if crew.size() < 4: return
+	for child in $Crew_toChoose/Crew_4.get_children():
+		child.queue_free()
+	var resource_4 = $"../WholeInteriorScene/Lobby".getScene(crew[3])
+	resource_4 = resource_4.instantiate()
+	resource_4.scale = Vector2(0.5,0.5)
+	resource_4.position += pos
+	$Crew_toChoose/Crew_4.add_child(resource_4)
 
 
 

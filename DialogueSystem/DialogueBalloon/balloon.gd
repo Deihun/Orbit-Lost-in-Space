@@ -42,8 +42,20 @@ var dialogue_line: DialogueLine:
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
 		var portrait_path: = load("res://Resources/CREW/MAXIM.png")
-		if dialogue_line.character == "Maxim":
-			$Balloon/Portrait.texture = portrait_path
+		var adjustmentPosition = Vector2(100,350)
+		var a
+		if dialogue_line.character.contains("Maxim"):
+			a = preload("res://Resources/CREW/CrewLobby/Maxim.tscn").instantiate()
+		elif dialogue_line.character.contains("Fumiko"):
+			a = preload("res://Resources/CREW/CrewLobby/Fumiko.tscn").instantiate()
+		elif dialogue_line.character.contains("Regina"):	
+			a = preload("res://Resources/CREW/CrewLobby/Regina.tscn").instantiate()
+		elif dialogue_line.character.contains("Nashir"):
+			a = preload("res://Resources/CREW/CrewLobby/Nashir.tscn").instantiate()
+		else: 
+			a = preload("res://Resources/CREW/CrewLobby/Jerry.tscn").instantiate()
+		a.position += adjustmentPosition
+		portrait.add_child(a)
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line

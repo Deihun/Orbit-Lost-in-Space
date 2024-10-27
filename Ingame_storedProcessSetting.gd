@@ -90,9 +90,9 @@ func set_Factions():
 			cumulative_probability += SubFactions_Probability[faction]
 			if random_pick < cumulative_probability:
 				return faction
-		TotalProbabilityForFactionsToFound = TotalProbabilityForFactionsToFound + 0.07 if Cycle >= 20 else TotalProbabilityForFactionsToFound
+		TotalProbabilityForFactionsToFound = TotalProbabilityForFactionsToFound + 0.05 if Cycle >= 20 else TotalProbabilityForFactionsToFound
 	else:
-		TotalProbabilityForFactionsToFound += 0.1
+		TotalProbabilityForFactionsToFound += 0.12 if Cycle >= 20 else TotalProbabilityForFactionsToFound
 		return "None"
 	return "None"
 

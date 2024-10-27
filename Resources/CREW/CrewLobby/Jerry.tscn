@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jdhpscp7ayht"]
+
+[ext_resource type="Texture2D" uid="uid://is7h52merfrm" path="res://Resources/CREW/CrewLobby/Fumiko Lobby.png" id="1_e7f8o"]
+
+[node name="Fumiko" type="Sprite2D"]
+texture = ExtResource("1_e7f8o")

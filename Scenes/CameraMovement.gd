@@ -63,14 +63,14 @@ func ChangeLocaton(smoothMovement:bool):
 				tween.kill()
 				self.position = SpecificLocation[LocationKey]
 			$Button_navigation_node_parent/MeteorCyce.hide()
-			ArrowButton[0].visible = false
-			ArrowButton[1].visible = true
 			EndButton.enable()
 			$Button_navigation_node_parent/MeteorCyce.show()
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			EndButton.disable()
 			await get_tree().create_timer(2.0).timeout 
+			ArrowButton[0].visible = false
+			ArrowButton[1].visible = true
 			EndButton.enable()
 			if($"../TutorialPanel_Folder/TutorialPanel3"):
 				$"../TutorialPanel_Folder/TutorialPanel3".visible = true
@@ -87,16 +87,16 @@ func ChangeLocaton(smoothMovement:bool):
 				tween.kill()
 				self.position = SpecificLocation[LocationKey]
 			$Button_navigation_node_parent/MeteorCyce.show()
-			ArrowButton[0].visible = true
-			ArrowButton[1].visible = true
 			EndButton.enable()
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			EndButton.disable()
 			await get_tree().create_timer(2.0).timeout 
 			EndButton.enable()
+			ArrowButton[0].visible = true
+			ArrowButton[1].visible = true
 
-			
+
 		2:#DrivingsRoom
 			$Button_navigation_node_parent/MeteorCyce.show()
 			if position == SpecificLocation[2]:
@@ -149,6 +149,8 @@ func ChangeLocaton(smoothMovement:bool):
 
 		5: #ExpeditionRoom
 			$"../ExpeditionSelection".uponCall()
+			ArrowButton[0].visible = false
+			ArrowButton[1].visible = false
 			EndButton.enable()
 			position = SpecificLocation[LocationKey]
 			pass
@@ -213,5 +215,8 @@ func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, sh
 
 func _on_click_on_left_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-			LocationKey = 0
-			ChangeLocaton(false)
+			position = SpecificLocation[0]
+			canBeClick = true
+			ChangeSpecificScene(0)
+			ArrowButton[0].hide()
+			ArrowButton[1].show()
