@@ -7,6 +7,7 @@ extends Node
 @onready var item_requirements = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_RequirementsLabel")
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var control: Control = $Control
+@onready var Items = CraftingItems
 
 var craftingItems
 var recentAnimation = ""
@@ -33,42 +34,42 @@ func _on_sprite_2d_animation_finished() -> void:
 #Crafting Items
 func space_suit_pressed() -> void:
 	craftingItems = "A.C.E.S"
-	item_title.text = craftingItems
-	item_description.text = "[fill]Advanced Crew Escape Suit is a specialized, airtight suit designed to protect astronauts from the harsh environment of space. It provides life support by supplying oxygen for breathing, regulating temperature, and maintaining pressure to prevent the body from being harmed by the vacuum of space. Spacesuits are equipped with various layers that shield astronauts from extreme temperatures, cosmic radiation, and micrometeoroid impacts. \n\nKey components of a spacesuit include a helmet with a visor to protect from sunlight and glare, gloves for dexterity, boots for movement in low-gravity environments, and a backpack that contains essential systems like oxygen, cooling, and communication. Spacesuits allow astronauts to work outside spacecraft, such as on spacewalks or when exploring the surface of planets or moons."
-	item_effect.text = "- Can be given to crew to be able to explore planets that lack oxygen.\n- Outdated suit that funnily enough it works with wonders on treacherous environment \n- Weak Radiation Protection"
+	item_title.text = Items.ItemsName[0]
+	item_description.text = Items.ItemDescription[0]
+	item_effect.text = Items.ItemEffect[0]
 	item_requirements.text = "Cost to craft: 300 Space-parts, 100 Oxygen, 10 Fuel, 1 Cycle"
 
 func crowbar_pressed() -> void:
 	craftingItems = "Crowbar"
-	item_title.text = craftingItems
-	item_description.text = "[fill]A crowbar is a sturdy, long metal tool used to pry, lift, or move heavy objects.\n\nIt usually has a straight or slightly curved shape, with one end being flat and wedge-like to fit into tight spaces, and the other end may be bent or forked to help with pulling nails or prying things apart. Crowbars are made of tough materials, like steel, to withstand pressure, and they are often used in tasks like construction, demolition, or even for opening things like crates or doors. Their main function is to provide extra leverage for tough jobs."
-	item_effect.text = "- Used as a weapon, increasing success chance by 20% in certain events."
+	item_title.text = Items.ItemsName[1]
+	item_description.text = Items.ItemDescription[1]
+	item_effect.text = Items.ItemEffect[1]
 	item_requirements.text = "Cost to craft: 350 Spare-parts, 10 Fuel, 1 Cycle"
 
 func _on_dehy_space_food_pressed() -> void:
 	craftingItems = "DehySpaceFood"
-	item_title.text = "Dehydrated Space Food"
-	item_description.text = "[fill]Dehydrated space food is food that has had most of its water content removed through a process of dehydration to make it lighter, longer-lasting, and easier to store for space missions. Unlike freeze-dried food, which uses freezing and sublimation, dehydrated food is dried by heating or air circulation to evaporate the water, which also makes it compact and lightweight, ideal for limited storage in space.\n\nBefore consumption, astronauts typically add water to rehydrate the food, allowing it to regain its original texture and flavor. Dehydrated space food is often used for meals like soups, stews, or pasta, where the food can easily be rehydrated with hot or cold water. This type of food is essential for space travel, as it ensures that astronauts have access to nutritious meals without taking up too much weight or space aboard the spacecraft. \n\nThe dehydration process also helps to preserve the food for long periods without refrigeration."
-	item_effect.text = "- Gives 20 food ration feed the crew"
+	item_title.text = Items.ItemsName[2]
+	item_description.text = Items.ItemDescription[2]
+	item_effect.text = Items.ItemEffect[2]
 	item_requirements.text = "Cost to craft: 100 Biogene, 10 Fuel, 1 Cycle"
 
 func medkit_charge_pressed() -> void:
 	craftingItems = "MedkitCharge"
-	item_title.text = "Medkit Charge"
-	item_description.text = "[fill]A Medkit Charge is a one-time use healing item in games, designed to quickly restore a portion of the patients health when activated. \n\nUnlike traditional medkits, which may provide full health restoration, the Medkit Charge offers a faster but more limited healing boost. \n\nIt is typically used in high-pressure situations where time is critica"
-	item_effect.text = "- A one-time use Medkit."
+	item_title.text = Items.ItemsName[3]
+	item_description.text = Items.ItemDescription[3]
+	item_effect.text = Items.ItemEffect[3]
 	item_requirements.text = "Cost to craft: 150 Biogene, 10 Fuel, 1 Cycle"
 
 func fre_dri_space_food_pressed() -> void:
 	craftingItems = "FreDriSpaceFood"
-	item_title.text = "Freeze-Dried Space Food"
-	item_description.text = "[fill]Freeze-dried space food is specially prepared food used by astronauts during space missions. \n\nThe freeze-drying process removes almost all water content from the food to make it lightweight, compact, and shelf-stable, while still preserving its flavor and nutritional value. \n\nThis process involves freezing the food and then placing it in a vacuum to remove the ice through sublimation, turning it directly into vapor without passing through the liquid phase. \n\nTo eat freeze-dried space food, astronauts typically add water to rehydrate the meal, restoring its original texture and making it ready to eat. Some snacks, like freeze-dried fruits or ice cream, can be eaten in their dry form without rehydration. Freeze-dried space food is designed to be easy to store, handle, and consume in the zero-gravity environment of space, while also ensuring astronauts get the calories and nutrients they need for their missions."
-	item_effect.text = "- Gives 10 food ration feeds the crew. "
+	item_title.text = Items.ItemsName[4]
+	item_description.text = Items.ItemDescription[4]
+	item_effect.text = Items.ItemEffect[4]
 	item_requirements.text = "Cost to craft: 80 Biogene, 10 Fuel, 1 Cycle"
 
 func hazmat_suit_pressed() -> void:
 	craftingItems = "LeadSuitUp"
-	item_title.text = "Lead Suit Reinforcement"
-	item_description.text = "[fill]The Lead Suit Reinforcement is a module upgrade designed to enhance the durability and protection for the A.C.E.S, particularly against radiation and environmental hazards in space exploration. \n\nBy integrating advanced lead-based materials into the suit’s structure, this upgrade significantly boosts resistance to harmful radiation from cosmic rays, solar flares, or toxic environments on alien planets. While it may add some weight and reduce mobility slightly, the Lead Suit Reinforcement ensures that the wearer can safely explore high-radiation areas or hazardous zones without sustaining damage. \n\nThis makes it essential for missions in deep space or planets with extreme conditions."
-	item_effect.text = "- Moderate Radiation Protection \n- Applied to A.C.E.S Suit"
+	item_title.text = Items.ItemsName[5]
+	item_description.text = Items.ItemDescription[5]
+	item_effect.text = Items.ItemEffect[5]
 	item_requirements.text = "Cost to craft: 450 Spare-parts, 10 Fuel, 1 Cycle"

@@ -47,16 +47,6 @@ func _on_craft_button_pressed() -> void:
 				else:
 					warning_insufficientShow()
 			
-			"LaserGun":
-				if getResources.spareparts >= 350 && getResources.biogene >= 20 && getResources.fuel >= 10:
-					getResources.spareparts -= 350
-					getResources.biogene -= 20
-					getResources.fuel -= 10
-					currentlycrafting = crafting_tab.craftingItems
-					ongoingCraft = true
-					NowCraftingShow()
-				else:
-					warning_insufficientShow()
 			
 			"MedkitCharge":
 				if getResources.biogene >= 150 && getResources.fuel >= 10:
