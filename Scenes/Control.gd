@@ -9,6 +9,7 @@ extends Control
 @onready var craftingtab = ItemUi
 @onready var putResources = $"/root/GlobalResources"
 @onready var SaveGame = SaveNLoad
+@onready var crafted_items_inventory: Control = $CraftedItemsInventory
 
 #VARIABLES
 var resources 
@@ -94,14 +95,10 @@ func PAUSE() -> void:
 	var pause = $PauseMenu
 	pause.position = $cam2d.position + Vector2(-500, -350)
 	pause._pause()
-	pass # Replace with function body.
-
 
 func _on_expedition_button_button_down() -> void:
 	camera.ChangeSpecificScene(5)
 	camera.ChangeLocaton(false)
-	pass # Replace with function body.
-
 
 func _on_embark_button_pressed() -> void: #WHEN EMBARK
 	match (IngameStoredProcessSetting.current_Factions):
@@ -110,4 +107,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 			pass
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
 	get_tree().change_scene_to_packed(loadingScreen)
-	pass # Replace with function body.
+
+func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
+		crafted_items_inventory.show()

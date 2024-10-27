@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=101 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 [ext_resource type="Texture2D" uid="uid://dw6ae7xyyamkp" path="res://Scenes/Cycle_Report/ExpeditionReportBG.png" id="17_8py32"]
 [ext_resource type="Texture2D" uid="uid://c5wxf42th7rbc" path="res://Scenes/Between Wall.png" id="17_raxb3"]
+[ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h45yn"]
 size = Vector2(170, 130)
@@ -798,6 +799,12 @@ polygon = PackedVector2Array(-2858, 541, -2861, -316, -2315, -321, -2310, 546)
 position = Vector2(-1565, -1)
 texture = ExtResource("17_raxb3")
 
+[node name="CraftedItemsUi" type="Area2D" parent="WholeInteriorScene"]
+
+[node name="CraftedItems" type="CollisionPolygon2D" parent="WholeInteriorScene/CraftedItemsUi"]
+position = Vector2(-1087, 74)
+polygon = PackedVector2Array(-2958, 492, -2954, 212, -2171, 217, -2169, 495)
+
 [node name="OnCameraMovingDesign" type="Node2D" parent="."]
 position = Vector2(2, -193)
 
@@ -1060,6 +1067,15 @@ offset_top = -410.0
 offset_right = -457.0
 offset_bottom = -410.0
 
+[node name="CraftedItemsInventory" parent="." instance=ExtResource("28_b2c70")]
+visible = false
+layout_mode = 1
+offset_left = -3974.0
+offset_top = -314.0
+offset_right = -3974.0
+offset_bottom = -314.0
+scale = Vector2(0.728638, 0.728638)
+
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
@@ -1079,6 +1095,7 @@ offset_bottom = -410.0
 [connection signal="button_down" from="WholeInteriorScene/Lobby/Nashir" to="WholeInteriorScene/Lobby" method="_on_nashir_button_down"]
 [connection signal="button_down" from="WholeInteriorScene/ExpeditionButton" to="." method="_on_expedition_button_button_down"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
+[connection signal="input_event" from="WholeInteriorScene/CraftedItemsUi" to="." method="_on_crafted_items_ui_input_event"]
 [connection signal="pressed" from="ExpeditionSelection/Embark_button" to="." method="_on_embark_button_pressed"]
 [connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
 [connection signal="mouse_entered" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_entered"]
