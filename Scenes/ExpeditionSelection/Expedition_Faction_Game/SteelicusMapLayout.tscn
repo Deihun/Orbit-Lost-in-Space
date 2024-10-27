@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyrwebsncnwmi"]
+
+[ext_resource type="Texture2D" uid="uid://coq7qkm4f0cge" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Steelicus.png" id="1_ac33n"]
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_r0hm0"]
+
+[node name="SteelicusMapLayout" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1122.5, 952.34)
+scale = Vector2(2.96274, 2.9624)
+texture = ExtResource("1_ac33n")
+
+[node name="Wall" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 33
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+build_mode = 1
+polygon = PackedVector2Array(-412.962, -412.956, -414.312, -115.562, -331.619, -115.224, -331.281, -85.856, -412.962, -85.856, -411.275, 141.662, -243.525, 143.35, -242.512, 64.3599, -92.6507, 65.0351, -95.3509, 147.401, -33.2462, 147.401, -35.2714, 202.761, -82.1874, 206.474, -82.8625, 320.909, -110.54, 321.921, -110.54, 161.578, -410.6, 161.578, -413.3, 410.363, -106.827, 411.713, -106.489, 377.282, -84.8876, 376.607, -85.2252, 411.713, 45.3972, 412.388, 42.3594, 141.325, 102.101, 142.337, 106.152, 64.6975, 251.963, 62.6721, 259.388, 85.6265, 187.833, 82.926, 183.783, 142.337, 214.16, 142.337, 213.147, 165.629, 67.6738, 166.642, 70.3741, 394.835, 395.411, 399.899, 390.348, 163.604, 290.103, 166.642, 287.065, 144.363, 410.6, 143.35, 413.975, 413.739, 411.95, 143.687, 408.912, -96.6581, 307.317, -95.3078, 307.992, -122.988, 410.6, -122.651, 408.912, -411.943, 319.13, -410.255, 123.028, -409.58, 125.728, -119.612, 240.149, -119.95, 237.112, -89.9068, 187.495, -92.9449, 189.52, -11.2544, 102.776, -11.9295, 99.7387, -408.905, -88.6004, -409.242, -87.9254, -2.81531, -240.149, -3.828, -238.462, -117.249, -106.827, -114.549, -105.86, -409.313)
+
+[node name="player" parent="." instance=ExtResource("2_r0hm0")]
+position = Vector2(992, 786)
