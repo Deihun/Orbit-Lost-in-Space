@@ -58,3 +58,12 @@ func _smoothCameraTrack(value : bool):
 
 func gameStart():
 	$player.gameStart()
+
+func gameWin():
+	$player.gameWin()
+
+func transition():
+	$player/AllUIParents/Transition.show()
+	$player/AllUIParents/Transition/AnimationPlayer.play("FadeToBlack")
+	await get_tree().create_timer(2.5).timeout
+	$player/AllUIParents/Transition.hide()

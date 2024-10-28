@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2kiedg73l26x"
-path="res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"
+uid="uid://doy8r2j7r5n3e"
+path="res://.godot/imported/Jerry Lobby (1).png-974e85d92f0a9339ff94e019300bb3cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DropBox/TemporaryDropboxWarning.png"
-dest_files=["res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"]
+source_file="res://Resources/CREW/CrewLobby/Jerry Lobby (1).png"
+dest_files=["res://.godot/imported/Jerry Lobby (1).png-974e85d92f0a9339ff94e019300bb3cc.ctex"]
 
 [params]
 

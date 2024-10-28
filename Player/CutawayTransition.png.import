@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2kiedg73l26x"
-path="res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"
+uid="uid://kcqwl47g7x5u"
+path="res://.godot/imported/CutawayTransition.png-479331b9870aade924610c2f6b66431f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DropBox/TemporaryDropboxWarning.png"
-dest_files=["res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"]
+source_file="res://Player/CutawayTransition.png"
+dest_files=["res://.godot/imported/CutawayTransition.png-479331b9870aade924610c2f6b66431f.ctex"]
 
 [params]
 

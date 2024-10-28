@@ -14,9 +14,11 @@ if !already_talk["Maxim"]
 			Maxim: Theres no food!
 			set already_talk["Maxim"] = false
 	- Give medicine
-		if ration >= 20
+		if medicine >= 1
 			Maxim: Thankyou very much!
+			set _disease["Maxim"] = 0.0
 		else
+			Jerry: I dont have any medicine to offer.
 			set already_talk["Maxim"] = false
 	- [[Nevermind|Talk to you later|See you arounhd]]
 		set already_talk["Maxim"] = false
@@ -43,10 +45,15 @@ if !already_talk["Regina"]
 			Regina: Theres no food!
 			set already_talk["Regina"] = false 
 	- Give medicine
-		if ration >= 20
+		if medicine >= 1
 			Regina: Thankyou very much!
+			set _disease["Regina"] = 0.0
 		else
-			set already_talk["Regina"] = false 
+			Jerry: I dont have any medicine to offer.
+			set already_talk["Regina"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Regina"] = false
+		=> END
 else
 	Jerry: I already talk with him...
 => END
@@ -69,10 +76,15 @@ if !already_talk["Fumiko"]
 			Fumiko: Theres no food!
 			set already_talk["Fumiko"] = false 
 	- Give medicine
-		if ration >= 20
-			Fumiko: Thankyou very much!
+		if medicine >= 1
+			Regina: Thankyou very much!
+			set _disease["Fumiko"] = 0.0
 		else
-			set already_talk["Fumiko"] = false 
+			Jerry: I dont have any medicine to offer.
+			set already_talk["Fumiko"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Fumiko"] = false
+		=> END
 else
 	Jerry: I already talk with him...
 => END
@@ -95,10 +107,15 @@ if !already_talk["Nashir"]
 			Nashir: Theres no food!
 			set already_talk["Nashir"] = false 
 	- Give medicine
-		if ration >= 20
-			Nashir: Thankyou very much!
-		else 
-			set already_talk["Nashir"] = false 
+		if medicine >= 1
+			Regina: Thankyou very much!
+			set _disease["Nashir"] = 0.0
+		else
+			Jerry: I dont have any medicine to offer.
+			set already_talk["Nashir"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Nashir"] = false
+		=> END
 else
 	Jerry: I already talk with him...
 => END

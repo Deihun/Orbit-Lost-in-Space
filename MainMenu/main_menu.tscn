@@ -1,11 +1,147 @@
-[gd_scene load_steps=7 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=13 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
-[ext_resource type="Texture2D" uid="uid://cdaqautft1fif" path="res://MainMenu/Untitled-1-Recovered.png" id="2_b48ty"]
+[ext_resource type="Texture2D" uid="uid://dkcr0omxilpsl" path="res://MainMenu/Space_mainmenu.png" id="2_7rstv"]
+[ext_resource type="Texture2D" uid="uid://cbcfgnsq0f4uy" path="res://MainMenu/Earth_mainmenu.png" id="3_ly8cc"]
 [ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="3_xdu3v"]
 [ext_resource type="PackedScene" uid="uid://cunvpo4f1ww16" path="res://Credits.tscn" id="4_e2ov8"]
 [ext_resource type="AudioStream" uid="uid://cir657n81xry8" path="res://Music/Erika-German-Song-Sound-Effect.mp3" id="4_hxbdb"]
+[ext_resource type="Texture2D" uid="uid://dgkr0ab5k81fq" path="res://MainMenu/Ship_mainmenu.png" id="4_lojns"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
+[ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="6_qrx2q"]
+
+[sub_resource type="Animation" id="Animation_7qc1o"]
+resource_name = "Start_up"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.36667),
+"transitions": PackedFloat32Array(0.203063, 0.203064),
+"update": 0,
+"values": [Vector2(991, 503.075), Vector2(991, 553.435)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EarthMainmenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.36667),
+"transitions": PackedFloat32Array(0.203063, 0.203064),
+"update": 0,
+"values": [Vector2(1077, 1602.23), Vector2(1077, 607)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ShipMainmenu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.36667),
+"transitions": PackedFloat32Array(0.203063, 0.203064),
+"update": 0,
+"values": [Vector2(812, 3000), Vector2(812, 673)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../MarginContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 1.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-165, -303), Vector2(-165, -303)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Control:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 1.4),
+"transitions": PackedFloat32Array(0.297302, 2.73208),
+"update": 0,
+"values": [Vector2(1750, 2000), Vector2(1750, 960)]
+}
+
+[sub_resource type="Animation" id="Animation_0mu7w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(991, 520)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EarthMainmenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1077, 607)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ShipMainmenu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(812, 673)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../MarginContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-165, -303)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Control:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1548, 960)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ea70b"]
+_data = {
+"RESET": SubResource("Animation_0mu7w"),
+"Start_up": SubResource("Animation_7qc1o")
+}
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -16,21 +152,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ych5w")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.331597
-anchor_top = -0.333333
-anchor_right = 1.33507
-anchor_bottom = 1.33333
-offset_left = 384.0
-offset_top = 216.0
-offset_right = -384.0
-offset_bottom = -216.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_b48ty")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("Space")
+libraries = {
+"": SubResource("AnimationLibrary_ea70b")
+}
+
+[node name="Space" type="Sprite2D" parent="AnimationPlayer"]
+z_index = -5
+position = Vector2(991, 520)
+scale = Vector2(1.05104, 1.0963)
+texture = ExtResource("2_7rstv")
 metadata/_edit_lock_ = true
+
+[node name="EarthMainmenu" type="Sprite2D" parent="AnimationPlayer"]
+z_index = -5
+position = Vector2(1077, 607)
+texture = ExtResource("3_ly8cc")
+metadata/_edit_lock_ = true
+
+[node name="ShipMainmenu" type="Sprite2D" parent="AnimationPlayer"]
+z_index = -5
+position = Vector2(812, 673)
+texture = ExtResource("4_lojns")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -53,106 +197,214 @@ theme_override_constants/margin_bottom = 12
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 325
+metadata/_edit_lock_ = true
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 14
 alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Seperator 2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Seperator 3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Seperator 4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Seperator 5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
-zoom = Vector2(0.785, 0.8)
+zoom = Vector2(1, 1.019)
 
-[node name="Settings_Menu" parent="." instance=ExtResource("3_xdu3v")]
-visible = false
-layout_mode = 1
-
-[node name="DeveloperOption" type="Button" parent="."]
-layout_mode = 0
+[node name="Control" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
 offset_left = 1548.0
 offset_top = 960.0
-offset_right = 1914.0
-offset_bottom = 1068.0
+offset_right = 1588.0
+offset_bottom = 1000.0
+
+[node name="DeveloperOption" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 366.0
+offset_bottom = 108.0
 text = "EVENT MANAGER <DEV TOOL>"
 
-[node name="New_Game_Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="New_Game_Button" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = -112.0
-offset_top = 367.0
-offset_right = 223.0
-offset_bottom = 458.0
+offset_left = -1662.0
+offset_top = -604.0
+offset_right = -1327.0
+offset_bottom = -513.0
 scale = Vector2(1.05035, 1.05598)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "New Game
 "
 
-[node name="Load_Game_Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/New_Game_Button"]
+layout_mode = 0
+offset_left = -63.7883
+offset_top = -63.4481
+offset_right = 400.212
+offset_bottom = 159.552
+texture = ExtResource("6_qrx2q")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/New_Game_Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
+theme_override_font_sizes/font_size = 60
+text = "NEW GAME"
+
+[node name="Load_Game_Button" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = -115.0
-offset_top = 495.0
-offset_right = 220.0
-offset_bottom = 586.0
+offset_left = -1663.0
+offset_top = -465.0
+offset_right = -1328.0
+offset_bottom = -374.0
 scale = Vector2(1.06487, 0.964602)
 theme_override_font_sizes/font_size = 60
 text = "Load Game
 "
 
-[node name="Settings_Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Load_Game_Button"]
+offset_left = -63.7883
+offset_top = -63.4481
+offset_right = 400.212
+offset_bottom = 159.552
+texture = ExtResource("6_qrx2q")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/Load_Game_Button/NinePatchRect"]
+offset_left = 69.4228
+offset_top = 67.5949
+offset_right = 394.423
+offset_bottom = 150.595
+theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
+theme_override_font_sizes/font_size = 55
+text = "LOAD GAME"
+
+[node name="Settings_Button" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = -115.0
-offset_top = 614.0
-offset_right = 220.0
-offset_bottom = 705.0
+offset_left = -1661.0
+offset_top = -342.0
+offset_right = -1326.0
+offset_bottom = -251.0
 scale = Vector2(1.06338, 0.978837)
 theme_override_font_sizes/font_size = 60
 text = "Settings
 "
 
-[node name="Credits_Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings_Button"]
+offset_left = -63.7883
+offset_top = -63.4481
+offset_right = 400.212
+offset_bottom = 159.552
+texture = ExtResource("6_qrx2q")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/Settings_Button"]
+offset_left = 25.3907
+offset_right = 301.391
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS"
+
+[node name="Credits_Button" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -115.0
-offset_top = 729.0
-offset_right = 220.0
-offset_bottom = 820.0
+offset_left = -1663.0
+offset_top = -213.0
+offset_right = -1328.0
+offset_bottom = -122.0
 scale = Vector2(1.06338, 0.978837)
 theme_override_font_sizes/font_size = 60
 text = "Credits"
 
-[node name="Quit_Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Credits_Button"]
+offset_left = -63.7883
+offset_top = -63.4481
+offset_right = 400.212
+offset_bottom = 159.552
+texture = ExtResource("6_qrx2q")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/Credits_Button"]
+offset_left = 43.2583
+offset_top = 3.06486
+offset_right = 368.258
+offset_bottom = 86.0649
+theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
+theme_override_font_sizes/font_size = 60
+text = "CREDITS"
+
+[node name="Quit_Button" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = -122.0
-offset_top = 835.0
-offset_right = 213.0
-offset_bottom = 926.0
+offset_left = -1664.0
+offset_top = -75.0
+offset_right = -1329.0
+offset_bottom = 16.0
 scale = Vector2(1.0841, 1)
 theme_override_font_sizes/font_size = 60
 text = "Quit
 "
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Quit_Button"]
+offset_left = -63.7883
+offset_top = -63.4481
+offset_right = 400.212
+offset_bottom = 159.552
+texture = ExtResource("6_qrx2q")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/Quit_Button"]
+offset_left = 83.0183
+offset_right = 227.018
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
+theme_override_font_sizes/font_size = 60
+text = "QUIT"
 
 [node name="Credits" parent="." instance=ExtResource("4_e2ov8")]
 visible = false
@@ -169,17 +421,23 @@ stream = ExtResource("4_hxbdb")
 autoplay = true
 bus = &"Music"
 
+[node name="Settings_Menu" parent="." instance=ExtResource("3_xdu3v")]
+visible = false
+z_index = 1
+layout_mode = 1
+
 [node name="SaveUI" parent="." instance=ExtResource("5_qnku8")]
 visible = false
+z_index = 1
 layout_mode = 1
 offset_left = 337.0
 offset_top = 168.0
 offset_right = -549.0
 offset_bottom = -121.0
 
-[connection signal="pressed" from="DeveloperOption" to="." method="_on_developer_option_pressed"]
-[connection signal="pressed" from="New_Game_Button" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="Load_Game_Button" to="." method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Credits_Button" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/DeveloperOption" to="." method="_on_developer_option_pressed"]
+[connection signal="pressed" from="Control/New_Game_Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Control/Load_Game_Button" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="Control/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/Quit_Button" to="." method="_on_quit_button_pressed"]

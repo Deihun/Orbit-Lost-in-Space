@@ -6,7 +6,7 @@ extends Sprite2D
 @onready var crew_3 : Button = $Crew_toChoose/Crew_3
 @onready var crew_4 : Button = $Crew_toChoose/Crew_4
 
-var selection_ui_position = [Vector2(-761.118,-420.849),Vector2(-416.14,-408.457),Vector2(-63.623,-404.644),Vector2(278.527,-403.691)]
+var selection_ui_position = [Vector2(-761.118,-175),Vector2(-416.14,-175),Vector2(-63.623,-175),Vector2(278.527,-175)]
 var selected : int = 0
 var crew_button = []
 var crew = []
@@ -40,7 +40,7 @@ func updateSelectionButton():
 		else:
 			crew_button[i].visible = false
 	
-	var pos = Vector2(80,400)
+	var pos = Vector2(80,900)
 	if crew.size() < 1: return
 	for child in $Crew_toChoose/Crew_1.get_children():
 		child.queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2kiedg73l26x"
-path="res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"
+uid="uid://dgkr0ab5k81fq"
+path="res://.godot/imported/Ship_mainmenu.png-4ddbc8774834814d066369ba8f89f0f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DropBox/TemporaryDropboxWarning.png"
-dest_files=["res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"]
+source_file="res://MainMenu/Ship_mainmenu.png"
+dest_files=["res://.godot/imported/Ship_mainmenu.png-4ddbc8774834814d066369ba8f89f0f1.ctex"]
 
 [params]
 

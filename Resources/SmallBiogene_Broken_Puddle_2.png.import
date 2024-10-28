@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2kiedg73l26x"
-path="res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"
+uid="uid://bxm5omh0yl1hp"
+path="res://.godot/imported/SmallBiogene_Broken_Puddle_2.png-deee745c0ce11b245ebee4865ef42073.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DropBox/TemporaryDropboxWarning.png"
-dest_files=["res://.godot/imported/TemporaryDropboxWarning.png-bd9ac3155e58d0818f1bc0553d3b1bd8.ctex"]
+source_file="res://Resources/SmallBiogene_Broken_Puddle_2.png"
+dest_files=["res://.godot/imported/SmallBiogene_Broken_Puddle_2.png-deee745c0ce11b245ebee4865ef42073.ctex"]
 
 [params]
 

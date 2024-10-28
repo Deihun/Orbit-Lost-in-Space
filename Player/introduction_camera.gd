@@ -21,23 +21,17 @@ func gameOver() -> void:
 
 
 func gameWin() -> void:
-	var transition = get_parent().get_node("Player/player/AllUIParents/BlackTransition")
 	
 	player_cb.canMove = false
 	player_cb.hideallUI()
-	if player_cb.endAnimationOnce:
-		transition.show()
-		transition.play("default")
-		transition.visible = true
-		player_cb.endAnimationOnce = false
-	await get_tree().create_timer(5).timeout 
-	transition.hide()
+	player_position.transition()
+	await get_tree().create_timer(2.5).timeout 
 	var introCam = NodeFinder.find_node_by_name(get_tree().current_scene, "IntroductionCamera")
 	if introCam:
 		introCam.position = Vector2(4000,-3800)
 		introCam.make_current()
 	$"../RocketLaunchCutscene".play()
-	await get_tree().create_timer(2.5).timeout 
+	await get_tree().create_timer(3.0).timeout 
 	IngameStoredProcessSetting.Scenes = "interiorscene"
 	Engine.time_scale = 1.0
 	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
@@ -48,11 +42,11 @@ func gameStart():
 	if IngameStoredProcessSetting.is_previous_restart:
 		IngameStoredProcessSetting.is_previous_restart = false
 		await get_tree().create_timer(0.5).timeout
-		await SimpleMovement.MoveObjectSmoothly(self, player_position.position + adjustingPosition, 1.5)
+		await SimpleMovement.MoveObjectSmoothly(self, player_position.position + player_camera.position + player_cb.position, 1.5)
 		await get_tree().create_timer(1.5).timeout
 	else:
 		await get_tree().create_timer(1.2).timeout  
-		await SimpleMovement.MoveObjectSmoothly(self, player_position.position + adjustingPosition, secondsTransition)
+		await SimpleMovement.MoveObjectSmoothly(self, player_position.position + player_camera.position + player_cb.position, secondsTransition)
 		await get_tree().create_timer(secondsTransition).timeout
 
 

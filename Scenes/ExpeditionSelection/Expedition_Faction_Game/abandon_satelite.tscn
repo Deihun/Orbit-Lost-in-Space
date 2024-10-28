@@ -72,6 +72,7 @@ position = Vector2(11460, 2378)
 scale = Vector2(1.4618, 1.421)
 texture = ExtResource("3_drt7d")
 script = ExtResource("4_vxoaw")
+metadata/_edit_lock_ = true
 
 [node name="Keycard" type="AnimatedSprite2D" parent="Satelite_2"]
 position = Vector2(959.092, 903.589)
@@ -97,6 +98,7 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Satelite_2/WallStaticBody"]
 build_mode = 1
 polygon = PackedVector2Array(-1476.26, -1441.94, -1217.68, -1434.2, -1063.07, -1444.05, -1040.5, -1510.2, -833.22, -1511.61, -836.64, -1320.2, -831.851, -1209.01, -783.281, -1146.38, -692.982, -1137.93, -688.193, -995.074, -597.893, -992.259, -584.896, -1187.19, -573.266, -1401.83, -240.799, -1816.33, 201.122, -1812.1, 199.754, -1857.85, 650.568, -1860.66, 988.508, -1533.43, 986.456, -729.768, 680.668, -731.879, 674.511, -629.134, 999.453, -627.023, 996.717, 686.84, 326.994, 698.804, 324.258, -109.782, 722.397, -111.189, 729.922, -194.229, 62.2521, -197.748, 67.0407, -88.67, 226.433, -87.2625, 224.381, 667.839, -1468.05, 645.32, -1480.37, -96.411, -333.835, -87.9662, -333.151, -196.341, -1478.31, -202.674, -1486.52, -659.395, 443.289, -661.506, 438.501, -726.249, -1486.52, -736.805)
+metadata/_edit_lock_ = true
 
 [node name="Satelite_3" type="Sprite2D" parent="."]
 z_index = -1
@@ -141,6 +143,31 @@ collision_mask = 0
 build_mode = 1
 polygon = PackedVector2Array(-1476.26, -1441.94, -1217.68, -1434.2, -1063.07, -1444.05, -1040.5, -1510.2, -833.22, -1511.61, -836.64, -1320.2, -831.851, -1209.01, -783.281, -1146.38, -692.982, -1137.93, -688.193, -995.074, -597.893, -992.259, -584.896, -1187.19, -573.266, -1401.83, -240.799, -1816.33, 201.122, -1812.1, 199.754, -1857.85, 650.568, -1860.66, 988.508, -1533.43, 986.456, -729.768, 680.668, -731.879, 674.511, -629.134, 999.453, -627.023, 996.717, 686.84, 326.994, 698.804, 324.258, -109.782, 722.397, -111.189, 729.922, -194.229, 62.2521, -197.748, 67.0407, -88.67, 226.433, -87.2625, 224.381, 667.839, -1468.05, 645.32, -1480.37, -96.411, -333.835, -87.9662, -333.151, -196.341, -1478.31, -202.674, -1486.52, -659.395, 443.289, -661.506, 438.501, -726.249, -1486.52, -736.805)
 metadata/_edit_lock_ = true
+
+[node name="DropBox" parent="." instance=ExtResource("9_0esv2")]
+position = Vector2(12109, 6743)
+
+[node name="DoorWay" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(10543, 1434)
+scale = Vector2(1.59601, 1.56161)
+wallRotation = 2
+metadata/_edit_lock_ = true
+
+[node name="InteractionArea" parent="DoorWay" instance=ExtResource("5_naert")]
+action_name = "Requires KeyCard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWay/InteractionArea"]
+position = Vector2(-6.89307, 52.5101)
+shape = SubResource("RectangleShape2D_j0bs0")
+metadata/_edit_lock_ = true
+
+[node name="DoorWay2" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(3654, 7900)
+scale = Vector2(0.904363, 1.01023)
+
+[node name="DoorWay3" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(11510, 8644)
+scale = Vector2(1.4218, 1.421)
 
 [node name="Node Resource Spawner" parent="." instance=ExtResource("10_iioux")]
 z_index = 0
@@ -272,13 +299,13 @@ position = Vector2(-1027, -5499)
 position = Vector2(498, -6160)
 
 [node name="Node2D39" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2607, -4798)
+position = Vector2(-2680, -4442)
 
 [node name="Node2D40" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-459, -4584)
+position = Vector2(-110, -6502)
 
 [node name="Node2D41" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(160, -4443)
+position = Vector2(41, -5842)
 
 [node name="Node2D42" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-359, -5153)
@@ -287,31 +314,31 @@ position = Vector2(-359, -5153)
 position = Vector2(-1446, -5334)
 
 [node name="Node2D44" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2137, -5751)
+position = Vector2(-2323, -5969)
 
 [node name="Node2D45" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-2350, -5444)
 
 [node name="Node2D46" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2612, -5938)
+position = Vector2(-2748, -5851)
 
 [node name="Node2D47" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2539, -5241)
+position = Vector2(-2579, -5093)
 
 [node name="Node2D48" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-1120, -6236)
+position = Vector2(-1267, -5948)
 
 [node name="Node2D49" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2243, -5159)
+position = Vector2(-2149, -5312)
 
 [node name="Node2D50" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-2221, -5513)
 
 [node name="Node2D51" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2329, -5963)
+position = Vector2(-1930, -6119)
 
 [node name="Node2D52" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2594, -5450)
+position = Vector2(-2037, -6119)
 
 [node name="Node2D53" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-1930, -5980)
@@ -320,10 +347,10 @@ position = Vector2(-1930, -5980)
 position = Vector2(-1936, -5788)
 
 [node name="Node2D55" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-2676, -5121)
+position = Vector2(-2714, -5092)
 
 [node name="Node2D56" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-1833, -4580)
+position = Vector2(-2350, -4673)
 
 [node name="Node2D57" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-1725, -3707)
@@ -347,19 +374,19 @@ position = Vector2(159, -3874)
 position = Vector2(-1314, -3609)
 
 [node name="Node2D64" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-841, -3797)
+position = Vector2(-513, -3312)
 
 [node name="Node2D65" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-629, -4015)
+position = Vector2(593, -5754)
 
 [node name="Node2D66" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-1133, -5177)
 
 [node name="Node2D67" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(-713, -6467)
+position = Vector2(-948, -6435)
 
 [node name="Node2D68" type="Node2D" parent="Node Resource Spawner"]
-position = Vector2(450, -3990)
+position = Vector2(631, -3429)
 
 [node name="Node2D69" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(86, -4017)
@@ -472,28 +499,164 @@ position = Vector2(-2210, 587)
 [node name="Node2D105" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(640, 543)
 
-[node name="DropBox" parent="." instance=ExtResource("9_0esv2")]
-position = Vector2(12109, 6743)
+[node name="Node2D106" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9190, 29)
 
-[node name="DoorWay" parent="." instance=ExtResource("4_ocmvt")]
-position = Vector2(10543, 1434)
-scale = Vector2(1.59601, 1.56161)
-wallRotation = 2
+[node name="Node2D107" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9220, 422)
 
-[node name="InteractionArea" parent="DoorWay" instance=ExtResource("5_naert")]
-action_name = "Requires KeyCard"
+[node name="Node2D108" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8805, 278)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWay/InteractionArea"]
-position = Vector2(-6.89307, 52.5101)
-shape = SubResource("RectangleShape2D_j0bs0")
+[node name="Node2D109" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9622, 453)
 
-[node name="DoorWay2" parent="." instance=ExtResource("4_ocmvt")]
-position = Vector2(3654, 7900)
-scale = Vector2(0.904363, 1.01023)
+[node name="Node2D110" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9652, 846)
 
-[node name="DoorWay3" parent="." instance=ExtResource("4_ocmvt")]
-position = Vector2(11510, 8644)
-scale = Vector2(1.4218, 1.421)
+[node name="Node2D111" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9237, 702)
+
+[node name="Node2D112" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10070, 2173)
+
+[node name="Node2D113" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10100, 2566)
+
+[node name="Node2D114" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9685, 2422)
+
+[node name="Node2D115" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10502, 2597)
+
+[node name="Node2D116" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10532, 2990)
+
+[node name="Node2D117" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10117, 2846)
+
+[node name="Node2D118" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10806, 2205)
+
+[node name="Node2D119" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10836, 2598)
+
+[node name="Node2D120" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10421, 2454)
+
+[node name="Node2D121" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-11238, 2629)
+
+[node name="Node2D122" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-11268, 3022)
+
+[node name="Node2D123" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10853, 2878)
+
+[node name="Node2D124" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-11214, 325)
+
+[node name="Node2D125" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10078, 1368)
+
+[node name="Node2D126" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8413, 3006)
+
+[node name="Node2D127" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10480, 1399)
+
+[node name="Node2D128" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10510, 1792)
+
+[node name="Node2D129" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10095, 1648)
+
+[node name="Node2D130" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10574, 1037)
+
+[node name="Node2D131" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10814, 1400)
+
+[node name="Node2D132" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10933, 558)
+
+[node name="Node2D133" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-11216, 1431)
+
+[node name="Node2D134" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-11246, 1824)
+
+[node name="Node2D135" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-10831, 1680)
+
+[node name="Node2D136" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8112, 1350)
+
+[node name="Node2D137" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8514, 1381)
+
+[node name="Node2D138" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8544, 1774)
+
+[node name="Node2D139" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8129, 1630)
+
+[node name="Node2D140" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8848, 1382)
+
+[node name="Node2D141" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9250, 1413)
+
+[node name="Node2D142" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-9280, 1806)
+
+[node name="Node2D143" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-8865, 1662)
+
+[node name="Node2D144" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2767, -5732)
+
+[node name="Node2D145" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2478, -5531)
+
+[node name="Node2D146" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2740, -6025)
+
+[node name="Node2D147" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2667, -5328)
+
+[node name="Node2D148" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-1998, -5093)
+
+[node name="Node2D149" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2349, -5600)
+
+[node name="Node2D150" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2747, -5973)
+
+[node name="Node2D151" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2722, -5537)
+
+[node name="Node2D152" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-2720, -4811)
+
+[node name="Node2D153" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-493, -5170)
+
+[node name="Node2D154" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-851, -6026)
+
+[node name="Node2D155" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-705, -5145)
+
+[node name="Node2D156" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-1235, -6087)
+
+[node name="Node2D157" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-1081, -6239)
+
+[node name="Node2D158" type="Node2D" parent="Node Resource Spawner"]
+position = Vector2(-892, -5807)
 
 [node name="Player" parent="." instance=ExtResource("4_168wx")]
 position = Vector2(2490, 2510)
@@ -502,3 +665,4 @@ show_crewInventoryUI = false
 show_tutorialTip = false
 useGlobeTimerUI = false
 delayBeforeGameStart = 0.0
+limitTimeDuration = 10

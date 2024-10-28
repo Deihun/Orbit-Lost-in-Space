@@ -31,14 +31,18 @@ func parse_json(json_text):
 	return json.get_data()
 
 func switchIt(value : bool = true):
+	eventReader.hide()
 	if value:	#OPENING
+		OpeningAnimation.stop()
+		eventReader.hide()
 		OpeningAnimation.show()
 		OpeningAnimation.play("OpeningAnimation")
 		recentAnimation = "OpeningAnimation"
 
 	else: #CLOSING
+		OpeningAnimation.stop()
 		eventReader.hide()
-		OpeningAnimation.visible = true
+		OpeningAnimation.show()
 		OpeningAnimation.play("ClosingAnimation")
 		recentAnimation = "ClosingAnimation"
 		if !onceTutorial:
@@ -48,12 +52,12 @@ func switchIt(value : bool = true):
 				tutorialEnd.visible = true
 
 func _on_opening_ui_scene_animation_finished() -> void:
-	if isEventVisible:
+	if recentAnimation == "OpeningAnimation":
 		OpeningAnimation.show()
-		eventReader.visible = true
+		eventReader.show()
 	else: 
 		OpeningAnimation.hide()
-		OpeningAnimation.visible = false
+		eventReader.hide()
 
 
 func _newGameStart():
@@ -178,6 +182,10 @@ func ActivateEvent(): #ACTIVATE QUEUE EVENT
 	if GlobalResources.eventID.front() == null:
 		isEventVisible = false
 		switchIt(false)
+		var endCycle = $"../cam2d/Button_navigation_node_parent/EndCycle"
+		var control = get_parent()
+		endCycle.enable()
+		control.EndCycle_Can_Be_Click_ = true
 		return
 	isEventVisible = true
 	eventReader.setEventID(GlobalResources.eventID.pop_front())

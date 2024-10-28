@@ -6,12 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://2iu3pq8qbv1r" path="res://Resources/CREW/CrewLobby/Regina/Regina Lobby_Sick.png" id="4_dvat7"]
 
 [node name="Regina" type="Sprite2D"]
+y_sort_enabled = true
 texture = ExtResource("1_rwx6f")
+offset = Vector2(0, -700)
 script = ExtResource("2_uqcva")
 
 [node name="Reaction" type="Sprite2D" parent="."]
 texture = ExtResource("3_mpsdr")
+offset = Vector2(0, -700)
 
 [node name="Sick" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("4_dvat7")
+offset = Vector2(0, -700)

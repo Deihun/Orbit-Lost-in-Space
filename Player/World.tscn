@@ -86,16 +86,6 @@ sprite_frames = SubResource("SpriteFrames_0a1hs")
 autoplay = "default"
 frame_progress = 0.340232
 
-[node name="Player" parent="." instance=ExtResource("1_qqdcd")]
-z_index = 2
-position = Vector2(885, 1619)
-can_Move = false
-AdditionalPlayerSpeed = 100
-show_timer = false
-canRestartOnGameOver = true
-delayBeforeGameStart = 4.0
-limitTimeDuration = 2
-
 [node name="DropBox" parent="." instance=ExtResource("6_aur0e")]
 z_index = 1
 position = Vector2(1116, 1553)
@@ -713,5 +703,14 @@ position = Vector2(896, 3396)
 [node name="SmallBox10" parent="." instance=ExtResource("14_dh8q3")]
 z_index = 2
 position = Vector2(1590, 2523)
+
+[node name="Player" parent="." instance=ExtResource("1_qqdcd")]
+z_index = 2
+position = Vector2(885, 1619)
+can_Move = false
+AdditionalPlayerSpeed = 100
+show_timer = false
+canRestartOnGameOver = true
+delayBeforeGameStart = 4.0
 
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]

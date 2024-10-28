@@ -1,4 +1,4 @@
-[gd_scene load_steps=285 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=286 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="3_ay1c7"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 [ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
+[ext_resource type="PackedScene" uid="uid://blr60lckf51rn" path="res://Player/transition.tscn" id="4_5e847"]
 [ext_resource type="Shader" path="res://Player/BlackandWhite.gdshader" id="4_ov5gh"]
 [ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
@@ -1886,6 +1887,8 @@ shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
 
+[node name="Transition" parent="player/AllUIParents" instance=ExtResource("4_5e847")]
+
 [node name="GameOver" type="ColorRect" parent="player/AllUIParents"]
 visible = false
 material = SubResource("ShaderMaterial_50fry")
@@ -2225,6 +2228,7 @@ position = Vector2(9, -40)
 shape = SubResource("CircleShape2D_dsf36")
 
 [node name="PlayerCamera" type="Camera2D" parent="player"]
+position = Vector2(13, -148)
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.5
