@@ -5,6 +5,7 @@ extends Node
 @onready var item_description = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_DescriptionLabel")
 @onready var item_effect = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_EffectLabel")
 @onready var item_requirements = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_RequirementsLabel")
+@onready var item_picture = NodeFinder.find_node_by_name(get_tree().current_scene, "ItemPicture")
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var control: Control = $Control
 @onready var Items = CraftingItems
@@ -34,6 +35,7 @@ func _on_sprite_2d_animation_finished() -> void:
 #Crafting Items
 func space_suit_pressed() -> void:
 	craftingItems = "A.C.E.S"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/ACES_SUIT.png")
 	item_title.text = Items.ItemsName[0]
 	item_description.text = Items.ItemDescription[0]
 	item_effect.text = Items.ItemEffect[0]
@@ -41,6 +43,7 @@ func space_suit_pressed() -> void:
 
 func crowbar_pressed() -> void:
 	craftingItems = "Crowbar"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/CrowBar.png")
 	item_title.text = Items.ItemsName[1]
 	item_description.text = Items.ItemDescription[1]
 	item_effect.text = Items.ItemEffect[1]
@@ -48,6 +51,7 @@ func crowbar_pressed() -> void:
 
 func _on_dehy_space_food_pressed() -> void:
 	craftingItems = "DehySpaceFood"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/DriedSpaceFood.png")
 	item_title.text = Items.ItemsName[2]
 	item_description.text = Items.ItemDescription[2]
 	item_effect.text = Items.ItemEffect[2]
@@ -55,6 +59,7 @@ func _on_dehy_space_food_pressed() -> void:
 
 func medkit_charge_pressed() -> void:
 	craftingItems = "MedkitCharge"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/Medicine_Pickup.png")
 	item_title.text = Items.ItemsName[3]
 	item_description.text = Items.ItemDescription[3]
 	item_effect.text = Items.ItemEffect[3]
@@ -62,6 +67,7 @@ func medkit_charge_pressed() -> void:
 
 func fre_dri_space_food_pressed() -> void:
 	craftingItems = "FreDriSpaceFood"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/DeepDriedSpaceFood.png")
 	item_title.text = Items.ItemsName[4]
 	item_description.text = Items.ItemDescription[4]
 	item_effect.text = Items.ItemEffect[4]
@@ -69,6 +75,7 @@ func fre_dri_space_food_pressed() -> void:
 
 func hazmat_suit_pressed() -> void:
 	craftingItems = "LeadSuitUp"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/ACE_SUIT_LEAD_IMPROVEMENT.png")
 	item_title.text = Items.ItemsName[5]
 	item_description.text = Items.ItemDescription[5]
 	item_effect.text = Items.ItemEffect[5]

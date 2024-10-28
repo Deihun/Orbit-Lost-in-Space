@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=125 format=3 uid="uid://cc7evrjjstpn1"]
-
+[gd_scene load_steps=126 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -31,13 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 [ext_resource type="Texture2D" uid="uid://dw6ae7xyyamkp" path="res://Scenes/Cycle_Report/ExpeditionReportBG.png" id="17_8py32"]
 [ext_resource type="Texture2D" uid="uid://c5wxf42th7rbc" path="res://Scenes/Between Wall.png" id="17_raxb3"]
-[ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
 [ext_resource type="Texture2D" uid="uid://hj48j1tcj24y" path="res://Scenes/ExpeditionSelection/Expedition.png" id="19_hgekd"]
 [ext_resource type="Texture2D" uid="uid://cc1k8exi08mao" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/NormalSpace.png" id="19_veuuq"]
 [ext_resource type="Texture2D" uid="uid://bos6vw3go366u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonShipAnimation.png" id="20_8oew0"]
 [ext_resource type="Script" path="res://Scenes/expedition_selection.gd" id="21_iriww"]
 [ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
 [ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
+[ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -983,8 +981,8 @@ polygon = PackedVector2Array(-2858, 541, -2861, -316, -2315, -321, -2310, 546)
 position = Vector2(-1565, -1)
 texture = ExtResource("17_raxb3")
 
-
 [node name="CraftedItemsUi" type="Area2D" parent="WholeInteriorScene"]
+
 [node name="CraftedItems" type="CollisionPolygon2D" parent="WholeInteriorScene/CraftedItemsUi"]
 position = Vector2(-1087, 74)
 polygon = PackedVector2Array(-2958, 492, -2954, 212, -2171, 217, -2169, 495)
