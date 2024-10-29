@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr3kesbj8wcvp"]
+[gd_scene load_steps=3 format=3 uid="uid://cr3kesbj8wcvp"]
 
 [ext_resource type="Script" path="res://Crafting_UI/crafted_items_inventory.gd" id="1_iut1y"]
+[ext_resource type="Texture2D" uid="uid://cf4ottwq7pd4d" path="res://Icon (1) (1).svg" id="2_iflek"]
 
 [node name="CraftedItemsInventory" type="Control"]
 layout_mode = 3
@@ -73,6 +74,11 @@ offset_left = 18.0
 offset_top = 16.0
 offset_right = 449.0
 offset_bottom = 442.0
+
+[node name="ItemPic" type="Sprite2D" parent="Panel/Panel2/ItemsSprite"]
+position = Vector2(216.5, 216.5)
+scale = Vector2(1.48047, 1.48047)
+texture = ExtResource("2_iflek")
 
 [node name="ItemEffect" type="Panel" parent="Panel/Panel2"]
 z_index = 2

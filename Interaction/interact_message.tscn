@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bekfchgw067gf"]
+[gd_scene load_steps=6 format=3 uid="uid://bekfchgw067gf"]
 
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="1_6s4yo"]
 [ext_resource type="Script" path="res://Interaction/interact_message.gd" id="1_j6q2q"]
@@ -14,11 +14,14 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_e1k1s"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="interact_message" type="Node2D"]
-visible = false
 script = ExtResource("1_j6q2q")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_6s4yo")]
@@ -44,6 +47,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "<message>
 "
+label_settings = SubResource("LabelSettings_e1k1s")
+horizontal_alignment = 1
 autowrap_mode = 3
 justification_flags = 171
 text_overrun_behavior = 2

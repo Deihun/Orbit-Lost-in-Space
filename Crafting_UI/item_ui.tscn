@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqjlvrwl7jpbg"]
+[gd_scene load_steps=3 format=3 uid="uid://bqjlvrwl7jpbg"]
 
 [ext_resource type="Script" path="res://Crafting_UI/item_ui.gd" id="1_jecnw"]
+[ext_resource type="Texture2D" uid="uid://cf4ottwq7pd4d" path="res://Icon (1) (1).svg" id="2_2i7ik"]
 
 [node name="Item_UI" type="Control"]
 layout_mode = 3
@@ -24,6 +25,11 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 510.0
 offset_bottom = 445.0
+
+[node name="ItemPicture" type="Sprite2D" parent="Panel/Item_Picture"]
+position = Vector2(251.57, 220.464)
+scale = Vector2(1.74191, 1.74191)
+texture = ExtResource("2_2i7ik")
 
 [node name="Item_Name" type="Panel" parent="Panel"]
 custom_minimum_size = Vector2(500, 0)
