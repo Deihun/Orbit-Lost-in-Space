@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5sefbugw52ul"]
+
+[ext_resource type="Texture2D" uid="uid://ntsfnmnkewyj" path="res://Resources/CREW/CrewLobby/Maxim/Maxim Lobby.png" id="1_nt3pa"]
+[ext_resource type="Script" path="res://Resources/CREW/CrewLobby/maxim.gd" id="2_utwp1"]
+[ext_resource type="Texture2D" uid="uid://cl47c8v5binjd" path="res://Resources/CREW/CrewLobby/Maxim/Maxim Lobby_Neutral.png" id="3_3tixh"]
+[ext_resource type="Texture2D" uid="uid://bm8j5wg5l0o6v" path="res://Resources/CREW/CrewLobby/Maxim/Maxim Lobby_Sick.png" id="4_j2giv"]
+
+[node name="Maxim" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_nt3pa")
+offset = Vector2(0, -700)
+script = ExtResource("2_utwp1")
+
+[node name="Reaction" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("3_3tixh")
+offset = Vector2(0, -700)
+
+[node name="Sick" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
+texture = ExtResource("4_j2giv")
+offset = Vector2(0, -700)

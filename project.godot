@@ -26,6 +26,16 @@ SimpleMovement="*res://TweenClass/SimpleMovement.gd"
 SettingsSignalBus="*res://settings_menu/SettingsSignalBus.gd"
 SettingsDataContainer="*res://settings_menu/SettingsDataContainer.gd"
 SaveManager="*res://Scripts/SaveManager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+DialogueCommand="*res://DialogueSystem/DialogueCommand.gd"
+ItemUi="*res://Crafting_UI/item_ui.gd"
+CraftingItems="*res://Crafting_UI/CraftingItems.gd"
+
+[dialogue_manager]
+
+general/balloon_path="res://DialogueSystem/DialogueBalloon/balloon.tscn"
+general/states=["GlobalResources", "IngameStoredProcessSetting", "DialogueCommand"]
+general/export_characters_in_translation=false
 
 [display]
 
@@ -33,6 +43,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -61,6 +75,20 @@ Interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
+openCommand={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":92,"key_label":0,"unicode":92,"location":0,"echo":false,"script":null)
+]
+}
+Confirm={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://DialogueSystem/Dialogue.dialogue", "res://DialogueSystem/EventDialogue/Dialogue_interact.dialogue", "res://DialogueSystem/EventDialogue/FirstDay_Dialogue.dialogue")
 
 [layer_names]
 
@@ -79,3 +107,4 @@ Interact={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

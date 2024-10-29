@@ -2,15 +2,15 @@ extends Node
 
 
 #VARIABLES 
-var ration = 0
+var ration = 10000
 var fuel = 0
 var oxygen = 1000
 var spareparts = 10000000
-var biogene = 0
+var biogene : int= 0
 var ductape : int = 0
 var medicine: int = 0
-var emergencyOxy = 0
-var emergencyFuel = 0
+var emergencyOxy = 100
+var emergencyFuel = 100
 
 #EVENT VARIABLES
 var Critical_Event = []
@@ -43,6 +43,7 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 			ductape += 1
 
 func hasItem(item_type: String, quantity: int) -> bool:
+	item_type = item_type.to_upper()
 	var returningValue = false
 	match(item_type):
 		"FOOD":
@@ -66,6 +67,7 @@ func getSpareparts():
 	return spareparts
 
 func subtractItem(conditions : bool,item_name : String, amount : int):
+	item_name = item_name.to_upper()
 	if conditions:
 		match(item_name):
 			"SPAREPARTS":
@@ -88,6 +90,7 @@ func subtractItem(conditions : bool,item_name : String, amount : int):
 				oxygen -= amount
 
 func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
+	print(item_name,amount)
 	if conditions:
 		match(item_name):
 			"SPAREPARTS":
@@ -108,20 +111,34 @@ func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
 			"OXYGEN":
 				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
 				oxygen += amount
+			_:
+				print("unrecognize item ", item_name)
 
 func reset(item_type):
 	match(item_type):
 		"SPAREPARTS":
+			var value = spareparts * -1
+			IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", value))
 			spareparts = 0
 		"FOOD":
+			var value = ration * -1
+			IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", value))
 			ration = 0 
 		"FUEL":
+			var value = fuel * -1
+			IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", value))
 			fuel = 0 
 		"BIOGENE":
+			var value = biogene * -1
+			IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", value))
 			biogene = 0 
 		"DUCTAPE":
+			var value = ductape * -1
+			IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", value))
 			ductape = 0 
 		"OXYGEN": 
+			var value = oxygen * -1
+			IngameStoredProcessSetting.addOnCycleReportList(str("Spareparts -", value))
 			oxygen = 0
 
 func addGameEffect(name):

@@ -37,15 +37,7 @@
 		"Repeatable": true,
 		"description": "Theres a leak happening inside your station that needs to be fix immediately",
 		"id": 1,
-		"name": "Gas LEAK!",
-		"return": [
-			0,
-			0,
-			0,
-			0,
-			0,
-			"none"
-		]
+		"name": "Gas LEAK!"
 	},
 	{
 		"Probability": [
@@ -65,8 +57,8 @@
 				]
 			]
 		],
-		"RandomTrue": false,
-		"Repeatable": false,
+		"RandomTrue": true,
+		"Repeatable": true,
 		"description": "Something wrong if this doesnt change",
 		"id": 2,
 		"name": "DEBUG"
@@ -161,7 +153,7 @@
 				"This will cost 1 Ductape to repair \nDuctape:@DUCTAPE()/1"
 			]
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "Description",
 		"id": 9,
@@ -185,7 +177,7 @@
 			],
 			"Wanna see some fireworks? You should know what and when is your place! This is my place therefore this is my time! If you cant afford it? Goodbye! \nSpareparts:@SPAREPARTS()/50"
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "Witness, the final calamity",
 		"id": 11,
@@ -212,14 +204,14 @@
 			],
 			"Let the anger out! This will cause your crew to commit chaos, damaging your ship\nSpareparts:@SPAREPARTS()/10"
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"description": "One of your crew simply want to express their freedome through breathing, will you let that crew breath more air than usual?",
 		"id": 12,
 		"name": "You are what you are"
 	},
 	{
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": true,
 		"choice-1": [
 			0,
@@ -248,24 +240,95 @@
 		"name": "Testing"
 	},
 	{
-		"Conditions": [
-			"HAS",
-			[
-				"@SPAREPARTS",
-				"@SPAREPARTS"
-			]
+		"Command": [
+			"@RESET FOOD "
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description_input": "Testing Conditions",
+		"description": "Achieving her life goals and dream, Regina is now living at the fullest\nthanks to your contribution!",
 		"id": 14,
-		"name": "testing Name"
+		"name": "Regina is now a happy woman"
 	},
 	{
-		"RandomTrue": true,
+		"Command": [
+			"@RESET FOOD "
+		],
+		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "testing 15",
+		"description": "Regina is now a sad person. Who knows what will she do next? Oh\nright. Regina will eat everything in her path!",
 		"id": 15,
-		"name": "test"
+		"name": "Regina is sad"
+	},
+	{
+		"Choice-1": [
+			15,
+			[
+				[
+					"Spareparts",
+					0
+				]
+			],
+			"Who cares about that? Let her cry! WOMP WOMP WOMP"
+		],
+		"Choice-2": [
+			14,
+			[
+				[
+					"Spareparts",
+					0
+				]
+			],
+			"I care about here... Not a simp tho..."
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "She was stunned as she discover the idea of turning a biogene into\na toy! Now she is invested but simply wants your permission. \nWill you let her join you or will you ignore her?",
+		"id": 16,
+		"name": "Oh dear regina"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": true,
+		"description": "dasad",
+		"id": 17,
+		"name": "For me to allow not being null"
+	},
+	{
+		"Choice-1": [
+			1,
+			[
+				[
+					"SPAREPARTS",
+					0
+				]
+			],
+			"Tite tite na supot"
+		],
+		"HiddenChoice": [
+			[
+				[
+					"HAS_UNIQUE_ITEM",
+					[
+						"BURNIK",
+						1
+					]
+				]
+			],
+			[
+				1,
+				[
+					[
+						"SPAREPARTS",
+						0
+					]
+				],
+				"Tite"
+			]
+		],
+		"RandomTrue": false,
+		"Repeatable": true,
+		"description": "testtestttest",
+		"id": 18,
+		"name": "Testing Unique Item"
 	}
 ]

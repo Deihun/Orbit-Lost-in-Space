@@ -1,14 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://l3oth153v8dv"]
+[gd_scene load_steps=4 format=3 uid="uid://l3oth153v8dv"]
 
 [ext_resource type="Texture2D" uid="uid://cj4w00cxpq0as" path="res://AmbiencePurposes/Boxes/SmallBoxes.png" id="1_v4nfs"]
+[ext_resource type="Script" path="res://AmbiencePurposes/Boxes/small_box.gd" id="1_ytcrn"]
 
-[node name="SmallBox" type="RigidBody2D"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6ph7g"]
+polygon = PackedVector2Array(-14, 64, 76, 69, 63, 40, -9, 38)
+
+[node name="SmallBox" type="StaticBody2D"]
 y_sort_enabled = true
-collision_mask = 19
-mass = 500.0
-gravity_scale = 0.0
-lock_rotation = true
-linear_damp = 20.0
+collision_layer = 33
+collision_mask = 0
+script = ExtResource("1_ytcrn")
+
+[node name="PushUp" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 35
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="PushUp"]
+scale = Vector2(1.02765, 0.994261)
+polygon = PackedVector2Array(-11.6772, 65.3752, 72.0091, 69.3983, 72.0091, 70.4041, -12.6502, 66.381)
+
+[node name="PushDown" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 35
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PushDown"]
+polygon = PackedVector2Array(-3, 42, 59, 42, 60, 41, -3, 41)
+
+[node name="PushLeft" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 35
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PushLeft"]
+polygon = PackedVector2Array(60, 44, 75, 68, 76, 68, 61, 44)
+
+[node name="PushRight" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 35
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PushRight"]
+polygon = PackedVector2Array(-15, 64, -5, 44, -6, 44, -16, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -18,3 +49,15 @@ offset = Vector2(-14.36, -81.7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-4, 43, -14, 64, 39, 67, 74, 68, 59, 43)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_6ph7g")
+
+[connection signal="body_entered" from="PushUp" to="." method="_on_push_up_body_entered"]
+[connection signal="body_exited" from="PushUp" to="." method="_on_push_up_body_exited"]
+[connection signal="body_entered" from="PushDown" to="." method="_on_push_down_body_entered"]
+[connection signal="body_exited" from="PushDown" to="." method="_on_push_down_body_exited"]
+[connection signal="body_entered" from="PushLeft" to="." method="_on_push_left_body_entered"]
+[connection signal="body_exited" from="PushLeft" to="." method="_on_push_left_body_exited"]
+[connection signal="body_entered" from="PushRight" to="." method="_on_push_right_body_entered"]
+[connection signal="body_exited" from="PushRight" to="." method="_on_push_right_body_exited"]

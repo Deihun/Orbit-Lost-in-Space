@@ -1,0 +1,352 @@
+~ WithCompleteGroup_without_Nashir_1
+Maxim: That was close...
+Fumiko: yeah, really close...
+Regina: Do we have enough ration to survive?
+Fumiko: Hopefully
+Maxim: Then, Ill be the one managing our power source
+Regina: Right! Lets split our work and survive!
+=> END
+~ WithCompleteGroup_without_Nashir_2
+Jerry: Did everybody get in safe?
+Regina: I think so?
+Fumiko: Whooo! That was a crazy andrenaline rush! I love it!
+Maxim: ...
+Jerry:
+	-Did every body got a good 
+=> END
+~ WithCompleteGroup_without_Nashir_3
+=> END
+~ WithCompleteGroup_without_Nashir_4
+=> END
+~ WithCompleteGroup_without_Nashir_5
+=> END
+~ WithCompleteGroup_without_Maxim_1
+=> END
+~ WithCompleteGroup_without_Maxim_2
+=> END
+~ WithCompleteGroup_without_Maxim_3
+=> END
+~ WithCompleteGroup_without_Maxim_4
+=> END
+~ WithCompleteGroup_without_Maxim_5
+=> END
+~ WithCompleteGroup_without_Regina_1
+=> END
+~ WithCompleteGroup_without_Regina_2
+=> END
+~ WithCompleteGroup_without_Regina_3
+=> END
+~ WithCompleteGroup_without_Regina_4
+=> END
+~ WithCompleteGroup_without_Regina_5
+=> END
+~ WithCompleteGroup_without_Fumiko_1
+=> END
+~ WithCompleteGroup_without_Fumiko_2
+=> END
+~ WithCompleteGroup_without_Fumiko_3
+=> END
+~ WithCompleteGroup_without_Fumiko_4
+=> END
+~ WithCompleteGroup_without_Fumiko_5
+=> END
+
+~ ReginaOnly_1
+=> END
+~ ReginaOnly_2
+=> END
+~ ReginaOnly_3
+=> END
+
+~ FumikoOnly_1
+=> END
+~ FumikoOnly_2
+=> END
+~ FumikoOnly_3
+=> END
+
+~ NashirOnly_1
+=> END
+~ NashirOnly_2
+=> END 
+~ NashirOnly_3
+=> END
+
+~ MaximOnly_1
+=> END
+~ MaximOnly_2
+=> END
+~ MaximOnly_3
+=> END
+
+~ Jerry_Only_1
+Jerry: Jerry_only
+=> END 
+
+~ Jerry_Only_2
+Jerry: Jerry_only
+=> END 
+
+~ Jerry_Only_3
+Jerry: Jerry_only
+=> END 
+
+~ Jerry_Only_4
+Jerry: Jerry_only
+=> END 
+
+#MAKE IT NEUTRAL THAT EVEN IF THEIR RELATIONSHIP ARE LOW, THEY CAN STILL TALK 
+# MAXIM and FUMIKO
+~ RandomMeeting_1 
+=> END
+
+~ RandomMeeting_2
+=> END
+
+
+# NASHIR and MAXIM
+~ RandomMeeting_3
+=> END
+
+~ RandomMeeting_4
+=> END
+
+# REGINA and FUMIKO
+~ RandomMeeting_5
+=> END
+
+~ RandomMeeting_6
+=> END
+
+#NASHIR and REGINA
+~ RandomMeeting_7
+=> END
+
+~ RandomMeeting_8
+=> END
+
+#MAXIM and REGINA
+~ RandomMeeting_9
+=> END
+
+~ RandomMeeting_10
+=> END
+
+#NASHIR and FUMIKO
+~ RandomMeeting_11
+=> END
+
+~ RandomMeeting_12
+=> END
+
+
+#RELATIONSHIP IN BETWEEN AS HATED
+#MAXIM mad at NASHIR
+~ mad_interaction_maxim_nashir1
+=> END 
+
+~ mad_interaction_maxim_nashir2
+=> END 
+
+
+#MAXIM mad at JERRY
+~ mad_interaction_maxim_jerry1
+=> END 
+
+~ mad_interaction_maxim_jerry2
+=> END 
+
+
+#MAXIM mad at FUMIKO
+~ mad_interaction_maxim_fumiko1
+=> END 
+
+~ mad_interaction_maxim_fumiko2
+=> END 
+
+
+#MAXIM mad at REGINA
+~ mad_interaction_maxim_regina1
+=> END 
+
+~ mad_interaction_maxim_regina2
+=> END 
+
+
+#NASHIR mad at REGINA
+~ mad_interaction_nashir_regina1
+=> END 
+
+~ mad_interaction_nashir_regina2
+=> END 
+#NASHIR mad at JERRY
+~ mad_interaction_nashir_jerry1
+=> END 
+
+~ mad_interaction_nashir_jerry2
+=> END 
+#NASHIR mad at MAXIM
+~ mad_interaction_nashir_maxim1
+=> END 
+
+~ mad_interaction_nashir_maxim2
+=> END 
+
+#NASHIR mad at FUMIKO
+~ mad_interaction_nashir_fumiko1
+=> END 
+
+~ mad_interaction_nashir_fumiko2
+=> END 
+
+
+#REGINA mad at FUMIKO
+~ mad_interaction_regina_fumiko1
+=> END 
+
+~ mad_interaction_regina_fumiko2
+=> END 
+
+#REGINA mad at JERRY
+~ mad_interaction_regina_jerry1
+=> END 
+
+~ mad_interaction_regina_jerry2
+=> END 
+
+#REGINA mad at MAXIM
+~ mad_interaction_regina_maxim1
+=> END 
+
+~ mad_interaction_regina_maxim2
+=> END 
+
+#REGINA mad at NASHIR
+~ mad_interaction_regina_nashir1
+=> END 
+
+~ mad_interaction_regina_nashir2
+=> END 
+
+
+#FUMIKO mad at JERRY
+~ mad_interaction_fumiko_jerry1
+=> END 
+
+~ mad_interaction_fumiko_jerry2
+=> END 
+
+#FUMIKO mad at MAXIM
+~ mad_interaction_fumiko_maxim1
+=> END 
+
+~ mad_interaction_fumiko_maxim2
+=> END 
+
+#FUMIKO mad at NASHIR
+~ mad_interaction_fumiko_nashir1
+=> END 
+
+~ mad_interaction_fumiko_nashir2
+=> END 
+
+#FUMIKO mad at REGINA
+~ mad_interaction_fumiko_regina1
+=> END 
+
+~ mad_interaction_fumiko_regina2
+=> END 
+
+
+##EVERYONE HATE JERRY
+~ mad_interaction_everyone_jerry1
+=> END 
+
+~ mad_interaction_everyone_jerry2
+=> END 
+
+~ mad_interaction_everyone_jerry3
+=> END 
+
+#HUNGER
+~ hunger_fumiko1
+=> END
+~ hunger_fumiko2
+=> END
+
+~ hunger_maxim1
+=> END 
+~ hunger_maxim2
+=> END 
+
+~ hunger_regina1
+=> END 
+~ hunger_regina2
+=> END 
+
+~ hunger_nashir1
+=> END 
+~ hunger_nashir2
+=> END 
+
+
+#SANITY LOW
+~ sanity_low_fumiko1
+=> END
+~ sanity_low_fumiko2
+=> END
+
+~ sanity_low_maxim1
+=> END 
+~ sanity_low_maxim2
+=> END 
+
+~ sanity_low_regina1
+=> END 
+~ sanity_low_regina2
+=> END 
+
+~ sanity_low_nashir1
+=> END 
+~ sanity_low_nashir2
+=> END 
+
+#SANITY CRAZY
+~ sanity_insane_fumiko1
+=> END
+~ sanity_insane_fumiko2
+=> END!
+~ sanity_insane_maxim1
+=> END 
+~ sanity_insane_maxim2
+=> END 
+~ sanity_insane_regina1
+=> END 
+~ sanity_insane_regina2
+=> END 
+~ sanity_insane_nashir1
+=> END 
+~ sanity_insane_nashir2
+=> END 
+
+#SANITY GOOD
+~ sanity_good_fumiko1
+=> END
+~ sanity_good_fumiko2
+=> END!
+~ sanity_good_maxim1
+=> END 
+~ sanity_good_maxim2
+=> END 
+~ sanity_good_regina1
+=> END 
+~ sanity_good_regina2
+=> END 
+~ sanity_good_nashir1
+=> END 
+~ sanity_good_nashir2
+=> END 
+
+############LEAVE THIS NULL
+~ null 
+=> END 

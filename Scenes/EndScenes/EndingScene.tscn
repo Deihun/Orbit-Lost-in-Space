@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgpoayc71lu3f"]
+
+[ext_resource type="Script" path="res://Scenes/EndScenes/ending_scene.gd" id="1_6ugeb"]
+
+[node name="EndingScene" type="Node2D"]
+script = ExtResource("1_6ugeb")
+
+[node name="img_Ending" type="Sprite2D" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(49.4925, 28.9409)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 9.25393
+offset_top = 11.6099
+offset_right = 614.254
+offset_bottom = 251.61
+scale = Vector2(0.0371133, 0.0616244)
+theme_override_font_sizes/font_size = 126
+text = "ENDING"

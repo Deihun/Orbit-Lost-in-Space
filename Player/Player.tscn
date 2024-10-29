@@ -1,4 +1,4 @@
-[gd_scene load_steps=281 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=287 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -11,9 +11,13 @@
 [ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="3_ay1c7"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 [ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
+[ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="3_siuyv"]
+[ext_resource type="PackedScene" uid="uid://blr60lckf51rn" path="res://Player/transition.tscn" id="4_5e847"]
+[ext_resource type="Shader" path="res://Player/BlackandWhite.gdshader" id="4_ov5gh"]
 [ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
 [ext_resource type="Texture2D" uid="uid://b58dt7l7pk8hc" path="res://Player/RedAlert.png" id="5_uu3ny"]
+[ext_resource type="Script" path="res://Player/crew_show.gd" id="7_2xvw1"]
 [ext_resource type="FontFile" uid="uid://c7uhqrt01aycb" path="res://Player/Dashhorizon-eZ5wg.otf" id="9_38whn"]
 [ext_resource type="Script" path="res://Player/UI_Resources_InRun.gd" id="10_bg53w"]
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
@@ -21,9 +25,14 @@
 [ext_resource type="Texture2D" uid="uid://cpoeki66yyjkf" path="res://Scenes/StartText.png" id="15_up6st"]
 [ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
+[ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50fry"]
+shader = ExtResource("4_ov5gh")
+shader_parameter/amount = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l85dg"]
 atlas = ExtResource("2_6y3nk")
@@ -1855,7 +1864,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsf36"]
 radius = 29.0
 
-[node name="player" type="Node2D" groups=["player"]]
+[node name="Player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
 script = ExtResource("1_mhmxe")
@@ -1867,6 +1876,23 @@ collision_layer = 2
 collision_mask = 54
 script = ExtResource("1_5ung8")
 
+[node name="PointLight2D" type="PointLight2D" parent="player"]
+z_index = 2
+position = Vector2(6, -40)
+color = Color(1, 1, 1, 0.180392)
+energy = 3.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter_smooth = 8.5
+shadow_item_cull_mask = 99
+texture = ExtResource("3_siuyv")
+texture_scale = 2.37
+height = 1.0
+
+[node name="_GameTimerLimit" type="Timer" parent="player"]
+one_shot = true
+script = ExtResource("23_rapkq")
+
 [node name="CheckingFor_OnHitEffect" type="Area2D" parent="player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/CheckingFor_OnHitEffect"]
@@ -1875,10 +1901,62 @@ shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
 
+[node name="Transition" parent="player/AllUIParents" instance=ExtResource("4_5e847")]
+metadata/_edit_lock_ = true
+
+[node name="GameOver" type="ColorRect" parent="player/AllUIParents"]
+visible = false
+material = SubResource("ShaderMaterial_50fry")
+offset_right = 1917.0
+offset_bottom = 1091.0
+color = Color(0, 0, 0, 0.945098)
+
+[node name="Label" type="Label" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 263.0
+offset_right = 1245.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "Try Again?"
+
+[node name="Label2" type="Label" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 443.0
+offset_right = 1518.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Your planet got destroyed and you along with it!"
+
+[node name="_Retry" type="Button" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 580.0
+offset_right = 1449.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 61
+text = "Retry"
+
+[node name="_Quit" type="Button" parent="player/AllUIParents/GameOver"]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 687.0
+offset_right = 1452.0
+offset_bottom = 779.0
+theme_override_font_sizes/font_size = 61
+text = "Main Menu"
+
 [node name="BlackTransition" type="AnimatedSprite2D" parent="player/AllUIParents"]
 visible = false
-position = Vector2(965, 525)
-scale = Vector2(1.01, 1.01)
+position = Vector2(964.805, 533.8)
+scale = Vector2(1.0102, 1.0263)
 sprite_frames = SubResource("SpriteFrames_dgrpv")
 frame = 99
 frame_progress = 1.0
@@ -1893,6 +1971,7 @@ texture = ExtResource("15_up6st")
 
 [node name="Red_UI_Indicator" type="Node2D" parent="player/AllUIParents"]
 visible = false
+scale = Vector2(1.01833, 1.02692)
 script = ExtResource("4_q5jjs")
 
 [node name="Red" type="Sprite2D" parent="player/AllUIParents/Red_UI_Indicator"]
@@ -1903,10 +1982,28 @@ texture = ExtResource("5_uu3ny")
 wait_time = 0.1
 autostart = true
 
+[node name="Crew_Show" type="Control" parent="player/AllUIParents"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1369.0
+offset_top = 1021.0
+offset_right = 1897.0
+offset_bottom = 1110.0
+script = ExtResource("7_2xvw1")
+
+[node name="Crew_container" type="HBoxContainer" parent="player/AllUIParents/Crew_Show"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 560.0
+offset_bottom = 128.0
+theme_override_constants/separation = 154
+
 [node name="FullInventoryIndicator" parent="player/AllUIParents" instance=ExtResource("2_1yavb")]
 visible = false
 z_index = 200
-position = Vector2(419, 875)
+position = Vector2(327, 875)
 scale = Vector2(2.065, 2.065)
 
 [node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
@@ -2044,7 +2141,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Medicine: 0"
 
 [node name="Game in EarlyProgress" type="Label" parent="player/AllUIParents"]
-visible = false
 offset_left = 1515.0
 offset_top = 1038.0
 offset_right = 1902.0
@@ -2053,6 +2149,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "GAME IS STILL IN EARLY DEVELOPMENT PROGRESS"
 
 [node name="Label_Timer" type="Label" parent="player/AllUIParents"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.003125
 anchor_top = 0.0157407
@@ -2124,11 +2221,11 @@ texture = ExtResource("1_8a5wi")
 offset = Vector2(0, -64.35)
 
 [node name="Player4" type="AnimatedSprite2D" parent="player"]
+light_mask = 0
 position = Vector2(4, -36)
 scale = Vector2(0.784612, 1.02256)
 sprite_frames = SubResource("SpriteFrames_5ii05")
-animation = &"Up_animation"
-frame_progress = 0.802908
+animation = &"Pickup_animation"
 offset = Vector2(0, -130.43)
 metadata/_edit_lock_ = true
 
@@ -2146,9 +2243,10 @@ position = Vector2(9, -40)
 shape = SubResource("CircleShape2D_dsf36")
 
 [node name="PlayerCamera" type="Camera2D" parent="player"]
+position = Vector2(13, -148)
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 1.5
+position_smoothing_speed = 2.5
 
 [node name="PickUpCooldown" type="Timer" parent="player"]
 wait_time = 0.5
@@ -2157,8 +2255,11 @@ one_shot = true
 [node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
 
+[connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
 [connection signal="body_exited" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_exited"]
+[connection signal="pressed" from="player/AllUIParents/GameOver/_Retry" to="player" method="_on__retry_pressed"]
+[connection signal="pressed" from="player/AllUIParents/GameOver/_Quit" to="player" method="_on__quit_pressed"]
 [connection signal="timeout" from="player/AllUIParents/Red_UI_Indicator/_Red_UI_Indicator_timer" to="player/AllUIParents/Red_UI_Indicator" method="_on__red_ui_indicator_timer_timeout"]
 [connection signal="button_down" from="player/AllUIParents/Pause_Button" to="player" method="_on_pause_button_button_down"]
 [connection signal="animation_finished" from="player/Player4" to="player" method="_on_player_4_animation_finished"]

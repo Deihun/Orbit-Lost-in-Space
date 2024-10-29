@@ -1,9 +1,12 @@
-[gd_scene load_steps=262 format=3 uid="uid://d085vtooegqlb"]
+[gd_scene load_steps=263 format=3 uid="uid://d085vtooegqlb"]
 
 [ext_resource type="Script" path="res://Resources/Small_Fuel/SmallBattery.gd" id="1_xiaef"]
 [ext_resource type="Texture2D" uid="uid://bdoqu4er4i22x" path="res://Resources/Small_Fuel/Small_Fuel_Animation.png" id="2_jr41g"]
 [ext_resource type="Texture2D" uid="uid://bkcs8lfob6bgk" path="res://Resources/Small_Fuel/Lightning Effect.png" id="2_o6130"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_l756a"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e2yq4"]
+polygon = PackedVector2Array(-19, 98, -20, 103, -13, 109, 5, 111, 20, 108, 24, 104, 19, 93, 4, 91, -15, 93, -17, 94)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxtr2"]
 atlas = ExtResource("2_o6130")
@@ -1806,6 +1809,9 @@ gravity_scale = 0.0
 lock_rotation = true
 linear_damp = 6.5
 script = ExtResource("1_xiaef")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_e2yq4")
 
 [node name="LightningTimer" type="Timer" parent="."]
 autostart = true

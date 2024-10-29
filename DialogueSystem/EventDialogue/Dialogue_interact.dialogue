@@ -1,0 +1,144 @@
+~ interaction_maxim
+if !already_talk["Maxim"]
+	set already_talk["Maxim"] = true
+	if _relationship["Maxim"] > 0.8
+		Maxim: [[What do you want?|Is there something you need?|Hmm?]]
+		- Give food for today
+			if ration >= _rationConsumes["Maxim"] and already_eaten["Maxim"] == false 
+				do reduceFood(crewEat("Maxim", ration))
+				set already_eaten["Maxim"] = true 
+				Maxim: Thankyou very much!
+			elif ration >= _rationConsumes["Maxim"] already_eaten["Maxim"] == true
+				Maxim: Already got my meal comrade 
+				set already_talk["Maxim"] = false
+			else
+				Maxim: Theres no food!
+				set already_talk["Maxim"] = false
+		- Give medicine
+			if medicine >= 1
+				Maxim: Thankyou very much!
+				set _disease["Maxim"] = 0.0
+			else
+				Jerry: I dont have any medicine to offer.
+				set already_talk["Maxim"] = false
+		- Order
+			Jerry: Testing Order
+		- [[Nevermind|Talk to you later|See you arounhd]]
+			set already_talk["Maxim"] = false
+			=> END
+	else
+		Maxim: [[What do you want?|Is there something you need?|Hmm?]]
+		- Give food for today
+			if ration >= _rationConsumes["Maxim"] and already_eaten["Maxim"] == false 
+				do reduceFood(crewEat("Maxim", ration))
+				set already_eaten["Maxim"] = true 
+				Maxim: Thankyou very much!
+			elif ration >= _rationConsumes["Maxim"] already_eaten["Maxim"] == true
+				Maxim: Already got my meal comrade 
+				set already_talk["Maxim"] = false
+			else
+				Maxim: Theres no food!
+				set already_talk["Maxim"] = false
+		- Give medicine
+			if medicine >= 1
+				Maxim: Thankyou very much!
+				set _disease["Maxim"] = 0.0
+			else
+				Jerry: I dont have any medicine to offer.
+				set already_talk["Maxim"] = false
+else
+	Jerry: I already talk with him...
+=> END
+
+
+
+~ interaction_regina
+if !already_talk["Regina"]
+	set already_talk["Regina"] = true
+	Regina: [[What do you want?|Is there something you need?|Hmm?]]
+	- Give food for today
+		if ration >= _rationConsumes["Regina"] and already_eaten["Regina"] == false 
+			do reduceFood(crewEat("Regina", ration))
+			set already_eaten["Regina"] = true 
+			Regina: Thankyou very much!
+		elif ration >= _rationConsumes["Regina"] already_eaten["Regina"] == true
+			Regina: Already got my meal comrade 
+			set already_talk["Regina"] = false 
+		else
+			Regina: Theres no food!
+			set already_talk["Regina"] = false 
+	- Give medicine
+		if medicine >= 1
+			Regina: Thankyou very much!
+			set _disease["Regina"] = 0.0
+		else
+			Jerry: I dont have any medicine to offer.
+			set already_talk["Regina"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Regina"] = false
+		=> END
+else
+	Jerry: I already talk with him...
+=> END
+
+
+
+~ interaction_fumiko
+if !already_talk["Fumiko"]
+	set already_talk["Fumiko"] = true
+	Fumiko: [[What do you want?|Is there something you need?|Hmm?]]
+	- Give food for today
+		if ration >= _rationConsumes["Fumiko"] and already_eaten["Fumiko"] == false 
+			do reduceFood(crewEat("Fumiko", ration))
+			set already_eaten["Fumiko"] = true 
+			Fumiko: Thankyou very much!
+		elif ration >= _rationConsumes["Fumiko"] already_eaten["Fumiko"] == true
+			Fumiko: Already got my meal comrade 
+			set already_talk["Fumiko"] = false 
+		else
+			Fumiko: Theres no food!
+			set already_talk["Fumiko"] = false 
+	- Give medicine
+		if medicine >= 1
+			Regina: Thankyou very much!
+			set _disease["Fumiko"] = 0.0
+		else
+			Jerry: I dont have any medicine to offer.
+			set already_talk["Fumiko"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Fumiko"] = false
+		=> END
+else
+	Jerry: I already talk with him...
+=> END
+
+
+
+~ interaction_nashir
+if !already_talk["Nashir"]
+	set already_talk["Nashir"] = true
+	Nashir: [[What do you want?|Is there something you need?|Hmm?]]
+	- Give food for today
+		if ration >= _rationConsumes["Nashir"] and already_eaten["Nashir"] == false 
+			do reduceFood(crewEat("Nashir", ration))
+			set already_eaten["Nashir"] = true 
+			Nashir: Thankyou very much!
+		elif ration >= _rationConsumes["Nashir"] already_eaten["Nashir"] == true
+			Nashir: Already got my meal comrade 
+			set already_talk["Nashir"] = false 
+		else
+			Nashir: Theres no food!
+			set already_talk["Nashir"] = false 
+	- Give medicine
+		if medicine >= 1
+			Regina: Thankyou very much!
+			set _disease["Nashir"] = 0.0
+		else
+			Jerry: I dont have any medicine to offer.
+			set already_talk["Nashir"] = false
+	- [[Nevermind|Talk to you later|See you arounhd]]
+		set already_talk["Nashir"] = false
+		=> END
+else
+	Jerry: I already talk with him...
+=> END

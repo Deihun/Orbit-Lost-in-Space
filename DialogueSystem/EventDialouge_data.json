@@ -1,0 +1,428 @@
+[
+	{
+		"Name" : "WithCompleteGroup_without_Nashir_1",
+		"TAG" : ["Fumiko","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Nashir_2",
+		"TAG" : ["Fumiko","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Nashir_3",
+		"TAG" : ["Fumiko","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Nashir_4",
+		"TAG" : ["Fumiko","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Nashir_5",
+		"TAG" : ["Fumiko","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Fumiko_1",
+		"TAG" : ["Nashir","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Fumiko_2",
+		"TAG" : ["Nashir","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Fumiko_3",
+		"TAG" : ["Nashir","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Fumiko_4",
+		"TAG" : ["Nashir","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Fumiko_5",
+		"TAG" : ["Nashir","Maxim","Regina","FIRSTDAY"]
+	},
+	{
+		"Name" : "WithCompleteGroup_without_Maxim_1",
+		"TAG" : ["Nashir","Fumiko","Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "WithCompleteGroup_without_Maxim_2",
+		"TAG" : ["Nashir","Fumiko","Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "WithCompleteGroup_without_Maxim_3",
+		"TAG" : ["Nashir","Fumiko","Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "WithCompleteGroup_without_Maxim_4",
+		"TAG" : ["Nashir","Fumiko","Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "WithCompleteGroup_without_Maxim_5",
+		"TAG" : ["Nashir","Fumiko","Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "WithCompleteGroup_without_Regina_1",
+		"TAG" : ["Nashir","Fumiko","Maxim","FIRSTDAY"]
+	},
+			{
+		"Name" : "WithCompleteGroup_without_Regina_2",
+		"TAG" : ["Nashir","Fumiko","Maxim","FIRSTDAY"]
+	},
+			{
+		"Name" : "WithCompleteGroup_without_Regina_3",
+		"TAG" : ["Nashir","Fumiko","Maxim","FIRSTDAY"]
+	},
+			{
+		"Name" : "WithCompleteGroup_without_Regina_4",
+		"TAG" : ["Nashir","Fumiko","Maxim","FIRSTDAY"]
+	},
+			{
+		"Name" : "WithCompleteGroup_without_Regina_5",
+		"TAG" : ["Nashir","Fumiko","Maxim","FIRSTDAY"]
+	},
+	
+	
+	
+	{
+		"Name" : "ReginaOnly_1",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "ReginaOnly_2",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "ReginaOnly_3",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+		{
+		"Name" : "MaximOnly_1",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+			{
+		"Name" : "MaximOnly_2",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+			{
+		"Name" : "MaximOnly_3",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+			{
+		"Name" : "FumikoOnly_2",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+				{
+		"Name" : "FumikoOnly_3",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+				{
+		"Name" : "FumikoOnly_2",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+				{
+		"Name" : "FumikoOnly_3",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+				{
+		"Name" : "NashirOnly_1",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+					{
+		"Name" : "NashirOnly_2",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},
+					{
+		"Name" : "NashirOnly_3",
+		"TAG" : ["Regina","FIRSTDAY"]
+	},{
+		"Name": "Jerry_Only_1",
+		"TAG": ["FIRSTDAY"]
+	},{
+		"Name": "Jerry_Only_2",
+		"TAG": ["FIRSTDAY"]
+	},{
+		"Name": "Jerry_Only_3",
+		"TAG": ["FIRSTDAY"]
+	},{
+		"Name": "Jerry_Only_4",
+		"TAG": ["FIRSTDAY"]
+	},
+
+	{
+		"Name": "mad_interaction_maxim_nashir1",
+		"TAG": ["maxin_hate_nashir"]
+	},
+	{
+		"Name": "mad_interaction_maxim_nashir2",
+		"TAG": ["maxin_hate_nashir"]
+	},
+	{
+		"Name": "mad_interaction_maxim_jerry1",
+		"TAG": ["maxin_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_maxim_jerry2",
+		"TAG": ["maxin_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_maxim_fumiko1",
+		"TAG": ["maxin_hate_fumiko"]
+	},
+	{
+		"Name": "mad_interaction_maxim_fumiko2",
+		"TAG": ["maxin_hate_fumiko"]
+	},
+	{
+		"Name": "mad_interaction_maxim_regina1",
+		"TAG": ["maxin_hate_regina"]
+	},
+	{
+		"Name": "mad_interaction_maxim_regina2",
+		"TAG": ["maxin_hate_regina"]
+	},
+	{
+		"Name": "mad_interaction_nashir_regina1",
+		"TAG": ["naashir_hate_regina"]
+	},
+	{
+		"Name": "mad_interaction_nashir_regina2",
+		"TAG": ["naashir_hate_regina"]
+	},
+	{
+		"Name": "mad_interaction_nashir_jerry1",
+		"TAG": ["naashir_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_nashir_jerry2",
+		"TAG": ["naashir_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_nashir_maxim1",
+		"TAG": ["naashir_hate_maxim"]
+	},
+	{
+		"Name": "mad_interaction_nashir_maxim2",
+		"TAG": ["naashir_hate_maxim"]
+	},
+	{
+		"Name": "mad_interaction_nashir_fumiko1",
+		"TAG": ["naashir_hate_fumiko"]
+	},
+	{
+		"Name": "mad_interaction_nashir_fumiko2",
+		"TAG": ["naashir_hate_fumiko"]
+	},
+	{
+		"Name": "mad_interaction_regina_fumiko1",
+		"TAG": ["regina_hate_fumiko"]
+	},
+	{
+		"Name": "mad_interaction_regina_fumiko2",
+		"TAG": ["regina_hate_fumiko"]
+	},
+	{
+		"Name": "mad_interaction_regina_jerry1",
+		"TAG": ["regina_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_regina_jerry2",
+		"TAG": ["regina_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_regina_maxim1",
+		"TAG": ["regina_hate_maxim"]
+	},
+	{
+		"Name": "mad_interaction_regina_maxim2",
+		"TAG": ["regina_hate_maxim"]
+	},
+	{
+		"Name": "mad_interaction_regina_nashir1",
+		"TAG": ["regina_hate_nashir"]
+	},
+	{
+		"Name": "mad_interaction_regina_nashir2",
+		"TAG": ["regina_hate_nashir"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_jerry1",
+		"TAG": ["fumiko_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_jerry2",
+		"TAG": ["fumiko_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_maxim1",
+		"TAG": ["fumiko_hate_maxim"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_maxim2",
+		"TAG": ["fumiko_hate_maxim"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_nashir1",
+		"TAG": ["fumiko_hate_nashir"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_nashir2",
+		"TAG": ["fumiko_hate_nashir"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_regina1",
+		"TAG": ["fumiko_hate_regina"]
+	},
+	{
+		"Name": "mad_interaction_fumiko_regina2",
+		"TAG": ["fumiko_hate_regina"]
+	},
+	{
+		"Name": "mad_interaction_everyone_jerry1",
+		"TAG": ["everyone_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_everyone_jerry2",
+		"TAG": ["everyone_hate_jerry"]
+	},
+	{
+		"Name": "mad_interaction_everyone_jerry3",
+		"TAG": ["everyone_hate_jerry"]
+	},
+		{
+			"Name": "hunger_fumiko1",
+			"TAG": ["fumiko_hunger"]
+		},
+		{
+			"Name": "hunger_fumiko2",
+			"TAG": ["fumiko_hunger"]
+		},
+		{
+			"Name": "hunger_maxim1",
+			"TAG": ["maxim_hunger"]
+		},
+		{
+			"Name": "hunger_maxim2",
+			"TAG": ["maxim_hunger"]
+		},
+		{
+			"Name": "hunger_regina1",
+			"TAG": ["regina_hunger"]
+		},
+		{
+			"Name": "hunger_regina2",
+			"TAG": ["regina_hunger"]
+		},
+		{
+			"Name": "hunger_nashir1",
+			"TAG": ["nashir_hunger"]
+		},
+		{
+			"Name": "hunger_nashir2",
+			"TAG": ["nashir_hunger"]
+	},
+	{
+		"Name": "sanity_low_fumiko1",
+		"TAG": ["fumiko_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_fumiko2",
+		"TAG": ["fumiko_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_maxim1",
+		"TAG": ["maxim_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_maxim2",
+		"TAG": ["maxim_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_regina1",
+		"TAG": ["regina_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_regina2",
+		"TAG": ["regina_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_nashir1",
+		"TAG": ["nashir_sanity_low"]
+	},
+	{
+		"Name": "sanity_low_nashir2",
+		"TAG": ["nashir_sanity_low"]
+	},
+	{
+		"Name": "sanity_insane_fumiko1",
+		"TAG": ["fumiko_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_fumiko2",
+		"TAG": ["fumiko_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_maxim1",
+		"TAG": ["maxim_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_maxim2",
+		"TAG": ["maxim_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_regina1",
+		"TAG": ["regina_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_regina2",
+		"TAG": ["regina_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_nashir1",
+		"TAG": ["nashir_sanity_insane"]
+	},
+	{
+		"Name": "sanity_insane_nashir2",
+		"TAG": ["nashir_sanity_insane"]
+	},
+	{
+		"Name": "sanity_good_fumiko1",
+		"TAG": ["fumiko_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_fumiko2",
+		"TAG": ["fumiko_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_maxim1",
+		"TAG": ["maxim_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_maxim2",
+		"TAG": ["maxim_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_regina1",
+		"TAG": ["regina_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_regina2",
+		"TAG": ["regina_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_nashir1",
+		"TAG": ["nashir_sanity_good"]
+	},
+	{
+		"Name": "sanity_good_nashir2",
+		"TAG": ["nashir_sanity_good"]
+	},
+
+
+
+
+
+
+	{
+		"Name": "null",
+		"TAG": [""]
+	}
+]

@@ -9,26 +9,26 @@
 script = ExtResource("1_jnq3i")
 
 [node name="EventUIAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(955, 525)
+visible = false
+position = Vector2(989, 542)
 sprite_frames = ExtResource("4_coms2")
 animation = &"OpeningAnimation"
-frame = 28
-frame_progress = 1.0
 
-[node name="Event_UI" type="Node2D" parent="."]
+[node name="EventReader" type="Node2D" parent="."]
 visible = false
 script = ExtResource("2_nkt3i")
 
-[node name="Sprite2D" type="Sprite2D" parent="Event_UI"]
+[node name="Sprite2D" type="Sprite2D" parent="EventReader"]
+visible = false
 position = Vector2(968, 549)
 texture = ExtResource("2_qyjc8")
 
-[node name="Title" type="Label" parent="Event_UI"]
+[node name="Title" type="Label" parent="EventReader"]
 z_index = 20
-offset_left = 613.0
-offset_top = 178.0
-offset_right = 1256.0
-offset_bottom = 280.0
+offset_left = 231.0
+offset_top = 167.0
+offset_right = 874.0
+offset_bottom = 269.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
 text = "title"
@@ -36,19 +36,19 @@ autowrap_mode = 3
 justification_flags = 227
 text_overrun_behavior = 1
 
-[node name="Description" type="Label" parent="Event_UI"]
+[node name="Description" type="Label" parent="EventReader"]
 z_index = 20
-offset_left = 598.0
-offset_top = 310.0
-offset_right = 1325.0
-offset_bottom = 847.0
+offset_left = 246.0
+offset_top = 285.0
+offset_right = 1018.0
+offset_bottom = 822.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "description
 "
 autowrap_mode = 3
 
-[node name="Container" type="Node2D" parent="Event_UI"]
-position = Vector2(1645, 112)
+[node name="Container" type="Node2D" parent="EventReader"]
+position = Vector2(1425, 260)
 
 [connection signal="animation_finished" from="EventUIAnimation" to="." method="_on_opening_ui_scene_animation_finished"]

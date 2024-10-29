@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5vtus1x6a8lx"]
+
+[ext_resource type="Texture2D" uid="uid://xm6lvp8uq8ah" path="res://Resources/CREW/CrewLobby/Nashir/Nashir Lobby.png" id="1_jyica"]
+[ext_resource type="Script" path="res://Resources/CREW/CrewLobby/nashir.gd" id="2_6j87k"]
+[ext_resource type="Texture2D" uid="uid://byi02ect741jy" path="res://Resources/CREW/CrewLobby/Nashir/Nashir Lobby_neutral.png" id="2_jgbbo"]
+[ext_resource type="Texture2D" uid="uid://dpea3voevoe58" path="res://Resources/CREW/CrewLobby/Nashir/Nashir Lobby_Sick.png" id="3_pgb0j"]
+
+[node name="Nashir" type="Sprite2D"]
+y_sort_enabled = true
+texture = ExtResource("1_jyica")
+offset = Vector2(0, -700)
+script = ExtResource("2_6j87k")
+
+[node name="Reaction" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("2_jgbbo")
+offset = Vector2(0, -700)
+
+[node name="Sick" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
+texture = ExtResource("3_pgb0j")
+offset = Vector2(0, -700)

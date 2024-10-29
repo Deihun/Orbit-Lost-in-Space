@@ -51,8 +51,9 @@ func add_new_event():
 		new_event[choice_id] = TemporaryChoices[choice_id]
 	if CommandList.size() > 0:
 		new_event["Command"] = CommandList
-	if !$Panel_Conditions/LineEdit_Command_Value.text == "" and _Condition_ValueGroup.size() > 0:
-		new_event["Conditions"] = [$Panel_Conditions/LineEdit_Command_Conditions.text,_Condition_ValueGroup]
+	if _Condition_ValueGroup.size() > 0:
+		print("more than shit")
+		new_event["Conditions"] = _Condition_ValueGroup.duplicate(true)
 	event_data.append(new_event)
 	if _probabilityGroup.size()> 0:
 		var a = _probabilityGroup.duplicate(true)
@@ -125,8 +126,9 @@ func add_items():
 	var target_id = int($Panel_ButtonGeneration/LineEdit_ID.text.strip_edges())
 	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
 	var items = []
-	var item_name = $Panel_ButtonGeneration/LineEdit_item.text.strip_edges()
+	var item_name = $Panel_ButtonGeneration/ItemType_OptionButton.text.to_upper()
 	var item_amount= int($Panel_ButtonGeneration/LineEdit_amount.text.strip_edges())
+	
 	current_Items.append([item_name, int(item_amount)])
 	print(current_Items)
 	clear_item_UI()
@@ -137,14 +139,14 @@ func reset_items():
 	$Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text= ""
 
 func clear_item_UI():
-	$Panel_ButtonGeneration/LineEdit_item.text = ""
 	$Panel_ButtonGeneration/LineEdit_amount.text = ""
 
 func on_finalize_choice_button():
 	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
+	var targetId = int($Panel_ButtonGeneration/LineEdit_ID.text)
 	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
-		TemporaryChoices["choice-"+str(current_choice_id+1)] = [
-			int(current_choice_id),
+		TemporaryChoices["Choice-"+str(current_choice_id+1)] = [
+			targetId,
 			current_Items,
 			description
 		]
@@ -153,7 +155,14 @@ func on_finalize_choice_button():
 		if TemporaryChoices.keys().has("HiddenChoice"):
 			print("ERROR: HiddenChoice can only be called once")
 			return
-		TemporaryChoices["HiddenChoice"] = [[[str($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Condition.text).capitalize(),[str($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Item.text).capitalize(), int($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Amount.text)]]],[int(current_choice_id),current_Items,	description
+		#if $Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text == "HAS_UNIQUE_ITEM":
+		TemporaryChoices["HiddenChoice"] = [
+			[
+				[str($Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text),
+				[str($Panel_ButtonGeneration/Panel_HiddenChoice/_ItemName.text.to_upper()), 
+				int($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Amount.text)
+			]]],
+			[targetId ,current_Items,	description
 		]
 		]
 	update_UI()
@@ -173,6 +182,7 @@ func _ClearItems() -> void:
 
 
 func _RESET_TemporaryITEM() -> void:
+	current_choice_id = 0
 	TemporaryChoices.clear()
 	update_UI()
 	pass # Replace with function body.
@@ -181,7 +191,7 @@ func _RESET_TemporaryITEM() -> void:
 #						COMMAND TAB
 var CommandList = []
 func _EnterCommand() -> void:
-	var line = str($Panel_Command/LineEdit_Command.text).capitalize()
+	var line = str($Panel_Command/LineEdit_Command.text)
 	CommandList.append(line)
 	update_UI()
 	pass # Replace with function body.
@@ -197,7 +207,12 @@ var _Condition_ValueGroup = []
 
 
 func _AddValue() -> void:
-	_Condition_ValueGroup.append($Panel_Conditions/LineEdit_Command_Value.text)
+	_ConditionGroupsReset()
+	#_Condition_ValueGroup[0][0] = $Panel_Conditions/Conditional_OptionButton.text
+	#_Condition_ValueGroup[0][1] = $Panel_Conditions/LineEdit_Value.text
+	#_Condition_ValueGroup = [[$Panel_Conditions/Conditional_OptionButton.text][$Panel_Conditions/LineEdit_Value.text]]
+	_Condition_ValueGroup.append($Panel_Conditions/Conditional_OptionButton.text)
+	_Condition_ValueGroup.append($Panel_Conditions/LineEdit_Value.text)
 	update_UI()
 	pass # Replace with function body.
 
@@ -236,4 +251,9 @@ func _ProbabilityAddGroup() -> void:
 	_probabilityGroup.append(value)
 	print("DEBUG COMPARISON: ", value," : ", _probabilityGroup)
 	update_UI()
+	pass # Replace with function body.
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
 	pass # Replace with function body.

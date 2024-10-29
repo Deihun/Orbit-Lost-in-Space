@@ -1,26 +1,661 @@
-[gd_scene load_steps=26 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=126 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
-[ext_resource type="Texture2D" uid="uid://biepyio2v1od6" path="res://Scenes/arrow.png" id="2_c3qtk"]
+[ext_resource type="Texture2D" uid="uid://bood1yhkad03s" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png" id="2_66wyx"]
 [ext_resource type="Script" path="res://Scenes/CameraMovement.gd" id="2_uajib"]
 [ext_resource type="PackedScene" uid="uid://cb52e7f7m0hvb" path="res://Scenes/Ingame/pause_menu.tscn" id="3_h4mnh"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_nae67"]
-[ext_resource type="Texture2D" uid="uid://bnisegno5uf6s" path="res://Button_Textures/EndCycle_Button.png" id="4_3ysvw"]
 [ext_resource type="Texture2D" uid="uid://bsb3mkmhlb03u" path="res://Scenes/Ingame/Event_Notification_UI.png" id="5_00itk"]
+[ext_resource type="Script" path="res://Scenes/Command_Live.gd" id="5_ntf38"]
+[ext_resource type="Script" path="res://Scenes/end_cycle.gd" id="6_rquqo"]
 [ext_resource type="Texture2D" uid="uid://b2ytbiutos4vv" path="res://Scenes/Cycle_Report/Meteor_Cyce.png" id="6_scv0j"]
+[ext_resource type="Texture2D" uid="uid://bag5mgeqm47sn" path="res://Scenes/UI/EndCycle_Enable.png" id="7_ke8mh"]
 [ext_resource type="Texture2D" uid="uid://ukon4oh76ai7" path="res://InteriorScene/Whole Interior Scene.png" id="8_4grje"]
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
+[ext_resource type="Texture2D" uid="uid://b0uu8qtxo3joe" path="res://Scenes/SceneAssets/ArrowNavigation.png" id="11_0iy23"]
+[ext_resource type="Texture2D" uid="uid://irge65po27jl" path="res://Scenes/craft.png" id="12_krim2"]
+[ext_resource type="Texture2D" uid="uid://cnb6mk0kko7a" path="res://Lobby.png" id="12_nbaaq"]
+[ext_resource type="Script" path="res://Scenes/lobby.gd" id="12_qmdri"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
-[ext_resource type="Texture2D" uid="uid://dpt3p0eq40v4v" path="res://Scenes/ExpeditionSelection/Expedition Selection.png" id="13_t2sia"]
+[ext_resource type="Script" path="res://Scenes/craft_button.gd" id="14_boj56"]
 [ext_resource type="Script" path="res://Scenes/storage_scene.gd" id="14_dtqtq"]
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
 [ext_resource type="Script" path="res://Scenes/Spareparts.gd" id="14_vw57t"]
+[ext_resource type="Texture2D" uid="uid://cd21p2lrg3shh" path="res://Scenes/CraftingUI/HoveringMouse_AICrafting.png" id="15_4vfma"]
 [ext_resource type="PackedScene" uid="uid://dcb5l6014oa70" path="res://Scenes/Cycle_Report/CycleReport_Bar.tscn" id="15_640qk"]
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 [ext_resource type="Texture2D" uid="uid://dw6ae7xyyamkp" path="res://Scenes/Cycle_Report/ExpeditionReportBG.png" id="17_8py32"]
+[ext_resource type="Texture2D" uid="uid://c5wxf42th7rbc" path="res://Scenes/Between Wall.png" id="17_raxb3"]
+[ext_resource type="Texture2D" uid="uid://hj48j1tcj24y" path="res://Scenes/ExpeditionSelection/Expedition.png" id="19_hgekd"]
+[ext_resource type="Texture2D" uid="uid://cc1k8exi08mao" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/NormalSpace.png" id="19_veuuq"]
+[ext_resource type="Texture2D" uid="uid://bos6vw3go366u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonShipAnimation.png" id="20_8oew0"]
+[ext_resource type="Script" path="res://Scenes/expedition_selection.gd" id="21_iriww"]
+[ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
+[ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
+[ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
+size = Vector2(159.5, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h45yn"]
+size = Vector2(170, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chk0y"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 776, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlwgl"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 776, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsbjg"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 776, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11xhu"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 776, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m88o"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 776, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgude"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kowhj"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp83o"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5l71"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc1cv"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_216pw"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofmp0"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3lnr"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb68s"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iex7"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwn7g"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_they2"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8k7o"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b11lr"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg6ft"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v377"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgbii"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0kim"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqrga"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxrrq"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvnfv"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5omvl"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52jm1"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1l5i"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq583"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glkm4"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_745aj"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tjix"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x2lo"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxgk6"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pawl"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd4j5"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho4t1"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jijg6"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sdde"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3rmm"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr8rt"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgdq5"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7nc7"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a4gy"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgxke"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 776, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oauq"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 1164, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajuwo"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 1552, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tie8"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 1940, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n60rd"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 2328, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5swtu"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2926, 2716, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3n1j"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlkxp"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_341w4"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_821fj"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0rgf"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inxhv"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjxwq"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 0, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65i8n"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve2un"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(418, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38hfq"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(836, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxbmx"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1254, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bgj7"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(1672, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlorf"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2090, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8r5b"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(2508, 388, 418, 388)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s1u5"]
+atlas = ExtResource("15_4vfma")
+region = Rect2(0, 776, 418, 388)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01g2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chk0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlwgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsbjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11xhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m88o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgude")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kowhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp83o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5l71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc1cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_216pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofmp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3lnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb68s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iex7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwn7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_they2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8k7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b11lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg6ft")
+}],
+"loop": true,
+"name": &"Crafting",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v377")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgbii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0kim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqrga")
+}],
+"loop": false,
+"name": &"HoverBlinking",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxrrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvnfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5omvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52jm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1l5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq583")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glkm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_745aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tjix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x2lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxgk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pawl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd4j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho4t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jijg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sdde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3rmm")
+}],
+"loop": false,
+"name": &"HoveringIn",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr8rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr8rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgdq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgdq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7nc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a4gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgxke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oauq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajuwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tie8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n60rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5swtu")
+}],
+"loop": false,
+"name": &"HoveringOut",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3n1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlkxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_341w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_821fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0rgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inxhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjxwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65i8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve2un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38hfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxbmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bgj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlorf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8r5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s1u5")
+}],
+"loop": true,
+"name": &"Sleeping",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2reso"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2sua"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5al8"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n7hy"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6uwx"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbcvj"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(404, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkogs"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(0, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2jga"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(202, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv5ng"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(404, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg0j2"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(606, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wjoc"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(606, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qexn0"]
+atlas = ExtResource("19_veuuq")
+region = Rect2(606, 404, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vwb4"]
+atlas = ExtResource("20_8oew0")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4y7q"]
+atlas = ExtResource("20_8oew0")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej6sa"]
+atlas = ExtResource("20_8oew0")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km7gi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2reso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2sua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5al8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n7hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6uwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbcvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkogs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2jga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv5ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg0j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wjoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qexn0")
+}],
+"loop": true,
+"name": &"Space",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vwb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4y7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej6sa")
+}],
+"loop": true,
+"name": &"abandonship",
+"speed": 1.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55a4j"]
 size = Vector2(267.869, 259.306)
@@ -39,9 +674,14 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2162.0
+offset_top = 786.58
+offset_right = 2162.0
+offset_bottom = 786.58
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m612p")
+metadata/_edit_lock_ = true
 
 [node name="TutorialPanel_Folder" type="Node2D" parent="."]
 visible = false
@@ -113,6 +753,21 @@ z_index = 1
 position = Vector2(-567.5, 78.4998)
 scale = Vector2(0.998006, 1)
 
+[node name="EndCycle" type="Area2D" parent="cam2d/Button_navigation_node_parent"]
+position = Vector2(-255.008, -529.5)
+scale = Vector2(1.002, 1)
+script = ExtResource("6_rquqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cam2d/Button_navigation_node_parent/EndCycle"]
+position = Vector2(176.249, -1.99986)
+scale = Vector2(0.999998, 1)
+shape = SubResource("RectangleShape2D_g5rh8")
+
+[node name="Sprite2D" type="Sprite2D" parent="cam2d/Button_navigation_node_parent/EndCycle"]
+position = Vector2(174.874, -4.99988)
+scale = Vector2(0.675925, 0.748)
+texture = ExtResource("7_ke8mh")
+
 [node name="MeteorCyce" type="Sprite2D" parent="cam2d/Button_navigation_node_parent"]
 z_index = 1
 position = Vector2(-255.008, -529.5)
@@ -150,33 +805,29 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[node name="LeftButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
-offset_left = -383.264
-offset_top = 203.5
-offset_right = -128.264
-offset_bottom = 458.5
-scale = Vector2(0.998006, 1)
-texture_normal = ExtResource("2_c3qtk")
-metadata/_edit_use_anchors_ = true
+[node name="LeftButton_UI" type="Button" parent="cam2d/Button_navigation_node_parent"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -394.0
+offset_top = 273.0
+offset_right = -192.0
+offset_bottom = 389.0
 
-[node name="RightButton_UI" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
-offset_left = 1489.47
-offset_top = 447.5
-offset_right = 1744.47
-offset_bottom = 702.5
-rotation = -3.13541
-scale = Vector2(0.998006, 1)
-texture_normal = ExtResource("2_c3qtk")
-metadata/_edit_use_anchors_ = true
+[node name="Sprite2D" type="Sprite2D" parent="cam2d/Button_navigation_node_parent/LeftButton_UI"]
+position = Vector2(88.8916, 62.5002)
+scale = Vector2(1.69646, 1.4925)
+texture = ExtResource("11_0iy23")
 
-[node name="NextDay_Button" type="TextureButton" parent="cam2d/Button_navigation_node_parent"]
-offset_left = -229.959
-offset_top = -649.5
-offset_right = 282.041
-offset_bottom = -137.5
-scale = Vector2(0.517161, 0.470855)
-texture_normal = ExtResource("4_3ysvw")
-metadata/_edit_use_anchors_ = true
+[node name="RightButton_UI" type="Button" parent="cam2d/Button_navigation_node_parent"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1275.04
+offset_top = 274.5
+offset_right = 1478.04
+offset_bottom = 392.5
+
+[node name="Sprite2D" type="Sprite2D" parent="cam2d/Button_navigation_node_parent/RightButton_UI"]
+position = Vector2(106.212, 63)
+scale = Vector2(-1.65461, 1.69109)
+texture = ExtResource("11_0iy23")
 
 [node name="UI_G" type="Control" parent="cam2d/Button_navigation_node_parent"]
 layout_mode = 3
@@ -184,43 +835,177 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Command" type="Panel" parent="cam2d"]
+visible = false
+z_index = 500
+offset_left = -1072.0
+offset_top = -547.0
+offset_right = 1053.0
+offset_bottom = 542.0
+script = ExtResource("5_ntf38")
+
+[node name="_Command" type="LineEdit" parent="cam2d/Command"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 8.0
+offset_right = 1975.0
+offset_bottom = 39.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="cam2d/Command"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 55.0
+offset_right = 2010.0
+offset_bottom = 1039.0
+
+[node name="RecentCode" type="Label" parent="cam2d/Command/ScrollContainer"]
+layout_mode = 2
+
+[node name="CommandCooldown" type="Timer" parent="cam2d/Command"]
+wait_time = 0.2
+one_shot = true
+
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
-position = Vector2(1672.74, -550)
-scale = Vector2(1.101, 1.02)
-metadata/_edit_lock_ = true
+position = Vector2(1931, -556)
+scale = Vector2(1, 1.05)
 
 [node name="WholeInteriorScene" type="Sprite2D" parent="."]
+z_index = -11
 position = Vector2(-56, -2)
 texture = ExtResource("8_4grje")
 metadata/_edit_lock_ = true
 
+[node name="Lobby2" type="Sprite2D" parent="WholeInteriorScene"]
+position = Vector2(-65, -3)
+texture = ExtResource("12_nbaaq")
+metadata/_edit_lock_ = true
+
+[node name="Craft" type="Sprite2D" parent="WholeInteriorScene"]
+position = Vector2(-3065, 1)
+texture = ExtResource("12_krim2")
+script = ExtResource("14_boj56")
+
+[node name="Mouse_to_CraftingInteraction" type="Area2D" parent="WholeInteriorScene/Craft"]
+position = Vector2(-65, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction"]
+position = Vector2(-28, 25)
+shape = SubResource("RectangleShape2D_h45yn")
+
+[node name="CraftingAnimation" type="AnimatedSprite2D" parent="WholeInteriorScene/Craft"]
+position = Vector2(-65, 200)
+sprite_frames = SubResource("SpriteFrames_01g2f")
+animation = &"HoverBlinking"
+frame = 3
+frame_progress = 1.0
+
+[node name="BlinkTimer" type="Timer" parent="WholeInteriorScene/Craft/CraftingAnimation"]
+wait_time = 4.0
+autostart = true
+
+[node name="Lobby" type="Control" parent="WholeInteriorScene"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1003.0
+offset_top = -552.0
+offset_right = 1253.0
+offset_bottom = 554.0
+mouse_filter = 2
+script = ExtResource("12_qmdri")
+metadata/_edit_lock_ = true
+
+[node name="Crew_1" type="Button" parent="WholeInteriorScene/Lobby"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 305.0
+offset_top = 350.0
+offset_right = 591.0
+offset_bottom = 1054.0
+metadata/_edit_lock_ = true
+
+[node name="Crew_2" type="Button" parent="WholeInteriorScene/Lobby"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 481.0
+offset_top = 271.0
+offset_right = 767.0
+offset_bottom = 975.0
+metadata/_edit_lock_ = true
+
+[node name="Crew_3" type="Button" parent="WholeInteriorScene/Lobby"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1071.0
+offset_top = 259.0
+offset_right = 1357.0
+offset_bottom = 963.0
+metadata/_edit_lock_ = true
+
+[node name="Crew_4" type="Button" parent="WholeInteriorScene/Lobby"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1404.0
+offset_top = 362.0
+offset_right = 1690.0
+offset_bottom = 1066.0
+metadata/_edit_lock_ = true
+
+[node name="Cockpit" type="Sprite2D" parent="WholeInteriorScene"]
+position = Vector2(3040, 0)
+texture = ExtResource("2_66wyx")
+
+[node name="ExpeditionScreen" type="AnimatedSprite2D" parent="WholeInteriorScene/Cockpit"]
+position = Vector2(-204.5, 145)
+scale = Vector2(1.25248, 0.732673)
+sprite_frames = SubResource("SpriteFrames_km7gi")
+animation = &"abandonship"
+
 [node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
-offset_left = 3497.0
-offset_top = -33.0
-offset_right = 3627.0
-offset_bottom = -10.0
+visible = false
+offset_left = 2709.0
+offset_top = 74.0
+offset_right = 2847.0
+offset_bottom = 97.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "FactionCurrently: "
 
 [node name="ExpeditionButton" type="Button" parent="WholeInteriorScene"]
 visible = false
-offset_left = 3490.0
-offset_top = 4.0
-offset_right = 3727.0
-offset_bottom = 63.0
+offset_left = 2688.0
+offset_top = 50.0
+offset_right = 2972.0
+offset_bottom = 222.0
 text = "EXPEDITION BUTTON
 "
 
 [node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WholeInteriorScene/Button_ToStorageRoom"]
-polygon = PackedVector2Array(-2858, 541, -2861, -316, -2358, -319, -2349, 538)
+position = Vector2(-83, 10)
+polygon = PackedVector2Array(-2858, 541, -2861, -316, -2315, -321, -2310, 546)
+
+[node name="BetweenWall" type="Sprite2D" parent="WholeInteriorScene"]
+position = Vector2(-1565, -1)
+texture = ExtResource("17_raxb3")
+
+[node name="CraftedItemsUi" type="Area2D" parent="WholeInteriorScene"]
+
+[node name="CraftedItems" type="CollisionPolygon2D" parent="WholeInteriorScene/CraftedItemsUi"]
+position = Vector2(-1087, 74)
+polygon = PackedVector2Array(-2958, 492, -2954, 212, -2171, 217, -2169, 495)
+
+[node name="BetweenWall2" type="Sprite2D" parent="WholeInteriorScene"]
+position = Vector2(1486.5, -1)
+scale = Vector2(1.10278, 1)
+texture = ExtResource("17_raxb3")
 
 [node name="OnCameraMovingDesign" type="Node2D" parent="."]
 position = Vector2(2, -193)
 
 [node name="Left_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
+visible = false
 position = Vector2(-1900, -600)
 
 [node name="TestingOnly" type="Sprite2D" parent="OnCameraMovingDesign/Left_Groups_of_Objects"]
@@ -236,9 +1021,29 @@ texture = ExtResource("10_7sn4k")
 [node name="Right_Groups_of_Objects" type="Node2D" parent="OnCameraMovingDesign"]
 
 [node name="ExpeditionSelection" type="Sprite2D" parent="."]
+z_index = -3
 position = Vector2(-269.5, 2987.5)
 scale = Vector2(1.06094, 1.04907)
-texture = ExtResource("13_t2sia")
+texture = ExtResource("19_hgekd")
+script = ExtResource("21_iriww")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ExpeditionSelection"]
+z_index = 100
+offset_left = 967.0
+offset_top = -470.0
+offset_right = 1476.0
+offset_bottom = 396.0
+texture = ExtResource("22_fdhp7")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="SelectedCrewExpedition" type="Sprite2D" parent="ExpeditionSelection"]
+position = Vector2(-870.455, -174.517)
+scale = Vector2(0.94256, 0.953225)
+texture = ExtResource("25_vreag")
 
 [node name="Crew_toChoose" type="Control" parent="ExpeditionSelection"]
 layout_mode = 3
@@ -247,81 +1052,134 @@ offset_left = -964.0
 offset_top = -535.0
 offset_right = 546.0
 offset_bottom = 533.0
+metadata/_edit_lock_ = true
 
 [node name="Crew_1" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_top = 116.0
-offset_right = 387.0
-offset_bottom = 1062.0
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 54.0
+offset_top = 142.0
+offset_right = 385.0
+offset_bottom = 1043.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Crew_2" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_left = 395.0
-offset_top = 116.0
-offset_right = 768.0
-offset_bottom = 1049.0
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 396.107
+offset_top = 150.374
+offset_right = 711.107
+offset_bottom = 1051.37
+metadata/_edit_use_anchors_ = true
 
 [node name="Crew_3" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_left = 775.017
-offset_top = 115.104
-offset_right = 1117.02
-offset_bottom = 1059.1
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 721.291
+offset_top = 151.327
+offset_right = 1070.29
+offset_bottom = 1052.33
+metadata/_edit_use_anchors_ = true
 
 [node name="Crew_4" type="Button" parent="ExpeditionSelection/Crew_toChoose"]
-layout_mode = 2
-offset_left = 1123.0
-offset_top = 113.953
-offset_right = 1498.0
-offset_bottom = 1059.95
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 148.0
+offset_right = 1406.0
+offset_bottom = 1053.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Details_Container" type="Control" parent="ExpeditionSelection"]
+z_index = 200
 layout_mode = 3
 anchors_preset = 0
-offset_left = 546.0
-offset_top = -539.0
-offset_right = 960.0
-offset_bottom = 417.0
+offset_left = 991.0
+offset_top = -449.0
+offset_right = 1441.0
+offset_bottom = 366.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Requirement_label" type="Label" parent="ExpeditionSelection/Details_Container"]
 layout_mode = 0
-offset_left = 67.1355
-offset_top = 49.5188
-offset_right = 238.135
-offset_bottom = 110.519
+offset_left = 16.1257
+offset_top = 23.3849
+offset_right = 187.125
+offset_bottom = 84.3851
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Requirements:
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Crew_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 192.0
-offset_right = 186.0
-offset_bottom = 241.0
+offset_left = 17.0683
+offset_top = 125.38
+offset_right = 139.068
+offset_bottom = 174.38
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "<Name>
 
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
 layout_mode = 0
-offset_left = 64.3078
-offset_top = 223.006
-offset_right = 235.308
-offset_bottom = 284.006
+offset_left = 15.1831
+offset_top = 177.808
+offset_right = 425.183
+offset_bottom = 322.808
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "<Description>
 
 "
+autowrap_mode = 2
+justification_flags = 171
+clip_text = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Embark_button" type="Button" parent="ExpeditionSelection"]
-offset_left = 611.25
-offset_top = 432.288
-offset_right = 881.25
-offset_bottom = 504.288
+[node name="Planet_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 20.8385
+offset_top = 333.183
+offset_right = 139.839
+offset_bottom = 356.183
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<planet_name>"
+metadata/_edit_use_anchors_ = true
+
+[node name="Planet_description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 23.6662
+offset_top = 370.359
+offset_right = 443.666
+offset_bottom = 516.359
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "<planetdesc>
+"
+autowrap_mode = 2
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="cancel_button" type="Button" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 8.58522
+offset_top = 748.789
+offset_right = 438.585
+offset_bottom = 820.789
+text = "BACK
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Embark_button" type="Button" parent="ExpeditionSelection/Details_Container"]
+layout_mode = 0
+offset_left = 8.58523
+offset_top = 668.719
+offset_right = 438.585
+offset_bottom = 740.719
 text = "EMBARK"
+metadata/_edit_use_anchors_ = true
 
 [node name="StorageScene" type="Sprite2D" parent="."]
 position = Vector2(-3000, 1500)
@@ -429,7 +1287,6 @@ texture = ExtResource("17_8py32")
 
 [node name="ClickAnywhereButton" type="Area2D" parent="CycleReport"]
 z_index = 500
-scale = Vector2(1, 1)
 
 [node name="Panel" type="Panel" parent="CycleReport/ClickAnywhereButton"]
 z_as_relative = false
@@ -465,32 +1322,59 @@ alignment = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CycleReport/ClickAnywhereButton"]
 z_index = 10
 position = Vector2(0.951904, -0.466064)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kb8bw")
 
 [node name="CraftingTab" parent="." instance=ExtResource("13_10a7a")]
-position = Vector2(-3982, -471)
+position = Vector2(-4082, -537)
+metadata/_edit_lock_ = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_h4mnh")]
 visible = false
 top_level = true
 z_index = 700
-offset_left = -457.0
-offset_top = -410.0
-offset_right = -457.0
-offset_bottom = -410.0
+offset_left = 1584.0
+offset_top = 231.0
+offset_right = 1584.0
+offset_bottom = 231.0
+
+[node name="CraftedItemsInventory" parent="." instance=ExtResource("28_b2c70")]
+visible = false
+layout_mode = 1
+offset_left = -3974.0
+offset_top = -314.0
+offset_right = -3974.0
+offset_bottom = -314.0
+scale = Vector2(0.728638, 0.728638)
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
+[connection signal="input_event" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_input_event"]
+[connection signal="mouse_entered" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_exited"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
-[connection signal="pressed" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="_on_left_button_ui_pressed"]
-[connection signal="pressed" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
-[connection signal="pressed" from="cam2d/Button_navigation_node_parent/NextDay_Button" to="." method="_on_next_day_button_pressed"]
+[connection signal="button_up" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="ChangeLocationToLeft"]
+[connection signal="button_up" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
+[connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
+[connection signal="input_event" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_input_event"]
+[connection signal="mouse_entered" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_entered"]
+[connection signal="mouse_exited" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_exited"]
+[connection signal="animation_finished" from="WholeInteriorScene/Craft/CraftingAnimation" to="WholeInteriorScene/Craft" method="_on_crafting_animation_animation_finished"]
+[connection signal="timeout" from="WholeInteriorScene/Craft/CraftingAnimation/BlinkTimer" to="WholeInteriorScene/Craft" method="_on_blink_timer_timeout"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_1" to="WholeInteriorScene/Lobby" method="_on_maxim_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_2" to="WholeInteriorScene/Lobby" method="_on_fumiko_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_3" to="WholeInteriorScene/Lobby" method="_on_regina_button_down"]
+[connection signal="button_down" from="WholeInteriorScene/Lobby/Crew_4" to="WholeInteriorScene/Lobby" method="_on_nashir_button_down"]
 [connection signal="button_down" from="WholeInteriorScene/ExpeditionButton" to="." method="_on_expedition_button_button_down"]
 [connection signal="input_event" from="WholeInteriorScene/Button_ToStorageRoom" to="cam2d" method="_on_button_to_storage_room_input_event"]
-[connection signal="pressed" from="ExpeditionSelection/Embark_button" to="." method="_on_embark_button_pressed"]
+[connection signal="input_event" from="WholeInteriorScene/CraftedItemsUi" to="." method="_on_crafted_items_ui_input_event"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_1" to="ExpeditionSelection" method="_on_crew_1_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_2" to="ExpeditionSelection" method="_on_crew_2_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_3" to="ExpeditionSelection" method="_on_crew_3_pressed"]
+[connection signal="pressed" from="ExpeditionSelection/Crew_toChoose/Crew_4" to="ExpeditionSelection" method="_on_crew_4_pressed"]
+[connection signal="button_up" from="ExpeditionSelection/Details_Container/cancel_button" to="." method="_on_cancel_button_button_up"]
+[connection signal="pressed" from="ExpeditionSelection/Details_Container/Embark_button" to="." method="_on_embark_button_pressed"]
 [connection signal="input_event" from="StorageScene/ClickOnLeft" to="cam2d" method="_on_click_on_left_input_event"]
 [connection signal="mouse_entered" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StorageScene/CheckSpareparts" to="StorageScene/CheckSpareparts" method="_on_mouse_exited"]

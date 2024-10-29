@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://jdhpscp7ayht"]
+
+[ext_resource type="Texture2D" uid="uid://doy8r2j7r5n3e" path="res://Resources/CREW/CrewLobby/Jerry Lobby (1).png" id="1_uq601"]
+
+[node name="Jerry" type="Sprite2D"]
+texture = ExtResource("1_uq601")
+offset = Vector2(0, -700)

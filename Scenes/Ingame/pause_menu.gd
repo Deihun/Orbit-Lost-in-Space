@@ -1,7 +1,8 @@
 extends Control
 
-@onready var save_ui = $SaveUI
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var save_ui = $ColorRect/SaveUI
+@onready var v_box_container: VBoxContainer = $ColorRect/VBoxContainer
+@onready var settings_menu = $ColorRect/NinePatchRect2
 
 var readyToPause : bool = true
 
@@ -9,13 +10,8 @@ var readyToPause : bool = true
 func _ready() -> void:
 	self.visible = false
 	save_ui.visible = false
-	set_process_input(true)
 
-func _input(event):
-	if Input.is_key_pressed(KEY_ESCAPE) and readyToPause:
-		_TOGGLE_ESCAPE()
-		readyToPause = false
-		$PauseTimer.start()
+
 
 func _TOGGLE_ESCAPE():
 	var Pause_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Pause_Button")
@@ -26,8 +22,8 @@ func _TOGGLE_ESCAPE():
 	else:
 		_pause()
 
+
 func _pause():
-	
 	visible = true
 	Engine.time_scale = 0
 	var TutorialUI = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")
@@ -49,9 +45,8 @@ func RESUME() -> void:
 	visible = false
 
 func RESTART() -> void:
-	visible = false
-	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	$ColorRect/Restart.show()
+	$ColorRect/VBoxContainer.hide()
 
 func QUIT() -> void:
 	get_tree().quit()
@@ -70,3 +65,34 @@ func _on_save_pressed() -> void:
 	else:
 		save_ui.visible = true
 		v_box_container.visible = false
+
+
+func _on_settings_pressed() -> void:
+	settings_menu.visible = true
+	$ColorRect/NinePatchRect2/Settings_Menu.show()
+	settings_menu.set_process(true)
+
+
+func _on_settings_menu_visibility_changed() -> void:
+	if $ColorRect/NinePatchRect2/Settings_Menu.visible == false:
+		$ColorRect/NinePatchRect2.hide()
+	pass # Replace with function body.
+
+
+
+#RESTART CONFIRMATION
+func _on_yes_button_up() -> void:
+	Engine.time_scale = 1
+	IngameStoredProcessSetting.is_previous_restart = true
+	IngameStoredProcessSetting.Scenes = "newgame"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	pass # Replace with function body.
+
+
+func _on_no_button_down() -> void:
+	$ColorRect/Restart.hide()
+	$ColorRect/VBoxContainer.show()
+
+
+func _on_visibility_changed() -> void:
+	Engine.time_scale = 1.0 if !visible else 0.0

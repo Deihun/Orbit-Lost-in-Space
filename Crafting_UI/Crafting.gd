@@ -1,148 +1,82 @@
 extends Node
 
 @onready var getResources = $"/root/GlobalResources"
-@onready var SaveLoadGame = SaveNLoad
+@onready var item_title = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_Title")
+@onready var item_description = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_DescriptionLabel")
+@onready var item_effect = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_EffectLabel")
+@onready var item_requirements = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_RequirementsLabel")
+@onready var item_picture = NodeFinder.find_node_by_name(get_tree().current_scene, "ItemPicture")
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var control: Control = $Control
+@onready var Items = CraftingItems
 
 var craftingItems
-var ongoingCraft = false
-var currentlycrafting
+var recentAnimation = ""
 
-func craft_button_pressed() -> void:
-	if (ongoingCraft == false):
-		match craftingItems:
-			"SpaceSuit":
-				if getResources.spareparts >= 300 && getResources.oxygen >= 100 && getResources.fuel >= 10:
-					getResources.spareparts -= 300
-					getResources.oxygen -= 100
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true
-				else:
-					print("Insufficient Items!")
-			
-			"HazmatSuit":
-				if getResources.spareparts >= 400 && getResources.fuel >= 10:
-					getResources.spareparts -= 400
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true
-					print("Successfully Made!")
-				else:
-					print("Insufficient Items!")
-			
-			"Crowbar":
-				if getResources.spareparts >= 350 && getResources.fuel >= 10:
-					getResources.spareparts -= 350
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true	
-					print("Successfully Made!")
-				else:
-					print("Insufficient Items!")
-			
-			"LaserGun":
-				if getResources.spareparts >= 350 && getResources.biogene >= 20 && getResources.fuel >= 10:
-					getResources.spareparts -= 350
-					getResources.biogene -= 20
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true
-					print("Successfully Made!")
-				else:
-					print("Insufficient Items!")
-			
-			"MedkitCharge":
-				if getResources.biogene >= 150 && getResources.fuel >= 10:
-					getResources.biogene -= 150
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true
-					print("Successfully Made!")
-				else:
-					print("Insufficient Items!")
-			
-			"DehySpaceFood":
-				if getResources.biogene >= 100 && getResources.fuel >= 10:
-					getResources.biogene -= 150
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true
-					print("Successfully Made!")
-				else:
-					print("Insufficient Items!")
-			
-			"FreDriSpaceFood":
-				if getResources.ration >= 20 && getResources.fuel >= 10:
-					getResources.ration -= 20
-					getResources.fuel -= 10
-					currentlycrafting = craftingItems
-					ongoingCraft = true
-					print("Successfully Made!")
-				else:
-					print("Insufficient Items!")
-				print("Select a Item")
+func _ready() -> void:
+	space_suit_pressed()
+
+func openScreen() -> void:
+	sprite_2d.visible = true
+	sprite_2d.play("Open")
+	recentAnimation = "Open"
+	
+func closeScreen() -> void:
+	control.visible = false
+	sprite_2d.play("Close")
+	recentAnimation = "Close"
+	
+func _on_sprite_2d_animation_finished() -> void:
+	if recentAnimation == "Open":
+		control.visible = true
 	else:
-		print("Currently Crafting a Item")
-	pass
+		sprite_2d.visible = false
 
-
-func add_res_pressed() -> void:
-	getResources.spareparts += 1000
-	getResources.oxygen += 1000
-	getResources.fuel += 1000
-	getResources.biogene += 1000
-	getResources.ration += 1000
-	print(getResources.spareparts, " ", getResources.oxygen, " ", getResources.fuel, " ", getResources.biogene, " ", getResources.ration)
-	pass # Replace with function body.
-
-func check_res_pressed() -> void:
-	print(getResources.spareparts, " ", getResources.oxygen, " ", getResources.fuel, " ", getResources.biogene, " ", getResources.ration)
-	print(getResources.uniqueItems)
-	pass # Replace with function body.
-
+#Crafting Items
 func space_suit_pressed() -> void:
-	craftingItems = "SpaceSuit"
-	print("Selected Space suit")
-	pass # Replace with function body.
+	craftingItems = "A.C.E.S"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/ACES_SUIT.png")
+	item_title.text = Items.ItemsName[0]
+	item_description.text = Items.ItemDescription[0]
+	item_effect.text = Items.ItemEffect[0]
+	item_requirements.text = "Cost to craft: 300 Space-parts, 100 Oxygen, 10 Fuel, 1 Cycle"
 
 func crowbar_pressed() -> void:
 	craftingItems = "Crowbar"
-	print("Selected Crowbar")
-	pass # Replace with function body.
-
-func laser_gun_pressed() -> void:
-	craftingItems = "LaserGun"
-	print("Selected Laser Gun")
-	pass # Replace with function body.
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/CrowBar.png")
+	item_title.text = Items.ItemsName[1]
+	item_description.text = Items.ItemDescription[1]
+	item_effect.text = Items.ItemEffect[1]
+	item_requirements.text = "Cost to craft: 350 Spare-parts, 10 Fuel, 1 Cycle"
 
 func _on_dehy_space_food_pressed() -> void:
 	craftingItems = "DehySpaceFood"
-	print("Selected DehySpaceFood")
-	pass # Replace with function body.
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/DriedSpaceFood.png")
+	item_title.text = Items.ItemsName[2]
+	item_description.text = Items.ItemDescription[2]
+	item_effect.text = Items.ItemEffect[2]
+	item_requirements.text = "Cost to craft: 100 Biogene, 10 Fuel, 1 Cycle"
 
 func medkit_charge_pressed() -> void:
 	craftingItems = "MedkitCharge"
-	print("Selected MedkitCharge")
-	pass # Replace with function body.
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/Medicine_Pickup.png")
+	item_title.text = Items.ItemsName[3]
+	item_description.text = Items.ItemDescription[3]
+	item_effect.text = Items.ItemEffect[3]
+	item_requirements.text = "Cost to craft: 150 Biogene, 10 Fuel, 1 Cycle"
 
 func fre_dri_space_food_pressed() -> void:
 	craftingItems = "FreDriSpaceFood"
-	print("Selected FreDriSpaceFood")
-	pass # Replace with function body.
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/DeepDriedSpaceFood.png")
+	item_title.text = Items.ItemsName[4]
+	item_description.text = Items.ItemDescription[4]
+	item_effect.text = Items.ItemEffect[4]
+	item_requirements.text = "Cost to craft: 80 Biogene, 10 Fuel, 1 Cycle"
 
 func hazmat_suit_pressed() -> void:
-	craftingItems = "HazmatSuit"
-	print("Selected HazmatSuit")
-	pass # Replace with function body.
-
-func _on_save_button_debug_pressed() -> void:
-	SaveLoadGame.save()
-
-func _on_load_button_debug_pressed() -> void:
-	SaveLoadGame.loadsave()
-
-func _on_check_crafting_pressed() -> void:
-	if (ongoingCraft == true):
-		print ("currently crafting")
-	else:
-		print ("not crafting")
+	craftingItems = "LeadSuitUp"
+	item_picture.texture = load("res://Crafting_UI/ItemAssests/ACE_SUIT_LEAD_IMPROVEMENT.png")
+	item_title.text = Items.ItemsName[5]
+	item_description.text = Items.ItemDescription[5]
+	item_effect.text = Items.ItemEffect[5]
+	item_requirements.text = "Cost to craft: 450 Spare-parts, 10 Fuel, 1 Cycle"

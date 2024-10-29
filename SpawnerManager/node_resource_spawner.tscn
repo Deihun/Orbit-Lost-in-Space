@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bo23icrofd40r"]
+[gd_scene load_steps=18 format=3 uid="uid://bo23icrofd40r"]
 
 [ext_resource type="Script" path="res://Resource Spawner.gd" id="1_2rhg8"]
 [ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/Small_Fuel/Small Fuel.tscn" id="2_iwsqb"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://v1jdjh7bs30" path="res://Resources/Spareparts/Spareparts_Variety1.tscn" id="6_bu8s1"]
 [ext_resource type="PackedScene" uid="uid://cwl2d5xnndn76" path="res://Resources/Ductape.tscn" id="6_von65"]
 [ext_resource type="PackedScene" uid="uid://d4j5shfi1sldf" path="res://Resources/FirstAidKit/MedicinePack.tscn" id="8_pndfl"]
+[ext_resource type="PackedScene" uid="uid://bkx4akg11k70k" path="res://Resources/CREW/Fumiko.tscn" id="14_ul0m3"]
+[ext_resource type="PackedScene" uid="uid://bn3q1myrjas65" path="res://Resources/CREW/Nashir.tscn" id="15_6bkbh"]
+[ext_resource type="PackedScene" uid="uid://rolc4sisy7y7" path="res://Resources/CREW/Maxim.tscn" id="16_covmm"]
+[ext_resource type="PackedScene" uid="uid://b1hxt1ajwmmkj" path="res://Resources/CREW/Regina.tscn" id="17_b5yp1"]
 
 [node name="Node Resource Spawner" type="Node2D"]
 z_index = 1
@@ -29,4 +33,9 @@ food = ExtResource("3_h1bd4")
 biogene = ExtResource("4_1e2dx")
 spareparts = ExtResource("5_bfvwt")
 ductapes = ExtResource("6_von65")
+Fumiko = ExtResource("14_ul0m3")
+Nashir = ExtResource("15_6bkbh")
+Maxim = ExtResource("16_covmm")
+Regina = ExtResource("17_b5yp1")
+foodChance = 1.5
 number_of_resources = 30
