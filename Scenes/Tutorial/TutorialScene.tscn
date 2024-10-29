@@ -1,4 +1,4 @@
-[gd_scene load_steps=278 format=3 uid="uid://ddn3a2s5gco1d"]
+[gd_scene load_steps=282 format=3 uid="uid://ddn3a2s5gco1d"]
 
 [ext_resource type="Script" path="res://Scenes/Tutorial/tutorial_scene.gd" id="1_6or5p"]
 [ext_resource type="Script" path="res://Scenes/Tutorial/key_card.gd" id="2_3xpew"]
@@ -15,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://cg2e3j7q32we0" path="res://Resources/SmallOxygenGas/Small_OxygenTank.tscn" id="12_rduvr"]
 [ext_resource type="PackedScene" uid="uid://d085vtooegqlb" path="res://Resources/Small_Fuel/Small Fuel.tscn" id="13_wj73t"]
 [ext_resource type="Texture2D" uid="uid://bdoqu4er4i22x" path="res://Resources/Small_Fuel/Small_Fuel_Animation.png" id="14_61vwv"]
+[ext_resource type="Texture2D" uid="uid://dpo4ry5xsuada" path="res://Scenes/Tutorial/pedestal.png" id="16_51cgt"]
 [ext_resource type="Texture2D" uid="uid://bf3ux2qjmr8qs" path="res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png" id="16_ianv6"]
+[ext_resource type="Texture2D" uid="uid://c67acfbsu28ii" path="res://Resources/Small_Biogene/BiogenePickup.png" id="17_3fqhc"]
 [ext_resource type="Texture2D" uid="uid://bxfqsdx3uuu4s" path="res://Resources/SmallOxygenGas/Small_SmallOxygenGas.png" id="17_6vnml"]
 [ext_resource type="Texture2D" uid="uid://ddr2eun7fonyi" path="res://Resources/Resource_Images/SmallFood_Unpickup_variety2.png" id="18_2qstg"]
 [ext_resource type="Texture2D" uid="uid://bqx17afm5w5de" path="res://Resources/Resource_Images/Ductape_UnpickedUp.png" id="19_ueytj"]
@@ -137,6 +139,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qrrx"]
+size = Vector2(110, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lt2x"]
 atlas = ExtResource("14_61vwv")
@@ -1815,16 +1820,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsc6h"]
 size = Vector2(77.25, 408)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7vn52"]
+polygon = PackedVector2Array(2214, 1335, -1063, 1361, -1098, -1087, 178, -1022, 1805, -1070, 3319, -1003, 4931, -669, 5506, -448, 5268, 35, 5412, 533, 4970, 1072, 4726, 825, 4727, 316, 5061, 313, 5047, -357, 4729, -357, 4728, -611, 3308.43, -610.022, 3307, -557, 3132, -357, 2948, -357, 2787, -512, 2787, -615, 1362, -611, 1362, -354, 1215, -353, 1205, -376, 1274, -629, 884, -636, 957, -382, 960, -351, 823, -346, 825, -615, -600, -609, -603, -350, -859, -356, -842, 307, -596, 315, -579, 810, 814, 814, 821, 112, 1361, 112, 1363, 831, 2782, 825, 2784, 278, 2956, 111, 3134, 110, 3307, 277, 3308, 822, 4726, 825, 4970, 1072, 3815, 1304, 3035, 1373)
+
 [node name="TutorialScene" type="Node2D"]
 script = ExtResource("1_6or5p")
 
 [node name="TemporaryText" type="Node" parent="."]
 
 [node name="Label4" type="Label" parent="TemporaryText"]
-offset_left = 3817.0
-offset_top = 250.0
-offset_right = 4706.0
-offset_bottom = 717.0
+offset_left = 4130.0
+offset_top = 399.0
+offset_right = 5019.0
+offset_bottom = 866.0
 theme_override_colors/font_color = Color(0.273873, 0.273873, 0.273873, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 66
@@ -1910,7 +1918,7 @@ frame_progress = 0.71547
 
 [node name="Player" parent="." instance=ExtResource("2_pi7qp")]
 z_index = 1
-position = Vector2(4610, 474)
+position = Vector2(501, 476)
 useGlobeTimerUI = false
 
 [node name="Background" type="Node2D" parent="."]
@@ -1929,7 +1937,7 @@ build_mode = 1
 polygon = PackedVector2Array(-36, 149, -34, 366, -365, 365, -351, 795, -36, 793, -35, 1302, 1383, 1303, 1383, 588, 1922, 588, 1925, 1306, 3342, 1301, 3348, 749, 3516, 591, 3699, 591, 3866, 749, 3873, 1299, 4036, 1301, 5287, 1302, 5287, 793, 5820, 800, 5820, 359, 5289, 364, 5288, 152, 5130, 151.888, 4467.33, 151.418, 4137.08, 151.184, 3948.47, 151.05, 3878, 151, 3704, 361, 3510, 367, 3348, 189, 3346, 151, 2284, 149, 2283, 163, 2214, 164, 2213, 149, 1928, 148, 1926, 365, 1369, 367, 1371, 154)
 
 [node name="DoorWay" parent="Background" instance=ExtResource("5_aclcj")]
-position = Vector2(1484, 429)
+position = Vector2(1432, 428)
 scale = Vector2(1.13636, 0.921488)
 wallRotation = 2
 
@@ -2007,89 +2015,212 @@ position = Vector2(2585, 228)
 [node name="3rdRoom" type="Node2D" parent="."]
 
 [node name="ItemsOnInteract2D" type="Node2D" parent="3rdRoom"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="battery" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(4035, 1099)
+scale = Vector2(1, 1)
+texture = ExtResource("16_51cgt")
+offset = Vector2(3, -35)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/battery"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/battery/StaticBody2D"]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_7qrrx")
 
 [node name="SmallFuel" type="AnimatedSprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(4032, 970)
+y_sort_enabled = true
+position = Vector2(4038, 1102)
 scale = Vector2(0.64902, 0.621569)
 sprite_frames = SubResource("SpriteFrames_20s23")
 animation = &"IDle"
 autoplay = "IDle"
+offset = Vector2(-9.24463, -212.366)
 
 [node name="interact_message" parent="3rdRoom/ItemsOnInteract2D/SmallFuel" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 1
-position = Vector2(-40.0609, 8.04417)
+position = Vector2(-26.1935, 69.1798)
 scale = Vector2(1.54078, 1.60883)
 message = "An important part on take off! Don't underestimate its size as this little fuel can be your most wish resources as you travel in space. Use on crafting and powering your ship"
 
+[node name="biogene" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(4158, 295)
+scale = Vector2(1, 1)
+texture = ExtResource("16_51cgt")
+offset = Vector2(0, -35)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/biogene"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/biogene/StaticBody2D"]
+position = Vector2(-1, 0.999996)
+shape = SubResource("RectangleShape2D_7qrrx")
+
 [node name="Biogene" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(4435, 37.0001)
+y_sort_enabled = true
+position = Vector2(4160, 299)
 scale = Vector2(0.358824, 0.362745)
+texture = ExtResource("17_3fqhc")
+offset = Vector2(-25.082, -319.784)
 
 [node name="interact_message2" parent="3rdRoom/ItemsOnInteract2D/Biogene" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 1
-position = Vector2(-769.179, 352.865)
+position = Vector2(22.2954, 137.838)
 scale = Vector2(2.78688, 2.75676)
 message = "One of the most successful discovery in Synthetic Biology. Biogene is a versatile, bio-engineered material that can be easily converted into essential items like food and medicine! "
 
+[node name="spareparts" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(4389, 1104)
+scale = Vector2(0.901637, 1.11892)
+texture = ExtResource("16_51cgt")
+offset = Vector2(3.32764, -36.6425)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/spareparts"]
+position = Vector2(-407.037, -5.36232)
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/spareparts/StaticBody2D"]
+position = Vector2(409.256, 2.6812)
+shape = SubResource("RectangleShape2D_7qrrx")
+
 [node name="Spareparts" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(4359, 978)
+y_sort_enabled = true
+position = Vector2(4389, 1105)
 scale = Vector2(0.323529, 0.405882)
 texture = ExtResource("16_ianv6")
+offset = Vector2(-6.18164, -271.015)
 
 [node name="interact_message3" parent="3rdRoom/ItemsOnInteract2D/Spareparts" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 1
-position = Vector2(12.3642, -12.3188)
+position = Vector2(-18.5464, 56.6668)
 scale = Vector2(3.09091, 2.46377)
 message = "Spareparts are commonly use to repair your ship, and crafting. Some might also take interest on spareparts..."
 
+[node name="gastank" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(4548, 300)
+scale = Vector2(0.97381, 0.979749)
+texture = ExtResource("16_51cgt")
+offset = Vector2(1.02686, -34.7028)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/gastank"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/gastank/StaticBody2D"]
+position = Vector2(1.02703, 2.04135)
+shape = SubResource("RectangleShape2D_7qrrx")
+
 [node name="SmallGasTank" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(4585, 255)
+y_sort_enabled = true
+position = Vector2(4549, 302)
 scale = Vector2(0.57353, 0.583333)
 texture = ExtResource("17_6vnml")
+offset = Vector2(-5.23047, -240)
 
 [node name="interact_message4" parent="3rdRoom/ItemsOnInteract2D/SmallGasTank" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 1
-position = Vector2(-3.8147e-05, -54.8572)
+position = Vector2(17.4358, 111.429)
 scale = Vector2(1.74359, 1.71429)
 message = "Oxygen is one of the fuel requirement by human to survive too. Hate the life without oxygen? Be Anaerobic!"
 
+[node name="ration" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(4728, 1107)
+scale = Vector2(1.0406, 1.06538)
+texture = ExtResource("16_51cgt")
+offset = Vector2(1.92236, -35.668)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/ration"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/ration/StaticBody2D"]
+position = Vector2(1.92228, -1.87729)
+shape = SubResource("RectangleShape2D_7qrrx")
+
 [node name="SmallRation" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(4729, 979)
+y_sort_enabled = true
+position = Vector2(4731, 1107)
 scale = Vector2(0.195313, 0.202148)
 texture = ExtResource("18_2qstg")
+offset = Vector2(-10.2402, -633.2)
 
 [node name="interact_message5" parent="3rdRoom/ItemsOnInteract2D/SmallRation" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 1
-position = Vector2(-46.0834, -29.6812)
+position = Vector2(51.1988, 202.822)
 scale = Vector2(5.11999, 4.94687)
 message = "A simple food ration is enough to solve anyones hunger a day!"
 
+[node name="duct" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(4960, 314)
+scale = Vector2(0.793927, 0.8769)
+texture = ExtResource("16_51cgt")
+offset = Vector2(1.7666, -37.2998)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/duct"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/duct/StaticBody2D"]
+position = Vector2(-0.000568509, -3.8147e-06)
+shape = SubResource("RectangleShape2D_7qrrx")
+
 [node name="Ductape" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(4957, 228)
+y_sort_enabled = true
+position = Vector2(4959, 316)
 scale = Vector2(0.28488, 0.318091)
 texture = ExtResource("19_ueytj")
+offset = Vector2(-7.01953, -276.65)
 
 [node name="interact_message6" parent="3rdRoom/ItemsOnInteract2D/Ductape" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 1
-position = Vector2(24.5723, -198.057)
+position = Vector2(24.5723, -12.575)
 scale = Vector2(3.51025, 3.14375)
 message = "If you have a problem with your ship? Slap it with ductape!"
 
+[node name="med" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
+y_sort_enabled = true
+position = Vector2(5089, 1101)
+scale = Vector2(0.8989, 0.927026)
+texture = ExtResource("16_51cgt")
+offset = Vector2(3.33691, -37.7551)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3rdRoom/ItemsOnInteract2D/med"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rdRoom/ItemsOnInteract2D/med/StaticBody2D"]
+position = Vector2(2.225, -3.23615)
+shape = SubResource("RectangleShape2D_7qrrx")
+
 [node name="Medicine" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
-position = Vector2(5090, 991)
+y_sort_enabled = true
+position = Vector2(5092, 1107)
 scale = Vector2(0.322547, 0.336274)
 texture = ExtResource("20_5leqa")
+offset = Vector2(3.10059, -324.14)
 
 [node name="interact_message7" parent="3rdRoom/ItemsOnInteract2D/Medicine" instance=ExtResource("23_ko1cw")]
 visible = false
 z_index = 5
-position = Vector2(-49.6045, -41.6326)
+position = Vector2(9.30165, 83.2654)
 scale = Vector2(3.10032, 2.97377)
 message = "Traversing in dead space is challenging, Its important to keep everyone safe and bacteria free! If one of your crew got sick? Medicine always got your back!"
 
@@ -2168,6 +2299,10 @@ texture = ExtResource("24_33yaf")
 position = Vector2(5771.25, 484.923)
 scale = Vector2(0.55, 3.26804)
 texture = ExtResource("24_33yaf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(562, 477)
+occluder = SubResource("OccluderPolygon2D_7vn52")
 
 [connection signal="animation_finished" from="2ndRoom/Dropbox/Dropbox_animation" to="2ndRoom/Dropbox" method="_on_dropbox_animation_animation_finished"]
 [connection signal="body_entered" from="3rdRoom/ExitTutorial" to="3rdRoom/ExitTutorial" method="_on_body_entered"]
