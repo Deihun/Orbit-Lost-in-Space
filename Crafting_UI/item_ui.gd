@@ -9,6 +9,7 @@ extends Control
 @onready var warning: Panel = $Panel/Warning
 @onready var warning_insufficient: Panel = $Panel/WarningInsufficient
 @onready var now_crafting: Panel = $Panel/NowCrafting
+@onready var item_picture: Sprite2D = $Panel/Item_Picture/ItemPicture
 
 var ongoingCraft = false
 var currentlycrafting
