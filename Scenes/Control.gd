@@ -147,4 +147,3 @@ func _on_cancel_button_button_up() -> void:
 	$cam2d.ChangeSpecificScene(2)
 	$cam2d.ChangeLocaton(false)
 	pass # Replace with function body.
-

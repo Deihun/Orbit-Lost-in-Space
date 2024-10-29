@@ -14,4 +14,3 @@ func _ready() -> void:
 	tutorialAssets.visible = true
 	
 	player_camera.make_current()
-	pass # Replace with function body.
