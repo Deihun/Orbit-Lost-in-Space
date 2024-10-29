@@ -1,28 +1,51 @@
 ~ interaction_maxim
 if !already_talk["Maxim"]
 	set already_talk["Maxim"] = true
-	Maxim: [[What do you want?|Is there something you need?|Hmm?]]
-	- Give food for today
-		if ration >= _rationConsumes["Maxim"] and already_eaten["Maxim"] == false 
-			do reduceFood(crewEat("Maxim", ration))
-			set already_eaten["Maxim"] = true 
-			Maxim: Thankyou very much!
-		elif ration >= _rationConsumes["Maxim"] already_eaten["Maxim"] == true
-			Maxim: Already got my meal comrade 
+	if _relationship["Maxim"] > 0.8
+		Maxim: [[What do you want?|Is there something you need?|Hmm?]]
+		- Give food for today
+			if ration >= _rationConsumes["Maxim"] and already_eaten["Maxim"] == false 
+				do reduceFood(crewEat("Maxim", ration))
+				set already_eaten["Maxim"] = true 
+				Maxim: Thankyou very much!
+			elif ration >= _rationConsumes["Maxim"] already_eaten["Maxim"] == true
+				Maxim: Already got my meal comrade 
+				set already_talk["Maxim"] = false
+			else
+				Maxim: Theres no food!
+				set already_talk["Maxim"] = false
+		- Give medicine
+			if medicine >= 1
+				Maxim: Thankyou very much!
+				set _disease["Maxim"] = 0.0
+			else
+				Jerry: I dont have any medicine to offer.
+				set already_talk["Maxim"] = false
+		- Order
+			Jerry: Testing Order
+		- [[Nevermind|Talk to you later|See you arounhd]]
 			set already_talk["Maxim"] = false
-		else
-			Maxim: Theres no food!
-			set already_talk["Maxim"] = false
-	- Give medicine
-		if medicine >= 1
-			Maxim: Thankyou very much!
-			set _disease["Maxim"] = 0.0
-		else
-			Jerry: I dont have any medicine to offer.
-			set already_talk["Maxim"] = false
-	- [[Nevermind|Talk to you later|See you arounhd]]
-		set already_talk["Maxim"] = false
-		=> END
+			=> END
+	else
+		Maxim: [[What do you want?|Is there something you need?|Hmm?]]
+		- Give food for today
+			if ration >= _rationConsumes["Maxim"] and already_eaten["Maxim"] == false 
+				do reduceFood(crewEat("Maxim", ration))
+				set already_eaten["Maxim"] = true 
+				Maxim: Thankyou very much!
+			elif ration >= _rationConsumes["Maxim"] already_eaten["Maxim"] == true
+				Maxim: Already got my meal comrade 
+				set already_talk["Maxim"] = false
+			else
+				Maxim: Theres no food!
+				set already_talk["Maxim"] = false
+		- Give medicine
+			if medicine >= 1
+				Maxim: Thankyou very much!
+				set _disease["Maxim"] = 0.0
+			else
+				Jerry: I dont have any medicine to offer.
+				set already_talk["Maxim"] = false
 else
 	Jerry: I already talk with him...
 => END

@@ -15,7 +15,7 @@ var _button
 
 func _ready() -> void:
 	button_array = [crew1,crew2,crew3,crew4]
-	IngameStoredProcessSetting.crew_in_ship = ["Maxim","Fumiko","Nashir"]
+	#IngameStoredProcessSetting.crew_in_ship = ["Maxim","Fumiko","Nashir"]
 	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
@@ -93,7 +93,7 @@ func set_initialDialogue():
 
 
 func _on_maxim_button_down() -> void: #CREW 0
-	print("button1 ")
+	if getcrew.size() < 1: return
 	var a = _getInteractionDialogue(getcrew[0])
 	$Crew_1.add_child(resource)
 	if a == null: return
@@ -101,7 +101,7 @@ func _on_maxim_button_down() -> void: #CREW 0
 
 
 func _on_fumiko_button_down() -> void: #CREW 1
-	print("button2 ")
+	if getcrew.size() < 2: return
 	var a = _getInteractionDialogue(getcrew[1])
 	if a == null: return
 	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
@@ -109,7 +109,7 @@ func _on_fumiko_button_down() -> void: #CREW 1
 
 
 func _on_regina_button_down() -> void: #CREW 2
-	print("button3 ")
+	if getcrew.size() < 3: return
 	var a = _getInteractionDialogue(getcrew[2])
 	if a == null: return
 	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
@@ -117,7 +117,7 @@ func _on_regina_button_down() -> void: #CREW 2
 
 
 func _on_nashir_button_down() -> void: #CREW 3
-	print("button4 ")
+	if getcrew.size() < 4: return
 	var a = _getInteractionDialogue(getcrew[3])
 	if a == null: return
 	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)

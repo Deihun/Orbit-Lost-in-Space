@@ -1,11 +1,5 @@
 extends Node2D
 
-
-
-
-func _ready() -> void:
-	pass # Replace with function body.
-
 func addData(data : int, _bool : bool):
 	match(data):
 		1:

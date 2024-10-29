@@ -10,13 +10,7 @@ var readyToPause : bool = true
 func _ready() -> void:
 	self.visible = false
 	save_ui.visible = false
-	set_process_input(true)
 
-func _input(event):
-	if Input.is_key_pressed(KEY_ESCAPE) and readyToPause:
-		_TOGGLE_ESCAPE()
-		readyToPause = false
-		$ColorRect/PauseTimer.start()
 
 
 func _TOGGLE_ESCAPE():
@@ -98,3 +92,7 @@ func _on_yes_button_up() -> void:
 func _on_no_button_down() -> void:
 	$ColorRect/Restart.hide()
 	$ColorRect/VBoxContainer.show()
+
+
+func _on_visibility_changed() -> void:
+	Engine.time_scale = 1.0 if !visible else 0.0

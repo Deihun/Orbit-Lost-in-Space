@@ -735,28 +735,6 @@ tutorialPanel_ID = 4
 z_index = 500
 script = ExtResource("2_uajib")
 
-[node name="Command" type="Panel" parent="cam2d"]
-visible = false
-z_index = 500
-offset_left = -1072.0
-offset_top = -547.0
-offset_right = 1053.0
-offset_bottom = 542.0
-mouse_filter = 1
-script = ExtResource("5_ntf38")
-
-[node name="_Command" type="TextEdit" parent="cam2d/Command"]
-z_index = 200
-layout_mode = 0
-offset_left = 123.0
-offset_top = 8.0
-offset_right = 2011.0
-offset_bottom = 48.0
-
-[node name="CommandCooldown" type="Timer" parent="cam2d/Command"]
-wait_time = 0.2
-one_shot = true
-
 [node name="Pause_Button" type="Button" parent="cam2d"]
 z_index = 150
 offset_left = 778.0
@@ -857,6 +835,36 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Command" type="Panel" parent="cam2d"]
+visible = false
+z_index = 500
+offset_left = -1072.0
+offset_top = -547.0
+offset_right = 1053.0
+offset_bottom = 542.0
+script = ExtResource("5_ntf38")
+
+[node name="_Command" type="LineEdit" parent="cam2d/Command"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 8.0
+offset_right = 1975.0
+offset_bottom = 39.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="cam2d/Command"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 55.0
+offset_right = 2010.0
+offset_bottom = 1039.0
+
+[node name="RecentCode" type="Label" parent="cam2d/Command/ScrollContainer"]
+layout_mode = 2
+
+[node name="CommandCooldown" type="Timer" parent="cam2d/Command"]
+wait_time = 0.2
+one_shot = true
+
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
 position = Vector2(1931, -556)
@@ -915,6 +923,7 @@ offset_left = 305.0
 offset_top = 350.0
 offset_right = 591.0
 offset_bottom = 1054.0
+metadata/_edit_lock_ = true
 
 [node name="Crew_2" type="Button" parent="WholeInteriorScene/Lobby"]
 self_modulate = Color(1, 1, 1, 0)
@@ -1338,7 +1347,6 @@ offset_bottom = -314.0
 scale = Vector2(0.728638, 0.728638)
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
-[connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="input_event" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_input_event"]
 [connection signal="mouse_entered" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_entered"]
@@ -1348,6 +1356,7 @@ scale = Vector2(0.728638, 0.728638)
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="ChangeLocationToLeft"]
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
+[connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
 [connection signal="input_event" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_input_event"]
 [connection signal="mouse_entered" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_entered"]
 [connection signal="mouse_exited" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_exited"]

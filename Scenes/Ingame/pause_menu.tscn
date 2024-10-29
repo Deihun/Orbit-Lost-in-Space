@@ -207,6 +207,7 @@ theme_override_colors/font_color = Color(0.281187, 0.281187, 0.281187, 1)
 theme_override_font_sizes/font_size = 20
 text = "Restarting this will lose your current progress"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_down" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]
 [connection signal="button_up" from="ColorRect/VBoxContainer/RESTART" to="." method="RESTART"]

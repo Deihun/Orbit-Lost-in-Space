@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc0h431h7nqe6"]
+[gd_scene load_steps=17 format=3 uid="uid://cc0h431h7nqe6"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.gd" id="1_styhv"]
 [ext_resource type="Texture2D" uid="uid://b1yewkdhl72xc" path="res://Scenes/SceneAssets/LavenderWallColorSet/Space.png" id="2_462ea"]
@@ -38,6 +38,9 @@ size = Vector2(259.268, 244.194)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0bs0"]
 size = Vector2(259.398, 242.058)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_14f1h"]
+polygon = PackedVector2Array(-664, -1560, -660, -1010, -612, -1011, -611, -1565, -314, -1895, 697.204, -1897.9, 696.504, -1925.87, -326, -1928, -634, -1620, -1565.73, -1622.38, -1559, 1095, -373.443, 1112.06, 1151, 1134, 1198.6, -1650.35, 696.504, -1925.87, 697.204, -1897.9, 1063.64, -1590.91, 1060.84, -475.525, 737.763, -474.126, 737.763, -437.063, 1071.33, -435.664, 1067.83, 943.357, 332.169, 939.161, 332.169, 100, 720.979, 97.9021, 721.679, 53.1469, 132.868, 53.8462, 132.868, 95.8042, 279.721, 95.1049, 277.623, 937.063, -1515.38, 931.469, -1518.88, 93.7063, -347.552, 92.3077, -351, 56, -1522.38, 56.6433, -1523.78, -434.965, 420, -432, 420, -471, -1525.17, -472.727, -1523.78, -1560.84)
 
 [node name="AbandonSatelite" type="Node2D"]
 script = ExtResource("1_styhv")
@@ -657,6 +660,25 @@ position = Vector2(-1081, -6239)
 
 [node name="Node2D158" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-892, -5807)
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(2813, 8626)
+scale = Vector2(1.45, 1.45)
+occluder = SubResource("OccluderPolygon2D_14f1h")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(11647, 8632)
+scale = Vector2(1.43, 1.43)
+occluder = SubResource("OccluderPolygon2D_14f1h")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(11437, 2386)
+scale = Vector2(1.43, 1.43)
+occluder = SubResource("OccluderPolygon2D_14f1h")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(2490, 2510)
+occluder = SubResource("OccluderPolygon2D_14f1h")
 
 [node name="Player" parent="." instance=ExtResource("4_168wx")]
 position = Vector2(2490, 2510)

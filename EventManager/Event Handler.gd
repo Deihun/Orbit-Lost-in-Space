@@ -202,3 +202,9 @@ func getAllEventIDHierarchy():
 
 func addFollowUpEvent(event):
 	GlobalResources.Priority_Event.append(event)
+
+func _is_in_event_index(target_data : int) -> bool:
+	for entry in rawEvent:
+		if entry.has("id") and entry["id"] == target_data:
+			return true
+	return false

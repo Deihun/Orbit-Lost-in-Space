@@ -44,7 +44,6 @@ func processNextEvent():			#PLAY NEXT EVENT
 	var CurrentID = EventID
 	var currentEvent = find_by_id(CurrentID)
 	var parent = get_parent()
-	print(currentEvent["id"])
 	
 	title.text = currentEvent["name"] 
 	desc.text = currentEvent["description"] 

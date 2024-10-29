@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do3agr6u61b4u"]
+[gd_scene load_steps=18 format=3 uid="uid://do3agr6u61b4u"]
 
 [ext_resource type="Script" path="res://DropBox/DropBox.gd" id="1_qn0js"]
 [ext_resource type="Texture2D" uid="uid://cak4wyw2mfq02" path="res://Scenes/SceneAssets/DropboxSprite.png" id="2_q71nl"]
@@ -76,6 +76,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mpntw"]
+polygon = PackedVector2Array(-97, 37, -82, 56, -51, 65, 5, 67, 44, 65, 69, 46, 74, 34, 73, -5, 71, -21, 59, -34, 45, -45, 24, -53, -22, -55, -75, -40, -98, -9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgxwq"]
 size = Vector2(638, 513)
 
@@ -96,6 +99,7 @@ position = Vector2(29, -91)
 polygon = PackedVector2Array(-71, -2, -73, 41, -44, 63, 33, 71, 70, 66, 90, 51, 100, 18, 91, -4, 72, -16, 37, -27, 8, -32, -37, -25, -56, -17)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 0
 y_sort_enabled = true
 position = Vector2(13, 1.395)
 scale = Vector2(0.862, 0.914)
@@ -105,6 +109,11 @@ autoplay = "Idle"
 frame = 6
 frame_progress = 1.0
 offset = Vector2(-27.025, -1.69)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+position = Vector2(-15.0812, -1.52626)
+scale = Vector2(1.16009, 1.09409)
+occluder = SubResource("OccluderPolygon2D_mpntw")
 
 [node name="LastMinute_Dropbox_indicator" type="Node2D" parent="."]
 visible = false

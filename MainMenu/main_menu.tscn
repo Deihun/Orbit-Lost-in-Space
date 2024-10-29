@@ -10,6 +10,69 @@
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="6_qrx2q"]
 
+[sub_resource type="Animation" id="Animation_0mu7w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(991, 520)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EarthMainmenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1077, 607)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ShipMainmenu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(812, 673)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../MarginContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-165, -303)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Control:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1548, 960)]
+}
+
 [sub_resource type="Animation" id="Animation_7qc1o"]
 resource_name = "Start_up"
 length = 3.0
@@ -72,69 +135,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(0.297302, 2.73208),
 "update": 0,
 "values": [Vector2(1750, 2000), Vector2(1750, 960)]
-}
-
-[sub_resource type="Animation" id="Animation_0mu7w"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(991, 520)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../EarthMainmenu:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1077, 607)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../ShipMainmenu:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(812, 673)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../MarginContainer:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-165, -303)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../Control:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1548, 960)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ea70b"]
@@ -237,15 +237,17 @@ zoom = Vector2(1, 1.019)
 [node name="Control" type="Control" parent="."]
 z_index = 1
 anchors_preset = 0
-offset_left = 1548.0
-offset_top = 960.0
-offset_right = 1588.0
-offset_bottom = 1000.0
+offset_left = 1750.0
+offset_top = 2000.0
+offset_right = 1790.0
+offset_bottom = 2040.0
 
 [node name="DeveloperOption" type="Button" parent="Control"]
 layout_mode = 0
-offset_right = 366.0
-offset_bottom = 108.0
+offset_left = -223.0
+offset_top = -76.0
+offset_right = 143.0
+offset_bottom = 32.0
 text = "EVENT MANAGER <DEV TOOL>"
 
 [node name="New_Game_Button" type="Button" parent="Control"]
@@ -294,6 +296,7 @@ text = "Load Game
 "
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Load_Game_Button"]
+layout_mode = 0
 offset_left = -63.7883
 offset_top = -63.4481
 offset_right = 400.212
@@ -305,6 +308,7 @@ patch_margin_right = 100
 patch_margin_bottom = 100
 
 [node name="Label" type="Label" parent="Control/Load_Game_Button/NinePatchRect"]
+layout_mode = 0
 offset_left = 69.4228
 offset_top = 67.5949
 offset_right = 394.423
@@ -326,6 +330,7 @@ text = "Settings
 "
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings_Button"]
+layout_mode = 0
 offset_left = -63.7883
 offset_top = -63.4481
 offset_right = 400.212
@@ -337,6 +342,7 @@ patch_margin_right = 100
 patch_margin_bottom = 100
 
 [node name="Label" type="Label" parent="Control/Settings_Button"]
+layout_mode = 0
 offset_left = 25.3907
 offset_right = 301.391
 offset_bottom = 83.0
@@ -356,6 +362,7 @@ theme_override_font_sizes/font_size = 60
 text = "Credits"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Credits_Button"]
+layout_mode = 0
 offset_left = -63.7883
 offset_top = -63.4481
 offset_right = 400.212
@@ -367,6 +374,7 @@ patch_margin_right = 100
 patch_margin_bottom = 100
 
 [node name="Label" type="Label" parent="Control/Credits_Button"]
+layout_mode = 0
 offset_left = 43.2583
 offset_top = 3.06486
 offset_right = 368.258
@@ -388,6 +396,7 @@ text = "Quit
 "
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Quit_Button"]
+layout_mode = 0
 offset_left = -63.7883
 offset_top = -63.4481
 offset_right = 400.212
@@ -399,6 +408,7 @@ patch_margin_right = 100
 patch_margin_bottom = 100
 
 [node name="Label" type="Label" parent="Control/Quit_Button"]
+layout_mode = 0
 offset_left = 83.0183
 offset_right = 227.018
 offset_bottom = 83.0

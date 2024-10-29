@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=29 format=3 uid="uid://ci0ganygmrv2x"]
 
+[ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_0nwbd"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
 [ext_resource type="VideoStream" path="res://Scenes/EndScenes/Gallery_Endings/FGUtji7wRD1S.ogv" id="2_kva43"]
@@ -9,10 +10,34 @@
 [ext_resource type="PackedScene" uid="uid://b2onu2klyecou" path="res://AmbiencePurposes/Paper_Collidable/PaperAmbienceGeneration.tscn" id="5_bvoa8"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="6_aur0e"]
 [ext_resource type="PackedScene" uid="uid://cleem5f6dxwl4" path="res://Resources/SmallFoodCan/SmallCan_Variety1.tscn" id="6_mx32n"]
+[ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="10_ljiwb"]
 [ext_resource type="PackedScene" uid="uid://l3oth153v8dv" path="res://AmbiencePurposes/Boxes/SmallBox.tscn" id="14_dh8q3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o01sg"]
+shader = ExtResource("1_0nwbd")
+shader_parameter/base_color = null
+shader_parameter/light_intensity = 0.7
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cnxy7"]
 load_path = "res://.godot/imported/GatheringPhase.png-7ce96ac76f2a31c5b3c8875489fcff09.ctex"
+
+[sub_resource type="Sky" id="Sky_8hq38"]
+
+[sub_resource type="Environment" id="Environment_k1waa"]
+background_mode = 2
+background_color = Color(1.27546e-06, 0, 0.482093, 1)
+background_energy_multiplier = 3.8
+sky = SubResource("Sky_8hq38")
+sky_custom_fov = 20.2
+ambient_light_source = 3
+ambient_light_color = Color(0.513677, 0.000927191, 0.645576, 1)
+ambient_light_sky_contribution = 0.35
+ambient_light_energy = 16.0
+reflected_light_source = 1
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_i1u2f"]
+
+[sub_resource type="Compositor" id="Compositor_o84nn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6puyf"]
 bg_color = Color(0, 0, 0, 1)
@@ -46,6 +71,21 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a75y7"]
+polygon = PackedVector2Array(-3836, -6106, -3762, -6107, -3764, -5704, -2537, -5703, -2534, -5944, -2529, -5943, -2532, -5662, -3837, -5662)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sc1uf"]
+polygon = PackedVector2Array(-1745, -1169, -1707, -1168, -1709, -806, -3376, -809, -3378, -1115, -3342, -1115, -3342, -853, -1749, -854)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pj1ms"]
+polygon = PackedVector2Array(1084, 596, 1072, 793, 588, 796, 589, 1639, 665, 1638, 675, 841, 1085, 829, 1095, 607)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j7uh8"]
+polygon = PackedVector2Array(-1640, -1965, -1670, -1966, -1675, -823, -2492, -823, -2491, 310, -2454, 308, -2454, -788, -1671, -787, -1670, -1014, -1639, -1013, -1638, -785, -860, -788, -860, 160, -824, 162, -823, -824, -1636, -824, -1637, -1017)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rt44c"]
+polygon = PackedVector2Array(1089, -360, 693, -589, -403, -595, -750, -346, -2042, -344, -2042, 2959, -476, 2955, -469, 3012, -2046, 3016, -2043, 4427, 28, 4418, 26, 3025, -91, 3021, -92, 2954, 161, 2955, 159, 3021, 96, 3023, 97, 4422, 2522, 4424, 2509.27, 3023.86, 527, 3028, 527, 2947, 2507, 2941, 2512, 2154, 1891, 2152, 1889, 608, 1083, 606, 1085, -360, 1882, -290, 3218, 1383, 3391, 5164, -1283, 5284, -2725, 4748, -3193, 2151, -2884, -598, -2038, -779, -490, -990, 726, -1021, 1908, -294)
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
@@ -54,15 +94,22 @@ z_index = -5
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="World"]
+material = SubResource("ShaderMaterial_o01sg")
 position = Vector2(990, 4021)
 texture = SubResource("CompressedTexture2D_cnxy7")
 metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World/Sprite2D"]
+environment = SubResource("Environment_k1waa")
+camera_attributes = SubResource("CameraAttributesPhysical_i1u2f")
+compositor = SubResource("Compositor_o84nn")
 
 [node name="IntroductionCamera" type="Camera2D" parent="."]
 position = Vector2(989, -3748)
 script = ExtResource("1_sfe6y")
 
 [node name="Panel" type="Panel" parent="."]
+light_mask = 0
 offset_left = 2673.0
 offset_top = -4621.0
 offset_right = 6360.0
@@ -77,6 +124,7 @@ offset_bottom = -3262.0
 stream = ExtResource("2_kva43")
 
 [node name="WideShotBackground" type="Sprite2D" parent="."]
+light_mask = 0
 position = Vector2(990, -2133)
 texture = ExtResource("2_og4ji")
 
@@ -680,7 +728,7 @@ position = Vector2(180, 2318)
 
 [node name="SmallBox5" parent="." instance=ExtResource("14_dh8q3")]
 z_index = 2
-position = Vector2(902, 3448)
+position = Vector2(913, 3451)
 
 [node name="SmallBox6" parent="." instance=ExtResource("14_dh8q3")]
 z_index = 2
@@ -698,19 +746,60 @@ position = Vector2(906, 3595)
 
 [node name="SmallBox9" parent="." instance=ExtResource("14_dh8q3")]
 z_index = 2
-position = Vector2(896, 3396)
+position = Vector2(903, 3407)
 
 [node name="SmallBox10" parent="." instance=ExtResource("14_dh8q3")]
 z_index = 2
 position = Vector2(1590, 2523)
 
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+position = Vector2(5310, 9714)
+occluder = SubResource("OccluderPolygon2D_a75y7")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(2655, 4857)
+occluder = SubResource("OccluderPolygon2D_sc1uf")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(885, 1619)
+occluder = SubResource("OccluderPolygon2D_pj1ms")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(1770, 3238)
+occluder = SubResource("OccluderPolygon2D_j7uh8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(885, 1619)
+occluder = SubResource("OccluderPolygon2D_rt44c")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(814, 2703)
+color = Color(0.522217, 0.637133, 0.806816, 0.6)
+energy = 0.1
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("10_ljiwb")
+texture_scale = 2.34
+height = 1.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-412, 2069)
+color = Color(0.324604, 0.000309384, 0.987553, 0.6)
+energy = 0.1
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("10_ljiwb")
+texture_scale = 5.18
+height = 1.0
+
 [node name="Player" parent="." instance=ExtResource("1_qqdcd")]
 z_index = 2
-position = Vector2(885, 1619)
+position = Vector2(874, 1661)
 can_Move = false
 AdditionalPlayerSpeed = 100
 show_timer = false
 canRestartOnGameOver = true
 delayBeforeGameStart = 4.0
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]

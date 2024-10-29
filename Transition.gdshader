@@ -14,4 +14,3 @@ void fragment() {
 	vec4 mask_color = texture(mask , UV * s + offset);
 	COLOR.a = 1.0 - mask_color.a + float(cutoff);
 }
-

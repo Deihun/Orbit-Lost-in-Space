@@ -4,7 +4,7 @@ extends Camera2D
 @onready var player_cb : CharacterBody2D = $"../Player/player"
 @onready var player_position
 @onready var player_camera
-var secondsTransition : float = 4
+var secondsTransition : float = 1.5
 
 # Called when the node enters the scene tree for thefirst time.
 func _ready() -> void:
@@ -14,6 +14,9 @@ func _ready() -> void:
 	player_cb._set_game_over_action(Callable(self,"gameOver"))
 	player_cb._set_game_win_condition(Callable(self,"gameWin"))
 
+	var shader = $"../World/Sprite2D".material as ShaderMaterial
+	shader.set_shader_parameter("base_color", Color(1, 1, 1, 1))
+	shader.set_shader_parameter("light_intensity", 0.7)
 	gameStart()
 func gameOver() -> void:
 	player_cb.retry()
