@@ -38,23 +38,60 @@ var dialogue_line: DialogueLine:
 			await ready
 
 		dialogue_line = next_dialogue_line
-
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
 		var portrait_path: = load("res://Resources/CREW/MAXIM.png")
-		var adjustmentPosition = Vector2(100,350)
+		var adjustmentPosition = Vector2(150,1150)
+		var adjustmentScale = Vector2(0.25,0.25)
 		var a
 		if dialogue_line.character.contains("Maxim"):
 			a = preload("res://Resources/CREW/CrewLobby/Maxim.tscn").instantiate()
+			if dialogue_line.character.contains("_Happy"):
+				a.setHappy()
+			elif dialogue_line.character.contains("_Neutral"):
+				a.setNeutral()
+			elif dialogue_line.character.contains("_Angry"):
+				a.setAngry()
+			else:
+				pass
+			dialogue_line.character = "Maxim"
 		elif dialogue_line.character.contains("Fumiko"):
 			a = preload("res://Resources/CREW/CrewLobby/Fumiko.tscn").instantiate()
+			if dialogue_line.character.contains("_Happy"):
+				a.setHappy()
+			elif dialogue_line.character.contains("_Neutral"):
+				a.setNeutral()
+			elif dialogue_line.character.contains("_Angry"):
+				a.setAngry()
+			else:
+				pass
+			dialogue_line.character = "Fumiko"
 		elif dialogue_line.character.contains("Regina"):	
 			a = preload("res://Resources/CREW/CrewLobby/Regina.tscn").instantiate()
+			if dialogue_line.character.contains("_Happy"):
+				a.setHappy()
+			elif dialogue_line.character.contains("_Neutral"):
+				a.setNeutral()
+			elif dialogue_line.character.contains("_Angry"):
+				a.setAngry()
+			else:
+				pass
+			dialogue_line.character = "Regina"
 		elif dialogue_line.character.contains("Nashir"):
 			a = preload("res://Resources/CREW/CrewLobby/Nashir.tscn").instantiate()
+			if dialogue_line.character.contains("_Happy"):
+				a.setHappy()
+			elif dialogue_line.character.contains("_Neutral"):
+				a.setNeutral()
+			elif dialogue_line.character.contains("_Angry"):
+				a.setAngry()
+			else:
+				pass
+			dialogue_line.character = "Nashir"
 		else: 
 			a = preload("res://Resources/CREW/CrewLobby/Jerry.tscn").instantiate()
 		a.position += adjustmentPosition
+		a.scale += adjustmentScale
 		portrait.add_child(a)
 
 		dialogue_label.hide()

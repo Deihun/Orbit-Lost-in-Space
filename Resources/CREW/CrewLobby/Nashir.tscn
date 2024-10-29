@@ -6,12 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://dpea3voevoe58" path="res://Resources/CREW/CrewLobby/Nashir/Nashir Lobby_Sick.png" id="3_pgb0j"]
 
 [node name="Nashir" type="Sprite2D"]
+y_sort_enabled = true
 texture = ExtResource("1_jyica")
+offset = Vector2(0, -700)
 script = ExtResource("2_6j87k")
 
 [node name="Reaction" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = ExtResource("2_jgbbo")
+offset = Vector2(0, -700)
 
 [node name="Sick" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 texture = ExtResource("3_pgb0j")
+offset = Vector2(0, -700)

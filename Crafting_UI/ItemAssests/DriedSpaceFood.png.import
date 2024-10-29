@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0pyrkb81fuba"
-path="res://.godot/imported/SmallBiogene_Broken_Puddle.png-5d51b35097b8a6bfa54aeee3f2174340.ctex"
+uid="uid://kx34ra48c7i1"
+path="res://.godot/imported/DriedSpaceFood.png-b145560a51a4a382c08942972b1801c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Small_Biogene/SmallBiogene_Broken_Puddle.png"
-dest_files=["res://.godot/imported/SmallBiogene_Broken_Puddle.png-5d51b35097b8a6bfa54aeee3f2174340.ctex"]
+source_file="res://Crafting_UI/ItemAssests/DriedSpaceFood.png"
+dest_files=["res://.godot/imported/DriedSpaceFood.png-b145560a51a4a382c08942972b1801c6.ctex"]
 
 [params]
 

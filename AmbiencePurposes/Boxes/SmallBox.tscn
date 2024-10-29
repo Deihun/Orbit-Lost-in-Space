@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://l3oth153v8dv"]
+[gd_scene load_steps=4 format=3 uid="uid://l3oth153v8dv"]
 
 [ext_resource type="Texture2D" uid="uid://cj4w00cxpq0as" path="res://AmbiencePurposes/Boxes/SmallBoxes.png" id="1_v4nfs"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Boxes/small_box.gd" id="1_ytcrn"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6ph7g"]
+polygon = PackedVector2Array(-14, 64, 76, 69, 63, 40, -9, 38)
 
 [node name="SmallBox" type="StaticBody2D"]
 y_sort_enabled = true
@@ -46,6 +49,9 @@ offset = Vector2(-14.36, -81.7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-4, 43, -14, 64, 39, 67, 74, 68, 59, 43)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_6ph7g")
 
 [connection signal="body_entered" from="PushUp" to="." method="_on_push_up_body_entered"]
 [connection signal="body_exited" from="PushUp" to="." method="_on_push_up_body_exited"]

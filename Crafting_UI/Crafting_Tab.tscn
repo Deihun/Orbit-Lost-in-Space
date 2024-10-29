@@ -402,7 +402,6 @@ offset_bottom = 629.0
 text = "Freeze-Dried Space Food"
 
 [node name="Item_UI" parent="Control" instance=ExtResource("8_k5b2a")]
-visible = true
 layout_mode = 1
 offset_left = 436.0
 offset_top = 177.0

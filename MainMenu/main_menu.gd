@@ -1,13 +1,13 @@
 class_name MainMenu
 extends Control
 
-@onready var new_game_button = $MarginContainer/HBoxContainer/VBoxContainer/New_Game_Button as Button
-@onready var load_game_button = $MarginContainer/HBoxContainer/VBoxContainer/Load_Game_Button as Button
-@onready var settings_button = $MarginContainer/HBoxContainer/VBoxContainer/Settings_Button as Button
+@onready var new_game_button = $Control/New_Game_Button as Button
+@onready var load_game_button = $Control/Load_Game_Button as Button
+@onready var settings_button = $Control/Settings_Button as Button
 @onready var settings_menu = $Settings_Menu as SettingsMenu
 @onready var save_ui = $SaveUI
 @onready var margin_container = $MarginContainer as MarginContainer
-@onready var quit_button = $MarginContainer/HBoxContainer/VBoxContainer/Quit_Button as Button
+@onready var quit_button = $Control/Quit_Button as Button
 @onready var start_game = load("res://Scenes/LoadingScene.tscn") as PackedScene
 @onready var load_game = load("res://Scenes/TestingInteriorScene.tscn") as PackedScene
 @onready var a = preload("res://Scripts/EventManager_NotIngame.tscn") as PackedScene
@@ -15,6 +15,8 @@ extends Control
 @onready var LoadGame = SaveNLoad
 @onready var credits: Control = $Credits
 
+func _ready() -> void:
+	$AnimationPlayer.play("Start_up")
 
 func _on_new_game_button_pressed() -> void:
 	if SettingsDataContainer.tutorialScene or SettingsDataContainer.tutorialScene == null:

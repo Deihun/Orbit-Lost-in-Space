@@ -4,7 +4,8 @@ extends Control
 @onready var crew3 : Button = $Crew_3
 @onready var crew4 : Button = $Crew_4
 
-var consPosition = [Vector2(173,346), Vector2(481,271),Vector2(1071,259),Vector2(1404,362)]
+var consPosition = [Vector2(321,348), Vector2(669,240),Vector2(1007,243),Vector2(1201,332)]
+var atBack = [Vector2(669,240),Vector2(1007,243)]
 var button_array = []
 var crew = []
 var getcrew = []
@@ -14,7 +15,7 @@ var _button
 
 func _ready() -> void:
 	button_array = [crew1,crew2,crew3,crew4]
-	IngameStoredProcessSetting.crew_in_ship = ["Maxim","Nashir","Fumiko"]
+	#IngameStoredProcessSetting.crew_in_ship = ["Maxim","Fumiko","Nashir"]
 	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
@@ -24,6 +25,7 @@ func _ready() -> void:
 	
 
 func setRandomPosition():
+	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	positionRandom = consPosition.duplicate()
 	positionRandom.shuffle()
 	$Crew_1.position = positionRandom.pop_front()
@@ -31,9 +33,10 @@ func setRandomPosition():
 	$Crew_3.position = positionRandom.pop_front()
 	$Crew_4.position = positionRandom.pop_front()
 
-	print(getcrew[4] if 4 < getcrew.size() else null)
-
-	var pos = Vector2(80,400)
+	var pos_big = Vector2(80,750)
+	var pos_small = Vector2(80,800)
+	var bigSize = Vector2(0.5,0.5)
+	var smallSize = Vector2(0.37, 0.37)
 	if getcrew.size() < 1: return
 	for i in range(button_array.size()):
 		var crew_member = getcrew[i] if i < getcrew.size() else null
@@ -42,8 +45,9 @@ func setRandomPosition():
 		child.queue_free()
 	var resource = getScene(getcrew[0])
 	resource = resource.instantiate()
-	resource.scale = Vector2(0.5,0.5)
-	resource.position += pos
+	resource.scale = smallSize if atBack.has($Crew_1.position) else bigSize
+	resource.position = pos_big + resource.position  if atBack.has($Crew_1) else pos_small + resource.position
+	resource.scale.x *=  1 if randf() < 0.5 else -1
 	$Crew_1.add_child(resource)
 
 	if getcrew.size() < 2: return
@@ -51,8 +55,9 @@ func setRandomPosition():
 		child.queue_free()
 	var resource_2 = getScene(getcrew[1])
 	resource_2 = resource_2.instantiate()
-	resource_2.scale = Vector2(0.5,0.5)
-	resource_2.position += pos
+	resource_2.scale = smallSize if atBack.has($Crew_2.position) else bigSize
+	resource_2.position = pos_big + resource_2.position  if atBack.has($Crew_2.position) else pos_small + resource_2.position
+	resource_2.scale.x *=  1 if randf() < 0.5 else -1
 	$Crew_2.add_child(resource_2)
 
 	if getcrew.size() < 3: return
@@ -60,8 +65,9 @@ func setRandomPosition():
 		child.queue_free()
 	var resource_3 = getScene(getcrew[2])
 	resource_3 = resource_3.instantiate()
-	resource_3.scale = Vector2(0.5,0.5)
-	resource_3.position += pos
+	resource_3.scale = smallSize if atBack.has($Crew_3.position) else bigSize
+	resource_3.position = pos_big + resource_3.position if atBack.has($Crew_3.position) else pos_small + resource_3.position
+	resource_3.scale.x *=  1 if randf() < 0.5 else -1
 	$Crew_3.add_child(resource_3)
 
 	if getcrew.size() < 4: return
@@ -69,8 +75,9 @@ func setRandomPosition():
 		child.queue_free()
 	var resource_4 = getScene(getcrew[3])
 	resource_4 = resource_4.instantiate()
-	resource_4.scale = Vector2(0.5,0.5)
-	resource_4.position += pos
+	resource_4.scale = smallSize if atBack.has($Crew_4.position) else bigSize
+	resource_4.position = pos_big + resource_4.position  if atBack.has($Crew_4.position) else pos_small + resource_4.position
+	resource_4.scale.x *=  1 if randf() < 0.5 else -1
 	$Crew_4.add_child(resource_4)
 
 ################################################# INTERACTION DIALOGUE
@@ -86,6 +93,7 @@ func set_initialDialogue():
 
 
 func _on_maxim_button_down() -> void: #CREW 0
+	if getcrew.size() < 1: return
 	var a = _getInteractionDialogue(getcrew[0])
 	$Crew_1.add_child(resource)
 	if a == null: return
@@ -93,6 +101,7 @@ func _on_maxim_button_down() -> void: #CREW 0
 
 
 func _on_fumiko_button_down() -> void: #CREW 1
+	if getcrew.size() < 2: return
 	var a = _getInteractionDialogue(getcrew[1])
 	if a == null: return
 	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
@@ -100,6 +109,7 @@ func _on_fumiko_button_down() -> void: #CREW 1
 
 
 func _on_regina_button_down() -> void: #CREW 2
+	if getcrew.size() < 3: return
 	var a = _getInteractionDialogue(getcrew[2])
 	if a == null: return
 	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)
@@ -107,6 +117,7 @@ func _on_regina_button_down() -> void: #CREW 2
 
 
 func _on_nashir_button_down() -> void: #CREW 3
+	if getcrew.size() < 4: return
 	var a = _getInteractionDialogue(getcrew[3])
 	if a == null: return
 	DialogueManager.show_dialogue_balloon(maxim_initialDialogue, a)

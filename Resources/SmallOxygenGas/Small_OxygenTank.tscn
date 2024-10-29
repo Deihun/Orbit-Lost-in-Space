@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg2e3j7q32we0"]
+[gd_scene load_steps=12 format=3 uid="uid://cg2e3j7q32we0"]
 
 [ext_resource type="Script" path="res://Resources/SmallOxygenGas/small_oxygen_tank.gd" id="1_ljicf"]
 [ext_resource type="PackedScene" uid="uid://bj53jj53p782" path="res://Resources/SmallOxygenGas/explosion_area.tscn" id="2_qvjlw"]
 [ext_resource type="Texture2D" uid="uid://b8bnpjrqpsr3o" path="res://Resources/SmallOxygenGas/Small_OxygenTankSpritesheet.png" id="2_ru0l7"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_18u1h"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rj2x6"]
+polygon = PackedVector2Array(21, 19, 11, 25, -2, 27, -12, 25, -21, 21, -24, 15, -16, 12, -3, 10, 12, 12, 20, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kq64"]
 radius = 25.4951
@@ -49,6 +52,9 @@ lock_rotation = true
 linear_damp = 20.0
 script = ExtResource("1_ljicf")
 Explosion_Scene = ExtResource("2_qvjlw")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_rj2x6")
 
 [node name="DamageHitPoint" type="Area2D" parent="."]
 collision_mask = 19

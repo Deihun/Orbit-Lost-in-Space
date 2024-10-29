@@ -6,6 +6,14 @@ extends Node2D
 var speed = 1000.0
 
 func _ready():
+	match int(randf() * 4):
+		1:
+			$Puddle.texture = load("res://Resources/SmallBiogene_Broken_Puddle_1.png")
+		2:
+			$Puddle.texture = load("res://Resources/SmallBiogene_Broken_Puddle_2.png")
+		3:
+			$Puddle.texture = load("res://Resources/SmallBiogene_Broken_Puddle_3.png")
+	$Puddle.rotation = randf()*1
 	var glass_shards = [glassshard_1, glassshard_2, glassshard_3]
 	for shard in glass_shards:
 		if shard:

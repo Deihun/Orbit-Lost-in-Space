@@ -3,12 +3,14 @@ extends Node2D
 #NODES
 @onready var space_image = $Space
 @onready var _player = $Player
-
+@onready var player_cb = $Player/player
 #VARIABLE
-
+var crew_name = IngameStoredProcessSetting.selectedCrew
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_onStartInitialize()
+	player_cb._set_game_over_action(Callable(self,"gameOver"))
+	player_cb._set_game_win_condition(Callable(self,"gameWin"))
 
 
 func _onStartInitialize():
@@ -41,3 +43,23 @@ func _randomizeSatelite():
 			pass
 	print(randomStart)
 	_player.gameStart()
+
+func gameStart():
+	player_cb.startUI()
+	player_cb.canMove = true
+
+func gameOver():
+	_player.transition()
+	player_cb.canMove = false
+	await get_tree().create_timer(2.5).timeout
+	IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
+	IngameStoredProcessSetting.Scenes = "interiorscene"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	pass
+
+func gameWin():
+	_player.transition()
+	player_cb.canMove = false
+	await get_tree().create_timer(2.5).timeout
+	IngameStoredProcessSetting.Scenes = "interiorscene"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")

@@ -115,7 +115,7 @@ func _on_click_cooldown_timeout() -> void:
 
 func PAUSE() -> void:
 	var pause = $PauseMenu
-	pause.position = $cam2d.position + Vector2(1584, 231)
+	pause.position = $cam2d.position + Vector2(1584, 350)
 	pause._pause()
 
 func _on_expedition_button_button_down() -> void:

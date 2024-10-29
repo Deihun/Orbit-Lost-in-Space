@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://do3agr6u61b4u"]
+[gd_scene load_steps=18 format=3 uid="uid://do3agr6u61b4u"]
 
 [ext_resource type="Script" path="res://DropBox/DropBox.gd" id="1_qn0js"]
 [ext_resource type="Texture2D" uid="uid://cak4wyw2mfq02" path="res://Scenes/SceneAssets/DropboxSprite.png" id="2_q71nl"]
 [ext_resource type="Script" path="res://DropBox/LastMinuteDropbox_indicator.gd" id="3_oh65s"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_t4s61"]
-[ext_resource type="Texture2D" uid="uid://cwk0mlnr1okh6" path="res://DropBox/TemporaryDropboxWarning.png" id="4_2le4n"]
+[ext_resource type="Texture2D" uid="uid://2kiedg73l26x" path="res://DropBox/TemporaryDropboxWarning.png" id="4_2le4n"]
 [ext_resource type="Script" path="res://DropBox/Player_Final_Count.gd" id="4_cp7mb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f11ab"]
@@ -76,6 +76,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mpntw"]
+polygon = PackedVector2Array(-97, 37, -82, 56, -51, 65, 5, 67, 44, 65, 69, 46, 74, 34, 73, -5, 71, -21, 59, -34, 45, -45, 24, -53, -22, -55, -75, -40, -98, -9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgxwq"]
 size = Vector2(638, 513)
 
@@ -96,6 +99,7 @@ position = Vector2(29, -91)
 polygon = PackedVector2Array(-71, -2, -73, 41, -44, 63, 33, 71, 70, 66, 90, 51, 100, 18, 91, -4, 72, -16, 37, -27, 8, -32, -37, -25, -56, -17)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 0
 y_sort_enabled = true
 position = Vector2(13, 1.395)
 scale = Vector2(0.862, 0.914)
@@ -106,18 +110,32 @@ frame = 6
 frame_progress = 1.0
 offset = Vector2(-27.025, -1.69)
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+position = Vector2(-15.0812, -1.52626)
+scale = Vector2(1.16009, 1.09409)
+occluder = SubResource("OccluderPolygon2D_mpntw")
+
 [node name="LastMinute_Dropbox_indicator" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_oh65s")
 
 [node name="Sprite2D" type="Sprite2D" parent="LastMinute_Dropbox_indicator"]
-visible = false
-position = Vector2(17, -29)
+position = Vector2(-10, -4.99999)
 scale = Vector2(2.56078, 2.31373)
 texture = ExtResource("4_2le4n")
 
 [node name="LastMinuteBlinking" type="Timer" parent="LastMinute_Dropbox_indicator"]
 wait_time = 0.1
 one_shot = true
+
+[node name="SkipTimer" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 255
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SkipTimer"]
+position = Vector2(-43, 12)
+scale = Vector2(1.6145, 1.6072)
+polygon = PackedVector2Array(-76.804, 11.1996, -55.1254, 67.1976, 31.5887, 86.4858, 96.6243, 57.2424, 114.587, -10.5774, 69.9907, -63.4644, -10.5296, -73.4196, -61.9387, -37.9542)
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_t4s61")]
 collision_layer = 2
@@ -126,7 +144,7 @@ action_name = "Submit"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="InteractionArea"]
 position = Vector2(-43, 12)
 scale = Vector2(1.6145, 1.6072)
-polygon = PackedVector2Array(-123.877, -18.666, -67.513, 111.374, 109.631, 108.885, 167.853, 0, 107.154, -126.929, -61.3191, -126.929)
+polygon = PackedVector2Array(-76.804, 11.1996, -55.1254, 67.1976, 31.5887, 86.4858, 96.6243, 57.2424, 114.587, -10.5774, 69.9907, -63.4644, -10.5296, -73.4196, -61.9387, -37.9542)
 
 [node name="Player_Final_Count" type="Area2D" parent="."]
 collision_layer = 0
@@ -138,5 +156,7 @@ position = Vector2(-16, -8)
 shape = SubResource("RectangleShape2D_mgxwq")
 
 [connection signal="timeout" from="LastMinute_Dropbox_indicator/LastMinuteBlinking" to="LastMinute_Dropbox_indicator" method="_on_last_minute_blinking_timeout"]
+[connection signal="body_entered" from="SkipTimer" to="." method="_on_skip_timer_body_entered"]
+[connection signal="body_exited" from="SkipTimer" to="." method="_on_skip_timer_body_exited"]
 [connection signal="body_entered" from="Player_Final_Count" to="Player_Final_Count" method="_on_body_entered"]
 [connection signal="body_exited" from="Player_Final_Count" to="Player_Final_Count" method="_on_body_exited"]

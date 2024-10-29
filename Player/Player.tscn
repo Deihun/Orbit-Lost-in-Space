@@ -1,4 +1,4 @@
-[gd_scene load_steps=285 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=287 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -11,6 +11,8 @@
 [ext_resource type="FontFile" uid="uid://pbqj04f0mk5m" path="res://TutorialUI/LEMONMILK-Bold.otf" id="3_ay1c7"]
 [ext_resource type="Texture2D" uid="uid://biimev6c1gcxp" path="res://Player/Pause_Button.png" id="3_my03n"]
 [ext_resource type="Texture2D" uid="uid://2lu52tr4nke0" path="res://TutorialUI/Player Control.png" id="3_n65bk"]
+[ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="3_siuyv"]
+[ext_resource type="PackedScene" uid="uid://blr60lckf51rn" path="res://Player/transition.tscn" id="4_5e847"]
 [ext_resource type="Shader" path="res://Player/BlackandWhite.gdshader" id="4_ov5gh"]
 [ext_resource type="Script" path="res://Player/red_ui_indicator.gd" id="4_q5jjs"]
 [ext_resource type="Texture2D" uid="uid://b3wlqi01kmlma" path="res://TutorialUI/Interact.png" id="4_t2mgb"]
@@ -1874,6 +1876,19 @@ collision_layer = 2
 collision_mask = 54
 script = ExtResource("1_5ung8")
 
+[node name="PointLight2D" type="PointLight2D" parent="player"]
+z_index = 2
+position = Vector2(6, -40)
+color = Color(1, 1, 1, 0.180392)
+energy = 3.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter_smooth = 8.5
+shadow_item_cull_mask = 99
+texture = ExtResource("3_siuyv")
+texture_scale = 2.37
+height = 1.0
+
 [node name="_GameTimerLimit" type="Timer" parent="player"]
 one_shot = true
 script = ExtResource("23_rapkq")
@@ -1885,6 +1900,9 @@ position = Vector2(8, -39)
 shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
+
+[node name="Transition" parent="player/AllUIParents" instance=ExtResource("4_5e847")]
+metadata/_edit_lock_ = true
 
 [node name="GameOver" type="ColorRect" parent="player/AllUIParents"]
 visible = false
@@ -2203,11 +2221,11 @@ texture = ExtResource("1_8a5wi")
 offset = Vector2(0, -64.35)
 
 [node name="Player4" type="AnimatedSprite2D" parent="player"]
+light_mask = 0
 position = Vector2(4, -36)
 scale = Vector2(0.784612, 1.02256)
 sprite_frames = SubResource("SpriteFrames_5ii05")
-animation = &"Up_animation"
-frame_progress = 0.802908
+animation = &"Pickup_animation"
 offset = Vector2(0, -130.43)
 metadata/_edit_lock_ = true
 
@@ -2225,6 +2243,7 @@ position = Vector2(9, -40)
 shape = SubResource("CircleShape2D_dsf36")
 
 [node name="PlayerCamera" type="Camera2D" parent="player"]
+position = Vector2(13, -148)
 scale = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.5

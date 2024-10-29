@@ -193,11 +193,13 @@ func _on_click_cooldown_timeout() -> void:
 
 func _on_button_to_storage_room_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-			LocationKey = 3
-			ChangeLocaton(false)
+			position = SpecificLocation[3]
+			ArrowButton[0].hide()
+			ArrowButton[1].hide()
 
 
 func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	var eventReader = $"../EventHandler/EventReader"
 	var cycleReport_container = $"../CycleReport/ClickAnywhereButton/CycleReport_ScrollContainer"
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
 		if !cycleReport_container._isDoneShowing:
@@ -207,6 +209,7 @@ func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, sh
 		cycleReport_container.deleteChild()
 		IngameStoredProcessSetting.Cycle_ReportList.clear()
 		LocationKey = 2
+		eventReader.hide()
 		ChangeLocaton(false)
 		#$"../EventHandler".switchIt()
 		$"../WholeInteriorScene/Lobby".set_initialDialogue()
