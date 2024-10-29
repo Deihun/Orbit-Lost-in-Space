@@ -1,23 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgpoayc71lu3f"]
+[gd_scene load_steps=4 format=3 uid="uid://dgpoayc71lu3f"]
 
 [ext_resource type="Script" path="res://Scenes/EndScenes/ending_scene.gd" id="1_6ugeb"]
+[ext_resource type="Texture2D" uid="uid://d1ta36lw00oki" path="res://Scenes/EndScenes/Gallery_Endings/KickOut_EndScene.png" id="2_nhg8c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gvec"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="EndingScene" type="Node2D"]
 script = ExtResource("1_6ugeb")
 
 [node name="img_Ending" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_nhg8c")
+
+[node name="Button" type="Button" parent="img_Ending"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -966.0
+offset_top = -550.0
+offset_right = 964.0
+offset_bottom = 539.0
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+offset_left = -155.0
+offset_top = -18.0
+offset_right = -111.0
+offset_bottom = 22.0
 scale = Vector2(49.4925, 28.9409)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2gvec")
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 9.25393
-offset_top = 11.6099
-offset_right = 614.254
-offset_bottom = 251.61
-scale = Vector2(0.0371133, 0.0616244)
-theme_override_font_sizes/font_size = 126
-text = "ENDING"
+[node name="GoodEnd" type="Label" parent="."]
+visible = false
+offset_top = 381.0
+offset_right = 1921.0
+offset_bottom = 594.0
+theme_override_font_sizes/font_size = 156
+text = "<GOOD ENDING>"
+horizontal_alignment = 1
+
+[connection signal="button_up" from="img_Ending/Button" to="." method="_on_button_button_up"]

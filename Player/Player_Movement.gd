@@ -5,6 +5,7 @@ var slow : float = 0.0
 var Friction : float = 1000.0
 
 var distanceCurrentLimit :int = 0
+var animation_use_id : int
 
 var endAnimationOnce : bool = true
 var isPickingAnim : bool = false
@@ -14,6 +15,13 @@ var canMove : bool = false
 var currentAnimation = ""
 
 var inventory
+
+var run_left = ["Left_animation","_Helmet_Jerry_left"]
+var run_right = ["Right_movement","_Helmet_Jerry_right"]
+var run_up = ["Up_animation", "_Helmet_Jerry_up"]
+var run_down = ["Down_Movement","_Helmet_Jerry_down"]
+var run_idle = ["Idle_animation","_Helmet_Jerry_idle"]
+var run_pickup = ["Pickup_animation","_Helmet_Jerry_pickup"]
 
 @onready var anim_player = $Player4
 @onready var PickupTimer = $PickUpCooldown
@@ -25,10 +33,13 @@ var game_win : Callable
 
 #VOID METHODS
 func _ready():	#OnStart, 
-	play_animation("Idle_animation")
+	self.set_process(false)
+	await get_tree().create_timer(0.1).timeout #For enabling animation to run on conditions
+	play_animation(run_idle[animation_use_id])
 	$AllUIParents/Label_Timer.hide()
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
+	self.set_process(true)
 
 
 
@@ -37,7 +48,8 @@ func _physics_process(delta):
 		movement(delta)
 
 func movement(delta):
-	var animationFramesSlowness = (24 - (3 - (((maxSpeed - slow + inventory.getSpeedPenalty()))/50)))/24
+	var animationFramesSlowness = 1.0
+	if inventory: animationFramesSlowness = (24 - (3 - (((maxSpeed - slow + inventory.getSpeedPenalty()))/50)))/24
 	if animationFramesSlowness > 1.0:
 		animationFramesSlowness= 1.0
 	if isPickingAnim:
@@ -52,19 +64,20 @@ func movement(delta):
 		removeTutorialUI_onCertainCondition()
 		velocity = input_vector * ((maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta * 100)
 		if input_vector.x > 0:
-			play_animation("Right_movement")
+			play_animation(run_right[animation_use_id])
 		elif input_vector.x < 0:
-			play_animation("Left_animation")
+			play_animation(run_left[animation_use_id])
 		elif input_vector.y > 0:
-			play_animation("Down_Movement")
+			play_animation(run_down[animation_use_id])
 		elif input_vector.y < 0:
-			play_animation("Up_animation")
+			play_animation(run_up[animation_use_id])
 	elif !isPickingAnim and input_vector == Vector2.ZERO:
 		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
-		play_animation("Idle_animation") # Play idle animation when not moving    
+		play_animation(run_idle[animation_use_id]) # Play idle animation when not moving 
+	print(animation_use_id)
 
 
-	if (Vector2.ZERO == input_vector && currentAnimation != "Idle_animation"):
+	if (Vector2.ZERO == input_vector && currentAnimation != "Idle_animation" or "_Helmet_Jerry_idle"):
 		isPickingAnim = false
 	#CHECK IF VECTOR IS 'NOT' NULL OR ZERO TO MOVE ON SPECIFIC CALCULATION, SET ZERO OTHERWISE LATTER
 	if input_vector != Vector2.ZERO: 
@@ -73,7 +86,7 @@ func movement(delta):
 		velocity = input_vector * ($"..".AdditionalPlayerSpeed + (maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta*100)
 	else:
 		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
-	anim_player.speed_scale = animationFramesSlowness
+	#anim_player.speed_scale = animationFramesSlowness
 	move_and_slide()
 
 func _set_game_win_condition(action: Callable):
@@ -83,10 +96,10 @@ func _set_game_over_action(action: Callable):
 	game_over_action = action
 
 func pickup():
-	if currentAnimation != "Pickup_animation":
+	if currentAnimation != "Pickup_animation" or "_Helmet_Jerry_pickup":
 		isPickingAnim = true
 		isPicking = true
-		play_animation("Pickup_animation")
+		play_animation(run_pickup[animation_use_id])
 
 func update_label(text_content, isColor): #Set the child label node 
 	var label = get_parent().get_node("player/AllUIParents/Label_Timer")
@@ -103,10 +116,10 @@ func play_animation(anim_name):
 	
 
 func _on_player_4_animation_finished() -> void:
-	if currentAnimation == "Pickup_animation":
+	if currentAnimation == "Pickup_animation" or "_Helmet_Jerry_pickup":
 		isPickingAnim = false
 		isPicking = false
-		anim_player.play("Idle_animation")
+		anim_player.play(run_pickup[animation_use_id])
 	pass # Replace with function body.
 
 func _on_pause_button_button_down() -> void:

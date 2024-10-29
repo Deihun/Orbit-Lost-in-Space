@@ -32,7 +32,7 @@ func _ready():
 		_loadGameStart()
 	else:
 		_newGameStart()
-		
+	GameOver("Kickout")
 	updateUI()
 
 func getButtonPosition():
@@ -50,8 +50,9 @@ func _loadGameStart():
 	pass
 
 	
-func GameOver(OtherCommands):
-	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
+func GameOver(Ending : String):
+	IngameStoredProcessSetting.Ending = Ending
+	get_tree().change_scene_to_file("res://Scenes/EndScenes/EndingScene.tscn")
 	pass
 
 func _on_next_day_button_pressed():
@@ -76,6 +77,7 @@ func _on_next_day_button_pressed():
 		ClickCD.start()
 		$WholeInteriorScene/Lobby.setRandomPosition()
 		$WholeInteriorScene/Lobby.set_initialDialogue()
+		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
 		
@@ -147,3 +149,13 @@ func _on_cancel_button_button_up() -> void:
 	$cam2d.ChangeSpecificScene(2)
 	$cam2d.ChangeLocaton(false)
 	pass # Replace with function body.
+
+
+func checkIfKickoutEnough() -> bool:
+	var condition = false
+	for crew in IngameStoredProcessSetting.crew_in_ship:
+		condition = true if IngameStoredProcessSetting._relationship[crew] <= 0.0 else false
+	if condition:
+		if randf() > 0.25:
+			return true
+	return false

@@ -4,7 +4,9 @@ extends Node2D
 @export var can_Move : bool = true
 @export var Smoothing_CameraTrack : bool = true
 @export var crew_icon_bar_Show : bool = false
+@export var equipHelmet : bool = false
 @export var AdditionalPlayerSpeed : int = 0
+
 
 @export_group("UI_Settings")
 @export var cameraZoom : float
@@ -22,6 +24,7 @@ extends Node2D
 @export var limitTimeDuration : int = 90
 
 func _ready() -> void:
+	$player.animation_use_id = 1 if equipHelmet else 0
 	showTimer(show_timer)
 	canMove(can_Move)
 	_smoothCameraTrack(Smoothing_CameraTrack)
@@ -67,3 +70,7 @@ func transition():
 	$player/AllUIParents/Transition/AnimationPlayer.play("FadeToBlack")
 	await get_tree().create_timer(2.5).timeout
 	$player/AllUIParents/Transition.hide()
+
+func with_helmet():
+	await get_tree().create_timer(0.3).timeout
+	$player.animation_use_id = 1

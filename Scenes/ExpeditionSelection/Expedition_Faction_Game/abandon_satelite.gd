@@ -47,6 +47,7 @@ func _randomizeSatelite():
 func gameStart():
 	player_cb.startUI()
 	player_cb.canMove = true
+	#_player.with_helmet()
 
 func gameOver():
 	_player.transition()

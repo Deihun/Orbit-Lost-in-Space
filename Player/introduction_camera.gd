@@ -14,9 +14,12 @@ func _ready() -> void:
 	player_cb._set_game_over_action(Callable(self,"gameOver"))
 	player_cb._set_game_win_condition(Callable(self,"gameWin"))
 
+	var object_shader = $"../Objects".material
 	var shader = $"../World/Sprite2D".material as ShaderMaterial
 	shader.set_shader_parameter("base_color", Color(1, 1, 1, 1))
 	shader.set_shader_parameter("light_intensity", 0.7)
+	object_shader.set_shader_parameter("base_color", Color(1, 1, 1, 1))
+	object_shader.set_shader_parameter("light_intensity", 0.7)
 	gameStart()
 func gameOver() -> void:
 	player_cb.retry()

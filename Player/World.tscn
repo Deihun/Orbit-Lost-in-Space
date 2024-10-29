@@ -1,13 +1,17 @@
-[gd_scene load_steps=29 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=34 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_0nwbd"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
 [ext_resource type="VideoStream" path="res://Scenes/EndScenes/Gallery_Endings/FGUtji7wRD1S.ogv" id="2_kva43"]
 [ext_resource type="Texture2D" uid="uid://ce0kw7ceb80dk" path="res://Scenes/WideshotScenePanaroma.png" id="2_og4ji"]
+[ext_resource type="PackedScene" uid="uid://dt38hgny4s1wd" path="res://Scenes/ObjectDesigns/Whiteboard.tscn" id="3_ddrc8"]
+[ext_resource type="PackedScene" uid="uid://bphrh2i3jmv8p" path="res://Scenes/ObjectDesigns/lab_table_1.tscn" id="3_lcqxo"]
+[ext_resource type="PackedScene" uid="uid://cmd5y1o0ux14t" path="res://Scenes/ObjectDesigns/lab_table_2.tscn" id="3_ngllf"]
 [ext_resource type="Texture2D" uid="uid://cwuvkfw0gpv8x" path="res://Scenes/spritesheet (12).png" id="4_icatl"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="5_08kc6"]
 [ext_resource type="PackedScene" uid="uid://b2onu2klyecou" path="res://AmbiencePurposes/Paper_Collidable/PaperAmbienceGeneration.tscn" id="5_bvoa8"]
+[ext_resource type="PackedScene" uid="uid://b842s4y8f0fss" path="res://Scenes/ObjectDesigns/OfficeChair.tscn" id="5_nm4bh"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="6_aur0e"]
 [ext_resource type="PackedScene" uid="uid://cleem5f6dxwl4" path="res://Resources/SmallFoodCan/SmallCan_Variety1.tscn" id="6_mx32n"]
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="10_ljiwb"]
@@ -38,6 +42,11 @@ reflected_light_source = 1
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_i1u2f"]
 
 [sub_resource type="Compositor" id="Compositor_o84nn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g0ea"]
+shader = ExtResource("1_0nwbd")
+shader_parameter/base_color = null
+shader_parameter/light_intensity = 0.7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6puyf"]
 bg_color = Color(0, 0, 0, 1)
@@ -89,6 +98,15 @@ polygon = PackedVector2Array(1089, -360, 693, -589, -403, -595, -750, -346, -204
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Player" parent="." instance=ExtResource("1_qqdcd")]
+z_index = 2
+position = Vector2(1188, 1750)
+can_Move = false
+AdditionalPlayerSpeed = 100
+show_timer = false
+canRestartOnGameOver = true
+delayBeforeGameStart = 4.0
+
 [node name="World" type="Node2D" parent="."]
 z_index = -5
 metadata/_edit_lock_ = true
@@ -103,6 +121,53 @@ metadata/_edit_lock_ = true
 environment = SubResource("Environment_k1waa")
 camera_attributes = SubResource("CameraAttributesPhysical_i1u2f")
 compositor = SubResource("Compositor_o84nn")
+
+[node name="Objects" type="Node2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_1g0ea")
+position = Vector2(856, 1367)
+
+[node name="WhiteBoard" parent="Objects" instance=ExtResource("3_ddrc8")]
+position = Vector2(-728, 1000)
+scale = Vector2(0.7, 0.7)
+
+[node name="Lab_table1" parent="Objects" instance=ExtResource("3_lcqxo")]
+position = Vector2(1041, 1320)
+
+[node name="Lab_table2" parent="Objects" instance=ExtResource("3_ngllf")]
+light_mask = 0
+z_index = 2
+z_as_relative = false
+position = Vector2(1602, 1307)
+
+[node name="OfficeChair" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-456, 1398)
+
+[node name="OfficeChair2" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-456, 1554)
+
+[node name="OfficeChair3" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-453, 1725)
+
+[node name="OfficeChair4" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-450, 1890)
+
+[node name="OfficeChair5" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-1077, 1405)
+scale = Vector2(1, -1)
+
+[node name="OfficeChair6" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-1064, 1573)
+scale = Vector2(1, -1)
+
+[node name="OfficeChair7" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-1076, 1763)
+scale = Vector2(1, -1)
+
+[node name="OfficeChair8" parent="Objects" instance=ExtResource("5_nm4bh")]
+position = Vector2(-1075, 1903)
+scale = Vector2(1, -1)
 
 [node name="IntroductionCamera" type="Camera2D" parent="."]
 position = Vector2(989, -3748)
@@ -371,12 +436,48 @@ y_sort_enabled = true
 position = Vector2(-504, 3662)
 rotation = 0.261799
 
+[node name="Node Resource Spawner2" parent="." instance=ExtResource("5_08kc6")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-51, 1217)
+allowCrew_Spawn = true
+number_of_resources = 10
+
+[node name="Node2D10" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(-875, 1368)
+
+[node name="Node2D9" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(2760, 3071)
+
+[node name="Node2D7" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(603, 1428)
+
+[node name="Node2D6" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(2522, 2325)
+
+[node name="Node2D5" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(-872, 4241)
+
+[node name="Node2D4" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(1116, 3004)
+
+[node name="Node2D3" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(-795, 2971)
+
+[node name="Node2D2" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(625, 1463)
+
+[node name="Node2D" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(-657, 457)
+
+[node name="Node2D8" type="Node2D" parent="Node Resource Spawner2"]
+position = Vector2(2770, 4013)
+
 [node name="Node Resource Spawner" parent="." instance=ExtResource("5_08kc6")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(-51, 1217)
 food = ExtResource("6_mx32n")
-allowCrew_Spawn = true
 number_of_resources = 200
 
 [node name="Timer" type="Timer" parent="Node Resource Spawner"]
@@ -755,22 +856,27 @@ position = Vector2(1590, 2523)
 [node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
 position = Vector2(5310, 9714)
 occluder = SubResource("OccluderPolygon2D_a75y7")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
 position = Vector2(2655, 4857)
 occluder = SubResource("OccluderPolygon2D_sc1uf")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 position = Vector2(885, 1619)
 occluder = SubResource("OccluderPolygon2D_pj1ms")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
 position = Vector2(1770, 3238)
 occluder = SubResource("OccluderPolygon2D_j7uh8")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(885, 1619)
 occluder = SubResource("OccluderPolygon2D_rt44c")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(814, 2703)
@@ -781,6 +887,7 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("10_ljiwb")
 texture_scale = 2.34
 height = 1.0
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(-412, 2069)
@@ -791,15 +898,6 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("10_ljiwb")
 texture_scale = 5.18
 height = 1.0
-
-[node name="Player" parent="." instance=ExtResource("1_qqdcd")]
-z_index = 2
-position = Vector2(874, 1661)
-can_Move = false
-AdditionalPlayerSpeed = 100
-show_timer = false
-canRestartOnGameOver = true
-delayBeforeGameStart = 4.0
 metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]

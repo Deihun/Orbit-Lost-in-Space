@@ -40,7 +40,7 @@ size = Vector2(259.268, 244.194)
 size = Vector2(259.398, 242.058)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_14f1h"]
-polygon = PackedVector2Array(-664, -1560, -660, -1010, -612, -1011, -611, -1565, -314, -1895, 697.204, -1897.9, 696.504, -1925.87, -326, -1928, -634, -1620, -1565.73, -1622.38, -1559, 1095, -373.443, 1112.06, 1151, 1134, 1198.6, -1650.35, 696.504, -1925.87, 697.204, -1897.9, 1063.64, -1590.91, 1060.84, -475.525, 737.763, -474.126, 737.763, -437.063, 1071.33, -435.664, 1067.83, 943.357, 332.169, 939.161, 332.169, 100, 720.979, 97.9021, 721.679, 53.1469, 132.868, 53.8462, 132.868, 95.8042, 279.721, 95.1049, 277.623, 937.063, -1515.38, 931.469, -1518.88, 93.7063, -347.552, 92.3077, -351, 56, -1522.38, 56.6433, -1523.78, -434.965, 420, -432, 420, -471, -1525.17, -472.727, -1523.78, -1560.84)
+polygon = PackedVector2Array(-664, -1560, -660, -1010, -612, -1011, -611, -1565, -314, -1895, 676, -1893, 793, -2070, -340, -2063, -687, -1783, -1752, -1753, -1710, 1249, -350, 1348, 1428, 1321, 1227, -1663, 789, -2082, 674, -1889, 1025, -1588, 1021, -476, 705, -475, 709, -434, 1027, -431, 1025, 958, 310, 948, 303, 101, 691, 98, 686, 63, 115, 59, 113, 101, 256, 99, 259, 944, -1496, 944, -1502, 104, -357, 101, -357, 59, -1504, 57, -1502, -433, 420, -432, 420, -471, -1506, -467, -1510, -1563)
 
 [node name="AbandonSatelite" type="Node2D"]
 script = ExtResource("1_styhv")
@@ -149,28 +149,6 @@ metadata/_edit_lock_ = true
 
 [node name="DropBox" parent="." instance=ExtResource("9_0esv2")]
 position = Vector2(12109, 6743)
-
-[node name="DoorWay" parent="." instance=ExtResource("4_ocmvt")]
-position = Vector2(10543, 1434)
-scale = Vector2(1.59601, 1.56161)
-wallRotation = 2
-metadata/_edit_lock_ = true
-
-[node name="InteractionArea" parent="DoorWay" instance=ExtResource("5_naert")]
-action_name = "Requires KeyCard"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWay/InteractionArea"]
-position = Vector2(-6.89307, 52.5101)
-shape = SubResource("RectangleShape2D_j0bs0")
-metadata/_edit_lock_ = true
-
-[node name="DoorWay2" parent="." instance=ExtResource("4_ocmvt")]
-position = Vector2(3654, 7900)
-scale = Vector2(0.904363, 1.01023)
-
-[node name="DoorWay3" parent="." instance=ExtResource("4_ocmvt")]
-position = Vector2(11510, 8644)
-scale = Vector2(1.4218, 1.421)
 
 [node name="Node Resource Spawner" parent="." instance=ExtResource("10_iioux")]
 z_index = 0
@@ -661,6 +639,38 @@ position = Vector2(-1081, -6239)
 [node name="Node2D158" type="Node2D" parent="Node Resource Spawner"]
 position = Vector2(-892, -5807)
 
+[node name="Player" parent="." instance=ExtResource("4_168wx")]
+position = Vector2(2490, 2510)
+Smoothing_CameraTrack = false
+equipHelmet = true
+show_crewInventoryUI = false
+show_tutorialTip = false
+useGlobeTimerUI = false
+delayBeforeGameStart = 0.0
+limitTimeDuration = 10
+
+[node name="DoorWay" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(10543, 1434)
+scale = Vector2(1.59601, 1.56161)
+wallRotation = 2
+metadata/_edit_lock_ = true
+
+[node name="InteractionArea" parent="DoorWay" instance=ExtResource("5_naert")]
+action_name = "Requires KeyCard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorWay/InteractionArea"]
+position = Vector2(-6.89307, 52.5101)
+shape = SubResource("RectangleShape2D_j0bs0")
+metadata/_edit_lock_ = true
+
+[node name="DoorWay2" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(3654, 7900)
+scale = Vector2(0.904363, 1.01023)
+
+[node name="DoorWay3" parent="." instance=ExtResource("4_ocmvt")]
+position = Vector2(11510, 8644)
+scale = Vector2(1.4218, 1.421)
+
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
 position = Vector2(2813, 8626)
 scale = Vector2(1.45, 1.45)
@@ -679,12 +689,3 @@ occluder = SubResource("OccluderPolygon2D_14f1h")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(2490, 2510)
 occluder = SubResource("OccluderPolygon2D_14f1h")
-
-[node name="Player" parent="." instance=ExtResource("4_168wx")]
-position = Vector2(2490, 2510)
-Smoothing_CameraTrack = false
-show_crewInventoryUI = false
-show_tutorialTip = false
-useGlobeTimerUI = false
-delayBeforeGameStart = 0.0
-limitTimeDuration = 10
