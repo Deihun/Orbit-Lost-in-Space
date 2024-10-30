@@ -28,7 +28,6 @@ SettingsDataContainer="*res://settings_menu/SettingsDataContainer.gd"
 SaveManager="*res://Scripts/SaveManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DialogueCommand="*res://DialogueSystem/DialogueCommand.gd"
-ItemUi="*res://Crafting_UI/item_ui.gd"
 CraftingItems="*res://Crafting_UI/CraftingItems.gd"
 
 [dialogue_manager]
