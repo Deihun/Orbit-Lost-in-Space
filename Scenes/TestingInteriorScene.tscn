@@ -895,9 +895,7 @@ shape = SubResource("RectangleShape2D_h45yn")
 [node name="CraftingAnimation" type="AnimatedSprite2D" parent="WholeInteriorScene/Craft"]
 position = Vector2(-65, 200)
 sprite_frames = SubResource("SpriteFrames_01g2f")
-animation = &"HoverBlinking"
-frame = 3
-frame_progress = 1.0
+animation = &"Crafting"
 
 [node name="BlinkTimer" type="Timer" parent="WholeInteriorScene/Craft/CraftingAnimation"]
 wait_time = 4.0

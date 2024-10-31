@@ -6,10 +6,11 @@ extends Control
 @onready var ClickCD = $cam2d/Button_navigation_node_parent/ClickCooldown
 @onready var CycleSetting = $"/root/IngameStoredProcessSetting"
 @onready var EventHandler = $EventHandler
-@onready var craftingtab = ItemUi
-@onready var putResources = $"/root/GlobalResources"
+@onready var putResources = GlobalResources
 @onready var SaveGame = SaveNLoad
 @onready var crafted_items_inventory: Control = $CraftedItemsInventory
+@onready var item_ui: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_UI")
+@onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
 
 #VARIABLES
 var resources 
@@ -65,9 +66,12 @@ func _on_next_day_button_pressed():
 
 		#Auto Save
 		SaveGame.save()
+		
 		#crafting
-		craftingtab.ongoingCraft = false
-		putResources.uniqueItems.append(craftingtab.currentlycrafting)
+		item_ui.ongoingCraft = false
+		GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
+		setanimation._ready()
+		
 		#Handle Event
 		
 		EventHandler._removeAllEvent()
@@ -135,6 +139,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
 		crafted_items_inventory.show()
+		crafted_items_inventory.set_Items()
 
 func _updateUIExpeditionScreen():
 	var expScreen = $WholeInteriorScene/Cockpit/ExpeditionScreen
