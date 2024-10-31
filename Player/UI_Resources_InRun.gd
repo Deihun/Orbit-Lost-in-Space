@@ -47,7 +47,6 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 			gas += int(15 * IngameStoredProcessSetting.BonusMultiplyer)
 			$Label_Oxygen.text = str("Oxygen: ", gas)
 		"Regina":
-			print("regina is added for some reason")
 			if crew["regina"] == false:	crew_availability -= 1
 			crew["regina"] = true
 			

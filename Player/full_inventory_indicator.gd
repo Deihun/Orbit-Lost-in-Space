@@ -21,7 +21,6 @@ func onStart(message : String = "Inventory Full!"):
 	exp.start()
 
 func _on_expiration_timeout() -> void:
-	print($Label.visible, $Label2.visible, visible, repeatCount)
 	$Label.visible = !$Label.visible
 	$Label2.visible = !$Label2.visible
 	repeatCount += 1

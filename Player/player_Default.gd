@@ -37,10 +37,6 @@ func setStats():
 		$player/AllUIParents/UI_On_Hand.MAX_SLOTS = 4
 		IngameStoredProcessSetting.BonusMultiplyer = 1
 	AdditionalPlayerSpeed = IngameStoredProcessSetting.speed
-	
-	
-	print("Crew ", IngameStoredProcessSetting.selectedCrew + "//Speed ",IngameStoredProcessSetting.speed, "//Multiplyer ", IngameStoredProcessSetting.BonusMultiplyer, "// InventorySize ", IngameStoredProcessSetting.inventory)
-
 
 func showTimer(value : bool):
 	if value:

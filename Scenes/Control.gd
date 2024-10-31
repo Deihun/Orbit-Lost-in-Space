@@ -32,7 +32,6 @@ func _ready():
 		_loadGameStart()
 	else:
 		_newGameStart()
-	GameOver("Kickout")
 	updateUI()
 
 func getButtonPosition():

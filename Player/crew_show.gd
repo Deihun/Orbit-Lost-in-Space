@@ -37,7 +37,6 @@ func updateUI():
 		container.remove_child(children)
 	
 	if inventory.crew["regina"] == true: 
-		print("dito na ba si regina?")
 		sprite1.texture = _regina
 		sprite1.scale = presetSize
 		container.add_child(control1)
@@ -58,7 +57,6 @@ func updateUI():
 		container.add_child(control4)
 		control4.add_child(sprite4)
 	
-	print("CREW UNOCCUPIED",inventory.crew_availability)
 	for i in inventory.crew_availability:
 		var a = Control.new()
 		var b = Sprite2D.new()

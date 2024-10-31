@@ -74,7 +74,6 @@ func movement(delta):
 	elif !isPickingAnim and input_vector == Vector2.ZERO:
 		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
 		play_animation(run_idle[animation_use_id]) # Play idle animation when not moving 
-	print(animation_use_id)
 
 
 	if (Vector2.ZERO == input_vector && currentAnimation != "Idle_animation" or "_Helmet_Jerry_idle"):
@@ -137,9 +136,9 @@ func removeTutorialUI_onCertainCondition():
 func gameStart():
 	if $"..".activate_timeLimit:
 		await get_tree().create_timer($"..".delayBeforeGameStart).timeout
-		$PlayerCamera.make_current()
 		startUI()
 	else: canMove = true
+	$PlayerCamera.make_current()
 	pass
 
 
