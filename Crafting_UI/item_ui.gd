@@ -1,7 +1,7 @@
 extends Control
 
 @onready var getResources = $"/root/GlobalResources"
-@onready var crafting_tab = $"../.."
+@onready var crafting_tab: Node2D = get_parent().get_parent()
 @onready var item_description_label: RichTextLabel = $Panel/Item_Description/Item_DescriptionLabel
 @onready var item_effect_label: RichTextLabel = $Panel/Item_Effect/Item_EffectLabel
 @onready var item_requirements_label: RichTextLabel = $Panel/Item_Requirements/Item_RequirementsLabel
@@ -10,10 +10,9 @@ extends Control
 @onready var warning_insufficient: Panel = $Panel/WarningInsufficient
 @onready var now_crafting: Panel = $Panel/NowCrafting
 @onready var item_picture: Sprite2D = $Panel/Item_Picture/ItemPicture
-@onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
 
 var ongoingCraft = false
-var currentlycrafting: String = "test"
+var currentlycrafting
 
 func _on_craft_button_pressed() -> void:
 	if (ongoingCraft == false):
@@ -25,7 +24,6 @@ func _on_craft_button_pressed() -> void:
 					getResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
-					setanimation.nowcrafting()
 					NowCraftingShow()
 				else:
 					warning_insufficientShow()
@@ -36,7 +34,6 @@ func _on_craft_button_pressed() -> void:
 					getResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
-					setanimation.nowcrafting()
 					NowCraftingShow()
 				else:
 					warning_insufficientShow()
@@ -47,7 +44,6 @@ func _on_craft_button_pressed() -> void:
 					getResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true	
-					setanimation.nowcrafting()
 					NowCraftingShow()
 				else:
 					warning_insufficientShow()
@@ -59,7 +55,6 @@ func _on_craft_button_pressed() -> void:
 					getResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
-					setanimation.nowcrafting()
 					NowCraftingShow()
 				else:
 					warning_insufficientShow()
@@ -70,7 +65,6 @@ func _on_craft_button_pressed() -> void:
 					getResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
-					setanimation.nowcrafting()
 					NowCraftingShow()
 				else:
 					warning_insufficientShow()
@@ -81,7 +75,6 @@ func _on_craft_button_pressed() -> void:
 					getResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
-					setanimation.nowcrafting()
 					NowCraftingShow()
 				else:
 					warning_insufficientShow()
