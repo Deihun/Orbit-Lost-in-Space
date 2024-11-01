@@ -1,10 +1,10 @@
 {
 "facts": [
-	{"id": "fact1", "text": "The Space Shuttle was the first reusable spacecraft in history, The Shuttle launches like a rocket, maneuvers in Earth orbit like a spacecraft and lands like an airplane.", "encountered": false},
-	{"id": "fact2", "text": "Starship is the only launch vehicle intended to be fully reusable that has been fully built and tested. The most recent test flight was on October 13, 2024, in which the vehicle completed a suborbital launch and landed both stages for the second time. The Super Heavy booster was caught successfully by the chopstick system on Orbital Pad A for the first time. by SpaceX", "encountered": false},
+	{"id": "fact1", "text": "The Space Shuttle was the first reusable spacecraft in history, The Shuttle launches like a rocket, maneuvers in Earth orbit like a spacecraft and lands like an airplane.", "encountered": true},
+	{"id": "fact2", "text": "Starship is the only launch vehicle intended to be fully reusable that has been fully built and tested. The most recent test flight was on October 13, 2024, in which the vehicle completed a suborbital launch and landed both stages for the second time. The Super Heavy booster was caught successfully by the chopstick system on Orbital Pad A for the first time. by SpaceX", "encountered": true},
 	{"id": "fact3", "text": "The Starship was the first Super Heavy Rocket to reach earth orbit with a payload capacity of 100t to 150t fully reusable and with the height of 121m or 397ft by SpaceX.", "encountered": false},
 	{"id": "fact4", "text": "Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class reusable rocket. Reusability allows SpaceX to re-fly the most expensive parts of the rocket, which in turn drives down the cost of space access.", "encountered": false},
-	{"id": "fact5", "text": "the International Space Station The station was designed between 1984 and 1993. Elements of the station were in construction throughout the US, Canada, Japan, and Europe beginning in the late 1980s.", "encountered": false},
+	{"id": "fact5", "text": "The International Space Station The station was designed between 1984 and 1993. Elements of the station were in construction throughout the US, Canada, Japan, and Europe beginning in the late 1980s.", "encountered": false},
 	{"id": "fact6", "text": "Perseverance is NASA's rover based on the successful Curiosity design. Launched with the Mars 2020 mission on July 30, 2020, it landed on February 18, 2021.[16] It carried the Mars helicopter Ingenuity attached to its belly. Although Ingenuity's mission has ended, Perseverance remains operational as of March 2024.", "encountered": false},
 	{"id": "fact7", "text": "Sojourner rover, Mars Pathfinder, landed successfully on July 4, 1997. Communications were lost on September 27, 1997. Sojourner had traveled a distance of just over 100 meters (330 ft)", "encountered": false},
 	{"id": "fact8", "text": "Yuri Gagarin was the first human to journey into outer space in 1961.", "encountered": false},
@@ -71,6 +71,6 @@
 	{"id": "fact69", "text": "Iconic Mascot: The Bulldog The Marine Corps’ official mascot is an English Bulldog, often named “Chesty” in honor of Marine legend Chesty Puller, one of the most decorated Marines in U.S. history.", "encountered": false},
 	{"id": "fact70", "text": "High Ethical Standards Marines are expected to live by a strict code of honor, emphasizing courage, commitment, and integrity.", "encountered": false},
 	{"id": "fact71", "text": "The Power of Placebo Psychologists have extensively studied the placebo effect, which shows that people can experience improvements in their condition simply by believing they are receiving treatment, even if the treatment has no active ingredients.", "encountered": false},
-	{"id": "fact73", "text": "Psychologists in Crisis Situations Psychologists often work in crisis intervention during emergencies like natural disasters, terrorist attacks, or military conflicts.", "encountered": false}
+	{"id": "fact72", "text": "Psychologists in Crisis Situations Psychologists often work in crisis intervention during emergencies like natural disasters, terrorist attacks, or military conflicts.", "encountered": false}
 	]   
-}
+} 
