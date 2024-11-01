@@ -47,6 +47,7 @@ func _randomizeSatelite():
 func gameStart():
 	player_cb.startUI()
 	player_cb.canMove = true
+	#_player.with_helmet()
 
 func gameOver():
 	_player.transition()
@@ -55,6 +56,7 @@ func gameOver():
 	IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
 	IngameStoredProcessSetting.Scenes = "interiorscene"
 	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	
 	pass
 
 func gameWin():

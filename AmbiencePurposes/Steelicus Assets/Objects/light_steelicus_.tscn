@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7rww8k6vfxyv"]
+
+[ext_resource type="Texture2D" uid="uid://x5jtj6v1gs8u" path="res://AmbiencePurposes/Steelicus Assets/Objects/Light.png" id="1_iktqf"]
+[ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="2_oxusi"]
+
+[node name="LightSteelicus_" type="Sprite2D"]
+light_mask = 0
+position = Vector2(-20, 20.5)
+scale = Vector2(0.6, 0.59)
+texture = ExtResource("1_iktqf")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3.33333, -12.7119)
+scale = Vector2(1.66667, 1.69492)
+color = Color(0.329412, 1, 1, 1)
+texture = ExtResource("2_oxusi")

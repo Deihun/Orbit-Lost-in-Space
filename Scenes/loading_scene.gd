@@ -11,6 +11,11 @@ var mainmenu = "res://MainMenu/main_menu.tscn"
 var _tutorial = "res://Scenes/Tutorial/TutorialScene.tscn"
 var _abandonShip = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.tscn"
 var interiorScene = "res://Scenes/TestingInteriorScene.tscn"
+var radonti = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/RadontiMapLayout.tscn"
+var sauria = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaMapLayout.tscn"
+var earth2 = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2MapLayout.tscn"
+var Enthuli = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/EnthuliMapLayout.tscn"
+var steelicus = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusMapLayout.tscn"
 
 func _ready() -> void:
 	var a = IngameStoredProcessSetting.Scenes
@@ -19,16 +24,16 @@ func _ready() -> void:
 		"newgame":
 			$TutorialPanel.show()
 			sceneName = _newGameWorld
-		"loadgame":
-			sceneName = interiorScene
-		"tutorial":
-			sceneName = _tutorial
-		"abandonship":
-			sceneName = _abandonShip	
-		"interiorscene":
-			sceneName = interiorScene
-		"mainmenu":
-			sceneName = mainmenu
+		"loadgame": sceneName = interiorScene
+		"tutorial": sceneName = _tutorial
+		"abandonship": sceneName = _abandonShip	
+		"interiorscene": sceneName = interiorScene
+		"mainmenu": sceneName = mainmenu
+		"Radonti": sceneName = radonti
+		"Sauria" : sceneName = sauria
+		"Earth2" : sceneName = earth2
+		"Enthuli": sceneName = Enthuli
+		"Steelicus": sceneName = steelicus
 		_:
 			sceneName = "res://Player/World.tscn"
 	

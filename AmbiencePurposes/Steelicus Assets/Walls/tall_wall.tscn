@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://beed6et61l70p"]
+
+[ext_resource type="Texture2D" uid="uid://bf6b2g82w2ylu" path="res://AmbiencePurposes/Steelicus Assets/Walls/TallWallAssets.png" id="1_vrg1f"]
+
+[node name="TallWall" type="NinePatchRect"]
+use_parent_material = true
+offset_right = 699.0
+offset_bottom = 618.0
+texture = ExtResource("1_vrg1f")
+patch_margin_left = 110
+patch_margin_top = 195
+patch_margin_right = 330
+patch_margin_bottom = 95

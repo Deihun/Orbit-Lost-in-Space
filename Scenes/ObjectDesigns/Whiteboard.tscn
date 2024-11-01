@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt38hgny4s1wd"]
+
+[ext_resource type="Texture2D" uid="uid://ddtbxnb10ajn1" path="res://Scenes/ObjectDesigns/Whiteboard.png" id="1_3fkdt"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6y7dp"]
+polygon = PackedVector2Array(-304.807, 207.452, -302.897, 261.56, 352.39, 269.956, 347.614, 199.989)
+
+[node name="OfficeChair" type="RigidBody2D"]
+y_sort_enabled = true
+use_parent_material = true
+scale = Vector2(0.75, 0.75)
+collision_mask = 19
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 14.735
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-2.90625, -1.37394)
+scale = Vector2(1.04687, 1.07193)
+occluder = SubResource("OccluderPolygon2D_6y7dp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-3, 201)
+texture = ExtResource("1_3fkdt")
+offset = Vector2(3, -201)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-2.90625, -19.899)
+scale = Vector2(1.04688, 2.31609)
+polygon = PackedVector2Array(-225.521, 99.2616, -296.208, 102.035, -307.67, 134.234, 352.386, 132.075, 348.565, 97.5346, 7.5522, 97.9663)

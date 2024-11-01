@@ -17,8 +17,6 @@ func _ready():	#onStart, Initialize the inventory paths
 	
 	player = NodeFinder.find_node_by_name(get_tree().current_scene, "Player")
 	inventory = NodeFinder.find_node_by_name(get_tree().current_scene, "UI_On_Hand")
-	if not inventory: #Debugging for paths
-		print("Unable to detect with dropbox: UI On Hand")
 	set_process(true)
 	pass
 

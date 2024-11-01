@@ -80,8 +80,9 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 		var Critical_key = GlobalResources.Critical_Event.pop_front()
 		for eachEvent in rawEvent:
 			if eachEvent.has("Conditions"):
-				if eachEvent["Conditions"][0] == "CRITICAL" && eachEvent["Conditions"][1].has(Critical_key):
+				if eachEvent["Conditions"][0] == "CRITICAL" and Critical_key in eachEvent["Conditions"][1]:
 					GlobalResources.eventID.append(eachEvent["id"])
+
 	#PRIORITIZE EVENTS THAT WITHIN PRIORITY ARRAY
 	while(GlobalResources.Priority_Event.size() > 0 && numbers_of_event > 0): 
 		var priority_key = GlobalResources.Priority_Event.pop_front()
@@ -156,6 +157,7 @@ func _conditions(eachEvent) -> bool:
 				GlobalResources.eventID.append(eachEvent["id"])
 				return condition
 	return false
+
 
 
 

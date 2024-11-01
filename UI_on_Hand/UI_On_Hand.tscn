@@ -66,6 +66,7 @@ texture = ExtResource("1_hr640")
 [node name="Item_Display" type="Sprite2D" parent="Hand_4"]
 
 [node name="Hand_5" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 167.0
 offset_right = 207.0
 offset_bottom = 40.0
@@ -78,6 +79,7 @@ texture = ExtResource("1_hr640")
 [node name="Item_Display" type="Sprite2D" parent="Hand_5"]
 
 [node name="Hand_6" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 208.0
 offset_right = 248.0
 offset_bottom = 40.0

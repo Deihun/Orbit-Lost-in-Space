@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bphrh2i3jmv8p"]
+
+[ext_resource type="Texture2D" uid="uid://3vrsn75kgove" path="res://Scenes/ObjectDesigns/LabTable.png" id="1_kfrkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dltje"]
+size = Vector2(212, 621)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qhskp"]
+polygon = PackedVector2Array(-106, -275, 109, -272, 107, 346, -106, 344)
+
+[node name="Lab_table1" type="Sprite2D"]
+light_mask = 0
+use_parent_material = true
+position = Vector2(103, 107)
+texture = ExtResource("1_kfrkn")
+offset = Vector2(1, 271)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2, 267)
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 38.5)
+shape = SubResource("RectangleShape2D_dltje")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_qhskp")
+metadata/_edit_lock_ = true

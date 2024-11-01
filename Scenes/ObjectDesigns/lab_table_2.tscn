@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmd5y1o0ux14t"]
+
+[ext_resource type="Texture2D" uid="uid://cqhkhjrfw6j3i" path="res://Scenes/ObjectDesigns/LabTable_withSink.png" id="1_0bamf"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4h6o1"]
+polygon = PackedVector2Array(-112, -1, 102, -3, 89, 503, 88, 619, -92, 618, -93, 496)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6nkc"]
+size = Vector2(214, 626)
+
+[node name="Lab_table2" type="Sprite2D"]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(114, 2)
+texture = ExtResource("1_0bamf")
+offset = Vector2(-5, 271.98)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_4h6o1")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(2, 57)
+collision_layer = 33
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-5, 254)
+shape = SubResource("RectangleShape2D_y6nkc")
+metadata/_edit_lock_ = true

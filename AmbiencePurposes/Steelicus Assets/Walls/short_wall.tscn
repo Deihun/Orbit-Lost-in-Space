@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4olqgs46th3a"]
+
+[ext_resource type="Texture2D" uid="uid://biahx8ayhs31g" path="res://AmbiencePurposes/Steelicus Assets/Walls/ShortWall.png" id="1_b4r25"]
+
+[node name="ShortWall" type="NinePatchRect"]
+use_parent_material = true
+offset_right = 75.0
+offset_bottom = 80.0
+texture = ExtResource("1_b4r25")
+patch_margin_left = 25
+patch_margin_top = 10
+patch_margin_right = 25
+patch_margin_bottom = 50

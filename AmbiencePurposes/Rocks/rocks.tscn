@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://mt7cxk242i47"]
+
+[ext_resource type="Texture2D" uid="uid://26jrky056kok" path="res://AmbiencePurposes/Rocks/Rock.png" id="1_xeull"]
+
+[node name="Rocks" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(-3, 27)
+texture = ExtResource("1_xeull")
+offset = Vector2(3, -27)

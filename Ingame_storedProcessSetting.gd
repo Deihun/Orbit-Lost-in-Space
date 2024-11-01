@@ -36,13 +36,14 @@ func getCycle():
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #HANDLING FACTIONS
+var delayInFaction : int = 0
 var current_Factions : String = "SPACE"
 var TravelPerSections : int = 1
 var Target_factions : String = "SPACE"
 var TotalProbabilityForFactionsToFound : float = 0.006
 var Factions_Probability = {
 	"Radonti" : 0.75,
-	"Faction2" : 0.0,
+	"Sauria" : 0.20,
 	"Faction3" : 0.0,
 	"Faction4" : 0.0,
 	"Faction5" : 0.0
@@ -54,18 +55,37 @@ var SubFactions_Probability = {
 	"SmallPlanetoid" : 0.0
 }
 
+func _no_in_faction():
+	for faction in Factions_Probability:
+		if faction == current_Factions:
+			Factions_Probability[faction] = 0.0
+	TotalProbabilityForFactionsToFound = -0.5
+	current_Factions = "None"
+	move_space(5)
+
+func _yes_in_faction():
+	delayInFaction = 4
+	for faction in Factions_Probability:
+		if faction == current_Factions:
+			Factions_Probability[faction] = 0.0
 
 func move_space(move_number : int = 1): #INCOMPLETE
-	TravelPerSections += move_number
-	if TravelPerSections == 3:
-		Target_factions = set_Factions()
-		current_Factions = Target_factions
-		TravelPerSections = 1
-	
-	if Factions_Probability.keys().has(current_Factions):
-		addFactionsCriticalEvent()
-	elif SubFactions_Probability.keys().has(current_Factions):
-		addFactionsCriticalEvent()
+	for i in move_number:
+		if delayInFaction > 0 :
+			delayInFaction -= 1
+			continue
+		current_Factions = "None"
+		TravelPerSections += 1
+		if TravelPerSections == 3:
+			Target_factions = set_Factions()
+			current_Factions = Target_factions
+			TravelPerSections = 1
+
+		if Factions_Probability.keys().has(current_Factions):
+			addFactionsCriticalEvent(current_Factions)
+		elif SubFactions_Probability.keys().has(current_Factions):
+			addFactionsCriticalEvent(current_Factions)
+		print("Current Faction: ", current_Factions, " delay: ", delayInFaction)
 
 
 func set_Factions():
@@ -97,10 +117,10 @@ func set_Factions():
 	return "None"
 
 
-func addFactionsCriticalEvent():#INCOMPLETE - MISSING MATCH TYPE CONDITION AND THE LIST OF CRITICAL EVENTS NEEDS
+func addFactionsCriticalEvent(faction):#INCOMPLETE - MISSING MATCH TYPE CONDITION AND THE LIST OF CRITICAL EVENTS NEEDS
 	var eventHandler = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 	if eventHandler:#INCOMPLETE, HAS NO CONTENT
-		#eventHandler.Critical_Event.append("TestingScene") 
+		#eventHandler.Critical_Event.append(faction) 
 		pass
 	else:
 		print("//ERROR - Can't find node name EventHandler")

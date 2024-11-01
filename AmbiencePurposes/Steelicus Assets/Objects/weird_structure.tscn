@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://q858dc8my7eq"]
+
+[ext_resource type="Texture2D" uid="uid://jwulhxn5gxnv" path="res://AmbiencePurposes/Steelicus Assets/Objects/WeirdStructure.png" id="1_fgdo6"]
+
+[node name="WeirdStructure" type="Sprite2D"]
+use_parent_material = true
+position = Vector2(-196, -2542)
+rotation = -1.5708
+scale = Vector2(1.93, 1.93)
+texture = ExtResource("1_fgdo6")
+offset = Vector2(0, -46.33)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1.03627, -41.9689)
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-86.5286, 20.2073, -47.6683, 46.114, 7.77197, 45.0778, 43.5233, 41.4508, 86.0104, 25.3886, 79.7927, 1.55444, 48.1865, -0.518127, 6.73572, -6.21759, -44.0415, 0, -76.684, 5.18134)

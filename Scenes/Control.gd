@@ -6,10 +6,11 @@ extends Control
 @onready var ClickCD = $cam2d/Button_navigation_node_parent/ClickCooldown
 @onready var CycleSetting = $"/root/IngameStoredProcessSetting"
 @onready var EventHandler = $EventHandler
-@onready var craftingtab = ItemUi
-@onready var putResources = $"/root/GlobalResources"
+@onready var putResources = GlobalResources
 @onready var SaveGame = SaveNLoad
 @onready var crafted_items_inventory: Control = $CraftedItemsInventory
+@onready var item_ui: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_UI")
+@onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
 
 #VARIABLES
 var resources 
@@ -32,7 +33,6 @@ func _ready():
 		_loadGameStart()
 	else:
 		_newGameStart()
-		
 	updateUI()
 
 func getButtonPosition():
@@ -40,6 +40,7 @@ func getButtonPosition():
 
 #GAME SETTINGS
 func _newGameStart():
+	SaveGame.isLoadGame = true
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
 	EventHandler.ActivateEvent()
@@ -47,11 +48,14 @@ func _newGameStart():
 	pass
 
 func _loadGameStart():
+	updateUI()
+	updateCockpit()
 	pass
 
 	
-func GameOver(OtherCommands):
-	#INCOMPLETE - THIS METHOD IS FOR ENDING THE GAME
+func GameOver(Ending : String):
+	IngameStoredProcessSetting.Ending = Ending
+	get_tree().change_scene_to_file("res://Scenes/EndScenes/EndingScene.tscn")
 	pass
 
 func _on_next_day_button_pressed():
@@ -61,13 +65,16 @@ func _on_next_day_button_pressed():
 	if GlobalResources.currentActiveQueue <= 0:
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
+		
 		CycleSetting.endCycle()
-
 		#Auto Save
-		SaveGame.save()
+		_is_MainFaction()
+		
 		#crafting
-		craftingtab.ongoingCraft = false
-		putResources.uniqueItems.append(craftingtab.currentlycrafting)
+		item_ui.ongoingCraft = false
+		GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
+		setanimation._ready()
+		
 		#Handle Event
 		
 		EventHandler._removeAllEvent()
@@ -76,6 +83,7 @@ func _on_next_day_button_pressed():
 		ClickCD.start()
 		$WholeInteriorScene/Lobby.setRandomPosition()
 		$WholeInteriorScene/Lobby.set_initialDialogue()
+		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
 		
@@ -95,23 +103,22 @@ func updateUI():
 func updateCockpit():
 	var a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	match IngameStoredProcessSetting.current_Factions:
-		"SPACE":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-			
-		"None":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-			pass
-		"Radonti":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
-			
-		"Abandonship":
-			pass
+		"SPACE":a    = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+		"None":a     = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+		"Radonti":a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+		"Abandonship":pass
+		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
 
 
 func _on_click_cooldown_timeout() -> void:
 	ClickTrue = true
 
+func _is_MainFaction():
+	match IngameStoredProcessSetting.current_Factions:
+		"Radonti": 
+			if IngameStoredProcessSetting.Factions_Probability["Radonti"] > 0.0:
+				GlobalResources.Critical_Event.append("Radonti")
 
 func PAUSE() -> void:
 	var pause = $PauseMenu
@@ -124,9 +131,12 @@ func _on_expedition_button_button_down() -> void:
 
 func _on_embark_button_pressed() -> void: #WHEN EMBARK
 	match (IngameStoredProcessSetting.current_Factions):
-		"AbandonShip":
-			IngameStoredProcessSetting.Scenes = "abandonship"
-			pass
+		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
+		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
+		"Sauria":IngameStoredProcessSetting.Scenes = "Sauria"
+		"Earth2":IngameStoredProcessSetting.Scenes = "Earth2"
+		"Enthuli":IngameStoredProcessSetting.Scenes = "Enthuli"
+		"Steelicus":IngameStoredProcessSetting.Scenes = "Steelicus"
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
 	get_tree().change_scene_to_packed(loadingScreen)
 
@@ -134,6 +144,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
 		crafted_items_inventory.show()
+		crafted_items_inventory.set_Items()
 
 func _updateUIExpeditionScreen():
 	var expScreen = $WholeInteriorScene/Cockpit/ExpeditionScreen
@@ -147,3 +158,13 @@ func _on_cancel_button_button_up() -> void:
 	$cam2d.ChangeSpecificScene(2)
 	$cam2d.ChangeLocaton(false)
 	pass # Replace with function body.
+
+
+func checkIfKickoutEnough() -> bool:
+	var condition = false
+	for crew in IngameStoredProcessSetting.crew_in_ship:
+		condition = true if IngameStoredProcessSetting._relationship[crew] <= 0.0 else false
+	if condition:
+		if randf() > 0.25:
+			return true
+	return false

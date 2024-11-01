@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://6hpd3wf2vb1u"]
+
+[ext_resource type="Texture2D" uid="uid://chp4ah0g7jexh" path="res://AmbiencePurposes/Hay/Hay1.png" id="1_r85ao"]
+[ext_resource type="Script" path="res://AmbiencePurposes/Hay/hay.gd" id="2_t6hvb"]
+
+[node name="Hay" type="Sprite2D"]
+light_mask = 0
+y_sort_enabled = true
+position = Vector2(0, 3)
+scale = Vector2(3.775, 3.775)
+texture = ExtResource("1_r85ao")
+offset = Vector2(9, -10)
+script = ExtResource("2_t6hvb")

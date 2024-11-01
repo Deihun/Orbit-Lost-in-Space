@@ -32,7 +32,6 @@ var inventory = []
 func _ready():
 	MAX_SLOTS = IngameStoredProcessSetting.inventory
 	MAX_SLOTS = 6 if MAX_SLOTS > 6 else MAX_SLOTS
-	
 	for i in range(MAX_SLOTS): #Declaration of inventory size
 		inventory.append([])
 	showItem()
@@ -65,23 +64,18 @@ func showItem():
 		if i < hands.size() and "Small Fuel" in inventory[i]:
 			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = battery_texture
-			print("Detected battery in slot ", i + 2)
 		elif i < hands.size() and "Small Spareparts" in inventory[i]:
 			hands[i].scale = Vector2(0.25,0.25)
 			hands[i].texture = spareparts_texture
-			print("Detected apple in slot ", i + 1)
 		elif i < hands.size() and "Small Food" in inventory[i]:
 			hands[i].scale = Vector2(0.2,0.2)
 			hands[i].texture = smallfood
-			print("Detected apple in slot ", i + 1)
 		elif i < hands.size() and "Ductape" in inventory[i]:
 			hands[i].scale = Vector2(0.45,0.45)
 			hands[i].texture = ductape
-			print("Detected apple in slot ", i + 1)
 		elif i < hands.size() and "Medicine Pack" in inventory[i]:
 			hands[i].scale = Vector2(0.2,0.2)
 			hands[i].texture = medicine
-			print("Detected apple in slot ", i + 1)
 		elif i < hands.size() and "Small Biogene" in inventory[i]:
 			hands[i].scale = Vector2(0.30,0.30)
 			hands[i].texture = small_biogene_texture
@@ -113,17 +107,14 @@ func showItem():
 
 func addItem(itemType, slotsNeeded):
 	if slotsNeeded <= 0 or slotsNeeded > MAX_SLOTS:
-		print("Invalid number of slots needed.")
 		return false
 	var remainingSlots = getRemainingSlots()
 	if slotsNeeded > remainingSlots:
 		var indicator = NodeFinder.find_node_by_name(get_tree().current_scene, "FullInventoryIndicator")
 		indicator.onStart()
-		print("Not enough space in the inventory.")
 		return false
 	var startIndex = findAvailableSlots(slotsNeeded)
 	if startIndex == -1:
-		print("Could not find enough consecutive slots.")
 		return false
 		
 	for i in range(slotsNeeded):
@@ -165,5 +156,4 @@ func getSpeedPenalty(): #Return penalty speed, Carrying more items decrease play
 	return (getRemainingSlots() * 20) - (MAX_SLOTS * 20)
 
 func hasItem(item : String):
-	print(inventory)
 	return inventory[0].has(item)

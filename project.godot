@@ -28,7 +28,6 @@ SettingsDataContainer="*res://settings_menu/SettingsDataContainer.gd"
 SaveManager="*res://Scripts/SaveManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DialogueCommand="*res://DialogueSystem/DialogueCommand.gd"
-ItemUi="*res://Crafting_UI/item_ui.gd"
 CraftingItems="*res://Crafting_UI/CraftingItems.gd"
 
 [dialogue_manager]
@@ -88,7 +87,7 @@ Confirm={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://DialogueSystem/Dialogue.dialogue", "res://DialogueSystem/EventDialogue/Dialogue_interact.dialogue", "res://DialogueSystem/EventDialogue/FirstDay_Dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://DialogueSystem/Dialogue.dialogue", "res://DialogueSystem/EventDialogue/Dialogue_interact.dialogue", "res://DialogueSystem/EventDialogue/FirstDay_Dialogue.dialogue", "res://DialogueSystem/End.dialogue")
 
 [layer_names]
 
@@ -108,3 +107,7 @@ locale/translations_pot_files=PackedStringArray("res://DialogueSystem/Dialogue.d
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+
+[xr]
+
+shaders/enabled=true

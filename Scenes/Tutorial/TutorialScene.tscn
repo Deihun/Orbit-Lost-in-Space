@@ -2021,7 +2021,6 @@ y_sort_enabled = true
 [node name="battery" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
 y_sort_enabled = true
 position = Vector2(4035, 1099)
-scale = Vector2(1, 1)
 texture = ExtResource("16_51cgt")
 offset = Vector2(3, -35)
 
@@ -2052,7 +2051,6 @@ message = "An important part on take off! Don't underestimate its size as this l
 [node name="biogene" type="Sprite2D" parent="3rdRoom/ItemsOnInteract2D"]
 y_sort_enabled = true
 position = Vector2(4158, 295)
-scale = Vector2(1, 1)
 texture = ExtResource("16_51cgt")
 offset = Vector2(0, -35)
 

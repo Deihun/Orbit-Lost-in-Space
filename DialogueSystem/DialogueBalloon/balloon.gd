@@ -88,11 +88,15 @@ var dialogue_line: DialogueLine:
 			else:
 				pass
 			dialogue_line.character = "Nashir"
-		else: 
+		elif dialogue_line.character.contains("Jerry"):
 			a = preload("res://Resources/CREW/CrewLobby/Jerry.tscn").instantiate()
-		a.position += adjustmentPosition
-		a.scale += adjustmentScale
-		portrait.add_child(a)
+		else:
+			var b = $Balloon/ColorRect.material
+			b.set_shader_parameter("amount",0.0)
+		if a:
+			a.position += adjustmentPosition
+			a.scale += adjustmentScale
+			portrait.add_child(a)
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
