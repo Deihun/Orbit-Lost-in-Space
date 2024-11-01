@@ -47,9 +47,7 @@ func processNextEvent():			#PLAY NEXT EVENT
 	
 	title.text = currentEvent["name"] 
 	desc.text = currentEvent["description"] 
-	
-	print(currentEvent["name"], "\ndescription: ", currentEvent["description"])
-	
+
 	if currentEvent.has("FollowUp"):
 		for follow_up_event in currentEvent["FollowUp"]:
 			parent.addFollowUpEvent(follow_up_event)
@@ -186,6 +184,10 @@ func RunKeyWord(Command):
 		_command = _command.substr("@ADD_PROBABILITY_FACTIONS".length(), _command.length() - "@ADD_PROBABILITY_FACTIONS".length())
 		_command.strip_edges()
 		#IngameStoredProcessSetting.Factions_Probability
+	elif _command.begins_with("@YES_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		IngameStoredProcessSetting._yes_in_faction()
+	elif _command.begins_with("@NO_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		IngameStoredProcessSetting._no_in_faction()
 	else:
 		print("Unable to identify Keyword in the context: '",_command,"'")
 
@@ -244,7 +246,7 @@ func _on_choice_button_pressed(choice_data):
 		return
 	
 	if _can_satisfy_choice(choice_data):
-		if str(choice_data[1]) != "[<null>]":
+		if !str(choice_data[1]).contains("<null>"):
 			for item in choice_data[1]:
 				Global_resources.subtractItem(true,item[0],item[1])
 				pass
@@ -264,7 +266,7 @@ func _can_satisfy_choice(choice_data):
 	var condition = true
 	var Global_resources = $/root/GlobalResources
 	var conditionResource = choice_data[1]
-	if str(choice_data[1]) == "[<null>]":
+	if str(choice_data[1]).contains("<null>") :
 		return true
 	for item in choice_data[1]:
 		var condition1 = Global_resources.hasItem(item[0],item[1])

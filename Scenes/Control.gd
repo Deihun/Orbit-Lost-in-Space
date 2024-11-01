@@ -40,6 +40,7 @@ func getButtonPosition():
 
 #GAME SETTINGS
 func _newGameStart():
+	SaveGame.isLoadGame = true
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
 	EventHandler.ActivateEvent()
@@ -47,6 +48,8 @@ func _newGameStart():
 	pass
 
 func _loadGameStart():
+	updateUI()
+	updateCockpit()
 	pass
 
 	
@@ -62,10 +65,10 @@ func _on_next_day_button_pressed():
 	if GlobalResources.currentActiveQueue <= 0:
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
+		
 		CycleSetting.endCycle()
-
 		#Auto Save
-		SaveGame.save()
+		_is_MainFaction()
 		
 		#crafting
 		item_ui.ongoingCraft = false
@@ -100,23 +103,22 @@ func updateUI():
 func updateCockpit():
 	var a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	match IngameStoredProcessSetting.current_Factions:
-		"SPACE":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-			
-		"None":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-			pass
-		"Radonti":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
-			
-		"Abandonship":
-			pass
+		"SPACE":a    = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+		"None":a     = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+		"Radonti":a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+		"Abandonship":pass
+		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
 
 
 func _on_click_cooldown_timeout() -> void:
 	ClickTrue = true
 
+func _is_MainFaction():
+	match IngameStoredProcessSetting.current_Factions:
+		"Radonti": 
+			if IngameStoredProcessSetting.Factions_Probability["Radonti"] > 0.0:
+				GlobalResources.Critical_Event.append("Radonti")
 
 func PAUSE() -> void:
 	var pause = $PauseMenu
@@ -129,9 +131,12 @@ func _on_expedition_button_button_down() -> void:
 
 func _on_embark_button_pressed() -> void: #WHEN EMBARK
 	match (IngameStoredProcessSetting.current_Factions):
-		"AbandonShip":
-			IngameStoredProcessSetting.Scenes = "abandonship"
-			pass
+		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
+		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
+		"Sauria":IngameStoredProcessSetting.Scenes = "Sauria"
+		"Earth2":IngameStoredProcessSetting.Scenes = "Earth2"
+		"Enthuli":IngameStoredProcessSetting.Scenes = "Enthuli"
+		"Steelicus":IngameStoredProcessSetting.Scenes = "Steelicus"
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
 	get_tree().change_scene_to_packed(loadingScreen)
 

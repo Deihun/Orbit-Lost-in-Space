@@ -56,6 +56,7 @@ func gameOver():
 	IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
 	IngameStoredProcessSetting.Scenes = "interiorscene"
 	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	
 	pass
 
 func gameWin():

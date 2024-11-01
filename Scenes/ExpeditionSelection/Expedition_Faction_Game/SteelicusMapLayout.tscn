@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyrwebsncnwmi"]
+[gd_scene load_steps=3 format=3 uid="uid://b052fsib5brvj"]
 
 [ext_resource type="Texture2D" uid="uid://coq7qkm4f0cge" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Steelicus.png" id="1_ac33n"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_r0hm0"]
