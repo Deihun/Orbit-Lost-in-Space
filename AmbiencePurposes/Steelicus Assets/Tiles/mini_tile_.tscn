@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://gvm4t7m37i4r"]
+
+[ext_resource type="Texture2D" uid="uid://dsjt28gew4ig2" path="res://AmbiencePurposes/Steelicus Assets/Tiles/MiniTile.png" id="1_hvgqg"]
+
+[node name="MiniTile_" type="NinePatchRect"]
+use_parent_material = true
+offset_right = 199.0
+offset_bottom = 114.0
+texture = ExtResource("1_hvgqg")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcsf5att40ghs"]
+
+[ext_resource type="Texture2D" uid="uid://c3bkro5rtplsu" path="res://AmbiencePurposes/Steelicus Assets/Tiles/Tile1-3.png" id="1_4jgdt"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/tiles_Steelicus.gd" id="2_xackf"]
+
+[node name="Tiles" type="Sprite2D"]
+use_parent_material = true
+position = Vector2(775, 78)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("1_4jgdt")
+script = ExtResource("2_xackf")

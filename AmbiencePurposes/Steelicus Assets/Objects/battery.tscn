@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ak0u1ugm5ww"]
+
+[ext_resource type="Texture2D" uid="uid://dlsvus0n6fgbl" path="res://AmbiencePurposes/Steelicus Assets/Objects/Battery_Steelicus.png" id="1_o7meu"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2k44c"]
+polygon = PackedVector2Array(-63, 7, -44.5, -5.5, -40.5, -5.5, -38, -10, -25.5, -10, 34, -9.5, 33.5, -5.5, 40, -5.5, 40, 0.5, 42.5, 0.5, 42.5, -5.5, 39.5, -9, 35.5, -8.5, 35.5, -11, -40, -12.5, -41.5, -7, -47.5, -6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1psk"]
+size = Vector2(102, 21)
+
+[node name="Battery" type="Sprite2D"]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(0, 34)
+scale = Vector2(2, 2)
+texture = ExtResource("1_o7meu")
+offset = Vector2(0, -34)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_2k44c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7, 0.5)
+shape = SubResource("RectangleShape2D_x1psk")
