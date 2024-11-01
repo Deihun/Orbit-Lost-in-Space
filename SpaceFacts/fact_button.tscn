@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://baond8hhrlmdf"]
+
+[ext_resource type="Script" path="res://SpaceFacts/fact_button.gd" id="1_6411q"]
+
+[node name="FactButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6411q")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1918.0
+offset_bottom = 1079.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 493.0
+offset_bottom = 1075.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="FactTitle" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = 219.0
+offset_right = 14.0
+offset_bottom = 242.0
+grow_horizontal = 2
+text = "Fact"
+vertical_alignment = 1
+
+[node name="FactDesc" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 475.0
+offset_top = 288.0
+offset_right = 1431.0
+offset_bottom = 795.0
+text = "Desc"
+horizontal_alignment = 1
+autowrap_mode = 2
