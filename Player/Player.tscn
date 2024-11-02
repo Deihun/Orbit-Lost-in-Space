@@ -2310,7 +2310,7 @@ script = ExtResource("1_5ung8")
 z_index = 2
 position = Vector2(6, -40)
 color = Color(1, 1, 1, 0.180392)
-energy = 3.0
+energy = 0.0
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter_smooth = 8.5
@@ -2675,7 +2675,6 @@ shape = SubResource("CircleShape2D_dsf36")
 [node name="PlayerCamera" type="Camera2D" parent="player"]
 position = Vector2(13, -148)
 scale = Vector2(0.5, 0.5)
-zoom = Vector2(0.165, 0.165)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.5
 

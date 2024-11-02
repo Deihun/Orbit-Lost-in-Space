@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://lo6jryltgtqm"]
+
+[ext_resource type="Texture2D" uid="uid://b585vc7e0gjt4" path="res://AmbiencePurposes/Earth 2.0 Ambience/Grass_1.png" id="1_edukm"]
+[ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/grass.gd" id="2_chxqe"]
+
+[sub_resource type="Animation" id="Animation_y1ve7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.284489]
+}
+
+[sub_resource type="Animation" id="Animation_3niob"]
+resource_name = "GrassSwinging"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.284489, 0.357792]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hf1q"]
+_data = {
+"GrassSwinging_1": SubResource("Animation_3niob"),
+"RESET": SubResource("Animation_y1ve7")
+}
+
+[node name="Grass" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(7, 95)
+skew = -0.284489
+texture = ExtResource("1_edukm")
+offset = Vector2(-7, -95)
+script = ExtResource("2_chxqe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6hf1q")
+}

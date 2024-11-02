@@ -3,6 +3,7 @@ var vZeros = Vector2.ZERO
 var maxSpeed = 300.0
 var slow : float = 0.0
 var Friction : float = 1000.0
+var bonusSpeed : float = 0.0
 
 var distanceCurrentLimit :int = 0
 var animation_use_id : int
@@ -48,6 +49,7 @@ func _physics_process(delta):
 		movement(delta)
 
 func movement(delta):
+	bonusSpeed = bonusSpeed if bonusSpeed > 0.0 else 0.0
 	var animationFramesSlowness = 1.0
 	if inventory: animationFramesSlowness = (24 - (3 - (((maxSpeed - slow + inventory.getSpeedPenalty()))/50)))/24
 	if animationFramesSlowness > 1.0:
@@ -82,9 +84,9 @@ func movement(delta):
 	if input_vector != Vector2.ZERO: 
 		distanceCurrentLimit += 1 if distanceCurrentLimit < 51 else 0
 		removeTutorialUI_onCertainCondition()
-		velocity = input_vector * ($"..".AdditionalPlayerSpeed + (maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta*100)
+		velocity = input_vector * ($"..".AdditionalPlayerSpeed + bonusSpeed + (maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta*100)
 	else:
-		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
+		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta) 
 	#anim_player.speed_scale = animationFramesSlowness
 	move_and_slide()
 
@@ -221,7 +223,11 @@ func retry():
 		if tutorial: tutorial.queue_free()
 		Engine.time_scale = 0.0
 
-
+func speedFruit():
+	bonusSpeed += 300
+	await get_tree().create_timer(7.0).timeout
+	bonusSpeed -= 300 
+	pass
 
 func _on_checking_for_on_hit_effect_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
