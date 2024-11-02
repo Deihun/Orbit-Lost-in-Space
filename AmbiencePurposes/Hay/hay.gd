@@ -9,3 +9,5 @@ func _ready() -> void:
 		3: texture = load("res://AmbiencePurposes/Hay/Hay3.png")
 	
 	if 0.5 > randf(): flip_h = true
+	await get_tree().create_timer(randf()).timeout
+	$AnimationPlayer.play("HayMovement")

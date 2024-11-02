@@ -25,6 +25,7 @@ func _on_craft_button_pressed() -> void:
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
+					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 			
@@ -35,6 +36,7 @@ func _on_craft_button_pressed() -> void:
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
+					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 			
@@ -45,6 +47,7 @@ func _on_craft_button_pressed() -> void:
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true	
 					NowCraftingShow()
+					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 			
@@ -56,6 +59,7 @@ func _on_craft_button_pressed() -> void:
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
+					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 			
@@ -66,6 +70,7 @@ func _on_craft_button_pressed() -> void:
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
+					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 			
@@ -76,6 +81,7 @@ func _on_craft_button_pressed() -> void:
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
+					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 	else:

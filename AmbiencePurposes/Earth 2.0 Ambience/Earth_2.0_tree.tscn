@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dml8jyjxyhqru"]
+
+[ext_resource type="Texture2D" uid="uid://bqpbjgrwka4qc" path="res://AmbiencePurposes/Earth 2.0 Ambience/Tree_1.png" id="1_flb21"]
+[ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/earth_2.0_tree.gd" id="2_tsvlo"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cadb4"]
+polygon = PackedVector2Array(-39, -1, -215, 28, -152, 28, -121, 46, -81, 37, -75, 30, -58, 36, -48, 39, -28, 39, -16, 38, -7, 38, 34, 41, 55, 40, 159, 46, 88, 13, 56, -11)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2vyq2"]
+radius = 31.9993
+height = 103.959
+
+[node name="Earth2_0Tree" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(-3, -27)
+texture = ExtResource("1_flb21")
+offset = Vector2(-26, -283)
+script = ExtResource("2_tsvlo")
+
+[node name="Area2D" type="Area2D" parent="."]
+y_sort_enabled = true
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+y_sort_enabled = true
+polygon = PackedVector2Array(-363, -598, -348, -63, 413, -45, 387, -595)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+y_sort_enabled = true
+occluder = SubResource("OccluderPolygon2D_cadb4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+collision_layer = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(12, 10)
+rotation = -1.56425
+shape = SubResource("CapsuleShape2D_2vyq2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

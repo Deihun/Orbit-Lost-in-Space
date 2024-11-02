@@ -9,6 +9,7 @@ extends Node2D
 var inventory 
 var alreadyTrigger : bool = false
 var isPlayer_inside : bool = false
+var readyToGoInside : bool = false
 var charge_SkipTime : float = 0.0
 var player 
 
@@ -27,7 +28,7 @@ func _process(delta):
 	interaction_area.interact = Callable(self,"interaction") #Call Interaction callable for other accessors
 	
 	await get_tree().create_timer(0.12).timeout
-	if isPlayer_inside and Input.is_action_pressed("Interact"):
+	if isPlayer_inside == true and Input.is_action_pressed("Interact") and readyToGoInside:
 		charge_SkipTime += 0.01
 		if charge_SkipTime >= 1.0 and player and !alreadyTrigger:
 			alreadyTrigger = true
@@ -54,3 +55,4 @@ func _on_skip_timer_body_entered(body: Node2D) -> void:
 func _on_skip_timer_body_exited(body: Node2D) -> void:
 	if body.name == "Player" or "player":
 		isPlayer_inside = false
+		readyToGoInside = true

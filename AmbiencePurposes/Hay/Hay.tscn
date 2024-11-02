@@ -1,13 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://6hpd3wf2vb1u"]
+[gd_scene load_steps=6 format=3 uid="uid://6hpd3wf2vb1u"]
 
 [ext_resource type="Texture2D" uid="uid://chp4ah0g7jexh" path="res://AmbiencePurposes/Hay/Hay1.png" id="1_r85ao"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Hay/hay.gd" id="2_t6hvb"]
+
+[sub_resource type="Animation" id="Animation_j5wr1"]
+resource_name = "HayMovement"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.63333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.214676, 0.356047]
+}
+
+[sub_resource type="Animation" id="Animation_31luk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.214676]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hss0j"]
+_data = {
+"HayMovement": SubResource("Animation_j5wr1"),
+"RESET": SubResource("Animation_31luk")
+}
 
 [node name="Hay" type="Sprite2D"]
 light_mask = 0
 y_sort_enabled = true
 position = Vector2(0, 3)
 scale = Vector2(3.775, 3.775)
+skew = -0.214676
 texture = ExtResource("1_r85ao")
 offset = Vector2(9, -10)
 script = ExtResource("2_t6hvb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hss0j")
+}
