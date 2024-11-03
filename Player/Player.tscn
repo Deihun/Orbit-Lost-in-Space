@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
 [ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
+[ext_resource type="Texture2D" path="res://Player/timer.png" id="24_55iu7"]
 [ext_resource type="Texture2D" uid="uid://bxyb3hnsy7y8x" path="res://Player/PlayerCAS/with_Helmet_player_moveset.png" id="26_7snf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
