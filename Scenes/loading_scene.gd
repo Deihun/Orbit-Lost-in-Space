@@ -19,7 +19,6 @@ var steelicus = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Steeli
 
 func _ready() -> void:
 	var a = IngameStoredProcessSetting.Scenes
-	print(a)
 	match (a):
 		"newgame":
 			$TutorialPanel.show()
@@ -27,11 +26,17 @@ func _ready() -> void:
 		"loadgame": sceneName = interiorScene
 		"tutorial": sceneName = _tutorial
 		"abandonship": sceneName = _abandonShip	
-		"interiorscene": sceneName = interiorScene
+		"interiorscene": 
+			sceneName = interiorScene
+			if IngameStoredProcessSetting.didJerryLose:
+				$TutorialPanel2.show
+			IngameStoredProcessSetting.didJerryLose = false
 		"mainmenu": sceneName = mainmenu
-		"Radonti": sceneName = radonti
+		"Radonti":
+			sceneName = radonti
+			$TutorialPanel3.show()
 		"Sauria" : sceneName = sauria
-		"Earth2" : sceneName = earth2
+		"Earth2.0" : sceneName = earth2
 		"Enthuli": sceneName = Enthuli
 		"Steelicus": sceneName = steelicus
 		_:
@@ -54,7 +59,6 @@ func _process(delta: float) -> void:
 
 
 func _on_press_anywhere_pressed() -> void:
-	print("clicking")
 	if isComplete:
 		get_tree().change_scene_to_packed(newScene)
 	pass # Replace with function body.

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://b052fsib5brvj"]
+[gd_scene load_steps=19 format=3 uid="uid://b052fsib5brvj"]
 
 [ext_resource type="PackedScene" uid="uid://2ak0u1ugm5ww" path="res://AmbiencePurposes/Steelicus Assets/Objects/battery.tscn" id="1_a5qp4"]
+[ext_resource type="Texture2D" uid="uid://coq7qkm4f0cge" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Steelicus.png" id="1_ac33n"]
 [ext_resource type="PackedScene" uid="uid://cwomyyc7i1742" path="res://AmbiencePurposes/Steelicus Assets/Walls/tiles_set.tscn" id="1_f33d5"]
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_m4x6u"]
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/steelicus_map_layout.gd" id="1_q7p7y"]
@@ -14,12 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://dv7oqg0gergs" path="res://AmbiencePurposes/Steelicus Assets/Tiles/wiring.png" id="5_p6mnu"]
 [ext_resource type="PackedScene" uid="uid://gvm4t7m37i4r" path="res://AmbiencePurposes/Steelicus Assets/Tiles/mini_tile_.tscn" id="6_oasxb"]
 [ext_resource type="Texture2D" uid="uid://vuywyb12nopf" path="res://AmbiencePurposes/Steelicus Assets/Tiles/BigFan.png" id="8_4gkcs"]
-[ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="15_q3r6l"]
-[ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="16_mvek0"]
-[ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="17_d5qbf"]
-[ext_resource type="PackedScene" uid="uid://c2ivqlxyu5lj" path="res://Scenes/SceneAssets/door_way.tscn" id="18_nfhgt"]
-[ext_resource type="Texture2D" uid="uid://c8en36ge4eq1u" path="res://Scenes/SceneAssets/KeyCard.png" id="19_h1g5r"]
-[ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="20_h74to"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_334dj"]
 shader = ExtResource("1_m4x6u")
@@ -31,31 +26,6 @@ polygon = PackedVector2Array(-875, 431, -807, 431, -807, 1634, -52, 1631, -52, 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nvdhd"]
 polygon = PackedVector2Array(616, -1271, 620, 388, -34, 385, -36, 607, 670, 607, 671, 549, 665, -1273, 1647, -1277, 1644, 836, 2053, 835, 2057, 451, 2285, 452, 2287, 403, 1694, 404, 1702, -1281, 3122, -1272, 3120, 408, 2629, 406, 2630, 452, 3122, 450, 3118, 824, 3182, 825, 3186, -1330, -874, -1330, -874, 431, -445, 432, -444, 378, -808, 380, -808, -1272)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m5oyq"]
-atlas = ExtResource("19_h1g5r")
-region = Rect2(0, 252, 252, 252)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjcwa"]
-atlas = ExtResource("19_h1g5r")
-region = Rect2(0, 504, 252, 252)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_r3wt1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m5oyq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjcwa")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vy2q"]
-size = Vector2(259.268, 244.194)
 
 [node name="SteelicusMapLayout" type="Node2D"]
 y_sort_enabled = true
@@ -140,6 +110,7 @@ position = Vector2(145, -108)
 z_index = -5
 y_sort_enabled = true
 
+
 [node name="Wall" type="StaticBody2D" parent="WorldMap"]
 position = Vector2(1122.5, 952.34)
 scale = Vector2(4.813, 4.811)
@@ -148,6 +119,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldMap/Wall"]
 polygon = PackedVector2Array(442.655, -492.692, 414.606, -504.747, 414.801, -113.909, 312.799, -113.976, 313.006, -98.1792, 414.769, -98.5103, 414.606, -19.8171, 428.735, -20.025, 428.808, -421.711, 689.902, -419.734, 692.396, 425.828, 428.111, 427.491, 428.319, 82.0328, 415.437, 81.6171, 413.983, 143.974, 292.229, 144.806, 292.229, 159.771, 414.814, 159.771, 415.437, 407.329, 121.549, 407.527, 120.195, 159.771, 218.886, 160.187, 219.302, 144.598, 191.876, 143.766, 191.542, 81.9174, 257.739, 82.4485, 257.739, 66.2357, 191.461, 66.8593, 110.43, 66.6514, 110.015, 144.796, 104.82, 144.806, 105.651, 407.537, -89.1811, 407.537, -89.8608, 377.398, -103.781, 376.982, -103.989, 407.537, -401.101, 408.16, -401.724, 156.861, -103.366, 156.653, -103.781, 322.108, -90.0686, 322.108, -90.8996, 163.513, -89.2375, 60.2078, -249.221, 59.7921, -249.013, 140.856, -401.603, 141.823, -400.893, -102.752, -325.057, -102.128, -325.473, -119.173, -400.976, -119.217, -402.45, -411.997, -104.683, -413.049, -103.989, -117.718, -240.702, -118.133, -240.91, -21.2721, -93.3929, -21.2721, -94.8473, -71.3656, -94.4317, -412.875, 109.183, -412.875, 108.56, -17.7385, 194.162, -18.3621, 194.162, -98.0224, 242.364, -97.9713, 242.364, -114.184, 194.162, -114.184, 119.364, -114.392, 119.872, -412.846, 414.606, -412.043, 414.606, -430.335, 414.191, -503.5, 407.958, -502.045, 81.1344, -535.302, -76.1479, -541.538, -279.763, -530.937, -424.995, -507.45, -673.488, -465.255, -613.651, 58.545, -553.813, 506.893, 502.285, 576.94, 792.541, 558.233, 1143.67, 426.868, 1176.92, -468.58, 622.169, -511.399)
+
 
 [node name="Tiles_SET" parent="WorldMap" instance=ExtResource("1_f33d5")]
 z_index = -1
@@ -796,12 +768,18 @@ scale = Vector2(0.296402, 0.271009)
 sprite_frames = SubResource("SpriteFrames_r3wt1")
 
 [node name="InteractionArea" parent="Keycard3" instance=ExtResource("20_h74to")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1122.5, 952.34)
+scale = Vector2(4.813, 4.811)
+texture = ExtResource("1_ac33n")
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keycard3/InteractionArea"]
-position = Vector2(8.55273, 7.38916)
-shape = SubResource("RectangleShape2D_2vy2q")
+[node name="Wall" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 0
 metadata/_edit_lock_ = true
+
 
 [node name="Keycard4" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0, 0, 1, 1)
@@ -810,9 +788,13 @@ scale = Vector2(0.296402, 0.271009)
 sprite_frames = SubResource("SpriteFrames_r3wt1")
 
 [node name="InteractionArea" parent="Keycard4" instance=ExtResource("20_h74to")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+position = Vector2(4.67484, 0.13718)
+build_mode = 1
+polygon = PackedVector2Array(-412.962, -412.956, -414.312, -115.562, -331.619, -115.224, -331.281, -85.856, -412.962, -85.856, -411.275, 141.662, -243.525, 143.35, -242.512, 64.3599, -92.6507, 65.0351, -95.3509, 147.401, -33.2462, 147.401, -35.2714, 202.761, -82.1874, 206.474, -82.8625, 320.909, -110.54, 321.921, -110.54, 161.578, -410.6, 161.578, -413.3, 410.363, -106.827, 411.713, -106.489, 377.282, -84.8876, 376.607, -85.2252, 411.713, 45.3972, 412.388, 42.3594, 141.325, 102.101, 142.337, 106.152, 64.6975, 251.963, 62.6721, 259.388, 85.6265, 187.833, 82.926, 183.783, 142.337, 214.16, 142.337, 213.147, 165.629, 67.6738, 166.642, 70.3741, 394.835, 395.411, 399.899, 390.348, 163.604, 290.103, 166.642, 287.065, 144.363, 410.6, 143.35, 413.975, 413.739, 411.95, 143.687, 408.912, -96.6581, 307.317, -95.3078, 307.992, -122.988, 410.6, -122.651, 408.912, -411.943, 319.13, -410.255, 123.028, -409.58, 125.728, -119.612, 240.149, -119.95, 237.112, -89.9068, 187.495, -92.9449, 189.52, -11.2544, 102.776, -11.9295, 99.7387, -408.905, -88.6004, -409.242, -87.9254, -2.81531, -240.149, -3.828, -238.462, -117.249, -106.827, -114.549, -105.86, -409.313)
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keycard4/InteractionArea"]
-position = Vector2(8.55273, 7.38916)
-shape = SubResource("RectangleShape2D_2vy2q")
-metadata/_edit_lock_ = true
+[node name="Player" parent="." instance=ExtResource("2_r0hm0")]
+position = Vector2(3348, 916)
+delayBeforeGameStart = 0.0
