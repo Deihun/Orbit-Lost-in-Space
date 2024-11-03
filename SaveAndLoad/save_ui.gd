@@ -5,6 +5,7 @@ extends Control
 @onready var SaveNode = $"res://SaveAndLoad/save_node.gd"
 @onready var naming: Control = $Naming
 @onready var panel: Panel = $NinePatchRect/Panel
+@onready var button_sfx: AudioStreamPlayer = $ButtonSfx
 
 var Files = []
 var numFiles = 0
@@ -46,11 +47,12 @@ func get_files() -> void:
 	else:
 		print("An error occurred when trying to access the path.")
 
-func _on_back_button_up() -> void:
+func _on_message_delay_timeout() -> void:
+	panel.hide()
+
+func _on_back_pressed() -> void:
+	button_sfx.play()
 	var visiblepause = NodeFinder.find_node_by_name(get_tree().current_scene, "VBoxContainer")
 	if visiblepause:
 		visiblepause.show()
 	self.visible = false
-
-func _on_message_delay_timeout() -> void:
-	panel.hide()
