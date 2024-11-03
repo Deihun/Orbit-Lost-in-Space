@@ -302,8 +302,7 @@ y_sort_enabled = true
 position = Vector2(-15, 106)
 scale = Vector2(1, 0.936)
 sprite_frames = SubResource("SpriteFrames_twx84")
-animation = &"Closing_Horizontal"
-frame = 8
+animation = &"Open"
 frame_progress = 1.0
 offset = Vector2(0, -177.05)
 

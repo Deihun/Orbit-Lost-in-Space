@@ -1,0 +1,881 @@
+[gd_scene load_steps=20 format=3 uid="uid://cqn25uxqee6fy"]
+
+[ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_3dave"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/radonti_map_layout.gd" id="2_2nm5k"]
+[ext_resource type="Texture2D" uid="uid://ry1bmdpegcvn" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti Map.png" id="3_7pjja"]
+[ext_resource type="PackedScene" uid="uid://dcmcp8fp003wm" path="res://DropBox/DropBoxOfRadonti.tscn" id="4_jlo4t"]
+[ext_resource type="PackedScene" uid="uid://6hpd3wf2vb1u" path="res://AmbiencePurposes/Hay/Hay.tscn" id="5_vvm0v"]
+[ext_resource type="PackedScene" uid="uid://mt7cxk242i47" path="res://AmbiencePurposes/Rocks/rocks.tscn" id="6_gga54"]
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="7_suax3"]
+[ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="8_t3kus"]
+[ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="9_mo7on"]
+[ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="10_3dfso"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drgx5"]
+shader = ExtResource("1_3dave")
+shader_parameter/base_color = null
+shader_parameter/light_intensity = 0.7
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wricx"]
+polygon = PackedVector2Array(844, 4557, 1450, 4557, 1496, 4558, 1831, 4883, 1831, 5402, 509, 5399, 507, 4882)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_30jb0"]
+polygon = PackedVector2Array(5548, 719, 5541, 1228, 5548, 1732, 6032, 2087, 6749, 2085, 6747, -76, 6024, -82, 5503, 267, 5502, 721)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kuxp"]
+polygon = PackedVector2Array(-3205, 1231, -3206, 1735, -3696, 2084, -4411, 2081, -4411, -77, -3691, -80, -3165, 264, -3164, 723, -3206, 723)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gk3gu"]
+polygon = PackedVector2Array(285, 1155, 285, 1200, -422, 1207, -666, 1499, -665, 2013, -261, 2427, 318, 2427, 740, 2115, 1003, 2113, 1005, 2157, 883, 2158, 743, 2159, 341, 2476, -283, 2475, -725, 2031, -727, 1503, -447, 1160)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5etgx"]
+polygon = PackedVector2Array(284, 554, 286, 590, -406, 585, -714, 288, -713, -281, -241, -734, 355, -733, 751, -354, 864, -354, 866, -296, 742, -298, 334, -690, -225, -693, -667, -265, -669, 282, -382, 556)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ejel8"]
+polygon = PackedVector2Array(1338, 2114, 1338, 2157, 1593, 2157, 1997, 2480, 2621, 2473, 3067, 2030, 3070, 1500, 2786, 1156, 2054, 1157, 2053, 1203, 2517, 1205, 2756, 1207, 3004, 1496, 3001, 2003, 2596, 2422, 2014, 2425, 1591, 2114)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4yj3x"]
+polygon = PackedVector2Array(1470, -356, 1472, -297, 1519, -295, 1597, -301, 2006, -691, 2566, -691, 3001, -262, 3004, 281, 2717, 555, 2049, 552, 2052, 584, 2743, 584, 3055, 285, 3055, -278, 2581, -733, 1981, -734, 1587, -356)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ldvu0"]
+polygon = PackedVector2Array(817, -1489, 866, -1486, 868, -1867, 988, -1865, 986, -1911, 305, -1910, 305, -2515, 721, -2864, 1622, -2863, 2030, -2518, 2030, -1906, 1348, -1910, 1348, -1862, 1470, -1864, 1474, -1488, 1523, -1489, 1525, -1753, 1522, -1867, 2068, -1868, 2074, -2540, 1629, -2906, 713, -2908, 263, -2545, 268, -1863, 814, -1867, 814, -1709)
+
+[node name="RadontiMap" type="Node2D"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_drgx5")
+script = ExtResource("2_2nm5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1075.75, 675.875)
+scale = Vector2(3.15476, 3.03067)
+texture = ExtResource("3_7pjja")
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 33
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+polygon = PackedVector2Array(-1359.45, -25.3657, -1360.4, -68.2605, -1513.82, -170.878, -1723.04, -171.788, -1721.76, 390.384, -1516.99, 390.714, -1372.45, 289.416, -1373.4, 182.179, -1155, 184.159, -1154.05, 194.388, -282.668, 1066.47, -61.7321, 1066.47, -61.7321, 1288.87, -165.068, 1386.86, -167.604, 1545.57, 227.672, 1544.58, 227.355, 1390.49, 119.898, 1287.22, 120.215, 1064.82, 342.419, 1064.16, 1213.8, 195.378, 1213.8, 183.829, 1432.2, 183.499, 1432.83, 291.726, 1576.74, 390.714, 1781.2, 390.384, 1778.66, -171.868, 1575.16, -171.208, 1418.32, -67.6892, 1418.57, 15.8793, 917.423, 16.5392, 916.789, -713.662, 125.921, -713.992, 126.099, -838.313, 86.6152, -837.397, 86.6152, -853.235, 125.921, -853.895, 303.113, -853.895, 301.846, -995.118, 171.883, -1102.03, -111.815, -1102.69, -244.63, -992.809, -244.313, -852.576, -27.1812, -853.895, -26.8642, -837.727, -64.268, -838.387, -67.7548, -713.332, -82.0189, -713.332, -858.623, -714.322, -854.185, -1009.97, -470.638, -1055.83, -395.196, -816.28, -441.476, -966.082, -482.683, -1095.1, -352.087, -1088.5, -225.611, -1180.56, -45.2491, -1267.01, 291.385, -1283.5, 512.004, -1193.42, 964.97, -857.855, 1330.77, -532.844, 1784.05, -343.117, 1949.2, -243.139, 1955.85, 161.062, 1882.31, 343.2, 1924.47, 471.554, 1854.1, 549.425, 1571.04, 625.975, 1313.65, 903.802, 979.552, 1186.58, 719.31, 1437.68, 453.997, 1599.03, 304.064, 1717.15, -175.528, 1727.05, -321.974, 1605.3, -340.042, 1477.93, -1033.91, 613.107, -1368.96, 494.651, -1461.2, 522.368, -1733.81, 522.038, -1885.64, 561.963, -1817.17, -172.198, -1783.89, -349.056, -1361.36, -323.98, -924.872, -913.288, -857.355, -827.828, -861.159, 14.5595, -1359.77, 14.8895)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+polygon = PackedVector2Array(-968.933, 182.509, -548.932, 183.169, -503.604, 182.179, -482.366, 158.752, -250.97, 159.412, -250.019, 244.212, -471.272, 241.902, -518.502, 299.645, -549.883, 332.971, -550.834, 444.497, -421.506, 575.492, -239.242, 577.141, -104.842, 474.854, -22.7434, 474.194, -22.1094, 540.516, -58.8793, 540.846, -59.8302, 870.146, -294.396, 869.156, -969.567, 196.038)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+polygon = PackedVector2Array(82.1774, 474.854, 81.5435, 539.526, 121.166, 540.846, 121.166, 868.166, 350.978, 871.136, 1029.32, 197.357, 1028.68, 183.169, 781.755, 182.839, 608.683, 180.859, 562.087, 181.849, 541.483, 158.422, 311.038, 158.752, 309.453, 244.872, 530.706, 243.222, 609.317, 334.621, 610.268, 438.888, 481.574, 578.461, 388.064, 575.492, 296.774, 578.461, 165.227, 475.184)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+polygon = PackedVector2Array(309.77, 16.8692, 535.461, 16.2093, 792.533, 16.5392, 790.314, -594.877, 346.857, -597.516, 198.827, -597.846, 126.555, -597.516, 125.604, -340.807, 124.336, -340.807, 125.287, -251.718, 164.593, -252.378, 294.872, -369.184, 471.747, -368.524, 610.902, -234.56, 610.902, -130.293, 520.563, -39.554, 309.453, -39.224)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Sprite2D/Wall"]
+polygon = PackedVector2Array(-731.514, 15.5494, -250.336, 17.5291, -249.702, -39.224, -460.804, -38.6469, -554.004, -130.623, -550.2, -177.147, -551.785, -233.241, -409.461, -370.174, -237.023, -371.164, -108.011, -251.718, -65.2189, -251.718, -67.4378, -597.846, -212.298, -596.526, -731.831, -596.526, -732.465, -37.9042)
+
+[node name="DropBoxOfRadonti" parent="." instance=ExtResource("4_jlo4t")]
+z_index = 1
+position = Vector2(5621, 654)
+metadata/_edit_lock_ = true
+
+[node name="DropBoxOfRadonti2" parent="." instance=ExtResource("4_jlo4t")]
+z_index = 1
+position = Vector2(-3402, 625)
+scale = Vector2(-0.22, 0.22)
+metadata/_edit_lock_ = true
+
+[node name="DropBoxOfRadonti3" parent="." instance=ExtResource("4_jlo4t")]
+z_index = 1
+position = Vector2(1497, 4747)
+metadata/_edit_lock_ = true
+
+[node name="AmbienceHay" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1012, -725)
+
+[node name="Hay" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(24.8, -157.2)
+
+[node name="Hay2" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-119, -659)
+
+[node name="Hay3" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-51, -656)
+
+[node name="Hay4" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(21, -526)
+
+[node name="Hay5" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(285, -359)
+
+[node name="Hay6" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(143, -364)
+
+[node name="Hay7" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(443, -649)
+
+[node name="Hay8" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-575, -638)
+
+[node name="Hay9" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-392, -484)
+
+[node name="Hay10" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2482, -666)
+
+[node name="Hay11" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2425, -357)
+
+[node name="Hay12" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1355, -638)
+
+[node name="Hay13" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1713, -614)
+
+[node name="Hay14" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(301, 475)
+
+[node name="Hay15" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(307, 529)
+
+[node name="Hay16" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-29, 462)
+
+[node name="Hay17" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2334, -347)
+
+[node name="Hay18" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2529, -9.00003)
+
+[node name="Hay19" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(35, 381)
+
+[node name="Hay20" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-857, 1523)
+
+[node name="Hay21" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2243, 1536)
+
+[node name="Hay22" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-3562, 1561)
+
+[node name="Hay23" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2944, 2123)
+
+[node name="Hay24" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(178, -276)
+
+[node name="Hay25" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(28, 83)
+
+[node name="Hay26" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(106, 85)
+
+[node name="Hay27" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(180, 76)
+
+[node name="Hay28" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(25.775, 154.5)
+
+[node name="Hay29" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(103.775, 156.5)
+
+[node name="Hay30" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(177.775, 147.5)
+
+[node name="Hay31" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(535, -594.5)
+
+[node name="Hay32" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(613, -592.5)
+
+[node name="Hay33" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(687, -601.5)
+
+[node name="Hay34" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(532.775, -523)
+
+[node name="Hay35" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(610.775, -521)
+
+[node name="Hay36" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(684.775, -530)
+
+[node name="Hay37" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(156, -621.5)
+
+[node name="Hay38" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(234, -619.5)
+
+[node name="Hay39" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(308, -628.5)
+
+[node name="Hay40" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(153.775, -550)
+
+[node name="Hay41" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(231.775, -548)
+
+[node name="Hay42" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(305.775, -557)
+
+[node name="Hay43" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1009, 1681.5)
+
+[node name="Hay44" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-931, 1683.5)
+
+[node name="Hay45" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-857, 1674.5)
+
+[node name="Hay46" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1011.22, 1753)
+
+[node name="Hay47" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-933.225, 1755)
+
+[node name="Hay48" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-859.225, 1746)
+
+[node name="Hay49" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1179, 1595.5)
+
+[node name="Hay50" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1257, 1597.5)
+
+[node name="Hay51" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1331, 1588.5)
+
+[node name="Hay52" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1176.78, 1667)
+
+[node name="Hay53" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1254.78, 1669)
+
+[node name="Hay54" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1328.78, 1660)
+
+[node name="Hay55" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2676, 1587.5)
+
+[node name="Hay56" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2598, 1589.5)
+
+[node name="Hay57" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2524, 1580.5)
+
+[node name="Hay58" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2678.23, 1659)
+
+[node name="Hay59" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2600.23, 1661)
+
+[node name="Hay60" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-2526.23, 1652)
+
+[node name="Hay61" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2648, -498.5)
+
+[node name="Hay62" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2726, -496.5)
+
+[node name="Hay63" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2800, -505.5)
+
+[node name="Hay64" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2645.78, -427)
+
+[node name="Hay65" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2723.78, -425)
+
+[node name="Hay66" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2797.78, -434)
+
+[node name="Hay67" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2659, 1461.5)
+
+[node name="Hay68" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2737, 1463.5)
+
+[node name="Hay69" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2811, 1454.5)
+
+[node name="Hay70" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2656.78, 1533)
+
+[node name="Hay71" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2734.78, 1535)
+
+[node name="Hay72" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2808.78, 1526)
+
+[node name="Hay73" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2706, 1286.5)
+
+[node name="Hay74" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2784, 1288.5)
+
+[node name="Hay75" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2858, 1279.5)
+
+[node name="Hay76" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2703.78, 1358)
+
+[node name="Hay77" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2781.78, 1360)
+
+[node name="Hay78" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2855.78, 1351)
+
+[node name="Hay79" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(3600, 1885.5)
+
+[node name="Hay80" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(3678, 1887.5)
+
+[node name="Hay81" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(3752, 1878.5)
+
+[node name="Hay82" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(3597.78, 1957)
+
+[node name="Hay83" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(3675.78, 1959)
+
+[node name="Hay84" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(3749.78, 1950)
+
+[node name="Hay85" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1339, 1708.5)
+
+[node name="Hay86" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1417, 1710.5)
+
+[node name="Hay87" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1491, 1701.5)
+
+[node name="Hay88" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1336.78, 1780)
+
+[node name="Hay89" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1414.78, 1782)
+
+[node name="Hay90" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1488.78, 1773)
+
+[node name="Hay91" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1125, 1751.5)
+
+[node name="Hay92" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1203, 1753.5)
+
+[node name="Hay93" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1277, 1744.5)
+
+[node name="Hay94" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1122.78, 1823)
+
+[node name="Hay95" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1200.78, 1825)
+
+[node name="Hay96" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1274.78, 1816)
+
+[node name="Hay97" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1724, 1804.5)
+
+[node name="Hay98" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1646, 1806.5)
+
+[node name="Hay99" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1572, 1797.5)
+
+[node name="Hay100" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1726.22, 1876)
+
+[node name="Hay101" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1648.22, 1878)
+
+[node name="Hay102" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1574.22, 1869)
+
+[node name="Hay103" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1194, 1570.5)
+
+[node name="Hay104" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1116, 1572.5)
+
+[node name="Hay105" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1042, 1563.5)
+
+[node name="Hay106" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1196.22, 1642)
+
+[node name="Hay107" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1118.22, 1644)
+
+[node name="Hay108" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-1044.22, 1635)
+
+[node name="Hay109" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(188, 3210.5)
+
+[node name="Hay110" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(266, 3212.5)
+
+[node name="Hay111" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(340, 3203.5)
+
+[node name="Hay112" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(185.775, 3282)
+
+[node name="Hay113" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(263.775, 3284)
+
+[node name="Hay114" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(337.775, 3275)
+
+[node name="Hay115" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-315, 4205.5)
+
+[node name="Hay116" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-237, 4207.5)
+
+[node name="Hay117" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-163, 4198.5)
+
+[node name="Hay118" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-317.225, 4277)
+
+[node name="Hay119" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-239.225, 4279)
+
+[node name="Hay120" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-165.225, 4270)
+
+[node name="Hay121" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(421, 4507.5)
+
+[node name="Hay122" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(499, 4509.5)
+
+[node name="Hay123" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(573, 4500.5)
+
+[node name="Hay124" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(418.775, 4579)
+
+[node name="Hay125" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(496.775, 4581)
+
+[node name="Hay126" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(570.775, 4572)
+
+[node name="Hay127" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(681, 4453.5)
+
+[node name="Hay128" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(759, 4455.5)
+
+[node name="Hay129" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(833, 4446.5)
+
+[node name="Hay130" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(678.775, 4525)
+
+[node name="Hay131" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(756.775, 4527)
+
+[node name="Hay132" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(830.775, 4518)
+
+[node name="Hay133" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-4112, 1816.5)
+
+[node name="Hay134" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-4034, 1818.5)
+
+[node name="Hay135" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-3960, 1809.5)
+
+[node name="Hay136" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-4114.23, 1888)
+
+[node name="Hay137" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-4036.23, 1890)
+
+[node name="Hay138" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(-3962.23, 1881)
+
+[node name="Hay139" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2381, 3064.5)
+
+[node name="Hay140" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2459, 3066.5)
+
+[node name="Hay141" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2533, 3057.5)
+
+[node name="Hay142" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2378.78, 3136)
+
+[node name="Hay143" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2456.78, 3138)
+
+[node name="Hay144" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(2530.78, 3129)
+
+[node name="Hay145" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1203, 4119.5)
+
+[node name="Hay146" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1281, 4121.5)
+
+[node name="Hay147" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1355, 4112.5)
+
+[node name="Hay148" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1200.78, 4191)
+
+[node name="Hay149" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1278.78, 4193)
+
+[node name="Hay150" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(1352.78, 4184)
+
+[node name="Hay151" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(4248, 1825.5)
+
+[node name="Hay152" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(4326, 1827.5)
+
+[node name="Hay153" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(4400, 1818.5)
+
+[node name="Hay154" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(4245.77, 1897)
+
+[node name="Hay155" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(4323.77, 1899)
+
+[node name="Hay156" parent="AmbienceHay" instance=ExtResource("5_vvm0v")]
+position = Vector2(4397.77, 1890)
+
+[node name="Rocks" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+
+[node name="Rocks2" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(5027, 948)
+
+[node name="Rocks3" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(5083, 937)
+scale = Vector2(0.34259, 0.396243)
+
+[node name="Rocks4" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(-1961, 1578)
+
+[node name="Rocks5" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(1100, -693)
+
+[node name="Rocks6" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(2489, 1567)
+
+[node name="Rocks7" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(-122, 4095)
+
+[node name="Rocks8" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(-2296, -475)
+
+[node name="Rocks9" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+position = Vector2(2078, 3629)
+
+[node name="Rocks10" parent="AmbienceHay" instance=ExtResource("6_gga54")]
+
+[node name="Player" parent="." instance=ExtResource("7_suax3")]
+z_index = 1
+position = Vector2(1114, -2287)
+equipHelmet = true
+show_crewInventoryUI = false
+delayBeforeGameStart = 0.0
+metadata/_edit_lock_ = true
+
+[node name="DropBox" parent="." instance=ExtResource("8_t3kus")]
+z_index = 1
+y_sort_enabled = false
+position = Vector2(1128, -2369)
+scale = Vector2(1.435, 1.435)
+
+[node name="LightList" type="Node2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_wricx")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_30jb0")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_1kuxp")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_gk3gu")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_5etgx")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_ejel8")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_4yj3x")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_ldvu0")
+
+[node name="Node Resource Spawner" parent="." instance=ExtResource("9_mo7on")]
+resource_chances = {
+"Biogene": 0.55,
+"DuctTape": 0.1,
+"Food": 0.4,
+"Fuel": 0.4,
+"Medicine": 0.12,
+"Oxygen": 0.4,
+"SpareParts": 0.55
+}
+number_of_resources = 80
+
+[node name="Node2D" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-3960, 892)
+
+[node name="Node2D2" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-3528, 1239)
+
+[node name="Node2D3" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-4009, 1330)
+
+[node name="Node2D4" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-3672, 1565)
+
+[node name="Node2D5" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-3758, 1143)
+
+[node name="Node2D6" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-4147, 379)
+
+[node name="Node2D7" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-3683, 860)
+
+[node name="Node2D8" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-3864, 577)
+
+[node name="Node2D9" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-4190, 1122)
+
+[node name="Node2D10" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-4091, 1556)
+
+[node name="Node2D11" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6281, 607)
+
+[node name="Node2D12" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6575, 884)
+
+[node name="Node2D13" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6507, 1376)
+
+[node name="Node2D14" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6038, 1337)
+
+[node name="Node2D15" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6270, 1060)
+
+[node name="Node2D16" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(5721, 935)
+
+[node name="Node2D17" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6038, 867)
+
+[node name="Node2D18" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(5970, 528)
+
+[node name="Node2D19" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6513, 364)
+
+[node name="Node2D20" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(6270, 1523)
+
+[node name="Node2D21" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(901, 4822)
+
+[node name="Node2D22" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1234, 5014)
+
+[node name="Node2D23" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(955, 5026)
+
+[node name="Node2D24" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1039, 4849)
+
+[node name="Node2D25" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1371, 5130)
+
+[node name="Node2D26" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1578, 5241)
+
+[node name="Node2D27" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1030, 5217)
+
+[node name="Node2D28" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1267, 4831)
+
+[node name="Node2D29" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(748, 5005)
+
+[node name="Node2D30" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(703, 5202)
+
+[node name="Node2D31" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-84, 295)
+
+[node name="Node2D32" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(342, 98)
+
+[node name="Node2D33" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-255, 41)
+
+[node name="Node2D34" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(196, 352)
+
+[node name="Node2D35" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(177, -175)
+
+[node name="Node2D36" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(94, 111)
+
+[node name="Node2D37" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-363, 339)
+
+[node name="Node2D38" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-192, 460)
+
+[node name="Node2D39" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-122, -283)
+
+[node name="Node2D40" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-497, 111)
+
+[node name="Node2D41" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2335, -150)
+
+[node name="Node2D42" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2558, 244)
+
+[node name="Node2D43" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2354, 263)
+
+[node name="Node2D44" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2278, -4)
+
+[node name="Node2D45" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2119, 212)
+
+[node name="Node2D46" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2729, 117)
+
+[node name="Node2D47" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2621, -137)
+
+[node name="Node2D48" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2075, -118)
+
+[node name="Node2D49" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1948, 54)
+
+[node name="Node2D50" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2285, 454)
+
+[node name="Node2D51" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-541, 1781)
+
+[node name="Node2D52" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(50, 1971)
+
+[node name="Node2D53" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-122, 1603)
+
+[node name="Node2D54" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-224, 2035)
+
+[node name="Node2D55" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(361, 2104)
+
+[node name="Node2D56" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(62, 2282)
+
+[node name="Node2D57" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(354, 1787)
+
+[node name="Node2D58" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(-204, 1793)
+
+[node name="Node2D59" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(215, 1584)
+
+[node name="Node2D60" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(551, 1933)
+
+[node name="Node2D61" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2300, 1736)
+
+[node name="Node2D62" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2188, 1960)
+
+[node name="Node2D63" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2608, 2188)
+
+[node name="Node2D64" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2172, 2224)
+
+[node name="Node2D65" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2456, 1900)
+
+[node name="Node2D66" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2716, 1960)
+
+[node name="Node2D67" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2040, 1716)
+
+[node name="Node2D68" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1884, 1980)
+
+[node name="Node2D69" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1884, 1792)
+
+[node name="Node2D70" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(2640, 1712)
+
+[node name="Node2D71" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(932, 764)
+
+[node name="Node2D72" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1204, 880)
+
+[node name="Node2D73" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1091, 989)
+
+[node name="Node2D74" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(806, 944)
+
+[node name="Node2D75" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1307, 1046)
+
+[node name="Node2D76" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1432, 1002)
+
+[node name="Node2D77" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(971, 1106)
+
+[node name="Node2D78" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1129, 1126)
+
+[node name="Node2D79" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(1268, 1244)
+
+[node name="Node2D80" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
+position = Vector2(768, 1170)
