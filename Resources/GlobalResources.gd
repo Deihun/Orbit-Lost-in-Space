@@ -2,15 +2,15 @@ extends Node
 
 
 #VARIABLES 
-var ration = 10000
+var ration = 0
 var fuel = 0
-var oxygen = 1000
-var spareparts = 10000000
+var oxygen = 0
+var spareparts = 0
 var biogene : int= 0
 var ductape : int = 0
 var medicine: int = 0
-var emergencyOxy = 100
-var emergencyFuel = 100
+var emergencyOxy = 10
+var emergencyFuel = 10
 
 #EVENT VARIABLES
 var Critical_Event = []
@@ -26,6 +26,20 @@ var GameEffects = []
 var uniqueItems = []
 
 var Location = "Space"
+
+func ConsumeFuel(value: int = 10) -> bool:
+	if oxygen >= value:
+		oxygen -= value
+	else:
+		value -= oxygen
+		oxygen = 0
+		if emergencyFuel >= value:
+			emergencyFuel -= value
+		else:
+			emergencyFuel = 0
+			return false
+	
+	return true
 
 func add_item(item_type):#Use to direct add items, used by other objects such as dropbox to add items
 	match(item_type):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bifu5vvw8n8s8"]
+[gd_scene load_steps=26 format=3 uid="uid://bifu5vvw8n8s8"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/earth_2_map_layout.gd" id="1_qq3uf"]
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_y3cto"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://b0efw37kuok2p" path="res://AmbiencePurposes/Earth 2.0 Ambience/WitheredSpeedFruit.tscn" id="18_kji81"]
 [ext_resource type="PackedScene" uid="uid://lo6jryltgtqm" path="res://AmbiencePurposes/Earth 2.0 Ambience/Grass.tscn" id="19_2dmx3"]
 [ext_resource type="PackedScene" uid="uid://cyuk8l7es553x" path="res://AmbiencePurposes/Earth 2.0 Ambience/Bush.tscn" id="20_rwun4"]
+[ext_resource type="PackedScene" uid="uid://bkssoy7vm8sg3" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit.tscn" id="23_h8iww"]
+[ext_resource type="PackedScene" uid="uid://dch7iftn2syj" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit.tscn" id="24_erjs6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x7von"]
 shader = ExtResource("1_y3cto")
@@ -3203,5 +3205,38 @@ position = Vector2(-617, 9526)
 [node name="Hay240" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
 position = Vector2(-697, 9422)
 
+[node name="VisionFruit" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(1576, -358)
+
 [node name="Hay241" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
 position = Vector2(-585, 9392)
+
+[node name="VisionFruit2" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(7300, 1100)
+
+[node name="VisionFruit3" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(-3857, 2238)
+
+[node name="VisionFruit4" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(-3484, -3294)
+
+[node name="Hay242" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
+position = Vector2(-7624, -8577)
+
+[node name="Hay243" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
+position = Vector2(-7572, -8468)
+
+[node name="Hay244" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
+position = Vector2(-7688, -9103)
+
+[node name="Hay245" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
+position = Vector2(-7613, -9073)
+
+[node name="Hay246" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
+position = Vector2(-7714, -9012)
+
+[node name="InventoryFruit" parent="Tree_groups" instance=ExtResource("24_erjs6")]
+position = Vector2(-9932, 8822)
+
+[node name="Hay247" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
+position = Vector2(-7606, -9035)

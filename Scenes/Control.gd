@@ -28,7 +28,6 @@ func _process(delta):
 
 func _ready():
 	$WholeInteriorScene/Lobby.initializeJSONFILE()
-	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
 	if SaveGame.isLoadGame:
 		_loadGameStart()
 	else:
@@ -40,6 +39,7 @@ func getButtonPosition():
 
 #GAME SETTINGS
 func _newGameStart():
+	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
 	SaveGame.isLoadGame = true
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
@@ -106,6 +106,10 @@ func updateCockpit():
 		"SPACE":a    = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 		"None":a     = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 		"Radonti":a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+		"Steelicus":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusCockpit.png")
+		"Earth2.0":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
+		"Sauria":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
+		"Enthuli": pass
 		"Abandonship":pass
 		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
@@ -134,7 +138,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
 		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
 		"Sauria":IngameStoredProcessSetting.Scenes = "Sauria"
-		"Earth2":IngameStoredProcessSetting.Scenes = "Earth2"
+		"Earth2.0":IngameStoredProcessSetting.Scenes = "Earth2"
 		"Enthuli":IngameStoredProcessSetting.Scenes = "Enthuli"
 		"Steelicus":IngameStoredProcessSetting.Scenes = "Steelicus"
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene

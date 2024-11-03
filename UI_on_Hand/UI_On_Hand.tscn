@@ -90,3 +90,55 @@ scale = Vector2(0.156863, 0.156863)
 texture = ExtResource("1_hr640")
 
 [node name="Item_Display" type="Sprite2D" parent="Hand_6"]
+
+[node name="Hand_7" type="Panel" parent="."]
+visible = false
+offset_left = 249.0
+offset_right = 289.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_7"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_7"]
+
+[node name="Hand_8" type="Panel" parent="."]
+visible = false
+offset_left = 290.0
+offset_right = 330.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_8"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_8"]
+
+[node name="Hand_9" type="Panel" parent="."]
+visible = false
+offset_left = 331.0
+offset_right = 371.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_9"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_9"]
+
+[node name="Hand_10" type="Panel" parent="."]
+visible = false
+offset_left = 372.0
+offset_right = 412.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand_10"]
+position = Vector2(20, 20)
+scale = Vector2(0.156863, 0.156863)
+texture = ExtResource("1_hr640")
+
+[node name="Item_Display" type="Sprite2D" parent="Hand_10"]

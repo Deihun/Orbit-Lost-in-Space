@@ -7,11 +7,12 @@ var Cycle : int = 0
 var Scenes : String= ""
 var Ending : String= "null"
 var is_previous_restart : bool = false
+var didJerryLose: bool = false
 
 #EXPEDITIONVALUE
 var selectedCrew = "Jerry"
 var speed = 0
-var inventory = 4
+var inventory = 6
 var BonusMultiplyer = 1
 
 func newGame():
@@ -19,6 +20,8 @@ func newGame():
 
 
 func endCycle():
+	if delayInFaction <= 0:
+		if !GlobalResources.ConsumeFuel(): gameOver()
 	_recent_events_adjust()
 	Cycle += 1
 	move_space()
@@ -34,6 +37,11 @@ func getCycle():
 	return Cycle
 
 
+func gameOver(value : String = "lackofresources"):
+	var interior = get_node("/root/Control_Interior")
+	if interior:
+		interior.GameOver(value)
+
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #HANDLING FACTIONS
 var delayInFaction : int = 0
@@ -44,9 +52,9 @@ var TotalProbabilityForFactionsToFound : float = 0.006
 var Factions_Probability = {
 	"Radonti" : 0.75,
 	"Sauria" : 0.20,
-	"Faction3" : 0.0,
-	"Faction4" : 0.0,
-	"Faction5" : 0.0
+	"Steelicus" : 0.2,
+	"Enthuli" : 0.2,
+	"Earth2.0" : 0.2
 }
 var SubFactions_Probability = {
 	"Asteroid" : 0.01,
@@ -174,7 +182,7 @@ func _recent_events_adjust():
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #								CREW
 var crew_in_ship = []
-
+var jerry_ate_countdown : int = 2
 
 var _relationship = { #SAVE
 	"Regina" : 0.65,
@@ -374,6 +382,11 @@ func reduceFood(value : int):
 	GlobalResources.ration = value
 
 func doHunger():
+	jerry_ate_countdown -= 1
+	if jerry_ate_countdown <= 0:
+		jerry_ate_countdown = 2
+		GlobalResources.ration -= 5
+	GlobalResources.ration = 0 if GlobalResources.ration < 0 else GlobalResources.ration
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
 			_current_hunger[crew] -= (randf() * 0.1) + 0.2
@@ -415,10 +428,11 @@ func doDisease():
 			if chance > (0.8 + immunity): _disease[crew] = 0.0001
 
 func doOxygen():
+	GlobalResources.oxygen -= 5
 	for crew in crew_in_ship:
 		if GlobalResources.oxygen <= 0:  # If no oxygen is left
 			if GlobalResources.emergencyOxy <= 0: 
-				pass # GAME OVER
+				gameOver()
 			else:
 				addOnCycleReportList("EmergencyOxygen -5")
 				GlobalResources.emergencyFuel -= 5
