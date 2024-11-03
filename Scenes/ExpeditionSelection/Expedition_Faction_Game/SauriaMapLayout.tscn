@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=11 format=3 uid="uid://bt734kuuqnucj"]
+[gd_scene load_steps=9 format=3 uid="uid://bt734kuuqnucj"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/sauria_map_layout.gd" id="1_vqsle"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_bq1gc"]
@@ -72,17 +71,6 @@ use_parent_material = true
 position = Vector2(718, 575)
 scale = Vector2(0.844, 0.804)
 texture = ExtResource("2_srj8q")
-
-[node name="Walls" type="StaticBody2D" parent="Sprite2D"]
-collision_layer = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Walls"]
-build_mode = 1
-polygon = PackedVector2Array(-407.264, 418.612, -173.779, 417.211, -176.893, 260.319, -268.952, 257.985, -268.952, 237.439, -162.661, 236.505, -159.548, 297.208, -60.8172, 299.542, -55.0357, 341.567, -69.7119, 338.298, -71.9356, 317.286, -159.548, 318.22, -157.769, 458.769, 140.647, 457.835, 137.978, 253.315, 61.0396, 257.518, 61.9291, 241.642, 152.655, 238.84, 159.77, 457.835, 228.704, 460.17, 229.593, 302.811, 271.398, 303.745, 272.733, 192.613, 474.641, 193.08, 473.307, -158.993, 432.836, -160.394, 434.615, -297.208, 353.674, -375.654, 156.212, -375.654, 156.212, -95.9563, 136.199, -95.9563, 139.313, -448.03, 34.8004, -448.963, -85.2776, -448.963, -83.9434, -342.034, -86.7229, -225.065, -236.932, -223.898, -242.379, -136.347, -342, -137.281, -341.555, -21.9462, -257.945, -21.0123, -255.277, 2.33469, -340.554, 5.36981, -340.554, 51.5969, -294.747, 51.5969, -296.97, 66.539, -361.901, 64.6713, -360.567, -175.803, -273.4, -174.402, -265.839, -266.857, -101.288, -266.857, -99.0643, -507.331, -500.213, -501.261, -507.329, 110.431, -312.091, 110.898, -312.981, 103.894, -294.747, 103.894, -296.081, 126.307, -405.485, 127.241)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Walls"]
-build_mode = 1
-polygon = PackedVector2Array(-100.398, -264.989, -100.843, -448.963, -303.641, -447.563, -303.641, -353.708, -287.742, -353.474, -288.632, -437.056, -112.962, -435.656, -112.962, -277.83, -304.197, -281.098, -303.308, -266.156)
 
 [node name="Player" parent="." instance=ExtResource("2_bq1gc")]
 z_index = 1
