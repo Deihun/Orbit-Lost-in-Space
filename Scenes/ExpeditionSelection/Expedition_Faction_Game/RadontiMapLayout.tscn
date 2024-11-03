@@ -1,4 +1,5 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqn25uxqee6fy"]
+[gd_scene load_steps=18 format=3 uid="uid://cqn25uxqee6fy"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/radonti_map_layout.gd" id="1_i8m6i"]
 [ext_resource type="Texture2D" uid="uid://ry1bmdpegcvn" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti Map.png" id="1_rmkx0"]
@@ -7,6 +8,35 @@
 [ext_resource type="PackedScene" uid="uid://6hpd3wf2vb1u" path="res://AmbiencePurposes/Hay/Hay.tscn" id="4_3crr4"]
 [ext_resource type="PackedScene" uid="uid://mt7cxk242i47" path="res://AmbiencePurposes/Rocks/rocks.tscn" id="5_2hgvg"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="5_ljopx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drgx5"]
+shader = ExtResource("1_uhpa5")
+shader_parameter/base_color = null
+shader_parameter/light_intensity = 0.7
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wricx"]
+polygon = PackedVector2Array(844, 4557, 1450, 4557, 1496, 4558, 1831, 4883, 1831, 5402, 509, 5399, 507, 4882)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_30jb0"]
+polygon = PackedVector2Array(5548, 719, 5541, 1228, 5548, 1732, 6032, 2087, 6749, 2085, 6747, -76, 6024, -82, 5503, 267, 5502, 721)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kuxp"]
+polygon = PackedVector2Array(-3205, 1231, -3206, 1735, -3696, 2084, -4411, 2081, -4411, -77, -3691, -80, -3165, 264, -3164, 723, -3206, 723)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gk3gu"]
+polygon = PackedVector2Array(285, 1155, 285, 1200, -422, 1207, -666, 1499, -665, 2013, -261, 2427, 318, 2427, 740, 2115, 1003, 2113, 1005, 2157, 883, 2158, 743, 2159, 341, 2476, -283, 2475, -725, 2031, -727, 1503, -447, 1160)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5etgx"]
+polygon = PackedVector2Array(284, 554, 286, 590, -406, 585, -714, 288, -713, -281, -241, -734, 355, -733, 751, -354, 864, -354, 866, -296, 742, -298, 334, -690, -225, -693, -667, -265, -669, 282, -382, 556)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ejel8"]
+polygon = PackedVector2Array(1338, 2114, 1338, 2157, 1593, 2157, 1997, 2480, 2621, 2473, 3067, 2030, 3070, 1500, 2786, 1156, 2054, 1157, 2053, 1203, 2756, 1199, 3004, 1496, 3001, 2003, 2596, 2422, 2014, 2425, 1591, 2114)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4yj3x"]
+polygon = PackedVector2Array(1470, -356, 1472, -297, 1597, -301, 2006, -691, 2566, -691, 3001, -262, 3004, 281, 2717, 555, 2049, 552, 2052, 584, 2743, 584, 3055, 285, 3055, -278, 2581, -733, 1981, -734, 1587, -356)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ldvu0"]
+polygon = PackedVector2Array(817, -1489, 866, -1486, 868, -1867, 988, -1865, 986, -1911, 305, -1910, 305, -2515, 721, -2864, 1622, -2863, 2030, -2518, 2030, -1906, 1348, -1910, 1348, -1862, 1470, -1864, 1474, -1488, 1523, -1489, 1525, -1753, 1522, -1867, 2068, -1868, 2074, -2540, 1629, -2906, 713, -2908, 263, -2545, 268, -1863, 814, -1867)
 
 [node name="RadontiMap" type="Node2D"]
 y_sort_enabled = true
@@ -573,3 +603,29 @@ z_index = 1
 y_sort_enabled = false
 position = Vector2(1128, -2342)
 scale = Vector2(1.435, 1.435)
+
+[node name="LightList" type="Node2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_wricx")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_30jb0")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_1kuxp")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_gk3gu")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_5etgx")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_ejel8")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_4yj3x")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="LightList"]
+occluder = SubResource("OccluderPolygon2D_ldvu0")
