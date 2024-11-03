@@ -2,3 +2,33 @@
 *You have been kicked out of your space shuttle by your crew unanimously due to your misbehavior*
 *Maintain positive trust and relationship with your crew*
 => END
+
+~ O2Runout
+*Due to a critically low amount of oxygen in your tank, you are unable to move. 
+*Your crew got worried and searched for you on the planet using half of your shuttle's resource.
+*They found you lying down unconscious and dragged you inside the shuttle
+=> END
+
+~ CultEnd
+=> END
+
+~ BadCultEnd
+=> END!
+
+~ GSEnd
+=> END!
+
+~ BadGSEnd
+=> END
+
+~ SteelEnd
+=> END
+
+~ BadEnd
+=> END
+
+~ CapyEnd
+=> END
+
+~ FreeEnd
+=> END
