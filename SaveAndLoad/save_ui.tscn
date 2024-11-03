@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmavgmmgqtmb0"]
+[gd_scene load_steps=6 format=3 uid="uid://cmavgmmgqtmb0"]
 
 [ext_resource type="PackedScene" uid="uid://dc6ynl8fpo7vk" path="res://SaveAndLoad/naming.tscn" id="1_22kad"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_bclxw"]
 [ext_resource type="Script" path="res://SaveAndLoad/save_ui.gd" id="1_oynrs"]
 [ext_resource type="PackedScene" uid="uid://cof0iw8v45lk3" path="res://SaveAndLoad/save_node.tscn" id="2_grgno"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="5_cni6w"]
 
 [node name="SaveUI" type="Control"]
 layout_mode = 3
@@ -98,5 +99,9 @@ offset_bottom = 720.0
 text = "Back
 "
 
+[node name="ButtonSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cni6w")
+bus = &"Sfx"
+
 [connection signal="timeout" from="NinePatchRect/Panel/MessageDelay" to="." method="_on_message_delay_timeout"]
-[connection signal="button_up" from="Back" to="." method="_on_back_button_up"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
