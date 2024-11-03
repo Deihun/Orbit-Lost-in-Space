@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bt734kuuqnucj"]
+[gd_scene load_steps=13 format=3 uid="uid://bt734kuuqnucj"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/sauria_map_layout.gd" id="1_vqsle"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_bq1gc"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cb4t2qx206y3u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Sauria Map.png" id="2_srj8q"]
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="3_iko7u"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="4_wqujf"]
+[ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="7_k48a1"]
+[ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="8_qp5eq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w50gs"]
 shader = ExtResource("2_fw06h")
@@ -99,3 +101,150 @@ equipHelmet = true
 show_crewInventoryUI = false
 delayBeforeGameStart = 0.0
 metadata/_edit_lock_ = true
+
+[node name="Node Resource Spawner" parent="." instance=ExtResource("7_k48a1")]
+number_of_resources = 55
+
+[node name="Node2D" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2068, -977)
+
+[node name="Node2D2" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2457, -799)
+
+[node name="Node2D3" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2534, -1240)
+
+[node name="Node2D4" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2101, -1401)
+
+[node name="Node2D5" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1610, -1409)
+
+[node name="Node2D9" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1578, 943)
+
+[node name="Node2D10" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1588, 591)
+
+[node name="Node2D11" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1264, 829)
+
+[node name="Node2D12" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1283, 1105)
+
+[node name="Node2D13" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2484, 2684)
+
+[node name="Node2D14" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2018, 3036)
+
+[node name="Node2D15" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2170, 2693)
+
+[node name="Node2D16" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1866, 2703)
+
+[node name="Node2D17" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1694, 2969)
+
+[node name="Node2D18" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1552, 2769)
+
+[node name="Node2D19" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1457, 2494)
+
+[node name="Node2D20" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2456, 2969)
+
+[node name="Node2D21" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(343, 2436)
+
+[node name="Node2D22" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(715, 2950)
+
+[node name="Node2D23" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(429, 2760)
+
+[node name="Node2D24" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(201, 2551)
+
+[node name="Node2D25" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1525, 2343)
+
+[node name="Node2D26" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1184, 2568)
+
+[node name="Node2D27" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1525, 2813)
+
+[node name="Node2D28" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1098, 2856)
+
+[node name="Node2D29" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-831, 2365)
+
+[node name="Node2D30" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-607, 2621)
+
+[node name="Node2D31" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-308, 2215)
+
+[node name="Node2D32" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-319, 2610)
+
+[node name="Node2D33" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2600, 150)
+
+[node name="Node2D34" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(3146, 516)
+
+[node name="Node2D35" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2247, 552)
+
+[node name="Node2D36" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2103, 210)
+
+[node name="Node2D37" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2756, 372)
+
+[node name="Node2D38" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(3217, 210)
+
+[node name="Node2D39" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2005, 1511)
+
+[node name="Node2D40" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2164, 2054)
+
+[node name="Node2D41" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2375, 1775)
+
+[node name="Node2D42" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1854, 1843)
+
+[node name="Node2D43" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2557, 2175)
+
+[node name="Node2D44" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2541, 1412)
+
+[node name="Node2D45" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(2844, 2062)
+
+[node name="Node2D46" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(3266, 2032)
+
+[node name="Node2D47" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1420, -651)
+
+[node name="Node2D48" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(-1054, -382)
+
+[node name="Node2D49" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(678, -208)
+
+[node name="Node2D50" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(1157, 248)
+
+[node name="Node2D51" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
+position = Vector2(282, 290)
