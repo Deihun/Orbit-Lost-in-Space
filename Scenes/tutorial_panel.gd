@@ -29,8 +29,6 @@ func _ready():
 	update_content()
 	if !Closable:
 		$CheckBox.process_mode = Node.PROCESS_MODE_DISABLED
-		$CheckBox.hide()
-		$ColorRect.queue_free()
 
 func instantiate():
 	pass

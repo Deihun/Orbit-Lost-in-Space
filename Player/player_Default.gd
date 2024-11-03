@@ -39,14 +39,12 @@ func setStats():
 	AdditionalPlayerSpeed = IngameStoredProcessSetting.speed
 
 func showTimer(value : bool):
-	if value and $".".useGlobeTimerUI:
+	if value:
 		$player/AllUIParents/Globe_Timer_Sprite.show()
-		$player/AllUIParents/Globe_Timer_Sprite/Label_Timer.show()
-	elif value and !$".".useGlobeTimerUI:
-		$player/AllUIParents/Timer.show()
+		$player/AllUIParents/Label_Timer.show()
 	else:
 		$player/AllUIParents/Globe_Timer_Sprite.hide()
-		$player/AllUIParents/Globe_Timer_Sprite/Label_Timer.hide()
+		$player/AllUIParents/Label_Timer.hide()
 
 func canMove(value : bool):
 	if value:

@@ -4,12 +4,10 @@ extends Node2D
 @onready var space_image = $Space
 @onready var _player = $Player
 @onready var player_cb = $Player/player
-@onready var camera = $Player/player/PlayerCamera
 #VARIABLE
 var crew_name = IngameStoredProcessSetting.selectedCrew
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	camera.make_current()
 	_onStartInitialize()
 	player_cb._set_game_over_action(Callable(self,"gameOver"))
 	player_cb._set_game_win_condition(Callable(self,"gameWin"))
@@ -55,20 +53,11 @@ func gameOver():
 	_player.transition()
 	player_cb.canMove = false
 	await get_tree().create_timer(2.5).timeout
-	if crew_name == "Jerry" and IngameStoredProcessSetting.crew_in_ship.size() > 0:
-		var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
-		IngameStoredProcessSetting.didJerryLose = true
-		r.updateGlobalResource()
-		IngameStoredProcessSetting.Scenes = "interiorscene"
-		get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
-	elif crew_name == "Jerry" and IngameStoredProcessSetting.crew_in_ship.size() <= 0:
-		IngameStoredProcessSetting.Ending = "JerryDeath"
-		get_tree().change_scene_to_file("res://Scenes/EndScenes/EndingScene.tscn")
-	else:
-		IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
-		IngameStoredProcessSetting.Scenes = "interiorscene"
-		get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
-
+	IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
+	IngameStoredProcessSetting.Scenes = "interiorscene"
+	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	
+	pass
 
 func gameWin():
 	_player.transition()

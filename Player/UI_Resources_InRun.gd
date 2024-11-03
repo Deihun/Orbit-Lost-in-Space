@@ -60,26 +60,18 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 			if crew["fumiko"] == false:	crew_availability -= 1
 			crew["fumiko"] = true
 
-func halfIt():
-	gas = int(gas/2)
-	ration = int(ration/2)
-	fuel = int(fuel/2)
-	spareparts = int(spareparts/2)
-	biogene = int(biogene/2)
-	ductape = int(ductape/2)
-	medicine = int(medicine/2)
-
 func updateGlobalResource():
 	var r = GlobalResources
 	var b = IngameStoredProcessSetting
-	r.ration += ration
-	r.fuel += fuel
-	r.oxygen += gas
-	r.spareparts += spareparts
-	r.biogene += biogene
-	r.ductape += ductape
-
-
+	r.ration = ration
+	r.fuel = fuel
+	r.oxygen = gas
+	r.spareparts = spareparts
+	r.biogene = biogene
+	r.ductape = ductape
+	r.emergencyOxy = 100
+	r.emergencyFuel = 100
+	
 	if crew["regina"] == true and !b.crew_in_ship.has("Regina"): b.crew_in_ship.append("Regina")
 	if crew["maxim"] == true and !b.crew_in_ship.has("Maxim"): b.crew_in_ship.append("Maxim")
 	if crew["fumiko"] == true and !b.crew_in_ship.has("Fumiko"): b.crew_in_ship.append("Fumiko")

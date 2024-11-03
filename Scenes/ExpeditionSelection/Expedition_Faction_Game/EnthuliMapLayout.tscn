@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b23l7lf7h1kmp"]
+[gd_scene load_steps=3 format=3 uid="uid://bfndi1rmcs7gj"]
 
 [ext_resource type="Texture2D" uid="uid://cmnaywa3o3si2" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Enthuli.png" id="1_icy4i"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_jec0x"]

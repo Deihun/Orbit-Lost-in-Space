@@ -1,15 +1,100 @@
-[gd_scene load_steps=7 format=3 uid="uid://b265u4rfm08ou"]
+[gd_scene load_steps=19 format=3 uid="uid://b265u4rfm08ou"]
 
 [ext_resource type="Texture2D" uid="uid://cmdsr8siuommy" path="res://AmbiencePurposes/Earth 2.0 Ambience/SpeedFruit_withfruit.png" id="1_34b3d"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/speed_fruit.gd" id="2_a24ki"]
-[ext_resource type="PackedScene" uid="uid://bo1pfvcdu6ny4" path="res://AmbiencePurposes/Earth 2.0 Ambience/Shine.tscn" id="3_mc660"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_u50xo"]
+[ext_resource type="Texture2D" uid="uid://dovnietwmwgq2" path="res://AmbiencePurposes/Earth 2.0 Ambience/ShineAnimation.png" id="3_x0tor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek7vk"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(0, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d6xo"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(102, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7gir"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(204, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjjjg"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(0, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px57s"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(102, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3swci"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(204, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_url3n"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(0, 204, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eil2l"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(102, 204, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6l3n"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(204, 204, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n567l"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(306, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsxcq"]
+atlas = ExtResource("3_x0tor")
+region = Rect2(306, 102, 102, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_capmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek7vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d6xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7gir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjjjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px57s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3swci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_url3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eil2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6l3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n567l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsxcq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xuq2"]
 radius = 8.06226
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nn3e0"]
-radius = 41.3038
+[sub_resource type="CircleShape2D" id="CircleShape2D_77gwn"]
+radius = 43.0465
 
 [node name="SpeedFruit" type="Sprite2D"]
 y_sort_enabled = true
@@ -18,7 +103,12 @@ texture = ExtResource("1_34b3d")
 offset = Vector2(8, -77)
 script = ExtResource("2_a24ki")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_mc660")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-5, -51)
+sprite_frames = SubResource("SpriteFrames_capmw")
+autoplay = "default"
+frame_progress = 0.824709
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 y_sort_enabled = true
@@ -31,13 +121,15 @@ y_sort_enabled = true
 position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_0xuq2")
 
-[node name="InteractionArea_speedFruit" parent="." instance=ExtResource("3_u50xo")]
+[node name="InteractionArea" parent="." instance=ExtResource("3_u50xo")]
 y_sort_enabled = true
 position = Vector2(-1, 0)
 action_name = "Eat the mysterious fruit"
 
-[node name="CollisionShape2D_SpeedFruit" type="CollisionShape2D" parent="InteractionArea_speedFruit"]
-shape = SubResource("CircleShape2D_nn3e0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+y_sort_enabled = true
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_77gwn")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 15.0

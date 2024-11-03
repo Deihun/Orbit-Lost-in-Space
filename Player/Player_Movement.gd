@@ -34,14 +34,10 @@ var game_win : Callable
 
 #VOID METHODS
 func _ready():	#OnStart, 
-	if $"..".useGlobeTimerUI: $AllUIParents/Timer.hide()
-	else: 
-		$AllUIParents/Timer/Label_Timer.text = str($"..".limitTimeDuration)
-		$AllUIParents/Timer/AnimationPlayer.play("StartingAnimation")
 	self.set_process(false)
 	await get_tree().create_timer(0.1).timeout #For enabling animation to run on conditions
 	play_animation(run_idle[animation_use_id])
-	$AllUIParents/Globe_Timer_Sprite/Label_Timer.hide()
+	$AllUIParents/Label_Timer.hide()
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 	self.set_process(true)
@@ -107,11 +103,10 @@ func pickup():
 		play_animation(run_pickup[animation_use_id])
 
 func update_label(text_content, isColor): #Set the child label node 
-	var label = get_parent().get_node("player/AllUIParents/Globe_Timer_Sprite/Label_Timer")
+	var label = get_parent().get_node("player/AllUIParents/Label_Timer")
 	if !$AllUIParents/Globe_Timer_Sprite/Meteor_animated.is_playing():
 		$AllUIParents/Globe_Timer_Sprite/Meteor_animated.play("idle_meteor")
 	$AllUIParents/Globe_Timer_Sprite/Meteor_animated.rotate(0.03)
-	$AllUIParents/Timer/Label_Timer.text = str(text_content)
 	label.text = str(text_content)
 
 func play_animation(anim_name):
@@ -180,9 +175,10 @@ func endScene():
 
 func showUIUpon():
 	if $"..".useGlobeTimerUI:
+		$AllUIParents/Label_Timer.show()
 		$AllUIParents/Globe_Timer_Sprite.show()
+		$AllUIParents/Globe_Timer_Sprite/Meteor_animated.show()
 	else:
-		$AllUIParents/Timer.show()
 		pass
 
 	if $"..".show_crewInventoryUI:
@@ -198,8 +194,10 @@ func showUIUpon():
 func hideallUI():
 	$AllUIParents/Red_UI_Indicator.hide()
 	$AllUIParents/UI_On_Hand.hide()
+	$AllUIParents/Label_Timer.hide()
 	$AllUIParents/Globe_Timer_Sprite.hide()
-	$AllUIParents/Timer.hide()
+	$AllUIParents/Globe_Timer_Sprite/Meteor_animated.hide()
+	$AllUIParents/Label_Timer.hide()
 	$AllUIParents/Crew_Show.hide()
 	$AllUIParents/ResourceUI_InRun.hide()
 	$AllUIParents/Crew_Show.hide()

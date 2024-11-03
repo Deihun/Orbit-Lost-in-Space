@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bifu5vvw8n8s8"]
+[gd_scene load_steps=24 format=3 uid="uid://bifu5vvw8n8s8"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/earth_2_map_layout.gd" id="1_qq3uf"]
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_y3cto"]
@@ -3221,9 +3221,6 @@ position = Vector2(-617, 9526)
 
 [node name="Hay240" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
 position = Vector2(-697, 9422)
-
-[node name="VisionFruit" parent="Tree_groups" instance=ExtResource("23_h8iww")]
-position = Vector2(1576, -358)
 
 [node name="Hay241" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
 position = Vector2(-585, 9392)

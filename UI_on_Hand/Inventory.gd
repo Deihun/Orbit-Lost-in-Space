@@ -8,10 +8,6 @@ var MAX_SLOTS : int = 4
 @onready var Hand4 = $Hand_4/Sprite2D
 @onready var Hand5 = $Hand_5/Sprite2D
 @onready var Hand6 = $Hand_6/Sprite2D
-@onready var Hand7 = $Hand_7/Sprite2D
-@onready var Hand8 = $Hand_8/Sprite2D
-@onready var Hand9 = $Hand_9/Sprite2D
-@onready var Hand10 = $Hand_10/Sprite2D
 @onready var resource = GlobalResources
 
 #Texture Packages
@@ -34,16 +30,11 @@ var inventory = []
 
 
 func _ready():
-	await get_tree().create_timer(0.01).timeout
 	MAX_SLOTS = IngameStoredProcessSetting.inventory
-	print(MAX_SLOTS)
 	MAX_SLOTS = 6 if MAX_SLOTS > 6 else MAX_SLOTS
 	for i in range(MAX_SLOTS): #Declaration of inventory size
 		inventory.append([])
 	showItem()
-	updateUICount()
-
-func updateUICount():
 	match MAX_SLOTS:
 		4:
 			$Hand_5.hide()
@@ -54,64 +45,6 @@ func updateUICount():
 		6:
 			$Hand_5.show()
 			$Hand_6.show()
-		7:
-			$Hand_5.show()
-			$Hand_6.show()
-			$Hand_7.show()
-		8:
-			$Hand_5.show()
-			$Hand_6.show()
-			$Hand_7.show()
-			$Hand_8.show()
-		9:
-			$Hand_5.show()
-			$Hand_6.show()
-			$Hand_7.show()
-			$Hand_8.show()
-			$Hand_9.show()
-		10:
-			$Hand_5.show()
-			$Hand_6.show()
-			$Hand_7.show()
-			$Hand_8.show()
-			$Hand_9.show()
-			$Hand_10.show()
-
-func set_max_slots(new_max_slots: int):
-	new_max_slots = clamp(new_max_slots, 1, 10)
-	
-	if new_max_slots > MAX_SLOTS:
-		# Increase the number of slots
-		for i in range(MAX_SLOTS, new_max_slots):
-			inventory.append([])
-	elif new_max_slots < MAX_SLOTS:
-		# Decrease the number of slots
-		# First, collect any items in the slots that will be removed
-		for i in range(new_max_slots, MAX_SLOTS):
-			if inventory[i].size() > 0:
-				# Here you can decide what to do with items in removed slots
-				# e.g., move them to another list, discard them, or notify the player
-				print("Slot", i, "contains items that will be lost:", inventory[i])
-		
-		# Trim the inventory to the new size
-		inventory.resize(new_max_slots)
-
-	MAX_SLOTS = new_max_slots
-	updateUICount()
-	update_ui_slots()
-
-
-func update_ui_slots():
-	# Update UI to show or hide slot nodes based on MAX_SLOTS
-	var hands = [Hand1, Hand2, Hand3, Hand4, Hand5, Hand6, Hand7, Hand8, Hand9, Hand10]
-	for i in range(hands.size()):
-		if i < MAX_SLOTS:
-			hands[i].show()
-		else:
-			hands[i].hide()
-	
-	showItem()  # Update the item display to reflect the new slot configuration
-
 
 func _insert_all_items(): #Declaration of inventory size
 	for i in range(MAX_SLOTS):
@@ -122,7 +55,7 @@ func _insert_all_items(): #Declaration of inventory size
 	showItem()
 
 func showItem():
-	var hands = [Hand1, Hand2, Hand3, Hand4, Hand5, Hand6,Hand7,Hand8,Hand9,Hand10]
+	var hands = [Hand1, Hand2, Hand3, Hand4, Hand5, Hand6]
 	
 	for hand in hands:
 		hand.texture = null
