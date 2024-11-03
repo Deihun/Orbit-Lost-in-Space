@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://b0efw37kuok2p" path="res://AmbiencePurposes/Earth 2.0 Ambience/WitheredSpeedFruit.tscn" id="18_kji81"]
 [ext_resource type="PackedScene" uid="uid://lo6jryltgtqm" path="res://AmbiencePurposes/Earth 2.0 Ambience/Grass.tscn" id="19_2dmx3"]
 [ext_resource type="PackedScene" uid="uid://cyuk8l7es553x" path="res://AmbiencePurposes/Earth 2.0 Ambience/Bush.tscn" id="20_rwun4"]
-[ext_resource type="PackedScene" uid="uid://bkssoy7vm8sg3" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit.tscn" id="23_h8iww"]
-[ext_resource type="PackedScene" uid="uid://dch7iftn2syj" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit.tscn" id="24_erjs6"]
+[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit.tscn" id="23_h8iww"]
+[ext_resource type="PackedScene" uid="uid://d4fk7lnj42wnm" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit.tscn" id="24_erjs6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x7von"]
 shader = ExtResource("1_y3cto")
@@ -945,7 +945,7 @@ position = Vector2(5249, -5167)
 position = Vector2(5036, -5079)
 
 [node name="Earth2_0Tree66" parent="Tree_groups" instance=ExtResource("12_j4rv6")]
-position = Vector2(7311, -9287)
+position = Vector2(5044, -9482)
 
 [node name="Earth2_0Tree67" parent="Tree_groups" instance=ExtResource("12_j4rv6")]
 position = Vector2(6432, -9512)
@@ -3240,3 +3240,22 @@ position = Vector2(-9932, 8822)
 
 [node name="Hay247" parent="Tree_groups" instance=ExtResource("17_8ox1p")]
 position = Vector2(-7606, -9035)
+
+[node name="InventoryFruit2" parent="Tree_groups" instance=ExtResource("24_erjs6")]
+position = Vector2(-4703, -5905)
+
+[node name="VisionFruit5" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(6093, -5316)
+
+[node name="VisionFruit6" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(5818, -754)
+
+[node name="VisionFruit7" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(-6967, -378)
+
+[node name="VisionFruit8" parent="Tree_groups" instance=ExtResource("23_h8iww")]
+position = Vector2(-1399, -8730)
+
+[node name="SpeedFruit42" parent="Tree_groups" instance=ExtResource("16_muaxw")]
+position = Vector2(-6626.48, -8773.77)
+scale = Vector2(1.81, 1.99)
