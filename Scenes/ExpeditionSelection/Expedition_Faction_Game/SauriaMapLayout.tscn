@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt734kuuqnucj"]
+[gd_scene load_steps=9 format=3 uid="uid://bt734kuuqnucj"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/sauria_map_layout.gd" id="1_vqsle"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_bq1gc"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cb4t2qx206y3u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Sauria Map.png" id="2_srj8q"]
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="3_iko7u"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="4_wqujf"]
-[ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="7_k48a1"]
-[ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="8_qp5eq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w50gs"]
 shader = ExtResource("2_fw06h")
@@ -15,13 +13,7 @@ shader_parameter/base_color = null
 shader_parameter/light_intensity = 0.7
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_slhpt"]
-polygon = PackedVector2Array(-749, 405, -745, 377, -193, 381, -192, 355, -748, 355, -742, -82, -314, -497, 416, -490, 854, -143, 849, 359, 298, 358, 298, 385, 855, 383, 859, 383, 860, 240, 913, 242, 914, -725, 1520, -724, 1522, -240, 2749, -242, 2741, 1098, 1574, 1097, 1583, 597, 928, 595, 931, 632, 1541, 628, 1541, 1380, 3449, 1388, 3398, 2438, 2735, 2434, 2735, 2206, 2203, 2207, 2200, 2445, 1527, 2445, 1526, 2989, 1631, 2991, 1632, 2614, 2698, 2623, 3614, 2589, 3554, 229, 1501, -1051, -752, -1036, -1877, 371, -1876, 407)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_26e2r"]
-polygon = PackedVector2Array(-1876, 407, -1824, 407, -1825, 1677, -1492, 1677, -1492, 1819, -2030, 1820, -2026, 2951, -1284, 2949, -1278, 2814, -1032, 2816, -1031, 3572, -1868, 3575, -1866, 4704, -1116, 4704, -1113, 4443, -247, 4440, -246, 3667, 372, 3669, 372, 3695, -203, 3699, -200, 4435, 53, 4434, 57, 4727, 700, 4724, 703, 4323, 1123, 4322, 1125, 4782, 2671, 4780, 2670, 4093, 1546, 4099, 1543, 3655, 733, 3655, 733, 4061, 695, 4061, 697, 3618, 1579, 3618, 1584, 4065, 2670, 4062, 2673, 3827, 3325, 3824, 3330, 3367, 2672, 3365, 2668, 2590, 2709, 2590, 2705, 3337, 3349, 3340, 3347, 3847, 2697, 3851, 2697, 4815, 1093, 4815, 1091, 4348, 720, 4351, 719, 4750, 24, 4751, 20, 4465, -1086, 4467, -1086, 4734, -1917, 4735, -1917, 3546, -1063, 3542, -1063, 2849, -1243, 2848, -1243, 2982, -2069, 2984, -2068, 1798, -1518, 1797, -1518, 1707, -1870, 1708)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_psrft"]
-polygon = PackedVector2Array(-623, 753, -354, 1026, -71, 1026, -69, 2236, 60, 2238, 59, 2466, 521, 2468, 517, 3103, -205, 3101, -210, 2527, -1024, 2532, -1071, 2532, -1071, 1630, -623, 1630)
+polygon = PackedVector2Array(-749, 405, -744, 372, -207, 380, -192, 355, -748, 355, -742, -82, -314, -497, 416, -490, 854, -143, 849, 359, 299, 362, 301, 386, 855, 383, 858, 381, 860, 240, 913, 242, 914, -725, 1520, -724, 1522, -240, 2749, -242, 2741, 1098, 1574, 1097, 1583, 597, 928, 595, 931, 632, 1541, 628, 1541, 1380, 3449, 1388, 3398, 2438, 2735, 2434, 2735, 2206, 2203, 2207, 2200, 2445, 1527, 2436, 1530, 2971, 1623, 2951, 1632, 2614, 2698, 2623, 3614, 2589, 3554, 229, 1501, -1051, -752, -1036, -1528, 40)
 
 [node name="SauriaMapLayout" type="Node2D"]
 y_sort_enabled = true
@@ -69,30 +61,27 @@ texture_scale = 1.6
 [node name="LightOccluder2D" type="LightOccluder2D" parent="LightList"]
 occluder = SubResource("OccluderPolygon2D_slhpt")
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="LightList"]
-occluder = SubResource("OccluderPolygon2D_26e2r")
-
-[node name="LightOccluder2D3" type="LightOccluder2D" parent="LightList"]
-occluder = SubResource("OccluderPolygon2D_psrft")
-
 [node name="DropBox" parent="." instance=ExtResource("4_wqujf")]
 z_index = 1
 position = Vector2(218, -1678)
 scale = Vector2(0.844, 0.804)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
 position = Vector2(718, 575)
 scale = Vector2(0.844, 0.804)
 texture = ExtResource("2_srj8q")
 
 [node name="Walls" type="StaticBody2D" parent="Sprite2D"]
-collision_layer = 33
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Walls"]
-polygon = PackedVector2Array(-50.9478, 1468.91, -927.725, 1467.66, -933.649, 467.662, -1947.87, 463.93, -1949.05, -707.711, -1421.8, -710.199, -1419.43, -1796.02, -1396.92, -1796.02, -1094.79, -1457.71, -753.555, -1457.71, -751.185, 44.7761, -601.896, 47.2637, -599.526, 334.577, -53.3175, 337.065)
+collision_layer = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Walls"]
-polygon = PackedVector2Array(-1554.5, -2552.24, -1554.5, -2288.56, -902.844, -2286.07, -900.474, -2217.66, -1568.72, -2226.37, -1607.82, -2274.88, -1644.55, -2281.09, -1674.17, -2293.53, -1716.82, -2302.24, -1744.08, -2869.4, -1168.25, -3496.27, -118.483, -3504.98, 311.611, -2965.17, -92.4171, -3477.61, 316.351, -3667.91, 414.692, -3671.64, 563.981, -3674.13, 1170.62, -3670.4, 1174.17, -3083.33, 1178.91, -3654.23, 1419.43, -3388.06, 2091.23, -3456.47, 2482.23, -3431.59, 2642.18, -3083.33, 2982.23, -2332.09, 2874.41, -1401.74, 2837.68, -1226.37, 2648.1, -1246.27, 2652.84, -1747.51, 2644.55, -1253.73, 1838.86, -1258.71, 2644.55, -1248.76, 2830.57, -1226.37, 3323.46, -1167.91, 3818.72, -1129.35, 3934.83, 528.607, 2569.91, 803.483, 2503.55, 384.328, 2526.07, 532.338, 2555.69, 820.896, 3222.75, 676.617, 3710.9, 1696.52, 3324.64, 2093.28, 2835.31, 2827.11, 2659.95, 3541.04, 523.697, 3577.11, 387.441, 3534.83, 608.418, 2687.05, 436.019, 3335.82, 158.768, 3319.65, -697.867, 3404.23, -2077.01, 3447.76, -3020.14, 3470.15, -3274.88, 2997.51, -3207.35, 1659.2, -3268.96, 1317.16, -3520.14, 325.871, -3265.4, -898.01, -3386.26, -2590.8, -1746.45, -2861.94, -1722.75, -2325.87, -1719.19, -2296.02, -1683.65, -2292.29, -1633.89, -2274.88, -1609, -2269.9, -1588.86, -2250, -1571.09, -2225.12, -1561.73, -2223.9, -1552.13, -2223.88, -1553.32, -1896.77, -2835.31, -1905.47, -2835.31, -679.104, -2437.2, -677.861, -2437.2, -160.448, -3071.91, -157.738, -3067.54, 895.522, -2202.61, 898.01, -2200.24, 722.637, -1891, 731.343, -1893.36, 1671.64, -1886.26, 2041.04, -2882.7, 2034.83, -2880.83, 3069.37, -2004.74, 3065.92, -2001.18, 2757.46, -975.118, 2748.76, -972.749, 1827.11, -904.028, 1825.87, -225.118, 1819.65, -226.303, 1921.64, -907.583, 1912.94, -905.214, 2748.46, -680.095, 2747.51, -603.081, 2745.02, -606.649, 3107.2, 144.891, 3110.63, 157.583, 2935.32, 150.474, 2633.08, 146.919, 2592.04, 607.82, 2590.8, 658.768, 2592.04, 661.536, 3162.83, 2482.23, 3159.2, 2482.23, 2411.69, 1148.1, 2424.13, 1146.11, 1865.24, 193.128, 1865.67, 196.682, 2323.38, 143.365, 2324.63, 139.81, 2031.09, 140.995, 1762.44, 1145.73, 1758.71, 1204.98, 1758.71, 1197.87, 2319.65, 2484.44, 2324.27, 2490.52, 2083.33, 2481.04, 1988.81, 3260.66, 1983.83, 3258.29, 1692.79, 2483.41, 1701.49, 2484.6, 750, 2094.79, 743.781, 1264.22, 750, 1254.74, 981.343, 1137.44, 980.1, 1133.89, 317.164, 1930.09, 314.677, 1933.65, 17.4129, 2558.06, 14.9254, 2555.69, 305.97, 3352.25, 303.108, 3341.23, -731.343, 1150.47, -731.343, 1152.84, -1879.35, 1090.05, -1879.35, 419.431, -1873.13, 418.247, -1992.54, 1195.5, -1992.54, 1194.31, -1356.97, 2569.91, -1355.72, 2573.46, -2703.98, 1132.7, -2706.47, 1136.26, -3289.8, 398.104, -3288.56, 399.289, -3124.38, 398.104, -2226.37, 332.938, -2225.12, -318.72, -2223.88, -318.72, -2278.61, 334.123, -2279.85, 338.863, -2590.8, -199.052, -3064.68, -1022.51, -3069.65)
+build_mode = 1
+polygon = PackedVector2Array(-407.264, 418.612, -173.779, 417.211, -176.893, 260.319, -268.952, 257.985, -268.952, 237.439, -162.661, 236.505, -159.548, 297.208, -60.8172, 299.542, -55.0357, 341.567, -69.7119, 338.298, -71.9356, 317.286, -159.548, 318.22, -157.769, 458.769, 140.647, 457.835, 137.978, 253.315, 61.0396, 257.518, 61.9291, 241.642, 152.655, 238.84, 159.77, 457.835, 228.704, 460.17, 229.593, 302.811, 271.398, 303.745, 272.733, 192.613, 474.641, 193.08, 473.307, -158.993, 432.836, -160.394, 434.615, -297.208, 353.674, -375.654, 156.212, -375.654, 156.212, -95.9563, 136.199, -95.9563, 139.313, -448.03, 34.8004, -448.963, -85.2776, -448.963, -83.9434, -342.034, -86.7229, -225.065, -236.932, -223.898, -242.379, -136.347, -342, -137.281, -341.555, -21.9462, -257.945, -21.0123, -255.277, 2.33469, -340.554, 5.36981, -340.554, 51.5969, -294.747, 51.5969, -296.97, 66.539, -361.901, 64.6713, -360.567, -175.803, -273.4, -174.402, -265.839, -266.857, -101.288, -266.857, -99.0643, -507.331, -500.213, -501.261, -507.329, 110.431, -312.091, 110.898, -312.981, 103.894, -294.747, 103.894, -296.081, 126.307, -405.485, 127.241)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sprite2D/Walls"]
+build_mode = 1
+polygon = PackedVector2Array(-100.398, -264.989, -100.843, -448.963, -303.641, -447.563, -303.641, -353.708, -287.742, -353.474, -288.632, -437.056, -112.962, -435.656, -112.962, -277.83, -304.197, -281.098, -303.308, -266.156)
 
 [node name="Player" parent="." instance=ExtResource("2_bq1gc")]
 z_index = 1
@@ -100,151 +89,3 @@ position = Vector2(148, -1621)
 equipHelmet = true
 show_crewInventoryUI = false
 delayBeforeGameStart = 0.0
-metadata/_edit_lock_ = true
-
-[node name="Node Resource Spawner" parent="." instance=ExtResource("7_k48a1")]
-number_of_resources = 55
-
-[node name="Node2D" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2068, -977)
-
-[node name="Node2D2" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2457, -799)
-
-[node name="Node2D3" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2534, -1240)
-
-[node name="Node2D4" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2101, -1401)
-
-[node name="Node2D5" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1610, -1409)
-
-[node name="Node2D9" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1578, 943)
-
-[node name="Node2D10" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1588, 591)
-
-[node name="Node2D11" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1264, 829)
-
-[node name="Node2D12" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1283, 1105)
-
-[node name="Node2D13" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2484, 2684)
-
-[node name="Node2D14" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2018, 3036)
-
-[node name="Node2D15" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2170, 2693)
-
-[node name="Node2D16" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1866, 2703)
-
-[node name="Node2D17" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1694, 2969)
-
-[node name="Node2D18" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1552, 2769)
-
-[node name="Node2D19" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1457, 2494)
-
-[node name="Node2D20" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2456, 2969)
-
-[node name="Node2D21" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(343, 2436)
-
-[node name="Node2D22" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(715, 2950)
-
-[node name="Node2D23" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(429, 2760)
-
-[node name="Node2D24" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(201, 2551)
-
-[node name="Node2D25" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1525, 2343)
-
-[node name="Node2D26" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1184, 2568)
-
-[node name="Node2D27" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1525, 2813)
-
-[node name="Node2D28" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1098, 2856)
-
-[node name="Node2D29" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-831, 2365)
-
-[node name="Node2D30" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-607, 2621)
-
-[node name="Node2D31" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-308, 2215)
-
-[node name="Node2D32" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-319, 2610)
-
-[node name="Node2D33" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2600, 150)
-
-[node name="Node2D34" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(3146, 516)
-
-[node name="Node2D35" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2247, 552)
-
-[node name="Node2D36" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2103, 210)
-
-[node name="Node2D37" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2756, 372)
-
-[node name="Node2D38" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(3217, 210)
-
-[node name="Node2D39" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2005, 1511)
-
-[node name="Node2D40" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2164, 2054)
-
-[node name="Node2D41" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2375, 1775)
-
-[node name="Node2D42" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1854, 1843)
-
-[node name="Node2D43" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2557, 2175)
-
-[node name="Node2D44" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2541, 1412)
-
-[node name="Node2D45" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(2844, 2062)
-
-[node name="Node2D46" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(3266, 2032)
-
-[node name="Node2D47" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1420, -651)
-
-[node name="Node2D48" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(-1054, -382)
-
-[node name="Node2D49" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(678, -208)
-
-[node name="Node2D50" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(1157, 248)
-
-[node name="Node2D51" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]
-position = Vector2(282, 290)
