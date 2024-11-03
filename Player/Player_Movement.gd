@@ -26,6 +26,8 @@ var run_pickup = ["Pickup_animation","_Helmet_Jerry_pickup"]
 
 @onready var anim_player = $Player4
 @onready var PickupTimer = $PickUpCooldown
+@onready var player_pickup: AudioStreamPlayer = $"../PlayerPickup"
+@onready var player_walk: AudioStreamPlayer = $"../PlayerWalk"
 
 var game_over_action : Callable
 var game_win : Callable
@@ -100,6 +102,7 @@ func pickup():
 	if currentAnimation != "Pickup_animation" or "_Helmet_Jerry_pickup":
 		isPickingAnim = true
 		isPicking = true
+		player_pickup.play()
 		play_animation(run_pickup[animation_use_id])
 
 func update_label(text_content, isColor): #Set the child label node 

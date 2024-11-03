@@ -3,9 +3,12 @@ extends Node2D
 @onready var glassshard_1 = $GlassShard1
 @onready var glassshard_2 = $GlassShard2
 @onready var glassshard_3 = $GlassShard3
+@onready var break_sound: AudioStreamPlayer = $BreakSound
+
 var speed = 1000.0
 
 func _ready():
+	break_sound.play()
 	match int(randf() * 4):
 		1:
 			$Puddle.texture = load("res://Resources/SmallBiogene_Broken_Puddle_1.png")

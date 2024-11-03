@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7y54rwkqlynh"
+path="res://.godot/imported/metal can sound.mp3-37afb56a61fa2099697caf47a23136b7.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/metal can sound.mp3"
+dest_files=["res://.godot/imported/metal can sound.mp3-37afb56a61fa2099697caf47a23136b7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

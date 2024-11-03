@@ -119,7 +119,7 @@ parameters/looping = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_rb837")
-volume_db = -45.0
+volume_db = -40.0
 autoplay = true
 bus = &"Music"
 parameters/looping = false

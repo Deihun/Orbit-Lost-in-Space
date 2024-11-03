@@ -4,6 +4,7 @@ extends Node2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var interaction_manager = InteractionManager
 @onready var res = GlobalResources
+@onready var openclose: AudioStreamPlayer2D = $openclose
 
 #VARIABLES
 var inventory 
@@ -42,6 +43,7 @@ func getIsPlayerInsideCondition() -> bool:
 func interaction(): #Interaction method for InteractionManagement Class
 	var crew_ui = NodeFinder.find_node_by_name(get_tree().current_scene,"Crew_Show")
 	$Sprite2D.play("Transfer")
+	openclose.play()
 	inventory._insert_all_items()
 	res.showTotalItems()
 	crew_ui.updateUI()
