@@ -740,6 +740,9 @@ position = Vector2(5990, -8552)
 [node name="Player" parent="." instance=ExtResource("2_whrsh")]
 z_index = 2
 position = Vector2(5886, -8511)
+equipHelmet = true
+show_timer = false
+useGlobeTimerUI = false
 delayBeforeGameStart = 0.0
 limitTimeDuration = 180
 

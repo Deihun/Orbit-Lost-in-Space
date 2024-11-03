@@ -25,7 +25,7 @@ extends Node2D
 
 func _ready() -> void:
 	$player.animation_use_id = 1 if equipHelmet else 0
-	showTimer(show_timer)
+	#showTimer(show_timer)
 	canMove(can_Move)
 	_smoothCameraTrack(Smoothing_CameraTrack)
 	setStats()
@@ -40,11 +40,11 @@ func setStats():
 
 func showTimer(value : bool):
 	if value:
-		$player/AllUIParents/Globe_Timer_Sprite.show()
-		$player/AllUIParents/Label_Timer.show()
-	else:
-		$player/AllUIParents/Globe_Timer_Sprite.hide()
-		$player/AllUIParents/Label_Timer.hide()
+		if $".".useGlobeTimerUI:
+			$player/AllUIParents/Globe_Timer_Sprite.show()
+		else:pass
+			#$player/AllUIParents/Timer_Stopwatch.show()
+
 
 func canMove(value : bool):
 	if value:

@@ -33,6 +33,8 @@ func endCycle():
 func getCycle():
 	return Cycle
 
+func gameOver(value : String = "lackofresources"):
+	var a = NodeFinder.find_node_by_name(get_tree().current_scene,"Control_interiorScene")
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #HANDLING FACTIONS
@@ -44,8 +46,8 @@ var TotalProbabilityForFactionsToFound : float = 0.006
 var Factions_Probability = {
 	"Radonti" : 0.75,
 	"Sauria" : 0.20,
-	"Faction3" : 0.0,
-	"Faction4" : 0.0,
+	"Steelicus" : 0.20,
+	"Earth2.0" : 0.20,
 	"Faction5" : 0.0
 }
 var SubFactions_Probability = {
@@ -174,7 +176,7 @@ func _recent_events_adjust():
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #								CREW
 var crew_in_ship = []
-
+var jerry_consumption : int = 2
 
 var _relationship = { #SAVE
 	"Regina" : 0.65,
@@ -374,6 +376,10 @@ func reduceFood(value : int):
 	GlobalResources.ration = value
 
 func doHunger():
+	jerry_consumption -= 1
+	if jerry_consumption <= 0:
+		GlobalResources.ration -= 5
+		jerry_consumption = 2
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
 			_current_hunger[crew] -= (randf() * 0.1) + 0.2
@@ -415,6 +421,7 @@ func doDisease():
 			if chance > (0.8 + immunity): _disease[crew] = 0.0001
 
 func doOxygen():
+	GlobalResources.oxygen -= 5
 	for crew in crew_in_ship:
 		if GlobalResources.oxygen <= 0:  # If no oxygen is left
 			if GlobalResources.emergencyOxy <= 0: 

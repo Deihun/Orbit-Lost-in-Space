@@ -19,7 +19,6 @@ var steelicus = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Steeli
 
 func _ready() -> void:
 	var a = IngameStoredProcessSetting.Scenes
-	print(a)
 	match (a):
 		"newgame":
 			$TutorialPanel.show()

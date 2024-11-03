@@ -9,3 +9,4 @@ void fragment() {
     COLOR = tex_color * base_color * vec4(light_contribution, 1.0);
 
 }
+
