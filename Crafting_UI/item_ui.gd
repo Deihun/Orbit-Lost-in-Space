@@ -11,11 +11,13 @@ extends Control
 @onready var now_crafting: Panel = $Panel/NowCrafting
 @onready var item_picture: Sprite2D = $Panel/Item_Picture/ItemPicture
 @onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
+@onready var buttons: AudioStreamPlayer = $Buttons
 
 var ongoingCraft = false
 var currentlycrafting: String = "test"
 
 func _on_craft_button_pressed() -> void:
+	buttons.play()
 	if (ongoingCraft == false):
 		match crafting_tab.craftingItems:
 			"A.C.E.S":
@@ -95,6 +97,7 @@ func _on_craft_button_pressed() -> void:
 		ISCraftingShow()
 
 func _on_cancel_button_pressed() -> void:
+	buttons.play()
 	crafting_tab.closeScreen()
 
 func warning_insufficientShow():

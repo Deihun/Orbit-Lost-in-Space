@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqjlvrwl7jpbg"]
+[gd_scene load_steps=4 format=3 uid="uid://bqjlvrwl7jpbg"]
 
 [ext_resource type="Script" path="res://Crafting_UI/item_ui.gd" id="1_jecnw"]
 [ext_resource type="Texture2D" uid="uid://cf4ottwq7pd4d" path="res://Icon (1) (1).svg" id="2_2i7ik"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="3_fl13c"]
 
 [node name="Item_UI" type="Control"]
 layout_mode = 3
@@ -231,6 +232,10 @@ theme_override_font_sizes/font_size = 50
 text = "Insufficient Materials
 to Craft Item!"
 horizontal_alignment = 1
+
+[node name="Buttons" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fl13c")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Panel/Craft_Button" to="." method="_on_craft_button_pressed"]
 [connection signal="pressed" from="Panel/Cancel_Button" to="." method="_on_cancel_button_pressed"]

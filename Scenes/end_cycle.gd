@@ -5,6 +5,7 @@ var isActive : bool = true
 var active = preload("res://Scenes/UI/EndCycle_Enable.png")
 var inactive = preload("res://Scenes/UI/EndCycle_Disable.png")
 var hover = preload("res://Scenes/UI/EndCycle_Hover.png")
+@onready var buttons: AudioStreamPlayer = $"../../../Buttons"
 
 func _on_mouse_exited() -> void:
 	if isActive: picture.texture = active
@@ -17,6 +18,7 @@ func _on_mouse_entered() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
+		buttons.play()
 		$"../../.."._on_next_day_button_pressed()
 	pass # Replace with function body.
 

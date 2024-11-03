@@ -28,7 +28,7 @@
 [ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 [ext_resource type="Texture2D" uid="uid://bxyb3hnsy7y8x" path="res://Player/PlayerCAS/with_Helmet_player_moveset.png" id="26_7snf5"]
 [ext_resource type="AudioStream" uid="uid://b42ygeymh77ly" path="res://Sounds/SFX/grab woosh noise.mp3" id="28_o17nf"]
-[ext_resource type="AudioStream" uid="uid://c013gnagyqqw2" path="res://Sounds/SFX/ground footstep.wav" id="29_7i5r6"]
+[ext_resource type="AudioStream" uid="uid://rc10y4myfcvd" path="res://Sounds/SFX/walkgroundDefault.mp3" id="29_r2js8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
@@ -2696,7 +2696,10 @@ volume_db = -5.0
 bus = &"Sfx"
 
 [node name="PlayerWalk" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("29_7i5r6")
+stream = ExtResource("29_r2js8")
+volume_db = -10.0
+bus = &"Sfx"
+playback_type = 1
 
 [connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
