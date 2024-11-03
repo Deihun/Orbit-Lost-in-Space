@@ -4,7 +4,6 @@ extends Control
 @onready var label: Label = $ColorRect/HBoxContainer/Label as Label
 @onready var SaveGame = SaveNLoad
 @onready var save_ui: Control = $"."
-@onready var button_sfx: AudioStreamPlayer = $ButtonSfx
 
 var FileName : String = "hello"
 var SaveName
@@ -17,13 +16,11 @@ func set_action_name() -> void:
 	SaveName = label.text
 
 func _on_button_pressed() -> void:
-	button_sfx.play()
 	SaveGame.LoadSave(SaveName)
 	SaveNLoad.isLoadGame = true
 	get_tree().change_scene_to_packed(load_game)
 
 func _on_delete_pressed() -> void:
-	button_sfx.play()
 	var deleteName = label.text
 	var Path = "Saves/" + deleteName +".json"
 	var PathName = deleteName +".json"
