@@ -7,6 +7,7 @@ extends Control
 @onready var save_ui: Control = $".."
 @onready var message_delay: Timer = $"../NinePatchRect/Panel/MessageDelay"
 @onready var panel: Panel = $"../NinePatchRect/Panel"
+@onready var button_sfx: AudioStreamPlayer = $HBoxContainer/ButtonSfx
 
 var filename
 
@@ -24,6 +25,7 @@ func save_file():
 		message_delay.start()
 
 func _on_save_pressed() -> void:
+	button_sfx.play()
 	set_file_name()
 	save_file()
 	text_edit.text = ""

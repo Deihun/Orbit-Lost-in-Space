@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8fqpefmv5g64"]
+[gd_scene load_steps=5 format=3 uid="uid://b8fqpefmv5g64"]
 
 [ext_resource type="Script" path="res://settings_menu/settings_menu.gd" id="1_et21w"]
 [ext_resource type="PackedScene" uid="uid://0navo5cmv2ab" path="res://settings_menu/settings_tab_container.tscn" id="2_m2500"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="3_yqk6b"]
 
 [sub_resource type="SystemFont" id="SystemFont_fy07a"]
 font_names = PackedStringArray("Impact")
@@ -66,3 +67,7 @@ text = "Back"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(979, 518)
 zoom = Vector2(1.025, 0.9)
+
+[node name="ButtonSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yqk6b")
+bus = &"Sfx"

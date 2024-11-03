@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cof0iw8v45lk3"]
+[gd_scene load_steps=3 format=3 uid="uid://cof0iw8v45lk3"]
 
 [ext_resource type="Script" path="res://SaveAndLoad/save_node.gd" id="1_wc7al"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="2_sj201"]
 
 [node name="SaveNode" type="Control"]
 layout_mode = 3
@@ -57,6 +58,10 @@ custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Delete"
+
+[node name="ButtonSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sj201")
+bus = &"Sfx"
 
 [connection signal="pressed" from="ColorRect/HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ColorRect/HBoxContainer/delete" to="." method="_on_delete_pressed"]

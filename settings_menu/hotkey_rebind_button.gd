@@ -3,6 +3,7 @@ extends Control
 
 @onready var label: Label = $HBoxContainer/Label
 @onready var button: Button = $HBoxContainer/Button
+@onready var button_sfx: AudioStreamPlayer = $"../../../../../../ButtonSfx"
 
 @export var action_name : String = "ui_left"
 
@@ -40,6 +41,7 @@ func set_text_for_key() -> void:
 		button.text = "No key assigned"
 
 func _on_button_toggled(button_pressed : bool) -> void:
+	button_sfx.play()
 	if button_pressed:
 		button.text = "Press any key..."
 		set_process_unhandled_key_input(button_pressed)
