@@ -28,10 +28,9 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("1_fd5c3")
 metadata/_tab_index = 0
@@ -69,6 +68,7 @@ layout_mode = 2
 bus_name = "Sfx"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("1_fd5c3")
 metadata/_tab_index = 1
@@ -228,16 +228,11 @@ text = "Access 5"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [node name="ButtonSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_70b7o")
 bus = &"Sfx"
 
-[connection signal="visibility_changed" from="TabContainer/Sound" to="TabContainer/Sound" method="_on_visibility_changed"]
+[connection signal="tab_changed" from="TabContainer" to="TabContainer/Sound" method="_on_tab_container_tab_changed"]
 [connection signal="visibility_changed" from="TabContainer/Graphics" to="TabContainer/Sound" method="_on_graphics_visibility_changed"]
 [connection signal="visibility_changed" from="TabContainer/Controls" to="TabContainer/Sound" method="_on_controls_visibility_changed"]
 [connection signal="visibility_changed" from="TabContainer/General" to="TabContainer/Sound" method="_on_general_visibility_changed"]
