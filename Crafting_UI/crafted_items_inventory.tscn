@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr3kesbj8wcvp"]
+[gd_scene load_steps=4 format=3 uid="uid://cr3kesbj8wcvp"]
 
 [ext_resource type="Script" path="res://Crafting_UI/crafted_items_inventory.gd" id="1_iut1y"]
 [ext_resource type="Texture2D" uid="uid://cf4ottwq7pd4d" path="res://Icon (1) (1).svg" id="2_iflek"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="3_iciiu"]
 
 [node name="CraftedItemsInventory" type="Control"]
 layout_mode = 3
@@ -107,5 +108,9 @@ offset_right = 441.0
 offset_bottom = 1038.0
 theme_override_font_sizes/font_size = 40
 text = "Back"
+
+[node name="Buttons" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iciiu")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

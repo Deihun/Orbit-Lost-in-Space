@@ -157,6 +157,18 @@ func _updateUIExpeditionScreen():
 		expScreen.play("Space")
 	elif "AbandonShip":
 		expScreen.play("abandonship")
+	elif "Asteroid":
+		expScreen.play("")
+	elif "Blackhole":
+		expScreen.play("")
+	elif "Radonti":
+		expScreen.play("")
+	elif "Sauria":
+		expScreen.play("")
+	elif "Steelicus":
+		expScreen.play("")
+	elif "Earth2":
+		expScreen.play("")
 
 
 func _on_cancel_button_button_up() -> void:

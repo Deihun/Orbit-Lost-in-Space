@@ -12,7 +12,6 @@ func _on_mouse_exited() -> void:
 	else: picture.texture = inactive
 	pass # Replace with function body.
 
-
 func _on_mouse_entered() -> void:
 	if isActive : picture.texture = hover
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://0navo5cmv2ab"]
 
 [ext_resource type="PackedScene" uid="uid://brekl0c5gr1i6" path="res://settings_menu/audio_slider_settings.tscn" id="1_3unra"]
-[ext_resource type="Script" path="res://settings_menu/PlaySoundtabs.gd" id="1_fd5c3"]
 [ext_resource type="PackedScene" uid="uid://dbvcnq4atloy4" path="res://settings_menu/window_mode_button.tscn" id="1_loh7i"]
 [ext_resource type="PackedScene" uid="uid://bfb2d4fmcu88j" path="res://settings_menu/hotkey_rebind_button.tscn" id="1_orr2h"]
+[ext_resource type="Script" path="res://settings_menu/tab_container.gd" id="1_vagwj"]
 [ext_resource type="PackedScene" uid="uid://bsjysdqt2fih" path="res://settings_menu/resolution_mode_button.tscn" id="2_g6a2k"]
 [ext_resource type="Script" path="res://settings_menu/v_box_container.gd" id="5_r54so"]
 [ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="6_70b7o"]
@@ -28,11 +28,12 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
+script = ExtResource("1_vagwj")
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
-script = ExtResource("1_fd5c3")
 metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
@@ -68,9 +69,7 @@ layout_mode = 2
 bus_name = "Sfx"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
-script = ExtResource("1_fd5c3")
 metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
@@ -103,7 +102,6 @@ layout_mode = 2
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-script = ExtResource("1_fd5c3")
 metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
@@ -157,7 +155,6 @@ theme_override_constants/separation = 12
 [node name="General" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-script = ExtResource("1_fd5c3")
 metadata/_tab_index = 3
 
 [node name="MarginContainer" type="Control" parent="TabContainer/General"]
@@ -232,8 +229,8 @@ text = "Access 5"
 stream = ExtResource("6_70b7o")
 bus = &"Sfx"
 
-[connection signal="tab_changed" from="TabContainer" to="TabContainer/Sound" method="_on_tab_container_tab_changed"]
-[connection signal="visibility_changed" from="TabContainer/Graphics" to="TabContainer/Sound" method="_on_graphics_visibility_changed"]
-[connection signal="visibility_changed" from="TabContainer/Controls" to="TabContainer/Sound" method="_on_controls_visibility_changed"]
-[connection signal="visibility_changed" from="TabContainer/General" to="TabContainer/Sound" method="_on_general_visibility_changed"]
+[connection signal="visibility_changed" from="TabContainer/Sound" to="TabContainer" method="_on_sound_visibility_changed"]
+[connection signal="visibility_changed" from="TabContainer/Graphics" to="TabContainer" method="_on_graphics_visibility_changed"]
+[connection signal="visibility_changed" from="TabContainer/Controls" to="TabContainer" method="_on_controls_visibility_changed"]
+[connection signal="visibility_changed" from="TabContainer/General" to="TabContainer" method="_on_general_visibility_changed"]
 [connection signal="button_down" from="TabContainer/General/MarginContainer/VBoxContainer/ResetTutorial" to="TabContainer/General/MarginContainer/VBoxContainer" method="_on_reset_tutorial_button_down"]

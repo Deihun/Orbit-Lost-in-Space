@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 
 
 func ChangeLocationToLeft():
+	buttons.play()
 	$"..".EndCycle_Can_Be_Click_ = false
 	if canBeClick == true:
 		if LocationKey > 0 and LocationKey < 3:
@@ -37,9 +38,9 @@ func ChangeLocationToLeft():
 			EndButton.disable()
 			ChangeLocaton(true)
 			ClickCD.start()
-			buttons.play()
 
 func ChangeLocationToRight():
+	buttons.play()
 	$"..".EndCycle_Can_Be_Click_ = false
 	if canBeClick == true:
 		if LocationKey < 2 and LocationKey > -1:
@@ -48,7 +49,6 @@ func ChangeLocationToRight():
 			EndButton.disable()
 			ChangeLocaton(true)
 			ClickCD.start()
-			buttons.play()
 
 func ChangeLocaton(smoothMovement:bool):
 	$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = false
@@ -202,6 +202,7 @@ func _on_button_to_storage_room_input_event(viewport: Node, event: InputEvent, s
 
 
 func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	buttons.play()
 	var eventReader = $"../EventHandler/EventReader"
 	var cycleReport_container = $"../CycleReport/ClickAnywhereButton/CycleReport_ScrollContainer"
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:

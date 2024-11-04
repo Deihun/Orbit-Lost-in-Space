@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=129 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -35,7 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
 [ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
 [ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
+[ext_resource type="AudioStream" uid="uid://dgbwukuh6yve7" path="res://Sounds/Music/夏の終わりに.mp3" id="36_glkqd"]
 [ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="36_impxt"]
+[ext_resource type="AudioStream" uid="uid://cmiit1tmye2lp" path="res://Sounds/Music/雲の隙間.mp3" id="37_0e0ve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -669,6 +671,12 @@ size = Vector2(354.529, 106.982)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_cmj13"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("36_glkqd")
+stream_1 = ExtResource("37_0e0ve")
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -959,6 +967,7 @@ position = Vector2(-204.5, 145)
 scale = Vector2(1.25248, 0.732673)
 sprite_frames = SubResource("SpriteFrames_km7gi")
 animation = &"abandonship"
+frame_progress = 0.549584
 
 [node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
 visible = false
@@ -1392,6 +1401,12 @@ offset_top = -314.0
 offset_right = -3974.0
 offset_bottom = -314.0
 scale = Vector2(0.728638, 0.728638)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_cmj13")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
 
 [node name="Buttons" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("36_impxt")
