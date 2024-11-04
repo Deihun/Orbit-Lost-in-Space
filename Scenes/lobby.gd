@@ -15,7 +15,7 @@ var _button
 
 func _ready() -> void:
 	button_array = [crew1,crew2,crew3,crew4]
-	IngameStoredProcessSetting.crew_in_ship = ["Maxim","Fumiko","Nashir"]
+	#IngameStoredProcessSetting.crew_in_ship = ["Maxim","Fumiko","Nashir"]
 	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)

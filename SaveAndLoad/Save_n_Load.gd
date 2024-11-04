@@ -1,6 +1,7 @@
 extends Node
 
 @onready var resources = GlobalResources
+@onready var stored = IngameStoredProcessSetting
 @onready var events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 var SavePath = "Saves/GameSave.json"
 var isLoadGame : bool
@@ -45,7 +46,11 @@ func savedata():
 		"Critical_Event" : resources.Critical_Event,
 		"alreadyTriggeredEvent" : resources.alreadyTriggeredEvent,
 		"Priority_Event" : resources.Priority_Event,
-		"eventID" : resources.eventID
+		"eventID" : resources.eventID,
+		
+		"cycle" : stored.Cycle,
+		"_relationship" : stored._relationship.duplicate()
+		
 	}
 	return save_dict
 
@@ -84,3 +89,6 @@ func loadsave():
 		resources.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
 		resources.Priority_Event = node_data["Priority_Event"]
 		resources.eventID = node_data["eventID"]
+		
+		stored.Cycle = node_data["cycle"]
+		stored._relationship = node_data["_relationship"].duplicate()

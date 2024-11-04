@@ -116,6 +116,7 @@ func selectionCrew(value : String):
 			IngameStoredProcessSetting.speed = -50
 			IngameStoredProcessSetting.inventory = 6
 			IngameStoredProcessSetting.BonusMultiplyer = 1
+			_description = "Maxim is your buff guy, able to carry with additional four slot but he is much slower than your usual."
 			pass
 		"REGINA":
 			_name = "Regina"
@@ -123,7 +124,7 @@ func selectionCrew(value : String):
 			IngameStoredProcessSetting.speed = 50
 			IngameStoredProcessSetting.inventory = 4
 			IngameStoredProcessSetting.BonusMultiplyer = 2.5
-			pass
+			_description = "Regina, a very cautious biologist when it comes to handling things. She might not be your best bet but she makes sure the items she bring to you are perfectly intacked"
 		"JERRY":
 			IngameStoredProcessSetting.selectedCrew = "Jerry"
 			_name = "Jerry"
@@ -135,13 +136,14 @@ func selectionCrew(value : String):
 			IngameStoredProcessSetting.speed = 200
 			IngameStoredProcessSetting.inventory = 4
 			IngameStoredProcessSetting.BonusMultiplyer = 1.2
-			pass
+			_description = "Fumiko is a very swift optimist girl, able to run around the map much more faster than your average crew"
 		"NASHIR":
 			_name = "Nashir"
 			IngameStoredProcessSetting.selectedCrew = "Nashir"
 			IngameStoredProcessSetting.BonusMultiplyer = 1.75
 			IngameStoredProcessSetting.speed = 120
 			IngameStoredProcessSetting.inventory = 4
+			_description = "Nashir can be cautious with handling thing but keep getting distracted by his own 'beauty'"
 			pass
 	
 	$Details_Container/Crew_name_label.text = _name
@@ -160,5 +162,7 @@ func updateDetailsContainer():
 			description = "A floating small body that ressembles a planet. This planetoid appears to have a small amount of resources within it."
 		"Radonti":
 			description = "A cold planet with a lively vegetation, detecting multiple lifeforms. Majority of species ressembles similarity to earth species of genus rattus."
+		"Earth2.0":
+			description = "A planet that seems to be the final destination, the final hope of humanity. Many embark in this planet, in this galaxy as its satisfied every condition a human life needs."
 	
 	$Details_Container/Planet_description_label.text = description
