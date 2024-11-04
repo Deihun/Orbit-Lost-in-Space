@@ -10,6 +10,9 @@ extends Control
 @onready var warning_insufficient: Panel = $Panel/WarningInsufficient
 @onready var now_crafting: Panel = $Panel/NowCrafting
 @onready var item_picture: Sprite2D = $Panel/Item_Picture/ItemPicture
+@onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
+@onready var buttons: AudioStreamPlayer = $Buttons
+
 
 var ongoingCraft = false
 var currentlycrafting

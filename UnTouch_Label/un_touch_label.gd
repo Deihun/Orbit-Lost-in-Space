@@ -40,4 +40,4 @@ func update_nine_patch_rect_size():
 	var new_width = max(label_size.x + 300, 200)
 	var new_height = max(label_size.y + 50, 200)
 	nine_patch_rect.size = Vector2(new_width, new_height)
-	minimum_size_changed()  # Updates the size of the parent container, if applicable
+	#minimum_size_changed()  # Updates the size of the parent container, if applicable

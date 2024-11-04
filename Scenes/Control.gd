@@ -73,9 +73,11 @@ func _on_next_day_button_pressed():
 		_is_MainFaction()
 		
 		#crafting
-		item_ui.ongoingCraft = false
-		GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
-		setanimation._ready()
+		if item_ui.ongoingCraft == true:
+			item_ui.ongoingCraft = false
+			GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
+			item_ui.currentlycrafting = ""
+			setanimation._ready()
 		
 		#Handle Event
 		
