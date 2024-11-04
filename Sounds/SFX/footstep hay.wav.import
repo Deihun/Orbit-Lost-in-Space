@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1wssa060w28s"
+path="res://.godot/imported/footstep hay.wav-af7742c5a65b1cac33b0c2b43eba6006.sample"
+
+[deps]
+
+source_file="res://Sounds/SFX/footstep hay.wav"
+dest_files=["res://.godot/imported/footstep hay.wav-af7742c5a65b1cac33b0c2b43eba6006.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

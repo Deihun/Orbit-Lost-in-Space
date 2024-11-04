@@ -1,6 +1,8 @@
 extends Control
 
 @onready var option_button = $HBoxContainer/OptionButton as OptionButton
+@onready var window_mode_button: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Window_Mode_Button")
+
 
 const RESOLUTION_DICTIONARY : Dictionary = {
 	"1920 x 1080" : Vector2i(1920, 1080),
@@ -11,9 +13,18 @@ const RESOLUTION_DICTIONARY : Dictionary = {
 }
 
 func _ready():
+	await get_tree().create_timer(0.01).timeout
+	window_mode_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Window_Mode_Button")
 	add_resolution_items()
-	option_button.item_selected.connect(on_resolution_selected)
 	load_data()
+	option_button.item_selected.connect(on_resolution_selected)
+	checkResolution()
+	
+func checkResolution():
+	if window_mode_button.fullmode == true:
+		option_button.disabled = true
+	elif window_mode_button.fullmode == false:
+		option_button.disabled = false
 	
 func load_data() -> void:
 	on_resolution_selected(SettingsDataContainer.get_resolution_index())
@@ -26,3 +37,4 @@ func add_resolution_items() -> void:
 func on_resolution_selected(index : int) -> void:
 	SettingsSignalBus.emit_on_resolution_selected(index)
 	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])
+	

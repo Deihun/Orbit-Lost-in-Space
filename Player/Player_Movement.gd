@@ -26,6 +26,9 @@ var run_pickup = ["Pickup_animation","_Helmet_Jerry_pickup"]
 
 @onready var anim_player = $Player4
 @onready var PickupTimer = $PickUpCooldown
+@onready var player_pickup: AudioStreamPlayer = $"../PlayerPickup"
+@onready var player_walk: AudioStreamPlayer = $"../PlayerWalk"
+@onready var buttons: AudioStreamPlayer = $"../Buttons"
 
 var game_over_action : Callable
 var game_win : Callable
@@ -47,8 +50,6 @@ func _ready():	#OnStart,
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 	self.set_process(true)
-
-
 
 func _physics_process(delta):
 	if !isPicking and canMove:
@@ -72,16 +73,25 @@ func movement(delta):
 		removeTutorialUI_onCertainCondition()
 		velocity = input_vector * ((maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta * 100)
 		if input_vector.x > 0:
+			if !player_walk.playing:
+				player_walk.play()
 			play_animation(run_right[animation_use_id])
 		elif input_vector.x < 0:
+			if !player_walk.playing:
+				player_walk.play()
 			play_animation(run_left[animation_use_id])
 		elif input_vector.y > 0:
+			if !player_walk.playing:
+				player_walk.play()
 			play_animation(run_down[animation_use_id])
 		elif input_vector.y < 0:
+			if !player_walk.playing:
+				player_walk.play()
 			play_animation(run_up[animation_use_id])
 	elif !isPickingAnim and input_vector == Vector2.ZERO:
 		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
 		play_animation(run_idle[animation_use_id]) # Play idle animation when not moving 
+		player_walk.stop()
 
 
 	if (Vector2.ZERO == input_vector && currentAnimation != "Idle_animation" or "_Helmet_Jerry_idle"):
@@ -106,6 +116,7 @@ func pickup():
 	if currentAnimation != "Pickup_animation" or "_Helmet_Jerry_pickup":
 		isPickingAnim = true
 		isPicking = true
+		player_pickup.play()
 		play_animation(run_pickup[animation_use_id])
 
 func update_label(text_content, isColor): #Set the child label node 
@@ -131,6 +142,7 @@ func _on_player_4_animation_finished() -> void:
 	pass # Replace with function body.
 
 func _on_pause_button_button_down() -> void:
+	buttons.play()
 	var pause = $AllUIParents/PauseMenu
 	pause._pause()
 

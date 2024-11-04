@@ -7,7 +7,6 @@ extends Node2D
 @export var equipHelmet : bool = false
 @export var AdditionalPlayerSpeed : int = 0
 
-
 @export_group("UI_Settings")
 @export var cameraZoom : float
 @export var show_timer : bool = true

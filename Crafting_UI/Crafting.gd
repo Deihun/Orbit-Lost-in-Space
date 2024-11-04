@@ -9,6 +9,7 @@ extends Node
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var control: Control = $Control
 @onready var Items = CraftingItems
+@onready var buttons: AudioStreamPlayer = $Buttons
 
 var craftingItems
 var recentAnimation = ""
@@ -34,6 +35,7 @@ func _on_sprite_2d_animation_finished() -> void:
 
 #Crafting Items
 func space_suit_pressed() -> void:
+	buttons.play()
 	craftingItems = "A.C.E.S"
 	item_picture.texture = load("res://Crafting_UI/ItemAssests/ACES_SUIT.png")
 	item_title.text = Items.ItemsName[0]
@@ -42,6 +44,7 @@ func space_suit_pressed() -> void:
 	item_requirements.text = "Cost to craft: 300 Space-parts, 100 Oxygen, 10 Fuel, 1 Cycle"
 
 func crowbar_pressed() -> void:
+	buttons.play()
 	craftingItems = "Crowbar"
 	item_picture.texture = load("res://Crafting_UI/ItemAssests/CrowBar.png")
 	item_title.text = Items.ItemsName[1]
@@ -50,6 +53,7 @@ func crowbar_pressed() -> void:
 	item_requirements.text = "Cost to craft: 350 Spare-parts, 10 Fuel, 1 Cycle"
 
 func _on_dehy_space_food_pressed() -> void:
+	buttons.play()
 	craftingItems = "DehySpaceFood"
 	item_picture.texture = load("res://Crafting_UI/ItemAssests/DriedSpaceFood.png")
 	item_title.text = Items.ItemsName[2]
@@ -58,6 +62,7 @@ func _on_dehy_space_food_pressed() -> void:
 	item_requirements.text = "Cost to craft: 100 Biogene, 10 Fuel, 1 Cycle"
 
 func medkit_charge_pressed() -> void:
+	buttons.play()
 	craftingItems = "MedkitCharge"
 	item_picture.texture = load("res://Crafting_UI/ItemAssests/Medicine_Pickup.png")
 	item_title.text = Items.ItemsName[3]
@@ -66,6 +71,7 @@ func medkit_charge_pressed() -> void:
 	item_requirements.text = "Cost to craft: 150 Biogene, 10 Fuel, 1 Cycle"
 
 func fre_dri_space_food_pressed() -> void:
+	buttons.play()
 	craftingItems = "FreDriSpaceFood"
 	item_picture.texture = load("res://Crafting_UI/ItemAssests/DeepDriedSpaceFood.png")
 	item_title.text = Items.ItemsName[4]
@@ -74,6 +80,7 @@ func fre_dri_space_food_pressed() -> void:
 	item_requirements.text = "Cost to craft: 80 Biogene, 10 Fuel, 1 Cycle"
 
 func hazmat_suit_pressed() -> void:
+	buttons.play()
 	craftingItems = "LeadSuitUp"
 	item_picture.texture = load("res://Crafting_UI/ItemAssests/ACE_SUIT_LEAD_IMPROVEMENT.png")
 	item_title.text = Items.ItemsName[5]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b42ygeymh77ly"
+path="res://.godot/imported/grab woosh noise.mp3-33d55f09dd86dbb60e70cef90b0b1670.mp3str"
+
+[deps]
+
+source_file="res://Sounds/SFX/grab woosh noise.mp3"
+dest_files=["res://.godot/imported/grab woosh noise.mp3-33d55f09dd86dbb60e70cef90b0b1670.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

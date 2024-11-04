@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb52e7f7m0hvb"]
+[gd_scene load_steps=8 format=3 uid="uid://cb52e7f7m0hvb"]
 
 [ext_resource type="Script" path="res://Scenes/Ingame/pause_menu.gd" id="1_cu0fw"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_jhi0i"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="3_d1w0n"]
 [ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="3_qbxds"]
 [ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="5_5ab7f"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="6_b6lfe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wmgc2"]
 shader = ExtResource("3_qbxds")
@@ -206,6 +207,10 @@ offset_bottom = 189.0
 theme_override_colors/font_color = Color(0.281187, 0.281187, 0.281187, 1)
 theme_override_font_sizes/font_size = 20
 text = "Restarting this will lose your current progress"
+
+[node name="Buttons" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_b6lfe")
+bus = &"Sfx"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_down" from="ColorRect/VBoxContainer/RESUME" to="." method="RESUME"]

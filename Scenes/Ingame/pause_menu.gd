@@ -3,6 +3,7 @@ extends Control
 @onready var save_ui = $ColorRect/SaveUI
 @onready var v_box_container: VBoxContainer = $ColorRect/VBoxContainer
 @onready var settings_menu = $ColorRect/NinePatchRect2
+@onready var buttons: AudioStreamPlayer = $Buttons
 
 var readyToPause : bool = true
 
@@ -35,6 +36,7 @@ func _pause():
 	set_process(true)
 
 func RESUME() -> void:
+	buttons.play()
 	var TutorialUI = NodeFinder.find_node_by_name(get_tree().current_scene, "TutorialPanel_Folder")
 	var Pause_button = NodeFinder.find_node_by_name(get_tree().current_scene, "Pause_Button")
 	if Pause_button:
@@ -45,13 +47,16 @@ func RESUME() -> void:
 	visible = false
 
 func RESTART() -> void:
+	buttons.play()
 	$ColorRect/Restart.show()
 	$ColorRect/VBoxContainer.hide()
 
 func QUIT() -> void:
+	buttons.play()
 	get_tree().quit()
 
 func MAIN_MENU() -> void:
+	buttons.play()
 	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
 	
@@ -60,6 +65,7 @@ func READY_TO_PAUSE() -> void:
 	readyToPause = true
 
 func _on_save_pressed() -> void:
+	buttons.play()
 	if save_ui.visible == true:
 		save_ui.visible = false
 	else:
@@ -68,6 +74,7 @@ func _on_save_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
+	buttons.play()
 	settings_menu.visible = true
 	$ColorRect/NinePatchRect2/Settings_Menu.show()
 	settings_menu.set_process(true)
@@ -82,6 +89,7 @@ func _on_settings_menu_visibility_changed() -> void:
 
 #RESTART CONFIRMATION
 func _on_yes_button_up() -> void:
+	buttons.play()
 	Engine.time_scale = 1
 	IngameStoredProcessSetting.is_previous_restart = true
 	IngameStoredProcessSetting.Scenes = "newgame"
@@ -90,6 +98,7 @@ func _on_yes_button_up() -> void:
 
 
 func _on_no_button_down() -> void:
+	buttons.play()
 	$ColorRect/Restart.hide()
 	$ColorRect/VBoxContainer.show()
 

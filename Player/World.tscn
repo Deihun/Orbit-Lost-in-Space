@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=37 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_0nwbd"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
 [ext_resource type="Script" path="res://Player/introduction_camera.gd" id="1_sfe6y"]
+[ext_resource type="AudioStream" uid="uid://bj35es7hhudyf" path="res://Sounds/SFX/Alarm.mp3" id="2_gns7q"]
 [ext_resource type="VideoStream" path="res://Scenes/EndScenes/Gallery_Endings/FGUtji7wRD1S.ogv" id="2_kva43"]
 [ext_resource type="Texture2D" uid="uid://ce0kw7ceb80dk" path="res://Scenes/WideshotScenePanaroma.png" id="2_og4ji"]
 [ext_resource type="PackedScene" uid="uid://dt38hgny4s1wd" path="res://Scenes/ObjectDesigns/Whiteboard.tscn" id="3_ddrc8"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="10_ljiwb"]
 [ext_resource type="PackedScene" uid="uid://l3oth153v8dv" path="res://AmbiencePurposes/Boxes/SmallBox.tscn" id="14_dh8q3"]
 [ext_resource type="PackedScene" uid="uid://dcmcp8fp003wm" path="res://DropBox/DropBoxOfRadonti.tscn" id="17_b4hq0"]
+[ext_resource type="AudioStream" uid="uid://dhfhucyhy48al" path="res://Sounds/Music/strum.mp3" id="18_rb837"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o01sg"]
 shader = ExtResource("1_0nwbd")
@@ -108,6 +110,20 @@ show_timer = false
 useGlobeTimerUI = false
 canRestartOnGameOver = true
 delayBeforeGameStart = 4.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gns7q")
+volume_db = -20.0
+autoplay = true
+bus = &"Sfx"
+parameters/looping = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_rb837")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+parameters/looping = false
 
 [node name="World" type="Node2D" parent="."]
 z_index = -5

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnccscv45adfj"]
+[gd_scene load_steps=5 format=3 uid="uid://dnccscv45adfj"]
 
 [ext_resource type="PackedScene" uid="uid://b4yvmesq7ajf7" path="res://Resources/SmallFoodCan/SmallCan_Variety2.tscn" id="1_kctqc"]
 [ext_resource type="PackedScene" uid="uid://cleem5f6dxwl4" path="res://Resources/SmallFoodCan/SmallCan_Variety1.tscn" id="2_44uu2"]
 [ext_resource type="PackedScene" uid="uid://bjdj7xsx3gmwo" path="res://Resources/SmallFoodCan/SmallCan_Variety3.tscn" id="3_882to"]
+[ext_resource type="AudioStream" uid="uid://bt6njl558skpq" path="res://Sounds/SFX/Metal_can.mp3" id="4_or10f"]
 
 [node name="TripleFoodCan" type="Node2D"]
 
@@ -14,3 +15,7 @@ position = Vector2(21, 1)
 
 [node name="SmallCanVariety3" parent="." instance=ExtResource("3_882to")]
 position = Vector2(2, -35)
+
+[node name="Can_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_or10f")
+bus = &"Sfx"

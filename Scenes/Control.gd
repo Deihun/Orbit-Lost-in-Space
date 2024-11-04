@@ -11,6 +11,7 @@ extends Control
 @onready var crafted_items_inventory: Control = $CraftedItemsInventory
 @onready var item_ui: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_UI")
 @onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
+@onready var buttons: AudioStreamPlayer = $Buttons
 
 #VARIABLES
 var resources 
@@ -61,6 +62,7 @@ func GameOver(Ending : String):
 	pass
 
 func _on_next_day_button_pressed():
+	buttons.play()
 	if !EndCycle_Can_Be_Click_: return
 	var EventHandler = $EventHandler
 	EndCycle_Can_Be_Click_ = false
@@ -73,9 +75,11 @@ func _on_next_day_button_pressed():
 		_is_MainFaction()
 		
 		#crafting
-		item_ui.ongoingCraft = false
-		GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
-		setanimation._ready()
+		if item_ui.ongoingCraft == true:
+			item_ui.ongoingCraft = false
+			GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
+			item_ui.currentlycrafting = ""
+			setanimation._ready()
 		
 		#Handle Event
 		
@@ -130,12 +134,15 @@ func PAUSE() -> void:
 	var pause = $PauseMenu
 	pause.position = $cam2d.position + Vector2(1584, 350)
 	pause._pause()
+	buttons.play()
 
 func _on_expedition_button_button_down() -> void:
+	buttons.play()
 	camera.ChangeSpecificScene(5)
 	camera.ChangeLocaton(false)
 
 func _on_embark_button_pressed() -> void: #WHEN EMBARK
+	buttons.play()
 	match (IngameStoredProcessSetting.current_Factions):
 		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
 		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
@@ -149,6 +156,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 
 func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
+		buttons.play()
 		crafted_items_inventory.show()
 		crafted_items_inventory.set_Items()
 
@@ -158,9 +166,22 @@ func _updateUIExpeditionScreen():
 		expScreen.play("Space")
 	elif "AbandonShip":
 		expScreen.play("abandonship")
+	elif "Asteroid":
+		expScreen.play("asteroid")
+	elif "Blackhole":
+		expScreen.play("blackhole")
+	elif "Radonti":
+		expScreen.play("radonti")
+	elif "Sauria":
+		expScreen.play("sauria")
+	elif "Steelicus":
+		expScreen.play("steelicus")
+	elif "Earth2":
+		expScreen.play("earth2")
 
 
 func _on_cancel_button_button_up() -> void:
+	buttons.play()
 	$cam2d.ChangeSpecificScene(2)
 	$cam2d.ChangeLocaton(false)
 	pass # Replace with function body.

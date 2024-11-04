@@ -5,6 +5,7 @@ extends RigidBody2D
 @onready var interaction_manager = InteractionManager
 @onready var animationSprite = $AnimatedSprite2D
 @onready var player = NodeFinder.find_node_by_name(get_tree().current_scene, "player")
+@onready var can_sound: AudioStreamPlayer2D = $Can_sound
 
 #VARIABLE
 var inventory 
@@ -74,6 +75,7 @@ func _on_interaction_area_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	can_sound.play()
 	if randf() < 0.45:
 		is_rolling = true
 		linear_damp = 1
