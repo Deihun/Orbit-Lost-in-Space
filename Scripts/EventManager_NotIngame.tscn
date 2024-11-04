@@ -703,6 +703,7 @@ event limit rule per cycle
 [connection signal="pressed" from="Panel_Probability/Button_RemoveCommands2" to="." method="_RemoveCommand_Probability"]
 [connection signal="pressed" from="Panel_Probability/Button_AddCommands" to="." method="_AddCommand_Probability"]
 [connection signal="pressed" from="Button_AddEvent" to="." method="add_new_event"]
+[connection signal="button_up" from="Button_Clear" to="." method="_on_button_clear_button_up"]
 [connection signal="pressed" from="Panel_ButtonGeneration/CheckButton_Hidden" to="." method="_Hidden_Choice_Toggle"]
 [connection signal="text_changed" from="Panel_ButtonGeneration/LineEdit_ID" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Panel_ButtonGeneration/Button_add_item" to="." method="add_items"]
