@@ -28,6 +28,7 @@ var run_pickup = ["Pickup_animation","_Helmet_Jerry_pickup"]
 @onready var PickupTimer = $PickUpCooldown
 @onready var player_pickup: AudioStreamPlayer = $"../PlayerPickup"
 @onready var player_walk: AudioStreamPlayer = $"../PlayerWalk"
+@onready var buttons: AudioStreamPlayer = $"../Buttons"
 
 var game_over_action : Callable
 var game_win : Callable
@@ -134,6 +135,7 @@ func _on_player_4_animation_finished() -> void:
 	pass # Replace with function body.
 
 func _on_pause_button_button_down() -> void:
+	buttons.play()
 	var pause = $AllUIParents/PauseMenu
 	pause._pause()
 

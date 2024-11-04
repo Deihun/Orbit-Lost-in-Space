@@ -1,4 +1,4 @@
-[gd_scene load_steps=347 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=348 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bxyb3hnsy7y8x" path="res://Player/PlayerCAS/with_Helmet_player_moveset.png" id="26_7snf5"]
 [ext_resource type="AudioStream" uid="uid://b42ygeymh77ly" path="res://Sounds/SFX/grab woosh noise.mp3" id="28_o17nf"]
 [ext_resource type="AudioStream" uid="uid://rc10y4myfcvd" path="res://Sounds/SFX/walkgroundDefault.mp3" id="29_r2js8"]
+[ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="30_jayno"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
@@ -2700,6 +2701,10 @@ stream = ExtResource("29_r2js8")
 volume_db = -10.0
 bus = &"Sfx"
 playback_type = 1
+
+[node name="Buttons" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_jayno")
+bus = &"Sfx"
 
 [connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]

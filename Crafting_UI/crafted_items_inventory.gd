@@ -7,6 +7,7 @@ var Items = 0
 var CraftItems = []
 
 func set_Items() -> void:
+	resetChild()
 	CraftItems = GlobalResources.uniqueItems
 	Items = CraftItems.size()
 	for i in Items:
@@ -16,3 +17,7 @@ func set_Items() -> void:
 
 func _on_button_pressed() -> void:
 	self.hide()
+
+func resetChild() -> void:
+	for child in item_container.get_children():
+		child.queue_free()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjdj7xsx3gmwo"]
+[gd_scene load_steps=16 format=3 uid="uid://bjdj7xsx3gmwo"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dexjcuegpaetd" path="res://Resources/SmallFoodCan/Friction.tres" id="1_w3lyv"]
 [ext_resource type="Script" path="res://Resources/SmallFoodCan/small_can_variety_1.gd" id="2_v8auj"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_sx4ph"]
 [ext_resource type="Texture2D" uid="uid://b5u5a0lkinf8s" path="res://Resources/SmallFoodCan/SmallFood_unpick_Variety2_SpriteSheet.png" id="4_fbiev"]
+[ext_resource type="AudioStream" uid="uid://bt6njl558skpq" path="res://Sounds/SFX/Metal_can.mp3" id="5_mrw5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou0d8"]
 size = Vector2(322, 300)
@@ -109,5 +110,9 @@ collision_mask = 19
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-12.5, 19.6429)
 shape = SubResource("CircleShape2D_a3c5y")
+
+[node name="Can_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mrw5a")
+bus = &"Sfx"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
