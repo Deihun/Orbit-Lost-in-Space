@@ -60,6 +60,7 @@ func GameOver(Ending : String):
 	pass
 
 func _on_next_day_button_pressed():
+	buttons.play()
 	if !EndCycle_Can_Be_Click_: return
 	var EventHandler = $EventHandler
 	EndCycle_Can_Be_Click_ = false
@@ -130,10 +131,12 @@ func PAUSE() -> void:
 	buttons.play()
 
 func _on_expedition_button_button_down() -> void:
+	buttons.play()
 	camera.ChangeSpecificScene(5)
 	camera.ChangeLocaton(false)
 
 func _on_embark_button_pressed() -> void: #WHEN EMBARK
+	buttons.play()
 	match (IngameStoredProcessSetting.current_Factions):
 		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
 		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
@@ -158,20 +161,21 @@ func _updateUIExpeditionScreen():
 	elif "AbandonShip":
 		expScreen.play("abandonship")
 	elif "Asteroid":
-		expScreen.play("")
+		expScreen.play("asteroid")
 	elif "Blackhole":
-		expScreen.play("")
+		expScreen.play("blackhole")
 	elif "Radonti":
-		expScreen.play("")
+		expScreen.play("radonti")
 	elif "Sauria":
-		expScreen.play("")
+		expScreen.play("sauria")
 	elif "Steelicus":
-		expScreen.play("")
+		expScreen.play("steelicus")
 	elif "Earth2":
-		expScreen.play("")
+		expScreen.play("earth2")
 
 
 func _on_cancel_button_button_up() -> void:
+	buttons.play()
 	$cam2d.ChangeSpecificScene(2)
 	$cam2d.ChangeLocaton(false)
 	pass # Replace with function body.

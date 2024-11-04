@@ -17,7 +17,6 @@ func _on_mouse_entered() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-		buttons.play()
 		$"../../.."._on_next_day_button_pressed()
 	pass # Replace with function body.
 
