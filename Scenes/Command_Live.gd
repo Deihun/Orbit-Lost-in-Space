@@ -118,10 +118,12 @@ func command(_command : String):
 	elif _command.begins_with("@SET_FACTION"):
 		_command = _command.substr("@SET_FACTION".length(), _command.length() - "@SET_FACTION".length())
 		_command.capitalize()
-		IngameStoredProcessSetting.current_Factions = _command
+		IngameStoredProcessSetting.current_Factions = _command.capitalize()
 	else:
 		commandMessage = "Unrecognize command: '" + commandMessage + "'"
 		addHistory(commandMessage)
+	$"../..".updateCockpit()
+	$"../..".updateUI()
 
 func addHistory(message : String):
 	command_history += message + "\n"

@@ -15,7 +15,9 @@ extends Control
 #VARIABLES
 var resources 
 var events
+var gameEndReason = "null"
 var EndCycle_Can_Be_Click_ : bool = true
+var gameOver : bool = false
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
 var eventHandler
@@ -86,7 +88,7 @@ func _on_next_day_button_pressed():
 		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
-		
+		if gameOver: GameOver(gameEndReason)
 	else:
 		camera.ChangeSpecificScene(2)
 
@@ -172,3 +174,7 @@ func checkIfKickoutEnough() -> bool:
 		if randf() > 0.25:
 			return true
 	return false
+
+
+func _on_fact_button_button_button_up() -> void:
+	$cam2d/FactButton.show()

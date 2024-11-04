@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dml8jyjxyhqru"]
+[gd_scene load_steps=5 format=3 uid="uid://dbvus3igik3kv"]
 
 [ext_resource type="Texture2D" uid="uid://bqpbjgrwka4qc" path="res://AmbiencePurposes/Earth 2.0 Ambience/Tree_1.png" id="1_flb21"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/earth_2.0_tree.gd" id="2_tsvlo"]

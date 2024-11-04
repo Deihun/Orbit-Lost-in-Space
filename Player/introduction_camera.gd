@@ -27,7 +27,8 @@ func gameOver() -> void:
 
 
 func gameWin() -> void:
-	
+	var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
+	r.updateGlobalResource()
 	player_cb.canMove = false
 	player_cb.hideallUI()
 	player_position.transition()

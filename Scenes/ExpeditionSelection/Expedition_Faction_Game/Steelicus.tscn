@@ -139,6 +139,7 @@ position = Vector2(145, -108)
 [node name="WorldMap" type="Node2D" parent="."]
 z_index = -5
 y_sort_enabled = true
+use_parent_material = true
 
 [node name="Wall" type="StaticBody2D" parent="WorldMap"]
 position = Vector2(1122.5, 952.34)
@@ -211,6 +212,7 @@ offset_left = -306.0
 offset_top = -628.0
 offset_right = 645.0
 offset_bottom = 301.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_" type="NinePatchRect" parent="WorldMap"]
 use_parent_material = true
@@ -222,6 +224,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_2" type="NinePatchRect" parent="WorldMap"]
 use_parent_material = true
@@ -234,6 +237,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_3" type="NinePatchRect" parent="WorldMap"]
 use_parent_material = true
@@ -245,24 +249,28 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="MiniTile_3" parent="WorldMap" instance=ExtResource("6_oasxb")]
 offset_left = 651.0
 offset_top = 467.0
 offset_right = 938.0
 offset_bottom = 847.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MiniTile_2" parent="WorldMap" instance=ExtResource("6_oasxb")]
 offset_left = 651.0
 offset_top = -617.0
 offset_right = 751.0
 offset_bottom = 481.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MiniTile_" parent="WorldMap" instance=ExtResource("6_oasxb")]
 offset_left = 651.0
 offset_top = -617.0
 offset_right = 951.0
 offset_bottom = -265.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_4" type="NinePatchRect" parent="WorldMap"]
 use_parent_material = true
@@ -275,6 +283,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="WALL_SET" type="Node2D" parent="WorldMap"]
 z_index = 1
@@ -439,6 +448,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_7" type="NinePatchRect" parent="WorldMap/Wiring_5"]
 use_parent_material = true
@@ -451,6 +461,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_5" type="NinePatchRect" parent="WorldMap/Wiring_5"]
 use_parent_material = true
@@ -464,6 +475,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_6" type="NinePatchRect" parent="WorldMap/Wiring_5"]
 use_parent_material = true
@@ -477,6 +489,7 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Wiring_" type="NinePatchRect" parent="WorldMap/Wiring_5"]
 use_parent_material = true
@@ -489,12 +502,15 @@ texture = ExtResource("5_p6mnu")
 patch_margin_left = 5
 patch_margin_right = 10
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_r0hm0")]
 position = Vector2(3334, 926)
 delayBeforeGameStart = 0.0
 
 [node name="Node Resource Spawner" parent="." instance=ExtResource("15_q3r6l")]
+z_index = 0
+y_sort_enabled = true
 number_of_resources = 80
 
 [node name="Node2D" parent="Node Resource Spawner" instance=ExtResource("16_mvek0")]
