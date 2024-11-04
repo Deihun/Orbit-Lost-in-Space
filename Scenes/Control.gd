@@ -76,6 +76,7 @@ func _on_next_day_button_pressed():
 		if item_ui.ongoingCraft == true:
 			item_ui.ongoingCraft = false
 			GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
+			print(item_ui.currentlycrafting)
 			item_ui.currentlycrafting = ""
 			setanimation._ready()
 		
