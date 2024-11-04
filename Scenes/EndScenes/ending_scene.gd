@@ -15,12 +15,29 @@ func _ready() -> void:
 var Dialogue = preload("res://DialogueSystem/End.dialogue")
 
 var Kickout_scene = preload("res://Scenes/EndScenes/Gallery_Endings/KickOut_EndScene.png")
+var lackofresources = preload("res://Scenes/EndScenes/Gallery_Endings/lackofresources.png")
+var radontiEnding = preload("res://Scenes/EndScenes/Gallery_Endings/RadontiEnding.png")
+var earth2Earth = preload("res://Scenes/EndScenes/Gallery_Endings/Earth2.0.png")
+var BlackHole = preload("res://Scenes/EndScenes/Gallery_Endings/BlackHoleEvent.png")
 
 func getScene(content : String):
 	match content:
 		"Kickout":
 			$GoodEnd.text = "Bad End"
 			return Kickout_scene
+			
+		"lackofresources":
+			$GoodEnd.text = "Bad End"
+			return lackofresources
+		"Radonti":
+			$GoodEnd.text = "Good Ending"
+			return radontiEnding
+		"Earth2":
+			$GoodEnd.text = "Good Ending"
+			return earth2Earth
+		"BlackHole":
+			$GoodEnd.text = "Bad End"
+			return BlackHole
 
 
 

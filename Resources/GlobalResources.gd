@@ -2,10 +2,10 @@ extends Node
 
 
 #VARIABLES 
-var ration = 10000
-var fuel = 0
-var oxygen = 1000
-var spareparts = 10000000
+var ration = 125
+var fuel = 100
+var oxygen = 100
+var spareparts = 0
 var biogene : int= 0
 var ductape : int = 0
 var medicine: int = 0
@@ -26,6 +26,20 @@ var GameEffects = []
 var uniqueItems = []
 
 var Location = "Space"
+
+func ConsumeFuel(value: int = 10) -> bool:
+	if oxygen >= value:
+		oxygen -= value
+	else:
+		value -= oxygen
+		oxygen = 0
+		if emergencyFuel >= value:
+			emergencyFuel -= value
+		else:
+			emergencyFuel = 0
+			return false
+	
+	return true
 
 func add_item(item_type):#Use to direct add items, used by other objects such as dropbox to add items
 	match(item_type):
@@ -149,3 +163,27 @@ func checkEffect(effect_name):
 
 func removeEffect(effect_name):
 	GameEffects.erase(effect_name)
+
+func deduct_oxygen(value: int = 5) -> bool:
+	if oxygen > 0:
+		var deducted = min(value, oxygen)
+		oxygen -= deducted
+		IngameStoredProcessSetting.addOnCycleReportList("Oxygen: -" + str(deducted))
+		value -= deducted  # Remaining value to deduct
+	if value > 0 and emergencyOxy > 0:
+		var emergency_deducted = min(value, emergencyOxy)
+		emergencyOxy -= emergencyOxy
+		IngameStoredProcessSetting.addOnCycleReportList("Emergency Oxygen: -" + str(emergency_deducted))
+	return emergencyOxy <= 0
+
+func deduct_fuel(value: int = 5) -> bool:
+	if fuel > 0:
+		var deducted = min(value, fuel)
+		fuel -= deducted
+		IngameStoredProcessSetting.addOnCycleReportList("Oxygen: -" + str(deducted))
+		value -= deducted  # Remaining value to deduct
+	if value > 0 and emergencyFuel > 0:
+		var emergency_deducted = min(value, emergencyFuel)
+		emergencyFuel -= emergencyFuel
+		IngameStoredProcessSetting.addOnCycleReportList("Emergency Oxygen: -" + str(emergency_deducted))
+	return emergencyFuel <= 0

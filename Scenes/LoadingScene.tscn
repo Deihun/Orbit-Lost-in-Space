@@ -40,6 +40,17 @@ tutorialDescription = Array[String](["Collect crew and resources for your ship w
 textureLink = Array[String](["res://TutorialUI/test.png"])
 Closable = false
 
+[node name="TutorialPanel2" parent="." instance=ExtResource("4_2qidk")]
+visible = false
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1373.0
+offset_bottom = 831.0
+tutorialTitle = Array[String](["What just happened?"])
+tutorialDescription = Array[String](["Your crew got worried and searched for you on the planet using half of your shuttle's resource. They found you lying down unconscious and dragged you inside the shuttle"])
+textureLink = Array[String](["res://TutorialUI/test.png"])
+Closable = false
+
 [node name="LoadingPoints" type="Label" parent="."]
 z_index = 500
 offset_left = 1768.0
@@ -48,5 +59,16 @@ offset_right = 1801.0
 offset_bottom = 1012.0
 scale = Vector2(2.51, 2.51)
 text = "00%"
+
+[node name="TutorialPanel3" parent="." instance=ExtResource("4_2qidk")]
+visible = false
+offset_left = 500.0
+offset_top = 90.0
+offset_right = 1373.0
+offset_bottom = 831.0
+tutorialTitle = Array[String](["Welcome to Radonti"])
+tutorialDescription = Array[String](["In this planet, there are friendly Radontians that will help you deliver collected items to your ship! Each of them can only carry as much as your crewmate can. They will return after 10 seconds on the same spot."])
+textureLink = Array[String](["res://TutorialUI/test.png"])
+Closable = false
 
 [connection signal="pressed" from="PressAnywhere" to="." method="_on_press_anywhere_pressed"]

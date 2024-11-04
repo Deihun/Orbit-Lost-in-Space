@@ -7,6 +7,7 @@ var Cycle : int = 0
 var Scenes : String= ""
 var Ending : String= "null"
 var is_previous_restart : bool = false
+var didJerryLose: bool = false
 
 #EXPEDITIONVALUE
 var selectedCrew = "Jerry"
@@ -19,6 +20,8 @@ func newGame():
 
 
 func endCycle():
+	if delayInFaction <= 0:
+		if GlobalResources.deduct_fuel(): gameOver()
 	_recent_events_adjust()
 	Cycle += 1
 	move_space()
@@ -34,6 +37,12 @@ func getCycle():
 	return Cycle
 
 
+func gameOver(value : String = "lackofresources"):
+	var interior = get_node("/root/Control_Interior")
+	if interior:
+		interior.gameEndReason = value
+		interior.gameOver = true
+
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #HANDLING FACTIONS
 var delayInFaction : int = 0
@@ -44,9 +53,9 @@ var TotalProbabilityForFactionsToFound : float = 0.006
 var Factions_Probability = {
 	"Radonti" : 0.75,
 	"Sauria" : 0.20,
-	"Faction3" : 0.0,
-	"Faction4" : 0.0,
-	"Faction5" : 0.0
+	"Steelicus" : 0.2,
+	"Enthuli" : 0.0,
+	"Earth2.0" : 0.2
 }
 var SubFactions_Probability = {
 	"Asteroid" : 0.01,
@@ -174,7 +183,7 @@ func _recent_events_adjust():
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #								CREW
 var crew_in_ship = []
-
+var jerry_ate_countdown : int = 2
 
 var _relationship = { #SAVE
 	"Regina" : 0.65,
@@ -276,6 +285,9 @@ var _FumikoRelationship = { #SAVE
 	"Nashir" : 0.5,
 	"Fumiko" : 0.5
 }
+func addDisease(crew_name : String):
+	_disease[crew_name] += 0.001
+
 func isRelationship(name: String, value : float, isGreaterThan : bool = true) -> bool:
 	var conditionState = false
 	if isGreaterThan:
@@ -374,6 +386,11 @@ func reduceFood(value : int):
 	GlobalResources.ration = value
 
 func doHunger():
+	jerry_ate_countdown -= 1
+	if jerry_ate_countdown <= 0:
+		jerry_ate_countdown = 2
+		GlobalResources.ration -= 5
+	GlobalResources.ration = 0 if GlobalResources.ration < 0 else GlobalResources.ration
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
 			_current_hunger[crew] -= (randf() * 0.1) + 0.2
@@ -415,38 +432,9 @@ func doDisease():
 			if chance > (0.8 + immunity): _disease[crew] = 0.0001
 
 func doOxygen():
+	if GlobalResources.deduct_oxygen(5): gameOver()
 	for crew in crew_in_ship:
-		if GlobalResources.oxygen <= 0:  # If no oxygen is left
-			if GlobalResources.emergencyOxy <= 0: 
-				pass # GAME OVER
-			else:
-				addOnCycleReportList("EmergencyOxygen -5")
-				GlobalResources.emergencyFuel -= 5
-				if GlobalResources.emergencyFuel < 0: GlobalResources.emergencyFuel = 0
-		else:
-			var oxygen_consumption = 5  # How much oxygen is consumed each cycle
-			GlobalResources.oxygen -= oxygen_consumption  # Subtract from oxygen
-			if GlobalResources.oxygen >= 0:  # If there's still oxygen left (or zero)
-				var oxygen_report =  "Oxygen -" + str(oxygen_consumption)
-				addOnCycleReportList(oxygen_report)
-			else:  # If oxygen goes negative, handle the excess consumption
-				var excessConsumption = GlobalResources.oxygen * -1  # Convert to positive excess
-				GlobalResources.oxygen = 0  # Set oxygen to 0 since it's depleted
-				
-				var oxygen_report = "Oxygen -" + str(oxygen_consumption - excessConsumption)
-				addOnCycleReportList(oxygen_report)
-				
-				# Handle excess by using emergency oxygen
-				if GlobalResources.emergencyOxy > 0 and excessConsumption > 0:
-					var emergency_report = "EmergencyOxygen -" + str(excessConsumption)
-					addOnCycleReportList(emergency_report)
-					
-					GlobalResources.emergencyOxy -= excessConsumption  # Subtract excess from emergency oxygen
-					
-					if GlobalResources.emergencyOxy < 0:  # Ensure emergency oxygen doesn't go negative
-						GlobalResources.emergencyOxy = 0
-					if GlobalResources.emergencyOxy <= 0:
-						pass ## Handle game over here if needed
+		if GlobalResources.deduct_oxygen(): gameOver()
 
 func getNumberOfDisease() -> int:
 	var disease_count = 0

@@ -1,8 +1,10 @@
 extends Sprite2D
 @onready var ai : AnimatedSprite2D = $CraftingAnimation
 @onready var crafting_tab: Node2D = $"../../CraftingTab"
-@onready var item_ui: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_UI")
+
+@onready var item_ui: Control = $"../../CraftingTab/Control/Item_UI"
 @onready var buttons: AudioStreamPlayer = $"../../Buttons"
+
 
 var RecentAnimation : String = ""
 var isMouseInside : bool = false

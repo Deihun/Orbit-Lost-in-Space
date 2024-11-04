@@ -54,7 +54,9 @@ func ChangeLocaton(smoothMovement:bool):
 	$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = false
 	$Button_navigation_node_parent/MeteorCyce.hide()
 	EndButton.visible = true
+	$FactButton_Button/FactButton_Button_Icon.hide()
 	match(LocationKey):
+		
 		0:#CraftingRoom
 			if GlobalResources.currentActiveQueue > 0:
 				$"../EventHandler".isEventVisible = false
@@ -74,6 +76,7 @@ func ChangeLocaton(smoothMovement:bool):
 			await get_tree().create_timer(2.0).timeout 
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = true
+			$FactButton_Button/FactButton_Button_Icon.show()
 			EndButton.enable()
 			if($"../TutorialPanel_Folder/TutorialPanel3"):
 				$"../TutorialPanel_Folder/TutorialPanel3".visible = true
@@ -83,6 +86,7 @@ func ChangeLocaton(smoothMovement:bool):
 				await get_tree().create_timer(0.2).timeout
 				$"../EventHandler".isEventVisible = false
 				$"../EventHandler".switchIt(false)
+				$FactButton_Button/FactButton_Button_Icon.show()
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
 				MoveObjectSmoothly(ObjectLeft,Vector2(-1950,-600),1.5)
@@ -113,6 +117,7 @@ func ChangeLocaton(smoothMovement:bool):
 				self.position = SpecificLocation[LocationKey]
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = false
+			$FactButton_Button/FactButton_Button_Icon.show()
 			if TimerFilter:
 				await get_tree().create_timer(1.5).timeout
 				if($"../TutorialPanel_Folder/TutorialPanel2"):
@@ -128,6 +133,7 @@ func ChangeLocaton(smoothMovement:bool):
 
 
 		3: #StorageRoom
+			$FactButton_Button/FactButton_Button_Icon.show()
 			EndButton.enable()
 			if smoothMovement:
 				MoveObjectSmoothly(self,SpecificLocation[LocationKey],2)
@@ -151,6 +157,7 @@ func ChangeLocaton(smoothMovement:bool):
 
 
 		5: #ExpeditionRoom
+			$FactButton_Button/FactButton_Button_Icon.hide()
 			$"../ExpeditionSelection".uponCall()
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = false

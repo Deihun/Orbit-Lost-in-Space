@@ -43,8 +43,6 @@ func checkForPlayer(): #Access dropbox hitboxes, if players inside, change scene
 	if isPlayerInside:
 		if isPlayerInside.getIsPlayerInsideCondition():
 			isPlayerInside.interaction()
-			var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
-			r.updateGlobalResource()
 			$"..".gameWin()
 		else:
 			$".."._game_over()

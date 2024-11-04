@@ -17,8 +17,6 @@ func load_json_file():
 		
 		if json_string != "":
 			var json = JSON.parse_string(json_string)
-			
-			
 			if json is Array:
 				event_data = json
 			else:
@@ -256,4 +254,18 @@ func _ProbabilityAddGroup() -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
+	pass # Replace with function body.
+
+func clear():
+	$Label_name/LineEdit.text = ""
+	$Label_description/TextEdit.text = ""
+	_RESET_TemporaryITEM() 
+	reset_items()
+	clear_item_UI()
+	_ClearItems()
+	_ClearCommand()
+	_probabilityGroup.clear()
+
+func _on_button_clear_button_up() -> void:
+	clear()
 	pass # Replace with function body.

@@ -16,7 +16,9 @@ extends Control
 #VARIABLES
 var resources 
 var events
+var gameEndReason = "null"
 var EndCycle_Can_Be_Click_ : bool = true
+var gameOver : bool = false
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
 var eventHandler
@@ -29,7 +31,6 @@ func _process(delta):
 
 func _ready():
 	$WholeInteriorScene/Lobby.initializeJSONFILE()
-	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
 	if SaveGame.isLoadGame:
 		_loadGameStart()
 	else:
@@ -41,6 +42,7 @@ func getButtonPosition():
 
 #GAME SETTINGS
 func _newGameStart():
+	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
 	SaveGame.isLoadGame = true
 	CycleSetting.newGame()
 	EventHandler.startAddNextEvent()
@@ -90,7 +92,7 @@ func _on_next_day_button_pressed():
 		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
-		
+		if gameOver: GameOver(gameEndReason)
 	else:
 		camera.ChangeSpecificScene(2)
 
@@ -110,6 +112,10 @@ func updateCockpit():
 		"SPACE":a    = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 		"None":a     = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 		"Radonti":a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+		"Steelicus":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusCockpit.png")
+		"Earth2.0":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
+		"Sauria":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
+		"Enthuli": pass
 		"Abandonship":pass
 		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
@@ -141,7 +147,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
 		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
 		"Sauria":IngameStoredProcessSetting.Scenes = "Sauria"
-		"Earth2":IngameStoredProcessSetting.Scenes = "Earth2"
+		"Earth2.0":IngameStoredProcessSetting.Scenes = "Earth2"
 		"Enthuli":IngameStoredProcessSetting.Scenes = "Enthuli"
 		"Steelicus":IngameStoredProcessSetting.Scenes = "Steelicus"
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
@@ -189,3 +195,7 @@ func checkIfKickoutEnough() -> bool:
 		if randf() > 0.25:
 			return true
 	return false
+
+
+func _on_fact_button_button_button_up() -> void:
+	$cam2d/FactButton.show()

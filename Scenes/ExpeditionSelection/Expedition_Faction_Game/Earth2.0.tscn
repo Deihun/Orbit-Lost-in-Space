@@ -1,0 +1,5003 @@
+[gd_scene load_steps=28 format=3 uid="uid://cp8kg47ebyvi6"]
+
+[ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_hnq2x"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/earth_2_map_layout.gd" id="2_xvd72"]
+[ext_resource type="Texture2D" uid="uid://ch6l1gmpn4dhq" path="res://DropBox/Map.png" id="3_wu0pc"]
+[ext_resource type="Texture2D" uid="uid://chgcpcv86t5hv" path="res://AmbiencePurposes/Earth 2.0 Ambience/GrassPatch.png" id="4_aehqo"]
+[ext_resource type="Texture2D" uid="uid://duyw80scy5hfk" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_4.png" id="5_6a7xj"]
+[ext_resource type="Texture2D" uid="uid://bwaftnnll7xni" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_5.png" id="6_yoq6d"]
+[ext_resource type="Texture2D" uid="uid://yq4t63gmqht0" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_1.png" id="7_7daru"]
+[ext_resource type="Texture2D" uid="uid://t4jnr84qahn8" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_3.png" id="8_5afas"]
+[ext_resource type="Texture2D" uid="uid://bclo4o0h8lpic" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_2.png" id="9_u2gbo"]
+[ext_resource type="Texture2D" uid="uid://b1tte8gk8wggo" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_8.png" id="10_g6e3j"]
+[ext_resource type="Texture2D" uid="uid://bi4vxtmfossj7" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_7.png" id="11_4s4m7"]
+[ext_resource type="Texture2D" uid="uid://cgp20yptol3nr" path="res://AmbiencePurposes/Earth 2.0 Ambience/Stone_6.png" id="12_hrjtl"]
+[ext_resource type="PackedScene" uid="uid://mt7cxk242i47" path="res://AmbiencePurposes/Rocks/rocks.tscn" id="13_jdpvx"]
+[ext_resource type="Texture2D" uid="uid://cq3d0w7jbuqd5" path="res://AmbiencePurposes/Earth 2.0 Ambience/Ship.png" id="14_u4et7"]
+[ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="15_x7tnl"]
+[ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="16_oadm4"]
+[ext_resource type="PackedScene" uid="uid://dbvus3igik3kv" path="res://AmbiencePurposes/Earth 2.0 Ambience/Earth_2.0_tree.tscn" id="17_g1f52"]
+[ext_resource type="PackedScene" uid="uid://b265u4rfm08ou" path="res://AmbiencePurposes/Earth 2.0 Ambience/Speed_fruit.tscn" id="18_muhiq"]
+[ext_resource type="PackedScene" uid="uid://6hpd3wf2vb1u" path="res://AmbiencePurposes/Hay/Hay.tscn" id="19_8i7yg"]
+[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/WitheredSpeedFruit.tscn" id="20_s0no7"]
+[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/Grass.tscn" id="21_drrb5"]
+[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/Bush.tscn" id="22_4f2tx"]
+[ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="23_sap40"]
+[ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="24_l2ffy"]
+[ext_resource type="PackedScene" uid="uid://e58h5aiabykh" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit.tscn" id="25_6bblo"]
+[ext_resource type="PackedScene" uid="uid://2jljl3kjjik8" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit.tscn" id="26_xraa1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7von"]
+shader = ExtResource("1_hnq2x")
+shader_parameter/base_color = null
+shader_parameter/light_intensity = 0.7
+
+[node name="Earth2MapLayout" type="Node2D"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_x7von")
+script = ExtResource("2_xvd72")
+
+[node name="Map" type="Node2D" parent="."]
+use_parent_material = true
+position = Vector2(64, -198)
+scale = Vector2(3.83183, 3.83184)
+
+[node name="GroundMap" type="Sprite2D" parent="Map"]
+z_index = -5
+use_parent_material = true
+texture = ExtResource("3_wu0pc")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1775.91, -579.617)
+scale = Vector2(1.16888, 1.11329)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch2" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1880.76, -989.703)
+rotation = -0.219495
+scale = Vector2(1.84566, 1.86823)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch3" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1298.07, -393.806)
+scale = Vector2(1.57259, 1.66706)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch4" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(498.456, -815.796)
+rotation = 1.61745
+scale = Vector2(0.0619732, 0.0681855)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch5" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1289.46, -982.296)
+scale = Vector2(1.31529, 1.44916)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch6" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(514.033, -797.143)
+rotation = 1.0472
+scale = Vector2(0.130163, 0.135296)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch7" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1247.35, -1520.55)
+scale = Vector2(2.74921, 2.44008)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch8" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1904.05, -1469.01)
+scale = Vector2(0.661825, 0.711929)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch9" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1822.37, -1716.15)
+rotation = -0.785397
+scale = Vector2(0.708277, 0.645644)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch10" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1755.04, -1863.6)
+rotation = -0.261799
+scale = Vector2(0.260972, 0.260971)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch11" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1077.81, 1102.6)
+rotation = 0.785398
+scale = Vector2(1.3581, 1.17228)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch12" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1481.8, 910.92)
+rotation = -0.261799
+scale = Vector2(1.22552, 1.17489)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch13" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-2302.55, 2007.59)
+scale = Vector2(4.67453, 4.69461)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch14" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-2321.08, 950.979)
+rotation = 0.523599
+scale = Vector2(1.37217, 1.08197)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch15" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1695.02, 1246.59)
+scale = Vector2(2.84041, 1.93822)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch16" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1004.48, 2167.89)
+rotation = 0.523599
+scale = Vector2(2.99021, 2.56038)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch17" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-1039.19, 1501.63)
+rotation = -0.523599
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch18" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(-857.293, 1332.78)
+rotation = 0.523598
+scale = Vector2(0.260972, 0.260971)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="GrassPatch19" type="Sprite2D" parent="Map/GroundMap"]
+use_parent_material = true
+position = Vector2(1637.73, 2303.59)
+scale = Vector2(6.65948, 3.54921)
+texture = ExtResource("4_aehqo")
+metadata/_edit_lock_ = true
+
+[node name="Stone_Groups" type="Node2D" parent="Map"]
+use_parent_material = true
+metadata/_edit_lock_ = true
+
+[node name="Stones" type="Node2D" parent="Map/Stone_Groups"]
+use_parent_material = true
+scale = Vector2(0.26, 0.26)
+
+[node name="Stone46" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(6715.69, -11642)
+scale = Vector2(7.85134, 4.45268)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone9" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(6280, -9939)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone6" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(5015, -10055)
+texture = ExtResource("7_7daru")
+
+[node name="Stone5" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(5325, -9827)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone4" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4763, -9857)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone3" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4379, -9919)
+texture = ExtResource("8_5afas")
+
+[node name="Stone1" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4125, -9300)
+texture = ExtResource("7_7daru")
+
+[node name="Stone11" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4530, -9360)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone2" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4011, -8907)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone8" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(5831, -9715)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone7" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(7015, -9888)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone10" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4044, -8639)
+texture = ExtResource("7_7daru")
+
+[node name="Stone12" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4053, -8396)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone13" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(3995, -8034)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone23" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(8012, -9805)
+texture = ExtResource("7_7daru")
+
+[node name="Stone14" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(3995, -7615)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone16" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(3991, -7402)
+texture = ExtResource("7_7daru")
+
+[node name="Stone15" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4299, -7255)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone34" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(10115, -11812)
+scale = Vector2(1.845, 1)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone33" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11206, -11601)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone32" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11166, -11201)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone31" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11211, -11141)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone30" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11393, -10687)
+texture = ExtResource("8_5afas")
+
+[node name="Stone35" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(9932, -11317)
+scale = Vector2(4.465, 1.565)
+texture = ExtResource("7_7daru")
+
+[node name="Stone17" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(4535, -7063)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone29" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11272, -9954)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone18" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(5165, -6811)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone19" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(5457, -6721)
+texture = ExtResource("7_7daru")
+
+[node name="Stone20" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(7538, -9650)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone21" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(7765, -9276)
+texture = ExtResource("7_7daru")
+
+[node name="Stone22" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(7405.58, -9021.58)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone24" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(8555, -9715)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone25" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(9199, -10120)
+texture = ExtResource("8_5afas")
+
+[node name="Stone26" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(9758, -9652)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone27" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(10566, -9787)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone28" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11460, -9612)
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone37" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-1838.01, -12380.1)
+scale = Vector2(4.89494, 4.55022)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone38" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-4593, -12259)
+scale = Vector2(3.525, 1.755)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone39" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-7745.31, -12603)
+scale = Vector2(3.29408, 5.12)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone40" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-9520, -12531)
+scale = Vector2(2.68321, 3.11509)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone41" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-10992, -12614)
+scale = Vector2(3.49314, 3.33938)
+texture = ExtResource("8_5afas")
+
+[node name="Stone42" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-9559, -11388)
+scale = Vector2(3.80442, 1.67469)
+texture = ExtResource("8_5afas")
+
+[node name="Stone43" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-7470.88, -11564)
+scale = Vector2(7.25458, 3.76215)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone44" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-3551, -11082)
+scale = Vector2(5.74386, 3.47358)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone36" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-10925, -9800.5)
+scale = Vector2(4.44604, 6.62141)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone45" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11533.5, -7337.63)
+scale = Vector2(4.05, 4.33442)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone47" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11722, -6189)
+scale = Vector2(5.04198, 4.70332)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone48" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11303.5, -4051.75)
+scale = Vector2(4.12518, 5.36998)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone49" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11413, -2680)
+scale = Vector2(3.37611, 2.70355)
+texture = ExtResource("8_5afas")
+
+[node name="Stone50" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11493, -274)
+scale = Vector2(5.33969, 3.37212)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone51" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11677, 2015)
+scale = Vector2(4.00351, 3.75738)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone52" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11591, 4281)
+scale = Vector2(9.5116, 5.56033)
+texture = ExtResource("7_7daru")
+
+[node name="Stone53" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-11813, 6640)
+scale = Vector2(6.13761, 7.68449)
+texture = ExtResource("8_5afas")
+
+[node name="Stone54" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-9925.5, 10802.9)
+scale = Vector2(3.86404, 3.15968)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone55" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-5550.25, 10796.5)
+scale = Vector2(10.2939, 3.43095)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone56" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+z_index = 1
+use_parent_material = true
+position = Vector2(6833.19, 10225)
+scale = Vector2(15.7059, 6.57696)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone57" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-3162, 11241)
+scale = Vector2(3.5177, 3.16173)
+texture = ExtResource("8_5afas")
+
+[node name="Stone58" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+z_index = 2
+use_parent_material = true
+position = Vector2(2177, 11962.9)
+scale = Vector2(12.8478, 5.66455)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone59" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+z_index = -1
+use_parent_material = true
+position = Vector2(3913, -12654)
+scale = Vector2(3.50351, 2.84238)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone60" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11724.8, -8929.25)
+scale = Vector2(2.71239, 1.93449)
+texture = ExtResource("8_5afas")
+
+[node name="Stone61" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11871.3, -7539)
+scale = Vector2(3.24809, 3.65985)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone62" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11916.8, -7006)
+scale = Vector2(3.67207, 3.84487)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone63" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11406.8, -5509.75)
+scale = Vector2(2.35468, 4.03537)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone64" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11625, -3789)
+scale = Vector2(3.03451, 2.44745)
+texture = ExtResource("8_5afas")
+
+[node name="Stone65" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(12670, -288)
+scale = Vector2(5.84737, 6.56375)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone66" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11634, 3265)
+scale = Vector2(5.9626, 5.0601)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone67" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(11838, 6492)
+scale = Vector2(3.53947, 4.38902)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone68" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(13311.5, 8698.75)
+scale = Vector2(5.57982, 4.28276)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone69" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-597.224, -9770.36)
+scale = Vector2(2.0646, 1.80537)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone70" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(2601.69, -10684.8)
+scale = Vector2(1.80563, 1.42416)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone71" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(3057.39, -10139.7)
+scale = Vector2(2.56169, 1.55452)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone72" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(2878.44, -9178.64)
+scale = Vector2(1.60373, 1.47297)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone73" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-494.843, -9322.7)
+scale = Vector2(1.68219, 1.28321)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone74" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-397.48, -8620.08)
+scale = Vector2(2.36309, 1.55218)
+texture = ExtResource("7_7daru")
+
+[node name="Stone75" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-278.035, -8030.89)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone76" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-87.3252, -7491.88)
+scale = Vector2(0.865396, 1)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone78" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-73.2729, -7007.08)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone77" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-82.3065, -6478.11)
+scale = Vector2(1.84712, 1.79763)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone79" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-110.411, -5982.26)
+scale = Vector2(1.68698, 1.92452)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone80" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-439.637, -5270.62)
+scale = Vector2(1.11985, 1.46937)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone81" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(2618.75, -8493.61)
+scale = Vector2(2.05224, 2.31628)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone82" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-1826.8, -10320.4)
+scale = Vector2(2.29252, 1.46064)
+texture = ExtResource("8_5afas")
+
+[node name="Stone83" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-573.456, -4224.61)
+scale = Vector2(2.31801, 2.23308)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone84" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-828.084, -3764.01)
+scale = Vector2(2.5967, 2.7139)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone85" type="Sprite2D" parent="Map/Stone_Groups/Stones"]
+use_parent_material = true
+position = Vector2(-1155.3, -2082.75)
+scale = Vector2(2.39301, 2.52051)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stones2" type="Node2D" parent="Map/Stone_Groups"]
+use_parent_material = true
+
+[node name="Stone7" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1824.12, -2267.67)
+scale = Vector2(0.187381, 0.223904)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone6" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1835.15, -2137.88)
+scale = Vector2(0.151122, 0.308354)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone8" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2805.45, -2428.34)
+scale = Vector2(0.387353, 0.422543)
+texture = ExtResource("10_g6e3j")
+
+[node name="Stone9" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2539.26, -2456)
+scale = Vector2(0.241088, 0.260289)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone5" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2292.12, -2525.16)
+scale = Vector2(0.43234, 0.315826)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone4" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2506.64, -1372.71)
+scale = Vector2(0.8299, 0.419239)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone10" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2666.61, -1301.72)
+scale = Vector2(0.720296, 0.5695)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone11" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2335.7, -1197.08)
+scale = Vector2(0.284355, 0.343787)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone12" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2661.13, -612.239)
+scale = Vector2(0.332657, 0.30897)
+texture = ExtResource("11_4s4m7")
+
+[node name="Stone13" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-386.531, -361.445)
+scale = Vector2(1.12997, 0.47637)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone3" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1410.81, -1560.61)
+scale = Vector2(0.681987, 0.316876)
+texture = ExtResource("8_5afas")
+
+[node name="Stone14" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1009.7, -1660.04)
+scale = Vector2(0.439892, 0.350154)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone15" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(2090.65, -2568.22)
+scale = Vector2(0.260972, 0.260971)
+texture = ExtResource("8_5afas")
+
+[node name="Stone16" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1591.67, -843.459)
+scale = Vector2(0.837808, 0.432984)
+texture = ExtResource("8_5afas")
+
+[node name="Stone17" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1304.08, -814.23)
+scale = Vector2(0.860531, 0.980144)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone2" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1461.7, -515.679)
+scale = Vector2(0.628511, 0.871733)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone18" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1102.35, -740.375)
+scale = Vector2(0.549685, 0.484774)
+texture = ExtResource("8_5afas")
+
+[node name="Stone1" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1571.83, -288.112)
+scale = Vector2(0.555247, 0.387131)
+texture = ExtResource("7_7daru")
+
+[node name="Stone20" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1689.79, 135.444)
+scale = Vector2(1.24416, 0.41301)
+texture = ExtResource("7_7daru")
+
+[node name="Stone19" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1858.38, 157.366)
+scale = Vector2(0.324941, 0.248494)
+texture = ExtResource("8_5afas")
+
+[node name="Stone21" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(788.135, 504.196)
+scale = Vector2(0.804002, 0.355164)
+texture = ExtResource("5_6a7xj")
+
+[node name="Stone22" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(1091.65, 610.934)
+scale = Vector2(0.849573, 0.257099)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone23" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(716.89, 683.484)
+scale = Vector2(0.445271, 0.232283)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone24" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-2487.32, -1496.41)
+scale = Vector2(0.479461, 0.484362)
+texture = ExtResource("6_yoq6d")
+
+[node name="Stone25" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-2456.27, -2208.6)
+scale = Vector2(0.584237, 0.422406)
+texture = ExtResource("7_7daru")
+
+[node name="Stone26" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-2317.95, -2634.5)
+scale = Vector2(0.477471, 0.417168)
+texture = ExtResource("9_u2gbo")
+
+[node name="Stone27" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-2066.38, -2731.06)
+scale = Vector2(0.445958, 0.31591)
+texture = ExtResource("8_5afas")
+
+[node name="Stone28" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-1864.12, -2648.86)
+scale = Vector2(0.776715, 0.670044)
+texture = ExtResource("7_7daru")
+
+[node name="Rocks" parent="Map/Stone_Groups/Stones2" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(2076.03, -1849.24)
+scale = Vector2(0.179, 0.202494)
+
+[node name="Stone29" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-1190.96, -2578.14)
+scale = Vector2(1.08032, 0.442999)
+texture = ExtResource("12_hrjtl")
+
+[node name="Stone30" type="Sprite2D" parent="Map/Stone_Groups/Stones2"]
+use_parent_material = true
+position = Vector2(-589.535, -2455.22)
+scale = Vector2(0.369326, 0.31737)
+texture = ExtResource("9_u2gbo")
+
+[node name="Ship" type="Sprite2D" parent="Map"]
+z_index = -4
+use_parent_material = true
+position = Vector2(1526.95, -2203.9)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("14_u4et7")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+use_parent_material = true
+collision_layer = 33
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+use_parent_material = true
+polygon = PackedVector2Array(5841, -8140, 5843, -8094, 5227, -8092, 5229, -8142, 5230, -9015, 5498, -9192, 5795, -9193, 6295, -9191, 6602, -9008, 6601, -8794, 6602, -8457, 6601, -8094, 6227, -8093, 6226, -8139, 6583, -8138, 6584, -8241, 6584, -8807, 6298, -8975, 5534, -8972, 5253, -8774, 5253.72, -8140.83, 5780, -8137)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wall"]
+use_parent_material = true
+polygon = PackedVector2Array(-21417, -9781, -12184.5, -9904.56, -9376, -9936, -9343, -9950, -9297, -9980, -9242, -9977, -9163, -9956, -9040, -9873, -8524, -9889, -8345, -9937, -8337, -9914, -8255, -9932, -8199, -9896, -7994, -9891, -7930, -9843, -7692, -9894, -7709, -9642, -6928, -9498, -6742, -9534, -6850, -9395, -2641, -9366, -2628, -9337, -2568, -9364, -2498, -9358, -2430, -9334, -2366, -9286, -1943, -9302, -1835, -9339, -1709, -9322, -1696, -9422, -1718, -9526, -1125, -9629, -1178, -9333, -1202, -9261, -949, -9251, -971, -9057, -481, -9011, -589, -8795, -654, -8745, -713, -8703, -758, -8631, -825, -8497, -833, -8363, -598, -8328, -636, -8288, -663, -8188, -661, -8161, -711, -7998, -748, -7889, -779, -7801, -359, -7793, -387, -7754, -410, -7671, -420, -7589, -433, -7526, -509, -7264, -436, -7262, -442, -7242, -452, -7203, -459, -7141, -482, -7056, -575, -6781, -232, -6774, -262, -6724, -257, -6619, -320, -6485, -376, -6486, -421, -6504, -488, -6251, -486, -6182, -260, -6186, -265, -6125, -283, -6066, -361, -6065, -424, -6038, -609, -5864, -653, -5833, -704, -5778, -809, -5639, -849, -5579, -869, -5498, -931, -5172, -1005, -4865, -857, -4862, -885, -4756, -924, -4612, -931, -4413, -913, -4248, -993, -4102, -1111, -3966, -1136, -4818, -1146, -4904, -1154, -4948, -1168, -4965, -1184, -4939, -1189, -4909, -1362, -4802, -1458, -4755, -1485, -4726, -1521, -4622, -1540, -4526, -1540, -4464, -1511, -4149, -1500.99, -3955.6, -1560, -3703, -1600, -3042, -1530, -3031, -1628, -2965, -1693, -2934, -2067, -2544, -2099, -2500, -2151, -2329, -2160, -2229, -2408, -2163, -2622, -2119, -2682, -2059, -2726, -1971, -2694, -1769, -2656, -1631, -2672, -1543, -2732, -1456, -2742, -1347, -2811, -969, -1693, -910, -1445, -902, -1281, -907, -19, -966, -93, -1054, -165, -1181, -181, -1222, 247, -1217, 268, -1311, 269, -1569, 245, -1577, 231, -1639, 198, -1883, 143, -2030, -6, -2300, -215, -2838, -252, -2921, -272, -2954, -300, -2975, 38, -3021, 51, -3072, 50, -3096, 24, -3184, -44, -3549, 252, -3536, 124, -3971, 91, -4237, 34, -4536, -64, -4663, -174, -4847, 255, -4827, 258, -5036, 218, -5269, 144, -5434, 67, -5664, 384, -5668, 372, -5750, 370, -5900, 303, -6044, 243, -6192, 451, -6196, 451, -6231, 440, -6276, 445, -6406, 348, -6576, 291, -6681, 266, -6765, 549, -6761, 557, -6791, 557, -6902, 546, -6905, 537, -6982, 515, -7067, 480, -7131, 459, -7161, 417, -7245, 461, -7240, 466, -7273, 468, -7385, 458, -7387, 447, -7473, 441, -7510, 428, -7556, 387, -7634, 362, -7685, 328, -7779, 346, -7779, 355, -7816, 352, -7919, 345, -7926, 331, -8025, 301, -8107, 226, -8227, 150, -8433, 175, -8705, 41, -9044, 110, -9053, 75, -9132, 45, -9230, 141, -9228, 85, -9422, 49, -9492, -36, -9975, -54, -10040, 2323.46, -10131.5, 2281, -9764, 2589, -9757, 2554, -9744, 2489, -9706, 2251, -9477, 2239, -9417, 2107, -9336, 2071, -9251, 2055, -9157, 2075, -8882, 2025, -8757, 2090, -8758, 2045, -8444, 2020, -7883, 2249, -7847, 2676, -7798, 2975, -7827, 3332, -7877, 3288, -8010, 3201, -8738, 3836, -8712, 3832, -8879, 3940, -8815, 3953, -8775, 3935, -8754, 3885, -8621, 3880, -8534, 3898, -8530, 3811, -8475, 3743, -8423, 3624, -8297, 3480, -7803, 3605, -7800, 3482, -7381, 3832, -7381, 3821, -7301, 4102, -7244, 4094, -7174, 4129, -7161, 4115, -7129, 3910, -7118, 3600, -6961, 3413, -6853, 3224, -6690, 3191, -6609, 3168, -6518, 2979, -6017, 3262, -6019, 4877, -5990, 4889, -6034, 4889, -6186, 4878, -6184, 4870, -6205, 4838, -6359, 4799, -6440, 4572, -6828, 4965, -6823, 4955, -6725, 5302, -6733, 5291, -6707, 5292, -6689, 5269, -6664, 5152, -6501, 5055, -6409, 5019, -6366, 4991, -6318, 4956, -6206, 4923, -5901, 4891, -5807, 4841, -5721, 4754, -5561, 4735, -5424, 5152, -5463, 5354, -5359, 6205, -5468, 6173, -5540, 6082, -5636, 6010, -5802, 5988, -5875, 5983, -5942, 5972, -6130, 5891, -6306, 5871, -6504, 5777, -6857, 5755, -6869, 5709, -6990, 5676, -6997, 5648, -7113, 5633, -7149, 5607, -7186, 5583, -7209, 5559, -7222, 5545, -7224, 5534, -7216, 5537, -7189, 5445, -7061, 5407, -6941, 5366, -7023, 5352, -7120, 5241, -7101, 5182, -7230, 5166, -7247, 5139, -7187, 5119, -7095, 5018, -7263, 4925, -7505, 4786, -7645, 4687, -7661, 4573, -7648, 4552, -7710, 4506, -7776, 4604, -7782, 4610, -7910, 4583, -8054, 4498, -8212, 4403, -8438, 4358, -8503, 4337, -8617, 4299, -8668, 4308, -8747, 4290, -8845, 4400, -8840, 4411, -8921, 4385, -9031, 4894, -9134, 4813, -9578, 4773, -9642, 5871, -9610, 7373, -9524, 7131, -9298, 7093, -9288, 7115, -9246, 7067, -9249, 7023, -9230, 6856, -9096, 6757, -8976, 6644, -8546, 6872, -8542, 6849, -8497, 6803, -8125, 6761, -7918, 7418, -7890, 7424, -7932, 7424, -8057, 7414, -8186, 7332, -8528, 7458, -8525, 7462, -8557, 7462, -8649, 7457, -8647, 7453, -8656, 7447, -8715, 7438, -8763, 7426, -8799, 7367, -8925, 7792, -8950, 7777, -9127, 7858, -9108, 7983, -9142, 7988, -9159, 8002, -9189, 8006, -9235, 8012, -9362, 8013, -9379, 8028, -9365, 8604, -9441, 8856, -9420, 9329, -9451, 9278, -9210, 10311, -9187, 10428, -9173, 10435, -9089, 11214, -9089, 11163, -8573, 11109, -8398, 10927, -8311, 10860, -8176, 10830, -7988, 10897, -7236, 10825, -6836, 10768, -6137, 10739, -6145, 10665, -6138, 10618, -6102, 10625, -6044, 10659, -5972, 10643, -5693, 10556, -5690, 10456, -5669, 10421, -5543, 10317, -5612, 10075, -5820, 9885, -5833, 9870, -5990, 9852, -6006, 9834, -5991, 9824, -5961, 9772, -5939, 9705, -6084, 9427, -6053, 9257, -5939, 9215, -5861, 9158, -5713, 9087, -5589, 9088, -5477, 9108, -5340, 9055, -5341, 8992, -5328, 8890, -5252, 8692, -5084, 8548, -4908, 8516, -4706, 8430, -4384, 8406, -4301, 8447, -4259, 8944, -4243, 9626, -4232, 9634, -4279, 9630, -4426, 10268, -4368, 10899, -4416, 11088, -4433, 11174, -4450, 11088, -4285, 10991, -3259, 10890, -2956, 10816, -2744, 10805.2, -2621.07, 10740, -2787, 10703, -2859, 10633, -2924, 10526, -3027, 10488, -3041, 10459, -3036, 10339, -3046, 10228, -3031, 9949, -2859, 9878, -2807, 9726, -2658, 9688, -2570, 9682, -2474, 9608, -2263, 9564, -2148, 9532, -2068, 10810, -2046, 10978, -2043, 10980.1, -1971.03, 10586, -1525, 10217, -1085, 10087, -564, 10064, -397, 10064, -253, 9585, 1483, 9392, 2127, 10713, 2179, 10570, 2651, 10569, 3024, 10618, 3409, 10395, 3748, 10131, 4050, 9901, 4137, 9780, 4753, 9708, 4930, 11173, 4975, 10865, 5211, 10391, 5769, 10283, 6206, 10199, 6770, 9853, 8022, 11021, 8039, 10862, 8330, 10815, 8634, 10761, 8816, 10337, 8486, 9910, 8277, 5830, 8375, 5397, 9086, 4992, 9475, 4590, 9357, 4301, 9351, 4114, 9374, 4001, 9345, 3634, 9304, 2419, 9248, 1621, 9272, 1453, 9323, 1520, 9402, 1656, 9475, 581, 9778, -336, 10080, -1026, 10251, -2467, 10877, -2520, 10579, -2659, 9279, -2704, 9208, -2764, 8894, -2975, 8879, -3065, 8946, -3172, 9145, -3223, 9390, -3300, 9612, -3516, 10157, -4157, 9796, -4747, 9773, -5008, 9694, -5344, 9235, -6263, 9305, -7584, 9304, -8982, 9238, -9143, 9230, -9663, 9232, -9875, 9258, -10320, 9481, -10508, 8456, -10504, 7494, -10669, 5861, -9734, 5729, -9584, 5470, -9496, 5146, -9452, 4369, -9612, 3962, -9895, 3392, -9444, 3384, -9337, 3393, -9308, 3265, -9302, 3156, -9310, 2853, -9338, 2849, -9347, 2795, -9406, 2483, -9443, 2332, -9571, 2061, -9699, 1876, -9880, 1566, -10098, 977, -10180, 835, -9649, 838, -9863, 378, -9998, -175, -10138, -651, -10261, -747, -10696, -1224, -10373, -1286, -10378, -1343, -10408, -1436, -10519, -1670, -10636, -2126, -10658, -2723, -10663, -2788, -10689, -2871, -10523, -2897, -10143, -3057, -9788, -2992, -9759, -3475, -9856, -4179, -10164, -5149, -10060, -5309, -9480, -5235, -8879, -5303, -8929, -5467, -8955, -5643, -9011, -6128, -9107, -6306, -9173, -6350, -9258, -6865, -9321, -7039, -9399, -7203, -9539, -7431, -9704, -7791, -9859, -8227, -9221, -8126, -8941, -8177, -8909, -8238, -8882, -8350, -8869, -8557, -8907, -8707, -9024, -9037, -9105, -9138, -9194, -9188, -9245, -9196, -9264, -9188, -9275, -9170, -9267, -9147, -9295, -9120, -9366, -9893, -9380, -9933, -9384, -9948, -11697, -9911, -21429, -9767, -21708, 12261, -19721, 17803, 11571, 17992, 17014, 17024, 17893, -13316, 743, -14869, -9721, -15885, -15715, -16291, -20429, -14296)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall"]
+use_parent_material = true
+polygon = PackedVector2Array(4304, -4278, 4224, -4104, 4194, -3960, 4110, -3757, 3996, -3751, 3915, -3706, 3978, -3586, 3969, -3415, 3899, -3269, 3868, -2942, 3831, -2506, 3705, -2080, 3698, -1892, 3789, -1945, 3867, -1854, 4119, -1847, 4188, -1785, 4876, -1946, 4922, -1425, 5028, -1516, 5111, -1518, 5221, -1465, 5374, -1300, 5856.94, -1312.23, 5739, -1220, 5668, -1081, 5638, -1017, 5631, -895, 6193, -811, 6353, -834, 6479, -861, 6498, -913, 6521, -933, 6538, -1100, 6542, -1220, 6518, -1302, 6480, -1399, 6491, -1401, 6502, -1710, 6474, -1944, 6456, -2133, 6379, -2362, 7085, -2466, 6999, -2596, 6909, -2687, 6827, -2906, 6796, -3048, 6774, -3383, 6720, -3513, 6620, -4049, 6542, -4355, 6517, -4369, 6460, -4539, 6259, -4552, 6191, -4514, 6084, -4399, 6056, -4353, 6044, -4294, 5986, -4187, 5866, -4019, 5797, -4169, 5749, -4247, 5697, -4289, 4839, -4258, 4789, -3992, 4697, -3681, 4655, -3591, 4611, -3562, 4588, -3794, 4554, -3970, 4529, -4074, 4479, -4275, 4356, -4293)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wall"]
+use_parent_material = true
+polygon = PackedVector2Array(5517, 755, 6269, 809, 6742, 843, 6857, 841, 6848, 873, 6842, 899, 6837, 994, 6884, 970, 6915, 994, 6930, 1009, 7083, 1016, 7129, 1049, 7534, 960, 7527, 932, 7519, 912, 7506, 880, 7476, 830, 7455, 749, 7501, 720, 7535, 628, 7548, 548, 7562, 397, 7471, 270, 7379, 170, 7349, -36, 7336, -108, 7332, -128, 7326, -129, 7324, -136, 7299, -233, 7224, -237, 7197, -223, 7167, -178, 7134, -104, 7081, -128, 6957, -174, 6896, -188, 6821, -200, 6768, -201, 6732, -199, 6712, -194, 6699, -183, 6698, -169, 6710, -157, 6246, 66, 6007, 317, 5778, 401, 5738, 428, 5660, 487, 5543, 616)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Wall"]
+use_parent_material = true
+polygon = PackedVector2Array(1840, 2777, 2625, 2784, 3763, 2795, 3776, 2776, 3783, 2754, 3779, 2670, 3766, 2669, 3754, 2640, 3750, 2618, 3724, 2547, 3680, 2494, 3720, 2496, 4015, 2504, 4257, 2513, 5211, 2483, 5298, 2475, 5254, 2441, 5179, 2352, 5091, 2120, 5040, 2036, 4942, 1986, 4890, 1948, 4817, 1926, 4751, 1920, 4674, 1912, 4571, 1914, 4452, 1923, 4337, 2065, 4316, 2105, 4343, 2263, 4165, 2342, 4074, 2340, 3891, 2320, 3867, 2294, 3854, 2262, 4093, 2267, 4063, 2214, 4015, 2137, 3970, 2079, 3941, 2026, 3906, 1944, 3885, 1844, 3804, 1655, 3743, 1626, 3477, 1430, 3324, 1421, 3267, 1412, 3232, 1397, 3185, 1332, 3122, 1203, 2848, 1231, 2681, 1331, 2658, 1369, 2589, 1516, 2543, 1586, 2528, 1614, 2522, 1651, 2520, 1726, 2546, 1828, 2469, 1899, 2330, 1982, 2279, 2008, 2180, 2025, 2117, 2184, 2077, 2238, 2268, 2240, 2223, 2265, 2086, 2341, 2058, 2388, 2043, 2428, 2043, 2452, 1924, 2655, 1876, 2728)
+
+[node name="DropBox" parent="." instance=ExtResource("15_x7tnl")]
+z_index = 2
+use_parent_material = true
+position = Vector2(5990, -8552)
+
+[node name="Player" parent="." instance=ExtResource("16_oadm4")]
+z_index = 2
+use_parent_material = true
+position = Vector2(5886, -8511)
+useGlobeTimerUI = false
+delayBeforeGameStart = 0.0
+limitTimeDuration = 180
+
+[node name="Tree_groups" type="Node2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+use_parent_material = true
+
+[node name="Earth2_0Tree" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+z_index = 2
+use_parent_material = true
+position = Vector2(1983, -3204)
+scale = Vector2(1.26264, 1.00129)
+
+[node name="Earth2_0Tree2" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3680, -904)
+
+[node name="Earth2_0Tree3" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3384, -1781)
+
+[node name="Earth2_0Tree4" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-4223, -2872)
+
+[node name="Earth2_0Tree5" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3611, -4298)
+
+[node name="Earth2_0Tree6" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3927, 3833)
+
+[node name="Earth2_0Tree7" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3661, 3995)
+
+[node name="Earth2_0Tree8" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3967, 3469)
+
+[node name="Earth2_0Tree9" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-4531, 3664)
+
+[node name="Earth2_0Tree10" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7101, 3355)
+
+[node name="Earth2_0Tree11" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6818, 3220)
+
+[node name="Earth2_0Tree12" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-9980, 5871)
+
+[node name="Earth2_0Tree13" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-9366, 3715)
+
+[node name="Earth2_0Tree15" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(2200, -3292)
+
+[node name="Earth2_0Tree14" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-9107, 3534)
+
+[node name="Earth2_0Tree16" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2378, 7338)
+
+[node name="Earth2_0Tree17" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2006, 7987)
+
+[node name="Earth2_0Tree18" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2570, 7745)
+
+[node name="Earth2_0Tree19" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(1815, 7104)
+
+[node name="Earth2_0Tree20" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(1558, 7456)
+
+[node name="Earth2_0Tree21" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(2157, 7466)
+
+[node name="Earth2_0Tree22" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(1668, 7849)
+
+[node name="Earth2_0Tree23" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(9200, 6320)
+
+[node name="Earth2_0Tree24" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(8709, 6192)
+
+[node name="Earth2_0Tree25" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(9502, 6600)
+
+[node name="Earth2_0Tree26" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(8920, 6547)
+
+[node name="Earth2_0Tree27" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(9842, 6970)
+
+[node name="Earth2_0Tree28" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3665, -3928)
+
+[node name="Earth2_0Tree29" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2442, -5237)
+
+[node name="Earth2_0Tree30" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2679, -5449)
+
+[node name="Earth2_0Tree31" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-4061, -7568)
+
+[node name="Earth2_0Tree32" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3789, -7458)
+
+[node name="Earth2_0Tree35" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(85, -856)
+
+[node name="Earth2_0Tree33" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-4569, -7449)
+
+[node name="Earth2_0Tree36" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-945, -214)
+
+[node name="Earth2_0Tree37" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(130, -574)
+
+[node name="Earth2_0Tree34" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-275, -632)
+
+[node name="Earth2_0Tree38" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-1322, -647)
+
+[node name="Earth2_0Tree39" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-852, -491)
+
+[node name="Earth2_0Tree40" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(3118, 779)
+
+[node name="Earth2_0Tree41" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-1699, -329)
+
+[node name="Earth2_0Tree42" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6162, -859)
+
+[node name="Earth2_0Tree43" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6405, -1174)
+
+[node name="Earth2_0Tree44" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6746, -1712)
+
+[node name="Earth2_0Tree45" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6369, -2314)
+
+[node name="Earth2_0Tree46" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7924, -1319)
+
+[node name="Earth2_0Tree47" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7426, -2163)
+
+[node name="Earth2_0Tree48" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7935, -2532)
+
+[node name="Earth2_0Tree49" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7007, -510)
+
+[node name="Earth2_0Tree50" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-8476, -204)
+
+[node name="Earth2_0Tree51" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7459, -691)
+
+[node name="Earth2_0Tree52" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3129, 6625)
+
+[node name="Earth2_0Tree53" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2730, 6919)
+
+[node name="Earth2_0Tree54" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3270, 5598)
+
+[node name="Earth2_0Tree55" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-3561, 4752)
+
+[node name="Earth2_0Tree56" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(6301, 6048)
+
+[node name="Earth2_0Tree57" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(6479, 6302)
+
+[node name="Earth2_0Tree58" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(7800, 5870)
+
+[node name="Earth2_0Tree59" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(10149, 8245)
+
+[node name="Earth2_0Tree60" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(10467, 8270)
+
+[node name="Earth2_0Tree61" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(9941, -1701)
+
+[node name="Earth2_0Tree62" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(8376, -4183)
+
+[node name="Earth2_0Tree63" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(9328, -4070)
+
+[node name="Earth2_0Tree65" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(5249, -5167)
+
+[node name="Earth2_0Tree64" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(5036, -5079)
+
+[node name="Earth2_0Tree66" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(6202, -9389)
+
+[node name="Earth2_0Tree67" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(6432, -9512)
+
+[node name="Earth2_0Tree68" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(6626, -9252)
+
+[node name="Earth2_0Tree69" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(6058, -9367)
+
+[node name="Earth2_0Tree70" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(4568, -8769)
+
+[node name="Earth2_0Tree71" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(5477, -9540)
+
+[node name="SpeedFruit" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(6655, -7897)
+scale = Vector2(1.81591, 1.54592)
+
+[node name="SpeedFruit2" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(5852, -7955)
+scale = Vector2(1.83091, 1.89092)
+
+[node name="SpeedFruit3" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(6555, -5302)
+scale = Vector2(3.01249, 2.62)
+
+[node name="SpeedFruit4" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(8653.54, -4002)
+scale = Vector2(2.71915, 2.68)
+
+[node name="SpeedFruit6" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(48, -2964)
+scale = Vector2(1.66, 1.605)
+
+[node name="SpeedFruit5" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(3546.79, -5801.91)
+scale = Vector2(2.2705, 2.55985)
+
+[node name="SpeedFruit7" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(125, -342)
+scale = Vector2(1.945, 1.99)
+
+[node name="SpeedFruit8" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-1291, -129)
+scale = Vector2(1.905, 2.035)
+
+[node name="SpeedFruit9" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-4316, 3813)
+scale = Vector2(2.975, 3.055)
+
+[node name="SpeedFruit10" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(2417, 1189)
+scale = Vector2(2.45, 2.285)
+
+[node name="SpeedFruit11" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-928, 5070)
+scale = Vector2(2.8, 2.96)
+
+[node name="SpeedFruit12" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(2067, -7826)
+scale = Vector2(2.075, 2.02)
+
+[node name="SpeedFruit13" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(10616, -7726)
+scale = Vector2(2.285, 2.135)
+
+[node name="SpeedFruit15" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-3555, -1678)
+scale = Vector2(1.68, 1.85)
+
+[node name="SpeedFruit14" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(9425, 2225)
+scale = Vector2(2.64, 2.53)
+
+[node name="SpeedFruit16" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-4130, -2790)
+scale = Vector2(1.765, 1.765)
+
+[node name="SpeedFruit17" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-9002, 3711)
+scale = Vector2(2.57, 2.57)
+
+[node name="SpeedFruit18" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-8835, 9181)
+scale = Vector2(2.66, 2.66)
+
+[node name="SpeedFruit19" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(2079, 6784)
+scale = Vector2(3.425, 2.81)
+
+[node name="Hay" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-4398, -2810)
+
+[node name="SpeedFruit20" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-1668.12, 9470.96)
+scale = Vector2(3.14, 3.045)
+
+[node name="Hay2" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-4337, -2762)
+
+[node name="Hay4" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-4539, -1486)
+
+[node name="Hay3" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-3773, -817)
+
+[node name="Hay5" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-3720, -755)
+
+[node name="Hay6" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-3626, -784)
+
+[node name="Hay7" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-995, -477)
+
+[node name="Hay9" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-383, -134)
+
+[node name="Hay8" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-461, -105)
+
+[node name="Hay10" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3085, 860)
+
+[node name="Hay11" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6059, -5422)
+
+[node name="Hay12" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5980, -5394)
+
+[node name="Hay13" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7248, -7561)
+
+[node name="Hay14" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6513, -8013)
+
+[node name="Hay15" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6550, -7940)
+
+[node name="Hay16" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6571, -8047)
+
+[node name="Hay17" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5763, -8067)
+
+[node name="Hay18" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5720, -8021)
+
+[node name="Hay19" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5667, -8049)
+
+[node name="SpeedFruit21" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-649.68, 1986.07)
+scale = Vector2(2.21, 1.91)
+
+[node name="SpeedFruit22" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(407.728, -5361.8)
+scale = Vector2(2.234, 2.39097)
+
+[node name="SpeedFruit23" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(3717, -1134)
+scale = Vector2(2.64, 2.755)
+
+[node name="SpeedFruit24" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(9618.6, -737.065)
+scale = Vector2(2.55, 2.655)
+
+[node name="SpeedFruit25" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(6386, 3193)
+scale = Vector2(2.6, 2.71)
+
+[node name="SpeedFruit26" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(7467.8, 5979.25)
+scale = Vector2(2.65, 2.815)
+
+[node name="WitheredSpeedFruit" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-577, -177)
+
+[node name="SpeedFruit27" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(2237.86, -1807.21)
+scale = Vector2(2.205, 2.27)
+
+[node name="WitheredSpeedFruit2" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(41, -387)
+
+[node name="WitheredSpeedFruit3" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(2728, -1211)
+
+[node name="WitheredSpeedFruit4" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(3841, -3686)
+
+[node name="WitheredSpeedFruit5" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(5600, -5355)
+
+[node name="WitheredSpeedFruit6" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(7535, -7799)
+
+[node name="WitheredSpeedFruit7" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(6265, -8051)
+
+[node name="WitheredSpeedFruit8" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(5263, -8058)
+
+[node name="WitheredSpeedFruit9" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(5893, -6846)
+
+[node name="WitheredSpeedFruit10" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(8337, -4119)
+
+[node name="WitheredSpeedFruit11" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(9577, -649)
+
+[node name="WitheredSpeedFruit12" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(6700, -618)
+
+[node name="WitheredSpeedFruit13" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(2717, 2827)
+
+[node name="WitheredSpeedFruit14" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(3967, 2516)
+
+[node name="WitheredSpeedFruit15" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-2927, -346)
+
+[node name="WitheredSpeedFruit16" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-3327, 2491)
+
+[node name="WitheredSpeedFruit17" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-5050, 34)
+
+[node name="WitheredSpeedFruit18" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-2710, -922)
+
+[node name="WitheredSpeedFruit19" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-2683, -2925)
+
+[node name="WitheredSpeedFruit20" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-1866, -4205)
+
+[node name="WitheredSpeedFruit21" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-1485, -5695)
+
+[node name="WitheredSpeedFruit22" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-488, -6162)
+
+[node name="WitheredSpeedFruit23" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-1287, -7846)
+
+[node name="WitheredSpeedFruit24" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-2280, -8810)
+
+[node name="WitheredSpeedFruit25" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-3613, -8820)
+
+[node name="WitheredSpeedFruit26" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-2585, -7819)
+
+[node name="WitheredSpeedFruit27" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-8129, 2892)
+
+[node name="WitheredSpeedFruit28" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-3019, 3744)
+
+[node name="WitheredSpeedFruit29" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-1293, 342)
+
+[node name="Earth2_0Tree72" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-2613, 440)
+
+[node name="WitheredSpeedFruit30" parent="Tree_groups" instance=ExtResource("20_s0no7")]
+use_parent_material = true
+position = Vector2(-2282, 460)
+
+[node name="Earth2_0Tree73" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(3488, 1062)
+
+[node name="Earth2_0Tree74" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7152, -6917)
+
+[node name="Earth2_0Tree75" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6746, -7365)
+
+[node name="Earth2_0Tree76" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6474, -6933)
+
+[node name="Earth2_0Tree77" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7343, -5630)
+
+[node name="Earth2_0Tree78" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7127, -6239)
+
+[node name="Earth2_0Tree79" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-7648, -6017)
+
+[node name="Earth2_0Tree80" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-6879, -5808)
+
+[node name="Earth2_0Tree81" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-5412, -7325)
+
+[node name="Earth2_0Tree82" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-4987, -7109)
+
+[node name="Earth2_0Tree83" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-5038, -7713)
+
+[node name="Earth2_0Tree84" parent="Tree_groups" instance=ExtResource("17_g1f52")]
+use_parent_material = true
+position = Vector2(-5876, -7357)
+
+[node name="Grass" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4384, -2653)
+
+[node name="Grass2" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4408, -2585)
+
+[node name="Grass3" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5397, -2241)
+
+[node name="Grass4" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5461, -2186)
+
+[node name="Grass5" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5351, -2165)
+
+[node name="Grass6" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5474, -830)
+
+[node name="Grass7" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5804, -1250)
+
+[node name="Grass8" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5702, -1262)
+
+[node name="Grass9" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5728, -1178)
+
+[node name="Grass10" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5825, -1326)
+
+[node name="Grass11" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5931, -1216)
+
+[node name="Grass12" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5931, -1339)
+
+[node name="Grass13" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5664, -2712)
+
+[node name="Grass14" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5721, -2753)
+
+[node name="Grass15" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5604, -2794)
+
+[node name="Grass16" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5704, -2849)
+
+[node name="Grass17" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5532, -2950)
+
+[node name="Grass18" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6253, -3806)
+
+[node name="Grass19" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4678, -4111)
+
+[node name="Grass20" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4101, -6093)
+
+[node name="Grass21" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4768, -6934)
+
+[node name="Grass22" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4959, -7054)
+
+[node name="Grass23" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4939, -6928)
+
+[node name="Grass24" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4861, -6996)
+
+[node name="Grass25" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3750, -6659)
+
+[node name="Grass26" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4037, -6375)
+
+[node name="Grass27" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3369, -6211)
+
+[node name="Grass28" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4673, -5935)
+
+[node name="Grass29" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5753, -6263)
+
+[node name="Grass30" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5689, -6231)
+
+[node name="Grass31" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6125, -6895)
+
+[node name="Grass32" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6869, -5699)
+
+[node name="Grass33" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7113, -6075)
+
+[node name="Grass34" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6334, -6784)
+
+[node name="Grass35" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6123, -6766)
+
+[node name="Grass36" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6152, -6813)
+
+[node name="Grass37" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5739, -6146)
+
+[node name="Grass38" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5758, -6203)
+
+[node name="Grass39" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5705, -6186)
+
+[node name="Grass40" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5820, -6142)
+
+[node name="Grass41" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5579, -2715)
+
+[node name="Grass42" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5551, -2860)
+
+[node name="Grass43" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5642, -2920)
+
+[node name="Grass44" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5491, -2799)
+
+[node name="Grass45" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4650, -724)
+
+[node name="Grass46" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4465, -1130)
+
+[node name="Grass47" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5466, -1471)
+
+[node name="Grass48" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5975, -2131)
+
+[node name="Grass49" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5473, -7213)
+
+[node name="Grass50" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5455, -7122)
+
+[node name="Grass51" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5379, -7178)
+
+[node name="Grass52" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5069, -6965)
+
+[node name="Grass53" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4800, -7037)
+
+[node name="Grass54" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6764, -5679)
+
+[node name="Grass55" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7278, -5512)
+
+[node name="Grass56" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5706, -4837)
+
+[node name="Grass57" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4648, -4656)
+
+[node name="Grass58" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3463, -5361)
+
+[node name="Grass59" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3946, -5219)
+
+[node name="Grass60" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5421, -4881)
+
+[node name="Grass61" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6843, -4600)
+
+[node name="Grass62" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5668, -4710)
+
+[node name="Grass63" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5729, -4775)
+
+[node name="Grass64" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5647, -4789)
+
+[node name="Grass65" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3600, -3979)
+
+[node name="Grass66" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3717, -3807)
+
+[node name="Grass67" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3798, -3819)
+
+[node name="Grass68" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3794, -3900)
+
+[node name="Grass69" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3745, -3934)
+
+[node name="Grass70" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3898, -3848)
+
+[node name="Grass71" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4411, -2708)
+
+[node name="Grass72" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4311, -2676)
+
+[node name="Grass73" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4238, -2757)
+
+[node name="Grass74" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3580, -1550)
+
+[node name="Grass75" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3569, -1620)
+
+[node name="Grass76" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3881, -609)
+
+[node name="Grass77" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4218, -338)
+
+[node name="Grass78" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5358, 2728)
+
+[node name="Grass79" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5450, 2674)
+
+[node name="Grass80" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5421, 2775)
+
+[node name="Grass81" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4753, 4202)
+
+[node name="Grass82" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7791, 6772)
+
+[node name="Grass83" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6587, 5551)
+
+[node name="Grass84" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7045, 5236)
+
+[node name="Grass85" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8424, 5760)
+
+[node name="Grass86" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9983, 5973)
+
+[node name="Grass87" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9870, 5997)
+
+[node name="Grass88" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9906, 6049)
+
+[node name="Grass89" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9850, 5921)
+
+[node name="Grass90" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9301, 3995)
+
+[node name="Grass91" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9098, 3722)
+
+[node name="Grass92" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9234, 3792)
+
+[node name="Grass93" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9472, 3992)
+
+[node name="Grass94" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9399, 3938)
+
+[node name="Grass95" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9222, 3684)
+
+[node name="Grass96" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7221, 4502)
+
+[node name="Grass97" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7170, 3503)
+
+[node name="Grass98" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7119, 3427)
+
+[node name="Grass99" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7034, 3508)
+
+[node name="Grass100" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7088, 3559)
+
+[node name="Grass101" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6828, 3357)
+
+[node name="Grass102" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7002, 3329)
+
+[node name="Grass103" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6937, 3393)
+
+[node name="Grass104" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6919, 3331)
+
+[node name="Grass105" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6182, 2641)
+
+[node name="Grass106" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6175, 2754)
+
+[node name="Grass107" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5964, 3453)
+
+[node name="Grass108" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5227, 3317)
+
+[node name="Grass109" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4589, 3790)
+
+[node name="Grass110" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4494, 3777)
+
+[node name="Grass111" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4615, 3653)
+
+[node name="Grass112" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4738, 3793)
+
+[node name="Grass113" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4742, 3717)
+
+[node name="Grass114" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4303, 3920)
+
+[node name="Grass115" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4075, 3732)
+
+[node name="Grass116" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3776, 3974)
+
+[node name="Grass117" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4018, 3920)
+
+[node name="Grass118" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3913, 4075)
+
+[node name="Grass119" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3887, 3990)
+
+[node name="Grass120" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3881, 3929)
+
+[node name="Grass121" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3795, 4101)
+
+[node name="Grass122" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3809, 4037)
+
+[node name="Grass123" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3718, 4101)
+
+[node name="Grass124" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3691, 4809)
+
+[node name="Grass125" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3744, 4819)
+
+[node name="Grass126" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3680, 4747)
+
+[node name="Grass127" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3446, 4835)
+
+[node name="Grass128" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3060, 7457)
+
+[node name="Grass129" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2715, 7857)
+
+[node name="Grass130" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2599, 7847)
+
+[node name="Grass131" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2631, 7735)
+
+[node name="Grass132" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3135, 7156)
+
+[node name="Grass133" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2822, 6995)
+
+[node name="Grass134" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3105, 6757)
+
+[node name="Grass135" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3269, 6678)
+
+[node name="Grass136" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3198, 6751)
+
+[node name="Grass137" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3134, 6844)
+
+[node name="Grass138" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4487, 7489)
+
+[node name="Grass139" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6795, 6897)
+
+[node name="Grass140" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6788, 6971)
+
+[node name="Grass141" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5853, 7288)
+
+[node name="Grass142" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5806, 7180)
+
+[node name="Grass143" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5799, 7281)
+
+[node name="Grass144" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5543, 8350)
+
+[node name="Grass145" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8776, 9308)
+
+[node name="Grass146" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7754, 9825)
+
+[node name="Grass147" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8134, 9289)
+
+[node name="Grass148" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8254, 8462)
+
+[node name="Grass149" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7119, 8051)
+
+[node name="Grass150" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8110, 7596)
+
+[node name="Grass151" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7280, 7290)
+
+[node name="Grass152" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7313, 7338)
+
+[node name="Grass153" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9075, 7653)
+
+[node name="Grass154" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-9482, 6603)
+
+[node name="Grass155" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5625, 6130)
+
+[node name="Grass156" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4942, 5527)
+
+[node name="Grass157" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8473, -4193)
+
+[node name="Grass158" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8473, -4085)
+
+[node name="Grass159" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-8139, -3247)
+
+[node name="Grass160" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7654, -3815)
+
+[node name="Grass161" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7711, -3812)
+
+[node name="Grass162" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7675, -3881)
+
+[node name="Grass163" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7390, -5502)
+
+[node name="Grass166" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7351, -5675)
+
+[node name="Grass164" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7480, -5694)
+
+[node name="Grass165" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7195, -5795)
+
+[node name="Grass167" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7290, -6208)
+
+[node name="Grass168" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-7139, -6828)
+
+[node name="Grass169" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6781, -7273)
+
+[node name="Grass170" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-6028, -7371)
+
+[node name="Grass171" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5733, -7563)
+
+[node name="Grass172" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-5589, -7328)
+
+[node name="Grass173" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4280, -7734)
+
+[node name="Grass174" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4398, -7677)
+
+[node name="Grass175" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4287, -7613)
+
+[node name="Grass176" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-4347, -7591)
+
+[node name="Grass177" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3671, -7321)
+
+[node name="Grass178" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3530, -7445)
+
+[node name="Grass179" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3575, -7373)
+
+[node name="Grass180" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3646, -7424)
+
+[node name="Grass181" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3566, -7285)
+
+[node name="Grass182" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3050, -7162)
+
+[node name="Grass183" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3077, -7085)
+
+[node name="Grass184" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2986, -7098)
+
+[node name="Grass185" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2708, -6032)
+
+[node name="Grass186" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2616, -6071)
+
+[node name="Grass187" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-2745, -6095)
+
+[node name="Grass188" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(-3762, -3733)
+
+[node name="Grass189" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6445, 6387)
+
+[node name="Grass190" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6346, 6413)
+
+[node name="Grass191" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6440, 6458)
+
+[node name="Grass192" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6049, 6151)
+
+[node name="Grass193" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6129, 6236)
+
+[node name="Grass194" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6290, 6294)
+
+[node name="Grass195" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6230, 6190)
+
+[node name="Grass196" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6184, 6291)
+
+[node name="Grass197" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6310, 6210)
+
+[node name="Grass198" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7428, 6092)
+
+[node name="Grass199" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6843, 6284)
+
+[node name="Grass200" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6897, 6172)
+
+[node name="Grass201" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7018, 7178)
+
+[node name="Grass202" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7070, 7277)
+
+[node name="Grass203" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7106, 7197)
+
+[node name="Grass204" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(5518, 7737)
+
+[node name="Grass205" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(5690, 7985)
+
+[node name="Grass206" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(5798, 7345)
+
+[node name="Grass207" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(5150, 6837)
+
+[node name="Grass208" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4426, 7061)
+
+[node name="Grass209" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4518, 6326)
+
+[node name="Grass210" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4616, 6630)
+
+[node name="Grass211" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4677, 6691)
+
+[node name="Grass212" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4674, 6589)
+
+[node name="Grass213" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(2140, 7583)
+
+[node name="Grass214" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1895, 7458)
+
+[node name="Grass215" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1972, 7441)
+
+[node name="Grass216" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1930, 7326)
+
+[node name="Grass217" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1757, 7296)
+
+[node name="Grass218" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1809, 7269)
+
+[node name="Grass219" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(2023, 7264)
+
+[node name="Grass220" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1852, 7681)
+
+[node name="Grass221" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1698, 7933)
+
+[node name="Grass222" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1766, 7842)
+
+[node name="Grass223" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1534, 7758)
+
+[node name="Grass224" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1312, 7664)
+
+[node name="Grass225" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1354, 7760)
+
+[node name="Grass226" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1426, 7617)
+
+[node name="Grass227" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3250, 8252)
+
+[node name="Grass228" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1649, 8826)
+
+[node name="Grass229" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1679, 8901)
+
+[node name="Grass230" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(2143, 8542)
+
+[node name="Grass231" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(2099, 8721)
+
+[node name="Grass232" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(1442, 8302)
+
+[node name="Grass233" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(2992, 7795)
+
+[node name="Grass234" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3163, 6660)
+
+[node name="Grass235" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3133, 6739)
+
+[node name="Grass236" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3214, 6742)
+
+[node name="Grass237" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3016, 6654)
+
+[node name="Grass238" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3459, 6425)
+
+[node name="Grass239" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3127, 6397)
+
+[node name="Grass240" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4024, 6024)
+
+[node name="Grass241" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(3977, 6060)
+
+[node name="Grass242" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4031, 6150)
+
+[node name="Grass243" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4331, 5869)
+
+[node name="Grass244" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4360, 5968)
+
+[node name="Grass245" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4450, 5965)
+
+[node name="Grass246" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(5494, 6361)
+
+[node name="Grass247" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6249, 7000)
+
+[node name="Grass248" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6177, 7013)
+
+[node name="Grass249" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6265, 7090)
+
+[node name="Grass250" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6929, 7995)
+
+[node name="Grass251" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6871, 8048)
+
+[node name="Grass252" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6935, 8096)
+
+[node name="Grass253" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8131, 6996)
+
+[node name="Grass254" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8119, 7116)
+
+[node name="Grass255" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8170, 7128)
+
+[node name="Grass256" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8158, 7221)
+
+[node name="Grass257" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7993, 7173)
+
+[node name="Grass258" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8017, 7056)
+
+[node name="Grass259" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8470, 6141)
+
+[node name="Grass260" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8575, 6507)
+
+[node name="Grass261" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7648, 6179)
+
+[node name="Grass262" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7557, 6174)
+
+[node name="Grass263" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7617, 6273)
+
+[node name="Grass264" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7479, 6175)
+
+[node name="Grass265" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7479, 6281)
+
+[node name="Grass266" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7611, 6015)
+
+[node name="Grass267" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7449, 5971)
+
+[node name="Grass268" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7525, 6074)
+
+[node name="Grass269" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8398, 6235)
+
+[node name="Grass270" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7819, 5989)
+
+[node name="Grass271" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7716, 5878)
+
+[node name="Grass272" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7899, 5857)
+
+[node name="Grass273" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8672, 6078)
+
+[node name="Grass274" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(9901, 7057)
+
+[node name="Grass275" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(9244, 6740)
+
+[node name="Grass276" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(9465, 7979)
+
+[node name="Grass277" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8911, 7639)
+
+[node name="Grass278" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8181, 7928)
+
+[node name="Grass279" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(9182, 7006)
+
+[node name="Grass280" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8831, 7673)
+
+[node name="Grass281" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(8718, 7108)
+
+[node name="Grass282" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7824, 7679)
+
+[node name="Grass283" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(6308, 7572)
+
+[node name="Grass284" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(7293, 6780)
+
+[node name="Grass285" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4245, 8434)
+
+[node name="Grass286" parent="Tree_groups" instance=ExtResource("21_drrb5")]
+use_parent_material = true
+position = Vector2(4460, 7546)
+
+[node name="Bush" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3848, -826)
+
+[node name="Bush2" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3580, -820)
+
+[node name="Bush3" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6091, -904)
+
+[node name="Bush4" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6226, -1000)
+
+[node name="Bush5" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6030, -1032)
+
+[node name="Bush6" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6810, -1628)
+
+[node name="Bush7" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7006, -1636)
+
+[node name="Bush8" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6950, -1732)
+
+[node name="Bush9" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7330, -2068)
+
+[node name="Bush10" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7530, -2020)
+
+[node name="Bush11" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7926, -2400)
+
+[node name="Bush12" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8110, -2544)
+
+[node name="Bush13" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6532, -5158)
+
+[node name="Bush14" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6457, -5067)
+
+[node name="Bush15" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6595, -5009)
+
+[node name="Bush16" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6457, -4897)
+
+[node name="Bush17" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7594, -5521)
+
+[node name="Bush18" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4142, -2670)
+
+[node name="Bush19" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3785, -658)
+
+[node name="Bush20" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3996, -478)
+
+[node name="Bush21" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6981, -5644)
+
+[node name="Bush22" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7018, -5792)
+
+[node name="Bush23" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7118, -6120)
+
+[node name="Bush24" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6677, -7078)
+
+[node name="Bush25" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6839, -7224)
+
+[node name="Bush26" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5856, -7218)
+
+[node name="Bush27" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6120, -7269)
+
+[node name="Bush28" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5442, -7382)
+
+[node name="Bush29" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5611, -7616)
+
+[node name="Bush30" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5745, -7444)
+
+[node name="Bush31" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4628, -7592)
+
+[node name="Bush32" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4958, -7400)
+
+[node name="Bush33" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3276, -7330)
+
+[node name="Bush34" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3932, -6694)
+
+[node name="Bush35" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3866, -6604)
+
+[node name="Bush36" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5508, -540)
+
+[node name="Bush37" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5015, -1609)
+
+[node name="Bush38" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5161, -1512)
+
+[node name="Bush39" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5253, -1594)
+
+[node name="Bush40" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5575, -3867)
+
+[node name="Bush41" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6688, -3561)
+
+[node name="Bush42" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5510, 2855)
+
+[node name="Bush43" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5244, 2899)
+
+[node name="Bush44" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5383, 2949)
+
+[node name="Bush45" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5160, 2584)
+
+[node name="Bush46" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4500, 3824)
+
+[node name="Bush47" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4605, 3950)
+
+[node name="Bush48" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4286, 3971)
+
+[node name="Bush49" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4041, 3828)
+
+[node name="Bush50" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4010, 3976)
+
+[node name="Bush51" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4136, 4102)
+
+[node name="Bush52" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-10407, 5953)
+
+[node name="Bush53" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-10111, 5997)
+
+[node name="Bush54" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-10268, 6051)
+
+[node name="Bush55" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7995, 6187)
+
+[node name="Bush56" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8368, 5644)
+
+[node name="Bush57" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8999, 4953)
+
+[node name="Bush58" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8614, 4296)
+
+[node name="Bush59" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7601, 4699)
+
+[node name="Bush60" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7436, 4661)
+
+[node name="Bush61" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7553, 4617)
+
+[node name="Bush62" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3573, 7727)
+
+[node name="Bush63" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-2890, 7176)
+
+[node name="Bush64" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-2995, 7101)
+
+[node name="Bush65" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3615, 6847)
+
+[node name="Bush66" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3465, 6793)
+
+[node name="Bush67" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4744, 6813)
+
+[node name="Bush68" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5980, 5476)
+
+[node name="Bush69" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6699, 6649)
+
+[node name="Bush70" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5788, 6323)
+
+[node name="Bush71" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6531, 8066)
+
+[node name="Bush72" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7730, 8378)
+
+[node name="Bush73" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-7358, 9259)
+
+[node name="Bush74" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-9844, 8917)
+
+[node name="Bush75" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-9151, 7309)
+
+[node name="Bush76" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-10120, 7995)
+
+[node name="Bush77" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-9259, 7208)
+
+[node name="Bush78" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8997, 7222)
+
+[node name="Bush79" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-9515, 6152)
+
+[node name="Bush80" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-9454, 5674)
+
+[node name="Bush81" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5169, 4080)
+
+[node name="Bush82" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-6064, 3916)
+
+[node name="Bush83" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5910, 4295)
+
+[node name="Bush84" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4601, 5363)
+
+[node name="Bush85" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-2081, 8647)
+
+[node name="Bush86" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-2295, 9923)
+
+[node name="Bush87" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-2412, 9117)
+
+[node name="Bush88" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-4009, 9383)
+
+[node name="Bush89" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3646, 9646)
+
+[node name="Bush90" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-3403, 8502)
+
+[node name="Bush91" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-5262, 8845)
+
+[node name="Bush92" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(1720, 8039)
+
+[node name="Bush93" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(1704, 7836)
+
+[node name="Bush94" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(2244, 7585)
+
+[node name="Bush95" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(1902, 7467)
+
+[node name="Bush96" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(2580, 6960)
+
+[node name="Bush97" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(6013, 6341)
+
+[node name="Bush98" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(7941, 6122)
+
+[node name="Bush99" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(7775, 7633)
+
+[node name="Bush100" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(5064, 8322)
+
+[node name="Bush101" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(4645, 9040)
+
+[node name="Bush102" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(3394, 8259)
+
+[node name="Bush103" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(3006, 8602)
+
+[node name="Bush104" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(3934, 7020)
+
+[node name="Bush105" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(4123, 7160)
+
+[node name="Bush106" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(3916, 7152)
+
+[node name="Bush107" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(2619, 6589)
+
+[node name="Bush108" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(2501, 6677)
+
+[node name="Bush109" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(5064, 6054)
+
+[node name="Bush110" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(6850, 5986)
+
+[node name="Bush111" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(8520, 8047)
+
+[node name="Bush112" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8070, -5013)
+
+[node name="Bush113" parent="Tree_groups" instance=ExtResource("22_4f2tx")]
+use_parent_material = true
+position = Vector2(-8202, -4640)
+
+[node name="SpeedFruit28" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(3639.3, 3490.53)
+scale = Vector2(2.025, 1.89)
+
+[node name="SpeedFruit29" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(3402.74, 5883.82)
+scale = Vector2(2.345, 2.66)
+
+[node name="SpeedFruit30" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-9917.3, -1992.33)
+scale = Vector2(2.475, 2.71)
+
+[node name="SpeedFruit31" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-6584.78, 5569.95)
+scale = Vector2(3.285, 3.35)
+
+[node name="SpeedFruit32" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-9014, 2453)
+scale = Vector2(3.665, 3.605)
+
+[node name="SpeedFruit33" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-7510, 8775)
+scale = Vector2(3.395, 3.335)
+
+[node name="SpeedFruit34" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(6639, -1965)
+scale = Vector2(4.295, 4.175)
+
+[node name="SpeedFruit35" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-5533, 2420)
+
+[node name="SpeedFruit36" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(-8195, -194)
+
+[node name="Rocks" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(5337, -8070)
+
+[node name="Rocks2" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(6122, -7626)
+scale = Vector2(0.57, 0.65)
+
+[node name="Rocks3" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(2076, -7709)
+
+[node name="Rocks4" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(3572.96, -4832.8)
+scale = Vector2(0.68, 0.6)
+
+[node name="Rocks5" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(6053, -4682)
+
+[node name="Rocks6" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(8322.21, -1729.11)
+scale = Vector2(2.43, 0.57)
+
+[node name="Rocks8" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(6685, -9195)
+
+[node name="Rocks7" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(6864, -1515)
+scale = Vector2(0.71, 0.57)
+
+[node name="Rocks9" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(5945, -9315)
+
+[node name="Rocks10" parent="Tree_groups" instance=ExtResource("13_jdpvx")]
+use_parent_material = true
+position = Vector2(7280.78, -8379.55)
+scale = Vector2(0.74, 0.85)
+
+[node name="Hay20" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3009, 853)
+
+[node name="Hay21" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3762, -1001)
+
+[node name="Hay22" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3707, -1048)
+
+[node name="Hay23" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3785, -1072)
+
+[node name="Hay24" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1997, -2591)
+
+[node name="Hay25" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2065, -2500)
+
+[node name="Hay26" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2001, -2524)
+
+[node name="Hay27" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1991, -2688)
+
+[node name="Hay28" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1010, -2955)
+
+[node name="Hay29" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(467, -2641)
+
+[node name="Hay30" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(169, -2727)
+
+[node name="Hay31" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(134, -2638)
+
+[node name="Hay32" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(207, -2663)
+
+[node name="Hay33" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(166, -2593)
+
+[node name="Hay34" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(147, -2533)
+
+[node name="Hay35" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6118, -791)
+
+[node name="Hay36" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6515, -2327)
+
+[node name="Hay37" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6643, -1893)
+
+[node name="Hay38" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6619, -2330)
+
+[node name="Hay39" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6558, -2334)
+
+[node name="Hay40" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7993, -2608)
+
+[node name="Hay41" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5540, -4599)
+
+[node name="Hay42" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3343, -4549)
+
+[node name="Hay43" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2214, -5047)
+
+[node name="Hay44" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2058, -4145)
+
+[node name="Hay45" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2788, -4856)
+
+[node name="Hay46" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2556, -5904)
+
+[node name="Hay47" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2632, -5430)
+
+[node name="Hay48" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2544, -5405)
+
+[node name="Hay49" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2604, -5345)
+
+[node name="Hay50" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2672, -5373)
+
+[node name="Hay51" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3024, -6001)
+
+[node name="Hay52" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3128, -5959)
+
+[node name="Hay53" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3048, -5965)
+
+[node name="Hay54" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2690, -6320)
+
+[node name="Hay55" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2257, -7038)
+
+[node name="Hay56" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2298, -7004)
+
+[node name="Hay57" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2365, -6957)
+
+[node name="Hay58" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2446, -6943)
+
+[node name="Hay59" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2533, -6930)
+
+[node name="Hay60" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2584, -7004)
+
+[node name="Hay61" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2668, -7044)
+
+[node name="Hay62" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2224, -7142)
+
+[node name="Hay63" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2227, -7259)
+
+[node name="Hay64" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2281, -7320)
+
+[node name="Hay65" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2365, -7367)
+
+[node name="Hay66" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2449, -7367)
+
+[node name="Hay67" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2395, -7270)
+
+[node name="Hay68" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2321, -7246)
+
+[node name="Hay69" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2333, -7165)
+
+[node name="Hay70" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2330, -7084)
+
+[node name="Hay71" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2449, -7063)
+
+[node name="Hay72" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2417, -7174)
+
+[node name="Hay73" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2501, -7214)
+
+[node name="Hay74" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2511, -7137)
+
+[node name="Hay75" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2604, -7150)
+
+[node name="Hay76" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2708, -7153)
+
+[node name="Hay77" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2611, -7248)
+
+[node name="Hay78" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2522, -7308)
+
+[node name="Hay79" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2449, -7325)
+
+[node name="Hay80" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2555, -7379)
+
+[node name="Hay81" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2468, -7411)
+
+[node name="Hay82" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2627, -7364)
+
+[node name="Hay83" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2675, -7305)
+
+[node name="Hay84" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2725, -7254)
+
+[node name="Hay85" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2597, -6965)
+
+[node name="Hay86" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2634, -7019)
+
+[node name="Hay87" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2715, -7111)
+
+[node name="Hay88" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2532, -7095)
+
+[node name="Hay89" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(940, 861)
+
+[node name="Hay90" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1005, 920)
+
+[node name="Hay91" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1021, 831)
+
+[node name="Hay92" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1094, 860)
+
+[node name="Hay93" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1075, 714)
+
+[node name="Hay94" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1161, 733)
+
+[node name="Hay95" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1183, 657)
+
+[node name="Hay96" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1139, 825)
+
+[node name="Hay97" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1253, 726)
+
+[node name="Hay98" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1285, 634)
+
+[node name="Hay99" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1161, 520)
+
+[node name="Hay100" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1237, 539)
+
+[node name="Hay101" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1342, 523)
+
+[node name="Hay102" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1250, 466)
+
+[node name="Hay103" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1358, 396)
+
+[node name="Hay104" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1364, 606)
+
+[node name="Hay105" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1402, 491)
+
+[node name="Hay106" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1485, 580)
+
+[node name="Hay107" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1269, 815)
+
+[node name="Hay108" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1364, 701)
+
+[node name="Hay109" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1459, 669)
+
+[node name="Hay110" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1567, -552)
+
+[node name="Hay111" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1610, -476)
+
+[node name="Hay112" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1658, -543)
+
+[node name="Hay113" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1677, -460)
+
+[node name="Hay114" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1508, -527)
+
+[node name="Hay115" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1537, -448)
+
+[node name="Hay116" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1613, -406)
+
+[node name="Hay117" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1563, -645)
+
+[node name="Hay118" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1638, -626)
+
+[node name="Hay119" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1710, -554)
+
+[node name="Hay120" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1692, -407)
+
+[node name="Hay121" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-7719, 1575)
+
+[node name="Hay122" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-7660, 1600)
+
+[node name="Hay123" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-7756, 1627)
+
+[node name="Hay124" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-7666, 1669)
+
+[node name="Hay125" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-7741, 1744)
+
+[node name="Hay126" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-7582, 1553)
+
+[node name="Hay127" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-8322, 938)
+
+[node name="Hay128" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-9582, 1505)
+
+[node name="Hay129" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-8768, 1291)
+
+[node name="Hay130" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-8792, 1395)
+
+[node name="Hay131" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-8664, 1409)
+
+[node name="Hay132" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-8692, 1414)
+
+[node name="Hay133" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-8768, 1524)
+
+[node name="Hay134" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-2243, 3396)
+
+[node name="Hay135" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-1621, 2706)
+
+[node name="Hay136" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-2825, 2754)
+
+[node name="Hay137" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(39.0001, 4814)
+
+[node name="Hay138" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-28, 7594)
+
+[node name="Hay139" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(130, 4658)
+
+[node name="Hay140" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(86, 4783)
+
+[node name="Hay141" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(3633, 2839)
+
+[node name="Hay142" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(2404, 3424)
+
+[node name="Hay143" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1981, 2941)
+
+[node name="Hay144" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1869, 2838)
+
+[node name="Hay145" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1887, 2899)
+
+[node name="Hay146" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6637, 3089)
+
+[node name="Hay147" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6600, 3163)
+
+[node name="Hay148" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6707, 3158)
+
+[node name="Hay149" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5587, 822)
+
+[node name="Hay150" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5663, 786)
+
+[node name="Hay151" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5487, 662)
+
+[node name="Hay152" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5779, 818)
+
+[node name="Hay153" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(5915, 842)
+
+[node name="Hay154" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6775, 894)
+
+[node name="Hay155" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6287, 1646)
+
+[node name="Hay156" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(4086, 1727)
+
+[node name="Hay157" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8472, -316)
+
+[node name="Hay158" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8466, -228)
+
+[node name="Hay159" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8396, -272)
+
+[node name="Hay160" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8364, -189)
+
+[node name="Hay161" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-2330, -8458)
+
+[node name="Hay162" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-794, -6858)
+
+[node name="Hay163" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(1094, -6538)
+
+[node name="Hay164" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7846, -6346)
+
+[node name="Hay165" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7331, -7501)
+
+[node name="Hay166" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9002, -6531)
+
+[node name="Hay167" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7329, -7377)
+
+[node name="Hay168" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9036, -6446)
+
+[node name="Hay169" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8934, -6471)
+
+[node name="Hay170" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7863, -6249)
+
+[node name="Hay171" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8990, -6357)
+
+[node name="Hay172" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7778, -6262)
+
+[node name="Hay173" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8545, -4143)
+
+[node name="Hay174" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8463, -4064)
+
+[node name="Hay175" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8453, -4202)
+
+[node name="Hay176" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8215, -4083)
+
+[node name="Hay177" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8249, -4150)
+
+[node name="Hay178" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8358, -4031)
+
+[node name="Hay179" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8463, -3955)
+
+[node name="Hay180" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8591, -3979)
+
+[node name="Hay181" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(10775, -4283)
+
+[node name="Hay182" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9274, -3201)
+
+[node name="Hay183" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9316, -3066)
+
+[node name="Hay184" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9265, -3100)
+
+[node name="Hay185" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6917, -3032)
+
+[node name="Hay186" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6922, -2961)
+
+[node name="Hay187" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7003, -3004)
+
+[node name="Hay188" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7017, -2904)
+
+[node name="Hay189" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6698, -2377)
+
+[node name="Hay190" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6682, -2273)
+
+[node name="Hay191" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7079, -2401)
+
+[node name="Hay192" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6987, -2415)
+
+[node name="Hay193" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7069, -2344)
+
+[node name="SpeedFruit37" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(6841, -3779)
+scale = Vector2(2.08841, 2.18436)
+
+[node name="SpeedFruit38" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(3752.6, -3074.61)
+scale = Vector2(1.8, 2.07)
+
+[node name="SpeedFruit39" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(1832, -3775)
+scale = Vector2(1.88, 1.91)
+
+[node name="SpeedFruit40" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(1037.84, 3786.8)
+scale = Vector2(2.52, 2.4)
+
+[node name="Hay194" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8911, -4226)
+
+[node name="SpeedFruit41" parent="Tree_groups" instance=ExtResource("18_muhiq")]
+use_parent_material = true
+position = Vector2(290, 7059)
+scale = Vector2(2.56, 2.72)
+
+[node name="Hay195" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(10630, -4338)
+
+[node name="Hay196" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7742, -8938)
+
+[node name="Hay197" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7676, -8898)
+
+[node name="Hay198" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7756, -8858)
+
+[node name="Hay199" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7584, -8870)
+
+[node name="Hay200" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7676, -8814)
+
+[node name="Hay201" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7456, -8878)
+
+[node name="Hay202" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(7528, -8862)
+
+[node name="Hay203" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8384, -9410)
+
+[node name="Hay204" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8460, -9414)
+
+[node name="Hay205" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9300, -9178)
+
+[node name="Hay206" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9240, -9430)
+
+[node name="Hay207" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9304, -9342)
+
+[node name="Hay208" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9216, -9346)
+
+[node name="Hay209" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9613, -8297)
+
+[node name="Hay210" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9580, -8269)
+
+[node name="Hay211" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9645, -8218)
+
+[node name="Hay212" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9159, -8178)
+
+[node name="Hay213" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9121, -8189)
+
+[node name="Hay214" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9084, -8135)
+
+[node name="Hay215" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9158, -8098)
+
+[node name="Hay216" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9091, -8051)
+
+[node name="Hay217" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6527, -6762)
+
+[node name="Hay218" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6570, -6696)
+
+[node name="Hay219" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6501, -6701)
+
+[node name="Hay220" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6095, -6253)
+
+[node name="Hay221" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6098, -6146)
+
+[node name="Hay222" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6023, -6232)
+
+[node name="Hay223" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6012, -6356)
+
+[node name="Hay224" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6112, -6374)
+
+[node name="Hay225" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6178, -6300)
+
+[node name="Hay226" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6066, -5350)
+
+[node name="Hay227" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(8451, -4736)
+
+[node name="Hay228" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6865, -3707)
+
+[node name="Hay229" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6776, -3714)
+
+[node name="Hay230" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6825, -3631)
+
+[node name="Hay231" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6861, -3562)
+
+[node name="Hay232" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6903, -3644)
+
+[node name="Hay233" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(6982, -2364)
+
+[node name="Hay234" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9552, -2051)
+
+[node name="Hay235" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9588, -1984)
+
+[node name="Hay237" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9813, -1606)
+
+[node name="Hay236" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9476, -1988)
+
+[node name="Hay238" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(9897, -1605)
+
+[node name="Hay239" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-617, 9526)
+
+[node name="Hay240" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-697, 9422)
+
+[node name="Hay241" parent="Tree_groups" instance=ExtResource("19_8i7yg")]
+use_parent_material = true
+position = Vector2(-585, 9392)
+
+[node name="Node Resource Spawner" parent="." instance=ExtResource("23_sap40")]
+z_index = 2
+y_sort_enabled = true
+resource_chances = {
+"Biogene": 0.55,
+"DuctTape": 0.2,
+"Food": 0.4,
+"Fuel": 0.4,
+"Medicine": 0.12,
+"Oxygen": 0.4,
+"SpareParts": 0.55
+}
+number_of_resources = 263
+
+[node name="Node2D" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+
+[node name="Node2D2" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4078, 6553)
+
+[node name="Node2D3" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2967, 7825)
+
+[node name="Node2D4" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4077, 7848)
+
+[node name="Node2D5" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5457, 7489)
+
+[node name="Node2D6" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5409, 6254)
+
+[node name="Node2D7" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7076, 7405)
+
+[node name="Node2D8" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4918, 8532)
+
+[node name="Node2D9" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3288, 8843)
+
+[node name="Node2D10" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7615, 7956)
+
+[node name="Node2D11" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6596, 6770)
+
+[node name="Node2D12" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8118, 6830)
+
+[node name="Node2D13" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8670, 7393)
+
+[node name="Node2D14" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(9221, 8064)
+
+[node name="Node2D15" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(9581, 7309)
+
+[node name="Node2D16" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1905, 8688)
+
+[node name="Node2D17" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6367, -7544)
+
+[node name="Node2D18" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7128, -6412)
+
+[node name="Node2D19" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7470, -4518)
+
+[node name="Node2D20" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5549, -4604)
+
+[node name="Node2D21" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3056, -4775)
+
+[node name="Node2D22" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8094, -2913)
+
+[node name="Node2D23" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8161, -976)
+
+[node name="Node2D24" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8874, 2199)
+
+[node name="Node2D25" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6843, 3020)
+
+[node name="Node2D26" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4165, 3356)
+
+[node name="Node2D27" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1306, 4169)
+
+[node name="Node2D28" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3875, 5729)
+
+[node name="Node2D29" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-521, 5330)
+
+[node name="Node2D30" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(545, 6567)
+
+[node name="Node2D31" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8042, 3065)
+
+[node name="Node2D32" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7243, 4321)
+
+[node name="Node2D33" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8632, 5006)
+
+[node name="Node2D34" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6577, 5025)
+
+[node name="Node2D35" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5340, 5482)
+
+[node name="Node2D36" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7909, 4740)
+
+[node name="Node2D37" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8577, 858)
+
+[node name="Node2D38" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1254, 1148)
+
+[node name="Node2D39" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(711, 996)
+
+[node name="Node2D40" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1169, 504)
+
+[node name="Node2D41" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(35, 8001)
+
+[node name="Node2D42" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-1423, 8984)
+
+[node name="Node2D43" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8170, 6746)
+
+[node name="Node2D44" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7339, 7424)
+
+[node name="Node2D45" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5695, 7119)
+
+[node name="Node2D46" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6153, 7831)
+
+[node name="Node2D47" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6627, 6424)
+
+[node name="Node2D48" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6610, 8746)
+
+[node name="Node2D49" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8763, 8170)
+
+[node name="Node2D50" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8068, 8730)
+
+[node name="Node2D51" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8780, 6068)
+
+[node name="Node2D52" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5186, 6221)
+
+[node name="Node2D53" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4932, 7950)
+
+[node name="Node2D54" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4712, 8865)
+
+[node name="Node2D55" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3525, 9002)
+
+[node name="Node2D56" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3301, 7987)
+
+[node name="Node2D57" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4123, 7026)
+
+[node name="Node2D58" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7551, 5595)
+
+[node name="Node2D59" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5138, 4912)
+
+[node name="Node2D60" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-10242, 6599)
+
+[node name="Node2D61" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-10007, 8169)
+
+[node name="Node2D62" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8281, 4770)
+
+[node name="Node2D63" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7289, 4034)
+
+[node name="Node2D64" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8031, 3260)
+
+[node name="Node2D65" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8719, 2046)
+
+[node name="Node2D66" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9462, -1861)
+
+[node name="Node2D67" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5123, -2461)
+
+[node name="Node2D68" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5140, -727)
+
+[node name="Node2D69" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4344, -727)
+
+[node name="Node2D70" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4394, -2077)
+
+[node name="Node2D71" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6722, -3408)
+
+[node name="Node2D72" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5694, -3337)
+
+[node name="Node2D73" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7750, -3458)
+
+[node name="Node2D74" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7175, -3144)
+
+[node name="Node2D75" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7997, -4339)
+
+[node name="Node2D76" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6853, -4788)
+
+[node name="Node2D77" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5505, -4356)
+
+[node name="Node2D78" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4378, -3686)
+
+[node name="Node2D79" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4822, -5326)
+
+[node name="Node2D80" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6133, -5340)
+
+[node name="Node2D81" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5577, -6580)
+
+[node name="Node2D82" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5335, -5810)
+
+[node name="Node2D83" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3667, -5611)
+
+[node name="Node2D84" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4095, -5069)
+
+[node name="Node2D85" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2869, -5026)
+
+[node name="Node2D86" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3097, -6381)
+
+[node name="Node2D87" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4091, -6885)
+
+[node name="Node2D88" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4699, -6584)
+
+[node name="Node2D89" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3884, -6172)
+
+[node name="Node2D90" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7716, -5074)
+
+[node name="Node2D91" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6261, -3990)
+
+[node name="Node2D92" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5096, -3248)
+
+[node name="Node2D93" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8347, -3782)
+
+[node name="Node2D94" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8436, -3274)
+
+[node name="Node2D95" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5599, -1894)
+
+[node name="Node2D96" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4942, -1440)
+
+[node name="Node2D97" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4729, 5414)
+
+[node name="Node2D98" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4057, -1647)
+
+[node name="Node2D99" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7329, -4360)
+
+[node name="Node2D100" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2228, -1453)
+
+[node name="Node2D101" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3479, -5394)
+
+[node name="Node2D102" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(703, -5020)
+
+[node name="Node2D103" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(810, -4145)
+
+[node name="Node2D104" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(265, -2521)
+
+[node name="Node2D105" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3912, 1261)
+
+[node name="Node2D106" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5968, 818)
+
+[node name="Node2D107" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8206, 374)
+
+[node name="Node2D108" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6956, 1765)
+
+[node name="Node2D109" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6536, 7310)
+
+[node name="Node2D110" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9473, 8437)
+
+[node name="Node2D111" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9928, 8940)
+
+[node name="Node2D112" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9725, 7370)
+
+[node name="Node2D113" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8898, 6806)
+
+[node name="Node2D114" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5745, 8856)
+
+[node name="Node2D115" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4511, 9395)
+
+[node name="Node2D116" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4271, 8353)
+
+[node name="Node2D117" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4127, 6255)
+
+[node name="Node2D118" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4726, 7154)
+
+[node name="Node2D119" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6057, 6135)
+
+[node name="Node2D120" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7303, 6243)
+
+[node name="Node2D121" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5745, 5140)
+
+[node name="Node2D122" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7735, 4937)
+
+[node name="Node2D123" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6297, 3882)
+
+[node name="Node2D124" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8107, 4037)
+
+[node name="Node2D125" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9101, 4721)
+
+[node name="Node2D126" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8922, 5332)
+
+[node name="Node2D127" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9497, 6579)
+
+[node name="Node2D128" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6021, 8365)
+
+[node name="Node2D129" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5446, 7538)
+
+[node name="Node2D130" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3827, 9599)
+
+[node name="Node2D131" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2641, 8377)
+
+[node name="Node2D132" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2940, 8748)
+
+[node name="Node2D133" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2197, 8952)
+
+[node name="Node2D134" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2233, 9575)
+
+[node name="Node2D135" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-1778, 8532)
+
+[node name="Node2D136" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2113, 8281)
+
+[node name="Node2D137" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4594, 5895)
+
+[node name="Node2D138" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5517, 5668)
+
+[node name="Node2D139" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7100, 5152)
+
+[node name="Node2D140" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4535, 4984)
+
+[node name="Node2D141" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4103, 5344)
+
+[node name="Node2D142" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5326, 4433)
+
+[node name="Node2D143" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5961, 4733)
+
+[node name="Node2D144" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6752, 4301)
+
+[node name="Node2D145" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4367, 4517)
+
+[node name="Node2D146" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8159, 7766)
+
+[node name="Node2D147" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6763, 5941)
+
+[node name="Node2D148" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7661, 3689)
+
+[node name="Node2D149" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6763, 3703)
+
+[node name="Node2D150" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6078, 3076)
+
+[node name="Node2D151" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5779, 3817)
+
+[node name="Node2D152" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5969, 3459)
+
+[node name="Node2D153" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5171, 3928)
+
+[node name="Node2D154" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5245, 3549)
+
+[node name="Node2D155" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5386, 3051)
+
+[node name="Node2D156" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5918, 2650)
+
+[node name="Node2D157" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5714, 2989)
+
+[node name="Node2D158" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4956, 2984)
+
+[node name="Node2D159" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5347, 2644)
+
+[node name="Node2D160" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8509, 3775)
+
+[node name="Node2D161" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-9069, 4200)
+
+[node name="Node2D162" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8531, 4352)
+
+[node name="Node2D163" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8475, 3204)
+
+[node name="Node2D164" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8645, 2836)
+
+[node name="Node2D165" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8022, 3696)
+
+[node name="Node2D166" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7683, 4347)
+
+[node name="Node2D167" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7998, 6131)
+
+[node name="Node2D168" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-10264, 7299)
+
+[node name="Node2D169" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8162, 7235)
+
+[node name="Node2D170" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7285, 8276)
+
+[node name="Node2D171" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6858, 9189)
+
+[node name="Node2D172" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3873, 7779)
+
+[node name="Node2D173" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4798, 7303)
+
+[node name="Node2D174" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4518, 8023)
+
+[node name="Node2D175" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6586, 8066)
+
+[node name="Node2D176" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6637, 7650)
+
+[node name="Node2D177" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5840, 6633)
+
+[node name="Node2D178" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3611, 7413)
+
+[node name="Node2D179" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4128, 8964)
+
+[node name="Node2D180" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3654, 8167)
+
+[node name="Node2D181" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2577, 8261)
+
+[node name="Node2D182" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2543, 9015)
+
+[node name="Node2D183" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2162, 8040)
+
+[node name="Node2D184" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1560, 8218)
+
+[node name="Node2D185" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3137, 7091)
+
+[node name="Node2D186" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2815, 7396)
+
+[node name="Node2D187" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3620, 6811)
+
+[node name="Node2D188" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3018, 6616)
+
+[node name="Node2D189" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2620, 6726)
+
+[node name="Node2D190" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4425, 5981)
+
+[node name="Node2D191" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4747, 6481)
+
+[node name="Node2D192" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5552, 6930)
+
+[node name="Node2D193" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(6281, 7328)
+
+[node name="Node2D194" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7756, 7294)
+
+[node name="Node2D195" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8019, 8184)
+
+[node name="Node2D196" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8612, 7837)
+
+[node name="Node2D197" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(9205, 7684)
+
+[node name="Node2D198" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8841, 6879)
+
+[node name="Node2D199" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7959, 6464)
+
+[node name="Node2D200" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7397, 6827)
+
+[node name="Node2D201" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8643, 3700)
+
+[node name="Node2D202" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7251, 2196)
+
+[node name="Node2D203" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8179, 1316)
+
+[node name="Node2D204" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4835, 884)
+
+[node name="Node2D205" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5363, 1588)
+
+[node name="Node2D206" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5779, 1076)
+
+[node name="Node2D207" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4659, 1428)
+
+[node name="Node2D208" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(8227, -2086)
+
+[node name="Node2D209" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1908, -7457)
+
+[node name="Node2D210" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2051, -5640)
+
+[node name="Node2D211" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2308, -4794)
+
+[node name="Node2D212" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1937, -7086)
+
+[node name="Node2D213" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1737, -7828)
+
+[node name="Node2D214" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2507, -7686)
+
+[node name="Node2D215" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(2374, -7296)
+
+[node name="Node2D216" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(727, -9705)
+
+[node name="Node2D217" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1391, -9121)
+
+[node name="Node2D218" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(599, -8737)
+
+[node name="Node2D219" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1359, -8289)
+
+[node name="Node2D220" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(871, -7953)
+
+[node name="Node2D221" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1615, -9705)
+
+[node name="Node2D222" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(999, -9161)
+
+[node name="Node2D223" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5702, 1691)
+
+[node name="Node2D224" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-1226, 1292)
+
+[node name="Node2D225" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-1483, 1919)
+
+[node name="Node2D226" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2024, 1491)
+
+[node name="Node2D227" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-941, 2432)
+
+[node name="Node2D228" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-1254, 4047)
+
+[node name="Node2D229" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-407, 4555)
+
+[node name="Node2D230" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-1356, 5064)
+
+[node name="Node2D231" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6024, -4708)
+
+[node name="Node2D232" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-7264, -4851)
+
+[node name="Node2D233" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6238, -3083)
+
+[node name="Node2D234" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5582, -2912)
+
+[node name="Node2D235" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5069, -4908)
+
+[node name="Node2D236" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4698, -4267)
+
+[node name="Node2D237" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4342, -4694)
+
+[node name="Node2D238" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5554, -5364)
+
+[node name="Node2D239" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6038, -5977)
+
+[node name="Node2D240" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5083, -6291)
+
+[node name="Node2D241" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4314, -5564)
+
+[node name="Node2D242" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-2931, -4552)
+
+[node name="Node2D243" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3387, -5079)
+
+[node name="Node2D244" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3287, -5621)
+
+[node name="Node2D245" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3330, -6547)
+
+[node name="Node2D246" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-3601, -6946)
+
+[node name="Node2D247" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-6780, -4152)
+
+[node name="Node2D248" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5411, -3825)
+
+[node name="Node2D249" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8419, -4751)
+
+[node name="Node2D250" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-8490, -2756)
+
+[node name="Node2D251" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4755, -361)
+
+[node name="Node2D252" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5269, -1188)
+
+[node name="Node2D253" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4955, -2057)
+
+[node name="Node2D254" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-4485, -1131)
+
+[node name="Node2D255" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5768, 8119)
+
+[node name="Node2D256" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5005, 7882)
+
+[node name="Node2D257" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5039, 6848)
+
+[node name="Node2D258" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(3446, 6356)
+
+[node name="Node2D259" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(4787, 6167)
+
+[node name="Node2D260" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(5374, 5958)
+
+[node name="Node2D261" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(7067, 8015)
+
+[node name="Node2D262" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(1261, 9023)
+
+[node name="Node2D263" parent="Node Resource Spawner" instance=ExtResource("24_l2ffy")]
+position = Vector2(-5290, 8487)
+
+[node name="VisionFruit" parent="Node Resource Spawner" instance=ExtResource("25_6bblo")]
+use_parent_material = true
+position = Vector2(5841.52, -5319.36)
+scale = Vector2(1.16, 1.105)
+
+[node name="VisionFruit2" parent="Node Resource Spawner" instance=ExtResource("25_6bblo")]
+use_parent_material = true
+position = Vector2(-1045.51, -122.36)
+scale = Vector2(1.17, 1.105)
+
+[node name="VisionFruit3" parent="Node Resource Spawner" instance=ExtResource("25_6bblo")]
+use_parent_material = true
+position = Vector2(-8767.99, 2447.72)
+scale = Vector2(1.33, 1.29)
+
+[node name="InventoryFruit" parent="Node Resource Spawner" instance=ExtResource("26_xraa1")]
+use_parent_material = true
+position = Vector2(-5123, -7095)

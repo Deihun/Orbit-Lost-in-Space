@@ -19,7 +19,8 @@ func onCall():
 		#instance.position = Vector2(instance.position.x , instance.position.y - (distance * rangeDistance))
 		instance.set_data(str(Info[0], " (",Info[1],")"))
 		container.add_child(instance)
-		await get_tree().create_timer(_Delay).timeout 
+		var timer = get_tree().create_timer(_Delay)
+		await timer.timeout
 	
 	$"../Click_anywhere".show()
 	_isDoneShowing = true

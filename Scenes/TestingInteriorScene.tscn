@@ -1,4 +1,5 @@
-[gd_scene load_steps=129 format=3 uid="uid://cc7evrjjstpn1"]
+
+[gd_scene load_steps=136 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b0uu8qtxo3joe" path="res://Scenes/SceneAssets/ArrowNavigation.png" id="11_0iy23"]
 [ext_resource type="Texture2D" uid="uid://irge65po27jl" path="res://Scenes/craft.png" id="12_krim2"]
 [ext_resource type="Texture2D" uid="uid://cnb6mk0kko7a" path="res://Lobby.png" id="12_nbaaq"]
+[ext_resource type="Texture2D" uid="uid://dgyqid6upini8" path="res://Scenes/Ingame/FactButton_withoutnotif.png" id="12_oquuw"]
 [ext_resource type="Script" path="res://Scenes/lobby.gd" id="12_qmdri"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
@@ -33,11 +35,24 @@
 [ext_resource type="Texture2D" uid="uid://bos6vw3go366u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonShipAnimation.png" id="20_8oew0"]
 [ext_resource type="Script" path="res://Scenes/expedition_selection.gd" id="21_iriww"]
 [ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
+[ext_resource type="Texture2D" uid="uid://3qtbe8hnsp4x" path="res://Scenes/EndScenes/Gallery_Endings/Expedition.png" id="24_atqdh"]
 [ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
 [ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
+
+[ext_resource type="Texture2D" uid="uid://blm13ibe5hs8x" path="res://Scenes/UI/StorageUI.png" id="30_3t5wv"]
+[ext_resource type="Texture2D" uid="uid://bf3ux2qjmr8qs" path="res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png" id="31_2medx"]
+[ext_resource type="Texture2D" uid="uid://b66dxxc6omd5s" path="res://Crafting_UI/ItemAssests/Medicine_Pickup.png" id="31_w6m34"]
+[ext_resource type="Texture2D" uid="uid://dxwa66u51ui4b" path="res://Resources/Spareparts/SparepartsPickup.png" id="32_5hsbb"]
+[ext_resource type="Texture2D" uid="uid://c67acfbsu28ii" path="res://Resources/Small_Biogene/BiogenePickup.png" id="34_m2f7x"]
+[ext_resource type="Texture2D" uid="uid://d1s43trmoohi7" path="res://Resources/SmallFoodCan/SmallFood_PickUp.png" id="35_kmg5f"]
+[ext_resource type="Texture2D" uid="uid://cwi6sxkf21j6t" path="res://Resources/Small_Fuel_1_unpickup.png" id="36_65yta"]
+[ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
+[ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
+
 [ext_resource type="AudioStream" uid="uid://dgbwukuh6yve7" path="res://Sounds/Music/夏の終わりに.mp3" id="36_glkqd"]
 [ext_resource type="AudioStream" uid="uid://djanb5rxdgvxw" path="res://Sounds/SFX/Button1.mp3" id="36_impxt"]
 [ext_resource type="AudioStream" uid="uid://cmiit1tmye2lp" path="res://Sounds/Music/雲の隙間.mp3" id="37_0e0ve"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -663,13 +678,16 @@ animations = [{
 size = Vector2(267.869, 259.306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyq57"]
-size = Vector2(340.863, 119.72)
+size = Vector2(340.863, 155.586)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unwh2"]
-size = Vector2(354.529, 106.982)
+size = Vector2(354.529, 149.668)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
+
+
+[node name="Control_Interior" type="Control"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_cmj13"]
 shuffle = true
@@ -677,7 +695,8 @@ stream_count = 2
 stream_0 = ExtResource("36_glkqd")
 stream_1 = ExtResource("37_0e0ve")
 
-[node name="Control" type="Control"]
+
+
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -873,6 +892,24 @@ layout_mode = 2
 wait_time = 0.2
 one_shot = true
 
+[node name="FactButton_Button" type="Button" parent="cam2d"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -881.0
+offset_top = -359.58
+offset_right = -791.0
+offset_bottom = -270.58
+
+[node name="FactButton_Button_Icon" type="Sprite2D" parent="cam2d/FactButton_Button"]
+position = Vector2(46, 43.42)
+texture = ExtResource("12_oquuw")
+
+[node name="FactButton" parent="cam2d" instance=ExtResource("44_sdcy4")]
+z_index = 170
+offset_left = -959.0
+offset_top = -539.58
+offset_right = -959.0
+offset_bottom = -539.58
+
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
 position = Vector2(1931, -556)
@@ -904,7 +941,9 @@ shape = SubResource("RectangleShape2D_h45yn")
 [node name="CraftingAnimation" type="AnimatedSprite2D" parent="WholeInteriorScene/Craft"]
 position = Vector2(-65, 200)
 sprite_frames = SubResource("SpriteFrames_01g2f")
-animation = &"Crafting"
+animation = &"HoverBlinking"
+frame = 3
+frame_progress = 1.0
 
 [node name="BlinkTimer" type="Timer" parent="WholeInteriorScene/Craft/CraftingAnimation"]
 wait_time = 4.0
@@ -980,12 +1019,17 @@ text = "FactionCurrently: "
 
 [node name="ExpeditionButton" type="Button" parent="WholeInteriorScene"]
 visible = false
-offset_left = 2688.0
-offset_top = 50.0
-offset_right = 2972.0
-offset_bottom = 222.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2747.0
+offset_top = -115.0
+offset_right = 2919.0
+offset_bottom = 52.0
 text = "EXPEDITION BUTTON
 "
+
+[node name="Sprite2D" type="Sprite2D" parent="WholeInteriorScene/ExpeditionButton"]
+position = Vector2(94, 89.42)
+texture = ExtResource("24_atqdh")
 
 [node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
 
@@ -1194,56 +1238,6 @@ scale = Vector2(1.03854, 1.09907)
 texture = ExtResource("13_mblje")
 script = ExtResource("14_dtqtq")
 
-[node name="LPanel" type="Panel" parent="StorageScene"]
-visible = false
-z_index = 2
-offset_left = -915.0
-offset_top = -9.0
-offset_right = -86.0
-offset_bottom = 415.0
-
-[node name="MarginContainer" type="MarginContainer" parent="StorageScene/LPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="RichTextLabel" type="RichTextLabel" parent="StorageScene/LPanel/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 25
-text = "Test Text"
-
-[node name="RPanel" type="Panel" parent="StorageScene"]
-visible = false
-z_index = 2
-offset_left = -59.6992
-offset_top = -460.917
-offset_right = 769.301
-offset_bottom = -36.9171
-
-[node name="MarginContainer" type="MarginContainer" parent="StorageScene/RPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="RichTextLabel" type="RichTextLabel" parent="StorageScene/RPanel/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 25
-text = "Test Text"
-
 [node name="ClickOnLeft" type="Area2D" parent="StorageScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/ClickOnLeft"]
@@ -1254,13 +1248,37 @@ polygon = PackedVector2Array(887.785, 381.231, 587.363, 444.922, 105.918, 544.09
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/CheckSpareparts"]
 polygon = PackedVector2Array(430.412, 127.38, 363.01, 176.513, 361.084, 332.099, 614.324, 327.55, 668.246, 272.958, 666.32, 129.2)
 
-[node name="Spareparts" type="Label" parent="StorageScene/CheckSpareparts"]
+[node name="Storage_Spareparts" type="NinePatchRect" parent="StorageScene/CheckSpareparts"]
 visible = false
-offset_left = 445.0
-offset_top = 96.0
-offset_right = 568.0
-offset_bottom = 125.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = 287.904
+offset_top = -74.2264
+offset_right = 768.904
+offset_bottom = 377.774
+texture = ExtResource("30_3t5wv")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="SmallSparepartsUnpickupVariety1" type="Sprite2D" parent="StorageScene/CheckSpareparts/Storage_Spareparts"]
+position = Vector2(371.676, 121.011)
+scale = Vector2(1.25521, 1.44554)
+texture = ExtResource("31_2medx")
+
+[node name="SparepartsPickup" type="Sprite2D" parent="StorageScene/CheckSpareparts/Storage_Spareparts"]
+position = Vector2(362.047, 64.6)
+rotation = -0.347244
+texture = ExtResource("32_5hsbb")
+
+[node name="Spareparts" type="RichTextLabel" parent="StorageScene/CheckSpareparts/Storage_Spareparts"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 36.0
+offset_right = 313.0
+offset_bottom = 405.0
+theme_override_colors/default_color = Color(0.785779, 0.595017, 0.330138, 1)
+theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08, 1)
+theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
 text = "Spareparts: 0/0"
 
 [node name="CheckingMedicine" type="Area2D" parent="StorageScene"]
@@ -1269,71 +1287,162 @@ text = "Spareparts: 0/0"
 position = Vector2(589.196, -201.532)
 shape = SubResource("RectangleShape2D_55a4j")
 
-[node name="Medicine" type="Label" parent="StorageScene/CheckingMedicine"]
+[node name="Storage_Medicine" type="NinePatchRect" parent="StorageScene/CheckingMedicine"]
 visible = false
-offset_left = 732.759
-offset_top = -238.383
-offset_right = 855.759
-offset_bottom = -209.383
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = -82.8085
+offset_top = -391.768
+offset_right = 483.191
+offset_bottom = 124.232
+texture = ExtResource("30_3t5wv")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Medicine" type="RichTextLabel" parent="StorageScene/CheckingMedicine/Storage_Medicine"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 36.0
+offset_right = 356.0
+offset_bottom = 442.0
+theme_override_colors/default_color = Color(0.785779, 0.595017, 0.330138, 1)
+theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08, 1)
+theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
 text = "Spareparts: 0/0"
+autowrap_mode = 2
+
+[node name="MedicinePickup" type="Sprite2D" parent="StorageScene/CheckingMedicine/Storage_Medicine"]
+position = Vector2(466.039, 100.085)
+texture = ExtResource("31_w6m34")
 
 [node name="CheckingBiogene" type="Area2D" parent="StorageScene"]
 
-[node name="Biogene" type="Label" parent="StorageScene/CheckingBiogene"]
-visible = false
-offset_left = 290.793
-offset_top = -111.913
-offset_right = 413.793
-offset_bottom = -80.9128
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Spareparts: 0/0"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StorageScene/CheckingBiogene"]
-position = Vector2(107.844, -104.443)
+position = Vector2(107.844, -122.376)
 shape = SubResource("RectangleShape2D_gyq57")
+
+[node name="Storage_Biogene" type="NinePatchRect" parent="StorageScene/CheckingBiogene"]
+visible = false
+offset_left = -123.25
+offset_top = -103.342
+offset_right = 375.75
+offset_bottom = 372.658
+texture = ExtResource("30_3t5wv")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="BiogenePickup" type="Sprite2D" parent="StorageScene/CheckingBiogene/Storage_Biogene"]
+position = Vector2(403.451, 100.994)
+texture = ExtResource("34_m2f7x")
+
+[node name="Biogene" type="RichTextLabel" parent="StorageScene/CheckingBiogene/Storage_Biogene"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 36.0
+offset_right = 348.0
+offset_bottom = 420.0
+theme_override_colors/default_color = Color(0.785779, 0.595017, 0.330138, 1)
+theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08, 1)
+theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
+text = "Spareparts: 0/0"
 
 [node name="CheckingRation" type="Area2D" parent="StorageScene"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StorageScene/CheckingRation"]
-position = Vector2(106.788, 248.583)
+position = Vector2(106.788, 227.24)
 shape = SubResource("RectangleShape2D_unwh2")
 
-[node name="Ration" type="Label" parent="StorageScene/CheckingRation"]
+[node name="Storage_Ration" type="NinePatchRect" parent="StorageScene/CheckingRation"]
 visible = false
-offset_left = 18.2948
-offset_top = 309.352
-offset_right = 141.295
-offset_bottom = 338.352
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = -166.0
+offset_top = 93.0
+offset_right = 269.0
+offset_bottom = 498.0
+texture = ExtResource("30_3t5wv")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="SmallFoodPickUp" type="Sprite2D" parent="StorageScene/CheckingRation/Storage_Ration"]
+position = Vector2(347.986, 103.912)
+texture = ExtResource("35_kmg5f")
+
+[node name="Ration" type="RichTextLabel" parent="StorageScene/CheckingRation/Storage_Ration"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 36.0
+offset_right = 271.0
+offset_bottom = 358.0
+theme_override_colors/default_color = Color(0.785779, 0.595017, 0.330138, 1)
+theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08, 1)
+theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
 text = "Spareparts: 0/0"
 
 [node name="CheckingFuel" type="Area2D" parent="StorageScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/CheckingFuel"]
-polygon = PackedVector2Array(-719.279, -447.651, -653.802, -545.916, -214.725, -551.903, -148.285, -427.634, -141.545, 273.868, -247.463, 341.198, -241.685, 370.313, -493, 439.463, -518.998, 394.879, -588.326, 401.248, -659.58, 365.236, -669.209, 337.94, -599.881, 174.165, -611.435, -63.3082, -703.873, -232.542)
+polygon = PackedVector2Array(-719.279, -447.651, -653.802, -545.916, -188.727, -559.564, -148.285, -427.634, -141.545, 273.868, -247.463, 341.198, -241.685, 370.313, -493, 439.463, -518.998, 394.879, -588.326, 401.248, -674.023, 356.665, -699.058, 339.378, -629.73, 177.423, -635.508, -51.8621, -725.056, -210.178)
 
-[node name="Fuel" type="Label" parent="StorageScene/CheckingFuel"]
+[node name="Storage_Fuel" type="NinePatchRect" parent="StorageScene/CheckingFuel"]
 visible = false
-offset_left = -120.361
-offset_top = 162.865
-offset_right = 2.63861
-offset_bottom = 191.865
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = -586.4
+offset_top = -433.621
+offset_right = 37.5999
+offset_bottom = 228.379
+texture = ExtResource("30_3t5wv")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Fuel" type="RichTextLabel" parent="StorageScene/CheckingFuel/Storage_Fuel"]
+layout_mode = 0
+offset_left = 43.4001
+offset_top = 25.6212
+offset_right = 371.4
+offset_bottom = 615.621
+theme_override_colors/default_color = Color(0.785779, 0.595017, 0.330138, 1)
+theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08, 1)
+theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
 text = "Spareparts: 0/0"
+
+[node name="SmallFuel1Unpickup" type="Sprite2D" parent="StorageScene/CheckingFuel/Storage_Fuel"]
+position = Vector2(489.148, 99.1748)
+texture = ExtResource("36_65yta")
 
 [node name="CheckingOxygen" type="Area2D" parent="StorageScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/CheckingOxygen"]
-polygon = PackedVector2Array(-987.925, -270.756, -914.746, -277.125, -797.273, -274.396, -704.836, -187.959, -645.136, -56.0293, -621.064, 91.3679, -639.359, 211.469, -699.058, 332.481, -758.758, 376.682, -805.939, 384.871, -794.384, 425.815, -841.566, 439.463, -879.119, 414.896, -872.378, 399.429, -991.777, 411.639)
+polygon = PackedVector2Array(-976.371, -527.719, -814.605, -501.333, -793.421, -283.876, -723.131, -204.719, -636.47, -48.2225, -632.619, 185.611, -699.058, 335.738, -758.758, 376.682, -805.939, 384.871, -794.384, 425.815, -841.566, 439.463, -879.119, 414.896, -872.378, 399.429, -967.705, 412.167)
 
-[node name="Oxygen" type="Label" parent="StorageScene/CheckingOxygen"]
+[node name="Storage_Oxygen" type="NinePatchRect" parent="StorageScene/CheckingOxygen"]
 visible = false
-offset_left = -695.207
-offset_top = 244.752
-offset_right = -572.207
-offset_bottom = 273.752
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_left = -778.015
+offset_top = -159.753
+offset_right = -205.015
+offset_bottom = 421.247
+texture = ExtResource("30_3t5wv")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="OxygenPickup" type="Sprite2D" parent="StorageScene/CheckingOxygen/Storage_Oxygen"]
+position = Vector2(441.004, 116.462)
+texture = ExtResource("37_5ufok")
+
+[node name="Oxygen" type="RichTextLabel" parent="StorageScene/CheckingOxygen/Storage_Oxygen"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 31.0
+offset_right = 374.0
+offset_bottom = 522.0
+theme_override_colors/default_color = Color(0.785779, 0.595017, 0.330138, 1)
+theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08, 1)
+theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
 text = "Spareparts: 0/0"
 
 [node name="CycleReport" type="Sprite2D" parent="."]
@@ -1392,6 +1501,7 @@ offset_left = 1584.0
 offset_top = 231.0
 offset_right = 1584.0
 offset_bottom = 231.0
+metadata/_edit_lock_ = true
 
 [node name="CraftedItemsInventory" parent="." instance=ExtResource("28_b2c70")]
 visible = false
@@ -1423,6 +1533,7 @@ bus = &"Sfx"
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="ChangeLocationToLeft"]
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
+[connection signal="button_up" from="cam2d/FactButton_Button" to="." method="_on_fact_button_button_button_up"]
 [connection signal="input_event" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_input_event"]
 [connection signal="mouse_entered" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_entered"]
 [connection signal="mouse_exited" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_exited"]

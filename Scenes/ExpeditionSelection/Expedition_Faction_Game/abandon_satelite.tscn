@@ -646,8 +646,7 @@ equipHelmet = true
 show_crewInventoryUI = false
 show_tutorialTip = false
 useGlobeTimerUI = false
-delayBeforeGameStart = 0.0
-limitTimeDuration = 10
+delayBeforeGameStart = 3.0
 
 [node name="DoorWay" parent="." instance=ExtResource("4_ocmvt")]
 position = Vector2(10543, 1434)

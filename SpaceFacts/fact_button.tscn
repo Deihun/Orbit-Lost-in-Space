@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://SpaceFacts/fact_button.gd" id="1_6411q"]
 
 [node name="FactButton" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +19,7 @@ offset_bottom = 1079.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 493.0
+offset_right = 650.0
 offset_bottom = 1075.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
@@ -30,20 +31,34 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -25.0
-offset_top = 219.0
-offset_right = 14.0
-offset_bottom = 242.0
+offset_left = -300.0
+offset_top = 44.0
+offset_right = 935.0
+offset_bottom = 135.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 66
 text = "Fact"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FactDesc" type="Label" parent="Panel"]
 layout_mode = 1
-offset_left = 475.0
-offset_top = 288.0
-offset_right = 1431.0
-offset_bottom = 795.0
+offset_left = 661.0
+offset_top = 145.0
+offset_right = 1897.0
+offset_bottom = 946.0
+theme_override_font_sizes/font_size = 51
 text = "Desc"
-horizontal_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
+
+[node name="Back_Button_FactButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1632.0
+offset_top = 970.0
+offset_right = 1881.0
+offset_bottom = 1058.0
+theme_override_font_sizes/font_size = 41
+text = "BACK"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_up" from="Panel/Back_Button_FactButton" to="." method="_on_back_button_fact_button_button_up"]
