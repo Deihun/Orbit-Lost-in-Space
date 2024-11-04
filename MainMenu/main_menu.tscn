@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=12 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
 [ext_resource type="Texture2D" uid="uid://dkcr0omxilpsl" path="res://MainMenu/Space_mainmenu.png" id="2_7rstv"]
 [ext_resource type="Texture2D" uid="uid://cbcfgnsq0f4uy" path="res://MainMenu/Earth_mainmenu.png" id="3_ly8cc"]
 [ext_resource type="PackedScene" uid="uid://b8fqpefmv5g64" path="res://settings_menu/settings_menu.tscn" id="3_xdu3v"]
 [ext_resource type="PackedScene" uid="uid://cunvpo4f1ww16" path="res://Credits.tscn" id="4_e2ov8"]
-[ext_resource type="AudioStream" uid="uid://cir657n81xry8" path="res://Music/Erika-German-Song-Sound-Effect.mp3" id="4_hxbdb"]
 [ext_resource type="Texture2D" uid="uid://dgkr0ab5k81fq" path="res://MainMenu/Ship_mainmenu.png" id="4_lojns"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="6_qrx2q"]
@@ -237,10 +236,10 @@ zoom = Vector2(1, 1.019)
 [node name="Control" type="Control" parent="."]
 z_index = 1
 anchors_preset = 0
-offset_left = 1750.0
-offset_top = 2000.0
-offset_right = 1790.0
-offset_bottom = 2040.0
+offset_left = 1548.0
+offset_top = 960.0
+offset_right = 1588.0
+offset_bottom = 1000.0
 
 [node name="DeveloperOption" type="Button" parent="Control"]
 layout_mode = 0
@@ -425,11 +424,6 @@ offset_top = 94.0
 offset_right = -899.0
 offset_bottom = -404.0
 scale = Vector2(2, 2)
-
-[node name="MusicStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_hxbdb")
-autoplay = true
-bus = &"Music"
 
 [node name="Settings_Menu" parent="." instance=ExtResource("3_xdu3v")]
 visible = false
