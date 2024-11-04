@@ -9,13 +9,13 @@
 script = ExtResource("1_jnq3i")
 
 [node name="EventUIAnimation" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(989, 542)
 sprite_frames = ExtResource("4_coms2")
 animation = &"OpeningAnimation"
+frame = 33
+frame_progress = 1.0
 
 [node name="EventReader" type="Node2D" parent="."]
-visible = false
 script = ExtResource("2_nkt3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="EventReader"]
@@ -48,7 +48,15 @@ text = "description
 "
 autowrap_mode = 3
 
-[node name="Container" type="Node2D" parent="EventReader"]
-position = Vector2(1425, 260)
+[node name="Container" type="ScrollContainer" parent="EventReader"]
+z_index = 5
+offset_left = 1070.0
+offset_top = 176.0
+offset_right = 1745.0
+offset_bottom = 908.0
+
+[node name="Container_EventButton" type="VBoxContainer" parent="EventReader/Container"]
+layout_mode = 2
+theme_override_constants/separation = 5
 
 [connection signal="animation_finished" from="EventUIAnimation" to="." method="_on_opening_ui_scene_animation_finished"]

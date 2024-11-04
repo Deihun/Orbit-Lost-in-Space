@@ -5,10 +5,6 @@ var is_modified = false
 func _ready() -> void:
 	load_facts()
 	set_fact_encountered("fact30")
-	set_fact_encountered("fact20")
-	set_fact_encountered("fact15")
-	set_fact_encountered("fact21")
-	set_fact_encountered("fact22")
 	LoopChecker()
 	
 func create_button(data):
