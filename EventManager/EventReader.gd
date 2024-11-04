@@ -8,7 +8,7 @@ var temp_choice_data = []
 
 @onready var title = $Title
 @onready var desc = $Description
-@onready var button_container = $Container
+@onready var button_container = $Container/Container_EventButton
 
 
 func _ready():
@@ -144,7 +144,7 @@ func RunKeyWord(Command):
 				break 
 		GlobalResources.AddItem(true,item_name,amount)
 	elif _command.begins_with("@RELATIONSHIP_INCREASE"):	#INCOMPLETE
-		_command = _command.substr("@ADD_MATERIALS".length(), _command.length() - "@ADD_MATERIALS".length())
+		_command = _command.substr("@RELATIONSHIP_INCREASE".length(), _command.length() - "@RELATIONSHIP_INCREASE".length())
 		_command.strip_edges()
 		var crew_name = ""
 		var value : float = 0.0
@@ -188,11 +188,24 @@ func RunKeyWord(Command):
 		IngameStoredProcessSetting._yes_in_faction()
 	elif _command.begins_with("@NO_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		IngameStoredProcessSetting._no_in_faction()
+	elif _command.begins_with("@FACTS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@FACTS".length(), _command.length() - "@FACTS".length())
+		_command.strip_edges()
+		var factChecks = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton")
+		if factChecks:
+			factChecks.set_fact_encountered(_command)
+			return
+			if factChecks.rawFacts["facts"].find({"id": _command}) :
+				factChecks.set_fact_encountered(_command)
+			else:
+				print(_command, " - Fact doesnt exist")
+		else:
+			print("Error// Cant find FactGroup node on current scene")
 	else:
 		print("Unable to identify Keyword in the context: '",_command,"'")
 
 
-func clear_container(container: Node2D):
+func clear_container(container: VBoxContainer):
 	for i in range(container.get_child_count() - 1, -1, -1):
 		var child = container.get_child(i)
 		child.queue_free()
@@ -200,23 +213,27 @@ func clear_container(container: Node2D):
 
 func _create_choice_button(choice_data, index):
 	var button = Button.new() #CREATE AND HANDLES BUTTON
-	button.text = ""  
+	button.text = translate_description_to_gettedProcess(choice_data[2])
 	button.z_index = 1 
-	button.size_flags_vertical = Control.SIZE_FILL
-	var un_touch_label = preload("res://UnTouch_Label/UnTouchLabel.tscn").instantiate() as Control
-	un_touch_label.updateText(translate_description_to_gettedProcess(choice_data[2]))  # Update the label text in UnTouchLabel
-	un_touch_label.z_index = 0
-	button.size = un_touch_label.getNinePatchRectSize()
-	un_touch_label.size = un_touch_label.getNinePatchRectSize()
+	button.modulate.a = 1.0
+	button.custom_minimum_size = Vector2(300,250)
+	button.show()
+	button_container.add_child(button)
+	#button.size_flags_vertical = Control.SIZE_FILL
+	#var un_touch_label = preload("res://UnTouch_Label/UnTouchLabel.tscn").instantiate() 
+	#await get_tree().create_timer(0.3).timeout
+	#un_touch_label.updateText(translate_description_to_gettedProcess(choice_data[2]))  # Update the label text in UnTouchLabel
+	#un_touch_label.z_index = 0
+	#button.size = un_touch_label.getNinePatchRectSize()
+	#un_touch_label.size = un_touch_label.getNinePatchRectSize()
+	#un_touch_label.update_nine_patch_rect_size()
 	
-	button_container.add_child(un_touch_label) 
-	un_touch_label.add_child(button)
+	#button_container.add_child(un_touch_label) 
+	#un_touch_label.add_child(button)
 	button.connect("pressed", Callable(self, "_on_choice_button_pressed").bind(choice_data))
 	button.mouse_filter = Control.MOUSE_FILTER_PASS
-	var current_position = Vector2(0, (index - 1) * (un_touch_label.size.y + 10))
-	un_touch_label.position = current_position
-	
-	button.modulate.a = 0
+	#var current_position = Vector2(0, (index - 1) * (un_touch_label.size.y + 10))
+	#un_touch_label.position = current_position
 
 func translate_description_to_gettedProcess(text):
 	var global_var = $"/root/GlobalResources"

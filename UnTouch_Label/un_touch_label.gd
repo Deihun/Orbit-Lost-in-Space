@@ -1,23 +1,22 @@
 extends Control
 @onready var label = $Label
-@onready var nine_patch_rect = $NinePatchRect
-
+@onready var nine_patch_rect = $"."
 
 func _ready() -> void:
-	label.autowrap_mode = false
+	label.autowrap_mode = false # Disable autowrap if you're manually handling line breaks
 	label.connect("text_changed", Callable(self, "_on_label_text_changed"))
-	#updateText("i have a beautiful gift for you in december morning of christmas eve")
+	update_nine_patch_rect_size()
 
 func _on_label_text_changed():
 	update_nine_patch_rect_size()
 
 func updateText(TEXT):
 	var text = insert_line_breaks(TEXT, 15)
-	$Label.text = text
-	update_nine_patch_rect_size()
+	label.text = text
+	call_deferred("update_nine_patch_rect_size")  # Ensures size update after layout settles
 
 func getNinePatchRectSize():
-	return $NinePatchRect.size
+	return nine_patch_rect.size
 
 func insert_line_breaks(text: String, max_length: int) -> String:
 	var words = text.split(" ")
@@ -36,9 +35,9 @@ func insert_line_breaks(text: String, max_length: int) -> String:
 		result += current_line
 	return result
 
-
 func update_nine_patch_rect_size():
-	var label_size = $Label.get_minimum_size()
+	var label_size = label.get_minimum_size()
 	var new_width = max(label_size.x + 300, 200)
-	var new_height = max(label_size.y+ 50, 200)
-	$NinePatchRect.size = Vector2(new_width, new_height)
+	var new_height = max(label_size.y + 50, 200)
+	nine_patch_rect.size = Vector2(new_width, new_height)
+	minimum_size_changed()  # Updates the size of the parent container, if applicable

@@ -354,8 +354,8 @@ func isSanity(name: String, value: float, isGreaterThan: bool = true) -> bool:
 					conditionState = true
 	return conditionState
 
-func addRelationshipBetweenCrew(FromCrewName : String,ToCrewName_CAPS, value : float):
-	match (ToCrewName_CAPS):
+func addRelationshipBetweenCrew(FromCrewName : String,ToCrewName_CAPS: String, value : float):
+	match (ToCrewName_CAPS.to_upper()):
 		"MAXIM": 
 			for crew in _MaximRelationship.keys():
 				if crew == FromCrewName:

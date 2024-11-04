@@ -88,7 +88,8 @@ func set_initialDialogue():
 	setTag()
 	var getDialogueTitle : String = _getRandomEvent()
 	#print("CHOSEN DIALOGUE EVENT: ", getDialogueTitle)
-	DialogueManager.show_dialogue_balloon(FirstDayDialogue, getDialogueTitle)
+	if getDialogueTitle != null and getDialogueTitle != "null":
+		DialogueManager.show_dialogue_balloon(FirstDayDialogue, getDialogueTitle)
 
 
 

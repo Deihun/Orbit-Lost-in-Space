@@ -8,7 +8,7 @@
 		{
 			"encountered": true,
 			"id": "fact2",
-			"text": "Starship is the only launch vehicle intended to be fully reusable that has been fully built and tested. The most recent test flight was on October 13, 2024, in which the vehicle completed a suborbital launch and landed both stages for the second time. The Super Heavy booster was caught successfully by the chopstick system on Orbital Pad A for the first time. by SpaceX"
+			"text": "Hydro carbons and fossil-fuel like substance can be found on asteroids and comets"
 		},
 		{
 			"encountered": false,
@@ -18,7 +18,7 @@
 		{
 			"encountered": false,
 			"id": "fact4",
-			"text": "Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class reusable rocket. Reusability allows SpaceX to re-fly the most expensive parts of the rocket, which in turn drives down the cost of space access."
+			"text": "The first use of solar panels in space was on the Vanguard I spacecraft in 1958. Solar panels are now a standard power source for spacecraft. In 2017, the Space Shuttle Discovery received an upgrade to its solar panels. The new panels increased the daytime power available on the International Space Station."
 		},
 		{
 			"encountered": false,
@@ -28,12 +28,12 @@
 		{
 			"encountered": false,
 			"id": "fact6",
-			"text": "Perseverance is NASA's rover based on the successful Curiosity design. Launched with the Mars 2020 mission on July 30, 2020, it landed on February 18, 2021.[16] It carried the Mars helicopter Ingenuity attached to its belly. Although Ingenuity's mission has ended, Perseverance remains operational as of March 2024."
+			"text": "Biogenic materials are materials that are created by organisms using proteins to assemble inorganic structures such as marine animals shell."
 		},
 		{
 			"encountered": false,
 			"id": "fact7",
-			"text": "Sojourner rover, Mars Pathfinder, landed successfully on July 4, 1997. Communications were lost on September 27, 1997. Sojourner had traveled a distance of just over 100 meters (330 ft)"
+			"text": "A solar flare is a relatively intense, localized emission of electromagnetic radiation in the Sun's atmosphere. Flares occur in active regions and are often, but not always,)"
 		},
 		{
 			"encountered": false,
@@ -108,7 +108,7 @@
 		{
 			"encountered": true,
 			"id": "fact22",
-			"text": "Gherman Titov was the second human to orbit Earth, following Yuri Gagarin."
+			"text": "In spacecraft where oxygen is stored as a liquid (like the systems on the International Space Station), heaters are used to keep the oxygen from reaching too low of a temperature. This ensures it remains in a usable state when converted to gas for life support or other systems."
 		},
 		{
 			"encountered": false,

@@ -1,129 +1,258 @@
 [
 	{
-		"id" : 1,
+		"Choice-1": [
+			6,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Check out this planet?"
+		],
+		"Choice-2": [
+			11,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Leave?"
+		],
+		"Conditions": [
+			"CRITICAL",
+			"Radonti"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"name" : "Welcome to Radonti",
 		"description": "Radonti Description",
-		"Conditions" : ["CRITICAL","Radonti"],
-		"Choice-1" : [6,[["SPAREPARTS" , null]], "Check out this planet?"],
-		"Choice-2" : [11,[["SPAREPARTS" , null]], "Leave?"]
-	},{
-		"id" : 2	,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Welcome to Sauria",
-		"description": "Sauria Description",
-		"Conditions" : ["CRITICAL","Sauria"],
-		"Choice-1" : [7,[["SPAREPARTS" , null]], "Check out this planet?"],
-		"Choice-2" : [12,[["SPAREPARTS" , null]], "Leave?"]
-	},{
-		"id" : 3	,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Welcome to Enthuli",
-		"description": "Enthuli Description",
-		"Conditions" : ["CRITICAL","Enthuli"],
-		"Choice-1" : [8,[["SPAREPARTS" , null]], "Check out this planet?"],
-		"Choice-2" : [13,[["SPAREPARTS" , null]], "Leave?"]
-	},{
-		"id" : 4	,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Welcome to Earth 2.0",
-		"description": "Sauria Description",
-		"Conditions" : ["CRITICAL","Earth"],
-		"Choice-1" : [9,[["SPAREPARTS" , null]], "Check out this planet?"],
-		"Choice-2" : [14,[["SPAREPARTS" , null]], "Leave?"]
-	},{
-		"id" : 5	,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Welcome to Steelicus",
-		"description": "Sauria Description",
-		"Conditions" : ["CRITICAL","Steelicus"],
-		"Choice-1" : [10,[["SPAREPARTS" , null]], "Check out this planet?"],
-		"Choice-2" : [15,[["SPAREPARTS" , null]], "Leave?"]
+		"id": 1,
+		"name": "Welcome to Radonti"
 	},
 	{
-		"id" : 6,
+		"Choice-1": [
+			7,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Check out this planet?"
+		],
+		"Choice-2": [
+			12,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Leave?"
+		],
+		"Conditions": [
+			"CRITICAL",
+			"Sauria"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"name" : "Welcome to Radonti",
+		"description": "Sauria Description",
+		"id": 2,
+		"name": "Welcome to Sauria"
+	},
+	{
+		"Choice-1": [
+			8,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Check out this planet?"
+		],
+		"Choice-2": [
+			13,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Leave?"
+		],
+		"Conditions": [
+			"CRITICAL",
+			"Enthuli"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Enthuli Description",
+		"id": 3,
+		"name": "Welcome to Enthuli"
+	},
+	{
+		"Choice-1": [
+			9,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Check out this planet?"
+		],
+		"Choice-2": [
+			14,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Leave?"
+		],
+		"Conditions": [
+			"CRITICAL",
+			"Earth"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Sauria Description",
+		"id": 4,
+		"name": "Welcome to Earth 2.0"
+	},
+	{
+		"Choice-1": [
+			10,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Check out this planet?"
+		],
+		"Choice-2": [
+			15,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Leave?"
+		],
+		"Conditions": [
+			"CRITICAL",
+			"Steelicus"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Sauria Description",
+		"id": 5,
+		"name": "Welcome to Steelicus"
+	},
+	{
+		"Command": [
+			"@YES_TO_LANDING"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
 		"description": "Radonti Description",
-		"Command" : ["@YES_TO_LANDING"]
-	},	
+		"id": 6,
+		"name": "Welcome to Radonti"
+	},
 	{
-		"id" : 7,
+		"Command": [
+			"@YES_TO_LANDING"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"name" : "Welcome to Sauria",
 		"description": "Sauria Description",
-		"Command" : ["@YES_TO_LANDING"]
+		"id": 7,
+		"name": "Welcome to Sauria"
 	},
 	{
-		"id" : 8,
+		"Command": [
+			"@YES_TO_LANDING"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"name" : "Welcome to Enthuli",
 		"description": "Enthuli Description",
-		"Command" : ["@YES_TO_LANDING"]
+		"id": 8,
+		"name": "Welcome to Enthuli"
 	},
-		{
-		"id" : 9,
+	{
+		"Command": [
+			"@YES_TO_LANDING"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"name" : "Welcome to Earth",
 		"description": "Earth Description",
-		"Command" : ["@YES_TO_LANDING"]
-	},
-		{
-		"id" : 10,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Welcome to Steelicus",
-		"description": "Steelicus Description",
-		"Command" : ["@YES_TO_LANDING"]
+		"id": 9,
+		"name": "Welcome to Earth"
 	},
 	{
-		"id" : 11,
+		"Command": [
+			"@YES_TO_LANDING"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"name" : "Saying no to rats",
-		"description": "Radonti Description",
-		"Command" : ["@NO_TO_LANDING"]
-	},
-		{
-		"id" : 12,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "No to sand",
-		"description": "Sauria Description",
-		"Command" : ["@NO_TO_LANDING"]
-	},
-		{
-		"id" : 13,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Saying no to Enthuli",
-		"description": "Enthuli Description",
-		"Command" : ["@NO_TO_LANDING"]
-	},
-		{
-		"id" : 14,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Saying no to Earth",
-		"description": "Earth Description",
-		"Command" : ["@NO_TO_LANDING"]
-	},
-		{
-		"id" : 15,
-		"RandomTrue": false,
-		"Repeatable": false,
-		"name" : "Saying no to Steelicus",
 		"description": "Steelicus Description",
-		"Command" : ["@NO_TO_LANDING"]
+		"id": 10,
+		"name": "Welcome to Steelicus"
+	},
+	{
+		"Command": [
+			"@NO_TO_LANDING"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Radonti Description",
+		"id": 11,
+		"name": "Saying no to rats"
+	},
+	{
+		"Command": [
+			"@NO_TO_LANDING"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Sauria Description",
+		"id": 12,
+		"name": "No to sand"
+	},
+	{
+		"Command": [
+			"@NO_TO_LANDING"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Enthuli Description",
+		"id": 13,
+		"name": "Saying no to Enthuli"
+	},
+	{
+		"Command": [
+			"@NO_TO_LANDING"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Earth Description",
+		"id": 14,
+		"name": "Saying no to Earth"
+	},
+	{
+		"Command": [
+			"@NO_TO_LANDING"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Steelicus Description",
+		"id": 15,
+		"name": "Saying no to Steelicus"
 	},
 	{
 		"RandomTrue": true,
@@ -131,5 +260,56 @@
 		"description": "eme eme eme",
 		"id": 19,
 		"name": "For Not Erroring"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL 20",
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew carefully mined the asteroid and found fuel. ",
+		"id": 20,
+		"name": "Mine Carefully "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL 20",
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew aggressively mined the asteroid and found fuel , earning 20 fuel but losing 20 spareparts in the process",
+		"id": 21,
+		"name": "Mine Aggressively "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Leave it",
+		"id": 22,
+		"name": "You left the asteroid alone"
+	},{
+		"Command": [
+			"@FACTS fact2",
+		],
+		"Choice-1": [20,[["SPAREPARTS", 10] ], "You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n - 10/@SPAREPARTS() Spare Parts"],
+		"Choice-2": [21,[["SPAREPARTS", 20] ], "You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n - 20/@SPAREPARTS() Spare Parts"],
+		"Choice-3": [22,[["SPAREPARTS", null] ], "Leave it."],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
+		"id": 23,
+		"name": "Foreign Object Detected!"
+	},{
+		"Command": [
+			"@FACTS fact2",
+		],
+		"Choice-1": [20,[["SPAREPARTS", 10] ], "You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n - 10/@SPAREPARTS() Spare Parts"],
+		"Choice-2": [21,[["SPAREPARTS", 20] ], "You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n - 20/@SPAREPARTS() Spare Parts"],
+		"Choice-3": [22,[["SPAREPARTS", null] ], "Leave it."],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
+		"id": 23,
+		"name": "Foreign Object Detected!"
 	}
 ]

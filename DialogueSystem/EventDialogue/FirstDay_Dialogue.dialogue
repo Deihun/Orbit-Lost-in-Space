@@ -1,352 +1,994 @@
-~ WithCompleteGroup_without_Nashir_1
-Maxim: That was close...
-Fumiko: yeah, really close...
-Regina: Do we have enough ration to survive?
-Fumiko: Hopefully
-Maxim: Then, Ill be the one managing our power source
-Regina: Right! Lets split our work and survive!
-=> END
-~ WithCompleteGroup_without_Nashir_2
-Jerry: Did everybody get in safe?
-Regina: I think so?
-Fumiko: Whooo! That was a crazy andrenaline rush! I love it!
-Maxim: ...
-Jerry:
-	-Did every body got a good 
-=> END
-~ WithCompleteGroup_without_Nashir_3
-=> END
-~ WithCompleteGroup_without_Nashir_4
-=> END
-~ WithCompleteGroup_without_Nashir_5
-=> END
-~ WithCompleteGroup_without_Maxim_1
-=> END
-~ WithCompleteGroup_without_Maxim_2
-=> END
-~ WithCompleteGroup_without_Maxim_3
-=> END
-~ WithCompleteGroup_without_Maxim_4
-=> END
-~ WithCompleteGroup_without_Maxim_5
-=> END
-~ WithCompleteGroup_without_Regina_1
-=> END
-~ WithCompleteGroup_without_Regina_2
-=> END
-~ WithCompleteGroup_without_Regina_3
-=> END
-~ WithCompleteGroup_without_Regina_4
-=> END
-~ WithCompleteGroup_without_Regina_5
-=> END
-~ WithCompleteGroup_without_Fumiko_1
-=> END
-~ WithCompleteGroup_without_Fumiko_2
-=> END
-~ WithCompleteGroup_without_Fumiko_3
-=> END
-~ WithCompleteGroup_without_Fumiko_4
-=> END
-~ WithCompleteGroup_without_Fumiko_5
-=> END
-
-~ ReginaOnly_1
-=> END
-~ ReginaOnly_2
-=> END
-~ ReginaOnly_3
-=> END
-
-~ FumikoOnly_1
-=> END
-~ FumikoOnly_2
-=> END
-~ FumikoOnly_3
-=> END
-
-~ NashirOnly_1
-=> END
-~ NashirOnly_2
+~ WithCompleteGroup_without_Nashir_1  
+Maxim: Great work friend! Glad Maxim’s friends made it too! 
+Fumiko: Great job Cap’n, you didn’t forget to bring enough supplies, did you? 
+Regina: Thanks for saving me Captain! I gotta say, I felt really nervous back there. 
+Jerry: It’s a shame that I couldn’t bring anyone else... 
+Jerry: Nashir could’ve made it too. 
 => END 
-~ NashirOnly_3
-=> END
 
-~ MaximOnly_1
-=> END
-~ MaximOnly_2
-=> END
-~ MaximOnly_3
-=> END
+~ WithCompleteGroup_without_Nashir_2  
+Maxim: That was close...  
+Fumiko: yeah, really close...  
+Regina: Do we have enough ration to survive?  
+Fumiko: Hopefully  
+Maxim: Then, I'll be the one managing our power source  
+Regina: Right! Let's split our work and survive! 
+=> END 
+
+~ WithCompleteGroup_without_Nashir_3 
+Jerry: Did everybody get in safe?  
+Regina: I think so?  
+Fumiko: Whooo! That was a crazy andrenaline rush! I love it!  
+Maxim: ... Friend, Maxim suggest moderation alright? 
+=> END  
+
+~ WithCompleteGroup_without_Nashir_4 
+Fumiko: Ah did Regina make it Captain? 
+Regina: I’m here, don’t worry 
+Jerry: She made it just fine. 
+Maxim: ... How about Maxim? 
+Jerry: I’m here for ya pal! 
+Maxim: Maxim is a touched friend! 
+=> END 
+
+~ WithCompleteGroup_without_Nashir_5 
+Maxim: My friends! Maxim is glad you made it! 
+Fumiko: Well well well, Maxim! Aren’t you a sight for sore eyes! 
+Regina: Settle down you two. 
+Jerry: Yeah, we got to prepare for things ahead. 
+=> END 
+
+ 
+
+~ WithCompleteGroup_without_Maxim_1 
+Jerry: Did everybody get in safe? 
+Fumiko: I certainly did cap’n! 
+Nashir: And I second that as well. 
+Regina: Well, it certainly will be lively around here with you guys around. 
+=> END  
+
+~ WithCompleteGroup_without_Maxim_2  
+Fumiko: *Breathe in* WOOOOH WHAT A RUSH! 
+Jerry: Woah there! slow down intern. 
+Nashir: She still has the energy after all of that? That’s impressive! 
+Regina: That’s an adrenaline junkie for ya. 
+=> END 
+
+~ WithCompleteGroup_without_Maxim_3  
+Regina: Ah! I forgot to bring my silk leaves! They could have been useful 
+Fumiko: Silk... Leaves? 
+Jerry: A man-made plant that mirrors a normal plant. 
+Nashir: Well, that certainly would have helped with our oxygen supply 
+=> END  
+
+~ WithCompleteGroup_without_Maxim_4  
+Nashir: I can see that you are very anxious, cap. 
+Regina: Well, we did just survive from a world ending meteor just now. 
+Jerry: Don’t worry about me guys, I’ll be fine. 
+Fumiko: Hey, if you need us, we’re here captain! 
+=> END  
+
+~ WithCompleteGroup_without_Maxim_5  
+Nashir: I see, the muscle didn’t make it 
+Jerry: If only we had an extra room in the shuttle. 
+Regina: Hey, cheer up guys. 
+Fumiko: Yeah! Maxim would be sad to see you like that. 
+=> END  
+
+ 
+
+~ WithCompleteGroup_without_Regina_1  
+Fumiko: What the!? I forgot my survival backpack! 
+Maxim: Maxim thinks that he saw that beside him before getting picked up by the captain. 
+Nashir: Well captain? Anything to say? 
+Jerry: What? It wasn’t my fault! I didn’t kno— 
+Nashir: Kidding captain! Just relax 
+Fumiko: It’s fine captain, I’ll make do with what we have. 
+=> END  
+
+~ WithCompleteGroup_without_Regina_2  
+Nashir: Well, it’s certainly assuring that we have an ex-soldier and a former athlete around here? 
+Maxim: Maxim is also glad we have mental help friend here. 
+Fumiko: *snicker* 
+Jerry: pfft— 
+Nashir: Don’t come to me when you guys go coo coo! 
+=> END  
+
+~ WithCompleteGroup_without_Regina_3  
+Fumiko: Muscle man! You made it too! 
+Nashir: Thanks, I’m proud of these babies 
+Fumiko: I’m talking to Maxim here. 
+Jerry: There, there... 
+Nashir: Thanks [[Jerry.|cap.|captain.]] 
+Maxim: If it ever helps, Maxim thinks you’re doing good. 
+=> END  
+
+~ WithCompleteGroup_without_Regina_4  
+Jerry: Is everyone safe? 
+Maxim: Maxim’s muscles are good! 
+Fumiko: A little bit of scratches here and there, I’m also fine. 
+Nashir: My face is unbruised and perfect! 
+=> END  
+
+~ WithCompleteGroup_without_Regina_5 
+Maxim: Where’s professor?  
+Fumiko: She couldn’t make it. 
+Nashir: A shame, glasses didn’t make it here 
+Jerry: Yeah, we could’ve used her expertise... 
+=> END  
+
+ 
+
+~ WithCompleteGroup_without_Fumiko_1  
+Jerry: Is everyone here? 
+Regina: Yeah, everyone except... Fumiko. 
+Nashir: That’s a shame. I enjoyed her company. 
+Maxim: Who will Maxim discuss his regimens to now. 
+=> END  
+
+~ WithCompleteGroup_without_Fumiko_2  
+Nashir: Well professor, did you bring that biogenetic fluid that I asked you? 
+Regina: Yeah, I got it right he— Wait? Where is it? 
+Maxim: Maxim saw you drop it earlier when you were running 
+Jerry: There’s nothing we can do now. 
+Nashir: But that’s for the solution for my luscious hair. 
+=> END 
+
+~ WithCompleteGroup_without_Fumiko_3 
+Jerry: I just noticed that Maxim always brings his barbels with him. 
+Nashir: Now that you mention it, do you always exercise that much? 
+Maxim: Maxim thinks that a strong body is required for survival. 
+Regina: Some studies do make it a topic, that’s for sure. 
+=> END  
+
+~ WithCompleteGroup_without_Fumiko_4 
+Jerry: Crew, we’re officially out of danger.  
+Jerry: The problem is we’re limited in our supplies. 
+Nashir: Don’t worry I don’t eat much unlike Maxim here. 
+Maxim: Food is necessary for a strong body, friend. Please do understand 
+Regina: With his stature, I’m sure he needs it. 
+=> END  
+
+~ WithCompleteGroup_without_Fumiko_5  
+Maxim: [[Friend|Captain|Jerry]] surely is calm after all of what happened. 
+Nashir: No. If you look closely, he’s pretty tired and depressed after that. 
+Nashir: No man feels calm after his world is destroyed. 
+Regina: Let him be, he needs to rest after carrying all of those supplies for us. 
+Jerry: Seriously guys, don’t worry. I’m fine. 
+=> END  
+
+ 
+
+~ ReginaOnly_1 
+Regina: Thanks for that captain. You risked your life to save me. 
+- I did what I had to do. 
+	Jerry: I just did what I had to do as your captain. 
+	Regina: And still you chose to save me instead of leaving me behind? 
+	Regina: Thank you. 
+	set _relationship["Regina"] += 0.15
+- I only saved you because of your usefulness 
+	Jerry: I only saved you because you are useful. 
+	Regina: Thanks anyways. If you chose not to, then I would have burned alongside the facility. 
+=> END  
+
+~ ReginaOnly_2  
+Jerry: You good? 
+Regina: Yeah, I’m fine. How about you captain? 
+- I’m also fine, don’t worry. 
+	Jerry: I’m also fine, don’t worry about me. 
+	Regina: Alright... I’ll head to my quarters then. I’m dead tired after all of that. Also, thanks for asking, that was sweet of you. (+ Relationship) 
+- I’m fine, why do you care? 
+	Jerry: I’m okay. Why do you even care? 
+	Regina: I’m just worried, okay? Well... We will be together from here on out so... let’s get along, yeah? 
+=> END  
+
+~ ReginaOnly_3  
+Regina: Why did you only save me captain? I saw you running around after you led me to the shuttle. 
+- I didn’t have the time to save the others. 
+	Jerry: I didn’t have time to save the rest of the crew. I’m sorry. 
+	Regina: No don’t be, it was a sudden event too, so I understand. 
+- I didn’t care about them. You should be thankful. 
+	Jerry: I didn’t care about their being, be thankful that I saved you. 
+	Regina: Wow, if I had a choice then you should have just left me behind.
+	set _relationship["Regina"] -= 0.3
+=> END  
+
+ 
+
+~ FumikoOnly_1  
+Fumiko: Wow! We almost didn’t make it! Thanks for saving me. 
+- It’s alright, I did what I had to do. 
+	Jerry: As your captain, I did what I had to do. 
+	Fumiko: Oh wow, that’s pretty admirable of you. Still, thanks for that. I owe you a lot.
+	set _relationship["Fumiko"] += 0.1
+- You better pull your own weight intern. 
+	Jerry: You better pull your own weight. I don’t want to know that I wasted my time. 
+	Fumiko: Roger that, captain! 
+=> END  
+
+~ FumikoOnly_2  
+Jerry: Are you alright, Fumiko? 
+Fumiko: Yeah, not much damage that can stop this survivor. 
+- That’s good, I’m glad that you’re alright. 
+	Jerry: That’s good, I’m glad that you’re alright. 
+	Fumiko: Yeah, thanks for worrying about me [[cap’n|captain]].
+	set _relationship["Fumiko"] += 0.05
+- Good for you then. 
+	Jerry: Good for you then. 
+	Fumiko: Oh, um yeah... Ok, I’ll um... Head to my quarters. 
+=> END  
+
+~ FumikoOnly_3  
+Fumiko: Thanks for saving me captain, but why is it just me. 
+- I’m sorry, I didn’t have enough time to save the others. 
+	Jerry: I’m sorry but I didn’t have enough time to save the other crew. 
+	Fumiko: Don’t take it out on to yourself. I’m still thankful that you saved me. I owe you, my life. 
+- I thought you’d love a guy like me to save you. 
+	Jerry: I thought you’d love a guy like me to save you. 
+	Fumiko: I’m not some weak woman of your fantasy you heartless dirt. 
+	set _relationship["Fumiko"] -= 0.3
+=> END  
+
+ 
+
+~ NashirOnly_1  
+Nashir: Oh my stars thank you for saving me [[Jerry|cap|captain]]. 
+- Don’t worry about it. 
+	Jerry: Don’t worry about it [[friend|Nashir]]. 
+	Nashir: No amount of thanks would amount to you saving my life, friend. 
+	set _relationship["Nashir"]
+- I did it because you’re useful. 
+	Jerry: I only did it because I deemed you useful. 
+	Nashir: Use my skills as you must my friend, I owe you my life.  
+=> END  
+
+~ NashirOnly_2  
+Nashir: Oh [[Captain|Jerry]], I will spread your name in the world as the man that you saved Nashir Asghar. Alas, it’s blown into pieces. 
+- There’s no need for that. 
+	Jerry: There is no need for that Nashir, let’s just survive this together. 
+	Nashir: Aye captain. Survive we will. 
+	set _relationship["Nashir"] += 0.15
+- Shut it, that’s embarrassing 
+	Jerry: Shut your mouth Nashir that’s very embarrassing. Just do your own thing okay? 
+	Nashir: Alright, alright. I’ll shut up. 
+=> END  
+
+~ NashirOnly_3 
+Nashir: Why did you only save me, [[Captain|Jerry]]? What about the others? 
+- There was no time. 
+	Jerry: There was no time, Nashir. You were the closest. I did what I could. 
+	Nashir: But... they were right there. They trusted you.
+	set _relationship["Nashir"] -= 0.2
+- And I’ll carry that with me 
+	Jerry: And I’ll carry that with me. Every day. 
+	Nashir: I just wish it didn’t have to be this way. 
+	Jerry: Me too, Nashir. Me too. 
+=> END  
+
+
+~ MaximOnly_1  
+Maxim: Friend! Maxim is grateful that you saved his muscles! Maxim will repay this in kind. 
+- There is no need for that. 
+	Jerry: There is no need for that Maxim. 
+	Maxim: Friend, you’re too kind. How about you leave cleaning duties to Maxim, eh? Maxim would be happy to help.
+	set _relationship["Maxim"] += 0.1
+- Repay me with your body. 
+Jerry: I saved you because you’re useful. You can repay me by using that body of yours. 
+Maxim: Aye, Captain! Maxim will prove his usefulness to you. 
+=> END  
+
+~ MaximOnly_2 
+Jerry: How are you holding up, friend? 
+Maxim: Maxim is fine, no injuries were attained with these muscles. And you? 
+- I’m good, no need to worry. 
+	Jerry: I’m good, friend, there is no need to worry. 
+	Maxim: That’s good! Maxim’s friend must be training his muscles too, eh? 
+	set  _relationship["Maxim"] =+ 0.1
+- Mind your own business.  
+	Jerry: Maxim, mind your own business please? 
+	Maxim: Oh! Maxim is sorry friend, mind Maxim’s business he shall.  
+=> END  
+
+
+~ MaximOnly_3  
+
+Maxim: [[Captain|Jerry]], Maxim must ask... why did you only save Maxim? What of the others? They were strong as Maxim too. 
+- It wasn’t an easy choice. 
+	Jerry: Maxim, it wasn’t an easy choice. I saved you because you were the closest, and I didn’t have time to reach anyone else. I wish I could’ve saved them all. 
+	Maxim: [Captain|Jerry], Maxim understands. Those who fell will not be forgotten. Maxim will honor them with his strength. 
+- It was either saved you, or no one at all. 
+	Jerry: Maxim... It was either to save you or to save no one at all. I had to make a choice at that moment, and you were my only option. 
+	Maxim: Then Maxim will make it worth the risk, [Captain|Jerry]]. For those we couldn’t bring back... Maxim will fight twice as hard. 
+=> END  
+
+ 
 
 ~ Jerry_Only_1
-Jerry: Jerry_only
-=> END 
+Jerry: I survived that apocalypse. 
+Jerry: I do feel lonely though. 
+=> END  
 
 ~ Jerry_Only_2
-Jerry: Jerry_only
-=> END 
+Jerry: Turns out I’m the only one who got in... 
+Jerry: Alright, I’ll have to work hard for my survival.  
+=> END  
 
 ~ Jerry_Only_3
-Jerry: Jerry_only
-=> END 
+Jerry: I didn’t manage to bring in any of my crew... 
+Jerry: Surviving this would prove difficult. 
+=> END  
 
 ~ Jerry_Only_4
-Jerry: Jerry_only
+Jerry: If only I could have more time to bring my crew in... 
+Jerry: Welp, there’s no use moping around. 
+=> END  
+
+ 
+
+#MAKE IT NEUTRAL THAT EVEN IF THEIR RELATIONSHIP ARE LOW, THEY CAN STILL TALK  
+
+# MAXIM and FUMIKO  
+
+~ RandomMeeting_1  
+Maxim: Maxim does 100 squats for Legs and 100 Push-ups for his arms. 
+Maxim: We don’t really have the best equipment for proper training. 
+Fumiko: Try rear lunges. I do those for my legs. Might be a good alternative for squats. 
+Maxim: Maxim will do that sometimes in the future, thank you friend. 
+=> END  
+
+~ RandomMeeting_2  
+Fumiko: So, Maxim, how did you even began working for this lab as an assistant? 
+Maxim: Maxim liked working in the Morskaya Pekhota, but Maxim is growing tired of strictness. No fun experienced back at the camp, so Maxim left and found a job as an assistant in this lab due to his curiosity. 
+Fumiko: So, in short, you were bored back at the Marine? 
+Maxim: Aye, you could say that. Assisting with the work of professors and captain here is fun. Maxim also built these beautiful muscles that he has now with free time. 
+=> END  
+
+ 
+
+# NASHIR and MAXIM  
+
+~ RandomMeeting_3  
+Maxim: We don't really have the best equipment for proper training. Maxim must make do with what’s here 
+Nashir: Ah, but isn’t that the beauty of it, Maxim? Real strength is about adapting. 
+Maxim: Hmm...  Maxim supposes there is truth in that. But Maxim likes routine. Routine keeps the mind and body sharp. 
+
+=> END  
+
+~ RandomMeeting_4  
+Nashir: Maxim, do you ever take time to just... rest? You know relax a little? 
+Maxim: Rest? Maxim rest when he sleeps. Training brings him peace. 
+Nashir: We all find peace in different ways, I suppose. You in muscle training, me in world play. 
+
+=> END  
+
+ 
+
+# REGINA and FUMIKO  
+
+~ RandomMeeting_5  
+Regina: Fumiko, I’m curious. Why did you join this laboratory? 
+Fumiko: I was assigned here by bossman to assist you. He said I could learn a lot from this lab from the boonies. 
+Regina: ...From the boonies? 
+Fumiko: Yeah, bossman said he appreciate it a lot if I head to lab with a lot of weirdos in it? 
+Regina: He called us what?! 
+Fumiko: Oh, don’t be mad at bossman, I think you guys are doing great! He just doesn’t see the quirkiness of the group, that’s all. 
+Regina: I don’t know if I should take that as a compliment... But thanks for that. 
+Fumiko: If it ever makes you feel good then you could always tell me about your research professor. 
+Regina: Oooh! You’re going to love this! 
+=> END  
+
+~ RandomMeeting_6  
+Fumiko: Say professor, why do they call you an Extremophile? Isn’t your job a biologist? 
+Regina: Yeah, it still is. It’s just that they are more focused on already studied wildlife and I’m more focused on creatures in extreme conditions. Such as space! 
+Fumiko: But why choose something hard to research? 
+Regina: Why wouldn’t I? That’s what makes them have fun. I don’t want to research cows or fish, what I want is to research resilient animals.  
+Fumiko: Now that you talk about it like that, yeah, I can see the charm. 
+Regina: Then, would you be interested in joining my research? I’m checking for creatures that could live in a hot desert. 
+=> END  
+
+ 
+
+#NASHIR and REGINA  
+
+~ RandomMeeting_7  
+Nashir: Professor, I suggest you have some rest. 
+Regina: And why is that? I don’t even feel slightly tired. 
+Nashir: Stress is the enemy of beauty, isn't it?  
+Nashir: And I also saw you doodling some odd creature on that notebook of yours. 
+Regina: They’re tardigrades not some odd creatures.  
+Regina: Though I suppose I do need some sleep, maybe I’ll go to bed early? 
+Nashir: If you need some help sleeping then I might just have the thing to help you with that.  
+Nashir: Also, put some mask for those bags under your eyes. I’ll get them for you. 
+Regina: Is it really that bad? 
+Nashir: Yes 
+=> END  
+
+~ RandomMeeting_8  
+Jerry: Regina put those test tubes down, they might spill. 
+Regina: Alright, alright. 
+Nashir: What was that about?  
+Regina: Captain wants me to put this tube full of gallium inside my container. 
+Nashir: Is that poisonous...? 
+Regina: I mean... Do you want to intake it? 
+Nashir: Oh no, not at all professor. 
+Regina: Don’t worry, it’s harmless... Mostly. It’s used for temperature measuring tools.  
+Regina: And we really did not bring any of those here. 
+Regina: It really wouldn’t “spill” like the captain said due to how cold this spacecraft is. 
+Nashir: Oh! Then let me help you with making that thermo-tool 
+=> END  
+
+#MAXIM and REGINA  
+
+~ RandomMeeting_9  
+Regina: Maxim, I really appreciate you being here to help with today’s experiment  
+Maxim: No need to thank Maxim, professor. Maxim oversees the heavy lifting and security duty. 
+Regina: True! It helps me focus. Thanks again, Maxim. Your experience really makes a difference. 
+Maxim: Maxim’s just doing what he does best keeping everyone safe.  
+=> END  
+
+~ RandomMeeting_10  
+Regina: Maxim, did you notice anything unusual with the experiment today? I didn’t expect the level of intensity. 
+Maxim: Maxim noticed. That experiment is more volatile than most. Maxim thinks tighter security protocols are needed.  
+Regina: I was thinking the same. If this is unpredictable, we should prepare for any possibility. 
+Maxim: Agreed. Maxim will make sure the lab is reinforced before we continue.  
+Regina: Thanks Maxim I feel a lot better knowing you’re here to keep everything under control. 
+=> END  
+
+#NASHIR and FUMIKO  
+
+~ RandomMeeting_11  
+Nashir: I can’t help to notice your complexion, what’s your skin care? 
+Fumiko: I really don’t have any skin care routine, doc. 
+Nashir: Fascinating, then why is it so smooth. 
+Nashir: I need to learn your secrets. 
+Fumiko: If it helps, then I am pretty optimistic. I also used to explore a lot of places. 
+Nashir: Oh of course! You live a stress-free life even before joining us in this lab! That would explain it. 
+Fumiko: I did once hear that they use the herbs in our cupboards. 
+Fumiko: They are not really good for a long space travel. 
+Nashir: Oooh! I’ll go get them now. 
+=> END  
+
+~ RandomMeeting_12  
+Fumiko: Doc, you work out often? 
+Nashir: Why yes! I was always working out with Maxim. 
+Nashir: A healthy body ensures a healthy mind. 
+Fumiko: Ooh! Then I happen to need a new routine since I rely on equipment a lot. 
+Nashir: Then you came to the right person! 
+Nashir: Let’s start with your arms! 
+=> END  
+
+ 
+
+#RELATIONSHIP IN BETWEEN AS HATED #MAXIM mad at NASHIR  
+
+~ mad_interaction_maxim_nashir1 
+Maxim: Friend, lately you have been getting on Maxim’s nerves. 
+Nashir: I’m sorry friend but we can talk this out. 
+=> END  
+
+~ mad_interaction_maxim_nashir2  
+Maxim: Friend, you better fix that attitude of yours. 
+Nashir: I do apologize but what happened? 
 => END 
 
-#MAKE IT NEUTRAL THAT EVEN IF THEIR RELATIONSHIP ARE LOW, THEY CAN STILL TALK 
-# MAXIM and FUMIKO
-~ RandomMeeting_1 
-=> END
+  
 
-~ RandomMeeting_2
-=> END
+#MAXIM mad at JERRY  
+~ mad_interaction_maxim_jerry1  
+Maxim: Captain, do you have an issue with Maxim, because Maxim does. 
+- Sorry, did I do something, friend? 
+	Jerry: Sorry, did I do something my friend? Let’s fix things between us. 
+	set _relationship["Maxim"] += 0.15
+	
+- I also have a problem with you. 
+	Jerry: Now that you mention it, I do have an issue with you. 
+	set  _relationship["Maxim"] -= 0.10
+=> END  
 
-
-# NASHIR and MAXIM
-~ RandomMeeting_3
-=> END
-
-~ RandomMeeting_4
-=> END
-
-# REGINA and FUMIKO
-~ RandomMeeting_5
-=> END
-
-~ RandomMeeting_6
-=> END
-
-#NASHIR and REGINA
-~ RandomMeeting_7
-=> END
-
-~ RandomMeeting_8
-=> END
-
-#MAXIM and REGINA
-~ RandomMeeting_9
-=> END
-
-~ RandomMeeting_10
-=> END
-
-#NASHIR and FUMIKO
-~ RandomMeeting_11
-=> END
-
-~ RandomMeeting_12
-=> END
-
-
-#RELATIONSHIP IN BETWEEN AS HATED
-#MAXIM mad at NASHIR
-~ mad_interaction_maxim_nashir1
+~ mad_interaction_maxim_jerry2  
+Maxim: Captain, your behavior lately has not been... pleasant. 
+- Sorry, did I do something, friend? 
+	Jerry: Sorry, did I do something my friend? Let’s fix things between us. 
+	set _relationship["Maxim"] += 0.1
+- I also have a problem with you. 
+	Jerry: Now that you mention it, I do have an issue with you. 
+	set _relationship["Maxim"] -= 0.1
 => END 
 
-~ mad_interaction_maxim_nashir2
+  
+
+#MAXIM mad at FUMIKO  
+~ mad_interaction_maxim_fumiko1  
+Maxim: Fumiko! Maxim told you not to touch the equipment in the containment area. Do you even realize how dangerous that was? 
+Fumiko: I'm sorry, Maxim. I just wanted to see how it worked... 
+Maxim: Curiosity is one thing; recklessness could put the whole crew in danger. Next time, listen to instructions. 
+Fumiko: Understood, Maxim. I won’t make the same mistake again. 
+Maxim: See that you don’t. This is a place for discipline, not shortcuts. 
+=> END  
+
+~ mad_interaction_maxim_fumiko2  
+Maxim: Fumiko, how many times does Maxim have to remind you about protocol? Those samples weren’t meant to be handled without gloves. 
+Fumiko: I didn’t realize it was such a big deal... 
+Maxim: it is a big deal! One slip-up could compromise the whole operation. Maxim doesn’t have time to clean up after carelessness. 
+Fumiko: I'm really sorry, Maxim I’ll be more careful. 
+Maxim: For everyone’s sake, let's hope that’s true. There is room for mistakes here. 
+=> END 
+
+  
+
+#MAXIM mad at REGINA  
+~ mad_interaction_maxim_regina1  
+Maxim: Professor, Maxim thinks that what you did was too far. 
+Regina: I’m sorry Maxim, let’s have a conversation. 
+=> END  
+
+~ mad_interaction_maxim_regina2  
+Maxim: Maxim was hurt by your action Professor. 
+Regina: I didn’t know what I did but I apologize. We can talk, just the two of us. 
+=> END  
+
+ 
+
+#NASHIR mad at REGINA  
+~ mad_interaction_nashir_regina1 
+set _reginaRelationship["Nashir"] -= 0.1
+Nashir: Looks like someone can’t appreciate my beauty. 
+Regina: Praising yourself? Really? 
+Nashir: Only hideous things can’t realize it. Like really, how did all trash gather in my sight? 
+Regina: How dare you! You narcissistic freak. 
+- Chill guys, we should work together. 
+	Regina: How could we work together if someone's come off a little rude, or maybe a world ‘little’ is befitting to the title 
+	Nashir: Why should I bother listening to a witch hmf! 
+	Regina: That smartmouth is really something... 
+- Just let it go 
+	Regina: You’re right... Nothings come good with that guy. 
+- You’re a little bit rude Nashir. 
+	set _relationship["Regina"] += 0.05 
+	set _relationship["Nashir"] -= 0.01 
+	Nashir: Are you siding that vile!? 
+	Regina: Hey! You may not respect me but respect our captain 
+	Nashir: Tch! 
+- Maybe you should appreciate beauty too regina. 
+	set _relationship["Regina"] -= 0.05 
+	set _relationship["Nashir"] += 0.07 
+	Regina: You- ugh! I can’t with you two!  
+=> END  
+
+ 
+
+~ mad_interaction_nashir_regina2  
+Nashir: Hello captain! My mornings beautiful, just like me OfCourse ~ but that change when I saw lady grim  
+Regina: Ugh... what did I do this time!? 
+Nashir: Nothing. For being born as ugly as you, you’re lucky to witness the true beauty. 
+Regina: I don’t have time to fight for you, okay? Just leave me alone. 
+Nashir: Ugly hag. 
+=> END  
+
+ 
+
+#NASHIR mad at JERRY  
+
+~ mad_interaction_nashir_jerry1 
+Nashir: Cap, your presence is filthy. 
+Nashir: Better get out of my sight. 
+- I’m sorry but what exactly made me an eyesore to you? Let’s talk. 
+	Nashir: I’m sorry I went too far, it’s just that what you did back there really offended me. 
+	Jerry: No friend, I should be the one who’s sorry. 
+	set _relationship["Nashir"] += 0.1 
+- How about you take that stupid face out of here? 
+	Nashir: Did you just— YOU IMBECILE.  
+	set _relationship["Nashir"] -= 0.1 
+=> END  
+
+~ mad_interaction_nashir_jerry2  
+Nashir: Honestly, this shuttle would feel more charming without you. Captain. 
+- I’m sorry but what exactly made me an eyesore to you? Let’s talk. 
+	Nashir: I’m sorry I went too far, it’s just that what you did back there really offended me. 
+	Jerry: No friend, I should be the one who’s sorry. 
+	set _relationship["Nashir"] += 0.1
+- How about you take that stupid face out of here? 
+	Nashir: Did you just— YOU IMBECILE.
+	set _relationship["Nashir"] -= 0.1
+=> END  
+
+ 
+#NASHIR mad at MAXIM  
+~ mad_interaction_nashir_maxim1 
+Nashir: So, Maxim, do you think all those muscles mean you know best? That’s not how we solve everything around here. 
+Maxim: And all that talking doesn’t mean you’re right, Nashir. Out in the field, a split second matters more than your long speeches. 
+- Let it go guys. Everyone has their strengths. 
+	set _relationship["Maxim"] += 0.05 
+	set _relationship["Maxim"] += 0.05 
+- Nashir, maybe Maxim has a point. 
+	set _relationship["Nashir"] -= 0.05 
+=> END  
+
+~ mad_interaction_nashir_maxim2  
+Nashir: Really, Maxim? You’re just going to stand there like some brooding statue? At least try using a few words instead of grunts. 
+Maxim: Words don’t stop bullets, Nashir. Maybe you should remember that. 
+- Let’s focus on what we do best and leave the rest. 
+	set _relationship["Maxim"] += 0.07 
+	set _relastionship["Nashir"] += 0.07 
+- Nashir, maybe not everyone needs to talk it out like you. 
+	set _relationship["Nashir"] -= 0.05 
+=> END  
+
+#NASHIR mad at FUMIKO  
+~ mad_interaction_nashir_fumiko1 
+Nashir: Fumiko, must you fidget with everything? You’re like a curious cat poking around where it doesn’t belong. 
+Fumiko: I can’t help it if everything here is interesting. Maybe you should try being a little curious yourself, Nashir. 
+- Let’s respect each other’s quirks, alright? 
+	set _relationship["Fumiko"] += 0.05 
+	set _relationship["Nashir"] += 0.05 
+- Fumiko, maybe Nashir has a point about boundaries. 
+	set _relationship["Fumiko"] -= 0.05 
+=> END  
+
+~ mad_interaction_nashir_fumiko2 
+Nashir: Honestly, Fumiko, do you ever sit still? Some of us value a little peace now and then. 
+Fumiko: And some of us value a little excitement. Not my fault you’re missing out. 
+- Balance, both of you. Maybe peace and excitement can coexist. 
+	set _relationship["Fumiko"] += 0.07 
+	set _relationship["Nashir"] += 0.07 
+- Fumiko, Nashir might be onto something. Maybe settle down a bit? 
+	set _relationship["Fumiko"] -= 0.07 
+=> END  
+
+ 
+
+#REGINA mad at FUMIKO  
+~ mad_interaction_regina_fumiko1 
+Regina: Intern, what you did back there was uncalled for. 
+Fumiko: Did I do something wrong professor? 
+Regina: Your attitude is what was wrong. 
+Fumiko: Alright professor, I’ll reflect on what I did. Let’s fix things between us. 
+=> END  
+
+~ mad_interaction_regina_fumiko2  
+Regina: Fumiko, we need to talk about your conduct. 
+Fumiko: I’m sorry professor but did I do something wrong? 
+Fumiko: We should talk professor. 
+Regina: Yeah, we should. 
+=> END  
+
+ 
+
+#REGINA mad at JERRY  
+~ mad_interaction_regina_jerry1 
+Regina: Captain, you really don’t see the importance of handling these life forms carefully, do you? It’s like you treat them as things instead of valuable life forms. 
+- You’re right, professor. I should be more mindful of your expertise. 
+	set _relationship["Regina"] += 0.04 
+- We’re here to survive, Regina, not play scientist. Try to keep up. 
+	set _relationship["Regina"] -= 0.05   
+=> END  
+
+~ mad_interaction_regina_jerry2  
+Regina: Captain, your approach is reckless. These lifeforms aren’t just threats, they’re incredible discoveries, and you’re squandering the chance to understand them. 
+- I get it, Professor. I’ll be more careful next time. 
+	set _relationship["Regina"] += 0.07 
+- They’re not my priority, Regina. Don’t lose sight of why we’re here. 
+	set _relationship["Regina"] -= 0.07 
+=> END  
+
+#REGINA mad at MAXIM  
+~ mad_interaction_regina_maxim1 
+Maxim: Professor, Maxim notice you don’t treat him as well as back at the lab 
+Regina: You know what you did Maxim. That was inexcusable. 
+Maxim: Maxim wants to make amends with the Professor. Maxim wants to talk. 
+=> END  
+
+~ mad_interaction_regina_maxim2 
+Maxim: Maxim doesn’t feel right with the Professor. 
+Regina: Oh? The muscle head is suddenly insensitive. 
+Maxim: Maxim does not know what he did, but Maxim wants to apologize. 
+Regina: Alright friend. 
+=> END  
+
+
+#REGINA mad at NASHIR  
+~ mad_interaction_regina_nashir1 
+Regina: Nashir I’m tired of your acts do you really think it’s fine to call people garbage based on their looks. 
+Nashir: It was a mere slip of the tongue professor. 
+Nashir: No, seriously if that offended you and the others I apologize dearly. It was uncalled for. 
+=> END  
+
+~ mad_interaction_regina_nashir2 
+Regina: Captain, your approach is reckless. These life forms aren’t just threats, they’re incredible discoveries, and you’re squandering the chance to understand them. 
+- I get it, Professor. I’ll be more careful next time.  
+	set _relationship["Regina"] += 0.07 
+- They’re not my priority, Regina. Don’t lose sight of why we’re here. 
+	set _relationship["Regina"] -= 0.07 
+=> END  
+
+#FUMIKO mad at JERRY  
+~ mad_interaction_fumiko_jerry1  
+Fumiko: Captain, you totally dismissed my plan back there! Do you even trust my input? 
+- You’re right, Fumiko. I’ll listen more closely next time. 
+	set _relationship["Fumiko"] += 0.05 
+- Plans need more than optimism, Fumiko They need experience. 
+	set _relationship["Fumiko"] -= 0.05 
+=> END  
+
+~ mad_interaction_fumiko_jerry2  
+Fumiko: You ignored my suggestions again, Captain! It’s like you don’t think I’m capable or trusworthy. 
+- I value your insights, Fumiko. 
+	set _relationship["Fumiko"] += 0.06 
+- I didn’t have time to look into it. 
+	set _relationship["Fumiko"] +=0.02
+=> END  
+
+ 
+
+#FUMIKO mad at MAXIM  
+
+~ mad_interaction_fumiko_maxim1 
+Fumiko: Maxim, do you have to be so rough with everything? Some things require a gentle touch! 
+Maxim: Maxim knows what works. Fragile isn’t an option out here. 
+- Let’s balance both approaches. We all have our strengths. 
+	set _relationship["Fumiko"] += 0.05 
+	set _relationship["Fumiko"] += 0.05 
+- Fumiko, maybe let Maxim do what he does best.  
+	set _relationship["Fumiko"] -= 0.05 
+	set _relationship["Maxim"] += 0.05 
+=> END  
+
+~ mad_interaction_fumiko_maxim2  
+Fumiko: Maxim, you’re stomping around like a tank! Not everything needs brute force. 
+Maxim: That’s where Maxim’s good at. Not everyone can handle these muscles. 
+- Let’s work together, folks. We need both caution and strength. 
+	set _relationship["Fumiko"] += 0.07 
+- Fumiko, sometimes force is exactly what we need. 
+	set _relationship["Fumiko"] -= 0.07 
+=> END  
+
+
+#FUMIKO mad at NASHIR  
+~ mad_interaction_fumiko_nashir1  
+Fumiko: Nashir, do you have to talk down to everyone? It’s getting old! 
+Nashir: I simply share my insights, Fumiko. Perhaps it’s wasted on some. 
+=> END  
+
+~ mad_interaction_fumiko_nashir2  
+Fumiko: Nashir, not every situation needs your commentary. Sometimes silence is golden. 
+Nashir: And sometimes curiosity is best left in check. 
 => END 
 
 
-#MAXIM mad at JERRY
-~ mad_interaction_maxim_jerry1
-=> END 
+ #FUMIKO mad at REGINA  
+~ mad_interaction_fumiko_regina1  
+Fumiko: Professor, you just ignored my observations! You’re not the only with ideas. 
+Regina: I don’t ignore. I prioritize. Maybe yours weren’t as urgent, Fumiko.  
+=> END  
 
-~ mad_interaction_maxim_jerry2
-=> END 
+~ mad_interaction_fumiko_regina2  
+Fumiko: Regina, you’re acting like you’re the only one who matters on this team. It’s getting annoying! 
+Regina: I’m acting with the mission in mind, Fumiko. It’s not about who’s right it’s about results. 
+=> END  
 
+ 
 
-#MAXIM mad at FUMIKO
-~ mad_interaction_maxim_fumiko1
-=> END 
+##EVERYONE HATE JERRY  
 
-~ mad_interaction_maxim_fumiko2
-=> END 
+~ mad_interaction_everyone_jerry1  
+Fumiko: Captain, maybe listen for once! We all have valuable input. 
+Regina: Agreed. You keep overlooking critical details, Captain. 
+Maxim: Even Maxim sees the problem. You need the crew’s insight. 
+Nashir: Perhaps the Captain believes he’s above learning from us. 
+- Alright, team. I’ll make an effort to consider all perspectives moving forward. 
+	set _relationship["Fumiko"] += 0.02 
+	set _relationship["Regina"] += 0.02 
+	set _relationship["Maxim"] += 0.02 
+	set _relationship["Nashir"] += 0.02 
+- Enough, all of you. I lead for a reason, and it’s not for debate 
+	set _relationship["Fumiko"] -= 0.02 
+	set _relationship["Regina"] -= 0.02 
+	set _relationship["Maxim"] -= 0.02 
+	set _relationship["Nashir"] -= 0.02 
+=> END  
 
+~ mad_interaction_everyone_jerry2  
+Fumiko: Captain, if you keep ignoring the rest of us, we’re going to end up in serious trouble! 
+Regina: We’re here to provide insight. Not just follow orders without question. 
+Maxim: Even Maxim knows the team’s strength lies in cooperation. Not in solo heroics, Captain. 
+Nashir: Precisely. Authority without listening is bound to fail. 
+=> END  
 
-#MAXIM mad at REGINA
-~ mad_interaction_maxim_regina1
-=> END 
+~ mad_interaction_everyone_jerry3  
+Fumiko: Captain, do you ever think about how your decisions affect the rest of us? 
+Regina: We’re part of the mission too, and our expertise shouldn’t be overlooked. 
+Maxim: Maxim knows teamwork isn’t just a word. You need to act on it, Captain. 
+Nashir: Yes, Captain. Leadership without consideration lacks true respect from the crew. 
+- Understood. I’ll do better to ensure everyone’s voice is heard.  
+	set _relationship["Fumiko"] += 0.02 
+	set _relationship["Regina"] += 0.02 
+	set _relationship["Maxim"] += 0.02 
+	set _relationship["Nashir"] += 0.02 
+- I’m leading this "mission". I know what’s best for all of us. 
+	set _relationship["Fumiko"] -= 0.02 
+	set _relationship["Regina"] -= 0.02 
+	set _relationship["Maxim"] -= 0.02 
+	set _relationship["Nashir"] -= 0.02 
+=> END  
 
-~ mad_interaction_maxim_regina2
-=> END 
+ 
 
+ 
 
-#NASHIR mad at REGINA
-~ mad_interaction_nashir_regina1
-=> END 
+#HUNGER  
+~ hunger_fumiko1  
+Fumiko: Ugh... my stomach’s been grumbling for hours. I can’t focus like this! 
+- Here, take my portion. 
 
-~ mad_interaction_nashir_regina2
-=> END 
-#NASHIR mad at JERRY
-~ mad_interaction_nashir_jerry1
-=> END 
+=> END  
 
-~ mad_interaction_nashir_jerry2
-=> END 
-#NASHIR mad at MAXIM
-~ mad_interaction_nashir_maxim1
-=> END 
+~ hunger_fumiko2  
+Fumiko: If I don’t get food soon, I’m going to collapse... or start seeing food where it isn’t. 
+set _sanity["Fumiko"] -=0.06 
+=> END  
 
-~ mad_interaction_nashir_maxim2
-=> END 
+~ hunger_maxim1  
+Maxim: Hunger is not an issue. Maxim’s been through worse. 
+=> END  
 
-#NASHIR mad at FUMIKO
-~ mad_interaction_nashir_fumiko1
-=> END 
+~ hunger_maxim2  
+Maxim: Could use some protein, Maxim feels muscles are shrinking. 
+set _sanity["Maxim"] -= 0.04  
+=> END  
 
-~ mad_interaction_nashir_fumiko2
-=> END 
+~ hunger_regina1  
+Regina: I’ve read that hunger affects cognitive function... and right now, I feel it. 
+- We’ll get you something soon, Professor. Hang in there. 
+set _relationship["Regina"] += 0.06 
+set _sanity["Regina"] += 0.05 
+do reduceFood(crewEat("Regina",GlobalResources.ration))
+Focus on the task at hand, Regina. We’ll eat when we’re done. 
+set _sanity["Regina"] -= 0.05 
+=> END  
 
+~ hunger_regina2  
+Regina: I can’t think straight. This hunger is clouding my mind... 
+set _sanity["Regina"] -= 0.04 
+=> END  
 
-#REGINA mad at FUMIKO
-~ mad_interaction_regina_fumiko1
-=> END 
+~ hunger_nashir1  
+Nashir: Hunger is an obstacle I can surpass... but it's unpleasant. 
+set _sanity["Nashir"] -= 0.05 
+=> END  
 
-~ mad_interaction_regina_fumiko2
-=> END 
+~ hunger_nashir2  
+Nashir: Really, is there nothing? Surely there’s a little something we missed? 
+- Here have some rations I found 
+	set _sanity["Nashir"] += 0.05 
+	do reduceFood(crewEat("Nashir",GlobalResources.ration))
+- Nashir, we need to limit the rations we eat 
+	set _sanity["Nashir"] -= 0.06 
+	set _relationship["Nashir"] -= 0.05 
+=> END  
 
-#REGINA mad at JERRY
-~ mad_interaction_regina_jerry1
-=> END 
+#SANITY LOW  
+~ sanity_low_fumiko1 
+Fumiko: I can feel the walls closing in... or is it just my imagination? 
+- Breathe, Fumiko. We’ll get through this. 
+	set _sanity["Fumiko"] +=0.02 
+- Try to stay calm, Fumiko. Focus on the mission at hand. 
+	set _sanity["Fumiko"] -= 0.02 
+	set _relationship["Fumiko"] -= 0.03 
+=> END  
 
-~ mad_interaction_regina_jerry2
-=> END 
+~ sanity_low_fumiko2 
+Fumiko: This is... too much. I need a moment. 
+=> END  
 
-#REGINA mad at MAXIM
-~ mad_interaction_regina_maxim1
-=> END 
+~ sanity_low_maxim1  
+Maxim: Maxim’s head is... foggy. Strange. Can’t lose it here. 
+- Stay with us Maxim. We’ll help you pull through. 
+	set _sanity["Maxim"] += 0.04 
+	set _relationship["Maxim"] += 0.05 
+- Keep steady, soldier. We need you to stay sharp. 
+	set _sanity["Maxim"] -= 0.04 
+	set _relationship["Maxim"] -= 0.03 
+=> END  
 
-~ mad_interaction_regina_maxim2
-=> END 
+~ sanity_low_maxim2  
+Maxim: Feel like the battlefield again... shadows creeping in. 
+set _sanity["Maxim"] -= 0.04 
+=> END  
 
-#REGINA mad at NASHIR
-~ mad_interaction_regina_nashir1
-=> END 
+~ sanity_low_regina1 
+Regina: My analysis is... slipping. I can’t seem to concentrate. 
+- Take a moment, Regina. Clear your head. 
+	set _sanity["Regina"] += 0.04 
+- We don’t have time for this. We need you to focus. 
+	set _sanity["Regina"] -= 0.04 
+	set _relationship["Regina"] -= 0.04 
+=> END  
 
-~ mad_interaction_regina_nashir2
-=> END 
+~ sanity_low_regina2  
+Regina: It’s like everything’s out of order. Nothing makes sense. 
+set _sanity["Regina"] -= 0.04 
+=> END  
 
+~ sanity_low_nashir1  
+Nashir: Even my mind has limits... but I won’t let this break me. 
+- Take a break, Nashir,  
+	set _sanity["Nashir"] += 0.04 
+	set _relationship["Nashir"] += 0.04 
+- No Time for breaks 
+	set _sanity["Nashir"] -= 0.04 
+	set _relationship["Nashir"] -= 0.04 
+=> END  
 
-#FUMIKO mad at JERRY
-~ mad_interaction_fumiko_jerry1
-=> END 
+~ sanity_low_nashir2  
+Nashir: Aha, this is a test. A test of the mind... I can still manage. 
+set _sanity["Nashir"] -= 0.05 
+=> END  
 
-~ mad_interaction_fumiko_jerry2
-=> END 
+ 
+#SANITY CRAZY  
+~ sanity_insane_fumiko1  
+Fumiko: Hah...! Shadows dancing... isn’t that... funny? 
+=> END  
 
-#FUMIKO mad at MAXIM
-~ mad_interaction_fumiko_maxim1
-=> END 
+~ sanity_insane_fumiko2  
+Fumiko: Who’s there? I can hear someone... whispering...! 
+=> END  
 
-~ mad_interaction_fumiko_maxim2
-=> END 
+~ sanity_insane_maxim1 
+Maxim: Don’t think... just act. I hear gunshots, need to take cover 
+=> END  
 
-#FUMIKO mad at NASHIR
-~ mad_interaction_fumiko_nashir1
-=> END 
+~ sanity_insane_maxim2  
+Maxim: Everything's...  a threat. Have to stay ready. No one is getting close to Maxim. 
+=> END  
 
-~ mad_interaction_fumiko_nashir2
-=> END 
+~ sanity_insane_regina1  
+Regina: I feel something is watching me... 
+=> END  
 
-#FUMIKO mad at REGINA
-~ mad_interaction_fumiko_regina1
-=> END 
+~ sanity_insane_regina2  
+Regina: Nothing... makes sense anymore. It’s all twisted. 
+=> END  
 
-~ mad_interaction_fumiko_regina2
-=> END 
+~ sanity_insane_nashir1  
+Nashir: My thoughts... are slipping away, but they’re still there... echoing. 
+=> END  
 
+~ sanity_insane_nashir2  
+Nashir: The mind is a labyrinth... but I’m not lost. Am I? 
+=> END  
 
-##EVERYONE HATE JERRY
-~ mad_interaction_everyone_jerry1
-=> END 
+ 
 
-~ mad_interaction_everyone_jerry2
-=> END 
+#SANITY GOOD  
 
-~ mad_interaction_everyone_jerry3
-=> END 
+~ sanity_good_fumiko1  
+Fumiko: Feeling clear-headed. I think I can handle anything today! 
+=> END  
 
-#HUNGER
-~ hunger_fumiko1
-=> END
-~ hunger_fumiko2
-=> END
+~ sanity_good_fumiko2  
+Fumiko: I feel great! Ready to tackle whatever’s ahead. 
+=> END!  
 
-~ hunger_maxim1
-=> END 
-~ hunger_maxim2
-=> END 
+~ sanity_good_maxim1  
+Maxim: Maxim’s mind is sharp, no distractions, no worries 
+=> END  
 
-~ hunger_regina1
-=> END 
-~ hunger_regina2
-=> END 
+~ sanity_good_maxim2  
+Maxim: Maxim’s ready. He knows what to do. 
+=> END  
 
-~ hunger_nashir1
-=> END 
-~ hunger_nashir2
-=> END 
+~ sanity_good_regina1  
+Regina: I’m calm and focused. Everything makes sense.  
+=> END  
 
+~ sanity_good_regina2  
+Regina: It’s wonderful to feel so clear. I can analyze anything right now. 
+=> END  
 
-#SANITY LOW
-~ sanity_low_fumiko1
-=> END
-~ sanity_low_fumiko2
-=> END
+~ sanity_good_nashir1  
+Nashir: A clear mind is a powerful thing. I feel at peace. 
+=> END  
 
-~ sanity_low_maxim1
-=> END 
-~ sanity_low_maxim2
-=> END 
-
-~ sanity_low_regina1
-=> END 
-~ sanity_low_regina2
-=> END 
-
-~ sanity_low_nashir1
-=> END 
-~ sanity_low_nashir2
-=> END 
-
-#SANITY CRAZY
-~ sanity_insane_fumiko1
-=> END
-~ sanity_insane_fumiko2
-=> END!
-~ sanity_insane_maxim1
-=> END 
-~ sanity_insane_maxim2
-=> END 
-~ sanity_insane_regina1
-=> END 
-~ sanity_insane_regina2
-=> END 
-~ sanity_insane_nashir1
-=> END 
-~ sanity_insane_nashir2
-=> END 
-
-#SANITY GOOD
-~ sanity_good_fumiko1
-=> END
-~ sanity_good_fumiko2
-=> END!
-~ sanity_good_maxim1
-=> END 
-~ sanity_good_maxim2
-=> END 
-~ sanity_good_regina1
-=> END 
-~ sanity_good_regina2
-=> END 
-~ sanity_good_nashir1
-=> END 
-~ sanity_good_nashir2
-=> END 
-
-############LEAVE THIS NULL
-~ null 
+~ sanity_good_nashir2  
+Nashir: I’m focused and grounded. Everything is as it should be. 
 => END 
