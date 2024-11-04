@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=135 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b0uu8qtxo3joe" path="res://Scenes/SceneAssets/ArrowNavigation.png" id="11_0iy23"]
 [ext_resource type="Texture2D" uid="uid://irge65po27jl" path="res://Scenes/craft.png" id="12_krim2"]
 [ext_resource type="Texture2D" uid="uid://cnb6mk0kko7a" path="res://Lobby.png" id="12_nbaaq"]
+[ext_resource type="Texture2D" uid="uid://dgyqid6upini8" path="res://Scenes/Ingame/FactButton_withoutnotif.png" id="12_oquuw"]
 [ext_resource type="Script" path="res://Scenes/lobby.gd" id="12_qmdri"]
 [ext_resource type="PackedScene" uid="uid://b5ib6052yah38" path="res://Crafting_UI/Crafting_Tab.tscn" id="13_10a7a"]
 [ext_resource type="Texture2D" uid="uid://cc8q6vvus8ouu" path="res://Scenes/Storage Scene.png .png" id="13_mblje"]
@@ -43,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://d1s43trmoohi7" path="res://Resources/SmallFoodCan/SmallFood_PickUp.png" id="35_kmg5f"]
 [ext_resource type="Texture2D" uid="uid://cwi6sxkf21j6t" path="res://Resources/Small_Fuel_1_unpickup.png" id="36_65yta"]
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
+[ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -872,6 +874,24 @@ layout_mode = 2
 wait_time = 0.2
 one_shot = true
 
+[node name="FactButton_Button" type="Button" parent="cam2d"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -881.0
+offset_top = -359.58
+offset_right = -791.0
+offset_bottom = -270.58
+
+[node name="FactButton_Button_Icon" type="Sprite2D" parent="cam2d/FactButton_Button"]
+position = Vector2(46, 43.42)
+texture = ExtResource("12_oquuw")
+
+[node name="FactButton" parent="cam2d" instance=ExtResource("44_sdcy4")]
+z_index = 170
+offset_left = -959.0
+offset_top = -539.58
+offset_right = -959.0
+offset_bottom = -539.58
+
 [node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
 z_index = 1
 position = Vector2(1931, -556)
@@ -1224,7 +1244,6 @@ texture = ExtResource("31_2medx")
 [node name="SparepartsPickup" type="Sprite2D" parent="StorageScene/CheckSpareparts/Storage_Spareparts"]
 position = Vector2(362.047, 64.6)
 rotation = -0.347244
-scale = Vector2(1, 1)
 texture = ExtResource("32_5hsbb")
 
 [node name="Spareparts" type="RichTextLabel" parent="StorageScene/CheckSpareparts/Storage_Spareparts"]
@@ -1451,12 +1470,14 @@ position = Vector2(-4082, -537)
 metadata/_edit_lock_ = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_h4mnh")]
+visible = false
 top_level = true
 z_index = 700
 offset_left = 1584.0
 offset_top = 231.0
 offset_right = 1584.0
 offset_bottom = 231.0
+metadata/_edit_lock_ = true
 
 [node name="CraftedItemsInventory" parent="." instance=ExtResource("28_b2c70")]
 visible = false
@@ -1478,6 +1499,7 @@ scale = Vector2(0.728638, 0.728638)
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="ChangeLocationToLeft"]
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
+[connection signal="button_up" from="cam2d/FactButton_Button" to="." method="_on_fact_button_button_button_up"]
 [connection signal="input_event" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_input_event"]
 [connection signal="mouse_entered" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_entered"]
 [connection signal="mouse_exited" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_exited"]

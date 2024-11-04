@@ -15,7 +15,7 @@ func create_button(data):
 	var button = Button.new()
 	$Panel/ScrollContainer/VBoxContainer.add_child(button)
 	button.text = data["id"]
-	var button_width = 200 
+	var button_width = 450
 	var button_height = 50
 	button.custom_minimum_size = Vector2(button_width, button_height)
 	button.connect("pressed",Callable (self,"buttonPress").bind(data))
@@ -53,6 +53,10 @@ func parse_json(json_text):
 	return json.get_data()
 	
 func set_fact_encountered(fact_id):
+	var FactButton_Button_Icon = get_node("FactButton_Button_Icon")
+	if FactButton_Button_Icon:
+		FactButton_Button_Icon.texture = "res://Scenes/Ingame/FactButton_withnotif.png"
+	
 	for fact in rawFacts:
 		if fact["id"] == fact_id:
 			if not fact["encountered"]: # Only update if not already encountered
@@ -78,3 +82,14 @@ func save_facts_to_json():
 	else:
 		print("Failed to open file for writing")
 		
+
+
+func _on_back_button_fact_button_button_up() -> void:
+	self.hide()
+	pass # Replace with function body.
+
+
+func _on_visibility_changed() -> void:
+	var FactButton_Button_Icon = get_node("FactButton_Button_Icon")
+	if FactButton_Button_Icon:
+		FactButton_Button_Icon.texture = "res://Scenes/Ingame/FactButton_withoutnotif.png"

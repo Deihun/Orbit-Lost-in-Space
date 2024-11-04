@@ -174,3 +174,7 @@ func checkIfKickoutEnough() -> bool:
 		if randf() > 0.25:
 			return true
 	return false
+
+
+func _on_fact_button_button_button_up() -> void:
+	$cam2d/FactButton.show()

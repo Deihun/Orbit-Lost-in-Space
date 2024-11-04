@@ -285,6 +285,9 @@ var _FumikoRelationship = { #SAVE
 	"Nashir" : 0.5,
 	"Fumiko" : 0.5
 }
+func addDisease(crew_name : String):
+	_disease[crew_name] += 0.001
+
 func isRelationship(name: String, value : float, isGreaterThan : bool = true) -> bool:
 	var conditionState = false
 	if isGreaterThan:
