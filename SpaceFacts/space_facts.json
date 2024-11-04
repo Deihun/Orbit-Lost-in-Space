@@ -1,7 +1,7 @@
 {
 	"facts": [
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact1",
 			"text": "The Space Shuttle was the first reusable spacecraft in history, The Shuttle launches like a rocket, maneuvers in Earth orbit like a spacecraft and lands like an airplane."
 		},
@@ -11,12 +11,12 @@
 			"text": "Hydro carbons and fossil-fuel like substance can be found on asteroids and comets"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact3",
 			"text": "The Starship was the first Super Heavy Rocket to reach earth orbit with a payload capacity of 100t to 150t fully reusable and with the height of 121m or 397ft by SpaceX."
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact4",
 			"text": "The first use of solar panels in space was on the Vanguard I spacecraft in 1958. Solar panels are now a standard power source for spacecraft. In 2017, the Space Shuttle Discovery received an upgrade to its solar panels. The new panels increased the daytime power available on the International Space Station."
 		},
@@ -26,7 +26,7 @@
 			"text": "The International Space Station The station was designed between 1984 and 1993. Elements of the station were in construction throughout the US, Canada, Japan, and Europe beginning in the late 1980s."
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact6",
 			"text": "Biogenic materials are materials that are created by organisms using proteins to assemble inorganic structures such as marine animals shell."
 		},
@@ -36,7 +36,7 @@
 			"text": "A solar flare is a relatively intense, localized emission of electromagnetic radiation in the Sun's atmosphere. Flares occur in active regions and are often, but not always,)"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact8",
 			"text": "Yuri Gagarin was the first human to journey into outer space in 1961."
 		},
@@ -71,7 +71,7 @@
 			"text": "Laika, a Soviet space dog, was the first animal to orbit Earth in 1957."
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact15",
 			"text": "The International Space Station (ISS) orbits Earth approximately every 90 minutes."
 		},
@@ -96,17 +96,17 @@
 			"text": "Sputnik 1 was the first artificial satellite, launched by the Soviet Union in 1957."
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact20",
 			"text": "The Apollo 11 mission’s lunar module was named Eagle."
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact21",
 			"text": "The Saturn V rocket, used in the Apollo missions, remains the most powerful rocket ever built."
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact22",
 			"text": "In spacecraft where oxygen is stored as a liquid (like the systems on the International Space Station), heaters are used to keep the oxygen from reaching too low of a temperature. This ensures it remains in a usable state when converted to gas for life support or other systems."
 		},
@@ -146,7 +146,7 @@
 			"text": "The Cassini spacecraft studied Saturn and its moons from 2004 to 2017."
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact30",
 			"text": "The Mars Pathfinder mission included the first successful rover, Sojourner, in 1997."
 		},

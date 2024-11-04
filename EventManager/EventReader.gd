@@ -125,7 +125,7 @@ func Probability(Event):
 func RunKeyWord(Command):
 	var numbers = ["0","1","2","3","4","5","6","7","8","9","-","."]
 	var global_resource = $"/root/GlobalResources"
-	var _command = Command
+	var _command : String = Command
 	
 	if _command.begins_with("@ADD_EFFECTS"):
 		_command = _command.substr("@ADD_EFFECTS".length(), _command.length() - "@ADD_EFFECTS".length())
@@ -188,11 +188,13 @@ func RunKeyWord(Command):
 		IngameStoredProcessSetting._yes_in_faction()
 	elif _command.begins_with("@NO_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		IngameStoredProcessSetting._no_in_faction()
-	elif _command.begins_with("@FACTS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
-		_command = _command.substr("@FACTS".length(), _command.length() - "@FACTS".length())
+	elif _command.begins_with("@FACTS "): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@FACTS ".length(), _command.length() - "@FACTS ".length())
 		_command.strip_edges()
+		_command.replace(" ","")
 		var factChecks = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton")
 		if factChecks:
+			print("Facts adding ", _command)
 			factChecks.set_fact_encountered(_command)
 			return
 			if factChecks.rawFacts["facts"].find({"id": _command}) :
@@ -240,16 +242,18 @@ func translate_description_to_gettedProcess(text):
 	var value = text
 	if "@SPAREPARTS()" in text:
 		value = text.replace("@SPAREPARTS()", str(global_var.spareparts))
-	elif "@FOOD" in text:
-		value = text.replace("@FOOD()", str(global_var.food))
-	elif "@BIOGENE" in text:
+	elif "@FOOD()" in text:
+		value = text.replace("@FOOD()", str(global_var.ration))
+	elif "@BIOGENE()" in text:
 		value = text.replace("@BIOGENE()", str(global_var.biogene))
-	elif "@DUCTAPE" in text:
+	elif "@DUCTAPE()" in text:
 		value = text.replace("@DUCTAPE()", str(global_var.ductape))
-	elif "@FUEL" in text: 
+	elif "@FUEL()" in text: 
 		value = text.replace("@FUEL()", str(global_var.fuel))
-	elif "@OXYGEN" in text:
+	elif "@OXYGEN()" in text:
 		value = text.replace("@OXYGEN()", str(global_var.oxygen))
+	elif "@MEDKIT()" in text:
+		value = text.replace("@MEDKIT()", str(global_var.medicine))
 	return value
 
 func _on_choice_button_pressed(choice_data):

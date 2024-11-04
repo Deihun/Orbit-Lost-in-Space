@@ -116,9 +116,8 @@ func command(_command : String):
 		if IngameStoredProcessSetting.crew_in_ship.has(_command):IngameStoredProcessSetting.crew_in_ship.erase(_command)
 		else: addHistory("/ERROR//: Cannot convert String to int '" + _command+"'")
 	elif _command.begins_with("@SET_FACTION"):
-		_command = _command.substr("@SET_FACTION".length(), _command.length() - "@SET_FACTION".length())
-		_command.capitalize()
-		IngameStoredProcessSetting.current_Factions = _command.capitalize()
+		commandMessage = commandMessage.substr("@SET_FACTION".length(), commandMessage.length() - "@SET_FACTION".length())
+		IngameStoredProcessSetting.current_Factions = commandMessage
 	else:
 		commandMessage = "Unrecognize command: '" + commandMessage + "'"
 		addHistory(commandMessage)

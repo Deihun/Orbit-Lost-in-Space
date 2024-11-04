@@ -9,8 +9,8 @@ var spareparts = 0
 var biogene : int= 0
 var ductape : int = 0
 var medicine: int = 0
-var emergencyOxy = 100
-var emergencyFuel = 100
+var emergencyOxy : int= 100
+var emergencyFuel :int = 100
 
 #EVENT VARIABLES
 var Critical_Event = []
@@ -72,6 +72,8 @@ func hasItem(item_type: String, quantity: int) -> bool:
 			returningValue = ductape >= quantity
 		"OXYGEN":
 			returningValue = oxygen >= quantity
+		"MEDKIT":
+			returningValue = medicine >= quantity
 	return returningValue
 
 func showTotalItems(): #For DEBUG only
@@ -102,6 +104,9 @@ func subtractItem(conditions : bool,item_name : String, amount : int):
 			"OXYGEN":
 				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
 				oxygen -= amount
+			"MEDKIT":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Medicine -", amount))
+				medicine -= amount
 
 func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
 	print(item_name,amount)
@@ -125,6 +130,9 @@ func AddItem(conditions,item_name, amount):#FOR EVENT ONLY
 			"OXYGEN":
 				IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -", amount))
 				oxygen += amount
+			"MEDKIT":
+				IngameStoredProcessSetting.addOnCycleReportList(str("Medicine -", amount))
+				medicine += amount
 			_:
 				print("unrecognize item ", item_name)
 
@@ -165,25 +173,41 @@ func removeEffect(effect_name):
 	GameEffects.erase(effect_name)
 
 func deduct_oxygen(value: int = 5) -> bool:
-	if oxygen > 0:
-		var deducted = min(value, oxygen)
-		oxygen -= deducted
-		IngameStoredProcessSetting.addOnCycleReportList("Oxygen: -" + str(deducted))
-		value -= deducted  # Remaining value to deduct
-	if value > 0 and emergencyOxy > 0:
-		var emergency_deducted = min(value, emergencyOxy)
-		emergencyOxy -= emergencyOxy
-		IngameStoredProcessSetting.addOnCycleReportList("Emergency Oxygen: -" + str(emergency_deducted))
+	var oxygenColludedValue = 0
+	var emergencyoxygenColludedValue = 0
+	print(oxygen, " - ", emergencyOxy, " ", value)
+	for i in range(value):
+		# Deduct from oxygen if there is any left.
+		if oxygen > 0:
+			oxygen -= 1
+			oxygenColludedValue+=1
+			
+		# If oxygen is depleted, start deducting from emergency oxygen.
+		elif emergencyOxy > 0 and oxygen <= 0:
+			emergencyOxy -= 1
+			emergencyoxygenColludedValue += 1
+
+	if oxygenColludedValue > 0 : IngameStoredProcessSetting.addOnCycleReportList(str("Oxygen -",oxygenColludedValue))
+	if emergencyoxygenColludedValue > 0 : IngameStoredProcessSetting.addOnCycleReportList(str("EmergencyOxygen -",emergencyoxygenColludedValue))
+
 	return emergencyOxy <= 0
 
+
 func deduct_fuel(value: int = 5) -> bool:
-	if fuel > 0:
-		var deducted = min(value, fuel)
-		fuel -= deducted
-		IngameStoredProcessSetting.addOnCycleReportList("Oxygen: -" + str(deducted))
-		value -= deducted  # Remaining value to deduct
-	if value > 0 and emergencyFuel > 0:
-		var emergency_deducted = min(value, emergencyFuel)
-		emergencyFuel -= emergencyFuel
-		IngameStoredProcessSetting.addOnCycleReportList("Emergency Oxygen: -" + str(emergency_deducted))
+	var oxygenColludedValue = 0
+	var emergencyoxygenColludedValue = 0
+	for i in range(value):
+		# Deduct from oxygen if there is any left.
+		if fuel > 0:
+			fuel -= 1
+			oxygenColludedValue+=1
+			
+		# If oxygen is depleted, start deducting from emergency oxygen.
+		elif emergencyFuel > 0 and oxygen <= 0:
+			emergencyFuel -= 1
+			emergencyoxygenColludedValue += 1
+
+	if oxygenColludedValue > 0 : IngameStoredProcessSetting.addOnCycleReportList(str("Fuel -",oxygenColludedValue))
+	if emergencyoxygenColludedValue > 0 : IngameStoredProcessSetting.addOnCycleReportList(str("EmergencyFuel -",emergencyoxygenColludedValue))
+
 	return emergencyFuel <= 0

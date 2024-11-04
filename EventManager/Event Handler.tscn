@@ -9,6 +9,7 @@
 script = ExtResource("1_jnq3i")
 
 [node name="EventUIAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(989, 542)
 sprite_frames = ExtResource("4_coms2")
 animation = &"OpeningAnimation"
@@ -16,6 +17,7 @@ frame = 33
 frame_progress = 1.0
 
 [node name="EventReader" type="Node2D" parent="."]
+visible = false
 script = ExtResource("2_nkt3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="EventReader"]
