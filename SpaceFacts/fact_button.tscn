@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://baond8hhrlmdf"]
+[gd_scene load_steps=3 format=3 uid="uid://baond8hhrlmdf"]
 
 [ext_resource type="Script" path="res://SpaceFacts/fact_button.gd" id="1_6411q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8iw6"]
+bg_color = Color(0.385493, 0.385493, 0.385492, 1)
 
 [node name="FactButton" type="Control"]
 visible = false
@@ -13,9 +16,11 @@ grow_vertical = 2
 script = ExtResource("1_6411q")
 
 [node name="Panel" type="Panel" parent="."]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
 layout_mode = 0
 offset_right = 1918.0
 offset_bottom = 1079.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8iw6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 layout_mode = 0
@@ -27,6 +32,7 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="FactTitle" type="Label" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -42,6 +48,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FactDesc" type="Label" parent="Panel"]
+visible = false
 layout_mode = 1
 offset_left = 661.0
 offset_top = 145.0
@@ -59,6 +66,11 @@ offset_right = 1881.0
 offset_bottom = 1058.0
 theme_override_font_sizes/font_size = 41
 text = "BACK"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 955.0
+offset_bottom = 787.0
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="Panel/Back_Button_FactButton" to="." method="_on_back_button_fact_button_button_up"]

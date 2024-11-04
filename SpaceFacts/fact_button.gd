@@ -4,7 +4,6 @@ var is_modified = false
 
 func _ready() -> void:
 	load_facts()
-	set_fact_encountered("fact30")
 	LoopChecker()
 	
 func create_button(data):
@@ -17,14 +16,18 @@ func create_button(data):
 	button.connect("pressed",Callable (self,"buttonPress").bind(data))
 	
 func buttonPress(data):
+	$Panel/FactTitle.show()
+	$Panel/FactDesc.show()
 	$Panel/FactTitle.text = data["id"]
 	$Panel/FactDesc.text = data["text"]
 func LoopChecker():
+	for child in $Panel/ScrollContainer/VBoxContainer.get_children():
+		child.queue_free()
+	
 	for facts in rawFacts:
 		if facts["encountered"]:
 			create_button(facts)
-			print("testing")
-		print("Fact encountered:" + facts["id"]) # print("data")
+		#print("Fact encountered:" + facts["id"]) # print("data")
 	
 	
 func load_facts():
@@ -61,7 +64,9 @@ func set_fact_encountered(fact_id):
 			save_facts_to_json()
 		else:
 			print("fact already marked as encountered:", fact_id)
-			
+		LoopChecker()
+
+
 func save_if_modified():
 	if is_modified:
 		save_facts_to_json()
@@ -86,6 +91,7 @@ func _on_back_button_fact_button_button_up() -> void:
 
 
 func _on_visibility_changed() -> void:
+	LoopChecker()
 	var FactButton_Button_Icon = get_node("FactButton_Button_Icon")
 	if FactButton_Button_Icon:
 		FactButton_Button_Icon.texture = "res://Scenes/Ingame/FactButton_withoutnotif.png"

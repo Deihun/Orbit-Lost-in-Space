@@ -114,7 +114,7 @@ func updateCockpit():
 		"Earth2.0":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
 		"Sauria":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
 		"Enthuli": pass
-		"Abandonship":pass
+		"AbandonShip":pass
 		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
 

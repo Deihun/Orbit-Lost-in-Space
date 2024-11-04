@@ -2,15 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="1_b430m"]
 [ext_resource type="Script" path="res://Resources/CREW/fumiko.gd" id="1_c6g0i"]
-[ext_resource type="Texture2D" uid="uid://b1lx8fjkuh7vc" path="res://Resources/CREW/FUMIKO.png" id="2_s0tor"]
+[ext_resource type="Texture2D" uid="uid://b5log70mq8p4e" path="res://Resources/CREW/FumikoGather.png" id="3_ur3pk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf1oy"]
-size = Vector2(53.75, 56.5)
+size = Vector2(462.375, 468.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ab11"]
 size = Vector2(314.286, 285.714)
 
 [node name="Fumiko" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(0.3, 0.3)
 collision_layer = 33
 collision_mask = 0
 script = ExtResource("1_c6g0i")
@@ -18,7 +20,7 @@ script = ExtResource("1_c6g0i")
 [node name="InteractionArea" parent="." instance=ExtResource("1_b430m")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-1.125, 0.75)
+position = Vector2(-5, 20)
 shape = SubResource("RectangleShape2D_rf1oy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,6 +30,8 @@ scale = Vector2(0.07, 0.07)
 shape = SubResource("RectangleShape2D_4ab11")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.38419e-07, 0)
-scale = Vector2(0.125833, 0.1125)
-texture = ExtResource("2_s0tor")
+y_sort_enabled = true
+position = Vector2(-3, 2)
+scale = Vector2(1, 0.888)
+texture = ExtResource("3_ur3pk")
+offset = Vector2(15.8941, -355.555)

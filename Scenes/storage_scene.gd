@@ -15,13 +15,13 @@ func _on_checking_ration_mouse_entered() -> void:
 func _on_checking_fuel_mouse_entered() -> void:
 	$CheckingFuel/Storage_Fuel.show()
 	$CheckingFuel/Storage_Fuel/Fuel.text = str("Fuel: ", GlobalResources.fuel,"/1000",
-	"\nEmergency Fuel: ", GlobalResources.emergencyFuel,"/100",
+	"\nEmergencyFuel: ", GlobalResources.emergencyFuel,"/100",
 	 "\n\nAn essential propulsion resource used to power and maneuver the spacecraft. Fuel depletes with each of movement of the Spacecraft, and depletes when crafting an Item, requiring careful management to ensure you have enough for both travel and crafting. Collect fuel cells in expeditions and events, and strategize the use of your fuel and avoid getting stranded in space")
 
 func _on_checking_oxygen_mouse_entered() -> void:
 	$CheckingOxygen/Storage_Oxygen.show()
 	$CheckingOxygen/Storage_Oxygen/Oxygen.text = str("Oxygen: ", GlobalResources.oxygen,"/1000",
-	"\nEmergency Oxygen: ",GlobalResources.emergencyFuel, "/100",
+	"\nEmergency Oxygen: ",GlobalResources.emergencyOxy, "/100",
 	 "\n\nA critical survival resource that determines how long you can explore hazardous or air-limited environments such as space. Oxygen depletes over time, in order to replenish this, you may replenish it in expedition or events in order to avoid suffocation and crew discontent. Manage your oxygen carefully, locate oxygen gas tanks, and plan each cycle to maximize oxygen management.")
 
 func _on_check_spareparts_mouse_entered() -> void:
