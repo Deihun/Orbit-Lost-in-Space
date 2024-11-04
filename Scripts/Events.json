@@ -288,9 +288,24 @@
 		"id": 22,
 		"name": "You left the asteroid alone"
 	},{
-		"Choice-1": [20,[["SPAREPARTS", 10] ], "You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n, - 10/@SPAREPARTS() Spare Parts"],
-		"Choice-2": [21,[["SPAREPARTS", 20] ], "You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n, - 20/@SPAREPARTS() Spare Parts"],
-		"Choice-3": [22,[["SPAREPARTS", null] ], "Leave it. \n+ 10 Fuel\n, - 10/@SPAREPARTS() Spare Parts"],
+		"Command": [
+			"@FACTS fact2",
+		],
+		"Choice-1": [20,[["SPAREPARTS", 10] ], "You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n - 10/@SPAREPARTS() Spare Parts"],
+		"Choice-2": [21,[["SPAREPARTS", 20] ], "You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n - 20/@SPAREPARTS() Spare Parts"],
+		"Choice-3": [22,[["SPAREPARTS", null] ], "Leave it."],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
+		"id": 23,
+		"name": "Foreign Object Detected!"
+	},{
+		"Command": [
+			"@FACTS fact2",
+		],
+		"Choice-1": [20,[["SPAREPARTS", 10] ], "You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n - 10/@SPAREPARTS() Spare Parts"],
+		"Choice-2": [21,[["SPAREPARTS", 20] ], "You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n - 20/@SPAREPARTS() Spare Parts"],
+		"Choice-3": [22,[["SPAREPARTS", null] ], "Leave it."],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",

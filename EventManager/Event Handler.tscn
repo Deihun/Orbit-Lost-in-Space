@@ -49,13 +49,14 @@ text = "description
 autowrap_mode = 3
 
 [node name="Container" type="ScrollContainer" parent="EventReader"]
-offset_left = 1315.0
+z_index = 5
+offset_left = 1070.0
 offset_top = 176.0
 offset_right = 1745.0
-offset_bottom = 903.0
+offset_bottom = 908.0
 
 [node name="Container_EventButton" type="VBoxContainer" parent="EventReader/Container"]
 layout_mode = 2
-theme_override_constants/separation = 300
+theme_override_constants/separation = 5
 
 [connection signal="animation_finished" from="EventUIAnimation" to="." method="_on_opening_ui_scene_animation_finished"]
