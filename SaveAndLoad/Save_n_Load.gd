@@ -27,10 +27,10 @@ func SaveGame(SaveName : String):
 	print(SavePath)
 
 func savedata():
-	#print("test")
 	if !events :
 		print("null save")
 	var save_dict = {
+		#Set Save data values to File save
 		"ration" : resources.ration,
 		"oxygen" : resources.oxygen,
 		"fuel" : resources.fuel,
@@ -45,13 +45,12 @@ func savedata():
 		"Critical_Event" : resources.Critical_Event,
 		"alreadyTriggeredEvent" : resources.alreadyTriggeredEvent,
 		"Priority_Event" : resources.Priority_Event,
-		"eventID" : resources.eventID
+		"eventID" : resources.eventID,
 	}
 	return save_dict
 
 func save():
 	print("saved")
-	#var file = FileAccess.open(SavePath, FileAccess.WRITE)
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
@@ -60,7 +59,6 @@ func loadsave():
 	if not FileAccess.file_exists(SavePath):
 		print("file exsit")
 		return
-	#var file = FileAccess.open(SavePath, FileAccess.READ)
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
 		
 	while file.get_position() < file.get_length():
@@ -68,7 +66,7 @@ func loadsave():
 		var json = JSON.new()
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()	
-		
+		#Get Value from save file
 		resources.ration = node_data["ration"]
 		resources.oxygen = node_data["oxygen"]
 		resources.fuel = node_data["fuel"]

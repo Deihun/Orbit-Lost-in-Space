@@ -24,7 +24,6 @@ func set_Items() -> void:
 		item_container.add_child(ItemButton)
 
 func _on_button_pressed() -> void:
-	buttons.play()
 	self.hide()
 
 func resetChild() -> void:

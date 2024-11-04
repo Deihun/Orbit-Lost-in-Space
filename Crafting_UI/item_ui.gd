@@ -1,6 +1,5 @@
 extends Control
 
-@onready var getResources = $"/root/GlobalResources"
 @onready var crafting_tab: Node2D = get_parent().get_parent()
 @onready var item_description_label: RichTextLabel = $Panel/Item_Description/Item_DescriptionLabel
 @onready var item_effect_label: RichTextLabel = $Panel/Item_Effect/Item_EffectLabel
@@ -13,7 +12,6 @@ extends Control
 @onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
 @onready var buttons: AudioStreamPlayer = $Buttons
 
-
 var ongoingCraft = false
 var currentlycrafting
 
@@ -21,21 +19,22 @@ func _on_craft_button_pressed() -> void:
 	if (ongoingCraft == false):
 		match crafting_tab.craftingItems:
 			"A.C.E.S":
-				if getResources.spareparts >= 300 && getResources.oxygen >= 100 && getResources.fuel >= 10:
-					getResources.spareparts -= 300
-					getResources.oxygen -= 100
-					getResources.fuel -= 10
+				if GlobalResources.spareparts >= 300 && GlobalResources.oxygen >= 100 && GlobalResources.fuel >= 10:
+					GlobalResources.spareparts -= 300
+					GlobalResources.oxygen -= 100
+					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
+					print(currentlycrafting)
 					NowCraftingShow()
 					crafting_tab.closeScreen()
 				else:
 					warning_insufficientShow()
 			
 			"LeadSuitUp":
-				if getResources.spareparts >= 400 && getResources.fuel >= 10:
-					getResources.spareparts -= 400
-					getResources.fuel -= 10
+				if GlobalResources.spareparts >= 400 && GlobalResources.fuel >= 10:
+					GlobalResources.spareparts -= 400
+					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
@@ -44,9 +43,9 @@ func _on_craft_button_pressed() -> void:
 					warning_insufficientShow()
 			
 			"Crowbar":
-				if getResources.spareparts >= 350 && getResources.fuel >= 10:
-					getResources.spareparts -= 350
-					getResources.fuel -= 10
+				if GlobalResources.spareparts >= 350 && GlobalResources.fuel >= 10:
+					GlobalResources.spareparts -= 350
+					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true	
 					NowCraftingShow()
@@ -54,11 +53,10 @@ func _on_craft_button_pressed() -> void:
 				else:
 					warning_insufficientShow()
 			
-			
 			"MedkitCharge":
-				if getResources.biogene >= 150 && getResources.fuel >= 10:
-					getResources.biogene -= 150
-					getResources.fuel -= 10
+				if GlobalResources.biogene >= 150 && GlobalResources.fuel >= 10:
+					GlobalResources.biogene -= 150
+					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
@@ -67,9 +65,9 @@ func _on_craft_button_pressed() -> void:
 					warning_insufficientShow()
 			
 			"DehySpaceFood":
-				if getResources.biogene >= 100 && getResources.fuel >= 10:
-					getResources.biogene -= 150
-					getResources.fuel -= 10
+				if GlobalResources.biogene >= 100 && GlobalResources.fuel >= 10:
+					GlobalResources.biogene -= 150
+					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
@@ -78,9 +76,9 @@ func _on_craft_button_pressed() -> void:
 					warning_insufficientShow()
 			
 			"FreDriSpaceFood":
-				if getResources.ration >= 20 && getResources.fuel >= 10:
-					getResources.ration -= 20
-					getResources.fuel -= 10
+				if GlobalResources.ration >= 20 && GlobalResources.fuel >= 10:
+					GlobalResources.ration -= 20
+					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true
 					NowCraftingShow()
