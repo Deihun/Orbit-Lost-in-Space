@@ -21,6 +21,8 @@ func _ready() -> void:
 	ChangeLocaton(false)
 
 func _process(delta: float) -> void:
+	if self.position == SpecificLocation[3]:
+		return 
 	if Input.is_key_pressed(KEY_A):
 		ChangeLocationToLeft()
 	elif Input.is_key_pressed(KEY_D):

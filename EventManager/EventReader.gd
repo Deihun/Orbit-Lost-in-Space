@@ -8,7 +8,7 @@ var temp_choice_data = []
 
 @onready var title = $Title
 @onready var desc = $Description
-@onready var button_container = $Container
+@onready var button_container = $Container/Container_EventButton
 
 
 func _ready():
@@ -188,11 +188,22 @@ func RunKeyWord(Command):
 		IngameStoredProcessSetting._yes_in_faction()
 	elif _command.begins_with("@NO_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		IngameStoredProcessSetting._no_in_faction()
+	elif _command.begins_with("@FACTS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@FACTS".length(), _command.length() - "@FACTS".length())
+		_command.strip_edges()
+		var factChecks = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton")
+		if factChecks:
+			if factChecks.rawFacts["facts"].find({"id": _command}) :
+				factChecks.set_fact_encountered(_command)
+			else:
+				print(_command, " - Fact doesnt exist")
+		else:
+			print("Error// Cant find FactGroup node on current scene")
 	else:
 		print("Unable to identify Keyword in the context: '",_command,"'")
 
 
-func clear_container(container: Node2D):
+func clear_container(container: VBoxContainer):
 	for i in range(container.get_child_count() - 1, -1, -1):
 		var child = container.get_child(i)
 		child.queue_free()
