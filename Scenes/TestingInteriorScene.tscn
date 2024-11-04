@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://cc7evrjjstpn1"]
+[gd_scene load_steps=136 format=3 uid="uid://cc7evrjjstpn1"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bos6vw3go366u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonShipAnimation.png" id="20_8oew0"]
 [ext_resource type="Script" path="res://Scenes/expedition_selection.gd" id="21_iriww"]
 [ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
+[ext_resource type="Texture2D" uid="uid://3qtbe8hnsp4x" path="res://Scenes/EndScenes/Gallery_Endings/Expedition.png" id="24_atqdh"]
 [ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
 [ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
 [ext_resource type="Texture2D" uid="uid://blm13ibe5hs8x" path="res://Scenes/UI/StorageUI.png" id="30_3t5wv"]
@@ -1000,12 +1001,17 @@ text = "FactionCurrently: "
 
 [node name="ExpeditionButton" type="Button" parent="WholeInteriorScene"]
 visible = false
-offset_left = 2688.0
-offset_top = 50.0
-offset_right = 2972.0
-offset_bottom = 222.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2747.0
+offset_top = -115.0
+offset_right = 2919.0
+offset_bottom = 52.0
 text = "EXPEDITION BUTTON
 "
+
+[node name="Sprite2D" type="Sprite2D" parent="WholeInteriorScene/ExpeditionButton"]
+position = Vector2(94, 89.42)
+texture = ExtResource("24_atqdh")
 
 [node name="Button_ToStorageRoom" type="Area2D" parent="WholeInteriorScene"]
 

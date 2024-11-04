@@ -69,6 +69,8 @@ func gameOver():
 
 
 func gameWin():
+	var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
+	r.updateGlobalResource()
 	_player.transition()
 	player_cb.canMove = false
 	await get_tree().create_timer(2.5).timeout
