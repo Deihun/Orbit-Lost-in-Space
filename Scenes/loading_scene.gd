@@ -11,15 +11,15 @@ var mainmenu = "res://MainMenu/main_menu.tscn"
 var _tutorial = "res://Scenes/Tutorial/TutorialScene.tscn"
 var _abandonShip = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.tscn"
 var interiorScene = "res://Scenes/TestingInteriorScene.tscn"
-var radonti = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/RadontiMapLayout.tscn"
-var sauria = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaMapLayout.tscn"
-var earth2 = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2MapLayout.tscn"
+var radonti = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.tscn"
+var sauria = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Sauria.tscn"
+var earth2 = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0.tscn"
 var Enthuli = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/EnthuliMapLayout.tscn"
-var steelicus = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusMapLayout.tscn"
+var steelicus = "res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Steelicus.tscn"
 
 func _ready() -> void:
+	Engine.time_scale = 1.0
 	var a = IngameStoredProcessSetting.Scenes
-	print(a)
 	match (a):
 		"newgame":
 			$TutorialPanel.show()

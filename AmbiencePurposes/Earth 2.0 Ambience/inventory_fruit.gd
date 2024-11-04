@@ -13,11 +13,7 @@ func _ready():#Initialize the inventory var
 	interaction_area.interact = Callable(self,"interaction")
 	await get_tree().create_timer(0.1).timeout
 	interaction_area = $InteractionArea_inventoryFruit
-	if interaction_area:
-		print("IT ISNT NULL SO WHY!???")
-	else:
-		print("WHY TF ITS A NULL!???")
-	pass
+
 
 
 

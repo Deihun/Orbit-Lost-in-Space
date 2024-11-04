@@ -1,7 +1,7 @@
 extends Sprite2D
 @onready var ai : AnimatedSprite2D = $CraftingAnimation
 @onready var crafting_tab: Node2D = $"../../CraftingTab"
-@onready var item_ui: Control = $"../../CraftedItemsInventory/Control/Item_UI"
+@onready var item_ui: Control = $"../../CraftingTab/Control/Item_UI"
 
 var RecentAnimation : String = ""
 var isMouseInside : bool = false

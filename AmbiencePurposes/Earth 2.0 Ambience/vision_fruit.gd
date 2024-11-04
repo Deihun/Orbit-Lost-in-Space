@@ -25,15 +25,18 @@ func interaction():
 		$AnimatedSprite2D.hide()
 		texture = load("res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit_withoutVisionFruit.png")
 		camera.zoom = Vector2(0.52,0.52)
-		await get_tree().create_timer(6.0).timeout
-		camera.zoom = Vector2(0.75,0.75)
+		$Duration.start()
 	pass
 
 
 
 func _on_cooldown_timeout() -> void:
-	$InteractionArea_vision/CollisionShape2D_visionFruit.disabled = false
 	$AnimatedSprite2D.show()
 	readyToPickup = true
 	texture = load("res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit_withFruit.png")
+	pass # Replace with function body.
+
+
+func _on_duration_timeout() -> void:
+	camera.zoom = Vector2(0.75,0.75)
 	pass # Replace with function body.

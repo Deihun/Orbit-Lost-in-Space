@@ -34,6 +34,8 @@ var game_win : Callable
 
 #VOID METHODS
 func _ready():	#OnStart, 
+	self.set_process(false)
+	await get_tree().create_timer(0.1).timeout
 	if $"..".useGlobeTimerUI: $AllUIParents/Timer.hide()
 	else: 
 		$AllUIParents/Timer/Label_Timer.text = str($"..".limitTimeDuration)

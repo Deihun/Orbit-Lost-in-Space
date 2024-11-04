@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkssoy7vm8sg3"]
+[gd_scene load_steps=7 format=3 uid="uid://e58h5aiabykh"]
 
 [ext_resource type="Texture2D" uid="uid://bmrlngo481ptl" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit_withFruit.png" id="1_2m8kh"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/vision_fruit.gd" id="2_y2wj3"]
-[ext_resource type="PackedScene" uid="uid://bo1pfvcdu6ny4" path="res://AmbiencePurposes/Earth 2.0 Ambience/Shine.tscn" id="3_mik5a"]
+[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/Shine.tscn" id="3_mik5a"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="4_j2fah"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vanyx"]
@@ -38,4 +38,9 @@ shape = SubResource("CircleShape2D_l4eed")
 wait_time = 15.0
 one_shot = true
 
+[node name="Duration" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]

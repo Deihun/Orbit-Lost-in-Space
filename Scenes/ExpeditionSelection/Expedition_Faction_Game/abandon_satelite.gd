@@ -56,9 +56,7 @@ func gameOver():
 	player_cb.canMove = false
 	await get_tree().create_timer(2.5).timeout
 	if crew_name == "Jerry" and IngameStoredProcessSetting.crew_in_ship.size() > 0:
-		var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
 		IngameStoredProcessSetting.didJerryLose = true
-		r.updateGlobalResource()
 		IngameStoredProcessSetting.Scenes = "interiorscene"
 		get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
 	elif crew_name == "Jerry" and IngameStoredProcessSetting.crew_in_ship.size() <= 0:

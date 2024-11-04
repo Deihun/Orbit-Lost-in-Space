@@ -2372,13 +2372,13 @@ script = ExtResource("1_5ung8")
 z_index = 2
 position = Vector2(6, -40)
 color = Color(1, 1, 1, 0.180392)
-energy = 0.0
+energy = 3.18
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 shadow_filter_smooth = 8.5
 shadow_item_cull_mask = 99
 texture = ExtResource("3_siuyv")
-texture_scale = 2.37
+texture_scale = 2.87
 height = 1.0
 
 [node name="_GameTimerLimit" type="Timer" parent="player"]

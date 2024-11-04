@@ -6,9 +6,6 @@ var canBeClickAgain : bool = true
 
 func _ready() -> void:
 	endTitle = IngameStoredProcessSetting.Ending
-	if endTitle == "lackofresources":
-		print("This is the ending")
-		return
 	$img_Ending.texture = getScene(endTitle)
 	DialogueManager.show_dialogue_balloon(Dialogue, endTitle)
 	pass
@@ -18,15 +15,17 @@ func _ready() -> void:
 var Dialogue = preload("res://DialogueSystem/End.dialogue")
 
 var Kickout_scene = preload("res://Scenes/EndScenes/Gallery_Endings/KickOut_EndScene.png")
+var lackofresources = preload("res://Scenes/EndScenes/Gallery_Endings/lackofresources.png")
 
 func getScene(content : String):
 	match content:
 		"Kickout":
 			$GoodEnd.text = "Bad End"
 			return Kickout_scene
+			
 		"lackofresources":
 			$GoodEnd.text = "Bad End"
-			return Kickout_scene
+			return lackofresources
 
 
 

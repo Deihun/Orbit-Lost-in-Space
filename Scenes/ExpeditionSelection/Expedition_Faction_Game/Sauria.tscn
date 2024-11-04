@@ -29,6 +29,7 @@ material = SubResource("ShaderMaterial_w50gs")
 script = ExtResource("1_vqsle")
 
 [node name="LightList" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(148, -1621)
 
 [node name="SpotLights" type="PointLight2D" parent="LightList"]
@@ -72,8 +73,45 @@ occluder = SubResource("OccluderPolygon2D_slhpt")
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="LightList"]
 occluder = SubResource("OccluderPolygon2D_26e2r")
 
+[node name="SpotLights8" type="PointLight2D" parent="LightList"]
+position = Vector2(-3620, 1030)
+energy = 16.0
+texture = ExtResource("3_iko7u")
+texture_scale = 4.74
+
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="LightList"]
 occluder = SubResource("OccluderPolygon2D_psrft")
+
+[node name="SpotLights6" type="PointLight2D" parent="LightList"]
+position = Vector2(-2531, -630)
+energy = 14.29
+texture = ExtResource("3_iko7u")
+texture_scale = 4.74
+
+[node name="SpotLights7" type="PointLight2D" parent="LightList"]
+position = Vector2(-4194, 4861)
+energy = 16.0
+range_z_min = -4096
+texture = ExtResource("3_iko7u")
+texture_scale = 4.74
+
+[node name="SpotLights9" type="PointLight2D" parent="LightList"]
+position = Vector2(4157, 218)
+energy = 19.2
+texture = ExtResource("3_iko7u")
+texture_scale = 4.74
+
+[node name="SpotLights10" type="PointLight2D" parent="LightList"]
+position = Vector2(-707, -1462)
+energy = 16.0
+texture = ExtResource("3_iko7u")
+texture_scale = 4.74
+
+[node name="SpotLights11" type="PointLight2D" parent="LightList"]
+position = Vector2(-162, 7090)
+energy = 16.0
+texture = ExtResource("3_iko7u")
+texture_scale = 6.91
 
 [node name="DropBox" parent="." instance=ExtResource("4_wqujf")]
 z_index = 1
@@ -81,9 +119,12 @@ position = Vector2(218, -1678)
 scale = Vector2(0.844, 0.804)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+use_parent_material = true
 position = Vector2(718, 575)
 scale = Vector2(0.844, 0.804)
 texture = ExtResource("2_srj8q")
+metadata/_edit_lock_ = true
 
 [node name="Walls" type="StaticBody2D" parent="Sprite2D"]
 collision_layer = 33
@@ -99,10 +140,12 @@ z_index = 1
 position = Vector2(148, -1621)
 equipHelmet = true
 show_crewInventoryUI = false
+useGlobeTimerUI = false
 delayBeforeGameStart = 0.0
 metadata/_edit_lock_ = true
 
 [node name="Node Resource Spawner" parent="." instance=ExtResource("7_k48a1")]
+y_sort_enabled = true
 number_of_resources = 55
 
 [node name="Node2D" parent="Node Resource Spawner" instance=ExtResource("8_qp5eq")]

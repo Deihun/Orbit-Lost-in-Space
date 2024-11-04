@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dch7iftn2syj"]
+[gd_scene load_steps=6 format=3 uid="uid://2jljl3kjjik8"]
 
 [ext_resource type="Texture2D" uid="uid://cp1c0mre1ojcq" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit_withFruit.png" id="1_l7xqy"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/inventory_fruit.gd" id="2_r0pmw"]
-[ext_resource type="PackedScene" uid="uid://bo1pfvcdu6ny4" path="res://AmbiencePurposes/Earth 2.0 Ambience/Shine.tscn" id="3_58eqk"]
+[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/Shine.tscn" id="3_58eqk"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="4_0gpbq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fuks4"]

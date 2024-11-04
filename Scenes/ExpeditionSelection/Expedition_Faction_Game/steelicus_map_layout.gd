@@ -18,7 +18,7 @@ func _ready() -> void:
 	interactionarea4.interact = Callable(self,"keycardInteract4")
 	var shader = self.material as ShaderMaterial
 	shader.set_shader_parameter("base_color", Color(1, 1, 1, 1))
-	shader.set_shader_parameter("light_intensity", 0.7)
+	shader.set_shader_parameter("light_intensity", 0.5)
 	player_cb._set_game_over_action(Callable(self,"gameOver"))
 	player_cb._set_game_win_condition(Callable(self,"gameWin"))
 	gameStart()
@@ -33,12 +33,21 @@ func gameOver():
 	_player.transition()
 	player_cb.canMove = false
 	await get_tree().create_timer(2.5).timeout
-	IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
-	IngameStoredProcessSetting.Scenes = "interiorscene"
-	get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
-	pass
+	if crew_name == "Jerry" and IngameStoredProcessSetting.crew_in_ship.size() > 0:
+		IngameStoredProcessSetting.didJerryLose = true
+		IngameStoredProcessSetting.Scenes = "interiorscene"
+		get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
+	elif crew_name == "Jerry" and IngameStoredProcessSetting.crew_in_ship.size() <= 0:
+		IngameStoredProcessSetting.Ending = "JerryDeath"
+		get_tree().change_scene_to_file("res://Scenes/EndScenes/EndingScene.tscn")
+	else:
+		IngameStoredProcessSetting.crew_in_ship.erase(crew_name)
+		IngameStoredProcessSetting.Scenes = "interiorscene"
+		get_tree().change_scene_to_file("res://Scenes/LoadingScene.tscn")
 
 func gameWin():
+	var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
+	r.updateGlobalResource()
 	_player.transition()
 	player_cb.canMove = false
 	await get_tree().create_timer(2.5).timeout
