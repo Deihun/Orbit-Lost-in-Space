@@ -5,7 +5,6 @@ var isActive : bool = true
 var active = preload("res://Scenes/UI/EndCycle_Enable.png")
 var inactive = preload("res://Scenes/UI/EndCycle_Disable.png")
 var hover = preload("res://Scenes/UI/EndCycle_Hover.png")
-@onready var buttons: AudioStreamPlayer = $"../../../Buttons"
 
 func _on_mouse_exited() -> void:
 	if isActive: picture.texture = active

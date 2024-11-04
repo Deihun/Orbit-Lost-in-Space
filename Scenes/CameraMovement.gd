@@ -5,7 +5,6 @@ extends Camera2D
 @onready var EndButton = $Button_navigation_node_parent/EndCycle
 @onready var EventUI = get_parent().get_node("EventHandler")
 @onready var SpecificLocation = [Vector2(-3100,0),Vector2(-100,0),Vector2(2950,0), Vector2(-3000,1500), Vector2(-3000,3000), $"../ExpeditionSelection".position]
-@onready var buttons: AudioStreamPlayer = $"../Buttons"
 
 var tween = create_tween()
 var nonCommonPanningRooms = [Vector2(-3000,1500), Vector2(-3000,3000)]

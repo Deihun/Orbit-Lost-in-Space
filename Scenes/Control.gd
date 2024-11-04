@@ -11,7 +11,6 @@ extends Control
 @onready var crafted_items_inventory: Control = $CraftedItemsInventory
 @onready var item_ui: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_UI")
 @onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
-@onready var buttons: AudioStreamPlayer = $Buttons
 
 #VARIABLES
 var resources 
@@ -128,7 +127,6 @@ func PAUSE() -> void:
 	var pause = $PauseMenu
 	pause.position = $cam2d.position + Vector2(1584, 350)
 	pause._pause()
-	buttons.play()
 
 func _on_expedition_button_button_down() -> void:
 	buttons.play()
@@ -150,7 +148,6 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 
 func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1 and event.pressed:
-		buttons.play()
 		crafted_items_inventory.show()
 		crafted_items_inventory.set_Items()
 
