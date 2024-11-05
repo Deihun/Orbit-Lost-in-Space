@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://tbhpfech36e8"]
+[gd_scene load_steps=137 format=3 uid="uid://tbhpfech36e8"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://cwi6sxkf21j6t" path="res://Resources/Small_Fuel_1_unpickup.png" id="36_65yta"]
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -1493,6 +1494,9 @@ offset_top = -314.0
 offset_right = -3974.0
 offset_bottom = -314.0
 scale = Vector2(0.728638, 0.728638)
+
+[node name="ButtonSounds" parent="." instance=ExtResource("47_evqmn")]
+root_path = NodePath("..")
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=13 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
 [ext_resource type="Texture2D" uid="uid://dkcr0omxilpsl" path="res://MainMenu/Space_mainmenu.png" id="2_7rstv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dgkr0ab5k81fq" path="res://MainMenu/Ship_mainmenu.png" id="4_lojns"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="6_qrx2q"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="9_ysiqj"]
 
 [sub_resource type="Animation" id="Animation_0mu7w"]
 length = 0.001
@@ -438,6 +439,9 @@ offset_left = 337.0
 offset_top = 168.0
 offset_right = -549.0
 offset_bottom = -121.0
+
+[node name="ButtonSounds" parent="." instance=ExtResource("9_ysiqj")]
+root_path = NodePath("..")
 
 [connection signal="pressed" from="Control/DeveloperOption" to="." method="_on_developer_option_pressed"]
 [connection signal="pressed" from="Control/New_Game_Button" to="." method="_on_new_game_button_pressed"]
