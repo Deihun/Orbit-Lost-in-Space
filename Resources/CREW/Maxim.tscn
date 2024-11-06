@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://dku1cktt0csve" path="res://Resources/CREW/Maxim gather.png" id="3_mdkny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf1oy"]
-size = Vector2(175.5, 144.25)
+size = Vector2(805.75, 782.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ab11"]
-size = Vector2(728.571, 657.143)
+size = Vector2(2457.14, 2335.71)
 
 [node name="Maxim" type="CharacterBody2D"]
 y_sort_enabled = true
+scale = Vector2(0.2, 0.2)
 collision_layer = 33
 collision_mask = 0
 script = ExtResource("1_ert0a")
@@ -19,18 +20,18 @@ script = ExtResource("1_ert0a")
 [node name="InteractionArea" parent="." instance=ExtResource("1_ippnn")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-4, -4)
+position = Vector2(-5, -99)
 shape = SubResource("RectangleShape2D_rf1oy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 0
-position = Vector2(-0.499999, -6)
+position = Vector2(8.00001, -60.25)
 scale = Vector2(0.07, 0.07)
 shape = SubResource("RectangleShape2D_4ab11")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-9, 20)
-scale = Vector2(0.246667, 0.263333)
+scale = Vector2(1, 1.065)
 texture = ExtResource("3_mdkny")
 offset = Vector2(64.8648, -562.026)

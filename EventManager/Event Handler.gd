@@ -8,7 +8,10 @@ var rawEvent = []
 var isEventVisible = false
 var onlyOnceTrigger : bool = true
 var onceTutorial : bool = false
+var isTextToSpeechOn : bool = false
 var recentAnimation = ""
+var voices = DisplayServer.tts_get_voices()
+var initialDescription = ""
 
 					#NON RETURNING METHODS
 #SETUP ZONES
@@ -40,6 +43,7 @@ func switchIt(value : bool = true):
 		recentAnimation = "OpeningAnimation"
 
 	else: #CLOSING
+		DisplayServer.tts_stop()
 		OpeningAnimation.stop()
 		eventReader.hide()
 		OpeningAnimation.show()
@@ -55,6 +59,7 @@ func _on_opening_ui_scene_animation_finished() -> void:
 	if recentAnimation == "OpeningAnimation":
 		OpeningAnimation.show()
 		eventReader.show()
+		_triggerDialogue(initialDescription, isTextToSpeechOn)
 	else: 
 		OpeningAnimation.hide()
 		eventReader.hide()
@@ -159,9 +164,18 @@ func _conditions(eachEvent) -> bool:
 	return false
 
 
+func _triggerDialogue(SpeechMessagge : String, value : bool, VoiceID : int = 0)-> void:
+	if !value: return
+	
+	var volume =  int(SettingsDataContainer.get_sfx_volume() * 100)
+	DisplayServer.tts_stop()
+	if !$EventReader.visible and $EventUIAnimation.is_playing():
+		await $EventUIAnimation.animation_finished
+	DisplayServer.tts_speak(SpeechMessagge,"TTS_MS_EN-US_DAVID_11.0",volume)
+	pass
 
 
-func _addNextEvent():
+func _addNextEvent()-> void :
 	var _event
 	while true:
 		var event_index_random = randi() % rawEvent.size()
@@ -189,9 +203,16 @@ func ActivateEvent(): #ACTIVATE QUEUE EVENT
 		endCycle.enable()
 		control.EndCycle_Can_Be_Click_ = true
 		return
+	var CurrentEventID = GlobalResources.eventID.pop_front()
 	isEventVisible = true
-	eventReader.setEventID(GlobalResources.eventID.pop_front())
+	eventReader.setEventID(CurrentEventID)
 	eventReader.processNextEvent()
+	var description = ""
+	for event in rawEvent:
+		if event.has("id") and event["id"] == CurrentEventID:
+			description = event.get("description","no description found")
+	initialDescription = description
+
 
 
 func _removeAllEvent(): #CLEAR ALL EVENT
@@ -210,3 +231,10 @@ func _is_in_event_index(target_data : int) -> bool:
 		if entry.has("id") and entry["id"] == target_data:
 			return true
 	return false
+
+
+func _on_volume_switch_button_up() -> void:
+	isTextToSpeechOn = !isTextToSpeechOn
+	if isTextToSpeechOn: $EventReader/VolumeSwitch/Volume.texture = load("res://Scenes/Ingame/VolumeOn_EventUI.png")
+	else: $EventReader/VolumeSwitch/Volume.texture = load("res://Scenes/Ingame/VolumeOff_EventUI.png")
+	pass # Replace with function body.

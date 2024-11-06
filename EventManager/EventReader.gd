@@ -1,9 +1,10 @@
 extends Node2D
-var EventID = []
+var EventID : int
 var event
 var buttonCounts = 0
 var button_index = 1
 var temp_choice_data = []
+var description = ""
 
 
 @onready var title = $Title
@@ -30,8 +31,8 @@ func parse_json(json_text):
 	return json.get_data()
 
 
-func setEventID(Event):
-	EventID = int(Event)
+func setEventID(Event : int):
+	EventID = Event
 
 
 func find_by_id(id):
@@ -47,6 +48,7 @@ func processNextEvent():			#PLAY NEXT EVENT
 	
 	title.text = currentEvent["name"] 
 	desc.text = currentEvent["description"] 
+	description = currentEvent["description"]
 
 	if currentEvent.has("FollowUp"):
 		for follow_up_event in currentEvent["FollowUp"]:
@@ -104,6 +106,9 @@ func HiddenChoice(Event):
 					_create_choice_button(Event["HiddenChoice"][1], button_index)
 					button_index += 1
 					temp_choice_data.append(Event["HiddenChoice"][1])
+			"CREW":
+				if IngameStoredProcessSetting.crew_in_ship.has(Event["HiddenChoice"][0][1][0]):
+					_create_choice_button(Event["HiddenChoice"][1], button_index)
 		pass
 
 
@@ -278,6 +283,7 @@ func _on_choice_button_pressed(choice_data):
 		else:
 			setEventID(choice_data[0])
 			processNextEvent()
+		$".."._triggerDialogue(description, $"..".isTextToSpeechOn)
 	else:
 		print("DEBUG: CONDITIONS NOT SATISFIED")
 	pass

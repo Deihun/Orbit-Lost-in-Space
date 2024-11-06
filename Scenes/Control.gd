@@ -20,7 +20,8 @@ var EndCycle_Can_Be_Click_ : bool = true
 var gameOver : bool = false
 #VARIABLE_FUNCTIONS
 var ClickTrue = true
-var eventHandler
+var initialEvent = []
+var eventHandler 
 
 #VOID METHODS // CAMERA CONTROLS - SETTINGS
 func _process(delta):
@@ -47,31 +48,42 @@ func _newGameStart():
 	EventHandler.startAddNextEvent()
 	EventHandler.ActivateEvent()
 	$WholeInteriorScene/Lobby.set_initialDialogue()
-	pass
+	_setUpInitialEvent()
 
-func _loadGameStart():
+
+func _setUpInitialEvent()-> void: #ADD INITIAL EVENT HERE
+	for b in initialEvent:
+		GlobalResources.Priority_Event.append(b)
+
+
+func removeitOnSecondDay()-> void:
+	if IngameStoredProcessSetting.Cycle > 1:
+		for b in initialEvent:
+			if GlobalResources.Priority_Event.has(b):
+				GlobalResources.Priority_Event.erase(b)
+
+
+func _loadGameStart()-> void:
 	updateUI()
 	updateCockpit()
-	pass
 
-	
-func GameOver(Ending : String):
+
+func GameOver(Ending : String)-> void: #TriggerEnding
 	IngameStoredProcessSetting.Ending = Ending
 	get_tree().change_scene_to_file("res://Scenes/EndScenes/EndingScene.tscn")
-	pass
+
 
 func _on_next_day_button_pressed():
 	if !EndCycle_Can_Be_Click_: return
 	var EventHandler = $EventHandler
 	EndCycle_Can_Be_Click_ = false
+
 	if GlobalResources.currentActiveQueue <= 0:
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
-		
+		removeitOnSecondDay()
 		CycleSetting.endCycle()
-		#Auto Save
 		_is_MainFaction()
-		
 		#crafting
 		if item_ui.ongoingCraft == true:
 			item_ui.ongoingCraft = false
@@ -79,9 +91,7 @@ func _on_next_day_button_pressed():
 			print(item_ui.currentlycrafting)
 			item_ui.currentlycrafting = ""
 			setanimation._ready()
-		
 		#Handle Event
-		
 		EventHandler._removeAllEvent()
 		EventHandler.startAddNextEvent()
 		EventHandler.ActivateEvent()
@@ -128,6 +138,15 @@ func _is_MainFaction():
 		"Radonti": 
 			if IngameStoredProcessSetting.Factions_Probability["Radonti"] > 0.0:
 				GlobalResources.Critical_Event.append("Radonti")
+		"Sauria": 
+			if IngameStoredProcessSetting.Factions_Probability["Sauria"] > 0.0:
+				GlobalResources.Critical_Event.append("Sauria")
+		"Steelicus": 
+			if IngameStoredProcessSetting.Factions_Probability["Steelicus"] > 0.0:
+				GlobalResources.Critical_Event.append("Steelicus")
+		"Earth2.0": 
+			if IngameStoredProcessSetting.Factions_Probability["Earth2.0"] > 0.0:
+				GlobalResources.Critical_Event.append("Earth2.0")
 
 func PAUSE() -> void:
 	var pause = $PauseMenu
