@@ -18,6 +18,7 @@ func _ready():#Initialize the inventory var
 func interaction():
 	if readyToPickup:
 		player.speedFruit()
+		$BiteFX.play()
 		$Cooldown.stop()
 		$Cooldown.start()
 		$InteractionArea_speedFruit/CollisionShape2D_SpeedFruit.disabled = true

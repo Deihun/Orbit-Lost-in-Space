@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=38 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_0nwbd"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="10_ljiwb"]
 [ext_resource type="PackedScene" uid="uid://l3oth153v8dv" path="res://AmbiencePurposes/Boxes/SmallBox.tscn" id="14_dh8q3"]
 [ext_resource type="PackedScene" uid="uid://dcmcp8fp003wm" path="res://DropBox/DropBoxOfRadonti.tscn" id="17_b4hq0"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="18_esivl"]
+[ext_resource type="AudioStream" uid="uid://lpt726b1semu" path="res://Sounds/SFX/Alarm.mp3" id="19_8l2fq"]
+[ext_resource type="AudioStream" uid="uid://bj5brc14dnei3" path="res://Sounds/Music/strum.mp3" id="20_r2veb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o01sg"]
 shader = ExtResource("1_0nwbd")
@@ -905,5 +908,22 @@ metadata/_edit_lock_ = true
 
 [node name="DropBoxOfRadonti" parent="." instance=ExtResource("17_b4hq0")]
 position = Vector2(1585, 4402)
+
+[node name="ButtonSounds" parent="." instance=ExtResource("18_esivl")]
+root_path = NodePath("..")
+
+[node name="AlarmSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_8l2fq")
+volume_db = -10.0
+autoplay = true
+bus = &"Sfx"
+parameters/looping = true
+
+[node name="BGM_gather" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_r2veb")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]

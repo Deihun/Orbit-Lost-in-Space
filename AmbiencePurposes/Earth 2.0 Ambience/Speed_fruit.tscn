@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b265u4rfm08ou"]
+[gd_scene load_steps=8 format=3 uid="uid://b265u4rfm08ou"]
 
 [ext_resource type="Texture2D" uid="uid://cmdsr8siuommy" path="res://AmbiencePurposes/Earth 2.0 Ambience/SpeedFruit_withfruit.png" id="1_34b3d"]
 [ext_resource type="Script" path="res://AmbiencePurposes/Earth 2.0 Ambience/speed_fruit.gd" id="2_a24ki"]
 [ext_resource type="PackedScene" uid="uid://bo1pfvcdu6ny4" path="res://AmbiencePurposes/Earth 2.0 Ambience/Shine.tscn" id="3_mc660"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_u50xo"]
+[ext_resource type="AudioStream" uid="uid://dx55jnmhp7j4y" path="res://Sounds/SFX/bite.mp3" id="5_87va0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0xuq2"]
 radius = 8.06226
@@ -42,5 +43,9 @@ shape = SubResource("CircleShape2D_nn3e0")
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
+
+[node name="BiteFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_87va0")
+bus = &"Sfx"
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

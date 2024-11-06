@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cor3oedj68goe"]
+[gd_scene load_steps=14 format=3 uid="uid://cor3oedj68goe"]
 
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_ych5w"]
 [ext_resource type="Texture2D" uid="uid://dkcr0omxilpsl" path="res://MainMenu/Space_mainmenu.png" id="2_7rstv"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dgkr0ab5k81fq" path="res://MainMenu/Ship_mainmenu.png" id="4_lojns"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="6_qrx2q"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="9_ysiqj"]
+[ext_resource type="AudioStream" uid="uid://wgfmqjiy4fj0" path="res://Sounds/Music/Deep_Sine_Song.mp3" id="10_1cymq"]
 
 [sub_resource type="Animation" id="Animation_0mu7w"]
 length = 0.001
@@ -242,6 +244,7 @@ offset_right = 1588.0
 offset_bottom = 1000.0
 
 [node name="DeveloperOption" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = -223.0
 offset_top = -76.0
@@ -429,6 +432,11 @@ scale = Vector2(2, 2)
 visible = false
 z_index = 1
 layout_mode = 1
+offset_left = 241.0
+offset_top = 137.0
+offset_right = -237.0
+offset_bottom = -132.0
+pivot_offset = Vector2(736, 356)
 
 [node name="SaveUI" parent="." instance=ExtResource("5_qnku8")]
 visible = false
@@ -438,6 +446,15 @@ offset_left = 337.0
 offset_top = 168.0
 offset_right = -549.0
 offset_bottom = -121.0
+
+[node name="ButtonSounds" parent="." instance=ExtResource("9_ysiqj")]
+root_path = NodePath("..")
+
+[node name="BGM_mainmenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1cymq")
+autoplay = true
+bus = &"Music"
+parameters/looping = false
 
 [connection signal="pressed" from="Control/DeveloperOption" to="." method="_on_developer_option_pressed"]
 [connection signal="pressed" from="Control/New_Game_Button" to="." method="_on_new_game_button_pressed"]

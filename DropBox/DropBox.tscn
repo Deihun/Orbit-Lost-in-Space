@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://do3agr6u61b4u"]
+[gd_scene load_steps=19 format=3 uid="uid://do3agr6u61b4u"]
 
 [ext_resource type="Script" path="res://DropBox/DropBox.gd" id="1_qn0js"]
 [ext_resource type="Texture2D" uid="uid://cak4wyw2mfq02" path="res://Scenes/SceneAssets/DropboxSprite.png" id="2_q71nl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="3_t4s61"]
 [ext_resource type="Texture2D" uid="uid://2kiedg73l26x" path="res://DropBox/TemporaryDropboxWarning.png" id="4_2le4n"]
 [ext_resource type="Script" path="res://DropBox/Player_Final_Count.gd" id="4_cp7mb"]
+[ext_resource type="AudioStream" uid="uid://ct6ri1yoehhxy" path="res://Sounds/SFX/543404__alexo400__sci_fi_door.wav" id="7_1haac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f11ab"]
 atlas = ExtResource("2_q71nl")
@@ -154,6 +155,11 @@ script = ExtResource("4_cp7mb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Final_Count"]
 position = Vector2(-16, -8)
 shape = SubResource("RectangleShape2D_mgxwq")
+
+[node name="door" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1haac")
+pitch_scale = 3.18
+bus = &"Sfx"
 
 [connection signal="timeout" from="LastMinute_Dropbox_indicator/LastMinuteBlinking" to="LastMinute_Dropbox_indicator" method="_on_last_minute_blinking_timeout"]
 [connection signal="body_entered" from="SkipTimer" to="." method="_on_skip_timer_body_entered"]

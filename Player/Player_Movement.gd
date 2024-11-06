@@ -72,16 +72,25 @@ func movement(delta):
 		removeTutorialUI_onCertainCondition()
 		velocity = input_vector * ((maxSpeed - slow) + inventory.getSpeedPenalty()) * (delta * 100)
 		if input_vector.x > 0:
+			if !$"../WalkSFX".playing:
+				$"../WalkSFX".play()
 			play_animation(run_right[animation_use_id])
 		elif input_vector.x < 0:
+			if !$"../WalkSFX".playing:
+				$"../WalkSFX".play()
 			play_animation(run_left[animation_use_id])
 		elif input_vector.y > 0:
+			if !$"../WalkSFX".playing:
+				$"../WalkSFX".play()
 			play_animation(run_down[animation_use_id])
 		elif input_vector.y < 0:
+			if !$"../WalkSFX".playing:
+				$"../WalkSFX".play()
 			play_animation(run_up[animation_use_id])
 	elif !isPickingAnim and input_vector == Vector2.ZERO:
 		velocity = vZeros.move_toward(Vector2.ZERO, Friction * delta)
 		play_animation(run_idle[animation_use_id]) # Play idle animation when not moving 
+		$"../WalkSFX".stop()
 
 
 	if (Vector2.ZERO == input_vector && currentAnimation != "Idle_animation" or "_Helmet_Jerry_idle"):
@@ -106,6 +115,7 @@ func pickup():
 	if currentAnimation != "Pickup_animation" or "_Helmet_Jerry_pickup":
 		isPickingAnim = true
 		isPicking = true
+		$"../pickupSound".play()
 		play_animation(run_pickup[animation_use_id])
 
 func update_label(text_content, isColor): #Set the child label node 
