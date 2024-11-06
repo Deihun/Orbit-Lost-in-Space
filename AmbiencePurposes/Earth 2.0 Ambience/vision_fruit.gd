@@ -19,6 +19,7 @@ func _ready():#Initialize the inventory var
 func interaction():
 	if readyToPickup:
 		$Cooldown.stop()
+		$BiteFX.play()
 		$Cooldown.start()
 		#$InteractionArea_vision/CollisionShape2D_visionFruit.disabled = true
 		readyToPickup = false

@@ -1,7 +1,6 @@
-[gd_scene load_steps=351 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=349 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
-[ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
 [ext_resource type="Script" path="res://Player/player_Default.gd" id="1_mhmxe"]
 [ext_resource type="PackedScene" uid="uid://cul7r04u1uv6" path="res://Player/FullInventory_Indicator.tscn" id="2_1yavb"]
 [ext_resource type="Texture2D" uid="uid://blyf5lab2oo6i" path="res://Scenes/TransitionClosing.png" id="2_6y3nk"]
@@ -23,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
 [ext_resource type="Texture2D" uid="uid://48fa0ct25py2" path="res://Player/Meteor_Spritesheet.png" id="11_lrphj"]
 [ext_resource type="Texture2D" uid="uid://cpoeki66yyjkf" path="res://Scenes/StartText.png" id="15_up6st"]
-[ext_resource type="Texture2D" uid="uid://ckv5km0kep1p3" path="res://Player/Adolf-Hitler-Free-PNG.png" id="17_85y4g"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
 [ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 [ext_resource type="Texture2D" uid="uid://do05uhnu3cq30" path="res://Player/timer.png" id="24_55iu7"]
@@ -2736,14 +2734,6 @@ text = "90"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Player2" type="Sprite2D" parent="player"]
-visible = false
-y_sort_enabled = true
-position = Vector2(1, -4.00002)
-scale = Vector2(1, 1.85156)
-texture = ExtResource("1_8a5wi")
-offset = Vector2(0, -64.35)
-
 [node name="Player4" type="AnimatedSprite2D" parent="player"]
 light_mask = 0
 position = Vector2(4, -36)
@@ -2752,14 +2742,6 @@ sprite_frames = SubResource("SpriteFrames_5ii05")
 animation = &"_Helmet_Jerry_pickup"
 offset = Vector2(0, -130.43)
 metadata/_edit_lock_ = true
-
-[node name="Player3" type="Sprite2D" parent="player"]
-visible = false
-y_sort_enabled = true
-position = Vector2(6, -16)
-scale = Vector2(0.810317, 0.725014)
-texture = ExtResource("17_85y4g")
-offset = Vector2(0, -124.89)
 
 [node name="Player" type="CollisionShape2D" parent="player"]
 y_sort_enabled = true
