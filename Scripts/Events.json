@@ -263,7 +263,7 @@
 	},
 	{
 		"Command": [
-			"@ADD_MATERIALS FUEL 20",
+			"@ADD_MATERIALS FUEL 20"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
@@ -273,7 +273,7 @@
 	},
 	{
 		"Command": [
-			"@ADD_MATERIALS FUEL 20",
+			"@ADD_MATERIALS FUEL 20"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
@@ -287,126 +287,218 @@
 		"description": "Leave it",
 		"id": 22,
 		"name": "You left the asteroid alone"
-	},{
-		"Command": [
-			"@FACTS fact2",
+	},
+	{
+		"Choice-1": [
+			20,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n - 10/@SPAREPARTS() Spare Parts"
 		],
-		"Choice-1": [20,[["SPAREPARTS", 10] ], "You and your crew carefully mined the asteroid and found fuel. \n+ 10 Fuel\n - 10/@SPAREPARTS() Spare Parts"],
-		"Choice-2": [21,[["SPAREPARTS", 20] ], "You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n - 20/@SPAREPARTS() Spare Parts"],
-		"Choice-3": [22,[["SPAREPARTS", null] ], "Leave it."],
+		"Choice-2": [
+			21,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"You and your crew aggressively mined the asteroid and found fuel.\n+ 20 Fuel\n - 20/@SPAREPARTS() Spare Parts"
+		],
+		"Choice-3": [
+			22,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Leave it."
+		],
+		"Command": [
+			"@FACTS fact2"
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
 		"id": 23,
 		"name": "Foreign Object Detected!"
-	},{
+	},
+	{
 		"Command": [
-			"@FACTS fact6", "@ADD_MATERIALS BIOGENE 10"
+			"@FACTS fact6",
+			"@ADD_MATERIALS BIOGENE 10"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "The material seems to be the ones used for Biogene",
 		"id": 24,
 		"name": "Gather the unidentified material."
-	},{
+	},
+	{
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "The material seems to be the ones used for Biogene",
 		"id": 25,
 		"name": "Gather the unidentified material."
-	},{
-		"Command": [
-			"@FACTS fact2",
+	},
+	{
+		"Choice-1": [
+			24,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Gather the unidentified material. Cost: 5/@FUEL()"
 		],
-		"Choice-1": [24,[["FUEL", 5] ], "Gather the unidentified material. Cost: 5/@FUEL()"],
-		"Choice-2": [25,[["SPAREPARTS", null] ], "Stay safe and leave the asteroid"],
+		"Choice-2": [
+			25,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Stay safe and leave the asteroid"
+		],
+		"Command": [
+			"@FACTS fact2"
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, I detected a cluster of asteroids near your vicinity. After a scan, I discovered an unidentified material inside of the asteroid.",
 		"id": 26,
 		"name": "Foreign Object Detected!"
-	},{
+	},
+	{
 		"Command": [
-			"@ADD_MATERIALS SPAREPARTS 5","@ADD_MATERIALS FOOD 5","@ADD_MATERIALS OXYGEN 5"
+			"@ADD_MATERIALS SPAREPARTS 5",
+			"@ADD_MATERIALS FOOD 5",
+			"@ADD_MATERIALS OXYGEN 5"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You accepted their help, and they gave you some supplies in return. ",
 		"id": 27,
 		"name": "Trade fuel"
-	},{
+	},
+	{
 		"Command": [
-			"@ADD_MATERIALS FUEL 5","@ADD_MATERIALS FOOD 5","@ADD_MATERIALS SPAREPARTS 5"
+			"@ADD_MATERIALS FUEL 5",
+			"@ADD_MATERIALS FOOD 5",
+			"@ADD_MATERIALS SPAREPARTS 5"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You accepted their help, and they gave you some supplies in return.",
 		"id": 28,
 		"name": "Trade spare parts "
-	},{
+	},
+	{
 		"Command": [
-			"@FACTS fact6", "@ADD_MATERIALS BIOGENE 10"
+			"@FACTS fact6",
+			"@ADD_MATERIALS BIOGENE 10"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You decided to leave and ignore the F.E.L.A.S.",
 		"id": 29,
 		"name": "Ignore and leave"
-	},{
-		"Command": [
-			"@FACTS fact3",
+	},
+	{
+		"Choice-1": [
+			27,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Trade Fuel. Cost: 10/@FUEL()"
 		],
-		"Choice-1": [27,[["FUEL", 10] ], "Trade Fuel. Cost: 10/@FUEL()"],
-		"Choice-2": [28,[["SPAREPARTS", 10] ], "Trade Spareparts. Cost: 10/@SPAREPARTS()d"],
-		"Choice-2": [29,[["SPAREPARTS", null] ], "Ignore and leave"],
+		"Choice-2": [
+			29,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Ignore and leave"
+		],
+		"Command": [
+			"@FACTS fact3"
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, I detected a cluster of asteroids near your vicinity. After a scan, I discovered an unidentified material inside of the asteroid.",
 		"id": 30,
 		"name": "Foreign Object Detected!"
-	},{
+	},
+	{
 		"Command": [
-			"@FACTS fact4","@ADD_MATERIALS FUEL 10"
+			"@FACTS fact4",
+			"@ADD_MATERIALS FUEL 10"
 		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, as we passed a nearby star, your solar panels have accumulated some extra energy. Do you want to use it immediately for our fuel supply or store it for emergency?",
 		"id": 31,
 		"name": "an specialize energy Detected!"
-	},{
+	},
+	{
 		"Command": [
-			"@FACTS fact22","@ADD_MATERIALS OXYGEN 10"
+			"@FACTS fact22",
+			"@ADD_MATERIALS OXYGEN 10"
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "It seems to be frozen cans of oxygen. It still has some oxygen left.",
 		"id": 32,
 		"name": "Take the ice that hit your shuttle "
-	},{
+	},
+	{
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "The shuttle steered clear before getting hit with more ice. ",
 		"id": 33,
 		"name": "Steer clear"
-	},{
-		"Choice-1": [32,[["FUEL", null] ], "Take the ice that hit your shuttle"],
-		"Choice-1": [33,[["FUEL", 5] ], "Steer clear . Cost: 5/@FUEL()"],
+	},
+	{
+		"Choice-1": [
+			33,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Steer clear . Cost: 5/@FUEL()"
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Frozen cans start to hit your shuttle, do you want to take the ice or steer clear of them? ",
 		"id": 34,
 		"name": "a Foreign Object Detected"
-	},{
+	},
+	{
 		"Command": [
-			"@FACTS fact4","@ADD_MATERIALS FUEL 10"
+			"@FACTS fact4",
+			"@ADD_MATERIALS FUEL 10"
 		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, as we passed a nearby star, your solar panels have accumulated some extra energy. Do you want to use it immediately for our fuel supply or store it for emergency?",
 		"id": 35,
 		"name": "an specialize energy Detected!"
-	}
-	,{
+	},
+	{
 		"Command": [
 			"@ADD_MATERIALS FUEL 5"
 		],
@@ -415,7 +507,8 @@
 		"description": "Your crew gathered some fuel for your ship while traversing the route.",
 		"id": 36,
 		"name": "Take the asteroid field route"
-	},{
+	},
+	{
 		"Command": [
 			"@ADD_MATERIALS SPAREPARTS 5"
 		],
@@ -424,15 +517,25 @@
 		"description": "Your crew found old crates full of spare parts floating while traversing the route.",
 		"id": 37,
 		"name": "Take the old trade route"
-	},{
-		"Choice-1": [36,[["FUEL", null] ], "Take the old trade route "],
-		"Choice-1": [37,[["FUEL", null] ], "Take the asteroid field route "],
+	},
+	{
+		"Choice-1": [
+			37,
+			[
+				[
+					"FUEL",
+					null
+				]
+			],
+			"Take the asteroid field route "
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "Captain, based on my database, I have uncovered a star chart ahead of our location. We can take two routes from here. One is a fuel rich asteroid field, and the other is an old route for trade. ",
 		"id": 38,
 		"name": "Location Found!"
-	},{
+	},
+	{
 		"Command": [
 			"@ADD_MATERIALS FUEL 10"
 		],
@@ -441,7 +544,8 @@
 		"description": "Your crew received FELAS’s help.",
 		"id": 39,
 		"name": "Accept it gratefully "
-	},{
+	},
+	{
 		"Command": [
 			"@ADD_MATERIALS FOOD 10"
 		],
@@ -450,251 +554,534 @@
 		"description": "FELAS offered you ration instead of fuel.",
 		"id": 40,
 		"name": "Refuse their pity !"
-	},{
+	},
+	{
+		"Choice-1": [
+			39,
+			[
+				[
+					"FUEL",
+					null
+				]
+			],
+			"TAccept it gratefully"
+		],
+		"Choice-2": [
+			40,
+			[
+				[
+					"FUEL",
+					null
+				]
+			],
+			"Refuse their pity"
+		],
 		"Command": [
 			"@FACTS fact8"
 		],
-		"Choice-1": [39,[["FUEL", null] ], "TAccept it gratefully"],
-		"Choice-2": [40,[["FUEL", null] ], "Refuse their pity"],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "A vessel of F.E.L.A.S (Federation of Extraterrestrial Lifeform Assistance and Supplies) they are offering you fuel as a pity for what happened to our planet. The leader that wants to hand the supplies identifies as Yuri Gagarin",
 		"id": 41,
 		"name": "Location Found!"
 	},
-	
-	
-	
-	
-	
-	
-{"Command": [ "@ADD_MATERIALS BIOGENE 10", "@ADD_MATERIALS FOOD -10"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The mold grew from the rations. After a while you removed it.",
-"id": 60,
-"name": "Let the mold grow a bit more."
-},
-{
-"RandomTrue": false,
-"Repeatable": false,
-"description": "You got rid of the mold you didn’t have enough to create biogene.",
-"id": 61,
-"name": "Get rid of it immediately."
-},{
-"Choice-1": [60,[["BIOGENE", null]], "Let the mold brow a bit more.  \n + 10 Biogene \n – 10/@FOOD() "],
-"Choice-2": [61,[["BIOGENE", null]], "Get rid of it immediately."],
-"RandomTrue": true,
-"Repeatable": true,
-"description": "Captain, there was a report of mold growing inside the storage, but this variant might be cultivated for biogene. Should we let it grow for a little bit more time?",
-"id": 62,
-"name": "Biogene Mold"
-},{
-"Command": ["@ADD_MATERIALS SPAREPARTS 20"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew salvages parts but risks encountering hostiles.",
-"id": 63,
-"name": "Head to the destroyed shuttle."
-},
-{
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew maintains a safe distance, avoiding risk.",
-"id": 64,
-"name": "It might be an ambush"
-},{
-"Choice-1": [63, [["SPAREPARTS", null]], "Head to the destroyed shuttle. \n +20 Spareparts"],
-"Choice-2": [64, [["SPAREPARTS", null]], "The crew maintains a safe distance, avoiding risk."],
-"RandomTrue": true,
-"Repeatable": true,
-"description": "Captain, I suggest replacing our radio wave transmitter and receiver. I just happened to scan a nearby destroyed shuttle with the same model as ours.",
-"id": 65,
-"name": "Replace Radio wave transmitter and receiver."
-},{
-"Command": [ "@ADD_MATERIALS DUCTAPE -1"], 
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The tape works effectively, fixing the shutters.",
-"id": 66,
-"name": "Fix the shutters using duct tape"
-},{
-"Command": [ "@ADD_MATERIALS SPAREPARTS -20"], 
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew uses spare parts for a sturdier repair.",
-"id": 67,
-"name": "Fix the shutters using spare parts"
-},{
-"Command": ["-5 HEALTH TO CREW"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew suffers minor damage from the solar flare but conserves resources.",
-"id": 68,
-"name": "Brace for impact",
-},{
-"Choice-1": [66, [["DUCTAPE", 1]], "Fix the shutters using duct tape. \nCost -1 Ductape"],
-"Choice-2": [67, [["SPAREPARTS", 20]], "Fix the shutters using spare part. \n –20 Spareparts"],
-"Choice-3": [68, [["HEALTH", null]], "Brace for impact.\n -5 Health"],
-"RandomTrue": true,
-"Repeatable": true,
-"description": "Captain, I detected an eminent solar flare. One of the shutters seems to be ripping off. We could use duct tape to fix the shutters or use spare parts as an alternative.",
-"id": 69,
-"name": "Eminent Solar Flare"
-},{
-"Command": ["@ADD_MATERIALS SPAREPARTS -10"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": " The crew pushes through but sustains minor damage.",
-"id": 69,
-"name": "Proceed and fix the damages later"
-},
-{"Command": ["@ADD_MATERIALS FUEL -10"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew avoids the magnetic field but takes a longer path.",
-"id": 70,
-"name": "Go to the alternate route"
-},{
-"Choice-1": [69,[["SPAREPARTS", null]], " Proceed and fix the damages later \nCost Spareparts 10/@SPAREPARTS()"],
-"Choice-2": [70,[["FUEL", null]], " Go to the alternate route.\nCost -10/@FUEL() Fuel"],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " Captain, the navigation has detected a magnetic field ahead. Should we proceed or find an alternate path. If you choose to proceed, we will need to fix the damage that we will sustain",
-"id": 71,
-"name": "Magnetic Field Detected"
-},
-{
-"Command": ["@ADD_MATERIALS FUEL 15"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew conserve fuel.",
-"id": 72,
-"name": " Glide through the field",
-},
-{"Command": ["@ADD_MATERIALS FUEL -15"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew avoids the anomaly but consumes extra fuel.",
-"id": 73,
-"name": " Try to find an alternative path ",
-},{
-"Choice-1": [72, [["FUEL", null]], " Proceed and fix the damages later\n Gain 10 Fuel"],
-"Choice-2": [73, [["FUEL", 15]], " Go to the alternate route.\n COST 15/@FUEL() Fuel"],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " Captain, sensors indicate a nearby low-gravity field. I recommend drifting through to conserve fuel. However, mapping this anomaly could also be beneficial for us.",
-"id": 74,
-"name": "Nearby Low-Gravity Field."
-},{
-"Command": ["@ADD_MATERIALS FUEL 15"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew gathers unusual material with medicinal properties.",
-"id": 75,
-"name": " Study it further ",
-},
-{
-"Command": ["@ADD_MATERIALS MEDKIT 2"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew avoid any potential risk from the unknown phenomenon",
-"id": 76,
-"name": "Keep our distance",
-},{
-"Choice-1": [75, [["MEDKIT", null]], "Study it further"],
-"Choice-2": [76, [["FUEL", null]], " Keep our distance"],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " Captain, the crew reports a peculiar signal from a nearby star. Scans reveal energy patterns that match no known phenomenon. Shall we study it further or keep our distance?",
-"id": 77,
-"name": "Unknown phenomenon."
-},
-{
-"Command": ["@ADD_MATERIALS SPAREPARTS -10"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The engine is optimized, increasing operational stability",
-"id": 78,
-"name": " Invest in Maintenance ",
-},
-{"Command": ["@ADD_MATERIALS FUEL -10"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The engine suffers from wear, impacting operational efficiency ",
-"id": 79,
-"name": " Ignore Maintenance",
-},{
-"Choice-1": [78, [["SPAREPARTS", 10]], " Proceed and fix the damages later \nCost 10/@SPAREPARTS() Spareparts"],
-"Choice-2": [79, [["FUEL", 10]], " Go to the alternate route.\nCost 10/@FUEL() Fuel"],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " Captain, engine maintenance is due. Ignoring it could reduce fuel efficiency. A small investment in resources now may save us in the long run.", 
-"id": 80,
-"name": "Engine Maintenance"
-},{
-"Command": ["@ADD_MATERIALS FUEL -10","@ADD_MATERIALS FOOD -10"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "Pirates accepted the bribe and left without any conflict.",
-"id": 81,
-"name": " Offer bribe ",
-},
-{"Command": ["– 10 HEALTH to CREW "],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew escapes but sustains damage.",
-"id": 82,
-"name": " Attempt to Escape ",
-},{
-"Choice-1": [81, [["FUEL", 10,"FOOD",10]], " Offer bribe \n -10 Fuel \n -10 Food ration"],
-"Choice-2": [82, [["HEALTH", 10]], " Attempt to Escape.\n -10 Crew Health"],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " A hostile vessel detected on our scanners, Captain. It’s displaying pirate insignia. Shall we offer a bribe to avoid conflict, or attempt an escape?",
-"id": 83,
-"name": "Space Pirates"
-},{
-"Command": ["@ADD_MATERIALS SPAREPARTS -15"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": " The crew repairs the communication system ",
-"id": 84,
-"name": " Investigate further"
-},{
-"RandomTrue": false,
-"Repeatable": false,
-"description": "Communication resumes after a delay, with no resource cost.",
-"id": 85,
-"name": " Wait until the signal resumes",
-},{
-"Choice-1": [84, [["SPAREPARTS", 15]], " Investigate further  \nCost 15/@SPAREPARTS Spareparts"],
-"Choice-2": [85, [["NO EFFECT", null]], " Wait until the signal resumes."],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " All external communications are down. I’m attempting to trace the issue. We can either investigate further or wait until the signal resumes",
-"id": 86,
-"name": "Communication Channel Down"
-},{
-"Command": ["@ADD_MATERIALS FOOD 15"],
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The light revealed to be harmless probe that left after a brief communication ",
-"id": 87,
-"name": " Attempt Communication",
-},{
-"RandomTrue": false,
-"Repeatable": false,
-"description": "The crew prepares for conflict, but the light leaves after a few minutes.",
-"id": 88,
-"name": "Prepare for defense",
-},{
-"Choice-1": [87, [["FOOD", null]], " Investigate further \n +15 Food ration"],
-"Choice-2": [88, [["NO EFFECT", null]], "Prepare for defense."],
-"RandomTrue": true,
-"Repeatable": true,
-"description": " Captain, a strange light is following our shuttle, I can’t detect whether they are hostile or not. What actions do you suggest?",
-"id": 89,
-"name": "Strange Light"
-}
+	{
+		"Command": [
+			"@ADD_MATERIALS BIOGENE 10",
+			"@ADD_MATERIALS FOOD -10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The mold grew from the rations. After a while you removed it.",
+		"id": 60,
+		"name": "Let the mold grow a bit more."
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You got rid of the mold you didn’t have enough to create biogene.",
+		"id": 61,
+		"name": "Get rid of it immediately."
+	},
+	{
+		"Choice-1": [
+			60,
+			[
+				[
+					"BIOGENE",
+					null
+				]
+			],
+			"Let the mold brow a bit more.  \n + 10 Biogene \n – 10/@FOOD() "
+		],
+		"Choice-2": [
+			61,
+			[
+				[
+					"BIOGENE",
+					null
+				]
+			],
+			"Get rid of it immediately."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, there was a report of mold growing inside the storage, but this variant might be cultivated for biogene. Should we let it grow for a little bit more time?",
+		"id": 62,
+		"name": "Biogene Mold"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS SPAREPARTS 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew salvages parts but risks encountering hostiles.",
+		"id": 63,
+		"name": "Head to the destroyed shuttle."
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew maintains a safe distance, avoiding risk.",
+		"id": 64,
+		"name": "It might be an ambush"
+	},
+	{
+		"Choice-1": [
+			63,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"Head to the destroyed shuttle. \n +20 Spareparts"
+		],
+		"Choice-2": [
+			64,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			"The crew maintains a safe distance, avoiding risk."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I suggest replacing our radio wave transmitter and receiver. I just happened to scan a nearby destroyed shuttle with the same model as ours.",
+		"id": 65,
+		"name": "Replace Radio wave transmitter and receiver."
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS DUCTAPE -1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The tape works effectively, fixing the shutters.",
+		"id": 66,
+		"name": "Fix the shutters using duct tape"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS SPAREPARTS -20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew uses spare parts for a sturdier repair.",
+		"id": 67,
+		"name": "Fix the shutters using spare parts"
+	},
+	{
+		"Command": [
+			"-5 HEALTH TO CREW"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew suffers minor damage from the solar flare but conserves resources.",
+		"id": 68,
+		"name": "Brace for impact"
+	},
+	{
+		"Choice-1": [
+			66,
+			[
+				[
+					"DUCTAPE",
+					1
+				]
+			],
+			"Fix the shutters using duct tape. \nCost -1 Ductape"
+		],
+		"Choice-2": [
+			67,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Fix the shutters using spare part. \n –20 Spareparts"
+		],
+		"Choice-3": [
+			68,
+			[
+				[
+					"HEALTH",
+					null
+				]
+			],
+			"Brace for impact.\n -5 Health"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I detected an eminent solar flare. One of the shutters seems to be ripping off. We could use duct tape to fix the shutters or use spare parts as an alternative.",
+		"id": 69,
+		"name": "Eminent Solar Flare"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS SPAREPARTS -10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": " The crew pushes through but sustains minor damage.",
+		"id": 69,
+		"name": "Proceed and fix the damages later"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL -10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew avoids the magnetic field but takes a longer path.",
+		"id": 70,
+		"name": "Go to the alternate route"
+	},
+	{
+		"Choice-1": [
+			69,
+			[
+				[
+					"SPAREPARTS",
+					null
+				]
+			],
+			" Proceed and fix the damages later \nCost Spareparts 10/@SPAREPARTS()"
+		],
+		"Choice-2": [
+			70,
+			[
+				[
+					"FUEL",
+					null
+				]
+			],
+			" Go to the alternate route.\nCost -10/@FUEL() Fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " Captain, the navigation has detected a magnetic field ahead. Should we proceed or find an alternate path. If you choose to proceed, we will need to fix the damage that we will sustain",
+		"id": 71,
+		"name": "Magnetic Field Detected"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL 15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew conserve fuel.",
+		"id": 72,
+		"name": " Glide through the field"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL -15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew avoids the anomaly but consumes extra fuel.",
+		"id": 73,
+		"name": " Try to find an alternative path "
+	},
+	{
+		"Choice-1": [
+			72,
+			[
+				[
+					"FUEL",
+					null
+				]
+			],
+			" Proceed and fix the damages later\n Gain 10 Fuel"
+		],
+		"Choice-2": [
+			73,
+			[
+				[
+					"FUEL",
+					15
+				]
+			],
+			" Go to the alternate route.\n COST 15/@FUEL() Fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " Captain, sensors indicate a nearby low-gravity field. I recommend drifting through to conserve fuel. However, mapping this anomaly could also be beneficial for us.",
+		"id": 74,
+		"name": "Nearby Low-Gravity Field."
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL 15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew gathers unusual material with medicinal properties.",
+		"id": 75,
+		"name": " Study it further "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS MEDKIT 2"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew avoid any potential risk from the unknown phenomenon",
+		"id": 76,
+		"name": "Keep our distance"
+	},
+	{
+		"Choice-1": [
+			75,
+			[
+				[
+					"MEDKIT",
+					null
+				]
+			],
+			"Study it further"
+		],
+		"Choice-2": [
+			76,
+			[
+				[
+					"FUEL",
+					null
+				]
+			],
+			" Keep our distance"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " Captain, the crew reports a peculiar signal from a nearby star. Scans reveal energy patterns that match no known phenomenon. Shall we study it further or keep our distance?",
+		"id": 77,
+		"name": "Unknown phenomenon."
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS SPAREPARTS -10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The engine is optimized, increasing operational stability",
+		"id": 78,
+		"name": " Invest in Maintenance "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL -10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The engine suffers from wear, impacting operational efficiency ",
+		"id": 79,
+		"name": " Ignore Maintenance"
+	},
+	{
+		"Choice-1": [
+			78,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			" Proceed and fix the damages later \nCost 10/@SPAREPARTS() Spareparts"
+		],
+		"Choice-2": [
+			79,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			" Go to the alternate route.\nCost 10/@FUEL() Fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " Captain, engine maintenance is due. Ignoring it could reduce fuel efficiency. A small investment in resources now may save us in the long run.",
+		"id": 80,
+		"name": "Engine Maintenance"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FUEL -10",
+			"@ADD_MATERIALS FOOD -10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Pirates accepted the bribe and left without any conflict.",
+		"id": 81,
+		"name": " Offer bribe "
+	},
+	{
+		"Command": [
+			"– 10 HEALTH to CREW "
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew escapes but sustains damage.",
+		"id": 82,
+		"name": " Attempt to Escape "
+	},
+	{
+		"Choice-1": [
+			81,
+			[
+				[
+					"FUEL",
+					10,
+					"FOOD",
+					10
+				]
+			],
+			" Offer bribe \n -10 Fuel \n -10 Food ration"
+		],
+		"Choice-2": [
+			82,
+			[
+				[
+					"HEALTH",
+					10
+				]
+			],
+			" Attempt to Escape.\n -10 Crew Health"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " A hostile vessel detected on our scanners, Captain. It’s displaying pirate insignia. Shall we offer a bribe to avoid conflict, or attempt an escape?",
+		"id": 83,
+		"name": "Space Pirates"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS SPAREPARTS -15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": " The crew repairs the communication system ",
+		"id": 84,
+		"name": " Investigate further"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Communication resumes after a delay, with no resource cost.",
+		"id": 85,
+		"name": " Wait until the signal resumes"
+	},
+	{
+		"Choice-1": [
+			84,
+			[
+				[
+					"SPAREPARTS",
+					15
+				]
+			],
+			" Investigate further  \nCost 15/@SPAREPARTS Spareparts"
+		],
+		"Choice-2": [
+			85,
+			[
+				[
+					"NO EFFECT",
+					null
+				]
+			],
+			" Wait until the signal resumes."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " All external communications are down. I’m attempting to trace the issue. We can either investigate further or wait until the signal resumes",
+		"id": 86,
+		"name": "Communication Channel Down"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALS FOOD 15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The light revealed to be harmless probe that left after a brief communication ",
+		"id": 87,
+		"name": " Attempt Communication"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew prepares for conflict, but the light leaves after a few minutes.",
+		"id": 88,
+		"name": "Prepare for defense"
+	},
+	{
+		"Choice-1": [
+			87,
+			[
+				[
+					"FOOD",
+					null
+				]
+			],
+			" Investigate further \n +15 Food ration"
+		],
+		"Choice-2": [
+			88,
+			[
+				[
+					"NO EFFECT",
+					null
+				]
+			],
+			"Prepare for defense."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": " Captain, a strange light is following our shuttle, I can’t detect whether they are hostile or not. What actions do you suggest?",
+		"id": 89,
+		"name": "Strange Light"
+	},
+	{
+		"Choice-1": [
+			321,
+			[
+				[
+					"SPAREPARTS",
+					32
+				]
+			],
+			"TestingShitt"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Testing immaculate shit",
+		"id": 90,
+		"name": "TestingEvent"
+	}
 ]

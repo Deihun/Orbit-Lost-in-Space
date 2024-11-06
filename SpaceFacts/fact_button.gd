@@ -52,19 +52,18 @@ func parse_json(json_text):
 	return json.get_data()
 	
 func set_fact_encountered(fact_id):
-	var FactButton_Button_Icon = get_node("FactButton_Button_Icon")
-	if FactButton_Button_Icon:
-		FactButton_Button_Icon.texture = "res://Scenes/Ingame/FactButton_withnotif.png"
-	
+	var condition : bool = false
 	for fact in rawFacts:
 		if fact["id"] == fact_id:
 			if not fact["encountered"]: # Only update if not already encountered
 				fact["encountered"] = true
-			print("Setting encountered for fact:",fact_id)
+				condition = true
 			save_facts_to_json()
-		else:
-			print("fact already marked as encountered:", fact_id)
 		LoopChecker()
+	
+	var FactButton_Button_Icon = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton_Button_Icon")
+	if FactButton_Button_Icon and condition:
+		FactButton_Button_Icon.texture = load("res://Scenes/Ingame/FactButton_withnotif.png")
 
 
 func save_if_modified():
@@ -92,6 +91,6 @@ func _on_back_button_fact_button_button_up() -> void:
 
 func _on_visibility_changed() -> void:
 	LoopChecker()
-	var FactButton_Button_Icon = get_node("FactButton_Button_Icon")
+	var FactButton_Button_Icon = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton_Button_Icon")
 	if FactButton_Button_Icon:
-		FactButton_Button_Icon.texture = "res://Scenes/Ingame/FactButton_withoutnotif.png"
+		FactButton_Button_Icon.texture = load("res://Scenes/Ingame/FactButton_withoutnotif.png")

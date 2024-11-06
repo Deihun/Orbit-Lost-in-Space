@@ -94,7 +94,6 @@ func move_space(move_number : int = 1): #INCOMPLETE
 			addFactionsCriticalEvent(current_Factions)
 		elif SubFactions_Probability.keys().has(current_Factions):
 			addFactionsCriticalEvent(current_Factions)
-		print("Current Faction: ", current_Factions, " delay: ", delayInFaction)
 
 
 func set_Factions():

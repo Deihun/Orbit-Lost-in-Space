@@ -31,6 +31,7 @@ func load_json_file():
 
 
 func add_new_event():
+	on_finalize_choice_button()
 	var name_input = $Label_name/LineEdit.text
 	var description_input =$Label_description/TextEdit.text
 	
@@ -87,10 +88,7 @@ func update_UI():
 	$Label_id.text = str("ID: ", get_next_event_id())
 	label.text = str(formatted_string)
 	label.autowrap_mode = true
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.autowrap_mode = true
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text = str(current_Items)
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.text = str(TemporaryChoices)
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.autowrap_mode = true
+
 	$Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text = str(CommandList)
 	$Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.autowrap_mode = true
 	$Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.text = str(_Condition_ValueGroup)
@@ -134,35 +132,16 @@ func add_items():
 
 func reset_items():
 	current_Items.clear()
-	$Panel_ButtonGeneration/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text= ""
+
 
 func clear_item_UI():
 	$Panel_ButtonGeneration/LineEdit_amount.text = ""
 
 func on_finalize_choice_button():
-	var description = $Panel_ButtonGeneration/TextEdit_Description.text.strip_edges()
-	var targetId = int($Panel_ButtonGeneration/LineEdit_ID.text)
-	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
-		TemporaryChoices["Choice-"+str(current_choice_id+1)] = [
-			targetId,
-			current_Items,
-			description
-		]
+	for child in $Create_ChoiceButton/ButtonScroll_Container/VBoxContainer_CreateButtonModule.get_children():
+		TemporaryChoices["Choice-"+str(current_choice_id+1)] = child.get_value().duplicate()
+		child.queue_free()
 		current_choice_id +=1
-	else:
-		if TemporaryChoices.keys().has("HiddenChoice"):
-			print("ERROR: HiddenChoice can only be called once")
-			return
-		#if $Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text == "HAS_UNIQUE_ITEM":
-		TemporaryChoices["HiddenChoice"] = [
-			[
-				[str($Panel_ButtonGeneration/Panel_HiddenChoice/Conditional_OptionButton.text),
-				[str($Panel_ButtonGeneration/Panel_HiddenChoice/_ItemName.text.to_upper()), 
-				int($Panel_ButtonGeneration/Panel_HiddenChoice/LineEdit_Amount.text)
-			]]],
-			[targetId ,current_Items,	description
-		]
-		]
 	update_UI()
 
 func _Hidden_Choice_Toggle() -> void:
@@ -269,3 +248,13 @@ func clear():
 func _on_button_clear_button_up() -> void:
 	clear()
 	pass # Replace with function body.
+
+
+func _on_button_add_choice_button_button_up() -> void:
+	var addChoiceItem = preload("res://Scripts/button_making.tscn").instantiate()
+	$Create_ChoiceButton/ButtonScroll_Container/VBoxContainer_CreateButtonModule.add_child(addChoiceItem)
+
+
+func _on_button_add_choice_button_2_button_up() -> void:
+	for child in $Create_ChoiceButton/ButtonScroll_Container/VBoxContainer_CreateButtonModule.get_children():
+		child.queue_free()
