@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://tbhpfech36e8"]
+[gd_scene load_steps=141 format=3 uid="uid://tbhpfech36e8"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -45,7 +45,11 @@
 [ext_resource type="Texture2D" uid="uid://d1s43trmoohi7" path="res://Resources/SmallFoodCan/SmallFood_PickUp.png" id="35_kmg5f"]
 [ext_resource type="Texture2D" uid="uid://cwi6sxkf21j6t" path="res://Resources/Small_Fuel_1_unpickup.png" id="36_65yta"]
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
+[ext_resource type="AudioStream" uid="uid://yrr1kbqjok3m" path="res://Sounds/SFX/425999__solarphasing__scifi-industrial-atmosphere-1.wav" id="41_xlg34"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
+[ext_resource type="AudioStream" uid="uid://cxhr20m0xnn2p" path="res://Sounds/Music/夏の終わりに.mp3" id="49_m6h5b"]
+[ext_resource type="AudioStream" uid="uid://pihlxlgsqtpx" path="res://Sounds/Music/雲の隙間.mp3" id="50_nnpsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -678,6 +682,12 @@ size = Vector2(354.529, 149.668)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_d4tfd"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("49_m6h5b")
+stream_1 = ExtResource("50_nnpsq")
 
 [node name="Control_Interior" type="Control"]
 layout_mode = 3
@@ -1427,6 +1437,13 @@ theme_override_colors/font_outline_color = Color(0.456271, 0.274971, 4.81308e-08
 theme_override_colors/font_shadow_color = Color(0.305717, 0.187002, 0, 1)
 text = "Spareparts: 0/0"
 
+[node name="StorageHumming" type="AudioStreamPlayer2D" parent="StorageScene"]
+position = Vector2(-4.81445, -363.562)
+scale = Vector2(0.96289, 0.90986)
+stream = ExtResource("41_xlg34")
+autoplay = true
+bus = &"Sfx"
+
 [node name="CycleReport" type="Sprite2D" parent="."]
 position = Vector2(-3000, 3000)
 scale = Vector2(1.05, 1.07315)
@@ -1493,6 +1510,14 @@ offset_top = -314.0
 offset_right = -3974.0
 offset_bottom = -314.0
 scale = Vector2(0.728638, 0.728638)
+
+[node name="ButtonSounds" parent="." instance=ExtResource("47_evqmn")]
+root_path = NodePath("..")
+
+[node name="BGM_lobby" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_d4tfd")
+autoplay = true
+bus = &"Music"
 
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]

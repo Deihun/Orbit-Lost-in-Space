@@ -60,3 +60,7 @@ func _on_credits_button_pressed() -> void:
 		print("open")
 	else:
 		credits.visible = true
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("openCommand"):
+		$Control/DeveloperOption.visible = !$Control/DeveloperOption.visible

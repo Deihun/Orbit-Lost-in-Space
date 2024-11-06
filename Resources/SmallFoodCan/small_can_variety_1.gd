@@ -74,6 +74,7 @@ func _on_interaction_area_area_entered(area: Area2D) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	$Can_kicked.play()
 	if randf() < 0.45:
 		is_rolling = true
 		linear_damp = 1

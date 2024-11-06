@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqn25uxqee6fy"]
+[gd_scene load_steps=22 format=3 uid="uid://cqn25uxqee6fy"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_3dave"]
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/radonti_map_layout.gd" id="2_2nm5k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="9_iqi30"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="9_mo7on"]
 [ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="10_3dfso"]
+[ext_resource type="AudioStream" uid="uid://bhahdflvcx8ns" path="res://Sounds/Music/長いお説教.mp3" id="12_1mbq4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_drgx5"]
 shader = ExtResource("1_3dave")
@@ -1082,3 +1083,9 @@ position = Vector2(1268, 1244)
 
 [node name="Node2D80" parent="Node Resource Spawner" instance=ExtResource("10_3dfso")]
 position = Vector2(768, 1170)
+
+[node name="BGM_radonti" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_1mbq4")
+volume_db = -10.0
+autoplay = true
+parameters/looping = false

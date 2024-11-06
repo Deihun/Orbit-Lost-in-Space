@@ -6,6 +6,7 @@ extends Node2D
 var speed = 1000.0
 
 func _ready():
+	$broken_glass.play()
 	match int(randf() * 4):
 		1:
 			$Puddle.texture = load("res://Resources/SmallBiogene_Broken_Puddle_1.png")

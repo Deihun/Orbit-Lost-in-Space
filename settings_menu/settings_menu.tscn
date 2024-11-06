@@ -66,3 +66,5 @@ text = "Back"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(979, 518)
 zoom = Vector2(1.025, 0.9)
+
+[connection signal="pressed" from="VBoxContainer/Back_button" to="." method="_on_back_button_pressed"]
