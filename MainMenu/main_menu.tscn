@@ -244,6 +244,7 @@ offset_right = 1588.0
 offset_bottom = 1000.0
 
 [node name="DeveloperOption" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = -223.0
 offset_top = -76.0
@@ -431,6 +432,11 @@ scale = Vector2(2, 2)
 visible = false
 z_index = 1
 layout_mode = 1
+offset_left = 241.0
+offset_top = 137.0
+offset_right = -237.0
+offset_bottom = -132.0
+pivot_offset = Vector2(736, 356)
 
 [node name="SaveUI" parent="." instance=ExtResource("5_qnku8")]
 visible = false

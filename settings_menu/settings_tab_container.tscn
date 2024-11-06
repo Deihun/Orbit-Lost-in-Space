@@ -26,7 +26,7 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 3
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
@@ -66,6 +66,7 @@ layout_mode = 2
 bus_name = "Sfx"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -150,7 +151,6 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="General" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -221,10 +221,5 @@ offset_bottom = 439.0
 text = "Access 5"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
 
 [connection signal="button_down" from="TabContainer/General/MarginContainer/VBoxContainer/ResetTutorial" to="TabContainer/General/MarginContainer/VBoxContainer" method="_on_reset_tutorial_button_down"]
