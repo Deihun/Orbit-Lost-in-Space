@@ -34,5 +34,5 @@ func install_sounds(node: Node) -> void:
 
 
 func ui_sfx_play(sound : String) -> void:
-	print("Playing sound:", sound)
+	#print("Playing sound:", sound)
 	sounds[sound].play()

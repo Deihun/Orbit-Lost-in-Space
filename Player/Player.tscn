@@ -1,4 +1,4 @@
-[gd_scene load_steps=349 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=351 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="1_8a5wi"]
@@ -28,6 +28,8 @@
 [ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 [ext_resource type="Texture2D" uid="uid://do05uhnu3cq30" path="res://Player/timer.png" id="24_55iu7"]
 [ext_resource type="Texture2D" uid="uid://bxyb3hnsy7y8x" path="res://Player/PlayerCAS/with_Helmet_player_moveset.png" id="26_7snf5"]
+[ext_resource type="AudioStream" uid="uid://du2gxvuhvesi2" path="res://Sounds/SFX/walkgroundDefault.mp3" id="29_civhm"]
+[ext_resource type="AudioStream" uid="uid://bt8mqxlcqjgos" path="res://Sounds/SFX/grab woosh noise.mp3" id="30_efosq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
@@ -2767,6 +2769,7 @@ shape = SubResource("CircleShape2D_dsf36")
 [node name="PlayerCamera" type="Camera2D" parent="player"]
 position = Vector2(13, -148)
 scale = Vector2(0.5, 0.5)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 2.5
 
@@ -2776,6 +2779,14 @@ one_shot = true
 
 [node name="Timer_OverTimeColorChanger" type="Timer" parent="player"]
 wait_time = 0.2
+
+[node name="WalkSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_civhm")
+bus = &"Sfx"
+
+[node name="pickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_efosq")
+bus = &"Sfx"
 
 [connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]

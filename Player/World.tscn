@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ci0ganygmrv2x"]
+[gd_scene load_steps=36 format=3 uid="uid://ci0ganygmrv2x"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_0nwbd"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="1_qqdcd"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="10_ljiwb"]
 [ext_resource type="PackedScene" uid="uid://l3oth153v8dv" path="res://AmbiencePurposes/Boxes/SmallBox.tscn" id="14_dh8q3"]
 [ext_resource type="PackedScene" uid="uid://dcmcp8fp003wm" path="res://DropBox/DropBoxOfRadonti.tscn" id="17_b4hq0"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="18_esivl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o01sg"]
 shader = ExtResource("1_0nwbd")
@@ -905,5 +906,8 @@ metadata/_edit_lock_ = true
 
 [node name="DropBoxOfRadonti" parent="." instance=ExtResource("17_b4hq0")]
 position = Vector2(1585, 4402)
+
+[node name="ButtonSounds" parent="." instance=ExtResource("18_esivl")]
+root_path = NodePath("..")
 
 [connection signal="timeout" from="Node Resource Spawner/Timer" to="Node Resource Spawner" method="_on_timer_timeout"]
