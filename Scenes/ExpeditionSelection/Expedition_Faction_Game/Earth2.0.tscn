@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cp8kg47ebyvi6"]
+[gd_scene load_steps=29 format=3 uid="uid://cp8kg47ebyvi6"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_hnq2x"]
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/earth_2_map_layout.gd" id="2_xvd72"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="24_l2ffy"]
 [ext_resource type="PackedScene" uid="uid://e58h5aiabykh" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit.tscn" id="25_6bblo"]
 [ext_resource type="PackedScene" uid="uid://2jljl3kjjik8" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit.tscn" id="26_xraa1"]
+[ext_resource type="AudioStream" uid="uid://pihlxlgsqtpx" path="res://Sounds/Music/雲の隙間.mp3" id="27_8v06f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x7von"]
 shader = ExtResource("1_hnq2x")
@@ -5001,3 +5002,8 @@ scale = Vector2(1.33, 1.29)
 [node name="InventoryFruit" parent="Node Resource Spawner" instance=ExtResource("26_xraa1")]
 use_parent_material = true
 position = Vector2(-5123, -7095)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_8v06f")
+autoplay = true
+bus = &"Music"

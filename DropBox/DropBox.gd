@@ -42,6 +42,7 @@ func getIsPlayerInsideCondition() -> bool:
 func interaction(): #Interaction method for InteractionManagement Class
 	var crew_ui = NodeFinder.find_node_by_name(get_tree().current_scene,"Crew_Show")
 	$Sprite2D.play("Transfer")
+	$door.play()
 	inventory._insert_all_items()
 	res.showTotalItems()
 	crew_ui.updateUI()

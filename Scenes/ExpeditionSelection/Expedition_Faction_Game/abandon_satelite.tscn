@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cc0h431h7nqe6"]
+[gd_scene load_steps=18 format=3 uid="uid://cc0h431h7nqe6"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.gd" id="1_styhv"]
 [ext_resource type="Texture2D" uid="uid://b1yewkdhl72xc" path="res://Scenes/SceneAssets/LavenderWallColorSet/Space.png" id="2_462ea"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="5_naert"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="9_0esv2"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="10_iioux"]
+[ext_resource type="AudioStream" uid="uid://dhwgl5m7ecxrm" path="res://Sounds/Music/Lonely_Platform.mp3" id="11_uqr8d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5oyq"]
 atlas = ExtResource("5_d2hjc")
@@ -688,3 +689,10 @@ occluder = SubResource("OccluderPolygon2D_14f1h")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(2490, 2510)
 occluder = SubResource("OccluderPolygon2D_14f1h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_uqr8d")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+parameters/looping = false
