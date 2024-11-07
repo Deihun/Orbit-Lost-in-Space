@@ -87,8 +87,16 @@ func _on_next_day_button_pressed():
 		#crafting
 		if item_ui.ongoingCraft == true:
 			item_ui.ongoingCraft = false
-			GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
-			print(item_ui.currentlycrafting)
+			if item_ui.currentlycrafting == "MedkitCharge" or item_ui.currentlycrafting == "FreDriSpaceFood" or item_ui.currentlycrafting == "DehySpaceFood":
+				match item_ui.currentlycrafting:
+					"MedkitCharge":
+						GlobalResources.medicine += 1
+					"FreDriSpaceFood":
+						GlobalResources.ration += 10
+					"DehySpaceFood":
+						GlobalResources.ration += 20
+			else:
+				GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
 			item_ui.currentlycrafting = ""
 			setanimation._ready()
 		#Handle Event
