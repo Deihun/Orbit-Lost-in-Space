@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://tbhpfech36e8"]
+[gd_scene load_steps=139 format=3 uid="uid://tbhpfech36e8"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -48,8 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://yrr1kbqjok3m" path="res://Sounds/SFX/425999__solarphasing__scifi-industrial-atmosphere-1.wav" id="41_xlg34"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
 [ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
-[ext_resource type="AudioStream" uid="uid://cxhr20m0xnn2p" path="res://Sounds/Music/夏の終わりに.mp3" id="49_m6h5b"]
-[ext_resource type="AudioStream" uid="uid://pihlxlgsqtpx" path="res://Sounds/Music/雲の隙間.mp3" id="50_nnpsq"]
+[ext_resource type="AudioStream" uid="uid://bci2331ggbm16" path="res://Sounds/Music/lofi .mp3" id="49_apm6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
 size = Vector2(159.5, 82)
@@ -682,12 +681,6 @@ size = Vector2(354.529, 149.668)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb8bw"]
 size = Vector2(1920, 1076.27)
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_d4tfd"]
-shuffle = true
-stream_count = 2
-stream_0 = ExtResource("49_m6h5b")
-stream_1 = ExtResource("50_nnpsq")
 
 [node name="Control_Interior" type="Control"]
 layout_mode = 3
@@ -1514,9 +1507,10 @@ tutorialPanel_ID = 4
 root_path = NodePath("..")
 
 [node name="BGM_lobby" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_d4tfd")
+stream = ExtResource("49_apm6u")
 autoplay = true
 bus = &"Music"
+parameters/looping = false
 
 [connection signal="button_up" from="cam2d/Pause_Button" to="." method="PAUSE"]
 [connection signal="input_event" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_input_event"]
