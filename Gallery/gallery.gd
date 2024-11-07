@@ -15,10 +15,10 @@ func gallerydata():
 	
 func set_image_unlocked(image_id):
 	var condition : bool = false
-	for fact in rawFacts:
-		if fact["id"] == fact_id:
-			if not fact["encountered"]: # Only update if not already encountered
-				fact["encountered"] = true
+	for image in rawImage:
+		if image["id"] == image_id:
+			if not fact["unlocked"]: # Only update if not already encountered
+				image["unlocked"] = true
 				condition = true
 			gallerydata()
 		#LoopChecker()
@@ -29,17 +29,17 @@ func savegallery():
 	var json_string = JSON.stringify(gallerydata())
 	file.store_line(json_string)
 	
-func loadgallery():
-	if not FileAccess.file_exists(file_path):
-		print("file exsit")
-		return
-	var file = FileAccess.open(file_path, FileAccess.READ)
-	
-	while file.get_position() < file.get_length():
-		var json_string = file.get_line()
-		var json = JSON.new()
-		var parse_result = json.parse(json_string)
-		var node_data = json.get_data()	
+func load_facts():
+	if FileAccess.file_exists(file_path):
+		var file = FileAccess.open(file_path, FileAccess.READ)
+		var json_text = file.get_as_text()
+		var parsed_data = parse_json(json_text)
+		if "facts" in parsed_data:
+			rawFacts = parsed_data["facts"]
+		else:
+			print("EVENT-HANDLER-SCRIPT://  'load_facts' : 'No key `facts` in parsed data'")
+	else: 
+		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
 	
 func _on_button_pressed() -> void:
 	self.hide()
