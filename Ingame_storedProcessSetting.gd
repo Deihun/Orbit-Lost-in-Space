@@ -216,10 +216,10 @@ var already_vitamins = { #SAVE
 }
 
 var _current_hunger = { #SAVE
-	"Regina" : 0.5,
-	"Maxim"  : 0.5,
-	"Nashir" : 0.5,
-	"Fumiko" : 0.5
+	"Regina" : 1.0,
+	"Maxim"  : 1.0,
+	"Nashir" : 1.0,
+	"Fumiko" : 1.0
 }
 var _rationConsumes = { #SAVE
 	"Regina" : 5,
@@ -228,10 +228,10 @@ var _rationConsumes = { #SAVE
 	"Fumiko" : 5
 }
 var _sanity = { #SAVE
-	"Regina" : 0.5,
-	"Maxim"  : 0.5,
-	"Nashir" : 0.5,
-	"Fumiko" : 0.5
+	"Regina" : 1.0,
+	"Maxim"  : 1.0,
+	"Nashir" : 1.0,
+	"Fumiko" : 1.0
 }
 var _health = { #SAVE
 	"Regina" : 1.0,
@@ -432,7 +432,7 @@ func doHunger():
 	GlobalResources.ration = 0 if GlobalResources.ration < 0 else GlobalResources.ration
 	for crew in crew_in_ship:
 		if _current_hunger.has(crew):
-			_current_hunger[crew] -= (randf() * 0.1) + 0.2
+			_current_hunger[crew] -= (randf() * 0.1) + 0.1
 			if _current_hunger[crew] < 0.0 : _current_hunger[crew] = 0.0
 
 func doHealthChecker():
