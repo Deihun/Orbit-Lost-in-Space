@@ -1066,5 +1066,26 @@
 		"description": " Captain, a strange light is following our shuttle, I can’t detect whether they are hostile or not. What actions do you suggest?",
 		"id": 89,
 		"name": "Strange Light"
+	},
+	{
+		"Probability": [
+			[
+				50,
+				[
+					"@TITLEyou win"
+				]
+			],
+			[
+				50,
+				[
+					"@TITLEYou lose"
+				]
+			]
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "huwahuwa",
+		"id": 90,
+		"name": "TestingCondition"
 	}
 ]

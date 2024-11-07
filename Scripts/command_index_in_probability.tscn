@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3uiyvg3y42vi"]
+
+[ext_resource type="Script" path="res://Scripts/command_index_in_probability.gd" id="1_h5fro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alp6q"]
+bg_color = Color(0.963232, 0.404158, 0, 1)
+
+[node name="Command_Index_inProbability" type="Control"]
+custom_minimum_size = Vector2(285, 110)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 139.0
+offset_top = 40.0
+offset_right = 214.0
+offset_bottom = 115.0
+script = ExtResource("1_h5fro")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Condition_OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 278.0
+offset_bottom = 36.0
+selected = 0
+item_count = 13
+popup/item_0/text = "@ADD_EFFECTS"
+popup/item_1/text = "@ADD_MATERIALS"
+popup/item_1/id = 1
+popup/item_2/text = "@RELATIONSHIP_INCREASE"
+popup/item_2/id = 2
+popup/item_3/text = "@TITLE"
+popup/item_3/id = 3
+popup/item_4/text = "@ANOTHER_EVENT"
+popup/item_4/id = 4
+popup/item_5/text = "@DESCRIPTION"
+popup/item_5/id = 5
+popup/item_6/text = "@RESET"
+popup/item_6/id = 6
+popup/item_7/text = "@GAMEOVER"
+popup/item_7/id = 7
+popup/item_8/text = "@CRITICAL"
+popup/item_8/id = 8
+popup/item_9/text = "@ADD_PROBABILITY_FACTIONS"
+popup/item_9/id = 9
+popup/item_10/text = "@DO_RANDOMDAMAGE"
+popup/item_10/id = 10
+popup/item_11/text = "@DO_DAMAGE"
+popup/item_11/id = 11
+popup/item_12/text = "@FACTS"
+popup/item_12/id = 12
+
+[node name="Value_OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 38.0
+offset_right = 276.0
+offset_bottom = 70.0
+
+[node name="Value_LineText" type="LineEdit" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = 274.0
+offset_bottom = 72.0
+placeholder_text = "Value"
+
+[node name="Quantity_LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 203.0
+offset_bottom = 108.0
+placeholder_text = "#Quantity"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 76.0
+offset_right = 278.0
+offset_bottom = 107.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_alp6q")
+text = "Remove"
+
+[connection signal="item_selected" from="Panel/Condition_OptionButton" to="." method="_on_condition_option_button_item_selected"]
+[connection signal="button_up" from="Panel/Button" to="." method="_on_button_remove_button_up"]

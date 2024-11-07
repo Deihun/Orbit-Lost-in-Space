@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci10knosnrmv3"]
+
+[ext_resource type="Script" path="res://Scripts/_probability_index.gd" id="1_5pgx0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fnry"]
+bg_color = Color(0.649856, 0.593252, 0.491854, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqdk1"]
+bg_color = Color(0.548408, 0.531723, 0.449094, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chqop"]
+bg_color = Color(0.69923, 0.412493, 0.291374, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyblo"]
+bg_color = Color(0.408988, 0.644231, 0.690293, 1)
+
+[node name="_Probability_index" type="Control"]
+custom_minimum_size = Vector2(725, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 37.0
+offset_right = 83.0
+offset_bottom = 61.0
+script = ExtResource("1_5pgx0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fnry")
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 36.0
+offset_right = 704.0
+offset_bottom = 143.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqdk1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 37.0
+offset_right = 640.0
+offset_bottom = 142.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Button_Remove" type="Button" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 3.0
+offset_right = 714.0
+offset_bottom = 34.0
+text = "Remove
+"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 28.0
+offset_right = 136.0
+offset_bottom = 59.0
+placeholder_text = "#Float 0.0 ~ 1.0"
+
+[node name="Label_clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 62.0
+offset_right = 704.0
+offset_bottom = 91.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_chqop")
+text = "Clear
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 36.0
+offset_right = 704.0
+offset_bottom = 61.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vyblo")
+text = "ADD
+"
+
+[connection signal="button_up" from="Button_Remove" to="." method="_on_button_remove_button_up"]
+[connection signal="button_up" from="Label_clear" to="." method="_on_label_clear_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

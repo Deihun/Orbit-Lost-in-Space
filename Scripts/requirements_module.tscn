@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://gx00pjdmcy2x"]
+
+[ext_resource type="Script" path="res://Scripts/requirements_module.gd" id="1_nw5k6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mqe6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8ctk"]
+bg_color = Color(1, 0.347131, 0.239018, 1)
+
+[node name="Requirements_Module" type="Control"]
+custom_minimum_size = Vector2(193, 88)
+layout_mode = 3
+anchor_right = 0.098
+anchor_bottom = 0.083
+offset_right = 0.839996
+offset_bottom = 0.359993
+script = ExtResource("1_nw5k6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0mqe6")
+
+[node name="OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 129.0
+offset_bottom = 34.0
+selected = 0
+item_count = 7
+popup/item_0/text = "SPAREPARTS"
+popup/item_1/text = "FOOD"
+popup/item_1/id = 1
+popup/item_2/text = "MEDKIT"
+popup/item_2/id = 2
+popup/item_3/text = "FUEL"
+popup/item_3/id = 3
+popup/item_4/text = "OXYGEN"
+popup/item_4/id = 4
+popup/item_5/text = "DUCTAPE"
+popup/item_5/id = 5
+popup/item_6/text = "BIOGENE"
+popup/item_6/id = 6
+
+[node name="LineEdit_ChoiceButton_ Amount" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 129.0
+offset_bottom = 67.0
+placeholder_text = "#Amount"
+
+[node name="Requirements_Remove" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -2.0
+offset_right = 194.0
+offset_bottom = 88.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d8ctk")
+text = "Remove"
+
+[connection signal="button_up" from="Panel/Requirements_Remove" to="." method="_on_requirements_remove_button_up"]

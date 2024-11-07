@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://chfw26lb6taau"]
+
+[ext_resource type="Script" path="res://Scripts/_probability_module.gd" id="1_e4a2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txyrg"]
+bg_color = Color(0.6, 0.6, 0.431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qj0h"]
+bg_color = Color(0.0283548, 0.626139, 0.642636, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph7k6"]
+bg_color = Color(0.860445, 0.484322, 0.341285, 1)
+
+[node name="_Probability_Module" type="Control"]
+custom_minimum_size = Vector2(800, 275)
+layout_mode = 3
+anchor_right = 0.416
+anchor_bottom = 0.255
+offset_left = -1.0
+offset_right = 0.279968
+offset_bottom = -0.400024
+script = ExtResource("1_e4a2s")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_txyrg")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 89.0
+offset_bottom = 27.0
+text = "Probability"
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 37.0
+offset_right = 738.0
+offset_bottom = 265.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 38.0
+offset_right = 739.0
+offset_bottom = 264.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Button_add" type="Button" parent="."]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 4.0
+offset_right = 798.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qj0h")
+text = "ADD"
+
+[node name="Button_clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 35.0
+offset_right = 798.0
+offset_bottom = 62.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ph7k6")
+text = "CLEAR"
+
+[connection signal="button_up" from="Button_add" to="." method="_on_button_add_button_up"]
+[connection signal="button_up" from="Button_clear" to="." method="_on_button_clear_button_up"]
