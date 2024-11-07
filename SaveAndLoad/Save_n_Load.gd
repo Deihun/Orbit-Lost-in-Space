@@ -3,7 +3,7 @@ extends Node
 @onready var resources = GlobalResources
 @onready var stored = IngameStoredProcessSetting
 @onready var events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
-var SavePath = "Saves/GameSave.json"
+var SavePath = "Saves/Autosave.json"
 var isLoadGame : bool
 
 var event_dictionary = {}
