@@ -159,6 +159,10 @@ func _conditions(eachEvent) -> bool:
 			if GlobalResources.uniqueItems.has(data):
 				GlobalResources.eventID.append(eachEvent["id"])
 				return condition
+		elif eachEvent["Conditions"][0] == "CYCLE":
+			if IngameStoredProcessSetting.Cycle == data:
+				GlobalResources.eventID.append(eachEvent["id"])
+				return condition
 	return false
 
 
