@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddrrlbfb8k16q"]
+
+[ext_resource type="Script" path="res://Scripts/_command_module.gd" id="1_yftli"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh471"]
+bg_color = Color(0.6, 0.6, 0.486275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al8f6"]
+bg_color = Color(0.269819, 0.269407, 0.185104, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_412hh"]
+bg_color = Color(0.290196, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqo8a"]
+bg_color = Color(0.984314, 0.309804, 0, 1)
+
+[node name="_Command_Module" type="Control"]
+custom_minimum_size = Vector2(800, 275)
+layout_mode = 3
+anchor_right = 0.43
+anchor_bottom = 0.29
+offset_left = -3.0
+offset_top = 8.0
+offset_right = 0.399963
+offset_bottom = 16.8
+script = ExtResource("1_yftli")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qh471")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 83.0
+offset_bottom = 23.0
+text = "Command"
+
+[node name="Command_CollectionPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 29.0
+offset_right = 469.0
+offset_bottom = 262.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_al8f6")
+
+[node name="CommandCollectionPanel_Add" type="Button" parent="Panel/Command_CollectionPanel"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 4.0
+offset_right = 452.0
+offset_bottom = 35.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_412hh")
+text = "ADD
+"
+
+[node name="CommandCollectionPanel_clear" type="Button" parent="Panel/Command_CollectionPanel"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 41.0
+offset_right = 452.0
+offset_bottom = 75.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqo8a")
+text = "CLEAR
+"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Command_CollectionPanel"]
+layout_mode = 0
+offset_right = 385.0
+offset_bottom = 232.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Command_CollectionPanel/ScrollContainer"]
+layout_mode = 2
+
+[connection signal="button_up" from="Panel/Command_CollectionPanel/CommandCollectionPanel_Add" to="." method="_on_command_collection_panel_add_button_up"]
+[connection signal="button_up" from="Panel/Command_CollectionPanel/CommandCollectionPanel_clear" to="." method="_on_command_collection_panel_clear_button_up"]

@@ -408,6 +408,18 @@ func doHealthChecker():
 				crew_in_ship.erase(crew)
 				recent_events.append("DEATH")
 
+func doRandomDamage(value : float = 0.1):
+	var CrewName = ""
+	var randomCrew = int(randf() * crew_in_ship.size())
+	CrewName = crew_in_ship[randomCrew]
+	doDamageToSpecific(CrewName, value)
+
+func doDamageToSpecific(crewName : String, value : float = 0.1):
+	if crew_in_ship.has(crewName):
+		_health[crewName] += value
+	else:
+		print("UNABLE TO DAMAGE THIS '", crewName, "' as it doesnt exist in ",crew_in_ship,". with value of ", value)
+
 
 func doSanity():
 	for crew in crew_in_ship:

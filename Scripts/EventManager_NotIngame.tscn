@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://biebc6r1spt82"]
+[gd_scene load_steps=7 format=3 uid="uid://biebc6r1spt82"]
 
 [ext_resource type="Script" path="res://Scripts/event_manager_not_ingame.gd" id="1_vywad"]
+[ext_resource type="PackedScene" uid="uid://ddrrlbfb8k16q" path="res://Scripts/_command_module.tscn" id="2_5gxj8"]
+[ext_resource type="PackedScene" uid="uid://chfw26lb6taau" path="res://Scripts/_probability_module.tscn" id="3_q1j43"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdps8"]
 bg_color = Color(0.442911, 0.442911, 0.442911, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a178w"]
 bg_color = Color(0.868985, 0.868985, 0.868985, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4u1n"]
+bg_color = Color(0.592077, 0.61975, 0.460177, 1)
 
 [node name="EventManagerNotIngame" type="Control"]
 layout_mode = 3
@@ -23,7 +28,7 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -9.0
 offset_right = 1918.0
-offset_bottom = 1067.0
+offset_bottom = 1077.0
 
 [node name="Panel_CodePreviewBColor" type="Panel" parent="."]
 visibility_layer = 512
@@ -40,271 +45,6 @@ offset_top = -2.0
 offset_right = 1909.0
 offset_bottom = 29.0
 text = "Back"
-
-[node name="Panel_Command" type="Panel" parent="."]
-layout_mode = 2
-offset_left = 924.0
-offset_top = 798.0
-offset_right = 1150.0
-offset_bottom = 942.0
-
-[node name="Button_Clear" type="Button" parent="Panel_Command"]
-layout_mode = 0
-offset_left = 181.0
-offset_top = 1.0
-offset_right = 216.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 10
-text = "CLEAR
-"
-
-[node name="Button_Add" type="Button" parent="Panel_Command"]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 1.0
-offset_right = 176.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 10
-text = "ADD"
-
-[node name="ScrollContainer_CodePreview_Item" type="ScrollContainer" parent="Panel_Command"]
-z_index = 20
-layout_mode = 0
-offset_left = 13.0
-offset_top = 71.0
-offset_right = 221.0
-offset_bottom = 132.0
-
-[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Command/ScrollContainer_CodePreview_Item"]
-z_index = 10
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview"]
-z_index = 10
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-autowrap_mode = 1
-
-[node name="Label_Command_Guide" type="Label" parent="Panel_Command"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Command
-"
-
-[node name="LineEdit_Command" type="LineEdit" parent="Panel_Command"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 21.0
-offset_right = 220.0
-offset_bottom = 52.0
-placeholder_text = "Enter a  @Command"
-
-[node name="Panel_Conditions" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1155.0
-offset_top = 799.0
-offset_right = 1345.0
-offset_bottom = 942.0
-
-[node name="ScrollContainer_CodePreview_ChoicePreview" type="ScrollContainer" parent="Panel_Conditions"]
-z_index = 20
-layout_mode = 0
-offset_left = 9.0
-offset_top = 80.0
-offset_right = 181.0
-offset_bottom = 135.0
-
-[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview"]
-z_index = 10
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview"]
-z_index = 10
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-autowrap_mode = 1
-
-[node name="Label_Conditions_Guide" type="Label" parent="Panel_Conditions"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Conditions
-"
-
-[node name="Button_Conditions_AddGroups" type="Button" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 3.0
-offset_right = 131.0
-offset_bottom = 25.0
-tooltip_text = "Add Specific Value in condition groups"
-theme_override_font_sizes/font_size = 10
-text = "SET"
-
-[node name="Button_Condition_ResetValueGroup" type="Button" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 2.0
-offset_right = 174.0
-offset_bottom = 24.0
-tooltip_text = "Reset the container of value as group"
-theme_override_font_sizes/font_size = 10
-text = "RESET
-"
-
-[node name="Button3" type="Button" parent="Panel_Conditions"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="LineEdit_Value" type="LineEdit" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 54.0
-offset_right = 149.0
-offset_bottom = 85.0
-placeholder_text = "Value"
-
-[node name="Conditional_OptionButton" type="OptionButton" parent="Panel_Conditions"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 21.0
-offset_right = 330.0
-offset_bottom = 52.0
-scale = Vector2(0.580556, 0.872727)
-selected = 0
-item_count = 14
-popup/item_0/text = "HAS"
-popup/item_1/text = "PLACE"
-popup/item_1/id = 1
-popup/item_2/text = "RELATIONSHIP_MAX_WITH_ME"
-popup/item_2/id = 2
-popup/item_3/text = "RELATIONSHIP_HIGH_75%_WITH_ME"
-popup/item_3/id = 3
-popup/item_4/text = "RELATIONSHIP_LOWER_25%_WITH_ME"
-popup/item_4/id = 5
-popup/item_5/text = "RELATIONSHIP_LOWER_0%_WITH_ME"
-popup/item_5/id = 5
-popup/item_6/text = "SANITY_100%"
-popup/item_6/id = 6
-popup/item_7/text = "SANITY_75%"
-popup/item_7/id = 7
-popup/item_8/text = "SANITY_25%"
-popup/item_8/id = 8
-popup/item_9/text = "SANITY_0%"
-popup/item_9/id = 9
-popup/item_10/text = "HAS_INGAME_EFFECTS"
-popup/item_10/id = 10
-popup/item_11/text = "HAS_UNIQUE_ITEM"
-popup/item_11/id = 11
-popup/item_12/text = "CRITICAL"
-popup/item_12/id = 12
-popup/item_13/text = "FOLLOW-UP"
-popup/item_13/id = 13
-
-[node name="Panel_Probability" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 1352.0
-offset_top = 800.0
-offset_right = 1695.0
-offset_bottom = 937.0
-
-[node name="Button_AddGroup" type="Button" parent="Panel_Probability"]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 24.0
-offset_right = 322.0
-offset_bottom = 60.0
-theme_override_colors/font_hover_color = Color(0.377167, 0.847477, 1.92523e-06, 1)
-theme_override_font_sizes/font_size = 10
-text = "ADD
-GROUP"
-
-[node name="Button_RemoveCommands2" type="Button" parent="Panel_Probability"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 60.0
-offset_right = 134.0
-offset_bottom = 96.0
-theme_override_colors/font_hover_color = Color(0.377167, 0.847477, 1.92523e-06, 1)
-theme_override_font_sizes/font_size = 10
-text = "REMOVE
-COMMAND"
-
-[node name="Button_AddCommands" type="Button" parent="Panel_Probability"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 59.0
-offset_right = 70.0
-offset_bottom = 95.0
-theme_override_colors/font_hover_color = Color(0.377167, 0.847477, 1.92523e-06, 1)
-theme_override_font_sizes/font_size = 10
-text = "ADD
- COMMAND"
-
-[node name="Label_Probability_Guide" type="Label" parent="Panel_Probability"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 2.0
-offset_right = 91.0
-offset_bottom = 25.0
-text = "Probability
-"
-
-[node name="LineEdit_Probability_Command" type="LineEdit" parent="Panel_Probability"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 26.0
-offset_right = 136.0
-offset_bottom = 57.0
-theme_override_font_sizes/font_size = 10
-placeholder_text = "@Command"
-
-[node name="LineEdit_Probability_Probability" type="LineEdit" parent="Panel_Probability"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 26.0
-offset_right = 250.0
-offset_bottom = 57.0
-theme_override_font_sizes/font_size = 10
-placeholder_text = "%Probability"
-
-[node name="ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup" type="ScrollContainer" parent="Panel_Probability"]
-z_index = 20
-layout_mode = 0
-offset_left = 9.0
-offset_top = 96.0
-offset_right = 133.0
-offset_bottom = 135.0
-
-[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup"]
-z_index = 10
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview"]
-z_index = 10
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-autowrap_mode = 1
-
-[node name="ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup" type="ScrollContainer" parent="Panel_Probability"]
-z_index = 20
-layout_mode = 0
-offset_left = 178.0
-offset_top = 61.0
-offset_right = 320.0
-offset_bottom = 130.0
-
-[node name="VScrollBar_CodePreview" type="VBoxContainer" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup"]
-z_index = 10
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview"]
-z_index = 10
-custom_minimum_size = Vector2(200, 30)
-layout_mode = 2
-autowrap_mode = 1
 
 [node name="ScrollContainer_CodePreview" type="ScrollContainer" parent="."]
 z_index = 1
@@ -418,9 +158,9 @@ text = "CLEAR"
 [node name="Create_ChoiceButton" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 923.0
-offset_top = 261.0
+offset_top = 249.0
 offset_right = 1837.0
-offset_bottom = 787.0
+offset_bottom = 584.0
 
 [node name="Button_AddChoiceButton" type="Button" parent="Create_ChoiceButton"]
 layout_mode = 0
@@ -437,9 +177,9 @@ text = "Add ChoiceButton
 [node name="ButtonScroll_Container" type="ScrollContainer" parent="Create_ChoiceButton"]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 65.0
+offset_top = 61.0
 offset_right = 895.0
-offset_bottom = 510.0
+offset_bottom = 309.0
 
 [node name="VBoxContainer_CreateButtonModule" type="VBoxContainer" parent="Create_ChoiceButton/ButtonScroll_Container"]
 layout_mode = 2
@@ -458,6 +198,7 @@ text = "Clear Choice
 "
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 65.0
 offset_top = 554.0
@@ -496,6 +237,7 @@ high priority : @CRITICAL <Name of CriticalEvent>
 autowrap_mode = 2
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 471.0
 offset_top = 550.0
@@ -519,14 +261,107 @@ FOLLOW-UP - Similar to CRITICAL but it follows
 event limit rule per cycle
 "
 
+[node name="Control" type="Control" parent="Label"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OtherSubComponents" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 593.0
+offset_right = 1825.0
+offset_bottom = 968.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OtherSubComponents"]
+layout_mode = 0
+offset_right = 904.0
+offset_bottom = 363.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OtherSubComponents/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="_Command_Module" parent="OtherSubComponents/ScrollContainer/VBoxContainer" instance=ExtResource("2_5gxj8")]
+layout_mode = 2
+
+[node name="Conditions_Components" type="Control" parent="OtherSubComponents/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 275)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4u1n")
+
+[node name="Conditional_OptionButton" type="OptionButton" parent="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 30.0
+offset_right = 367.0
+offset_bottom = 67.0
+scale = Vector2(0.580556, 0.872727)
+selected = 0
+item_count = 14
+popup/item_0/text = "HAS"
+popup/item_1/text = "PLACE"
+popup/item_1/id = 1
+popup/item_2/text = "RELATIONSHIP_MAX_WITH_ME"
+popup/item_2/id = 2
+popup/item_3/text = "RELATIONSHIP_HIGH_75%_WITH_ME"
+popup/item_3/id = 3
+popup/item_4/text = "RELATIONSHIP_LOWER_25%_WITH_ME"
+popup/item_4/id = 5
+popup/item_5/text = "RELATIONSHIP_LOWER_0%_WITH_ME"
+popup/item_5/id = 5
+popup/item_6/text = "SANITY_100%"
+popup/item_6/id = 6
+popup/item_7/text = "SANITY_75%"
+popup/item_7/id = 7
+popup/item_8/text = "SANITY_25%"
+popup/item_8/id = 8
+popup/item_9/text = "SANITY_0%"
+popup/item_9/id = 9
+popup/item_10/text = "HAS_INGAME_EFFECTS"
+popup/item_10/id = 10
+popup/item_11/text = "HAS_UNIQUE_ITEM"
+popup/item_11/id = 11
+popup/item_12/text = "CRITICAL"
+popup/item_12/id = 12
+popup/item_13/text = "FOLLOW-UP"
+popup/item_13/id = 13
+
+[node name="Label_Condition" type="Label" parent="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Conditions
+"
+
+[node name="Condition_Value_LineText" type="LineEdit" parent="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 68.0
+offset_right = 216.0
+offset_bottom = 99.0
+placeholder_text = "Value"
+
+[node name="_UseCondition_CheckButton" type="CheckButton" parent="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel"]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 3.0
+offset_right = 790.0
+offset_bottom = 34.0
+text = "USE CONDITION"
+
+[node name="_Probability_Module" parent="OtherSubComponents/ScrollContainer/VBoxContainer" instance=ExtResource("3_q1j43")]
+layout_mode = 2
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Panel_Command/Button_Clear" to="." method="_ClearCommand"]
-[connection signal="pressed" from="Panel_Command/Button_Add" to="." method="_EnterCommand"]
-[connection signal="pressed" from="Panel_Conditions/Button_Conditions_AddGroups" to="." method="_AddValue"]
-[connection signal="pressed" from="Panel_Conditions/Button_Condition_ResetValueGroup" to="." method="_ConditionGroupsReset"]
-[connection signal="pressed" from="Panel_Probability/Button_AddGroup" to="." method="_ProbabilityAddGroup"]
-[connection signal="pressed" from="Panel_Probability/Button_RemoveCommands2" to="." method="_RemoveCommand_Probability"]
-[connection signal="pressed" from="Panel_Probability/Button_AddCommands" to="." method="_AddCommand_Probability"]
 [connection signal="pressed" from="Button_AddEvent" to="." method="add_new_event"]
 [connection signal="button_up" from="Button_Clear" to="." method="_on_button_clear_button_up"]
 [connection signal="button_up" from="Create_ChoiceButton/Button_AddChoiceButton" to="." method="_on_button_add_choice_button_button_up"]

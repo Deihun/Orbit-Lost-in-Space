@@ -32,6 +32,8 @@ func load_json_file():
 
 func add_new_event():
 	on_finalize_choice_button()
+	setUpCommandList()
+	setUpCondition()
 	var name_input = $Label_name/LineEdit.text
 	var description_input =$Label_description/TextEdit.text
 	
@@ -48,21 +50,20 @@ func add_new_event():
 	}
 	for choice_id in TemporaryChoices.keys():
 		new_event[choice_id] = TemporaryChoices[choice_id]
-	if CommandList.size() > 0:
+	if $OtherSubComponents/ScrollContainer/VBoxContainer/_Command_Module.canBeUsed():
 		new_event["Command"] = CommandList
-	if _Condition_ValueGroup.size() > 0:
-		print("more than shit")
+	if $OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel/_UseCondition_CheckButton.is_pressed():
 		new_event["Conditions"] = _Condition_ValueGroup.duplicate(true)
 	event_data.append(new_event)
-	if _probabilityGroup.size()> 0:
-		var a = _probabilityGroup.duplicate(true)
+	if $OtherSubComponents/ScrollContainer/VBoxContainer/_Probability_Module.canBeCall():
+		var a = $OtherSubComponents/ScrollContainer/VBoxContainer/_Probability_Module.get_value().duplicate()
 		new_event["Probability"] = a
 		_probabilityGroup.clear()
 		_RemoveCommand_Probability()
 	save_json_file()
 	update_UI()
 	reset_items()
-	_ConditionGroupsReset()
+
 
 func save_json_file():
 	var file = FileAccess.open(json_file_path, FileAccess.WRITE)
@@ -89,10 +90,8 @@ func update_UI():
 	label.text = str(formatted_string)
 	label.autowrap_mode = true
 
-	$Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.text = str(CommandList)
-	$Panel_Command/ScrollContainer_CodePreview_Item/VScrollBar_CodePreview/Label.autowrap_mode = true
-	$Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.text = str(_Condition_ValueGroup)
-	$Panel_Conditions/ScrollContainer_CodePreview_ChoicePreview/VScrollBar_CodePreview/Label.autowrap_mode = true
+
+
 	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview/Label.text = str(_Probability_Command)
 	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview/Label.autowrap_mode = true
 	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview/Label.text = str(_probabilityGroup)
@@ -135,13 +134,19 @@ func reset_items():
 
 
 func clear_item_UI():
-	$Panel_ButtonGeneration/LineEdit_amount.text = ""
+	pass
 
 func on_finalize_choice_button():
 	for child in $Create_ChoiceButton/ButtonScroll_Container/VBoxContainer_CreateButtonModule.get_children():
-		TemporaryChoices["Choice-"+str(current_choice_id+1)] = child.get_value().duplicate()
+		var choice_data = child.get_value().duplicate() # Duplicate the choice data
+
+		if typeof(choice_data[0]) == TYPE_ARRAY and choice_data[0].size() > 0:
+			TemporaryChoices["HiddenChoice"] = choice_data
+		else:
+			TemporaryChoices["Choice-" + str(current_choice_id + 1)] = choice_data
+			current_choice_id += 1
+
 		child.queue_free()
-		current_choice_id +=1
 	update_UI()
 
 func _Hidden_Choice_Toggle() -> void:
@@ -167,37 +172,23 @@ func _RESET_TemporaryITEM() -> void:
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #						COMMAND TAB
 var CommandList = []
-func _EnterCommand() -> void:
-	var line = str($Panel_Command/LineEdit_Command.text)
-	CommandList.append(line)
-	update_UI()
-	pass # Replace with function body.
 
-
-func _ClearCommand() -> void:
+func setUpCommandList():
 	CommandList.clear()
-	update_UI()
-	pass # Replace with function body.
+	CommandList = $OtherSubComponents/ScrollContainer/VBoxContainer/_Command_Module.get_value().duplicate()
+
+
+
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #						ConditionTab
 var _Condition_ValueGroup = []
 
-
-func _AddValue() -> void:
-	_ConditionGroupsReset()
-	#_Condition_ValueGroup[0][0] = $Panel_Conditions/Conditional_OptionButton.text
-	#_Condition_ValueGroup[0][1] = $Panel_Conditions/LineEdit_Value.text
-	#_Condition_ValueGroup = [[$Panel_Conditions/Conditional_OptionButton.text][$Panel_Conditions/LineEdit_Value.text]]
-	_Condition_ValueGroup.append($Panel_Conditions/Conditional_OptionButton.text)
-	_Condition_ValueGroup.append($Panel_Conditions/LineEdit_Value.text)
-	update_UI()
-	pass # Replace with function body.
-
-
-func _ConditionGroupsReset() -> void:
+func setUpCondition():
 	_Condition_ValueGroup.clear()
-	update_UI()
-	pass # Replace with function body.
+	_Condition_ValueGroup.append($OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel/Conditional_OptionButton.text)
+	_Condition_ValueGroup.append($OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel/Condition_Value_LineText.text)
+
+
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #						Probability
 var _Probability_Command = []
@@ -242,7 +233,6 @@ func clear():
 	reset_items()
 	clear_item_UI()
 	_ClearItems()
-	_ClearCommand()
 	_probabilityGroup.clear()
 
 func _on_button_clear_button_up() -> void:

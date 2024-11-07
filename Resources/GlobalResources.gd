@@ -57,6 +57,7 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 			ductape += 1
 
 func hasItem(item_type: String, quantity: int) -> bool:
+	print("HAS ITEM: ", item_type, quantity)
 	item_type = item_type.to_upper()
 	var returningValue = false
 	match(item_type):

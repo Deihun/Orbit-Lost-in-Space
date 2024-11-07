@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjd2s6hyedjij"]
+
+[ext_resource type="Script" path="res://Scripts/commands_index.gd" id="1_ghkju"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hrpf"]
+bg_color = Color(0.788827, 0.540763, 0.256641, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvr7e"]
+bg_color = Color(1, 0.351117, 0.1901, 1)
+
+[node name="CommandsIndex" type="Control"]
+custom_minimum_size = Vector2(340, 132)
+layout_mode = 3
+anchor_right = 0.179
+anchor_bottom = 0.122
+offset_right = -0.680023
+offset_bottom = 0.23999
+script = ExtResource("1_ghkju")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 132.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hrpf")
+
+[node name="Button_Remove" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 96.0
+offset_right = 329.0
+offset_bottom = 127.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bvr7e")
+text = "REMOVE"
+
+[node name="Condition_OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 22.0
+offset_right = 330.0
+offset_bottom = 54.0
+selected = 0
+item_count = 13
+popup/item_0/text = "@ADD_EFFECTS"
+popup/item_1/text = "@ADD_MATERIALS"
+popup/item_1/id = 1
+popup/item_2/text = "@RELATIONSHIP_INCREASE"
+popup/item_2/id = 2
+popup/item_3/text = "@TITLE"
+popup/item_3/id = 3
+popup/item_4/text = "@ANOTHER_EVENT"
+popup/item_4/id = 4
+popup/item_5/text = "@DESCRIPTION"
+popup/item_5/id = 5
+popup/item_6/text = "@RESET"
+popup/item_6/id = 6
+popup/item_7/text = "@GAMEOVER"
+popup/item_7/id = 7
+popup/item_8/text = "@CRITICAL"
+popup/item_8/id = 8
+popup/item_9/text = "@ADD_PROBABILITY_FACTIONS"
+popup/item_9/id = 9
+popup/item_10/text = "@DO_RANDOMDAMAGE"
+popup/item_10/id = 10
+popup/item_11/text = "@DO_DAMAGE"
+popup/item_11/id = 11
+popup/item_12/text = "@FACTS"
+popup/item_12/id = 12
+
+[node name="Value_OptionButton" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 58.0
+offset_right = 330.0
+offset_bottom = 90.0
+
+[node name="Value_LineText" type="LineEdit" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 59.0
+offset_right = 330.0
+offset_bottom = 90.0
+placeholder_text = "Value"
+
+[node name="Quantity_LineEdit" type="LineEdit" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 95.0
+offset_right = 216.0
+offset_bottom = 126.0
+placeholder_text = "#Quantity"
+
+[connection signal="button_up" from="Panel/Button_Remove" to="." method="_on_button_remove_button_up"]
+[connection signal="item_selected" from="Panel/Condition_OptionButton" to="." method="_on_condition_option_button_item_selected"]

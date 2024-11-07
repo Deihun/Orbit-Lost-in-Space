@@ -91,18 +91,19 @@ func HiddenChoice(Event):
 	if Event.has("HiddenChoice"):
 		var inner_array = Event["HiddenChoice"][0]
 		var conditionArray = inner_array[0]
-		var condition = conditionArray[0]
+		var condition = Event["HiddenChoice"][0][0]
 		
-		print("Debug: // HAS = ", condition, " HAS_UNIQUE_ITEM = ", condition, Event["HiddenChoice"][0])
+		print("Debug: // HAS = ", condition, " HAS_UNIQUE_ITEM = ", 0, Event["HiddenChoice"][0])
+		print("Debug2: ",Event["HiddenChoice"][0][0][1][0],Event["HiddenChoice"][0][1][1])
 		
 		match(condition):
 			"HAS":
-				if globalResources.hasItem(Event["HiddenChoice"][0][0][1][0],Event["HiddenChoice"][0][1][1]):
+				if globalResources.hasItem(Event["HiddenChoice"][0][1][0],Event["HiddenChoice"][0][1][1]):
 					_create_choice_button(Event["HiddenChoice"][1], button_index)
 					button_index += 1
 					temp_choice_data.append(Event["HiddenChoice"][1])
 			"HAS_UNIQUE_ITEM":
-				if globalResources.uniqueItems.has(Event["HiddenChoice"][0][0][1][0]):
+				if globalResources.uniqueItems.has(Event["HiddenChoice"][0][1][0]):
 					_create_choice_button(Event["HiddenChoice"][1], button_index)
 					button_index += 1
 					temp_choice_data.append(Event["HiddenChoice"][1])
@@ -189,6 +190,22 @@ func RunKeyWord(Command):
 		_command = _command.substr("@ADD_PROBABILITY_FACTIONS".length(), _command.length() - "@ADD_PROBABILITY_FACTIONS".length())
 		_command.strip_edges()
 		#IngameStoredProcessSetting.Factions_Probability
+	elif _command.begins_with("@DO_RANDOMDAMAGE"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@DO_RANDOMDAMAGE".length(), _command.length() - "@DO_RANDOMDAMAGE".length())
+		_command.strip_edges()
+		IngameStoredProcessSetting.doRandomDamage(float(_command))
+	elif _command.begins_with("@DO_DAMAGE"):
+		_command = _command.substr("@DO_DAMAGE".length(), _command.length() - "@DO_DAMAGE".length())
+		_command.strip_edges()
+		var crew_name = ""
+		var amount : float = 0.0
+		for i in range(_command.length()):
+			var char = _command[i]
+			if numbers.has(char):
+				crew_name = _command.substr(0, i).strip_edges()  # Get the item name and strip edges.
+				amount = int(_command.substr(i, _command.length() - i))  # Get the amount as an integer.
+				break 
+		IngameStoredProcessSetting.doDamageToSpecific(crew_name,amount)
 	elif _command.begins_with("@YES_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		IngameStoredProcessSetting._yes_in_faction()
 	elif _command.begins_with("@NO_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
@@ -220,6 +237,7 @@ func clear_container(container: VBoxContainer):
 
 func _create_choice_button(choice_data, index):
 	var button = Button.new() #CREATE AND HANDLES BUTTON
+	print(choice_data)
 	button.text = translate_description_to_gettedProcess(choice_data[2])
 	button.z_index = 1 
 	button.modulate.a = 1.0
