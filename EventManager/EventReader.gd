@@ -92,9 +92,7 @@ func HiddenChoice(Event):
 		var inner_array = Event["HiddenChoice"][0]
 		var conditionArray = inner_array[0]
 		var condition = Event["HiddenChoice"][0][0]
-		
-		print("Debug: // HAS = ", condition, " HAS_UNIQUE_ITEM = ", 0, Event["HiddenChoice"][0])
-		print("Debug2: ",Event["HiddenChoice"][0][0][1][0],Event["HiddenChoice"][0][1][1])
+
 		
 		match(condition):
 			"HAS":
@@ -226,7 +224,6 @@ func RunKeyWord(Command):
 		_command.replace(" ","")
 		var factChecks = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton")
 		if factChecks:
-			print("Facts adding ", _command)
 			factChecks.set_fact_encountered(_command)
 			return
 			if factChecks.rawFacts["facts"].find({"id": _command}) :
@@ -247,7 +244,6 @@ func clear_container(container: VBoxContainer):
 
 func _create_choice_button(choice_data, index):
 	var button = Button.new() #CREATE AND HANDLES BUTTON
-	print(choice_data)
 	button.text = translate_description_to_gettedProcess(choice_data[2])
 	button.z_index = 1 
 	button.modulate.a = 1.0
