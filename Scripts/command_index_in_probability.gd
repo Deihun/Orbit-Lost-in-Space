@@ -89,6 +89,15 @@ func _on_condition_option_button_item_selected(index: int) -> void:
 			$Panel/Value_OptionButton.hide()
 			$Panel/Quantity_LineEdit.hide()
 			$Panel/Value_LineText.show()
+		13:
+			$Panel/Value_OptionButton.show()
+			$Panel/Quantity_LineEdit.show()
+			$Panel/Value_LineText.hide()
+			$Panel/Value_OptionButton.clear()
+			$Panel/Value_OptionButton.add_item("Maxim",0)
+			$Panel/Value_OptionButton.add_item("Regina",1)
+			$Panel/Value_OptionButton.add_item("Nashir",0)
+			$Panel/Value_OptionButton.add_item("Fumiko",2)
 
 func get_value():
 	var value = $Panel/Condition_OptionButton.get_selected_id()
@@ -98,7 +107,7 @@ func get_value():
 	if value in [0 , 3 , 4 , 5 , 7 , 8 , 12]:
 		string = str($Panel/Condition_OptionButton.text,$Panel/Value_LineText.text)
 #OptionBox andQuantity
-	elif value in [1,2,9,11]:
+	elif value in [1,2,9,11,13]:
 		string = str($Panel/Condition_OptionButton.text,$Panel/Value_OptionButton.text," ",$Panel/Quantity_LineEdit.text)
 		pass
 #OnlyOptionBox

@@ -92,10 +92,7 @@ func update_UI():
 
 
 
-	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview/Label.text = str(_Probability_Command)
-	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityCommandGroup/VScrollBar_CodePreview/Label.autowrap_mode = true
-	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview/Label.text = str(_probabilityGroup)
-	$Panel_Probability/ScrollContainer_CodePreview_ChoicePreview_ProbabilityGroup/VScrollBar_CodePreview/Label.autowrap_mode
+
 	var font_size = label.get_theme_font_size("font_size")  # Get the font size from the theme
 	var line_count = label.get_line_count()  # Get the number of lines
 	#label.custom_minimum_size = Vector2(0, font_size * line_count)

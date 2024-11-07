@@ -320,6 +320,46 @@ func isRelationship(name: String, value : float, isGreaterThan : bool = true) ->
 					conditionState = true
 		return conditionState
 
+func giveAllMedicine():
+	for crew in crew_in_ship:
+		if GlobalResources.medicine >= 1:
+			GlobalResources.medicine -= 1
+			_disease[crew] = 0.0
+
+func boostCrewSanity(value : float = 0.1):
+	for crew in crew_in_ship:
+		_sanity[crew] += value
+		_sanity[crew] = 1.0 if _sanity[crew] > 1.0 else _sanity
+
+func increaseDecreaseSanity(name: String, value : float):
+	match(name):
+		"FUMIKO":
+			_sanity["Fumiko"] += value
+			_sanity["Fumiko"] = 0.0 if _sanity["Fumiko"] < 0 else _sanity["Fumiko"]
+			_sanity["Fumiko"] = 1.0 if _sanity["Fumiko"] > 1.0 else _sanity["Fumiko"]
+
+		"REGINA":
+			_sanity["Regina"] += value
+			_sanity["Regina"] = 0.0 if _sanity["Regina"] < 0 else _sanity["Regina"]
+			_sanity["Regina"] = 1.0 if _sanity["Regina"] > 1.0 else _sanity["Regina"]
+
+		"MAXIM":
+			_sanity["Maxim"] += value
+			_sanity["Maxim"] = 0.0 if _sanity["Maxim"] < 0 else _sanity["Maxim"]
+			_sanity["Maxim"] = 1.0 if _sanity["Maxim"] > 1.0 else _sanity["Maxim"]
+		"NASHIR":
+			_sanity["Nashir"] += value
+			_sanity["Nashir"] = 0.0 if _sanity["Nashir"] < 0 else _sanity["Nashir"]
+			_sanity["Nashir"] = 1.0 if _sanity["Nashir"] > 1.0 else _sanity["Nashir"]
+
+
+func feedEveryone():
+	for crew in crew_in_ship:
+		if GlobalResources.ration >= _rationConsumes[crew]:
+			_current_hunger[crew] = 1.0
+			GlobalResources.ration -= _rationConsumes[crew]
+			already_eaten[crew] = true
+
 func isSanity(name: String, value: float, isGreaterThan: bool = true) -> bool:
 	var conditionState =false
 	if isGreaterThan:

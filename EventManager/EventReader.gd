@@ -160,7 +160,17 @@ func RunKeyWord(Command):
 				crew_name = _command.substr(0,i)
 				value = float(_command.substr(i, _command.length() - i))
 		IngameStoredProcessSetting.addRelationshipBetweenCrew(crew_name,"JERRY",value)
-		pass
+	elif _command.begins_with("@SANITY_INCREASE"):	#INCOMPLETE
+		_command = _command.substr("@SANITY_INCREASE".length(), _command.length() - "@SANITY_INCREASE".length())
+		_command.strip_edges()
+		var crew_name = ""
+		var value : float = 0.0
+		for i in range (_command.length()):
+			var char = _command[i]
+			if numbers.has(char):
+				crew_name = _command.substr(0,i)
+				value = float(_command.substr(i, _command.length() - i))
+		IngameStoredProcessSetting.increaseDecreaseSanity(crew_name,value)
 	elif _command.begins_with("@TITLE"):
 		_command = _command.substr("@TITLE".length(), _command.length() - "@TITLE".length())
 		_command.strip_edges()
@@ -210,8 +220,8 @@ func RunKeyWord(Command):
 		IngameStoredProcessSetting._yes_in_faction()
 	elif _command.begins_with("@NO_TO_LANDING"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		IngameStoredProcessSetting._no_in_faction()
-	elif _command.begins_with("@FACTS "): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
-		_command = _command.substr("@FACTS ".length(), _command.length() - "@FACTS ".length())
+	elif _command.begins_with("@FACTS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@FACTS".length(), _command.length() - "@FACTS".length())
 		_command.strip_edges()
 		_command.replace(" ","")
 		var factChecks = NodeFinder.find_node_by_name(get_tree().current_scene,"FactButton")

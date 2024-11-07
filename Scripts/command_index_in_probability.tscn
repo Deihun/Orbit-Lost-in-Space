@@ -30,7 +30,7 @@ offset_top = 4.0
 offset_right = 278.0
 offset_bottom = 36.0
 selected = 0
-item_count = 13
+item_count = 14
 popup/item_0/text = "@ADD_EFFECTS"
 popup/item_1/text = "@ADD_MATERIALS"
 popup/item_1/id = 1
@@ -56,6 +56,8 @@ popup/item_11/text = "@DO_DAMAGE"
 popup/item_11/id = 11
 popup/item_12/text = "@FACTS"
 popup/item_12/id = 12
+popup/item_13/text = "@SANITY_INCREASE"
+popup/item_13/id = 13
 
 [node name="Value_OptionButton" type="OptionButton" parent="Panel"]
 layout_mode = 0

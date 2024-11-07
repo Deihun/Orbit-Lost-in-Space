@@ -49,20 +49,18 @@ func switchIt(value : bool = true):
 		OpeningAnimation.show()
 		OpeningAnimation.play("ClosingAnimation")
 		recentAnimation = "ClosingAnimation"
-		if !onceTutorial:
-			var tutorialEnd = NodeFinder.find_node_by_name(get_tree().current_scene,"TutorialPanel4")
-			onceTutorial = true
-			if tutorialEnd:
-				tutorialEnd.visible = true
+
+
 
 func _on_opening_ui_scene_animation_finished() -> void:
 	if recentAnimation == "OpeningAnimation":
 		OpeningAnimation.show()
 		eventReader.show()
 		_triggerDialogue(initialDescription, isTextToSpeechOn)
-	else: 
+	elif recentAnimation == "ClosingAnimation": 
 		OpeningAnimation.hide()
 		eventReader.hide()
+
 
 
 func _newGameStart():
@@ -202,6 +200,12 @@ func ActivateEvent(): #ACTIVATE QUEUE EVENT
 		var control = get_parent()
 		endCycle.enable()
 		control.EndCycle_Can_Be_Click_ = true
+		if !onceTutorial:
+			var tutorialEnd = NodeFinder.find_node_by_name(get_tree().current_scene,"TutorialPanel4")
+			onceTutorial = true
+			if tutorialEnd:
+				tutorialEnd.visible = true
+
 		return
 	var CurrentEventID = GlobalResources.eventID.pop_front()
 	isEventVisible = true
