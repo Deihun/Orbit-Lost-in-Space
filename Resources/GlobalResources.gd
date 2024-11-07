@@ -38,8 +38,10 @@ func ConsumeFuel(value: int = 10) -> bool:
 		else:
 			emergencyFuel = 0
 			return false
-	
 	return true
+
+func addUniqueItem(item_name: String):
+	uniqueItems.append(item_name)
 
 func add_item(item_type):#Use to direct add items, used by other objects such as dropbox to add items
 	match(item_type):

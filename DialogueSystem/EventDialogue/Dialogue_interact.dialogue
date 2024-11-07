@@ -2,7 +2,7 @@
 if !already_talk["Maxim"]
 	set already_talk["Maxim"] = true
 	if _relationship["Maxim"] > 0.8
-		Maxim: [[What do you want?|Is there something you need?|Hmm?]]
+		Maxim: [[Is there something you need captain?|Do you want to say something?|Hmm?]]
 		- Give food for today
 			if ration >= _rationConsumes["Maxim"] and already_eaten["Maxim"] == false 
 				do reduceFood(crewEat("Maxim", ration))
@@ -22,7 +22,23 @@ if !already_talk["Maxim"]
 				Jerry: I dont have any medicine to offer.
 				set already_talk["Maxim"] = false
 		- Order
-			Jerry: Testing Order
+			- Feed Everyone
+				if crew_in_ship.size() > 1
+					do feedEveryone()
+					Maxim: Maxim will do it
+				else 
+					Jerry: Theres no other crew in the ship except Maxim
+					set already_talk["Maxim"] = false
+			- Craft CrowBaw
+				if spareparts >= 70
+					Maxim: Got it captain!
+					do addUniqueItem("Crowbar")
+				else
+					Maxim: Maxim think we don't have sufficient material to craft Crowbar Captain
+					set already_talk["Maxim"] = false
+			- [[Nevermind|Talk to you later|See you around]]
+				set already_talk["Maxim"] = false
+				=> END
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Maxim"] = false
 			=> END
@@ -57,8 +73,8 @@ else
 
 ~ interaction_regina
 if !already_talk["Regina"]
-	set already_talk["Maxim"] = true
-	if _relationship["Maxim"] > 0.8
+	set already_talk["Regina"] = true
+	if _relationship["Regina"] > 0.8
 		Regina: [[What do you want?|Is there something you need?|Hmm?]]
 		- Give food for today
 			if ration >= _rationConsumes["Regina"] and already_eaten["Regina"] == false 
@@ -79,7 +95,30 @@ if !already_talk["Regina"]
 				Regina: I dont have any medicine to offer.
 				set already_talk["Regina"] = false
 		- Order
-			Regina: Testing Order
+			- Feed Everyone
+				if crew_in_ship.size() > 1
+					do feedEveryone()
+					Regina: [[ALrighty|Is that all? I'll get into it.]]
+				else 
+					Jerry: Theres no other crew in the ship except Maxim
+					set already_talk["Regina"] = false
+			- Task to Craft a Medicine 
+				if biogene >= 150
+					set biogene -= 150
+					set medicine += 1
+					Regina: [[Got it [Jerry|Captain]| Don't worry, I'll make one]]
+				else 
+					set already_talk["Regina"] = false
+					Regina: We need more biogene, I can't craft one if I don't have the specific requirements.
+			- Task to Craft Regina Specialty Food
+				if biogene >= 50 and ration >= 50
+					Regina: [[I'll make something that you will never forget!| You will never forget my specialty!|Let the professional handle it~]]
+					set biogene -= 50
+					set food -= 10
+					do boostCrewSanity(0.15)
+			- [[Nevermind|Talk to you later|See you around]]
+				set already_talk["Regina"] = false
+				=> END
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Regina"] = false
 			=> END
@@ -116,27 +155,47 @@ else
 if !already_talk["Fumiko"]
 	set already_talk["Fumiko"] = true
 	if _relationship["Fumiko"] > 0.8
-		Fumiko: [[What do you want?|Is there something you need?|Hmm?]]
+		Fumiko: [[Hmm hmm?|Is there something you need?|Hmm?]]
 		- Give food for today
 			if ration >= _rationConsumes["Fumiko"] and already_eaten["Fumiko"] == false 
 				do reduceFood(crewEat("Fumiko", ration))
 				set already_eaten["Fumiko"] = true 
-				Fumiko: Thankyou very much!
+				Fumiko: Much appreciated
 			elif ration >= _rationConsumes["Fumiko"] already_eaten["Fumiko"] == true
-				Fumiko: Already got my meal comrade 
+				Fumiko: A balance diet doesn't need much more food Captain
 				set already_talk["Fumiko"] = false
 			else
-				Fumiko: Theres no food!
+				Fumiko: Ah... I think you need to check the storage again...
 				set already_talk["Fumiko"] = false
 		- Give medicine
 			if medicine >= 1
-				Fumiko: Thankyou very much!
-				set _disease["Fumiko"] = 0.0
+				if _disease["Fumiko"] > 0.0
+					Fumiko: With this it will make sure I will survive for it.
+					set _disease["Fumiko"] = 0.0
+				else
+					Fumiko: Uh... Sure captain
+				set medicine -= 1
 			else
-				Fumiko: I dont have any medicine to offer.
+				Jerry: I dont have any medicine to offer.
 				set already_talk["Fumiko"] = false
 		- Order
-			Fumiko: Testing Order
+			- Feed Everyone
+				if crew_in_ship.size() > 1
+					do feedEveryone()
+					Fumiko: Okay I'll deliver food to them
+				else 
+					Jerry: Theres no other crew in the ship except Fumiko
+					set already_talk["Fumiko"] = false
+			- Give everyones medicine
+				if medicine >= 1
+					do giveAllMedicine()
+					Fumiko: [[It will be quick| I wont keep you waiting]]
+				else 
+					set already_talk["Fumiko"] = false
+					Jerry: We don't have even a single Medicine left
+			- [[Nevermind|Talk to you later|See you around]]
+				set already_talk["Fumiko"] = false
+				=> END
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Fumiko"] = false
 			=> END
@@ -193,7 +252,26 @@ if !already_talk["Nashir"]
 				Jerry: I dont have any medicine to offer.
 				set already_talk["Nashir"] = false
 		- Order
-			Jerry: Testing Order
+			- Feed Everyone
+				if crew_in_ship.size() > 1
+					do feedEveryone()
+					Nashir: [[They wouldn't resist because its me| Me giving a food to them? Its a blessing for them]]
+				else 
+					Jerry: Theres no other crew in the ship except Nashir
+					set already_talk["Nashir"] = false
+			- Boost the morale of the crew:
+				if crew_in_ship.size() > 1
+					do boostCrewSanity(0.4)
+					Nashir: [[They will listen when I sing| They are only allowed to be crazy towards me| Surely my beauty will make them mesmerized]]
+					set _relationship["Maxim"] += 0.01
+					set _relationship["Regina"] += 0.01
+					set _relationship["Fumiko"] += 0.01
+				else 
+					Jerry: Theres no other crew in the ship except Nashir
+					set already_talk["Nashir"] = false
+			- [[Nevermind|Talk to you later|See you around]]
+				set already_talk["Nashir"] = false
+				=> END
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Nashir"] = false
 			=> END
