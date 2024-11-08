@@ -11,8 +11,10 @@ const KICK_OUT_END_SCENE = preload("res://Scenes/EndScenes/Gallery_Endings/KickO
 const LACKOFRESOURCES = preload("res://Scenes/EndScenes/Gallery_Endings/lackofresources.png")
 const RADONTI_ENDING = preload("res://Scenes/EndScenes/Gallery_Endings/RadontiEnding.png")
 const CTHULLU_ENDING = preload("res://Scenes/EndScenes/Gallery_Endings/Cthullu Ending.png")
+const SAURIA_ENDING = preload("res://Scenes/EndScenes/Gallery_Endings/Sauria Ending.png")
+const STEELICUS_ENDSCENE = preload("res://Scenes/EndScenes/Gallery_Endings/SteelicusENDSCENE.png")
 
-var groupOfGallery = [BLACK_HOLE_EVENT,EARTH_2_0,JERRY_DEATH,KICK_OUT_END_SCENE,LACKOFRESOURCES,RADONTI_ENDING,CTHULLU_ENDING]
+var groupOfGallery = [BLACK_HOLE_EVENT,EARTH_2_0,JERRY_DEATH,KICK_OUT_END_SCENE,LACKOFRESOURCES,RADONTI_ENDING,CTHULLU_ENDING,SAURIA_ENDING,STEELICUS_ENDSCENE]
 
 var selectedScene = 0
 
