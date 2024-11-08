@@ -733,6 +733,7 @@ position = Vector2(2473, 1776)
 
 [node name="Player" parent="." instance=ExtResource("2_r0hm0")]
 position = Vector2(3334, 926)
+equipHelmet = true
 show_crewInventoryUI = false
 useGlobeTimerUI = false
 delayBeforeGameStart = 0.0

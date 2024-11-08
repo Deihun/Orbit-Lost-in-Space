@@ -96,43 +96,43 @@
 	},
 		{
 		"Name" : "MaximOnly_1",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Maxim","FIRSTDAY"]
 	},
 			{
 		"Name" : "MaximOnly_2",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Maxim","FIRSTDAY"]
 	},
 			{
 		"Name" : "MaximOnly_3",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Maxim","FIRSTDAY"]
 	},
 			{
 		"Name" : "FumikoOnly_2",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Fumiko","FIRSTDAY"]
 	},
 				{
 		"Name" : "FumikoOnly_3",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Fumiko","FIRSTDAY"]
 	},
 				{
 		"Name" : "FumikoOnly_2",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Fumiko","FIRSTDAY"]
 	},
 				{
 		"Name" : "FumikoOnly_3",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Fumiko","FIRSTDAY"]
 	},
 				{
 		"Name" : "NashirOnly_1",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Nashir","FIRSTDAY"]
 	},
 					{
 		"Name" : "NashirOnly_2",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Nashir","FIRSTDAY"]
 	},
 					{
 		"Name" : "NashirOnly_3",
-		"TAG" : ["Regina","FIRSTDAY"]
+		"TAG" : ["Nashir","FIRSTDAY"]
 	},{
 		"Name": "Jerry_Only_1",
 		"TAG": ["FIRSTDAY"]
@@ -414,6 +414,56 @@
 	{
 		"Name": "sanity_good_nashir2",
 		"TAG": ["nashir_sanity_good"]
+	},
+
+
+	{
+		"Name": "RandomMeeting_1",
+		"TAG": ["Maxim","Fumiko"]
+	},
+		{
+		"Name": "RandomMeeting_2",
+		"TAG": ["Maxim","Fumiko"]
+	},
+	{
+		"Name": "RandomMeeting_3",
+		"TAG": ["Maxim","Nashir"]
+	},
+	{
+		"Name": "RandomMeeting_4",
+		"TAG": ["Maxim","Nashir"]
+	},
+	{
+		"Name": "RandomMeeting_5",
+		"TAG": ["Fumiko","Regina"]
+	},
+	{
+		"Name": "RandomMeeting_6",
+		"TAG": ["Fumiko","Regina"]
+	},
+	{
+		"Name": "RandomMeeting_7",
+		"TAG": ["Nashir","Regina"]
+	},
+	{
+		"Name": "RandomMeeting_8",
+		"TAG": ["Nashir","Regina"]
+	},
+	{
+		"Name": "RandomMeeting_9",
+		"TAG": ["Maxim","Regina"]
+	},
+	{
+		"Name": "RandomMeeting_10",
+		"TAG": ["Maxim","Regina"]
+	},
+	{
+		"Name": "RandomMeeting_11",
+		"TAG": ["Nashir","Fumiko"]
+	},
+	{
+		"Name": "RandomMeeting_12",
+		"TAG": ["Nashir","Fumiko"]
 	},
 
 

@@ -221,8 +221,8 @@ func _on_click_anywhere_button_input_event(viewport: Node, event: InputEvent, sh
 		LocationKey = 2
 		eventReader.hide()
 		ChangeLocaton(false)
-		#$"../EventHandler".switchIt()
 		$"../WholeInteriorScene/Lobby".set_initialDialogue()
+		#$"../EventHandler".switchIt()
 
 
 

@@ -2787,6 +2787,7 @@ libraries = {
 }
 
 [node name="Globe_Timer_Sprite" type="Sprite2D" parent="player/AllUIParents"]
+visible = false
 z_index = -134
 position = Vector2(146.788, 942.463)
 scale = Vector2(1.25657, 1.26637)
@@ -2821,10 +2822,10 @@ frame_progress = 0.290633
 offset = Vector2(0, -138.62)
 
 [node name="_DamageNotifyer" type="Label" parent="player/AllUIParents"]
-offset_left = -1.0
-offset_top = 368.0
-offset_right = 371.0
-offset_bottom = 459.0
+offset_left = 16.0
+offset_top = 627.0
+offset_right = 388.0
+offset_bottom = 718.0
 theme_override_colors/font_color = Color(1, 0.443684, 0.375095, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

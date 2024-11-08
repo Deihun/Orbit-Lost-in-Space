@@ -77,6 +77,7 @@ func updateGlobalResource():
 	r.spareparts += spareparts
 	r.biogene += biogene
 	r.ductape += ductape
+	r.medicine += medicine
 
 
 	if crew["regina"] == true and !b.crew_in_ship.has("Regina"): b.crew_in_ship.append("Regina")

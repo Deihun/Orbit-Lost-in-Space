@@ -34,9 +34,12 @@ var game_win : Callable
 
 #VOID METHODS
 func _ready():	#OnStart, 
-	if GlobalResources.uniqueItems.has("A.C.E.S"): $"..".limitTimeDuration += 20
-	if GlobalResources.uniqueItems.has("LeadSuitUp"): $"..".limitTimeDuration += 20
-
+	if GlobalResources.uniqueItems.has("A.C.E.S"):
+		$"..".limitTimeDuration += 20
+		$_GameTimerLimit.countdown_start += 20
+	if GlobalResources.uniqueItems.has("LeadSuitUp"):
+		$"..".limitTimeDuration += 20
+		$_GameTimerLimit.countdown_start += 20
 	self.set_process(false)
 	await get_tree().create_timer(0.1).timeout
 	if $"..".useGlobeTimerUI: $AllUIParents/Timer.hide()
