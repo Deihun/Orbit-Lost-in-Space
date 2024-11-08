@@ -1,45 +1,44 @@
 extends Control
 
-var file_path = "res://Gallery/gallery.json"
+var addgallery = preload("res://Gallery/gallery_button.tscn")
 
-func _ready():
+var gallery_path = "res://Gallery/gallery.json"
+var images = []
+var boolcheck = []
+
+func _ready() -> void:
+	get_data_gallery()
+	instace_button_to_grid()
+	
+func get_data_gallery() -> void:
+	var file = FileAccess.open(gallery_path, FileAccess.READ) 
+	var json_data = file.get_as_text() 
+	var json = JSON.new()
+	var parse_result = json.parse(json_data)
+	var result = json.get_data()
+	
+	images = result["images"]
+	#print(images)
+	for i in images:
+		if i["unlocked"]:
+			print(i)
+			#ayoko na
+		#print(i)
+		#print(boolcheck)
+	
+func set_data_gallery() -> void:
+	pass
+
+func set_gallery_unlocked() -> void:
 	pass
 	
-func gallerydata():
-	var images = {
-		#Set Gallery data values
-		"id" : "image",
-		"unlocked" : false
-	}
-	return images
+func get_boolcheck() -> void:
+	pass
 	
-func set_image_unlocked(image_id):
-	var condition : bool = false
-	for image in rawImage:
-		if image["id"] == image_id:
-			if not fact["unlocked"]: # Only update if not already encountered
-				image["unlocked"] = true
-				condition = true
-			gallerydata()
-		#LoopChecker()
+func instace_button_to_grid() -> void:
+	for i in images.size():
+		var Gnode = addgallery.instantiate()
+		#Gnode.getbool = images[i][0]
+		#Gnode.getID = images[i][i][i]
+		$NinePatchRect/GalleryPanel/GridContainer.add_child(Gnode)
 	
-func savegallery():
-	print("saved")
-	var file = FileAccess.open(file_path, FileAccess.WRITE)
-	var json_string = JSON.stringify(gallerydata())
-	file.store_line(json_string)
-	
-func load_facts():
-	if FileAccess.file_exists(file_path):
-		var file = FileAccess.open(file_path, FileAccess.READ)
-		var json_text = file.get_as_text()
-		var parsed_data = parse_json(json_text)
-		if "facts" in parsed_data:
-			rawFacts = parsed_data["facts"]
-		else:
-			print("EVENT-HANDLER-SCRIPT://  'load_facts' : 'No key `facts` in parsed data'")
-	else: 
-		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
-	
-func _on_button_pressed() -> void:
-	self.hide()
