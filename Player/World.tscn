@@ -107,7 +107,6 @@ position = Vector2(1188, 1750)
 can_Move = false
 AdditionalPlayerSpeed = 100
 show_timer = false
-useGlobeTimerUI = false
 canRestartOnGameOver = true
 delayBeforeGameStart = 4.0
 

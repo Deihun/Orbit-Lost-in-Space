@@ -309,13 +309,14 @@ Jerry: I do feel lonely though.
 => END  
 
 ~ Jerry_Only_2
-Jerry: Turns out I’m the only one who got in... 
-Jerry: Alright, I’ll have to work hard for my survival.  
+Jerry: If only... 
+Jerry: ... 
+Jerry: I’ll have to work hard for my survival.  
 => END  
 
 ~ Jerry_Only_3
-Jerry: I didn’t manage to bring in any of my crew... 
-Jerry: Surviving this would prove difficult. 
+Jerry: Would this be enough?
+Jerry: I feel like Im missing something
 => END  
 
 ~ Jerry_Only_4

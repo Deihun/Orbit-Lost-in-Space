@@ -54,6 +54,28 @@ func canMove(value : bool):
 	else: 
 		$player.canMove = false
 
+func playerGetDamage(value : int = 1):
+	var hp : float = float(1 * 0.05)
+	$player/_GameTimerLimit._on_timeout(value)
+	blinkingAfterDamage()
+	$player/AllUIParents/_DamageNotifyer.trigger(value)
+	if IngameStoredProcessSetting.selectedCrew in ["Maxim","Regina","Fumiko","Nashir"]:
+		IngameStoredProcessSetting._health[IngameStoredProcessSetting.selectedCrew] -= hp
+		IngameStoredProcessSetting._health[IngameStoredProcessSetting.selectedCrew] = 0.01 if IngameStoredProcessSetting._health[IngameStoredProcessSetting.selectedCrew] < 0.0 else IngameStoredProcessSetting._health[IngameStoredProcessSetting.selectedCrew]
+
+func blinkingAfterDamage():
+	$player/Player4.modulate.a = 0.5
+	await get_tree().create_timer(0.25).timeout
+	$player/Player4.modulate.a = 1
+	await get_tree().create_timer(0.25).timeout
+	$player/Player4.modulate.a = 0.5
+	await get_tree().create_timer(0.25).timeout
+	$player/Player4.modulate.a = 1
+	await get_tree().create_timer(0.25).timeout
+	$player/Player4.modulate.a = 0.5
+	await get_tree().create_timer(0.25).timeout
+	$player/Player4.modulate.a = 1
+
 func _smoothCameraTrack(value : bool):
 	$player/PlayerCamera.position_smoothing_enabled = value
 

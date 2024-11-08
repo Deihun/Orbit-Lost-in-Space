@@ -8,6 +8,7 @@ var Scenes : String= ""
 var Ending : String= "null"
 var is_previous_restart : bool = false
 var didJerryLose: bool = false
+var canExpedition : bool = true
 
 #EXPEDITIONVALUE
 var selectedCrew = "Jerry"

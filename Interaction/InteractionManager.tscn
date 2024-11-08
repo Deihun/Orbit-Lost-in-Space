@@ -5,9 +5,11 @@
 [ext_resource type="FontFile" uid="uid://dii0ye7dmqyf1" path="res://UnTouch_Label/CasanovaScotia-Xm0K.ttf" id="3_lvmee"]
 
 [node name="InteractionManager" type="Node2D"]
+light_mask = 0
 script = ExtResource("1_fourj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+light_mask = 0
 z_index = 200
 offset_left = -94.0
 offset_top = -104.0

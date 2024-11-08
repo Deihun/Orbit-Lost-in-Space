@@ -47,10 +47,34 @@ func savedata():
 		"alreadyTriggeredEvent" : resources.alreadyTriggeredEvent,
 		"Priority_Event" : resources.Priority_Event,
 		"eventID" : resources.eventID,
-		"cycle" : stored.Cycle,
-		"_relationship" : stored._relationship.duplicate()
 		
-
+		"cycle" : stored.Cycle,
+		"_relationship" : stored._relationship.duplicate(),
+		"_currentHunger" : stored._current_hunger.duplicate(),
+		"already_eaten" : stored.already_eaten.duplicate(),
+		"crew_in_ship" : stored.crew_in_ship.duplicate(),
+		"jerry_ate_countdown" : stored.jerry_ate_countdown,
+		"already_medicine" : stored.already_medicine.duplicate(),
+		"already_talk" : stored.already_talk.duplicate(),
+		"_sanity" : stored._sanity.duplicate(),
+		"_health" : stored._health.duplicate(),
+		"_disease" : stored._disease.duplicate(),
+		"_reginaRelationship" : stored._reginaRelationship.duplicate(),
+		"_MaximRelationship" : stored._MaximRelationship.duplicate(),
+		"_NashirRelationship"  : stored._NashirRelationship.duplicate(),
+		"_FumikoRelationship" : stored._reginaRelationship.duplicate(),
+		
+		"delayInFaction" : stored.delayInFaction,
+		"current_Factions" : stored.current_Factions,
+		"TravelPerSections" : stored.TravelPerSections,
+		"Target_factions" : stored.Target_factions,
+		"TotalProbabilityForFactionsToFound" : stored.TotalProbabilityForFactionsToFound,
+		"Factions_Probability" : stored.Factions_Probability.duplicate(),
+		"SubFactions_Probability" : stored.SubFactions_Probability.duplicate(),
+		
+		"Cycle_ReportList" : stored.Cycle_ReportList.duplicate(),
+		"recent_events" : stored.recent_events.duplicate(),
+		"canExpedition" : stored.canExpedition
 	}
 	return save_dict
 
@@ -90,3 +114,28 @@ func loadsave():
 		
 		stored.Cycle = node_data["cycle"]
 		stored._relationship = node_data["_relationship"].duplicate()
+		stored._current_hunger = node_data["_currentHunger"].duplicate()
+		stored.already_eaten= node_data["already_eaten"].duplicate()
+		stored.crew_in_ship = node_data["crew_in_ship"].duplicate()
+		
+		stored.jerry_ate_countdown = node_data["jerry_ate_countdown"]
+		stored.already_medicine = node_data["already_medicine"].duplicate()
+		stored.already_talk = node_data["already_talk"].duplicate()
+		stored._sanity = node_data["_sanity"].duplicate()
+		stored._health = node_data["_health"].duplicate()
+		stored._disease = node_data["_disease"].duplicate()
+		stored._reginaRelationship = node_data["_reginaRelationship"].duplicate()
+		stored._MaximRelationship = node_data["_MaximRelationship"].duplicate()
+		stored._NashirRelationship = node_data["_NashirRelationship"].duplicate()
+		stored._FumikoRelationship = node_data["_FumikoRelationship"].duplicate()
+		
+		stored.delayInFaction = node_data["delayInFaction"]
+		stored.current_Factions = node_data["current_Factions"]
+		stored.TravelPerSections = node_data["TravelPerSections"]
+		stored.Target_factions = node_data["Target_factions"]
+		stored.TotalProbabilityForFactionsToFound = node_data["TotalProbabilityForFactionsToFound"]
+		stored.Factions_Probability = node_data["Factions_Probability"].duplicate()
+		stored.SubFactions_Probability = node_data["SubFactions_Probability"].duplicate()
+		stored.Cycle_ReportList = node_data["Cycle_ReportList"].duplicate()
+		stored.recent_events = node_data["recent_events"].duplicate()
+		stored.canExpedition = node_data["canExpedition"]

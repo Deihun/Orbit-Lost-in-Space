@@ -4,5380 +4,3727 @@
 
 [node name="Tiles_SET" type="Node2D"]
 use_parent_material = true
-metadata/_edit_lock_ = true
 
 [node name="Tiles" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, 866)
-metadata/_edit_lock_ = true
 
 [node name="Tiles2" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, 866)
-metadata/_edit_lock_ = true
 
 [node name="Tiles3" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, 866)
-metadata/_edit_lock_ = true
 
 [node name="Tiles4" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, 865)
-metadata/_edit_lock_ = true
 
 [node name="Tiles5" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, 864)
-metadata/_edit_lock_ = true
 
 [node name="Tiles6" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, 864)
-metadata/_edit_lock_ = true
 
 [node name="Tiles7" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, 865)
-metadata/_edit_lock_ = true
 
 [node name="Tiles8" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.7499, 737.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles9" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, 737.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles10" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, 737.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles11" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, 736.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles12" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, 735.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles13" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, 735.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles14" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, 736.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles15" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, 609)
-metadata/_edit_lock_ = true
 
 [node name="Tiles16" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, 609)
-metadata/_edit_lock_ = true
 
 [node name="Tiles17" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, 609)
-metadata/_edit_lock_ = true
 
 [node name="Tiles18" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, 608)
-metadata/_edit_lock_ = true
 
 [node name="Tiles19" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, 607)
-metadata/_edit_lock_ = true
 
 [node name="Tiles20" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, 607)
-metadata/_edit_lock_ = true
 
 [node name="Tiles21" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, 608)
-metadata/_edit_lock_ = true
 
 [node name="Tiles22" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.7499, 480.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles23" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, 480.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles24" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, 480.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles25" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, 479.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles26" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, 478.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles27" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, 478.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles28" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, 479.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles29" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, 354)
-metadata/_edit_lock_ = true
 
 [node name="Tiles30" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, 354)
-metadata/_edit_lock_ = true
 
 [node name="Tiles31" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, 354)
-metadata/_edit_lock_ = true
 
 [node name="Tiles32" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, 353)
-metadata/_edit_lock_ = true
 
 [node name="Tiles33" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, 352)
-metadata/_edit_lock_ = true
 
 [node name="Tiles34" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, 352)
-metadata/_edit_lock_ = true
 
 [node name="Tiles35" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, 353)
-metadata/_edit_lock_ = true
 
 [node name="Tiles36" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.7499, 225.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles37" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, 225.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles38" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, 225.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles39" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, 224.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles40" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, 223.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles41" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, 223.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles42" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, 224.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles43" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, 97)
-metadata/_edit_lock_ = true
 
 [node name="Tiles44" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, 96.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles45" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, 96.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles46" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, 95.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles47" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, 94.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles48" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, 94.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles49" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, 95.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles50" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.7499, -31.2499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles51" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, -31.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles52" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, -31.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles53" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, -32.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles54" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, -33.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles55" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, -33.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles56" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, -32.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles57" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, -159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles58" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, -159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles59" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, -159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles60" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, -160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles61" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, -161)
-metadata/_edit_lock_ = true
 
 [node name="Tiles62" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, -161)
-metadata/_edit_lock_ = true
 
 [node name="Tiles63" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, -160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles64" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.75, -287.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles65" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, -287.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles66" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, -287.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles67" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, -288.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles68" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, -289.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles69" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, -289.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles70" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, -288.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles71" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(84, -416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles72" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, -416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles73" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, -416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles74" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, -417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles75" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, -418)
-metadata/_edit_lock_ = true
 
 [node name="Tiles76" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, -418)
-metadata/_edit_lock_ = true
 
 [node name="Tiles77" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, -417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles78" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.75, -544.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles79" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, -544.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles80" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, -544.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles81" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, -545.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles82" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, -546.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles83" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, -546.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles84" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, -545.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles85" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, -671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles86" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, -671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles87" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, -671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles88" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, -672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles89" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, -673)
-metadata/_edit_lock_ = true
 
 [node name="Tiles90" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, -673)
-metadata/_edit_lock_ = true
 
 [node name="Tiles91" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, -672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles92" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.7499, -799.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles93" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, -799.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles94" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, -799.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles95" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, -800.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles96" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, -801.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles97" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, -801.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles98" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, -800.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles99" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.9999, -928)
-metadata/_edit_lock_ = true
 
 [node name="Tiles100" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(209, -928)
-metadata/_edit_lock_ = true
 
 [node name="Tiles101" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(336, -928)
-metadata/_edit_lock_ = true
 
 [node name="Tiles102" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(458, -929)
-metadata/_edit_lock_ = true
 
 [node name="Tiles103" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(586, -930)
-metadata/_edit_lock_ = true
 
 [node name="Tiles104" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(713, -930)
-metadata/_edit_lock_ = true
 
 [node name="Tiles105" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(840, -929)
-metadata/_edit_lock_ = true
 
 [node name="Tiles106" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.7499, -1056.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles107" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208.75, -1056.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles108" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335.75, -1056.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles109" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457.75, -1057.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles110" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585.75, -1058.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles111" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712.75, -1058.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles112" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839.75, -1057.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles113" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.9999, 2911)
-metadata/_edit_lock_ = true
 
 [node name="Tiles114" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 2911)
-metadata/_edit_lock_ = true
 
 [node name="Tiles115" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 2911)
-metadata/_edit_lock_ = true
 
 [node name="Tiles116" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 2910)
-metadata/_edit_lock_ = true
 
 [node name="Tiles117" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 2909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles118" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 2909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles119" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 2910)
-metadata/_edit_lock_ = true
 
 [node name="Tiles120" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7501, 2782.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles121" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 2782.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles122" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 2782.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles123" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 2781.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles124" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 2780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles125" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 2780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles126" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 2781.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles127" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.0001, 2654)
-metadata/_edit_lock_ = true
 
 [node name="Tiles128" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 2654)
-metadata/_edit_lock_ = true
 
 [node name="Tiles129" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 2654)
-metadata/_edit_lock_ = true
 
 [node name="Tiles130" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 2653)
-metadata/_edit_lock_ = true
 
 [node name="Tiles131" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 2652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles132" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 2652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles133" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 2653)
-metadata/_edit_lock_ = true
 
 [node name="Tiles134" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7501, 2525.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles135" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 2525.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles136" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 2525.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles137" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 2524.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles138" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 2523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles139" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 2523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles140" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 2524.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles141" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.9999, 2399)
-metadata/_edit_lock_ = true
 
 [node name="Tiles142" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 2399)
-metadata/_edit_lock_ = true
 
 [node name="Tiles143" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 2399)
-metadata/_edit_lock_ = true
 
 [node name="Tiles144" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 2398)
-metadata/_edit_lock_ = true
 
 [node name="Tiles145" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 2397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles146" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 2397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles147" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 2398)
-metadata/_edit_lock_ = true
 
 [node name="Tiles148" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7499, 2270.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles149" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 2270.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles150" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 2270.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles151" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 2269.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles152" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 2268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles153" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 2268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles154" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 2269.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles155" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.9999, 2142)
-metadata/_edit_lock_ = true
 
 [node name="Tiles156" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 2142)
-metadata/_edit_lock_ = true
 
 [node name="Tiles157" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 2142)
-metadata/_edit_lock_ = true
 
 [node name="Tiles158" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 2141)
-metadata/_edit_lock_ = true
 
 [node name="Tiles159" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 2140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles160" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 2140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles161" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 2141)
-metadata/_edit_lock_ = true
 
 [node name="Tiles162" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7499, 2013.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles163" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 2013.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles164" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 2013.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles165" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 2012.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles166" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 2011.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles167" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 2011.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles168" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 2012.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles169" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.0001, 1886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles170" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 1886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles171" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 1886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles172" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 1885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles173" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 1884)
-metadata/_edit_lock_ = true
 
 [node name="Tiles174" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 1884)
-metadata/_edit_lock_ = true
 
 [node name="Tiles175" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 1885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles176" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7501, 1757.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles177" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 1757.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles178" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 1757.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles179" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 1756.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles180" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 1755.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles181" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 1755.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles182" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 1756.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles183" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.0001, 1629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles184" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 1629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles185" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 1629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles186" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 1628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles187" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 1627)
-metadata/_edit_lock_ = true
 
 [node name="Tiles188" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 1627)
-metadata/_edit_lock_ = true
 
 [node name="Tiles189" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 1628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles190" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7501, 1500.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles191" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 1500.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles192" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 1500.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles193" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 1499.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles194" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 1498.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles195" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 1498.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles196" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 1499.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles197" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.0001, 1374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles198" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 1374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles199" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 1374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles200" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 1373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles201" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 1372)
-metadata/_edit_lock_ = true
 
 [node name="Tiles202" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 1372)
-metadata/_edit_lock_ = true
 
 [node name="Tiles203" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 1373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles204" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7501, 1245.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles205" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 1245.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles206" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 1245.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles207" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 1244.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles208" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 1243.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles209" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 1243.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles210" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 1244.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles211" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(83.0001, 1117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles212" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(208, 1117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles213" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(335, 1117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles214" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(457, 1116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles215" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(585, 1115)
-metadata/_edit_lock_ = true
 
 [node name="Tiles216" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(712, 1115)
-metadata/_edit_lock_ = true
 
 [node name="Tiles217" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(839, 1116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles218" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(82.7501, 988.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles219" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(207.75, 988.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles220" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(334.75, 988.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles221" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(456.75, 987.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles222" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(584.75, 986.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles223" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(711.75, 986.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles224" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(838.75, 987.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles225" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, 875)
-metadata/_edit_lock_ = true
 
 [node name="Tiles226" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, 875)
-metadata/_edit_lock_ = true
 
 [node name="Tiles227" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, 875)
-metadata/_edit_lock_ = true
 
 [node name="Tiles228" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, 874)
-metadata/_edit_lock_ = true
 
 [node name="Tiles229" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, 873)
-metadata/_edit_lock_ = true
 
 [node name="Tiles230" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, 873)
-metadata/_edit_lock_ = true
 
 [node name="Tiles231" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, 874)
-metadata/_edit_lock_ = true
 
 [node name="Tiles232" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, 746.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles233" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, 746.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles234" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, 746.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles235" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, 745.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles236" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, 744.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles237" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, 744.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles238" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, 745.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles239" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, 618)
-metadata/_edit_lock_ = true
 
 [node name="Tiles240" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, 618)
-metadata/_edit_lock_ = true
 
 [node name="Tiles241" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, 618)
-metadata/_edit_lock_ = true
 
 [node name="Tiles242" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, 617)
-metadata/_edit_lock_ = true
 
 [node name="Tiles243" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, 616)
-metadata/_edit_lock_ = true
 
 [node name="Tiles244" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, 616)
-metadata/_edit_lock_ = true
 
 [node name="Tiles245" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, 617)
-metadata/_edit_lock_ = true
 
 [node name="Tiles246" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, 489.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles247" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, 489.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles248" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, 489.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles249" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, 488.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles250" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, 487.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles251" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, 487.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles252" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, 488.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles253" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, 363)
-metadata/_edit_lock_ = true
 
 [node name="Tiles254" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, 363)
-metadata/_edit_lock_ = true
 
 [node name="Tiles255" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, 363)
-metadata/_edit_lock_ = true
 
 [node name="Tiles256" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, 362)
-metadata/_edit_lock_ = true
 
 [node name="Tiles257" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, 361)
-metadata/_edit_lock_ = true
 
 [node name="Tiles258" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, 361)
-metadata/_edit_lock_ = true
 
 [node name="Tiles259" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, 362)
-metadata/_edit_lock_ = true
 
 [node name="Tiles260" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, 234.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles261" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, 234.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles262" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, 234.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles263" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, 233.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles264" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, 232.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles265" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, 232.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles266" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, 233.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles267" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, 106)
-metadata/_edit_lock_ = true
 
 [node name="Tiles268" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, 106)
-metadata/_edit_lock_ = true
 
 [node name="Tiles269" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, 106)
-metadata/_edit_lock_ = true
 
 [node name="Tiles270" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, 105)
-metadata/_edit_lock_ = true
 
 [node name="Tiles271" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, 104)
-metadata/_edit_lock_ = true
 
 [node name="Tiles272" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, 104)
-metadata/_edit_lock_ = true
 
 [node name="Tiles273" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, 105)
-metadata/_edit_lock_ = true
 
 [node name="Tiles274" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, -22.2499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles275" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, -22.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles276" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, -22.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles277" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, -23.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles278" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, -24.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles279" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, -24.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles280" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, -23.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles281" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, -150)
-metadata/_edit_lock_ = true
 
 [node name="Tiles282" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, -150)
-metadata/_edit_lock_ = true
 
 [node name="Tiles283" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, -150)
-metadata/_edit_lock_ = true
 
 [node name="Tiles284" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, -151)
-metadata/_edit_lock_ = true
 
 [node name="Tiles285" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, -152)
-metadata/_edit_lock_ = true
 
 [node name="Tiles286" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, -152)
-metadata/_edit_lock_ = true
 
 [node name="Tiles287" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, -151)
-metadata/_edit_lock_ = true
 
 [node name="Tiles288" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, -278.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles289" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, -278.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles290" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, -278.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles291" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, -279.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles292" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, -280.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles293" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, -280.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles294" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, -279.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles295" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, -407)
-metadata/_edit_lock_ = true
 
 [node name="Tiles296" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, -407)
-metadata/_edit_lock_ = true
 
 [node name="Tiles297" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, -407)
-metadata/_edit_lock_ = true
 
 [node name="Tiles298" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, -408)
-metadata/_edit_lock_ = true
 
 [node name="Tiles299" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, -409)
-metadata/_edit_lock_ = true
 
 [node name="Tiles300" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, -409)
-metadata/_edit_lock_ = true
 
 [node name="Tiles301" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, -408)
-metadata/_edit_lock_ = true
 
 [node name="Tiles302" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, -535.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles303" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, -535.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles304" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, -535.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles305" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, -536.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles306" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, -537.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles307" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, -537.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles308" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, -536.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles309" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, -662)
-metadata/_edit_lock_ = true
 
 [node name="Tiles310" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, -662)
-metadata/_edit_lock_ = true
 
 [node name="Tiles311" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, -662)
-metadata/_edit_lock_ = true
 
 [node name="Tiles312" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, -663)
-metadata/_edit_lock_ = true
 
 [node name="Tiles313" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, -664)
-metadata/_edit_lock_ = true
 
 [node name="Tiles314" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, -664)
-metadata/_edit_lock_ = true
 
 [node name="Tiles315" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, -663)
-metadata/_edit_lock_ = true
 
 [node name="Tiles316" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, -790.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles317" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, -790.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles318" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, -790.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles319" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, -791.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles320" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, -792.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles321" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, -792.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles322" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, -791.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles323" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802, -919)
-metadata/_edit_lock_ = true
 
 [node name="Tiles324" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677, -919)
-metadata/_edit_lock_ = true
 
 [node name="Tiles325" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550, -919)
-metadata/_edit_lock_ = true
 
 [node name="Tiles326" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428, -920)
-metadata/_edit_lock_ = true
 
 [node name="Tiles327" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300, -921)
-metadata/_edit_lock_ = true
 
 [node name="Tiles328" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173, -921)
-metadata/_edit_lock_ = true
 
 [node name="Tiles329" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.0001, -920)
-metadata/_edit_lock_ = true
 
 [node name="Tiles330" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-802.25, -1047.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles331" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-677.25, -1047.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles332" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-550.25, -1047.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles333" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-428.25, -1048.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles334" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-300.25, -1049.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles335" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-173.25, -1049.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles336" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.2501, -1048.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles337" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 2920)
-metadata/_edit_lock_ = true
 
 [node name="Tiles338" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 2920)
-metadata/_edit_lock_ = true
 
 [node name="Tiles339" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 2920)
-metadata/_edit_lock_ = true
 
 [node name="Tiles340" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 2919)
-metadata/_edit_lock_ = true
 
 [node name="Tiles341" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 2918)
-metadata/_edit_lock_ = true
 
 [node name="Tiles342" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 2918)
-metadata/_edit_lock_ = true
 
 [node name="Tiles343" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 2919)
-metadata/_edit_lock_ = true
 
 [node name="Tiles344" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 2791.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles345" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 2791.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles346" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 2791.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles347" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 2790.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles348" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 2789.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles349" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 2789.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles350" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 2790.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles351" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 2663)
-metadata/_edit_lock_ = true
 
 [node name="Tiles352" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 2663)
-metadata/_edit_lock_ = true
 
 [node name="Tiles353" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 2663)
-metadata/_edit_lock_ = true
 
 [node name="Tiles354" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 2662)
-metadata/_edit_lock_ = true
 
 [node name="Tiles355" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 2661)
-metadata/_edit_lock_ = true
 
 [node name="Tiles356" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 2661)
-metadata/_edit_lock_ = true
 
 [node name="Tiles357" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 2662)
-metadata/_edit_lock_ = true
 
 [node name="Tiles358" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 2534.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles359" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 2534.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles360" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 2534.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles361" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 2533.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles362" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 2532.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles363" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 2532.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles364" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 2533.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles365" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 2408)
-metadata/_edit_lock_ = true
 
 [node name="Tiles366" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 2408)
-metadata/_edit_lock_ = true
 
 [node name="Tiles367" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 2408)
-metadata/_edit_lock_ = true
 
 [node name="Tiles368" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 2407)
-metadata/_edit_lock_ = true
 
 [node name="Tiles369" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 2406)
-metadata/_edit_lock_ = true
 
 [node name="Tiles370" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 2406)
-metadata/_edit_lock_ = true
 
 [node name="Tiles371" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 2407)
-metadata/_edit_lock_ = true
 
 [node name="Tiles372" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 2279.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles373" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 2279.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles374" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 2279.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles375" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 2278.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles376" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 2277.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles377" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 2277.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles378" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 2278.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles379" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 2151)
-metadata/_edit_lock_ = true
 
 [node name="Tiles380" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 2151)
-metadata/_edit_lock_ = true
 
 [node name="Tiles381" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 2151)
-metadata/_edit_lock_ = true
 
 [node name="Tiles382" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 2150)
-metadata/_edit_lock_ = true
 
 [node name="Tiles383" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 2149)
-metadata/_edit_lock_ = true
 
 [node name="Tiles384" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 2149)
-metadata/_edit_lock_ = true
 
 [node name="Tiles385" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 2150)
-metadata/_edit_lock_ = true
 
 [node name="Tiles386" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 2022.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles387" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 2022.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles388" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 2022.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles389" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 2021.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles390" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 2020.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles391" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 2020.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles392" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 2021.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles393" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 1895)
-metadata/_edit_lock_ = true
 
 [node name="Tiles394" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 1895)
-metadata/_edit_lock_ = true
 
 [node name="Tiles395" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 1895)
-metadata/_edit_lock_ = true
 
 [node name="Tiles396" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 1894)
-metadata/_edit_lock_ = true
 
 [node name="Tiles397" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 1893)
-metadata/_edit_lock_ = true
 
 [node name="Tiles398" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 1893)
-metadata/_edit_lock_ = true
 
 [node name="Tiles399" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 1894)
-metadata/_edit_lock_ = true
 
 [node name="Tiles400" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 1766.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles401" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 1766.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles402" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 1766.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles403" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 1765.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles404" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 1764.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles405" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 1764.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles406" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 1765.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles407" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 1638)
-metadata/_edit_lock_ = true
 
 [node name="Tiles408" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 1638)
-metadata/_edit_lock_ = true
 
 [node name="Tiles409" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 1638)
-metadata/_edit_lock_ = true
 
 [node name="Tiles410" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 1637)
-metadata/_edit_lock_ = true
 
 [node name="Tiles411" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 1636)
-metadata/_edit_lock_ = true
 
 [node name="Tiles412" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 1636)
-metadata/_edit_lock_ = true
 
 [node name="Tiles413" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 1637)
-metadata/_edit_lock_ = true
 
 [node name="Tiles414" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 1509.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles415" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 1509.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles416" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 1509.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles417" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 1508.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles418" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 1507.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles419" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 1507.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles420" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 1508.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles421" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 1383)
-metadata/_edit_lock_ = true
 
 [node name="Tiles422" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 1383)
-metadata/_edit_lock_ = true
 
 [node name="Tiles423" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 1383)
-metadata/_edit_lock_ = true
 
 [node name="Tiles424" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 1382)
-metadata/_edit_lock_ = true
 
 [node name="Tiles425" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 1381)
-metadata/_edit_lock_ = true
 
 [node name="Tiles426" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 1381)
-metadata/_edit_lock_ = true
 
 [node name="Tiles427" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 1382)
-metadata/_edit_lock_ = true
 
 [node name="Tiles428" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 1254.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles429" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 1254.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles430" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 1254.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles431" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 1253.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles432" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 1252.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles433" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 1252.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles434" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 1253.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles435" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803, 1126)
-metadata/_edit_lock_ = true
 
 [node name="Tiles436" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678, 1126)
-metadata/_edit_lock_ = true
 
 [node name="Tiles437" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551, 1126)
-metadata/_edit_lock_ = true
 
 [node name="Tiles438" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429, 1125)
-metadata/_edit_lock_ = true
 
 [node name="Tiles439" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301, 1124)
-metadata/_edit_lock_ = true
 
 [node name="Tiles440" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174, 1124)
-metadata/_edit_lock_ = true
 
 [node name="Tiles441" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-46.9999, 1125)
-metadata/_edit_lock_ = true
 
 [node name="Tiles442" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-803.25, 997.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles443" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-678.25, 997.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles444" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-551.25, 997.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles445" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-429.25, 996.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles446" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-301.25, 995.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles447" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-174.25, 995.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles448" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(-47.2499, 996.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles449" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, 857)
-metadata/_edit_lock_ = true
 
 [node name="Tiles450" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, 857)
-metadata/_edit_lock_ = true
 
 [node name="Tiles451" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, 857)
-metadata/_edit_lock_ = true
 
 [node name="Tiles452" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, 856)
-metadata/_edit_lock_ = true
 
 [node name="Tiles453" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, 855)
-metadata/_edit_lock_ = true
 
 [node name="Tiles454" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, 855)
-metadata/_edit_lock_ = true
 
 [node name="Tiles455" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, 856)
-metadata/_edit_lock_ = true
 
 [node name="Tiles456" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, 728.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles457" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, 728.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles458" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, 728.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles459" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, 727.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles460" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, 726.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles461" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, 726.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles462" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, 727.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles463" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, 600)
-metadata/_edit_lock_ = true
 
 [node name="Tiles464" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, 600)
-metadata/_edit_lock_ = true
 
 [node name="Tiles465" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, 600)
-metadata/_edit_lock_ = true
 
 [node name="Tiles466" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, 599)
-metadata/_edit_lock_ = true
 
 [node name="Tiles467" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, 598)
-metadata/_edit_lock_ = true
 
 [node name="Tiles468" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, 598)
-metadata/_edit_lock_ = true
 
 [node name="Tiles469" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, 599)
-metadata/_edit_lock_ = true
 
 [node name="Tiles470" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, 471.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles471" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, 471.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles472" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, 471.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles473" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, 470.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles474" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, 469.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles475" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, 469.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles476" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, 470.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles477" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, 345)
-metadata/_edit_lock_ = true
 
 [node name="Tiles478" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, 345)
-metadata/_edit_lock_ = true
 
 [node name="Tiles479" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, 345)
-metadata/_edit_lock_ = true
 
 [node name="Tiles480" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, 344)
-metadata/_edit_lock_ = true
 
 [node name="Tiles481" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, 343)
-metadata/_edit_lock_ = true
 
 [node name="Tiles482" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, 343)
-metadata/_edit_lock_ = true
 
 [node name="Tiles483" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, 344)
-metadata/_edit_lock_ = true
 
 [node name="Tiles484" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, 216.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles485" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, 216.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles486" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, 216.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles487" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, 215.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles488" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, 214.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles489" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, 214.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles490" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, 215.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles491" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, 88)
-metadata/_edit_lock_ = true
 
 [node name="Tiles492" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, 87.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles493" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, 87.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles494" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, 86.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles495" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, 85.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles496" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, 85.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles497" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, 86.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles498" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, -40.2499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles499" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, -40.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles500" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, -40.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles501" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, -41.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles502" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, -42.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles503" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, -42.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles504" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, -41.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles505" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, -168)
-metadata/_edit_lock_ = true
 
 [node name="Tiles506" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, -168)
-metadata/_edit_lock_ = true
 
 [node name="Tiles507" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, -168)
-metadata/_edit_lock_ = true
 
 [node name="Tiles508" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, -169)
-metadata/_edit_lock_ = true
 
 [node name="Tiles509" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, -170)
-metadata/_edit_lock_ = true
 
 [node name="Tiles510" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, -170)
-metadata/_edit_lock_ = true
 
 [node name="Tiles511" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, -169)
-metadata/_edit_lock_ = true
 
 [node name="Tiles512" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, -296.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles513" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, -296.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles514" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, -296.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles515" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, -297.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles516" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, -298.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles517" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, -298.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles518" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, -297.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles519" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, -425)
-metadata/_edit_lock_ = true
 
 [node name="Tiles520" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, -425)
-metadata/_edit_lock_ = true
 
 [node name="Tiles521" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, -425)
-metadata/_edit_lock_ = true
 
 [node name="Tiles522" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, -426)
-metadata/_edit_lock_ = true
 
 [node name="Tiles523" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, -427)
-metadata/_edit_lock_ = true
 
 [node name="Tiles524" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, -427)
-metadata/_edit_lock_ = true
 
 [node name="Tiles525" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, -426)
-metadata/_edit_lock_ = true
 
 [node name="Tiles526" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, -553.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles527" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, -553.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles528" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, -553.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles529" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, -554.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles530" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, -555.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles531" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, -555.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles532" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, -554.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles533" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, -680)
-metadata/_edit_lock_ = true
 
 [node name="Tiles534" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, -680)
-metadata/_edit_lock_ = true
 
 [node name="Tiles535" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, -680)
-metadata/_edit_lock_ = true
 
 [node name="Tiles536" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, -681)
-metadata/_edit_lock_ = true
 
 [node name="Tiles537" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, -682)
-metadata/_edit_lock_ = true
 
 [node name="Tiles538" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, -682)
-metadata/_edit_lock_ = true
 
 [node name="Tiles539" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, -681)
-metadata/_edit_lock_ = true
 
 [node name="Tiles540" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, -808.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles541" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, -808.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles542" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, -808.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles543" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, -809.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles544" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, -810.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles545" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, -810.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles546" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, -809.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles547" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1855, -937)
-metadata/_edit_lock_ = true
 
 [node name="Tiles548" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1980, -937)
-metadata/_edit_lock_ = true
 
 [node name="Tiles549" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2107, -937)
-metadata/_edit_lock_ = true
 
 [node name="Tiles550" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2229, -938)
-metadata/_edit_lock_ = true
 
 [node name="Tiles551" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2357, -939)
-metadata/_edit_lock_ = true
 
 [node name="Tiles552" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2484, -939)
-metadata/_edit_lock_ = true
 
 [node name="Tiles553" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2611, -938)
-metadata/_edit_lock_ = true
 
 [node name="Tiles554" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854.75, -1065.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles555" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979.75, -1065.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles556" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106.75, -1065.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles557" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228.75, -1066.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles558" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356.75, -1067.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles559" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483.75, -1067.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles560" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610.75, -1066.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles561" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 2902)
-metadata/_edit_lock_ = true
 
 [node name="Tiles562" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 2902)
-metadata/_edit_lock_ = true
 
 [node name="Tiles563" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 2902)
-metadata/_edit_lock_ = true
 
 [node name="Tiles564" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 2901)
-metadata/_edit_lock_ = true
 
 [node name="Tiles565" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 2900)
-metadata/_edit_lock_ = true
 
 [node name="Tiles566" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 2900)
-metadata/_edit_lock_ = true
 
 [node name="Tiles567" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 2901)
-metadata/_edit_lock_ = true
 
 [node name="Tiles568" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 2773.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles569" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 2773.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles570" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 2773.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles571" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 2772.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles572" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 2771.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles573" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 2771.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles574" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 2772.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles575" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 2645)
-metadata/_edit_lock_ = true
 
 [node name="Tiles576" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 2645)
-metadata/_edit_lock_ = true
 
 [node name="Tiles577" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 2645)
-metadata/_edit_lock_ = true
 
 [node name="Tiles578" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 2644)
-metadata/_edit_lock_ = true
 
 [node name="Tiles579" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 2643)
-metadata/_edit_lock_ = true
 
 [node name="Tiles580" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 2643)
-metadata/_edit_lock_ = true
 
 [node name="Tiles581" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 2644)
-metadata/_edit_lock_ = true
 
 [node name="Tiles582" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 2516.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles583" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 2516.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles584" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 2516.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles585" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 2515.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles586" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 2514.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles587" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 2514.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles588" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 2515.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles589" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 2390)
-metadata/_edit_lock_ = true
 
 [node name="Tiles590" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 2390)
-metadata/_edit_lock_ = true
 
 [node name="Tiles591" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 2390)
-metadata/_edit_lock_ = true
 
 [node name="Tiles592" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 2389)
-metadata/_edit_lock_ = true
 
 [node name="Tiles593" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 2388)
-metadata/_edit_lock_ = true
 
 [node name="Tiles594" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 2388)
-metadata/_edit_lock_ = true
 
 [node name="Tiles595" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 2389)
-metadata/_edit_lock_ = true
 
 [node name="Tiles596" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 2261.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles597" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 2261.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles598" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 2261.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles599" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 2260.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles600" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 2259.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles601" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 2259.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles602" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 2260.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles603" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 2133)
-metadata/_edit_lock_ = true
 
 [node name="Tiles604" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 2133)
-metadata/_edit_lock_ = true
 
 [node name="Tiles605" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 2133)
-metadata/_edit_lock_ = true
 
 [node name="Tiles606" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 2132)
-metadata/_edit_lock_ = true
 
 [node name="Tiles607" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 2131)
-metadata/_edit_lock_ = true
 
 [node name="Tiles608" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 2131)
-metadata/_edit_lock_ = true
 
 [node name="Tiles609" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 2132)
-metadata/_edit_lock_ = true
 
 [node name="Tiles610" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 2004.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles611" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 2004.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles612" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 2004.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles613" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 2003.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles614" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 2002.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles615" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 2002.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles616" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 2003.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles617" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 1877)
-metadata/_edit_lock_ = true
 
 [node name="Tiles618" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 1877)
-metadata/_edit_lock_ = true
 
 [node name="Tiles619" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 1877)
-metadata/_edit_lock_ = true
 
 [node name="Tiles620" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 1876)
-metadata/_edit_lock_ = true
 
 [node name="Tiles621" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 1875)
-metadata/_edit_lock_ = true
 
 [node name="Tiles622" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 1875)
-metadata/_edit_lock_ = true
 
 [node name="Tiles623" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 1876)
-metadata/_edit_lock_ = true
 
 [node name="Tiles624" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 1748.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles625" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 1748.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles626" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 1748.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles627" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 1747.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles628" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 1746.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles629" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 1746.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles630" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 1747.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles631" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 1620)
-metadata/_edit_lock_ = true
 
 [node name="Tiles632" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 1620)
-metadata/_edit_lock_ = true
 
 [node name="Tiles633" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 1620)
-metadata/_edit_lock_ = true
 
 [node name="Tiles634" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 1619)
-metadata/_edit_lock_ = true
 
 [node name="Tiles635" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 1618)
-metadata/_edit_lock_ = true
 
 [node name="Tiles636" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 1618)
-metadata/_edit_lock_ = true
 
 [node name="Tiles637" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 1619)
-metadata/_edit_lock_ = true
 
 [node name="Tiles638" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 1491.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles639" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 1491.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles640" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 1491.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles641" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 1490.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles642" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 1489.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles643" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 1489.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles644" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 1490.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles645" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 1365)
-metadata/_edit_lock_ = true
 
 [node name="Tiles646" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 1365)
-metadata/_edit_lock_ = true
 
 [node name="Tiles647" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 1365)
-metadata/_edit_lock_ = true
 
 [node name="Tiles648" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 1364)
-metadata/_edit_lock_ = true
 
 [node name="Tiles649" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 1363)
-metadata/_edit_lock_ = true
 
 [node name="Tiles650" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 1363)
-metadata/_edit_lock_ = true
 
 [node name="Tiles651" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 1364)
-metadata/_edit_lock_ = true
 
 [node name="Tiles652" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 1236.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles653" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 1236.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles654" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 1236.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles655" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 1235.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles656" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 1234.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles657" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 1234.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles658" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 1235.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles659" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1854, 1108)
-metadata/_edit_lock_ = true
 
 [node name="Tiles660" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1979, 1108)
-metadata/_edit_lock_ = true
 
 [node name="Tiles661" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2106, 1108)
-metadata/_edit_lock_ = true
 
 [node name="Tiles662" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2228, 1107)
-metadata/_edit_lock_ = true
 
 [node name="Tiles663" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2356, 1106)
-metadata/_edit_lock_ = true
 
 [node name="Tiles664" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2483, 1106)
-metadata/_edit_lock_ = true
 
 [node name="Tiles665" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2610, 1107)
-metadata/_edit_lock_ = true
 
 [node name="Tiles666" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1853.75, 979.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles667" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1978.75, 979.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles668" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2105.75, 979.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles669" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2227.75, 978.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles670" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2355.75, 977.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles671" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2482.75, 977.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles672" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2609.75, 978.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles673" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, 866)
-metadata/_edit_lock_ = true
 
 [node name="Tiles674" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, 866)
-metadata/_edit_lock_ = true
 
 [node name="Tiles675" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, 866)
-metadata/_edit_lock_ = true
 
 [node name="Tiles676" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, 865)
-metadata/_edit_lock_ = true
 
 [node name="Tiles677" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, 864)
-metadata/_edit_lock_ = true
 
 [node name="Tiles678" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, 864)
-metadata/_edit_lock_ = true
 
 [node name="Tiles679" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, 865)
-metadata/_edit_lock_ = true
 
 [node name="Tiles680" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, 737.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles681" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, 737.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles682" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, 737.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles683" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, 736.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles684" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, 735.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles685" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, 735.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles686" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, 736.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles687" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, 609)
-metadata/_edit_lock_ = true
 
 [node name="Tiles688" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, 609)
-metadata/_edit_lock_ = true
 
 [node name="Tiles689" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, 609)
-metadata/_edit_lock_ = true
 
 [node name="Tiles690" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, 608)
-metadata/_edit_lock_ = true
 
 [node name="Tiles691" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, 607)
-metadata/_edit_lock_ = true
 
 [node name="Tiles692" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, 607)
-metadata/_edit_lock_ = true
 
 [node name="Tiles693" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, 608)
-metadata/_edit_lock_ = true
 
 [node name="Tiles694" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, 480.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles695" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, 480.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles696" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, 480.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles697" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, 479.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles698" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, 478.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles699" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, 478.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles700" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, 479.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles701" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, 354)
-metadata/_edit_lock_ = true
 
 [node name="Tiles702" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, 354)
-metadata/_edit_lock_ = true
 
 [node name="Tiles703" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, 354)
-metadata/_edit_lock_ = true
 
 [node name="Tiles704" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, 353)
-metadata/_edit_lock_ = true
 
 [node name="Tiles705" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, 352)
-metadata/_edit_lock_ = true
 
 [node name="Tiles706" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, 352)
-metadata/_edit_lock_ = true
 
 [node name="Tiles707" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, 353)
-metadata/_edit_lock_ = true
 
 [node name="Tiles708" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, 225.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles709" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, 225.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles710" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, 225.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles711" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, 224.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles712" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, 223.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles713" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, 223.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles714" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, 224.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles715" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, 97)
-metadata/_edit_lock_ = true
 
 [node name="Tiles716" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, 96.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles717" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, 96.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles718" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, 95.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles719" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, 94.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles720" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, 94.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles721" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, 95.9998)
-metadata/_edit_lock_ = true
 
 [node name="Tiles722" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, -31.2499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles723" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, -31.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles724" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, -31.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles725" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, -32.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles726" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, -33.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles727" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, -33.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles728" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, -32.2501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles729" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, -159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles730" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, -159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles731" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, -159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles732" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, -160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles733" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, -161)
-metadata/_edit_lock_ = true
 
 [node name="Tiles734" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, -161)
-metadata/_edit_lock_ = true
 
 [node name="Tiles735" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, -160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles736" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, -287.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles737" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, -287.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles738" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, -287.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles739" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, -288.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles740" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, -289.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles741" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, -289.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles742" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, -288.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles743" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, -416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles744" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, -416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles745" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, -416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles746" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, -417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles747" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, -418)
-metadata/_edit_lock_ = true
 
 [node name="Tiles748" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, -418)
-metadata/_edit_lock_ = true
 
 [node name="Tiles749" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, -417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles750" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, -544.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles751" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, -544.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles752" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, -544.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles753" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, -545.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles754" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, -546.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles755" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, -546.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles756" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, -545.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles757" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, -671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles758" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, -671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles759" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, -671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles760" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, -672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles761" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, -673)
-metadata/_edit_lock_ = true
 
 [node name="Tiles762" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, -673)
-metadata/_edit_lock_ = true
 
 [node name="Tiles763" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, -672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles764" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, -799.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles765" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, -799.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles766" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, -799.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles767" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, -800.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles768" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, -801.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles769" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, -801.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles770" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, -800.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles771" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(969, -928)
-metadata/_edit_lock_ = true
 
 [node name="Tiles772" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1094, -928)
-metadata/_edit_lock_ = true
 
 [node name="Tiles773" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1221, -928)
-metadata/_edit_lock_ = true
 
 [node name="Tiles774" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1343, -929)
-metadata/_edit_lock_ = true
 
 [node name="Tiles775" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1471, -930)
-metadata/_edit_lock_ = true
 
 [node name="Tiles776" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1598, -930)
-metadata/_edit_lock_ = true
 
 [node name="Tiles777" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1725, -929)
-metadata/_edit_lock_ = true
 
 [node name="Tiles778" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968.75, -1056.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles779" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093.75, -1056.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles780" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220.75, -1056.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles781" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342.75, -1057.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles782" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470.75, -1058.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles783" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597.75, -1058.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles784" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724.75, -1057.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles785" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 2911)
-metadata/_edit_lock_ = true
 
 [node name="Tiles786" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 2911)
-metadata/_edit_lock_ = true
 
 [node name="Tiles787" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 2911)
-metadata/_edit_lock_ = true
 
 [node name="Tiles788" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 2910)
-metadata/_edit_lock_ = true
 
 [node name="Tiles789" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 2909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles790" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 2909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles791" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 2910)
-metadata/_edit_lock_ = true
 
 [node name="Tiles792" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 2782.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles793" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 2782.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles794" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 2782.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles795" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 2781.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles796" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 2780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles797" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 2780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles798" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 2781.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles799" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 2654)
-metadata/_edit_lock_ = true
 
 [node name="Tiles800" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 2654)
-metadata/_edit_lock_ = true
 
 [node name="Tiles801" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 2654)
-metadata/_edit_lock_ = true
 
 [node name="Tiles802" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 2653)
-metadata/_edit_lock_ = true
 
 [node name="Tiles803" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 2652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles804" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 2652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles805" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 2653)
-metadata/_edit_lock_ = true
 
 [node name="Tiles806" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 2525.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles807" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 2525.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles808" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 2525.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles809" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 2524.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles810" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 2523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles811" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 2523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles812" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 2524.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles813" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 2399)
-metadata/_edit_lock_ = true
 
 [node name="Tiles814" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 2399)
-metadata/_edit_lock_ = true
 
 [node name="Tiles815" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 2399)
-metadata/_edit_lock_ = true
 
 [node name="Tiles816" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 2398)
-metadata/_edit_lock_ = true
 
 [node name="Tiles817" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 2397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles818" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 2397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles819" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 2398)
-metadata/_edit_lock_ = true
 
 [node name="Tiles820" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 2270.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles821" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 2270.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles822" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 2270.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles823" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 2269.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles824" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 2268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles825" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 2268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles826" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 2269.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles827" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 2142)
-metadata/_edit_lock_ = true
 
 [node name="Tiles828" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 2142)
-metadata/_edit_lock_ = true
 
 [node name="Tiles829" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 2142)
-metadata/_edit_lock_ = true
 
 [node name="Tiles830" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 2141)
-metadata/_edit_lock_ = true
 
 [node name="Tiles831" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 2140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles832" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 2140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles833" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 2141)
-metadata/_edit_lock_ = true
 
 [node name="Tiles834" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 2013.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles835" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 2013.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles836" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 2013.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles837" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 2012.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles838" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 2011.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles839" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 2011.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles840" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 2012.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles841" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 1886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles842" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 1886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles843" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 1886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles844" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 1885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles845" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 1884)
-metadata/_edit_lock_ = true
 
 [node name="Tiles846" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 1884)
-metadata/_edit_lock_ = true
 
 [node name="Tiles847" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 1885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles848" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 1757.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles849" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 1757.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles850" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 1757.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles851" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 1756.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles852" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 1755.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles853" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 1755.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles854" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 1756.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles855" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 1629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles856" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 1629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles857" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 1629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles858" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 1628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles859" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 1627)
-metadata/_edit_lock_ = true
 
 [node name="Tiles860" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 1627)
-metadata/_edit_lock_ = true
 
 [node name="Tiles861" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 1628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles862" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 1500.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles863" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 1500.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles864" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 1500.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles865" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 1499.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles866" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 1498.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles867" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 1498.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles868" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 1499.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles869" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 1374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles870" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 1374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles871" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 1374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles872" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 1373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles873" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 1372)
-metadata/_edit_lock_ = true
 
 [node name="Tiles874" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 1372)
-metadata/_edit_lock_ = true
 
 [node name="Tiles875" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 1373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles876" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 1245.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles877" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 1245.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles878" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 1245.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles879" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 1244.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles880" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 1243.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles881" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 1243.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles882" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 1244.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles883" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(968, 1117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles884" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1093, 1117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles885" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1220, 1117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles886" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1342, 1116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles887" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1470, 1115)
-metadata/_edit_lock_ = true
 
 [node name="Tiles888" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1597, 1115)
-metadata/_edit_lock_ = true
 
 [node name="Tiles889" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1724, 1116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles890" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(967.75, 988.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles891" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1092.75, 988.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles892" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1219.75, 988.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles893" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1341.75, 987.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles894" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1469.75, 986.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles895" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1596.75, 986.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles896" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(1723.75, 987.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles897" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, 909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles898" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, 909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles899" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, 909)
-metadata/_edit_lock_ = true
 
 [node name="Tiles900" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, 908)
-metadata/_edit_lock_ = true
 
 [node name="Tiles901" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, 907)
-metadata/_edit_lock_ = true
 
 [node name="Tiles902" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, 907)
-metadata/_edit_lock_ = true
 
 [node name="Tiles903" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, 908)
-metadata/_edit_lock_ = true
 
 [node name="Tiles904" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, 780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles905" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, 780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles906" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, 780.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles907" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, 779.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles908" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, 778.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles909" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, 778.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles910" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, 779.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles911" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, 652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles912" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, 652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles913" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, 652)
-metadata/_edit_lock_ = true
 
 [node name="Tiles914" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, 651)
-metadata/_edit_lock_ = true
 
 [node name="Tiles915" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, 650)
-metadata/_edit_lock_ = true
 
 [node name="Tiles916" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, 650)
-metadata/_edit_lock_ = true
 
 [node name="Tiles917" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, 651)
-metadata/_edit_lock_ = true
 
 [node name="Tiles918" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, 523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles919" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, 523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles920" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, 523.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles921" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, 522.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles922" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, 521.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles923" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, 521.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles924" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, 522.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles925" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, 397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles926" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, 397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles927" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, 397)
-metadata/_edit_lock_ = true
 
 [node name="Tiles928" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, 396)
-metadata/_edit_lock_ = true
 
 [node name="Tiles929" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, 395)
-metadata/_edit_lock_ = true
 
 [node name="Tiles930" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, 395)
-metadata/_edit_lock_ = true
 
 [node name="Tiles931" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, 396)
-metadata/_edit_lock_ = true
 
 [node name="Tiles932" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, 268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles933" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, 268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles934" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, 268.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles935" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, 267.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles936" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, 266.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles937" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, 266.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles938" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, 267.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles939" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, 140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles940" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, 140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles941" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, 140)
-metadata/_edit_lock_ = true
 
 [node name="Tiles942" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, 139)
-metadata/_edit_lock_ = true
 
 [node name="Tiles943" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, 138)
-metadata/_edit_lock_ = true
 
 [node name="Tiles944" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, 138)
-metadata/_edit_lock_ = true
 
 [node name="Tiles945" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, 139)
-metadata/_edit_lock_ = true
 
 [node name="Tiles946" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, 11.7501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles947" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, 11.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles948" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, 11.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles949" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, 10.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles950" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, 9.74994)
-metadata/_edit_lock_ = true
 
 [node name="Tiles951" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, 9.74994)
-metadata/_edit_lock_ = true
 
 [node name="Tiles952" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, 10.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles953" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, -116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles954" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, -116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles955" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, -116)
-metadata/_edit_lock_ = true
 
 [node name="Tiles956" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, -117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles957" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, -118)
-metadata/_edit_lock_ = true
 
 [node name="Tiles958" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, -118)
-metadata/_edit_lock_ = true
 
 [node name="Tiles959" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, -117)
-metadata/_edit_lock_ = true
 
 [node name="Tiles960" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, -244.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles961" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, -244.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles962" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, -244.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles963" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, -245.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles964" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, -246.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles965" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, -246.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles966" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, -245.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles967" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, -373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles968" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, -373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles969" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, -373)
-metadata/_edit_lock_ = true
 
 [node name="Tiles970" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, -374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles971" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, -375)
-metadata/_edit_lock_ = true
 
 [node name="Tiles972" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, -375)
-metadata/_edit_lock_ = true
 
 [node name="Tiles973" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, -374)
-metadata/_edit_lock_ = true
 
 [node name="Tiles974" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, -501.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles975" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, -501.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles976" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, -501.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles977" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, -502.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles978" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, -503.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles979" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, -503.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles980" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, -502.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles981" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, -628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles982" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, -628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles983" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, -628)
-metadata/_edit_lock_ = true
 
 [node name="Tiles984" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, -629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles985" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, -630)
-metadata/_edit_lock_ = true
 
 [node name="Tiles986" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, -630)
-metadata/_edit_lock_ = true
 
 [node name="Tiles987" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, -629)
-metadata/_edit_lock_ = true
 
 [node name="Tiles988" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, -756.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles989" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, -756.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles990" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, -756.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles991" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, -757.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles992" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, -758.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles993" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, -758.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles994" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, -757.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles995" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3629, -885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles996" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3754, -885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles997" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3881, -885)
-metadata/_edit_lock_ = true
 
 [node name="Tiles998" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4003, -886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles999" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4131, -887)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1000" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4258, -887)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1001" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4385, -886)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1002" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628.75, -1013.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1003" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753.75, -1013.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1004" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880.75, -1013.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1005" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002.75, -1014.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1006" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130.75, -1015.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1007" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257.75, -1015.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1008" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384.75, -1014.25)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1009" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3628, 2954)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1010" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3753, 2954)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1011" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3880, 2954)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1012" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4002, 2953)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1013" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4130, 2952)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1014" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4257, 2952)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1015" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4384, 2953)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1016" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3627.75, 2825.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1017" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3752.75, 2825.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1018" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3879.75, 2825.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1019" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4001.75, 2824.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1020" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4129.75, 2823.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1021" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4256.75, 2823.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1022" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4383.75, 2824.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1023" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3628, 2697)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1024" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3753, 2697)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1025" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3880, 2697)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1026" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4002, 2696)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1027" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4130, 2695)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1028" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4257, 2695)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1029" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4384, 2696)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1030" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3627.75, 2568.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1031" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3752.75, 2568.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1032" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3879.75, 2568.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1033" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4001.75, 2567.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1034" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4129.75, 2566.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1035" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4256.75, 2566.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1036" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4383.75, 2567.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1037" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3628, 2442)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1038" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3753, 2442)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1039" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3880, 2442)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1040" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4002, 2441)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1041" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4130, 2440)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1042" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4257, 2440)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1043" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4384, 2441)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1044" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3627.75, 2313.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1045" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3752.75, 2313.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1046" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3879.75, 2313.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1047" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4001.75, 2312.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1048" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4129.75, 2311.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1049" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4256.75, 2311.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1050" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4383.75, 2312.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1051" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3628, 2185)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1052" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3753, 2185)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1053" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3880, 2185)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1054" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4002, 2184)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1055" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4130, 2183)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1056" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4257, 2183)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1057" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4384, 2184)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1058" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3627.75, 2056.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1059" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3752.75, 2056.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1060" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3879.75, 2056.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1061" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4001.75, 2055.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1062" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4129.75, 2054.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1063" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4256.75, 2054.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1064" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4383.75, 2055.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1065" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3628, 1929)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1066" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3753, 1929)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1067" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3880, 1929)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1068" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4002, 1928)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1069" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4130, 1927)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1070" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4257, 1927)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1071" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4384, 1928)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1072" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3627.75, 1800.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1073" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3752.75, 1800.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1074" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3879.75, 1800.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1075" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4001.75, 1799.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1076" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4129.75, 1798.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1077" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4256.75, 1798.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1078" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(4383.75, 1799.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1079" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628, 1672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1080" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753, 1672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1081" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880, 1672)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1082" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002, 1671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1083" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130, 1670)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1084" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257, 1670)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1085" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384, 1671)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1086" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3627.75, 1543.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1087" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3752.75, 1543.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1088" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3879.75, 1543.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1089" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4001.75, 1542.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1090" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4129.75, 1541.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1091" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4256.75, 1541.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1092" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4383.75, 1542.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1093" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628, 1417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1094" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753, 1417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1095" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880, 1417)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1096" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002, 1416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1097" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130, 1415)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1098" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257, 1415)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1099" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384, 1416)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1100" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3627.75, 1288.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1101" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3752.75, 1288.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1102" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3879.75, 1288.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1103" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4001.75, 1287.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1104" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4129.75, 1286.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1105" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4256.75, 1286.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1106" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4383.75, 1287.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1107" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3628, 1160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1108" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3753, 1160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1109" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3880, 1160)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1110" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4002, 1159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1111" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4130, 1158)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1112" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4257, 1158)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1113" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4384, 1159)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1114" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3627.75, 1031.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1115" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3752.75, 1031.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1116" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3879.75, 1031.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1117" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4001.75, 1030.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1118" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4129.75, 1029.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1119" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4256.75, 1029.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1120" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(4383.75, 1030.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1121" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, 918)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1122" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, 918)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1123" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, 918)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1124" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, 917)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1125" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, 916)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1126" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, 916)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1127" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, 917)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1128" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, 789.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1129" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, 789.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1130" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, 789.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1131" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, 788.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1132" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, 787.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1133" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, 787.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1134" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, 788.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1135" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, 661)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1136" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, 661)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1137" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, 661)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1138" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, 660)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1139" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, 659)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1140" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, 659)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1141" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, 660)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1142" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, 532.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1143" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, 532.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1144" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, 532.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1145" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, 531.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1146" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, 530.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1147" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, 530.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1148" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, 531.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1149" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, 406)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1150" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, 406)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1151" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, 406)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1152" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, 405)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1153" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, 404)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1154" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, 404)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1155" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, 405)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1156" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, 277.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1157" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, 277.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1158" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, 277.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1159" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, 276.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1160" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, 275.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1161" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, 275.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1162" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, 276.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1163" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, 149)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1164" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, 149)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1165" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, 149)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1166" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, 148)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1167" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, 147)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1168" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, 147)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1169" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, 148)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1170" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, 20.7501)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1171" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, 20.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1172" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, 20.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1173" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, 19.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1174" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, 18.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1175" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, 18.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1176" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, 19.7499)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1177" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, -107)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1178" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, -107)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1179" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, -107)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1180" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, -108)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1181" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, -109)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1182" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, -109)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1183" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, -108)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1184" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, -235.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1185" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, -235.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1186" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, -235.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1187" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, -236.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1188" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, -237.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1189" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, -237.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1190" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, -236.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1191" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, -364)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1192" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, -364)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1193" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, -364)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1194" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, -365)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1195" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, -366)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1196" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, -366)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1197" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, -365)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1198" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, -492.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1199" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, -492.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1200" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, -492.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1201" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, -493.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1202" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, -494.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1203" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, -494.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1204" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, -493.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1205" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, -619)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1206" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, -619)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1207" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, -619)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1208" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, -620)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1209" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, -621)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1210" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, -621)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1211" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, -620)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1212" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, -747.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1213" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, -747.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1214" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, -747.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1215" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, -748.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1216" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, -749.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1217" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, -749.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1218" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, -748.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1219" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2743, -876)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1220" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2868, -876)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1221" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2995, -876)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1222" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3117, -877)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1223" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3245, -878)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1224" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3372, -878)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1225" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3499, -877)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1226" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742.75, -1004.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1227" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867.75, -1004.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1228" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994.75, -1004.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1229" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116.75, -1005.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1230" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244.75, -1006.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1231" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371.75, -1006.25)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1232" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498.75, -1005.25)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1233" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(2742, 2963)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1234" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(2867, 2963)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1235" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(2994, 2963)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1236" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3116, 2962)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1237" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3244, 2961)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1238" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3371, 2961)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1239" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3498, 2962)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1240" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(2741.75, 2834.75)
-metadata/_edit_lock_ = true
+position = Vector2(2741.75, 2868)
+scale = Vector2(0.85, 1.29333)
 
 [node name="Tiles1241" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(2866.75, 2834.75)
-metadata/_edit_lock_ = true
+position = Vector2(2866.75, 2869.5)
+scale = Vector2(0.85, 1.31333)
 
 [node name="Tiles1242" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(2993.75, 2834.75)
-metadata/_edit_lock_ = true
+position = Vector2(2993.75, 2864)
+scale = Vector2(0.85, 1.24)
 
 [node name="Tiles1243" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3115.75, 2833.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1244" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3243.75, 2832.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1245" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3370.75, 2832.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1246" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3497.75, 2833.75)
-metadata/_edit_lock_ = true
+position = Vector2(3115.75, 2864)
+scale = Vector2(0.85, 1.25333)
 
 [node name="Tiles1247" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 2706)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1248" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 2706)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1249" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 2706)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1250" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 2705)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1251" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3244, 2704)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1252" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3371, 2704)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1253" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3498, 2705)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1254" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 2577.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1255" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 2577.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1256" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 2577.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1257" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 2576.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1258" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3243.75, 2575.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1259" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3370.75, 2575.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1260" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3497.75, 2576.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1261" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 2451)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1262" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 2451)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1263" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 2451)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1264" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 2450)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1265" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3244, 2449)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1266" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3371, 2449)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1267" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3498, 2450)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1268" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 2322.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1269" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 2322.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1270" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 2322.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1271" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 2321.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1272" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3243.75, 2320.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1273" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3370.75, 2320.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1274" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3497.75, 2321.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1275" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 2194)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1276" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 2194)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1277" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 2194)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1278" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 2193)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1279" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3244, 2192)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1280" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3371, 2192)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1281" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3498, 2193)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1282" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 2065.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1283" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 2065.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1284" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 2065.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1285" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 2064.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1286" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3243.75, 2063.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1287" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3370.75, 2063.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1288" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3497.75, 2064.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1289" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 1938)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1290" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 1938)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1291" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 1938)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1292" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 1937)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1293" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3244, 1936)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1294" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3371, 1936)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1295" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3498, 1937)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1296" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 1809.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1297" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 1809.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1298" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 1809.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1299" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 1808.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1300" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3243.75, 1807.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1301" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3370.75, 1807.75)
-metadata/_edit_lock_ = true
-
-[node name="Tiles1302" parent="." instance=ExtResource("1_lomef")]
-position = Vector2(3497.75, 1808.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1303" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 1681)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1304" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 1681)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1305" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 1681)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1306" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 1680)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1307" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244, 1679)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1308" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371, 1679)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1309" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498, 1680)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1310" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 1552.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1311" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 1552.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1312" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 1552.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1313" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 1551.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1314" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3243.75, 1550.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1315" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3370.75, 1550.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1316" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3497.75, 1551.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1317" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 1426)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1318" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 1426)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1319" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 1426)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1320" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 1425)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1321" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244, 1424)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1322" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371, 1424)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1323" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498, 1425)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1324" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 1297.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1325" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 1297.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1326" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 1297.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1327" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 1296.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1328" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3243.75, 1295.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1329" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3370.75, 1295.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1330" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3497.75, 1296.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1331" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2742, 1169)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1332" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2867, 1169)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1333" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2994, 1169)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1334" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3116, 1168)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1335" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3244, 1167)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1336" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3371, 1167)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1337" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3498, 1168)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1338" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2741.75, 1040.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1339" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2866.75, 1040.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1340" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(2993.75, 1040.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1341" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3115.75, 1039.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1342" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3243.75, 1038.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1343" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3370.75, 1038.75)
-metadata/_edit_lock_ = true
 
 [node name="Tiles1344" parent="." instance=ExtResource("1_lomef")]
 position = Vector2(3497.75, 1039.75)
-metadata/_edit_lock_ = true

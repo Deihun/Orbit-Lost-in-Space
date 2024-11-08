@@ -21,8 +21,8 @@ func GameStart():
 	pass
 
 
-func _on_timeout(): #Simple recursion everytime the timer stops, update the UI till it hits zero
-	countdown_live -= 1
+func _on_timeout(value : int = 1): #Simple recursion everytime the timer stops, update the UI till it hits zero
+	countdown_live -= value
 	var player_node = $".."
 	if countdown_live > -1:
 		player_node.update_label(countdown_live, false)

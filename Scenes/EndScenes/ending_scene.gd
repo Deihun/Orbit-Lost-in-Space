@@ -19,6 +19,7 @@ var lackofresources = preload("res://Scenes/EndScenes/Gallery_Endings/lackofreso
 var radontiEnding = preload("res://Scenes/EndScenes/Gallery_Endings/RadontiEnding.png")
 var earth2Earth = preload("res://Scenes/EndScenes/Gallery_Endings/Earth2.0.png")
 var BlackHole = preload("res://Scenes/EndScenes/Gallery_Endings/BlackHoleEvent.png")
+var JerryAlone = preload("res://Scenes/EndScenes/Gallery_Endings/JerryDeath.png")
 
 func getScene(content : String):
 	match content:
@@ -38,7 +39,9 @@ func getScene(content : String):
 		"BlackHole":
 			$GoodEnd.text = "Bad End"
 			return BlackHole
-
+		"JerryDeath":
+			$GoodEnd.text = "Bad End"
+			return JerryAlone
 
 
 func _on_button_button_up() -> void:

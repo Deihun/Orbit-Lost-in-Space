@@ -1,4 +1,4 @@
-[gd_scene load_steps=349 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=353 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Script" path="res://Player/player_Default.gd" id="1_mhmxe"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
 [ext_resource type="Script" path="res://Player/_game_timer_limit.gd" id="23_rapkq"]
 [ext_resource type="Texture2D" uid="uid://do05uhnu3cq30" path="res://Player/timer.png" id="24_55iu7"]
+[ext_resource type="Script" path="res://Player/_damage_notifyer.gd" id="25_gx2if"]
 [ext_resource type="Texture2D" uid="uid://bxyb3hnsy7y8x" path="res://Player/PlayerCAS/with_Helmet_player_moveset.png" id="26_7snf5"]
 [ext_resource type="AudioStream" uid="uid://du2gxvuhvesi2" path="res://Sounds/SFX/walkgroundDefault.mp3" id="29_civhm"]
 [ext_resource type="AudioStream" uid="uid://bt8mqxlcqjgos" path="res://Sounds/SFX/grab woosh noise.mp3" id="30_efosq"]
@@ -1092,6 +1093,91 @@ animations = [{
 "name": &"idle_meteor",
 "speed": 24.0
 }]
+
+[sub_resource type="Animation" id="Animation_en5gg"]
+resource_name = "Trigger"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 627), Vector2(-1, 368)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.03333, 2.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pr1ih"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 627)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_su642"]
+_data = {
+"RESET": SubResource("Animation_pr1ih"),
+"Trigger": SubResource("Animation_en5gg")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u87n7"]
 atlas = ExtResource("17_b7037")
@@ -2669,6 +2755,7 @@ scale = Vector2(0.704902, 0.681373)
 texture = ExtResource("3_my03n")
 
 [node name="Timer" type="Sprite2D" parent="player/AllUIParents"]
+visible = false
 position = Vector2(996, 253)
 scale = Vector2(2.275, 1.99)
 texture = ExtResource("24_55iu7")
@@ -2700,19 +2787,10 @@ libraries = {
 }
 
 [node name="Globe_Timer_Sprite" type="Sprite2D" parent="player/AllUIParents"]
-visible = false
 z_index = -134
 position = Vector2(146.788, 942.463)
 scale = Vector2(1.25657, 1.26637)
 texture = ExtResource("10_cjn85")
-
-[node name="Meteor_animated" type="AnimatedSprite2D" parent="player/AllUIParents/Globe_Timer_Sprite"]
-position = Vector2(-2.21835, -5.10323)
-rotation = -0.698132
-sprite_frames = SubResource("SpriteFrames_b1bq1")
-animation = &"idle_meteor"
-frame_progress = 0.290633
-offset = Vector2(0, -138.62)
 
 [node name="Label_Timer" type="Label" parent="player/AllUIParents/Globe_Timer_Sprite"]
 anchors_preset = -1
@@ -2720,10 +2798,10 @@ anchor_left = -0.003125
 anchor_top = 0.0157407
 anchor_right = -0.003125
 anchor_bottom = 0.0157407
-offset_left = -81.0036
-offset_top = -54.9177
-offset_right = 89.9964
-offset_bottom = 115.082
+offset_left = -95.3283
+offset_top = -58.8659
+offset_right = 75.6717
+offset_bottom = 111.134
 scale = Vector2(1.105, 1.105)
 theme_override_colors/font_color = Color(1, 0.920667, 0.32, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -2733,6 +2811,32 @@ theme_override_font_sizes/font_size = 146
 text = "90"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Meteor_animated" type="AnimatedSprite2D" parent="player/AllUIParents/Globe_Timer_Sprite"]
+position = Vector2(-2.21835, -5.10323)
+rotation = -0.698132
+sprite_frames = SubResource("SpriteFrames_b1bq1")
+animation = &"idle_meteor"
+frame_progress = 0.290633
+offset = Vector2(0, -138.62)
+
+[node name="_DamageNotifyer" type="Label" parent="player/AllUIParents"]
+offset_left = -1.0
+offset_top = 368.0
+offset_right = 371.0
+offset_bottom = 459.0
+theme_override_colors/font_color = Color(1, 0.443684, 0.375095, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 66
+text = "<- seconds>
+"
+script = ExtResource("25_gx2if")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/AllUIParents/_DamageNotifyer"]
+libraries = {
+"": SubResource("AnimationLibrary_su642")
+}
 
 [node name="Player4" type="AnimatedSprite2D" parent="player"]
 light_mask = 0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cuq1cyc8wf2no"
+path="res://.godot/imported/Electricity Sound Effect xd (Thx for 1M Views!).mp3-efdb2d7a795f7f154bc65682049ec8ac.mp3str"
+
+[deps]
+
+source_file="res://Player/Electricity Sound Effect xd (Thx for 1M Views!).mp3"
+dest_files=["res://.godot/imported/Electricity Sound Effect xd (Thx for 1M Views!).mp3-efdb2d7a795f7f154bc65682049ec8ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

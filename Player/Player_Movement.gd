@@ -34,6 +34,9 @@ var game_win : Callable
 
 #VOID METHODS
 func _ready():	#OnStart, 
+	if GlobalResources.uniqueItems.has("A.C.E.S"): $"..".limitTimeDuration += 20
+	if GlobalResources.uniqueItems.has("LeadSuitUp"): $"..".limitTimeDuration += 20
+
 	self.set_process(false)
 	await get_tree().create_timer(0.1).timeout
 	if $"..".useGlobeTimerUI: $AllUIParents/Timer.hide()
@@ -43,7 +46,6 @@ func _ready():	#OnStart,
 	self.set_process(false)
 	await get_tree().create_timer(0.1).timeout #For enabling animation to run on conditions
 	play_animation(run_idle[animation_use_id])
-	$AllUIParents/Globe_Timer_Sprite/Label_Timer.hide()
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 	self.set_process(true)
@@ -163,6 +165,13 @@ func gameStart():
 
 
 func startUI():
+	if $"..".useGlobeTimerUI:
+		$AllUIParents/Globe_Timer_Sprite/Label_Timer.show()
+		$AllUIParents/Globe_Timer_Sprite.show()
+	else:
+		$AllUIParents/Globe_Timer_Sprite/Label_Timer.hide()
+		$AllUIParents/Globe_Timer_Sprite.hide()
+	handleRadition()
 	$AllUIParents/StartUI_label.visible = true
 	await get_tree().create_timer(0.1).timeout 
 	$AllUIParents/StartUI_label.visible = false
@@ -178,6 +187,69 @@ func startUI():
 	canMove = true
 	$_GameTimerLimit.GameStart()
 	pass
+
+
+func handleRadition():
+	var AcesChance : float = 0
+	var NoSuitChance : float =0
+	var LEADChance: float =0
+	var AcesDamage : float=0
+	var NoSuitDamage: float=0
+	var LEADDamage: float=0
+	
+	match(IngameStoredProcessSetting.current_Factions):
+		"Radonti":
+			AcesChance = 0
+			NoSuitChance = 0
+			LEADChance = 0
+			NoSuitDamage = 0
+			AcesDamage = 0
+			LEADDamage = 0
+		"AbandonShip":
+			AcesChance = 0.1
+			NoSuitChance = 0.15
+			LEADChance = 0
+			NoSuitDamage= 0.15
+			AcesDamage = 0.05
+			LEADDamage = 0
+		"Sauria":
+			AcesChance = 0
+			NoSuitChance = 0
+			LEADChance = 0
+			NoSuitDamage = 0.5
+			AcesDamage = 0.2
+			LEADDamage = 0.3
+		"Steelicus":
+			AcesChance = 0.3
+			NoSuitChance = 0.6
+			LEADChance = 0.05
+			NoSuitDamage = 0.8
+			AcesDamage = 0.5
+			LEADDamage = 0.3
+		"Earth2.0":
+			AcesChance = 0
+			NoSuitChance = 0
+			LEADChance = 0
+			NoSuitDamage = 0.0
+			AcesDamage = 0.0
+			LEADDamage = 0.0
+	
+	if IngameStoredProcessSetting.selectedCrew in ["Maxim","Fumiko","Regina","Nashir"]:
+		var crew = IngameStoredProcessSetting.selectedCrew
+		if GlobalResources.uniqueItems.has("LeadSuitUp"):
+			if randf() < LEADChance:
+				IngameStoredProcessSetting._disease[crew] += 0.00001
+			IngameStoredProcessSetting._health[crew] -= LEADDamage
+		elif GlobalResources.uniqueItems.has("A.C.E.S"):
+			IngameStoredProcessSetting._health[crew] -= AcesDamage
+			if randf() < AcesChance:
+				IngameStoredProcessSetting._disease[crew] += 0.00001
+		else:
+			IngameStoredProcessSetting._health[crew] -= NoSuitDamage
+			if randf() < NoSuitChance:
+				IngameStoredProcessSetting._disease[crew] += 0.00001
+		IngameStoredProcessSetting._health[crew] = 0.01 if IngameStoredProcessSetting._health[crew] < 0.01 else IngameStoredProcessSetting._health[crew]
+
 
 func endScene():
 	canMove = false

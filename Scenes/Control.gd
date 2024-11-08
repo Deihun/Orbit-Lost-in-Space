@@ -81,6 +81,7 @@ func _on_next_day_button_pressed():
 	if GlobalResources.currentActiveQueue <= 0:
 		#Handle Mini Event (PRIORITY 1)
 		#Handle UI Cycle
+		IngameStoredProcessSetting.canExpedition = true
 		removeitOnSecondDay()
 		CycleSetting.endCycle()
 		_is_MainFaction()
@@ -90,11 +91,11 @@ func _on_next_day_button_pressed():
 			if item_ui.currentlycrafting == "MedkitCharge" or item_ui.currentlycrafting == "FreDriSpaceFood" or item_ui.currentlycrafting == "DehySpaceFood":
 				match item_ui.currentlycrafting:
 					"MedkitCharge":
-						GlobalResources.medicine += 1
+						GlobalResources.AddItem(true, "MEDKIT", 1)
 					"FreDriSpaceFood":
-						GlobalResources.ration += 10
+						GlobalResources.AddItem(true, "FOOD", 10)
 					"DehySpaceFood":
-						GlobalResources.ration += 20
+						GlobalResources.AddItem(true, "FOOD", 20)
 			else:
 				GlobalResources.uniqueItems.append(item_ui.currentlycrafting)
 			item_ui.currentlycrafting = ""
@@ -105,7 +106,7 @@ func _on_next_day_button_pressed():
 		EventHandler.ActivateEvent()
 		ClickCD.start()
 		$WholeInteriorScene/Lobby.setRandomPosition()
-		$WholeInteriorScene/Lobby.set_initialDialogue()
+		if randf() < 0.4: $WholeInteriorScene/Lobby.set_initialDialogue()
 		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
@@ -117,8 +118,8 @@ func _on_next_day_button_pressed():
 func updateUI():
 	$WholeInteriorScene/FactionLabel_willBeRemove.text = str("FactionCurrently: ",IngameStoredProcessSetting.current_Factions)
 	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
-	if IngameStoredProcessSetting.current_Factions == "SPACE" or IngameStoredProcessSetting.current_Factions == "None":$WholeInteriorScene/ExpeditionButton.hide()
-	else:$WholeInteriorScene/ExpeditionButton.show()
+	if IngameStoredProcessSetting.current_Factions in ["None","Space","Asteroid","Blackhole"] :$WholeInteriorScene/ExpeditionButton.hide()
+	elif IngameStoredProcessSetting.canExpedition :$WholeInteriorScene/ExpeditionButton.show()
 	updateCockpit()
 	_updateUIExpeditionScreen()
 
@@ -174,6 +175,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 		"Enthuli":IngameStoredProcessSetting.Scenes = "Enthuli"
 		"Steelicus":IngameStoredProcessSetting.Scenes = "Steelicus"
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
+	IngameStoredProcessSetting.canExpedition = false
 	get_tree().change_scene_to_packed(loadingScreen)
 
 
