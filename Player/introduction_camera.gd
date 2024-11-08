@@ -4,7 +4,7 @@ extends Camera2D
 @onready var player_cb : CharacterBody2D = $"../Player/player"
 @onready var player_position
 @onready var player_camera
-var secondsTransition : float = 1.0
+var secondsTransition : float = 4.0
 
 # Called when the node enters the scene tree for thefirst time.
 func _ready() -> void:
