@@ -106,7 +106,7 @@ func _on_next_day_button_pressed():
 		EventHandler.ActivateEvent()
 		ClickCD.start()
 		$WholeInteriorScene/Lobby.setRandomPosition()
-		$WholeInteriorScene/Lobby.set_initialDialogue()
+		if randf() < 0.4: $WholeInteriorScene/Lobby.set_initialDialogue()
 		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
