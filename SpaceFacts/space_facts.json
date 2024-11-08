@@ -3,362 +3,458 @@
 		{
 			"encountered": false,
 			"id": "fact1",
-			"text": "The Space Shuttle was the first reusable spacecraft in history, The Shuttle launches like a rocket, maneuvers in Earth orbit like a spacecraft and lands like an airplane."
+			"text": "The Space Shuttle was the first reusable spacecraft in history, The Shuttle launches like a rocket, maneuvers in Earth orbit like a spacecraft and lands like an airplane.",
+			"title": "The Space Shuttle"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact2",
-			"text": "Hydro carbons and fossil-fuel like substance can be found on asteroids and comets"
+			"text": "Hydro carbons and fossil-fuel like substance can be found on asteroids and comets.",
+			"title": "Hydro Carbons"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact3",
-			"text": "The Starship was the first Super Heavy Rocket to reach earth orbit with a payload capacity of 100t to 150t fully reusable and with the height of 121m or 397ft by SpaceX."
+			"text": "The Starship was the first Super Heavy Rocket to reach earth orbit with a payload capacity of 100t to 150t fully reusable and with the height of 121m or 397ft by SpaceX.",
+			"title": "The Star Ship"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact4",
-			"text": "The first use of solar panels in space was on the Vanguard I spacecraft in 1958. Solar panels are now a standard power source for spacecraft. In 2017, the Space Shuttle Discovery received an upgrade to its solar panels. The new panels increased the daytime power available on the International Space Station."
+			"text": "The first use of solar panels in space was on the Vanguard I spacecraft in 1958. Solar panels are now a standard power source for spacecraft. In 2017, the Space Shuttle Discovery received an upgrade to its solar panels. The new panels increased the daytime power available on the International Space Station.",
+			"title": "The First use of Solar Panels"
 		},
 		{
 			"encountered": false,
 			"id": "fact5",
-			"text": "The International Space Station The station was designed between 1984 and 1993. Elements of the station were in construction throughout the US, Canada, Japan, and Europe beginning in the late 1980s."
+			"text": "The International Space Station The station was designed between 1984 and 1993. Elements of the station were in construction throughout the US, Canada, Japan, and Europe beginning in the late 1980s.",
+			"title": "The International Space Station Designed"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact6",
-			"text": "Biogenic materials are materials that are created by organisms using proteins to assemble inorganic structures such as marine animals shell."
+			"text": "Biogenic materials are materials that are created by organisms using proteins to assemble inorganic structures such as marine animals shell.",
+			"title": "Biogenic"
 		},
 		{
 			"encountered": false,
 			"id": "fact7",
-			"text": "A solar flare is a relatively intense, localized emission of electromagnetic radiation in the Sun's atmosphere. Flares occur in active regions and are often, but not always,)"
+			"text": "A solar flare is a relatively intense, localized emission of electromagnetic radiation in the Sun's atmosphere. Flares occur in active regions and are often, but not always.",
+			"title": "Solar Flare"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact8",
-			"text": "Yuri Gagarin was the first human to journey into outer space in 1961."
+			"text": "Yuri Gagarin was the first human to journey into outer space in 1961.",
+			"title": "Yuri Gagarin"
 		},
 		{
 			"encountered": false,
 			"id": "fact9",
-			"text": "Valentina Tereshkova was the first woman in space, flying on Vostok 6 in 1963."
+			"text": "Valentina Tereshkova was the first woman in space, flying on Vostok 6 in 1963.",
+			"title": "Valentina Tareshkova"
 		},
 		{
 			"encountered": false,
 			"id": "fact10",
-			"text": "Neil Armstrong and Buzz Aldrin were the first humans to walk on the moon during the Apollo 11 mission in 1969."
+			"text": "Neil Armstrong and Buzz Aldrin were the first humans to walk on the moon during the Apollo 11 mission in 1969.",
+			"title": "The First humans to walk on the Moon"
 		},
 		{
 			"encountered": false,
 			"id": "fact11",
-			"text": "The Apollo 13 mission, despite its failure to land on the moon, is famous for the crew’s safe return after an oxygen tank explosion."
+			"text": "The Apollo 13 mission, despite its failure to land on the moon, is famous for the crew’s safe return after an oxygen tank explosion.",
+			"title": "Apollo 13 Mission"
 		},
 		{
 			"encountered": false,
 			"id": "fact12",
-			"text": "The Hubble Space Telescope was launched into low Earth orbit in 1990 and remains in operation."
+			"text": "The Hubble Space Telescope was launched into low Earth orbit in 1990 and remains in operation.",
+			"title": "The Hubble Space Telescope"
 		},
 		{
 			"encountered": false,
 			"id": "fact13",
-			"text": "The Voyager 1 spacecraft, launched in 1977, is the farthest human-made object from Earth."
+			"text": "The Voyager 1 spacecraft, launched in 1977, is the farthest human-made object from Earth.",
+			"title": "The Voyager 1 Spacecraft"
 		},
 		{
 			"encountered": false,
 			"id": "fact14",
-			"text": "Laika, a Soviet space dog, was the first animal to orbit Earth in 1957."
+			"text": "Laika, a Soviet space dog, was the first animal to orbit Earth in 1957.",
+			"title": "The First Dog to Orbit Space"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact15",
-			"text": "The International Space Station (ISS) orbits Earth approximately every 90 minutes."
+			"text": "The International Space Station (ISS) orbits Earth approximately every 90 minutes.",
+			"title": "The International Space Station Orbits Earth"
 		},
 		{
 			"encountered": false,
 			"id": "fact16",
-			"text": "The Space Shuttle program ran from 1981 to 2011, with 135 missions."
+			"text": "The Space Shuttle program ran from 1981 to 2011, with 135 missions.",
+			"title": "The Space Shuttle Program"
 		},
 		{
 			"encountered": false,
 			"id": "fact17",
-			"text": "SpaceX was the first private company to send astronauts to the ISS in 2020."
+			"text": "SpaceX was the first private company to send astronauts to the ISS in 2020.",
+			"title": "SpaceX the First Private Company"
 		},
 		{
 			"encountered": false,
 			"id": "fact18",
-			"text": "The Mars Rover Curiosity has been exploring the surface of Mars since 2012."
+			"text": "The Mars Rover Curiosity has been exploring the surface of Mars since 2012.",
+			"title": "The Mars Rover Curiosity"
 		},
 		{
 			"encountered": false,
 			"id": "fact19",
-			"text": "Sputnik 1 was the first artificial satellite, launched by the Soviet Union in 1957."
+			"text": "Sputnik 1 was the first artificial satellite, launched by the Soviet Union in 1957.",
+			"title": "The Sputnik 1"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact20",
-			"text": "The Apollo 11 mission’s lunar module was named Eagle."
+			"text": "The Apollo 11 mission’s lunar module was named Eagle.",
+			"title": "The Apollo 11 Lunar Module"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact21",
-			"text": "The Saturn V rocket, used in the Apollo missions, remains the most powerful rocket ever built."
+			"text": "The Saturn V rocket, used in the Apollo missions, remains the most powerful rocket ever built.",
+			"title": "The Saturn V rocket"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact22",
-			"text": "In spacecraft where oxygen is stored as a liquid (like the systems on the International Space Station), heaters are used to keep the oxygen from reaching too low of a temperature. This ensures it remains in a usable state when converted to gas for life support or other systems."
+			"text": "In spacecraft where oxygen is stored as a liquid (like the systems on the International Space Station), heaters are used to keep the oxygen from reaching too low of a temperature. This ensures it remains in a usable state when converted to gas for life support or other systems.",
+			"title": "Oxygen Storage"
 		},
 		{
 			"encountered": false,
 			"id": "fact23",
-			"text": "The Galileo spacecraft studied Jupiter and its moons from 1995 to 2003."
+			"text": "The Galileo spacecraft studied Jupiter and its moons from 1995 to 2003.",
+			"title": "The Gelileo Spacecraft"
 		},
 		{
 			"encountered": false,
 			"id": "fact24",
-			"text": "Apollo 12 was struck by lightning shortly after launch but continued its mission successfully."
+			"text": "Apollo 12 was struck by lightning shortly after launch but continued its mission successfully.",
+			"title": "The Apollo 12"
 		},
 		{
 			"encountered": false,
 			"id": "fact25",
-			"text": "The James Webb Space Telescope, set to launch in 2021, aims to study the universe’s first galaxies."
+			"text": "The James Webb Space Telescope, set to launch in 2021, aims to study the universe’s first galaxies.",
+			"title": "The James Webb Space Telescope"
 		},
 		{
 			"encountered": false,
 			"id": "fact26",
-			"text": "Mariner 10 was the first spacecraft to use a gravity assist, flying by Venus to reach Mercury."
+			"text": "Mariner 10 was the first spacecraft to use a gravity assist, flying by Venus to reach Mercury.",
+			"title": "The Mariner 10"
 		},
 		{
 			"encountered": false,
 			"id": "fact27",
-			"text": "Apollo 8 was the first manned spacecraft to orbit the moon in 1968."
+			"text": "Apollo 8 was the first manned spacecraft to orbit the moon in 1968.",
+			"title": "The Apollo 8"
 		},
 		{
 			"encountered": false,
 			"id": "fact28",
-			"text": "The ISS is a joint project involving space agencies from the USA, Russia, Europe, Japan, and Canada."
+			"text": "The ISS is a joint project involving space agencies from the USA, Russia, Europe, Japan, and Canada.",
+			"title": "The International Space Station Joint Venture"
 		},
 		{
 			"encountered": false,
 			"id": "fact29",
-			"text": "The Cassini spacecraft studied Saturn and its moons from 2004 to 2017."
+			"text": "The Cassini spacecraft studied Saturn and its moons from 2004 to 2017.",
+			"title": "The Cassini Spacecraft"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact30",
-			"text": "The Mars Pathfinder mission included the first successful rover, Sojourner, in 1997."
+			"text": "The Mars Pathfinder mission included the first successful rover, Sojourner, in 1997.",
+			"title": "The Mars Pathfinder"
 		},
 		{
 			"encountered": false,
 			"id": "fact31",
-			"text": "The Mars Reconnaissance Orbiter has been studying Mars since 2006."
+			"text": "The Mars Reconnaissance Orbiter has been studying Mars since 2006.",
+			"title": "The Mars Reconnaissance Orbiter"
 		},
 		{
 			"encountered": false,
 			"id": "fact32",
-			"text": "The European Space Agency’s Rosetta mission was the first to orbit and land on a comet."
+			"text": "The European Space Agency’s Rosetta mission was the first to orbit and land on a comet.",
+			"title": "The Rosetta Mission"
 		},
 		{
 			"encountered": false,
 			"id": "fact33",
-			"text": "The Space Shuttle Columbia was the first shuttle to fly into space in 1981."
+			"text": "The Space Shuttle Columbia was the first shuttle to fly into space in 1981.",
+			"title": "The Space Shuttle Columbia"
 		},
 		{
 			"encountered": false,
 			"id": "fact34",
-			"text": "The Juno spacecraft is currently studying Jupiter."
+			"text": "The Juno spacecraft is currently studying Jupiter.",
+			"title": "The Juno Spacecraft"
 		},
 		{
 			"encountered": false,
 			"id": "fact35",
-			"text": "The Space Shuttle program included five orbiters: Columbia, Challenger, Discovery, Atlantis, and Endeavour."
+			"text": "The Space Shuttle program included five orbiters: Columbia, Challenger, Discovery, Atlantis, and Endeavour.",
+			"title": "The 5 Space Shuttle Orbiters"
 		},
 		{
 			"encountered": false,
 			"id": "fact36",
-			"text": "The Soviet Union’s Mars 3 was the first spacecraft to land on Mars in 1971."
+			"text": "The Soviet Union’s Mars 3 was the first spacecraft to land on Mars in 1971.",
+			"title": "The Soviet Union Mars 3"
 		},
 		{
 			"encountered": false,
 			"id": "fact37",
-			"text": "The Soviet Union’s Luna 16 was the first robotic mission to return lunar soil samples to Earth."
+			"text": "The Soviet Union’s Luna 16 was the first robotic mission to return lunar soil samples to Earth.",
+			"title": "The Soviet Union Luna 16"
 		},
 		{
 			"encountered": false,
 			"id": "fact38",
-			"text": "The Soviet Union’s Luna 17 delivered the first remote-controlled rover, Lunokhod 1, to the moon."
+			"text": "The Soviet Union’s Luna 17 delivered the first remote-controlled rover, Lunokhod 1, to the moon.",
+			"title": "The Soviet Union Luna 17"
 		},
 		{
 			"encountered": false,
 			"id": "fact39",
-			"text": "Life in Extreme Environments (Extremophiles): Space biologists study organisms that thrive in extreme conditions on Earth, like deep-sea hydrothermal vents or Antarctic deserts, to learn how life could potentially survive in space or on other planets."
+			"text": "Life in Extreme Environments (Extremophiles): Space biologists study organisms that thrive in extreme conditions on Earth, like deep-sea hydrothermal vents or Antarctic deserts, to learn how life could potentially survive in space or on other planets.",
+			"title": "The Extremophiles"
 		},
 		{
 			"encountered": false,
 			"id": "fact40",
-			"text": "Microgravity Effects: Space biology investigates the impact of microgravity (near-weightlessness) on living organisms."
+			"text": "Microgravity Effects: Space biology investigates the impact of microgravity (near-weightlessness) on living organisms.",
+			"title": "The Microgravity Effects"
 		},
 		{
 			"encountered": false,
 			"id": "fact41",
-			"text": "Radiation Exposure: Space biologists study the effects of cosmic radiation on living tissues, as astronauts are exposed to much higher levels of radiation in space than on Earth."
+			"text": "Radiation Exposure: Space biologists study the effects of cosmic radiation on living tissues, as astronauts are exposed to much higher levels of radiation in space than on Earth.",
+			"title": "Radiation Exposure"
 		},
 		{
 			"encountered": false,
 			"id": "fact42",
-			"text": "Life Support Systems: To sustain life on long-term space missions, space biologists work on creating sustainable life support systems, such as closed-loop ecosystems where plants produce oxygen and food, and human waste is recycled."
+			"text": "Life Support Systems: To sustain life on long-term space missions, space biologists work on creating sustainable life support systems, such as closed-loop ecosystems where plants produce oxygen and food, and human waste is recycled.",
+			"title": "Life Support Systems"
 		},
 		{
 			"encountered": false,
 			"id": "fact43",
-			"text": "Space Medicine: Space biology includes research on how spaceflight affects human health."
+			"text": "Space Medicine: Space biology includes research on how spaceflight affects human health.",
+			"title": "Space Medicine"
 		},
 		{
 			"encountered": false,
 			"id": "fact44",
-			"text": "Specialized in Amphibious Warfare Marines are primarily tasked with amphibious warfare, meaning they are trained to launch attacks from the sea and rapidly secure beachheads or other coastal areas before advancing inland."
+			"text": "Specialized in Amphibious Warfare Marines are primarily tasked with amphibious warfare, meaning they are trained to launch attacks from the sea and rapidly secure beachheads or other coastal areas before advancing inland.",
+			"title": "The Marines"
 		},
 		{
 			"encountered": false,
 			"id": "fact45",
-			"text": "“First to Fight” The Marine Corps’ motto “First to Fight” reflects its history of being the first military branch to be deployed in combat situations."
+			"text": "“First to Fight” The Marine Corps’ motto “First to Fight” reflects its history of being the first military branch to be deployed in combat situations.",
+			"title": "The Marine Motto"
 		},
 		{
 			"encountered": false,
 			"id": "fact46",
-			"text": "Marine Raiders: Elite Special Forces The Marine Raiders are the special operations forces of the Marine Corps, specializing in direct action missions, special reconnaissance, and irregular warfare."
+			"text": "Marine Raiders: Elite Special Forces The Marine Raiders are the special operations forces of the Marine Corps, specializing in direct action missions, special reconnaissance, and irregular warfare.",
+			"title": "The Marine Raiders"
 		},
 		{
 			"encountered": false,
 			"id": "fact47",
-			"text": "Rigorous Training (Boot Camp) The Marine Corps boot camp is known for being one of the most physically and mentally demanding training programs in the U.S. military."
+			"text": "Rigorous Training (Boot Camp) The Marine Corps boot camp is known for being one of the most physically and mentally demanding training programs in the U.S. military.",
+			"title": "The Marine Boot Camp"
 		},
 		{
 			"encountered": false,
 			"id": "fact48",
-			"text": "Marine Expeditionary Units (MEU) Marines are organized into Marine Expeditionary Units (MEUs), which are self-contained, rapid-response forces."
+			"text": "Marine Expeditionary Units (MEU) Marines are organized into Marine Expeditionary Units (MEUs), which are self-contained, rapid-response forces.",
+			"title": "The Marine Expeditionary Unit"
 		},
 		{
 			"encountered": false,
 			"id": "fact49",
-			"text": "“Every Marine a Rifleman” The Marine Corps emphasizes that every Marine, regardless of job or specialty, is trained as a basic infantry rifleman."
+			"text": "“Every Marine a Rifleman” The Marine Corps emphasizes that every Marine, regardless of job or specialty, is trained as a basic infantry rifleman.",
+			"title": "The Marine Rifleman"
 		},
 		{
 			"encountered": false,
 			"id": "fact50",
-			"text": "Psychology is a Science Psychology is a scientific discipline."
+			"text": "Psychology is a Science Psychology is a scientific discipline.",
+			"title": "Psychology"
 		},
 		{
 			"encountered": false,
 			"id": "fact51",
-			"text": "The Importance of Ethics Psychologists follow strict ethical guidelines to protect the well-being of their clients and research participants."
+			"text": "The Importance of Ethics Psychologists follow strict ethical guidelines to protect the well-being of their clients and research participants.",
+			"title": "The Importance of Ethics"
 		},
 		{
 			"encountered": false,
 			"id": "fact52",
-			"text": "Research on Human Behavior Psychologists conduct research on a variety of human behaviors, from how people make decisions to how emotions affect health."
+			"text": "Research on Human Behavior Psychologists conduct research on a variety of human behaviors, from how people make decisions to how emotions affect health.",
+			"title": "The Human Behavior"
 		},
 		{
 			"encountered": false,
 			"id": "fact53",
-			"text": "Psychologists are in High Demand The demand for psychologists is growing as mental health awareness increases globally."
+			"text": "Psychologists are in High Demand The demand for psychologists is growing as mental health awareness increases globally.",
+			"title": "Psychologist in High Demand"
 		},
 		{
 			"encountered": false,
 			"id": "fact54",
-			"text": "Self-reliance is a cornerstone of survivalism."
+			"text": "Self-reliance is a cornerstone of survivalism.",
+			"title": "Self-reliance"
 		},
 		{
 			"encountered": false,
 			"id": "fact55",
-			"text": "Survivalism is closely related to the concept of “prepping.”"
+			"text": "Survivalism is closely related to the concept of “prepping.”",
+			"title": "Survivalism"
 		},
 		{
 			"encountered": false,
 			"id": "fact56",
-			"text": "A survivalist is someone who actively prepares for emergencies or potential disasters, whether they are natural disasters, societal collapse, economic instability, or other large-scale crises."
+			"text": "A survivalist is someone who actively prepares for emergencies or potential disasters, whether they are natural disasters, societal collapse, economic instability, or other large-scale crises.",
+			"title": "The Survivalist"
 		},
 		{
 			"encountered": false,
 			"id": "fact57",
-			"text": "Many survivalists embrace off-grid living, meaning they live independently of public utilities like water, gas, or electricity."
+			"text": "Many survivalists embrace off-grid living, meaning they live independently of public utilities like water, gas, or electricity.",
+			"title": "The Survivalist Lifestyle"
 		},
 		{
 			"encountered": false,
 			"id": "fact58",
-			"text": "Survivalism Has Ancient Roots The idea of survivalism is not new."
+			"text": "Survivalism Has Ancient Roots The idea of survivalism is not new.",
+			"title": "Survivalism"
 		},
 		{
 			"encountered": false,
 			"id": "fact59",
-			"text": "The Survivalist Movement The modern survivalist movement began in the 1960s and 1970s in the U.S., spurred by fears of nuclear war, economic collapse, and the Cold War."
+			"text": "The Survivalist Movement The modern survivalist movement began in the 1960s and 1970s in the U.S., spurred by fears of nuclear war, economic collapse, and the Cold War.",
+			"title": "The Survivalist Movement"
 		},
 		{
 			"encountered": false,
 			"id": "fact60",
-			"text": "Importance of Mental Toughness In addition to physical skills, survivalists focus on mental toughness."
+			"text": "Importance of Mental Toughness In addition to physical skills, survivalists focus on mental toughness.",
+			"title": "Importance of Mental Toughness"
 		},
 		{
 			"encountered": false,
 			"id": "fact61",
-			"text": "Ethics and Community Although survivalism emphasizes self-reliance, many survivalists also believe in helping others and forming cooperative groups."
+			"text": "Ethics and Community Although survivalism emphasizes self-reliance, many survivalists also believe in helping others and forming cooperative groups.",
+			"title": "Ethics and Community in Survivalism"
 		},
 		{
 			"encountered": false,
 			"id": "fact62",
-			"text": "Psychological Testing, Psychologists use a wide range of standardized tests to assess intelligence, personality traits, cognitive abilities, and mental health disorders."
+			"text": "Psychological Testing, Psychologists use a wide range of standardized tests to assess intelligence, personality traits, cognitive abilities, and mental health disorders.",
+			"title": "Psychological Testing"
 		},
 		{
 			"encountered": false,
 			"id": "fact63",
-			"text": "Growth of Positive Psychology Positive Psychology is a relatively new field in psychology, founded by Martin Seligman in the 1990s."
+			"text": "Growth of Positive Psychology, Positive Psychology is a relatively new field in psychology, founded by Martin Seligman in the 1990s.",
+			"title": "The Positive Psychology"
 		},
 		{
 			"encountered": false,
 			"id": "fact64",
-			"text": "Cognitive Behavioral Therapy (CBT) Cognitive Behavioral Therapy (CBT) is one of the most widely used and evidence-based approaches in psychology."
+			"text": "Cognitive Behavioral Therapy (CBT) Cognitive Behavioral Therapy (CBT) is one of the most widely used and evidence-based approaches in psychology.",
+			"title": "The Cognitive Behavioral Therapy"
 		},
 		{
 			"encountered": false,
 			"id": "fact65",
-			"text": "First Experimental Psychology Lab The first experimental psychology laboratory was founded by Wilhelm Wundt in 1879 in Leipzig, Germany."
+			"text": "First Experimental Psychology Lab The first experimental psychology laboratory was founded by Wilhelm Wundt in 1879 in Leipzig, Germany.",
+			"title": "The First Experimental Psychology Lab"
 		},
 		{
 			"encountered": false,
 			"id": "fact66",
-			"text": "Education Requirements To become a psychologist, most countries require a doctoral degree (Ph.D. or Psy.D.) in psychology, especially for clinical or research roles."
+			"text": "Education Requirements to become a psychologist, most countries require a doctoral degree (Ph.D. or Psy.D.) in psychology, especially for clinical or research roles.",
+			"title": "Education Requirement for Psychologist "
 		},
 		{
 			"encountered": false,
 			"id": "fact67",
-			"text": "Established in 1775 The U.S. Marine Corps was founded on November 10, 1775, during the American Revolutionary War."
+			"text": "Established in 1775 The U.S. Marine Corps was founded on November 10, 1775, during the American Revolutionary War.",
+			"title": "Marine Corps Founded Date"
 		},
 		{
 			"encountered": false,
 			"id": "fact68",
-			"text": "Uniforms Marines are known for their distinctive and highly respected uniforms, including the Dress Blues."
+			"text": "Uniforms Marines are known for their distinctive and highly respected uniforms, including the Dress Blues.",
+			"title": "The Marine Uniform"
 		},
 		{
 			"encountered": false,
 			"id": "fact69",
-			"text": "Iconic Mascot: The Bulldog The Marine Corps’ official mascot is an English Bulldog, often named “Chesty” in honor of Marine legend Chesty Puller, one of the most decorated Marines in U.S. history."
+			"text": "Iconic Mascot: The Bulldog The Marine Corps’ official mascot is an English Bulldog, often named “Chesty” in honor of Marine legend Chesty Puller, one of the most decorated Marines in U.S. history.",
+			"title": "The Marine Corps Mascot"
 		},
 		{
 			"encountered": false,
 			"id": "fact70",
-			"text": "High Ethical Standards Marines are expected to live by a strict code of honor, emphasizing courage, commitment, and integrity."
+			"text": "High Ethical Standards Marines are expected to live by a strict code of honor, emphasizing courage, commitment, and integrity.",
+			"title": "The High Ethical Standards for Marines"
 		},
 		{
 			"encountered": false,
 			"id": "fact71",
-			"text": "The Power of Placebo Psychologists have extensively studied the placebo effect, which shows that people can experience improvements in their condition simply by believing they are receiving treatment, even if the treatment has no active ingredients."
+			"text": "The Power of Placebo Psychologists have extensively studied the placebo effect, which shows that people can experience improvements in their condition simply by believing they are receiving treatment, even if the treatment has no active ingredients.",
+			"title": "The Placebo Effect"
 		},
 		{
 			"encountered": false,
 			"id": "fact72",
-			"text": "Psychologists in Crisis Situations Psychologists often work in crisis intervention during emergencies like natural disasters, terrorist attacks, or military conflicts."
+			"text": "Psychologists in Crisis Situations, Psychologists often work in crisis intervention during emergencies like natural disasters, terrorist attacks, or military conflicts.",
+			"title": "Psychologist in Crisis Situations"
+		},
+		{
+			"encountered": false,
+			"id": "fact73",
+			"text": "Astronauts can perform spacewalks to repair solar panels. For example, an astronaut on the ISS used a contraption built in space to stitch together a torn solar panel.",
+			"title": "Astronaut"
+		},
+		{
+			"encountered": false,
+			"id": "fact74",
+			"text": "Fires in space behave differently than on Earth due to microgravity. Without gravity, hot air doesn't rise, so flames in space are spherical or dome-shaped and sluggish.",
+			"title": "Fire in Space"
+		},
+		{
+			"encountered": false,
+			"id": "fact75",
+			"text": "Alien, contrary to popular belief, does not mean creatures with inhuman-like features in space. Alien means an object or creature that belongs to another nation or country, in this case a planet/civilization.",
+			"title": "Alien Meaning"
+		},
+		{
+			"encountered": false,
+			"id": "fact76",
+			"text": "Tardigrades are microorganisms that can survive the vacuum of space. In one experiment, tardigrades were left in a Russian capsule in low-Earth orbit for about ten days and were still viable after exposure.",
+			"title": "The Tardigrades"
 		}
 	]
 }
