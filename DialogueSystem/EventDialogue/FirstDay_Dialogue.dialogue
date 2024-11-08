@@ -283,7 +283,7 @@ Maxim: Maxim is fine, no injuries were attained with these muscles. And you?
 - I’m good, no need to worry. 
 	Jerry: I’m good, friend, there is no need to worry. 
 	Maxim: That’s good! Maxim’s friend must be training his muscles too, eh? 
-	set  _relationship["Maxim"] =+ 0.1
+	set _relationship["Maxim"] += 0.1
 - Mind your own business.  
 	Jerry: Maxim, mind your own business please? 
 	Maxim: Oh! Maxim is sorry friend, mind Maxim’s business he shall.  
