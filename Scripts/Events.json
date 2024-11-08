@@ -1087,5 +1087,995 @@
 		"description": "huwahuwa",
 		"id": 90,
 		"name": "TestingCondition"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew gathered the debris of what is assumed the ISS carefully. ",
+		"id": 91,
+		"name": "Gather the Materials Carefully "
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew tried to gather as much materials as you can before they float away ",
+		"id": 92,
+		"name": "Gather as much materials as possible "
+	},
+	{
+		"Choice-1": [
+			91,
+			[],
+			"Gather the materials carefully "
+		],
+		"Choice-2": [
+			92,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Gather as much materials as possible "
+		],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "There is debris with the ISS logo on it outside the ship. We can gather those debris for materials. What approach do we do?",
+		"id": 93,
+		"name": "Debris of the old ISS"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew has offered a tribute to Laika",
+		"id": 94,
+		"name": "Offer a tribute to Laika"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew has no time for tributes and has continued through their navigation.",
+		"id": 95,
+		"name": "Continue navigating "
+	},
+	{
+		"Choice-1": [
+			94,
+			[],
+			"Offer a tribute to Laika"
+		],
+		"Choice-2": [
+			95,
+			[],
+			"Continue navigating "
+		],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "We are near the orbital path of Sputnik, where Laika, the first animal in space, once orbited. We could honor her with a brief tribute.",
+		"id": 96,
+		"name": "Space dog Laika tribute"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You traded your spare parts in the storage room for rations.",
+		"id": 97,
+		"name": "Trade spare parts for foods"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your team did not attend the event.",
+		"id": 98,
+		"name": "Leave event."
+	},
+	{
+		"Choice-1": [
+			97,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Trade spare parts for foods"
+		],
+		"Choice-2": [
+			98,
+			[],
+			"Leave event"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A shipment of a canning company has been seen hosting a trade event for foods in exchange for scraps. Should we take part in the event, Captain?",
+		"id": 99,
+		"name": "Canning company trade event"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You examined the odd technology",
+		"id": 100,
+		"name": "Examine the alien technology"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantled the alien technology",
+		"id": 101,
+		"name": "Dismantle the technology"
+	},
+	{
+		"Choice-1": [
+			100,
+			[],
+			"Examine the Alien Technology\n+ 20 Biogene"
+		],
+		"Choice-2": [
+			101,
+			[],
+			"Dismantle the technology\n+ @SPAREPARTS()\n"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I have retrieved an old alien technology near our vicinity. We could examine it for its usage, or we could scrap it for spare parts. What is your action?",
+		"id": 102,
+		"name": "Alien Technology"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You paid for the Rations",
+		"id": 103,
+		"name": "Pay for the Rations"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You paid for the Spare Parts",
+		"id": 104,
+		"name": "Pay for the Spare Parts "
+	},
+	{
+		"Choice-1": [
+			103,
+			[
+				[
+					"FOOD",
+					50
+				]
+			],
+			"Pay for the Rations \n-50 Rations"
+		],
+		"Choice-2": [
+			104,
+			[
+				[
+					"SPAREPARTS",
+					50
+				]
+			],
+			"Pay for the Spare Parts"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A vessel with no affiliation is approaching our shuttle, captain. Tractor beam detected, unable to move. You are greeted by the leader of F.E.L.A.S. It seems that they are holding us hostage in exchange for 50 Ration or 50 Spare Parts. ",
+		"id": 105,
+		"name": "F.E.L.A.S. Betrayal"
+	},
+	{
+		"Choice-1": [
+			103,
+			[
+				[
+					"FOOD",
+					50
+				]
+			],
+			"Pay for the Rations \n-50 Rations"
+		],
+		"Choice-2": [
+			104,
+			[
+				[
+					"SPAREPARTS",
+					50
+				]
+			],
+			"Pay for the Spare Parts"
+		],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantled the tracker.",
+		"id": 106,
+		"name": "Dismantle it"
+	},
+	{
+		"Choice-1": [
+			103,
+			[
+				[
+					"FOOD",
+					50
+				]
+			],
+			"Pay for the Rations \n-50 Rations"
+		],
+		"Choice-2": [
+			104,
+			[
+				[
+					"SPAREPARTS",
+					50
+				]
+			],
+			"Pay for the Spare Parts"
+		],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "It might just be a harmless device...",
+		"id": 107,
+		"name": "Keep it"
+	},
+	{
+		"Choice-1": [
+			106,
+			[],
+			"Dismantle it. \n+10 Spare Parts"
+		],
+		"Choice-2": [
+			107,
+			[],
+			"Keep it."
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, the gift supplies from the leader of F.E.L.A.S. contains an unknown device that pings our location on an unknown vessel, what do you wish to do with the device? ",
+		"id": 108,
+		"name": "A Planted Tracker?"
+	},
+	{
+		"Choice-1": [
+			106,
+			[],
+			"Dismantle it. \n+10 Spare Parts"
+		],
+		"Choice-2": [
+			107,
+			[],
+			"Keep it."
+		],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted their gift.",
+		"id": 109,
+		"name": "Accept the gift"
+	},
+	{
+		"Choice-1": [
+			106,
+			[],
+			"Dismantle it. \n+10 Spare Parts"
+		],
+		"Choice-2": [
+			107,
+			[],
+			"Keep it."
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You refused their suspicious gift.",
+		"id": 110,
+		"name": "Refuse the gift "
+	},
+	{
+		"Choice-1": [
+			106,
+			[],
+			"Dismantle it. \n+10 Spare Parts"
+		],
+		"Choice-2": [
+			107,
+			[],
+			"Keep it."
+		],
+		"Choice-3": [
+			109,
+			[],
+			"Accept the gift"
+		],
+		"Choice-4": [
+			110,
+			[],
+			"Refuse the gift"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Another vessel from F.E.L.A.S has been detected, captain. Their leader has been thinking fondly of you and your crew and has given you a gift. Should we accept their gift? ",
+		"id": 111,
+		"name": "Gift from the F.E.L.A.S."
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You found rations at the corner of the room!",
+		"id": 112,
+		"name": "Check the corners of the room"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ignored the unknown presence",
+		"id": 113,
+		"name": "Leave it be"
+	},
+	{
+		"Choice-1": [
+			112,
+			[],
+			"Check the corners of the room\n+-???"
+		],
+		"Choice-2": [
+			113,
+			[],
+			"Leave it be."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I have detected an unknown presence on the storage room. I suggest immediate investigation of the room.",
+		"id": 114,
+		"name": "An Unknown Presence"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew watched the beautiful nebula",
+		"id": 115,
+		"name": "Bask in the beauty of the nebula"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ignored the nebula and continued on",
+		"id": 116,
+		"name": "Continue travels"
+	},
+	{
+		"Choice-1": [
+			115,
+			[],
+			"Bask in the beauty of the nebula\n(+5 Crew Sanity)"
+		],
+		"Choice-2": [
+			116,
+			[],
+			"Leave it."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "We are now approaching a charted nebula. If you look outside, you can immediately see it. I suggest staying for a while to see this once in a lifetime scenery.",
+		"id": 117,
+		"name": "A Rare Sight"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You watched the beautiful comet shower.",
+		"id": 118,
+		"name": "Watch the comet with your crew"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You continued on with your travels",
+		"id": 119,
+		"name": "Continue travels "
+	},
+	{
+		"Choice-1": [
+			118,
+			[],
+			"Watch the comet with your crew"
+		],
+		"Choice-2": [
+			119,
+			[],
+			"Continue travels"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, an extremely rare comet shower is occurring outside the shuttle. I suggest you take a rest and go see the event with the rest of your crew.  ",
+		"id": 120,
+		"name": "Comet Shower"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew have adapted to the traumatic event that happened on earth.",
+		"id": 121,
+		"name": "Foster resilience"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew made biogene from unusable resources",
+		"id": 122,
+		"name": "Use boost to improve productivity"
+	},
+	{
+		"Choice-1": [
+			121,
+			[],
+			"Foster Resilience\n+10 Crew Sanity"
+		],
+		"Choice-2": [
+			122,
+			[],
+			"Use boost to improve productivity\n+5 Biogene"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The story of Apollo 13’s safe return after disaster is boosting crew confidence, inspiring adaptability in critical situations ",
+		"id": 123,
+		"name": "The Apollo 13 Effect"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You humbly introduced yourself to the rodents and they gave you some of their crops in return",
+		"id": 124,
+		"name": "Humbly introduce yourself"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The rodents are intimidated by your presence, still they give you some food.",
+		"id": 125,
+		"name": "Display your magnificence"
+	},
+	{
+		"Choice-1": [
+			124,
+			[],
+			"Humbly introduce yourself"
+		],
+		"Choice-2": [
+			125,
+			[],
+			"Display your magnificence"
+		],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, data shows that this planet is deemed to be safe for human respiration. Earlier, a creature approached our shuttle with a similar composition to earth’s rodents. It seems they want to make peace with your crew. ",
+		"id": 126,
+		"name": "Welcome to Radonti"
+	},
+	{
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "You gave some fuel to the rodents",
+		"id": 127,
+		"name": "Give some Fuel"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You gave some Biogene to the rodents",
+		"id": 128,
+		"name": "Give some Biogene"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You refuse to give some of your supplies to the rodent.",
+		"id": 129,
+		"name": "Refuse"
+	},
+	{
+		"Choice-1": [
+			127,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Give some Fuel\n+10 Rations\n-5 Fuel"
+		],
+		"Choice-2": [
+			128,
+			[
+				[
+					"BIOGENE",
+					5
+				]
+			],
+			"Give some Biogene\n+10 Rations\n-5 Biogene"
+		],
+		"Choice-3": [
+			129,
+			[],
+			"Refuse"
+		],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "One of the Rodents is offering you a bundle of tiny crops in exchange for a foreign substance that they have not encountered yet. It seems that they want to further their research using substances in our civilization. ",
+		"id": 130,
+		"name": "A Plea for Scientific Advancement"
+	},
+	{
+		"Command": [],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You decided to lead the rodents into a brighter future.",
+		"id": 131,
+		"name": "Be the leader that they need"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You told them that you are trying to find other human.",
+		"id": 132,
+		"name": "Tell them that you cannot stay"
+	},
+	{
+		"Choice-1": [
+			131,
+			[],
+			"Be the leader that they need"
+		],
+		"Choice-2": [
+			132,
+			[],
+			"Tell them that you cannot stay"
+		],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, after staying for a few days on the planet, I have determined the rodents direly needed a proper leader to further develop their society. Recently they have been offering you a position as their leader here in this planet. Should you choose to stay, you and your crew will have to lead the rodents or otherwise say your farewell to them when it's time.",
+		"id": 133,
+		"name": "To Lead or not to Lead"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You exchanged the nameplate for medicines",
+		"id": 134,
+		"name": "Exchange for Medicine"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You exchanged them for Relaxants",
+		"id": 135,
+		"name": "Exchange for Relaxants"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You contacted the treasure hunters and they gave you some supplies",
+		"id": 136,
+		"name": "Contact the treasure hunters"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantled the Mariner 10",
+		"id": 137,
+		"name": "Dismantle the Mariner 10"
+	},
+	{
+		"Choice-1": [
+			136,
+			[],
+			"Contact the treasure hunters\n+Relaxants"
+		],
+		"Choice-2": [
+			137,
+			[],
+			"Dismantle it\n+30 Spare Parts"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, Cassini has found a part of the telescope of the Mariner 10 outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
+		"id": 138,
+		"name": "The Mariner 10"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You contacted the Treasure Hunters and gave them Galileo in exchange of Medicine",
+		"id": 139,
+		"name": "Contact the Treasure Hunters"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantle the Galileo Spacecraft",
+		"id": 140,
+		"name": "Dismantle the spacecraft"
+	},
+	{
+		"Choice-1": [
+			139,
+			[],
+			"Contact the Treasure Hunters\n+1 Medkit"
+		],
+		"Choice-2": [
+			140,
+			[],
+			"Dismantle the Galileo Spacecraft\n+30 Spare Parts"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, Cassini has found a part of the Galileo Spacecraft outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
+		"id": 141,
+		"name": "The Galileo Spacecraft"
+	},
+	{
+		"Choice-1": [
+			134,
+			[],
+			"Exchange for Medicine"
+		],
+		"Choice-2": [
+			135,
+			[],
+			"Exchange for Relaxants"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"A Drone Named \"Cassini\""
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "An unknown vessel is approaching our shuttle. They introduced themselves as treasure hunters that collect old spacecraft parts. We currently have a nameplate that they are searching for. They are offering medicine or relaxants in exchange for Juno’s nameplate. They also give you their contact information when you find another. ",
+		"id": 142,
+		"name": "The Treasure Hunters"
+	},
+	{
+		"Choice-1": [
+			134,
+			[],
+			"Exchange for Medicine"
+		],
+		"Choice-2": [
+			135,
+			[],
+			"Exchange for Relaxants"
+		],
+		"Command": [],
+		"Conditions": [
+			"FOLLOW-UP",
+			"A Drone Named \"Cassini\""
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantled the nameplate for spare parts",
+		"id": 143,
+		"name": "Dismantle"
+	},
+	{
+		"Choice-1": [
+			134,
+			[],
+			"Exchange for Medicine"
+		],
+		"Choice-2": [
+			135,
+			[],
+			"Exchange for Relaxants"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You kept the nameplate for Juno",
+		"id": 144,
+		"name": "Keep the nameplate"
+	},
+	{
+		"Choice-1": [
+			134,
+			[],
+			"Exchange for Medicine"
+		],
+		"Choice-2": [
+			135,
+			[],
+			"Exchange for Relaxants"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You kept the nameplate of Juno",
+		"id": 145,
+		"name": "Keep the nameplate"
+	},
+	{
+		"Choice-1": [
+			143,
+			[],
+			"Dismantle"
+		],
+		"Choice-2": [
+			144,
+			[],
+			"Keep the nameplate"
+		],
+		"Command": [],
+		"Conditions": [
+			"FOLLOW-UP",
+			"A Drone Set Loose"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Cassini retrieval successful. It seems to be clutching on a crate. After a scan, the crate contains a nameplate of the spacecraft called Juno. It seems valuable, Captain. What action will you take.",
+		"id": 146,
+		"name": "A Drone Named \"Cassini\""
+	},
+	{
+		"Choice-1": [
+			143,
+			[],
+			"Dismantle"
+		],
+		"Choice-2": [
+			144,
+			[],
+			"Keep the nameplate"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You retrieve the drone ",
+		"id": 147,
+		"name": "Retrieve it"
+	},
+	{
+		"Choice-1": [
+			143,
+			[],
+			"Dismantle"
+		],
+		"Choice-2": [
+			144,
+			[],
+			"Keep the nameplate"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You left the drone.",
+		"id": 148,
+		"name": "Leave it "
+	},
+	{
+		"Choice-1": [
+			147,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Retrieve it."
+		],
+		"Choice-2": [
+			148,
+			[],
+			"Leave it"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, one of our drones, named Cassini, has been hit by unknown debris. Do we try to retrieve it, or do we leave it captain?",
+		"id": 149,
+		"name": "A Drone Set Loose"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You set up a memorial for Neil Armstrong and Buzz Aldrin",
+		"id": 150,
+		"name": "Set up a memorial"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You skipped making the material and continued on with your life.",
+		"id": 151,
+		"name": "Skip the memorial"
+	},
+	{
+		"Choice-1": [
+			150,
+			[],
+			"Set up a memorial\n+10 Crew Sanity"
+		],
+		"Choice-2": [
+			151,
+			[],
+			"Skip the memorial"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "We are near the Apollo 11 mission's historic path. Would you like to log a memorial entry in honor of Neil Armstrong and Buzz Aldrin?",
+		"id": 152,
+		"name": "The Apollo 11 Mission"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew consumed the purple cactus fruit... And it was delectable!",
+		"id": 153,
+		"name": "Consume the purple cactus fruit"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew discarded the fruit",
+		"id": 154,
+		"name": "Discard it  "
+	},
+	{
+		"Choice-1": [
+			153,
+			[],
+			"Consume the purple cactus fruit"
+		],
+		"Choice-2": [
+			154,
+			[],
+			"Discard it"
+		],
+		"Conditions": [
+			"PLACE",
+			"Sauria"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "During your stay on the sands, you found a peculiar fruit growing on a purple cactus. I have scanned it to be edible, but the side effects of consumption are unknown. Should we try and forage the fruit? ",
+		"id": 155,
+		"name": "Taste like Purple"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You opened it without damaging the content.",
+		"id": 156,
+		"name": "Open it using a crowbar"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You tried to open it with all your might causing the box to be flung, damaging its contents.",
+		"id": 157,
+		"name": "Forcefully Open it"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You threw the box, destroying it and the contents",
+		"id": 158,
+		"name": "Throw it"
+	},
+	{
+		"Choice-1": [
+			157,
+			[],
+			"Forcefully open it\n+10 Spare Parts"
+		],
+		"Choice-2": [
+			158,
+			[],
+			"Throw it\n+/-???"
+		],
+		"Command": [],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				156,
+				[],
+				"Open it using a crowbar\n+40 Spare Parts"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "One of the debris of SpaceX is currently locked in a crate, if we can open it, we could use the debris as a spare part. It is very fragile though, so we might need equipment to open it.",
+		"id": 159,
+		"name": "The SpaceX Crate"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You made an exchange with the robot.",
+		"id": 160,
+		"name": "Exchange with the robot"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ignored the robot",
+		"id": 161,
+		"name": "Ignore its plea "
+	},
+	{
+		"Choice-1": [
+			160,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Exchange with the Robot\n+20 Fuel\n-10 Spare Parts"
+		],
+		"Choice-2": [
+			161,
+			[],
+			"Ignore its plea"
+		],
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "One of the bots on the planet is searching for parts to fix its broken plating. It offered to trade you some of its fuel cans in exchange for some of your scrap parts. Should we accept their offer? ",
+		"id": 162,
+		"name": "The Broken Robot"
 	}
 ]
