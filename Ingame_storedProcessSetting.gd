@@ -37,6 +37,124 @@ func endCycle():
 func getCycle():
 	return Cycle
 
+func reset():
+	crew_in_ship = []
+	Cycle = 1
+	delayInFaction = 0
+	Factions_Probability = {
+	"Radonti" : 0.75,
+	"Sauria" : 0.20,
+	"Steelicus" : 0.2,
+	"Enthuli" : 0.0,
+	"Earth2.0" : 0.2}
+	SubFactions_Probability = {
+	"Asteroid" : 0.01,
+	"Blackhole" : 0.005,
+	"AbandonShip" : 0.35,
+	"SmallPlanetoid" : 0.0}
+	jerry_ate_countdown = 2
+	_relationship = { #SAVE
+		"Regina" : 0.65,
+		"Maxim"  : 0.65,
+		"Nashir" : 0.65,
+		"Fumiko" : 0.65
+	}
+	already_eaten = { #SAVE
+		"Regina" : false,
+		"Maxim"  : false,
+		"Nashir" : false,
+		"Fumiko" : false
+	}
+	already_medicine = { #SAVE
+		"Regina" : false,
+		"Maxim"  : false,
+		"Nashir" : false,
+		"Fumiko" : false
+	}
+	already_talk = { #SAVE
+		"Regina" : false,
+		"Maxim"  : false,
+		"Nashir" : false,
+		"Fumiko" : false
+	}
+	already_vitamins = { #SAVE
+		"Regina" : false,
+		"Maxim"  : false,
+		"Nashir" : false,
+		"Fumiko" : false
+	}
+
+	_current_hunger = { #SAVE
+		"Regina" : 1.0,
+		"Maxim"  : 1.0,
+		"Nashir" : 1.0,
+		"Fumiko" : 1.0
+	}
+	_rationConsumes = { #SAVE
+		"Regina" : 5,
+		"Maxim" : 10,
+		"Nashir" : 5,
+		"Fumiko" : 5
+	}
+	_sanity = { #SAVE
+		"Regina" : 1.0,
+		"Maxim"  : 1.0,
+		"Nashir" : 1.0,
+		"Fumiko" : 1.0
+	}
+	_health = { #SAVE
+		"Regina" : 1.0,
+		"Maxim"  : 1.0,
+		"Nashir" : 1.0,
+		"Fumiko" : 1.0
+	}
+	_disease = { #SAVE
+		"Regina" : 0.0,
+		"Maxim"  : 0.0,
+		"Nashir" : 0.0,
+		"Fumiko" : 0.0
+	}
+	_Survivability = { #SAVE
+		"Regina" : 0.3,
+		"Maxim" : 0.6,
+		"Nashir" : 0.3,
+		"Fumiko" : 0.3
+	}
+	_LootCapability = { #SAVE
+		"Regina" : 0.5,
+		"Maxim" : 0.3,
+		"Nashir" : 0.5,
+		"Fumiko" : 0.6
+	}
+	_Knowledge = { #SAVE
+		"Regina" : 1,
+		"Maxim" : 1,
+		"Nashir" : 1,
+		"Fumiko" : 1
+	}
+	_reginaRelationship = { #SAVE
+		"Maxim"  : 0.5,
+		"Nashir" : 0.5,
+		"Fumiko" : 0.5
+	}
+	_MaximRelationship = { #SAVE
+		"Regina" : 0.5,
+		"Nashir" : 0.5,
+		"Fumiko" : 0.5
+	}
+	_NashirRelationship = { #SAVE
+		"Regina" : 0.5,
+		"Maxim"  : 0.5,
+		"Fumiko" : 0.5
+	}
+	_FumikoRelationship = { #SAVE
+		"Regina" : 0.5,
+		"Maxim"  : 0.5,
+		"Nashir" : 0.5,
+		"Fumiko" : 0.5
+	}
+
+
 
 func gameOver(value : String = "lackofresources"):
 	var interior = get_node("/root/Control_Interior")

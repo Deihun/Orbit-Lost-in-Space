@@ -943,7 +943,7 @@ texture = ExtResource("2_66wyx")
 position = Vector2(-204.5, 145)
 scale = Vector2(1.25248, 0.732673)
 sprite_frames = SubResource("SpriteFrames_km7gi")
-animation = &"abandonship"
+animation = &"Space"
 
 [node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
 visible = false

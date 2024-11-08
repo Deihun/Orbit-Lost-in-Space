@@ -84,7 +84,7 @@ func _on_next_day_button_pressed():
 		IngameStoredProcessSetting.canExpedition = true
 		removeitOnSecondDay()
 		CycleSetting.endCycle()
-		print(IngameStoredProcessSetting._current_hunger,"\n",IngameStoredProcessSetting._health, "\n",IngameStoredProcessSetting.crew_in_ship,IngameStoredProcessSetting.crew_in_ship.size())
+		#print(IngameStoredProcessSetting._current_hunger,"\n",IngameStoredProcessSetting._health, "\n",IngameStoredProcessSetting.crew_in_ship,IngameStoredProcessSetting.crew_in_ship.size())
 		_is_MainFaction()
 		#crafting
 		if item_ui.ongoingCraft == true:
@@ -107,7 +107,6 @@ func _on_next_day_button_pressed():
 		EventHandler.ActivateEvent()
 		ClickCD.start()
 		$WholeInteriorScene/Lobby.setRandomPosition()
-		if randf() < 0.4: $WholeInteriorScene/Lobby.set_initialDialogue()
 		if checkIfKickoutEnough() : GameOver("Kickout")
 		updateUI()
 		camera.ChangeSpecificScene(4)
@@ -119,7 +118,7 @@ func _on_next_day_button_pressed():
 func updateUI():
 	$WholeInteriorScene/FactionLabel_willBeRemove.text = str("FactionCurrently: ",IngameStoredProcessSetting.current_Factions)
 	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
-	if IngameStoredProcessSetting.current_Factions in ["None","Space","Asteroid","Blackhole"] :$WholeInteriorScene/ExpeditionButton.hide()
+	if IngameStoredProcessSetting.current_Factions in ["None","SPACE","Asteroid","Blackhole"] :$WholeInteriorScene/ExpeditionButton.hide()
 	elif IngameStoredProcessSetting.canExpedition :$WholeInteriorScene/ExpeditionButton.show()
 	updateCockpit()
 	_updateUIExpeditionScreen()
@@ -172,7 +171,7 @@ func _on_embark_button_pressed() -> void: #WHEN EMBARK
 		"AbandonShip":IngameStoredProcessSetting.Scenes = "abandonship"
 		"Radonti":IngameStoredProcessSetting.Scenes = "Radonti"
 		"Sauria":IngameStoredProcessSetting.Scenes = "Sauria"
-		"Earth2.0":IngameStoredProcessSetting.Scenes = "Earth2"
+		"Earth2.0":IngameStoredProcessSetting.Scenes = "Earth2.0"
 		"Enthuli":IngameStoredProcessSetting.Scenes = "Enthuli"
 		"Steelicus":IngameStoredProcessSetting.Scenes = "Steelicus"
 	var loadingScreen = preload("res://Scenes/LoadingScene.tscn") as PackedScene
@@ -187,10 +186,10 @@ func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_i
 
 func _updateUIExpeditionScreen():
 	var expScreen = $WholeInteriorScene/Cockpit/ExpeditionScreen
-	if IngameStoredProcessSetting.current_Factions == "None" or IngameStoredProcessSetting.current_Factions == "SPACE":
-		expScreen.play("Space")
-	elif "AbandonShip":
+	if "AbandonShip":
 		expScreen.play("abandonship")
+	else :
+		expScreen.play("Space")
 
 
 func _on_cancel_button_button_up() -> void:

@@ -24,6 +24,7 @@ extends Node2D
 @export var limitTimeDuration : int = 90
 
 func _ready() -> void:
+	
 	$player.animation_use_id = 1 if equipHelmet else 0
 	showTimer(show_timer)
 	canMove(can_Move)

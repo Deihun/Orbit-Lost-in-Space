@@ -15,6 +15,7 @@ var _button
 
 func _ready() -> void:
 	button_array = [crew1,crew2,crew3,crew4]
+	IngameStoredProcessSetting.crew_in_ship = ["Maxim","Regina","Fumiko"]
 	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
@@ -187,7 +188,7 @@ func _getRandomEvent() -> String:
 	if Tag.has("FIRSTDAY"):
 		if !event["TAG"].has("FIRSTDAY"):
 			return _getRandomEvent()
-	#print(str(event["TAG"]), Tag ,_random(event))
+	print(str(event["TAG"]), Tag ,_random(event))
 	if recursion_check > 900:
 		recursion_check = 0
 		return "null"

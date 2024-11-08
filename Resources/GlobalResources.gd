@@ -27,6 +27,26 @@ var uniqueItems = []
 
 var Location = "Space"
 
+func _reset():
+	ration = 125
+	fuel = 100
+	oxygen = 100
+	spareparts = 0
+	biogene = 0
+	ductape = 0
+	medicine = 0
+	emergencyOxy = 100
+	emergencyFuel = 100
+	#EVENT VARIABLES
+	Critical_Event = []
+	alreadyTriggeredEvent = []
+	Priority_Event = []
+	eventID = []
+	currentActiveQueue = 0
+	GameEffects = [] 
+	uniqueItems = []
+	Location = "Space"
+
 func ConsumeFuel(value: int = 10) -> bool:
 	if oxygen >= value:
 		oxygen -= value
