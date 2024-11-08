@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=3 uid="uid://bpiknafenlxj8"]
+
+[ext_resource type="Texture2D" uid="uid://cfkrgng4njt6u" path="res://AmbiencePurposes/Steelicus Assets/Objects/ElectricTile.png" id="1_05j0t"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/lightning_tile.gd" id="2_cduku"]
+[ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="3_bav3d"]
+[ext_resource type="AudioStream" uid="uid://dfmu2qljqojpy" path="res://AmbiencePurposes/Steelicus Assets/Objects/Crew_GettingHit.mp3" id="4_qwyat"]
+[ext_resource type="AudioStream" uid="uid://bk6dtxqost0a4" path="res://AmbiencePurposes/Steelicus Assets/Objects/TriggerLightning.mp3" id="4_x8pso"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbsvs"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(0, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smn0g"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(102, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prrtv"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(204, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sei81"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(0, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q435"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(102, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d46ob"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(204, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce30e"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(0, 204, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg0p4"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(102, 204, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw5bm"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(204, 204, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uxeb"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(306, 0, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnk85"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(306, 102, 102, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isre2"]
+atlas = ExtResource("1_05j0t")
+region = Rect2(0, 0, 102, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0hy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbsvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smn0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prrtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sei81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q435")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d46ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce30e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg0p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw5bm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uxeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnk85")
+}],
+"loop": false,
+"name": &"OnLightning",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isre2")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd2hy"]
+size = Vector2(76, 86)
+
+[node name="LightningTile" type="AnimatedSprite2D"]
+light_mask = 0
+position = Vector2(-309, 768)
+sprite_frames = SubResource("SpriteFrames_r0hy8")
+animation = &"OnLightning"
+autoplay = "idle"
+frame = 10
+frame_progress = 1.0
+script = ExtResource("2_cduku")
+
+[node name="Timer_Trigger_Lightning" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 1)
+shape = SubResource("RectangleShape2D_jd2hy")
+disabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+color = Color(0, 1, 1, 1)
+texture = ExtResource("3_bav3d")
+
+[node name="TriggerLightning" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_x8pso")
+volume_db = -2.07
+
+[node name="GettingZap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qwyat")
+volume_db = 5.778
+bus = &"Sfx"
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="timeout" from="Timer_Trigger_Lightning" to="." method="_on_timer_trigger_lightning_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfmu2qljqojpy"
+path="res://.godot/imported/Crew_GettingHit.mp3-ac88dcd9bcfed79fbfc61ad4ecf960f5.mp3str"
+
+[deps]
+
+source_file="res://AmbiencePurposes/Steelicus Assets/Objects/Crew_GettingHit.mp3"
+dest_files=["res://.godot/imported/Crew_GettingHit.mp3-ac88dcd9bcfed79fbfc61ad4ecf960f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

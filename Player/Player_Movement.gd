@@ -46,7 +46,6 @@ func _ready():	#OnStart,
 	self.set_process(false)
 	await get_tree().create_timer(0.1).timeout #For enabling animation to run on conditions
 	play_animation(run_idle[animation_use_id])
-	$AllUIParents/Globe_Timer_Sprite/Label_Timer.hide()
 	distanceCurrentLimit = 0
 	inventory = get_parent().get_node("player/AllUIParents/UI_On_Hand")
 	self.set_process(true)
@@ -166,6 +165,12 @@ func gameStart():
 
 
 func startUI():
+	if $"..".useGlobeTimerUI:
+		$AllUIParents/Globe_Timer_Sprite/Label_Timer.show()
+		$AllUIParents/Globe_Timer_Sprite.show()
+	else:
+		$AllUIParents/Globe_Timer_Sprite/Label_Timer.hide()
+		$AllUIParents/Globe_Timer_Sprite.hide()
 	handleRadition()
 	$AllUIParents/StartUI_label.visible = true
 	await get_tree().create_timer(0.1).timeout 

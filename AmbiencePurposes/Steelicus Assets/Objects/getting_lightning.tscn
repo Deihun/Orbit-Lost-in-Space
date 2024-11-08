@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8fcs0fh504nq"]
+
+[ext_resource type="Texture2D" uid="uid://ct0q8apqlmm6p" path="res://AmbiencePurposes/Steelicus Assets/Objects/JerryGettingElectrecute.png" id="1_rytmf"]
+[ext_resource type="Script" path="res://AmbiencePurposes/Steelicus Assets/Objects/getting_lightning.gd" id="2_38v1u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs48p"]
+atlas = ExtResource("1_rytmf")
+region = Rect2(0, 0, 502, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1te"]
+atlas = ExtResource("1_rytmf")
+region = Rect2(502, 0, 502, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyhrj"]
+atlas = ExtResource("1_rytmf")
+region = Rect2(0, 502, 502, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ii81"]
+atlas = ExtResource("1_rytmf")
+region = Rect2(502, 502, 502, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8l78"]
+atlas = ExtResource("1_rytmf")
+region = Rect2(1004, 0, 502, 502)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xigk"]
+atlas = ExtResource("1_rytmf")
+region = Rect2(1004, 502, 502, 502)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45djo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs48p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj1te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyhrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ii81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8l78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xigk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs48p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="GettingLightning" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_45djo")
+frame = 6
+frame_progress = 1.0
+script = ExtResource("2_38v1u")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
