@@ -64,3 +64,9 @@ func _on_credits_button_pressed() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("openCommand"):
 		$Control/DeveloperOption.visible = !$Control/DeveloperOption.visible
+
+
+func _on_gallery_button_up() -> void:
+	var a = preload("res://Gallery/gallery.tscn").instantiate()
+	a.z_index = 50
+	$".".add_child(a)

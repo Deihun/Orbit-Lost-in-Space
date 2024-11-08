@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3dekkdmndo56"]
+[gd_scene load_steps=3 format=3 uid="uid://d3dekkdmndo56"]
 
 [ext_resource type="Script" path="res://Gallery/gallery_button.gd" id="1_ip8f8"]
+[ext_resource type="Texture2D" uid="uid://ete2srnnfpu2" path="res://Scenes/EndScenes/Gallery_Endings/BlackHoleEvent.png" id="2_2gos2"]
 
 [node name="gallery_button" type="Control"]
 layout_mode = 3
@@ -10,6 +11,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ip8f8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(155, 88.5)
+scale = Vector2(0.161458, 0.163889)
+texture = ExtResource("2_2gos2")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0

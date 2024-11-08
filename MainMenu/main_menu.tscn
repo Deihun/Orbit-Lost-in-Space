@@ -256,9 +256,9 @@ text = "EVENT MANAGER <DEV TOOL>"
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = -1662.0
-offset_top = -604.0
+offset_top = -757.0
 offset_right = -1327.0
-offset_bottom = -513.0
+offset_bottom = -666.0
 scale = Vector2(1.05035, 1.05598)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
@@ -288,10 +288,10 @@ text = "NEW GAME"
 [node name="Load_Game_Button" type="Button" parent="Control"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = -1663.0
-offset_top = -465.0
-offset_right = -1328.0
-offset_bottom = -374.0
+offset_left = -1661.0
+offset_top = -618.0
+offset_right = -1326.0
+offset_bottom = -527.0
 scale = Vector2(1.06487, 0.964602)
 theme_override_font_sizes/font_size = 60
 text = "Load Game
@@ -322,10 +322,10 @@ text = "LOAD GAME"
 [node name="Settings_Button" type="Button" parent="Control"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = -1661.0
-offset_top = -342.0
-offset_right = -1326.0
-offset_bottom = -251.0
+offset_left = -1656.0
+offset_top = -492.0
+offset_right = -1321.0
+offset_bottom = -401.0
 scale = Vector2(1.06338, 0.978837)
 theme_override_font_sizes/font_size = 60
 text = "Settings
@@ -418,6 +418,36 @@ theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
 theme_override_font_sizes/font_size = 60
 text = "QUIT"
 
+[node name="Gallery" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1676.0
+offset_top = -367.0
+offset_right = -1301.0
+offset_bottom = -238.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Gallery"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -57.0
+offset_right = 435.0
+offset_bottom = 181.0
+texture = ExtResource("6_qrx2q")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Label" type="Label" parent="Control/Gallery"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 18.0
+offset_right = 316.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.305081, 0.294831, 0.276825, 1)
+theme_override_font_sizes/font_size = 60
+text = "GALLERY"
+
 [node name="Credits" parent="." instance=ExtResource("4_e2ov8")]
 visible = false
 z_index = 5
@@ -462,3 +492,4 @@ parameters/looping = false
 [connection signal="pressed" from="Control/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/Credits_Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Control/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="button_up" from="Control/Gallery" to="." method="_on_gallery_button_up"]
