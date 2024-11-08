@@ -164,5 +164,9 @@ func updateDetailsContainer():
 			description = "A cold planet with a lively vegetation, detecting multiple lifeforms. Majority of species ressembles similarity to earth species of genus rattus."
 		"Earth2.0":
 			description = "A planet that seems to be the final destination, the final hope of humanity. Many embark in this planet, in this galaxy as its satisfied every condition a human life needs."
+		"Steelicus":
+			description = "An advance planet overule by technoly. Steelicus is a harsh planet with an abundance of elemenets of steel and copper."
+		"Sauria":
+			description = "A dessert planet where temperature range between 50-80 degree during the day and cool off extremely at night"
 	
 	$Details_Container/Planet_description_label.text = description

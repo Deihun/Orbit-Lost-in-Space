@@ -58,7 +58,7 @@ var dialogue_line: DialogueLine:
 			elif dialogue_line.character.contains("_Angry"):
 				a.setAngry()
 			else:
-				pass
+				a.set_Basis()
 			dialogue_line.character = "Maxim"
 		elif dialogue_line.character.contains("Fumiko"):
 			a = preload("res://Resources/CREW/CrewLobby/Fumiko.tscn").instantiate()
@@ -69,7 +69,7 @@ var dialogue_line: DialogueLine:
 			elif dialogue_line.character.contains("_Angry"):
 				a.setAngry()
 			else:
-				pass
+				a.set_Basis()
 			dialogue_line.character = "Fumiko"
 		elif dialogue_line.character.contains("Regina"):	
 			a = preload("res://Resources/CREW/CrewLobby/Regina.tscn").instantiate()
@@ -80,7 +80,7 @@ var dialogue_line: DialogueLine:
 			elif dialogue_line.character.contains("_Angry"):
 				a.setAngry()
 			else:
-				pass
+				a.set_Basis()
 			dialogue_line.character = "Regina"
 		elif dialogue_line.character.contains("Nashir"):
 			a = preload("res://Resources/CREW/CrewLobby/Nashir.tscn").instantiate()
@@ -91,7 +91,7 @@ var dialogue_line: DialogueLine:
 			elif dialogue_line.character.contains("_Angry"):
 				a.setAngry()
 			else:
-				pass
+				a.set_Basis()
 			dialogue_line.character = "Nashir"
 		elif dialogue_line.character.contains("Jerry"):
 			a = preload("res://Resources/CREW/CrewLobby/Jerry.tscn").instantiate()

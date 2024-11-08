@@ -73,7 +73,8 @@ func savedata():
 		"SubFactions_Probability" : stored.SubFactions_Probability.duplicate(),
 		
 		"Cycle_ReportList" : stored.Cycle_ReportList.duplicate(),
-		"recent_events" : stored.recent_events.duplicate()
+		"recent_events" : stored.recent_events.duplicate(),
+		"canExpedition" : stored.canExpedition
 	}
 	return save_dict
 
@@ -137,3 +138,4 @@ func loadsave():
 		stored.SubFactions_Probability = node_data["SubFactions_Probability"].duplicate()
 		stored.Cycle_ReportList = node_data["Cycle_ReportList"].duplicate()
 		stored.recent_events = node_data["recent_events"].duplicate()
+		stored.canExpedition = node_data["canExpedition"]
