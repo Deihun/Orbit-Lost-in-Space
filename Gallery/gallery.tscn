@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dltkhgl7weoqr"]
+
+[ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_dgwtu"]
+[ext_resource type="Script" path="res://Gallery/gallery.gd" id="2_mb2y2"]
+
+[node name="Gallery" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mb2y2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_dgwtu")
+patch_margin_left = 70
+patch_margin_top = 70
+patch_margin_right = 70
+patch_margin_bottom = 70
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 1619.0
+offset_top = 908.0
+offset_right = 1840.0
+offset_bottom = 995.0
+theme_override_font_sizes/font_size = 40
+text = "Back
+"
+
+[node name="GalleryPanel" type="Panel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 76.0
+offset_right = 1840.0
+offset_bottom = 894.0
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/GalleryPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 16.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 350
+theme_override_constants/v_separation = 230
+columns = 5
+
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]
