@@ -84,6 +84,7 @@ func _on_next_day_button_pressed():
 		IngameStoredProcessSetting.canExpedition = true
 		removeitOnSecondDay()
 		CycleSetting.endCycle()
+		print(IngameStoredProcessSetting._current_hunger,"\n",IngameStoredProcessSetting._health, "\n",IngameStoredProcessSetting.crew_in_ship,IngameStoredProcessSetting.crew_in_ship.size())
 		_is_MainFaction()
 		#crafting
 		if item_ui.ongoingCraft == true:

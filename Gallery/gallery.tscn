@@ -23,6 +23,7 @@ root_path = NodePath("..")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_1811c")
+layout_mode = 0
 offset_left = -1016.0
 offset_top = -423.0
 offset_right = 2346.0

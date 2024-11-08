@@ -15,7 +15,6 @@ var _button
 
 func _ready() -> void:
 	button_array = [crew1,crew2,crew3,crew4]
-	#IngameStoredProcessSetting.crew_in_ship = ["Maxim","Fumiko","Nashir"]
 	getcrew = IngameStoredProcessSetting.crew_in_ship.duplicate()
 	balloon = dialogueBalloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
@@ -37,12 +36,14 @@ func setRandomPosition():
 	var pos_small = Vector2(80,800)
 	var bigSize = Vector2(0.5,0.5)
 	var smallSize = Vector2(0.37, 0.37)
+	
+	for child in $Crew_1.get_children():
+		child.queue_free()
 	if getcrew.size() < 1: return
 	for i in range(button_array.size()):
 		var crew_member = getcrew[i] if i < getcrew.size() else null
 		button_array[i].visible = crew_member != null
-	for child in $Crew_1.get_children():
-		child.queue_free()
+
 	var resource = getScene(getcrew[0])
 	resource = resource.instantiate()
 	resource.scale = smallSize if atBack.has($Crew_1.position) else bigSize
