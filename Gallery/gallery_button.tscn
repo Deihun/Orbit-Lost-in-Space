@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3dekkdmndo56"]
+
+[ext_resource type="Script" path="res://Gallery/gallery_button.gd" id="1_ip8f8"]
+
+[node name="gallery_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ip8f8")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 309.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 30
+text = "Button1"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
