@@ -1,7 +1,7 @@
 extends Control
 
 var addgallery = preload("res://Gallery/gallery_button.tscn")
-
+var result
 var gallery_path = "res://Gallery/gallery.json"
 var images = []
 var boolcheck = []
@@ -15,17 +15,14 @@ func get_data_gallery() -> void:
 	var json_data = file.get_as_text() 
 	var json = JSON.new()
 	var parse_result = json.parse(json_data)
-	var result = json.get_data()
+	result = json.get_data()
 	
-	images = result["images"]
-	#print(images)
+	images = result["images"].duplicate()
 	for i in images:
+		pass
 		if i["unlocked"]:
-			print(i)
-			#ayoko na
-		#print(i)
-		#print(boolcheck)
-	
+			pass
+
 func set_data_gallery() -> void:
 	pass
 
@@ -36,9 +33,13 @@ func get_boolcheck() -> void:
 	pass
 	
 func instace_button_to_grid() -> void:
-	for i in images.size():
+	for i in images:
 		var Gnode = addgallery.instantiate()
-		#Gnode.getbool = images[i][0]
-		#Gnode.getID = images[i][i][i]
 		$NinePatchRect/GalleryPanel/GridContainer.add_child(Gnode)
-	
+		print(i["unlocked"])
+		if i["unlocked"]: 
+			Gnode.set_image(i["id"])
+
+
+func _on_button_button_up() -> void:
+	queue_free()

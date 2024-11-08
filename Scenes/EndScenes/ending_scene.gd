@@ -4,6 +4,11 @@ var endTitle : String
 
 var canBeClickAgain : bool = true
 
+# Instance of JSONHandler
+
+# Data structures to hold gallery and facts data
+var images = []
+
 func _ready() -> void:
 	endTitle = IngameStoredProcessSetting.Ending
 	$img_Ending.texture = getScene(endTitle)
@@ -20,6 +25,7 @@ var radontiEnding = preload("res://Scenes/EndScenes/Gallery_Endings/RadontiEndin
 var earth2Earth = preload("res://Scenes/EndScenes/Gallery_Endings/Earth2.0.png")
 var BlackHole = preload("res://Scenes/EndScenes/Gallery_Endings/BlackHoleEvent.png")
 var JerryAlone = preload("res://Scenes/EndScenes/Gallery_Endings/JerryDeath.png")
+const CTHULLU_ENDING = preload("res://Scenes/EndScenes/Gallery_Endings/Cthullu Ending.png")
 
 func getScene(content : String):
 	match content:
@@ -42,6 +48,9 @@ func getScene(content : String):
 		"JerryDeath":
 			$GoodEnd.text = "Bad End"
 			return JerryAlone
+		"CthulluEnding":
+			$GoodEnd.text = "Bad End"
+			return CTHULLU_ENDING
 
 
 func _on_button_button_up() -> void:
@@ -56,4 +65,3 @@ func _on_button_button_up() -> void:
 	$GoodEnd.show()
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://MainMenu/main_menu.tscn")
-	pass # Replace with function body.

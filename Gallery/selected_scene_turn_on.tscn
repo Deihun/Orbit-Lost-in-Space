@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://djx36l83vjvl3"]
+
+[ext_resource type="Texture2D" uid="uid://iqpy72wnip2f" path="res://Scenes/EndScenes/Gallery_Endings/Cthullu Ending.png" id="1_jmcug"]
+[ext_resource type="Script" path="res://Gallery/selected_scene_turn_on.gd" id="2_68t2e"]
+
+[node name="SelectedSceneTurnOn" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_jmcug")
+script = ExtResource("2_68t2e")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -958.0
+offset_top = -542.0
+offset_right = -952.0
+offset_bottom = -547.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

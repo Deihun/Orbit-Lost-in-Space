@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dltkhgl7weoqr"]
+[gd_scene load_steps=6 format=3 uid="uid://dltkhgl7weoqr"]
 
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="1_dgwtu"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="2_0tjyh"]
 [ext_resource type="Script" path="res://Gallery/gallery.gd" id="2_mb2y2"]
+[ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="2_uxek1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1811c"]
+shader = ExtResource("2_uxek1")
+shader_parameter/amount = 1.095
 
 [node name="Gallery" type="Control"]
 layout_mode = 3
@@ -11,6 +17,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_mb2y2")
+
+[node name="ButtonSounds" parent="." instance=ExtResource("2_0tjyh")]
+root_path = NodePath("..")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1811c")
+offset_left = -1016.0
+offset_top = -423.0
+offset_right = 2346.0
+offset_bottom = 1351.0
+grow_horizontal = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -55,4 +72,4 @@ theme_override_constants/h_separation = 350
 theme_override_constants/v_separation = 230
 columns = 5
 
-[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]
+[connection signal="button_up" from="NinePatchRect/Button" to="." method="_on_button_button_up"]

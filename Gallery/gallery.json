@@ -2,31 +2,31 @@
   	"images": [
 		{
 			"unlocked": false,
-			"id": "image1"
+			"id": 0
 		},
 		{
 			"unlocked": false,
-			"id": "image2"
+			"id": 1
 		},
 		{
 			"unlocked": false,
-			"id": "image3"
+			"id": 2
 		},
 		{
 			"unlocked": false,
-			"id": "image4"
+			"id": 3
 		},
 		{
 			"unlocked": false,
-			"id": "image5"
+			"id": 4
 		},
 		{
 			"unlocked": false,
-			"id": "image6"
+			"id": 5
 		},
 		{
 			"unlocked": false,
-			"id": "image7"
-		},
+			"id": 6
+		}
   	]
 }
