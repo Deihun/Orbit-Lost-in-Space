@@ -26,7 +26,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Radonti Description",
+		"description": "Welcome to Radonti, A Planet of evolve rodents",
 		"id": 1,
 		"name": "Welcome to Radonti"
 	},
@@ -57,7 +57,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Sauria Description",
+		"description": "Entering a hot dessert planet name Sauria, Strong winds and sandstorm occur everyday here.",
 		"id": 2,
 		"name": "Welcome to Sauria"
 	},
@@ -88,7 +88,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Enthuli Description",
+		"description": "A harsh zone planet rule by the empress of Steel. Radiations are everywhere, you might need a LEAD Suit doing expedition here.",
 		"id": 3,
 		"name": "Welcome to Enthuli"
 	},
@@ -119,7 +119,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Sauria Description",
+		"description": "A humanity last hope, this planet is refered as Earth2.0 as this is the perfect copy of earth where living organism is possible here.",
 		"id": 4,
 		"name": "Welcome to Earth 2.0"
 	},
@@ -150,7 +150,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Sauria Description",
+		"description": "A harsh zone planet rule by the empress of Steel. Radiations are everywhere, you might need a LEAD Suit doing expedition here.",
 		"id": 5,
 		"name": "Welcome to Steelicus"
 	},
@@ -160,7 +160,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Radonti Description",
+		"description": "You decided to stay here temporarily. During your stay, you encounter a creature ressembling a Rat species of earth but bigger.",
 		"id": 6,
 		"name": "Welcome to Radonti"
 	},
@@ -170,7 +170,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Sauria Description",
+		"description": "Decided to stay on Sauria, a harsh dessert planet. Wherever you look, its just all plain sand.",
 		"id": 7,
 		"name": "Welcome to Sauria"
 	},
@@ -190,7 +190,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Earth Description",
+		"description": "Upon landing here, you witness some few people here who also decided to stay here as their new homes.",
 		"id": 9,
 		"name": "Welcome to Earth"
 	},
@@ -200,7 +200,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Steelicus Description",
+		"description": "After searching for a best way to land, you saw  a bunch of metals and scraps here. Its technoloy is highly advance compare to human technology however it looks like whoever lives here doesn't invite any guess.",
 		"id": 10,
 		"name": "Welcome to Steelicus"
 	},
@@ -210,7 +210,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Radonti Description",
+		"description": "You decided to leave Radonti",
 		"id": 11,
 		"name": "Saying no to rats"
 	},
@@ -220,7 +220,7 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Sauria Description",
+		"description": "You decided to leave Sauria",
 		"id": 12,
 		"name": "No to sand"
 	},
@@ -240,9 +240,9 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Earth Description",
+		"description": "You decided to leave Earth2.0",
 		"id": 14,
-		"name": "Saying no to Earth"
+		"name": "Saying no to Earth2.0"
 	},
 	{
 		"Command": [
@@ -250,16 +250,9 @@
 		],
 		"RandomTrue": false,
 		"Repeatable": false,
-		"description": "Steelicus Description",
+		"description": "You decided to leave Steelicus",
 		"id": 15,
 		"name": "Saying no to Steelicus"
-	},
-	{
-		"RandomTrue": true,
-		"Repeatable": true,
-		"description": "eme eme eme",
-		"id": 19,
-		"name": "For Not Erroring"
 	},
 	{
 		"Command": [
@@ -1005,7 +998,7 @@
 					15
 				]
 			],
-			" Investigate further  \nCost 15/@SPAREPARTS Spareparts"
+			" Investigate further  \nCost 15/@SPAREPARTS() Spareparts"
 		],
 		"Choice-2": [
 			85,
@@ -1154,7 +1147,7 @@
 			"Continue navigating "
 		],
 		"Command": [],
-		"RandomTrue": false,
+		"RandomTrue": true,
 		"Repeatable": false,
 		"description": "We are near the orbital path of Sputnik, where Laika, the first animal in space, once orbited. We could honor her with a brief tribute.",
 		"id": 96,
@@ -1198,7 +1191,7 @@
 		"name": "Canning company trade event"
 	},
 	{
-		"Command": [],
+		"Command": ["@ADD_MATERIALS FUEL 20"],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You examined the odd technology",
@@ -1264,7 +1257,7 @@
 					50
 				]
 			],
-			"Pay for the Spare Parts"
+			"Pay for the 50 Spare Parts, you own @SPAREPARTS()"
 		],
 		"RandomTrue": true,
 		"Repeatable": false,
@@ -1273,27 +1266,7 @@
 		"name": "F.E.L.A.S. Betrayal"
 	},
 	{
-		"Choice-1": [
-			103,
-			[
-				[
-					"FOOD",
-					50
-				]
-			],
-			"Pay for the Rations \n-50 Rations"
-		],
-		"Choice-2": [
-			104,
-			[
-				[
-					"SPAREPARTS",
-					50
-				]
-			],
-			"Pay for the Spare Parts"
-		],
-		"Command": [],
+		"Command": ["@ADD_MATERIALS FUEL 20"],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You dismantled the tracker.",
@@ -1472,7 +1445,7 @@
 		"name": "A Rare Sight"
 	},
 	{
-		"Command": [],
+		"Command": ["@SANITY_INCREASEMAXIM 0.1","@SANITY_INCREASENASHIR 0.1","@SANITY_INCREASEFUMIKO 0.1","@SANITY_INCREASEREGINA 0.1"],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You watched the beautiful comet shower.",
@@ -1576,13 +1549,17 @@
 	},
 	{
 		"Command": [],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You gave some fuel to the rodents",
 		"id": 127,
 		"name": "Give some Fuel"
 	},
 	{
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
 		"Command": [],
 		"RandomTrue": false,
 		"Repeatable": false,
@@ -1716,7 +1693,7 @@
 			[],
 			"Dismantle it\n+30 Spare Parts"
 		],
-		"Command": [],
+		"Command": ["@ANOTHER_EVENT141"],
 		"RandomTrue": true,
 		"Repeatable": false,
 		"description": "Captain, Cassini has found a part of the telescope of the Mariner 10 outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
@@ -1751,6 +1728,7 @@
 			"Dismantle the Galileo Spacecraft\n+30 Spare Parts"
 		],
 		"Command": [],
+		"Conditions" : ["FOLLOW-UP",["A Drone Named Cassini"]],
 		"RandomTrue": true,
 		"Repeatable": false,
 		"description": "Captain, Cassini has found a part of the Galileo Spacecraft outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
@@ -1790,10 +1768,6 @@
 			"Exchange for Relaxants"
 		],
 		"Command": [],
-		"Conditions": [
-			"FOLLOW-UP",
-			"A Drone Named \"Cassini\""
-		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You dismantled the nameplate for spare parts",
@@ -2841,7 +2815,7 @@
 		"Choice-2": [
 			214,
 			[],
-			"Dismantle Sputnik 1"
+			"Dismantle Sputnik 1\n +20 Spareparts "
 		],
 		"Command": [],
 		"RandomTrue": true,
@@ -3005,7 +2979,7 @@
 			"Keep those Rations\n- 10 Damage to Crew"
 		],
 		"RandomTrue": true,
-		"Repeatable": false,
+		"Repeatable": true,
 		"description": "Captain, A report has been submitted for spoilage of Rations inside the storage. Please dispose of spoiled rations to prevent contamination of other rations. ",
 		"id": 227,
 		"name": "Spoiled Rations"
@@ -3182,6 +3156,9 @@
 		"name": "Carbon Levels Rising"
 	},
 	{
+		"Command": [
+			"@RESETSPAREPARTS"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You fixed the damages sustained from the solar flare",
@@ -3222,10 +3199,6 @@
 		"name": "Solar Flared"
 	},
 	{
-		"Conditions": [
-			"FOLLOW-UP",
-			"Brace for impact"
-		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You reassure your crew, as the whispers disperse",
@@ -3332,10 +3305,6 @@
 		"name": "A Thousand Mind, Merge into One"
 	},
 	{
-		"Conditions": [
-			"FOLLOW-UP",
-			"Word's Allure, Doctrine Signed"
-		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You bought a crate from the Ad",
@@ -3343,10 +3312,6 @@
 		"name": "Buy a crate!"
 	},
 	{
-		"Conditions": [
-			"FOLLOW-UP",
-			"Word's Allure, Doctrine Signed"
-		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You reset the system.",
@@ -3681,7 +3646,7 @@
 		"name": "Correct course"
 	},
 	{
-		"Command": [],
+		"Command": ["@FACTSfact3"],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You and your crew try to get pass the debris ",
@@ -4060,7 +4025,7 @@
 			"Change course at the last possible moment.\n-10 Sanity\n-10 Fuel"
 		],
 		"Command": [],
-		"RandomTrue": false,
+		"RandomTrue": true,
 		"Repeatable": false,
 		"description": "Captain, a signal from the original Rosetta is coming. The Rosetta is set on a comet, captain? Do you know what that means? A comet is set to collide on the ship. ",
 		"id": 303,
@@ -4094,6 +4059,7 @@
 		"name": "Replace the carbon scrubber"
 	},
 	{
+		"Command" : ["@CRITICALFix the Carbon Scrubber later"],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You forget it immediately and moved on",
@@ -4116,6 +4082,7 @@
 			[],
 			"Do it later"
 		],
+		"Condition" : ["@CRITICAL",["Fix the Carbon Scrubber later"]],
 		"Command": [],
 		"RandomTrue": true,
 		"Repeatable": true,
@@ -4176,7 +4143,7 @@
 			"PLACE",
 			"Steelicus"
 		],
-		"RandomTrue": true,
+		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You tried to stabilize the tank to reduce the fuel loss",
 		"id": 311,
@@ -4330,5 +4297,29 @@
 		"description": "Your crew found a strange distortion, it seems to be an indication of a black hole. What action do you want to take, captain?",
 		"id": 320,
 		"name": "Into the Black Hole"
-	}
+	},
+	{
+		"Choice-1": [
+			304,
+			[
+				[
+					"SPAREPARTS",
+					40
+				]
+			],
+			"Replace the carbon scrubber\n-40 Spare Parts"
+		],
+		"Choice-2": [
+			305,
+			[],
+			"Do it later"
+		],
+		"Condition" : ["@CRITICAL",["Fix the Carbon Scrubber later"]],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The carbon scrubber has been rendered useless due to the immense amount of carbon collected. We can only replace it. There is also a report about a crew getting sick due to carbon poisoning",
+		"id": 500,
+		"name": "Carbon Scrubbed"
+	},
 ]

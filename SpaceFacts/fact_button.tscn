@@ -3,10 +3,9 @@
 [ext_resource type="Script" path="res://SpaceFacts/fact_button.gd" id="1_6411q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8iw6"]
-bg_color = Color(0.385493, 0.385493, 0.385492, 1)
+bg_color = Color(0.20942, 0.127688, 0.0336939, 1)
 
 [node name="FactButton" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +31,6 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="FactTitle" type="Label" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -43,19 +41,16 @@ offset_right = 935.0
 offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 66
-text = "Fact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FactDesc" type="Label" parent="Panel"]
-visible = false
 layout_mode = 1
 offset_left = 661.0
 offset_top = 145.0
 offset_right = 1897.0
 offset_bottom = 946.0
 theme_override_font_sizes/font_size = 51
-text = "Desc"
 autowrap_mode = 3
 
 [node name="Back_Button_FactButton" type="Button" parent="Panel"]

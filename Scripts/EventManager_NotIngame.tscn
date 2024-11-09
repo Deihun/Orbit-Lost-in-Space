@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://biebc6r1spt82"]
 
 [ext_resource type="Script" path="res://Scripts/event_manager_not_ingame.gd" id="1_vywad"]
-[ext_resource type="PackedScene" uid="uid://ddrrlbfb8k16q" path="res://Scripts/_command_module.tscn" id="2_5gxj8"]
-[ext_resource type="PackedScene" uid="uid://chfw26lb6taau" path="res://Scripts/_probability_module.tscn" id="3_q1j43"]
+[ext_resource type="PackedScene" path="res://Scripts/_command_module.tscn" id="2_5gxj8"]
+[ext_resource type="PackedScene" path="res://Scripts/_probability_module.tscn" id="3_q1j43"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdps8"]
 bg_color = Color(0.442911, 0.442911, 0.442911, 1)
