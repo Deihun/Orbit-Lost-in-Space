@@ -9,16 +9,14 @@ func _ready() -> void:
 func create_button(data):
 	var button = Button.new()
 	$Panel/ScrollContainer/VBoxContainer.add_child(button)
-	button.text = data["id"]
-	var button_width = 450
+	button.text = data["title"]
+	var button_width = 200 
 	var button_height = 50
 	button.custom_minimum_size = Vector2(button_width, button_height)
 	button.connect("pressed",Callable (self,"buttonPress").bind(data))
 	
 func buttonPress(data):
-	$Panel/FactTitle.show()
-	$Panel/FactDesc.show()
-	$Panel/FactTitle.text = data["id"]
+	$Panel/FactTitle.text = data["title"]
 	$Panel/FactDesc.text = data["text"]
 func LoopChecker():
 	for child in $Panel/ScrollContainer/VBoxContainer.get_children():

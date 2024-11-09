@@ -31,6 +31,7 @@ func _on_option_box_hidden_choice_condition_item_selected(index: int) -> void:
 		1:
 			$HiddenChoice_Panel/OptionChoice_HiddenChoice_Condition.add_item("SPUTNIK",0)
 			$HiddenChoice_Panel/OptionChoice_HiddenChoice_Condition.add_item("STRANGEPURPLECACTUS",1)
+			$HiddenChoice_Panel/OptionChoice_HiddenChoice_Condition.add_item("Crowbar",2)
 			#$HiddenChoice_Panel/OptionChoice_HiddenChoice_Condition.add_item("RE",2)
 			#$HiddenChoice_Panel/OptionChoice_HiddenChoice_Condition.add_item("GAS",3)
 			#$HiddenChoice_Panel/OptionChoice_HiddenChoice_Condition.add_item("FUEL",4)
