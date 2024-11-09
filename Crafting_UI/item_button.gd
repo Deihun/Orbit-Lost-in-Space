@@ -40,7 +40,7 @@ func matchItem() -> void:
 			ItemPath = "res://Crafting_UI/ItemAssests/DeepDriedSpaceFood.png"
 		"LeadSuitUp":
 			checkItem = 5
-			ItemPath = "res://Crafting_UI/ItemAssests/ACES_SUIT.png"
+			ItemPath = "res://Crafting_UI/ItemAssests/ACE_SUIT_LEAD_IMPROVEMENT.png"
 
 func _on_button_pressed() -> void:
 	setDescription()

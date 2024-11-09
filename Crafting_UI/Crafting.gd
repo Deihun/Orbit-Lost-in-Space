@@ -47,7 +47,7 @@ func crowbar_pressed() -> void:
 	item_title.text = Items.ItemsName[1]
 	item_description.text = Items.ItemDescription[1]
 	item_effect.text = Items.ItemEffect[1]
-	item_requirements.text = "Cost to craft: 350 Spare-parts, 10 Fuel, 1 Cycle"
+	item_requirements.text = "Cost to craft: 100 Spare-parts, 10 Fuel, 1 Cycle"
 
 func _on_dehy_space_food_pressed() -> void:
 	craftingItems = "DehySpaceFood"
