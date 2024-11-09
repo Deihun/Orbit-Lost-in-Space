@@ -42,6 +42,12 @@ func getButtonPosition():
 
 #GAME SETTINGS
 func _newGameStart():
+	if IngameStoredProcessSetting.deathMessage == "":
+		var a = preload("res://Scenes/CrewDeath.tscn").instantiate()
+		a.z_index = 1000
+		a.position += Vector2(-1000,-500)
+		$cam2d.add_child(a)
+	
 	$WholeInteriorScene/Lobby.Tag.append("FIRSTDAY")
 	SaveGame.isLoadGame = true
 	CycleSetting.newGame()
@@ -64,6 +70,11 @@ func removeitOnSecondDay()-> void:
 
 
 func _loadGameStart()-> void:
+	if IngameStoredProcessSetting.deathMessage != "":
+		var a = preload("res://Scenes/CrewDeath.tscn").instantiate()
+		a.z_index = 1000
+		a.position += Vector2(-1000,-500)
+		$cam2d.add_child(a)
 	updateUI()
 	updateCockpit()
 
