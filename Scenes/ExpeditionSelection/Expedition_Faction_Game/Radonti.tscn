@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cqn25uxqee6fy"]
+[gd_scene load_steps=23 format=3 uid="uid://cqn25uxqee6fy"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_3dave"]
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/radonti_map_layout.gd" id="2_2nm5k"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="9_mo7on"]
 [ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="10_3dfso"]
 [ext_resource type="AudioStream" uid="uid://bhahdflvcx8ns" path="res://Sounds/Music/長いお説教.mp3" id="12_1mbq4"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="13_a47vc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_drgx5"]
 shader = ExtResource("1_3dave")
@@ -1089,3 +1090,6 @@ stream = ExtResource("12_1mbq4")
 volume_db = -10.0
 autoplay = true
 parameters/looping = false
+
+[node name="ButtonSounds" parent="." instance=ExtResource("13_a47vc")]
+root_path = NodePath("..")

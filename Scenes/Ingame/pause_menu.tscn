@@ -122,10 +122,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -523.0
-offset_top = -323.5
-offset_right = 477.0
-offset_bottom = 376.5
+offset_left = -484.0
+offset_top = -316.5
+offset_right = 516.0
+offset_bottom = 383.5
+scale = Vector2(0.915389, 0.90502)
 
 [node name="PauseTimer" type="Timer" parent="ColorRect"]
 wait_time = 0.3

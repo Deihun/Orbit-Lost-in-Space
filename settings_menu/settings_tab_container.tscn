@@ -181,45 +181,6 @@ offset_right = 249.0
 offset_bottom = 82.0
 text = "RESET TUTORIAL"
 
-[node name="Label" type="Label" parent="TabContainer/General/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 416.0
-offset_right = 65.0
-offset_bottom = 439.0
-text = "Access 1"
-
-[node name="Label2" type="Label" parent="TabContainer/General/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_left = 129.0
-offset_top = 416.0
-offset_right = 194.0
-offset_bottom = 439.0
-text = "Access 2"
-
-[node name="Label3" type="Label" parent="TabContainer/General/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_left = 258.0
-offset_top = 416.0
-offset_right = 323.0
-offset_bottom = 439.0
-text = "Access 3"
-
-[node name="Label4" type="Label" parent="TabContainer/General/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_left = 387.0
-offset_top = 416.0
-offset_right = 452.0
-offset_bottom = 439.0
-text = "Access 4"
-
-[node name="Label5" type="Label" parent="TabContainer/General/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_left = 516.0
-offset_top = 416.0
-offset_right = 581.0
-offset_bottom = 439.0
-text = "Access 5"
-
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 
 [connection signal="button_down" from="TabContainer/General/MarginContainer/VBoxContainer/ResetTutorial" to="TabContainer/General/MarginContainer/VBoxContainer" method="_on_reset_tutorial_button_down"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cp8kg47ebyvi6"]
+[gd_scene load_steps=30 format=3 uid="uid://cp8kg47ebyvi6"]
 
 [ext_resource type="Shader" path="res://Player/Darkness.gdshader" id="1_hnq2x"]
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/earth_2_map_layout.gd" id="2_xvd72"]
@@ -19,14 +19,15 @@
 [ext_resource type="PackedScene" uid="uid://dbvus3igik3kv" path="res://AmbiencePurposes/Earth 2.0 Ambience/Earth_2.0_tree.tscn" id="17_g1f52"]
 [ext_resource type="PackedScene" uid="uid://b265u4rfm08ou" path="res://AmbiencePurposes/Earth 2.0 Ambience/Speed_fruit.tscn" id="18_muhiq"]
 [ext_resource type="PackedScene" uid="uid://6hpd3wf2vb1u" path="res://AmbiencePurposes/Hay/Hay.tscn" id="19_8i7yg"]
-[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/WitheredSpeedFruit.tscn" id="20_s0no7"]
-[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/Grass.tscn" id="21_drrb5"]
-[ext_resource type="PackedScene" path="res://AmbiencePurposes/Earth 2.0 Ambience/Bush.tscn" id="22_4f2tx"]
+[ext_resource type="PackedScene" uid="uid://b0efw37kuok2p" path="res://AmbiencePurposes/Earth 2.0 Ambience/WitheredSpeedFruit.tscn" id="20_s0no7"]
+[ext_resource type="PackedScene" uid="uid://lo6jryltgtqm" path="res://AmbiencePurposes/Earth 2.0 Ambience/Grass.tscn" id="21_drrb5"]
+[ext_resource type="PackedScene" uid="uid://cyuk8l7es553x" path="res://AmbiencePurposes/Earth 2.0 Ambience/Bush.tscn" id="22_4f2tx"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="23_sap40"]
 [ext_resource type="PackedScene" uid="uid://cxkp57n3kkx4m" path="res://node_2d.tscn" id="24_l2ffy"]
 [ext_resource type="PackedScene" uid="uid://e58h5aiabykh" path="res://AmbiencePurposes/Earth 2.0 Ambience/VisionFruit.tscn" id="25_6bblo"]
 [ext_resource type="PackedScene" uid="uid://2jljl3kjjik8" path="res://AmbiencePurposes/Earth 2.0 Ambience/InventoryFruit.tscn" id="26_xraa1"]
 [ext_resource type="AudioStream" uid="uid://pihlxlgsqtpx" path="res://Sounds/Music/雲の隙間.mp3" id="27_8v06f"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="28_m86cf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x7von"]
 shader = ExtResource("1_hnq2x")
@@ -5008,3 +5009,6 @@ position = Vector2(-5123, -7095)
 stream = ExtResource("27_8v06f")
 autoplay = true
 bus = &"Music"
+
+[node name="ButtonSounds" parent="." instance=ExtResource("28_m86cf")]
+root_path = NodePath("..")
