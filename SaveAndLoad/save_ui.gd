@@ -16,6 +16,9 @@ func _ready() -> void:
 	get_files()
 	set_node()
 
+func hidenodeMain():
+	naming.hide()
+
 func check_saving() -> void:
 	if isSaving == true:
 		naming.visible = true

@@ -8,6 +8,7 @@ var secondsTransition : float = 4.0
 
 # Called when the node enters the scene tree for thefirst time.
 func _ready() -> void:
+	
 	IngameStoredProcessSetting.reset()
 	GlobalResources._reset()
 	player_position = NodeFinder.find_node_by_name(get_tree().current_scene, "Player")
