@@ -37,7 +37,7 @@ offset_right = 1373.0
 offset_bottom = 831.0
 tutorialTitle = Array[String]([" Gathering Phase"])
 tutorialDescription = Array[String](["Collect crew and resources for your ship within 90 seconds. Submit each collected items in the door."])
-textureLink = Array[String](["res://TutorialUI/test.png"])
+textureLink = Array[String](["res://TutorialUI/ScreenShot/1Start.png"])
 Closable = false
 
 [node name="TutorialPanel2" parent="." instance=ExtResource("4_2qidk")]

@@ -72,8 +72,6 @@ func savedata():
 		"Factions_Probability" : stored.Factions_Probability.duplicate(),
 		"SubFactions_Probability" : stored.SubFactions_Probability.duplicate(),
 		
-		"Cycle_ReportList" : stored.Cycle_ReportList.duplicate(),
-		"recent_events" : stored.recent_events.duplicate(),
 		"canExpedition" : stored.canExpedition
 	}
 	return save_dict
@@ -82,7 +80,7 @@ func save():
 	print("saved")
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
-	file.store_line(json_string)
+	print(json_string)
 	
 func loadsave():
 	if not FileAccess.file_exists(SavePath):
@@ -136,6 +134,4 @@ func loadsave():
 		stored.TotalProbabilityForFactionsToFound = node_data["TotalProbabilityForFactionsToFound"]
 		stored.Factions_Probability = node_data["Factions_Probability"].duplicate()
 		stored.SubFactions_Probability = node_data["SubFactions_Probability"].duplicate()
-		stored.Cycle_ReportList = node_data["Cycle_ReportList"].duplicate()
-		stored.recent_events = node_data["recent_events"].duplicate()
 		stored.canExpedition = node_data["canExpedition"]
