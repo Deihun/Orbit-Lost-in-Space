@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
 [ext_resource type="AudioStream" uid="uid://yrr1kbqjok3m" path="res://Sounds/SFX/425999__solarphasing__scifi-industrial-atmosphere-1.wav" id="41_xlg34"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
-[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
+[ext_resource type="PackedScene" path="res://button_sounds.tscn" id="47_evqmn"]
 [ext_resource type="AudioStream" uid="uid://bci2331ggbm16" path="res://Sounds/Music/lofi .mp3" id="49_apm6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
@@ -1178,7 +1178,12 @@ script = ExtResource("14_dtqtq")
 [node name="ClickOnLeft" type="Area2D" parent="StorageScene"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StorageScene/ClickOnLeft"]
-polygon = PackedVector2Array(887.785, 381.231, 587.363, 444.922, 105.918, 544.096, 964.816, 541.367, 961.927, 283.876)
+polygon = PackedVector2Array(887.785, 381.231, 575.808, 381.614, 548.847, 550.847, 968.668, 539.019, 971.556, 382.523)
+
+[node name="ArrowNavigation" type="Sprite2D" parent="StorageScene/ClickOnLeft"]
+position = Vector2(800.162, 463.501)
+scale = Vector2(-2.61016, 1.57332)
+texture = ExtResource("11_0iy23")
 
 [node name="CheckSpareparts" type="Area2D" parent="StorageScene"]
 
