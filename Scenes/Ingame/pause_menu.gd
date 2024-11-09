@@ -64,7 +64,7 @@ func _on_save_pressed() -> void:
 		save_ui.visible = false
 	else:
 		save_ui.visible = true
-		v_box_container.visible = false
+		#v_box_container.visible = false
 
 
 func _on_settings_pressed() -> void:

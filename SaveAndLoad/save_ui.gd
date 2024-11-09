@@ -48,8 +48,7 @@ func get_files() -> void:
 
 func _on_back_button_up() -> void:
 	var visiblepause = NodeFinder.find_node_by_name(get_tree().current_scene, "VBoxContainer")
-	if visiblepause:
-		visiblepause.show()
+	visiblepause.visible = true
 	self.visible = false
 
 func _on_message_delay_timeout() -> void:
