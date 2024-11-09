@@ -85,7 +85,7 @@
 			"title": "The First Dog to Orbit Space"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact15",
 			"text": "The International Space Station (ISS) orbits Earth approximately every 90 minutes.",
 			"title": "The International Space Station Orbits Earth"
@@ -115,19 +115,19 @@
 			"title": "The Sputnik 1"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact20",
 			"text": "The Apollo 11 mission’s lunar module was named Eagle.",
 			"title": "The Apollo 11 Lunar Module"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact21",
 			"text": "The Saturn V rocket, used in the Apollo missions, remains the most powerful rocket ever built.",
 			"title": "The Saturn V rocket"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact22",
 			"text": "In spacecraft where oxygen is stored as a liquid (like the systems on the International Space Station), heaters are used to keep the oxygen from reaching too low of a temperature. This ensures it remains in a usable state when converted to gas for life support or other systems.",
 			"title": "Oxygen Storage"
@@ -175,7 +175,7 @@
 			"title": "The Cassini Spacecraft"
 		},
 		{
-			"encountered": true,
+			"encountered": false,
 			"id": "fact30",
 			"text": "The Mars Pathfinder mission included the first successful rover, Sojourner, in 1997.",
 			"title": "The Mars Pathfinder"
