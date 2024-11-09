@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b052fsib5brvj"]
+[gd_scene load_steps=36 format=3 uid="uid://b052fsib5brvj"]
 
 [ext_resource type="PackedScene" uid="uid://2ak0u1ugm5ww" path="res://AmbiencePurposes/Steelicus Assets/Objects/battery.tscn" id="1_a5qp4"]
 [ext_resource type="PackedScene" uid="uid://cwomyyc7i1742" path="res://AmbiencePurposes/Steelicus Assets/Walls/tiles_set.tscn" id="1_f33d5"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://c8en36ge4eq1u" path="res://Scenes/SceneAssets/KeyCard.png" id="19_h1g5r"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="20_h74to"]
 [ext_resource type="AudioStream" uid="uid://btmuv6kmy3db7" path="res://Sounds/Music/Odyssey.mp3" id="21_lwdnw"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="27_jodkl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_334dj"]
 shader = ExtResource("1_m4x6u")
@@ -1069,3 +1070,6 @@ metadata/_edit_lock_ = true
 stream = ExtResource("21_lwdnw")
 volume_db = -10.0
 autoplay = true
+
+[node name="ButtonSounds" parent="." instance=ExtResource("27_jodkl")]
+root_path = NodePath("..")

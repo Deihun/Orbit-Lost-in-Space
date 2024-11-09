@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cof0iw8v45lk3" path="res://SaveAndLoad/save_node.tscn" id="2_grgno"]
 
 [node name="SaveUI" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

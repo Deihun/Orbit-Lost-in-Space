@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqs5a2e3u4d8a"]
+[gd_scene load_steps=5 format=3 uid="uid://cqs5a2e3u4d8a"]
 
 [ext_resource type="Texture2D" uid="uid://d033rk5yt6g0n" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SmallPlanetoid_MapLayout.png" id="1_ihuds"]
 [ext_resource type="PackedScene" uid="uid://8i0ockufywye" path="res://Player/Player.tscn" id="2_ymmy4"]
 [ext_resource type="PackedScene" uid="uid://c2ivqlxyu5lj" path="res://Scenes/SceneAssets/door_way.tscn" id="3_ohaaf"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="4_j56co"]
 
 [node name="SmallPlanetoid" type="Node2D"]
 
@@ -62,3 +63,6 @@ scale = Vector2(0.545261, 0.477501)
 
 [node name="player" parent="." instance=ExtResource("2_ymmy4")]
 position = Vector2(750, 1661)
+
+[node name="ButtonSounds" parent="." instance=ExtResource("4_j56co")]
+root_path = NodePath("..")
