@@ -43,8 +43,8 @@ func _on_craft_button_pressed() -> void:
 					warning_insufficientShow()
 			
 			"Crowbar":
-				if GlobalResources.spareparts >= 350 && GlobalResources.fuel >= 10:
-					GlobalResources.spareparts -= 350
+				if GlobalResources.spareparts >= 100 && GlobalResources.fuel >= 10:
+					GlobalResources.spareparts -= 100
 					GlobalResources.fuel -= 10
 					currentlycrafting = crafting_tab.craftingItems
 					ongoingCraft = true	
