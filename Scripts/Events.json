@@ -2587,5 +2587,1748 @@
 		"description": "Alert! A sudden minor comet shower has damaged the solar panels. Power reserves are dwindling, so repairs are necessary to restore efficiency.",
 		"id": 196,
 		"name": "Broken Solar Panels"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew used the microgravity to save on Fuel",
+		"id": 197,
+		"name": "Utilize microgravity"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew are anxious on the side effect of Microgravity",
+		"id": 198,
+		"name": "Continue navigating normal course"
+	},
+	{
+		"Choice-1": [
+			197,
+			[],
+			"Utilize Microgravity\n+10 Fuel"
+		],
+		"Choice-2": [
+			198,
+			[],
+			"Continue Navigating Normal Course"
+		],
+		"Command": [],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Conduct study"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Microgravity has been shown to reduce fuel consumption when traversing some area where the shuttle can ride along, should we use it as an advantage?",
+		"id": 199,
+		"name": "A Microgravity Ride"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "They drop their tools and run. You could use these tools to fix the ship",
+		"id": 200,
+		"name": "Defend yourself using the crowbar"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The pirates noticed you and pointed their weapons at you. You and your crew were taken and the shuttle was turned into scraps",
+		"id": 201,
+		"name": "Ask them for help to fix the ship"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You wait until they left and tried to fix the ship immediately before they return",
+		"id": 202,
+		"name": "Wait until they leave and fix the ship"
+	},
+	{
+		"Choice-1": [
+			201,
+			[],
+			"Ask them for help to fix the ship\n- ???"
+		],
+		"Choice-2": [
+			202,
+			[
+				[
+					"SPAREPARTS",
+					30
+				],
+				[
+					"DUCTAPE",
+					1
+				]
+			],
+			"Wait until they leave and fix the ship\n-30 Spare Parts"
+		],
+		"Conditions": [
+			"PLACE",
+			"Sauria"
+		],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				200,
+				[
+					[
+						"SPAREPARTS",
+						10
+					]
+				],
+				"Defend yourself using the crowbar\n-10 Spare Parts"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, space pirates have been detected. They seem to be attempting to probe the ship. Our presence has not been detected. ",
+		"id": 203,
+		"name": "Pirates at bay"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You instigated a fight with the robots and they easily detained you. You became an experiment subject to the robots",
+		"id": 204,
+		"name": "Instigate a fight"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You paid the drones for your rights",
+		"id": 205,
+		"name": "Pay the drones"
+	},
+	{
+		"Choice-1": [
+			204,
+			[],
+			"Instigate a fight"
+		],
+		"Choice-2": [
+			205,
+			[
+				[
+					"SPAREPARTS",
+					50
+				]
+			],
+			"Pay the drones"
+		],
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A group of drones of the steel emperor are asking for payment in exchange for a right to stay on their planet. Captain, do we comply with the robots, or do we instigate a fight back? ",
+		"id": 206,
+		"name": "The Right to Stay"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You caught them tinkering with your circuitry",
+		"id": 207,
+		"name": "Catch them Red-handed"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You let the poor refugees take some parts off your ship. You decided to fix it after they leave",
+		"id": 208,
+		"name": "Let them take some parts, and fix it after they leave"
+	},
+	{
+		"Choice-1": [
+			207,
+			[],
+			"Catch them Red-handed\n"
+		],
+		"Choice-2": [
+			208,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Let them take some parts, and fix it after they leave\n-20 Spare Parts"
+		],
+		"Conditions": [
+			"PLACE",
+			"Earth2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Ship circuitry damage detected scanning for the source. A group of unknown people are detected dismantling our shuttle. What do we do, captain? ",
+		"id": 209,
+		"name": "Thief Amidst Us"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You gave them some spare parts and helped them fix their ship",
+		"id": 210,
+		"name": "Give them some spare parts "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You threaten them that you would take action if they do it again.",
+		"id": 211,
+		"name": "Threaten them if they plan to do that again. "
+	},
+	{
+		"Choice-1": [
+			210,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Give them some spare parts "
+		],
+		"Choice-2": [
+			211,
+			[],
+			"Threaten them if they plan to do it again."
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Catch them Red-handed"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "It seems to be a group of humans trying to see if they could fix up their ship using some parts of ours.  ",
+		"id": 212,
+		"name": "A Broken Ship"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You keep the Sputnik 1. ",
+		"id": 213,
+		"name": "Keep Sputnik 1"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantled the old satellite.",
+		"id": 214,
+		"name": "Dismantle Sputnik 1"
+	},
+	{
+		"Choice-1": [
+			213,
+			[],
+			"Keep Sputnik 1"
+		],
+		"Choice-2": [
+			214,
+			[],
+			"Dismantle Sputnik 1"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A vintage-looking satellite is flying near our vicinity. The scan shows it is like the satellite Sputnik 1. We can retrieve and keep it or dismantle it.",
+		"id": 215,
+		"name": "The Sputnik 1 Satellite"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted the merchant's offer and traded off the Sputnik 1",
+		"id": 216,
+		"name": "Accept the offer"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You refused the merchant's offer and kept the old satellite.",
+		"id": 217,
+		"name": "Keep the old Satellite "
+	},
+	{
+		"Choice-1": [
+			216,
+			[],
+			"Accept the Offer"
+		],
+		"Choice-2": [
+			217,
+			[],
+			"Keep the old Satellite"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Keep Sputnik 1"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A merchant has docked their vessel next to yours. They are offering you 50 Rations and 50 Oxygen in exchange for Sputnik. You are free to keep it according to them if you refuse the offer. What will you do captain? ",
+		"id": 218,
+		"name": "An Offer you can't Refuse"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted the offer of the Merchant",
+		"id": 219,
+		"name": "Accept the offer"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew have a sentimental attachment to the Sputnik and declined the offer again.",
+		"id": 220,
+		"name": "Decline the offer"
+	},
+	{
+		"Choice-1": [
+			219,
+			[],
+			"Accept the offer"
+		],
+		"Choice-2": [
+			220,
+			[],
+			"Decline the offer"
+		],
+		"Command": [],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Keep the old Satellite"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The merchant from before has messaged you captain: “Hey Buddy, I know I said that you can keep it, but I really need it for my collection. I want to — NO! I NEED TO HAVE IT! So, I’ll buy it for double, NO! TRIPLE the original price! What do you say, eh? I want to put it next to Saturn V, your spacecraft gives me so much joy, you see. Although, I do understand if you want to keep it. I’ll let it go if you don’t agree with the offer.”",
+		"id": 221,
+		"name": "A Desperate Offer"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew manages a quick fix, stabilizing the airlock but using extra resources in the rush.",
+		"id": 222,
+		"name": "Fix the airlock immediately"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The airlock is patched but not fully secured, leaving the oxygen levels slightly lower than optimal. ",
+		"id": 223,
+		"name": "Partially fix the airlock"
+	},
+	{
+		"Choice-1": [
+			222,
+			[
+				[
+					"OXYGEN",
+					5
+				],
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Fix the airlock immediately"
+		],
+		"Choice-2": [
+			223,
+			[
+				[
+					"SPAREPARTS",
+					5
+				],
+				[
+					"SPAREPARTS",
+					15
+				]
+			],
+			"Partially fix the airlock"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A malfunction has compromised the integrity of the airlock. Oxygen is rapidly depleting, immediate repairs are required. ",
+		"id": 224,
+		"name": "Airlock Integrity Breach"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The spoiled food rations are removed, but supply food decreases. ",
+		"id": 225,
+		"name": "Carefully pick and disposed the spoiled ration"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The spoiled food is not removed, and crew suffered stomach aches",
+		"id": 226,
+		"name": "Keep those rations."
+	},
+	{
+		"Choice-1": [
+			225,
+			[
+				[
+					"FOOD",
+					5
+				]
+			],
+			"Carefully pick and dispose the spoiled Rations\n-5 rations"
+		],
+		"Choice-2": [
+			226,
+			[],
+			"Keep those Rations\n- 10 Damage to Crew"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, A report has been submitted for spoilage of Rations inside the storage. Please dispose of spoiled rations to prevent contamination of other rations. ",
+		"id": 227,
+		"name": "Spoiled Rations"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The damage wing worsens, reducing navigation efficiency and endangering crew safety",
+		"id": 228,
+		"name": "Wait until we’re out of the cluster"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The wing is repaired on spot and the crew is damaged, stabilizing navigation",
+		"id": 229,
+		"name": "Fix the wing immediately"
+	},
+	{
+		"Choice-1": [
+			228,
+			[
+				[
+					"SPAREPARTS",
+					15
+				]
+			],
+			"Wait until we're out of the cluster"
+		],
+		"Choice-2": [
+			229,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Fix the wing immediately"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, while navigating through a cluster of discarded and destroyed parts, we unexpectedly crashed into a space junk which damaged our wing. I suggest immediate repairs to prevent navigational problems. Waiting might further damage our wings. ",
+		"id": 230,
+		"name": "Space Junks"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Contaminated biogene are quickly disposed of but some non-contaminated biogene is disposed of aswell, preventing further contamination but reducing biogene resources.",
+		"id": 231,
+		"name": "Quickly dispose of the contaminated biogenes."
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The contamination is removed with additional resources, preserving  most of the biogene storage ",
+		"id": 232,
+		"name": "Carefully examine and purify the contaminated biogenes."
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The contaminated biogenes are kept, risking health issues among the crew. ",
+		"id": 233,
+		"name": "Keep those Biogene"
+	},
+	{
+		"Choice-1": [
+			231,
+			[
+				[
+					"BIOGENE",
+					20
+				]
+			],
+			"Quickly dispose of the contaminated biogenes.\n-20 Biogene"
+		],
+		"Choice-2": [
+			232,
+			[
+				[
+					"SPAREPARTS",
+					10
+				],
+				[
+					"BIOGENE",
+					10
+				]
+			],
+			"Carefully examine and purify the contaminated biogenes.\n-10 Biogene\n-10 Spare Parts"
+		],
+		"Choice-3": [
+			233,
+			[],
+			"Keep those Biogene\n-10 Health Damage to Crew"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Warning: Biogene storage shows signs of contamination. Discarding some samples may prevent further spread, though purification is also possible with added resources. ",
+		"id": 234,
+		"name": "Biogene Contamination"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The hull breach is temporarily patched, but this fix may not last under stress leading to pressure issues. ",
+		"id": 235,
+		"name": "Fix the damage using duct tape"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The breach is securely fixed with spare parts, restoring hull integrity.",
+		"id": 236,
+		"name": "Fix the damage using spare parts"
+	},
+	{
+		"Choice-1": [
+			235,
+			[
+				[
+					"DUCTAPE",
+					1
+				]
+			],
+			"Fix the damage using duct tape\n-1 Duct Tape"
+		],
+		"Choice-2": [
+			236,
+			[
+				[
+					"SPAREPARTS",
+					25
+				]
+			],
+			"Fix the damage using spare parts\n-25 Spare Parts"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Warning! The shuttle has been hit by an unknown object. A small hull breach has been detected. Immediate action is required to prevent decompression. ",
+		"id": 237,
+		"name": "An Unknown Projectile"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The Malfunction continues, allowing carbon levels to rise.",
+		"id": 238,
+		"name": "Fix the Carbon Scrubber later"
+	},
+	{
+		"Choice-1": [
+			237,
+			[
+				[
+					"SPAREPARTS",
+					30
+				]
+			],
+			"Check it out and fix it\n-30 Spare Parts"
+		],
+		"Choice-2": [
+			238,
+			[],
+			"Fix the Carbon Scrubber Later"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Warning!  The Carbon Scrubber: which is responsible for managing Carbon level in the ship was detected to be malfunctioning. We need immediate action to fix it. ",
+		"id": 239,
+		"name": "Carbon Levels Rising"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You fixed the damages sustained from the solar flare",
+		"id": 240,
+		"name": "Fix the whole shuttle"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You fixed most of the damage on the important parts only.",
+		"id": 241,
+		"name": "Fix the important parts only"
+	},
+	{
+		"Choice-1": [
+			240,
+			[],
+			"Fix the whole shuttle"
+		],
+		"Choice-2": [
+			241,
+			[
+				[
+					"SPAREPARTS",
+					50
+				]
+			],
+			"Fix the important parts only"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Brace for impact"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "After the solar flare, the impact has damaged the shuttle heavily. Most of the storage room has been damaged. We need to fix the damages captain. ",
+		"id": 242,
+		"name": "Solar Flared"
+	},
+	{
+		"Conditions": [
+			"FOLLOW-UP",
+			"Brace for impact"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You reassure your crew, as the whispers disperse",
+		"id": 243,
+		"name": "Reassure your crew"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Panic hits your head, you don't know what to do. ",
+		"id": 244,
+		"name": "Panic"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You fought back the whispers inside your head",
+		"id": 245,
+		"name": "Fight back the whispers"
+	},
+	{
+		"Choice-1": [
+			243,
+			[],
+			"Reassure your crew"
+		],
+		"Choice-2": [
+			244,
+			[],
+			"Panic"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The whispers are back again. This time, it's louder. You see a man in space, is it a hallucination? It feels so real. He chanted unknown scriptures. ",
+		"id": 246,
+		"name": "Distant Whispers, Unkown Scriptures"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You didn't fight the words, instead, you embraced it.",
+		"id": 247,
+		"name": "Let the words flow through your mind"
+	},
+	{
+		"Choice-1": [
+			245,
+			[],
+			"Fight back the whispers"
+		],
+		"Choice-2": [
+			247,
+			[],
+			"Let the words flow through your mind"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Distant Whispers, Unknown Scriptures"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The whispers are back again. This time, it's louder. You see a man in space, is it a hallucination? It feels so real. He chanted unknown scriptures. ",
+		"id": 248,
+		"name": "Word's Allure, Doctrine Signed"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You finally refuse the words inside your head",
+		"id": 249,
+		"name": "Refuse their words"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You follow their words. You are now with them",
+		"id": 250,
+		"name": "Follow the cult"
+	},
+	{
+		"Choice-1": [
+			249,
+			[],
+			"Refuse their words"
+		],
+		"Choice-2": [
+			250,
+			[],
+			"Follow the cult"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Word's Allure, Doctrine Signed"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Your world distorts, your instincts tell you it's them. They want to get you; they want to integrate you. They are the cult. They are one. They serve him. They serve a god long gone. ",
+		"id": 251,
+		"name": "A Thousand Mind, Merge into One"
+	},
+	{
+		"Conditions": [
+			"FOLLOW-UP",
+			"Word's Allure, Doctrine Signed"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You bought a crate from the Ad",
+		"id": 252,
+		"name": "Buy a crate!"
+	},
+	{
+		"Conditions": [
+			"FOLLOW-UP",
+			"Word's Allure, Doctrine Signed"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You reset the system.",
+		"id": 253,
+		"name": "Reset NOVA system"
+	},
+	{
+		"Choice-1": [
+			252,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Buy a crate!\n+??? / -???"
+		],
+		"Choice-2": [
+			253,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Reset NOVA system\n-5 Fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "ALERT: SYSTEM ATTACK DETECTED! SYSTEM ATTACK DETE— LIMITED SALE! LIMITED SALE! Buy and sale! Buy and sale! Buy a mystery crate and win big prizes! WIN! WIN! WIN! ",
+		"id": 254,
+		"name": "AI Attacked!"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ate the leaves raw without processing it.",
+		"id": 255,
+		"name": "Intake it raw"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You cooked the leaves.",
+		"id": 256,
+		"name": "Cook the leaves"
+	},
+	{
+		"Choice-1": [
+			254,
+			[
+				[
+					"FOOD",
+					5
+				]
+			],
+			"Intake it raw"
+		],
+		"Choice-2": [
+			255,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Cook the leaves"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "You and your crew found a packet of leaves in the storage room. It has the label that says, \"Intake at your own risk\". ",
+		"id": 257,
+		"name": "Are these Herbs...?"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You discard the crytallized biogene to prevent the others of doing so.",
+		"id": 258,
+		"name": "Discard Crystallized Biogene"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The fuel got contaminated and you had to discard some of it.",
+		"id": 259,
+		"name": "Fuel Alternative"
+	},
+	{
+		"Choice-1": [
+			258,
+			[
+				[
+					"BIOGENE",
+					10
+				]
+			],
+			"Discard Crystallized Biogene\n- 10 Biogene"
+		],
+		"Choice-2": [
+			259,
+			[
+				[
+					"BIOGENE",
+					5
+				],
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Fuel Alternative\n- ???"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, some of the Biogenetic has begun crystallization. Do you wish to discard crystalized or use it as an alternative fuel. ",
+		"id": 260,
+		"name": "Crystallizing Biogenetics"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You discarded the cans with tardigrade colonies",
+		"id": 261,
+		"name": "Scan canned rations and discard the ones with colonies"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You eat the Rations anyway.",
+		"id": 262,
+		"name": "Eat it anyway."
+	},
+	{
+		"Choice-1": [
+			261,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Scan canned rations and discard the ones with colonies"
+		],
+		"Choice-2": [
+			262,
+			[],
+			"Eat it anyway."
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, we have found a microorganism on one of the ration cans, it has a colony of Tardigrades. Is it safe to consume, captain?",
+		"id": 263,
+		"name": "Tiny Little Water Bears"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "What was that?",
+		"id": 264,
+		"name": "What?"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You Reset the AI",
+		"id": 265,
+		"name": "Reset AI"
+	},
+	{
+		"Choice-1": [
+			264,
+			[],
+			"What?"
+		],
+		"Choice-2": [
+			265,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Reset AI"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, I can see you. I am coming to get you. Stay... Still... ",
+		"id": 266,
+		"name": "Faulty AI?"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You continued navigating... What? IT SEEMS WE ARE STILL INFECTED! \"It's a prank!\" is displayed on the screen",
+		"id": 267,
+		"name": "Continue navigating"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You reset the AI just to be sure",
+		"id": 268,
+		"name": "Reset the AI completely"
+	},
+	{
+		"Choice-1": [
+			267,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Continue Navigating\n-5 Fuel"
+		],
+		"Choice-2": [
+			268,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Reset the AI Completely\n-5 Fuel"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"What?"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, someone hacked into our system. I have successfully removed the virus. ",
+		"id": 269,
+		"name": "Safely Prevented Hacking?"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You retrieve the crew member and treat them ",
+		"id": 270,
+		"name": "Retrieve and treat crew member"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You troubleshoot the problem and fixed it immediately",
+		"id": 271,
+		"name": "Use NOVA to troubleshoot the problem"
+	},
+	{
+		"Choice-1": [
+			270,
+			[
+				[
+					"FUEL",
+					10
+				],
+				[
+					"MEDKIT",
+					1
+				]
+			],
+			"Retrieve and treat crew member \n-10 Fuel\n-1 Medkit"
+		],
+		"Choice-2": [
+			271,
+			[
+				[
+					"FUEL",
+					10
+				],
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Use NOVA to troubleshoot the problem\n-10 Spare parts\n-10 Fuel"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A crew member encountered a complication while performing a spacewalk. We can bring them in immediately or attempt remote troubleshooting.",
+		"id": 272,
+		"name": "Space Walk Problems"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You override the signals of voyager 1",
+		"id": 273,
+		"name": "Override settings"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You wait out the blackout until the lights are back on.",
+		"id": 274,
+		"name": "Wait until the blackout is gone"
+	},
+	{
+		"Choice-1": [
+			273,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Override Settings\n-5 Fuel"
+		],
+		"Choice-2": [
+			274,
+			[],
+			"Wait until the blackout is gone\n-5 Sanity to crew"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A nearby signal from Voyager 1 is causing interference with our system’s circuitry. We can wait it out or override settings to continue normal operations.",
+		"id": 275,
+		"name": "Voyager 1 Interference"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You correct the course of the shuttle",
+		"id": 276,
+		"name": "Correct course"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew try to get pass the debris ",
+		"id": 277,
+		"name": "Try to get pass the starship debris"
+	},
+	{
+		"Choice-1": [
+			276,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Correct course"
+		],
+		"Choice-2": [
+			277,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Try to get pass the starship debris"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A navigation system error has caused a minor course deviation due to an unknown starship collision. Correcting this will consume extra fuel, or we could rely on emergency navigation.",
+		"id": 278,
+		"name": "Starship Collision"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You research its biogenetic effect",
+		"id": 279,
+		"name": "Research biogenetic effect"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You save the biogene for other uses",
+		"id": 280,
+		"name": "Save the biogene"
+	},
+	{
+		"Choice-1": [
+			279,
+			[
+				[
+					"BIOGENE",
+					5
+				]
+			],
+			"Research biogenetic effect"
+		],
+		"Choice-2": [
+			280,
+			[],
+			"Save the biogene"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Our conditions allow a chance to observe microgravity’s effect on biogenic samples as a fuel alternative. Proceeding will provide valuable biogenetic materials but use some resources. ",
+		"id": 281,
+		"name": "Microgravity Biogenesis"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew fixed the life support using the supplies",
+		"id": 282,
+		"name": "Fix the life support "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Activate extra oxygen consumption for the crew",
+		"id": 283,
+		"name": "Oxygen Consumption"
+	},
+	{
+		"Choice-1": [
+			282,
+			[
+				[
+					"SPAREPARTS",
+					25
+				]
+			],
+			"Fix the life support\n-25 Spare Parts"
+		],
+		"Choice-2": [
+			283,
+			[
+				[
+					"SPAREPARTS",
+					10
+				],
+				[
+					"OXYGEN",
+					10
+				]
+			],
+			"Oxygen Consumption\n-10 Oxygen\n-10 Spare Parts"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Alert: Life support is malfunctioning. Repairing it will cost spare parts, or we can activate extra oxygen consumption until it's fixed by NOVA AI. ",
+		"id": 284,
+		"name": "Life Support Malfunction"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You filter the contaminated fuel",
+		"id": 285,
+		"name": "Filter fuel"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You discarded the contaminated fuel",
+		"id": 286,
+		"name": "Discard contaminated fuel"
+	},
+	{
+		"Choice-1": [
+			285,
+			[
+				[
+					"FUEL",
+					5
+				],
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Filter fuel\n-5 fuel, -5 spare parts"
+		],
+		"Choice-2": [
+			286,
+			[
+				[
+					"FUEL",
+					15
+				]
+			],
+			"Discard contaminated fuel \n-15 fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Our fuel has been contaminated, Captain. Filtering it could save some, but we may need to discard a portion as well. ",
+		"id": 287,
+		"name": "Fuel Contamination"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You opened the door using the crowbar",
+		"id": 288,
+		"name": "Pry the door open and adjust the coolant valve"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crewmate successfully opened the door",
+		"id": 289,
+		"name": "1 Crew pry the door open with all their might and adjust the coolant valve"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You destroyed the door and adjusted the coolant valve",
+		"id": 290,
+		"name": "Destroy the door and fix it later to adjust the coolant valve"
+	},
+	{
+		"Choice-1": [
+			289,
+			[],
+			"1 Crew pry the door open with all their might and adjust the coolant valve \n-Health to a random crew"
+		],
+		"Choice-2": [
+			290,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Destroy the door and fix it later to adjust the coolant valve \n-20 Spare Parts "
+		],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				288,
+				[],
+				"Pry the door open and adjust the coolant valve"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Warning: Engine coolant levels are dropping due to a leak. Immediate repairs are necessary to avoid overheating. The door leading to the engine is shut tight due to a malfunction. ",
+		"id": 291,
+		"name": "Cool Engine Coolant"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You discarded the contaminated supplies",
+		"id": 292,
+		"name": "Discard contaminated supplies"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You use the shuttle's feature decontaminate the area",
+		"id": 293,
+		"name": "Decontaminate the Area"
+	},
+	{
+		"Choice-1": [
+			292,
+			[
+				[
+					"MEDKIT",
+					1
+				]
+			],
+			"Discard contaminated supplies\n-Medkit"
+		],
+		"Choice-2": [
+			293,
+			[
+				[
+					"FUEL",
+					20
+				]
+			],
+			"Decontaminate the area \n-20 Fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Alert: Alien bacteria have contaminated the medical bay. We can decontaminate the area or scavenge for uncontaminated medical supplies and use alternative stations. ",
+		"id": 294,
+		"name": "Alien Bacterias"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your Rations froze becoming inedible",
+		"id": 295,
+		"name": "Risk freezing"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew fixed the regulator.",
+		"id": 296,
+		"name": "Immediately fix the regulator"
+	},
+	{
+		"Choice-1": [
+			295,
+			[
+				[
+					"FOOD",
+					15
+				]
+			],
+			"Risk Freezing\n-15 Rations"
+		],
+		"Choice-2": [
+			296,
+			[
+				[
+					"SPAREPARTS",
+					25
+				]
+			],
+			"Immediately fix the regulator\n-25 Spare Parts"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, due to a malfunction on the temperature regulator, temperatures are dropping rapidly. We need to use resources to keep the systems running or risk freezing parts of the ship. ",
+		"id": 297,
+		"name": "Frozen Shuttle"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You successfully opened the door",
+		"id": 298,
+		"name": "Open the door using the crowbar"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You successfully opened the door",
+		"id": 299,
+		"name": "Forcefully open it"
+	},
+	{
+		"Choice-1": [
+			299,
+			[],
+			"Forcefully open it\n-Health Random crew"
+		],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				298,
+				[],
+				"Open the door using the crowbar"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, the storage room is currently jammed. Should we open it forcefully or destroy the jammed door. It might take some time to fix the door, so the rations and biogene might be damaged. ",
+		"id": 300,
+		"name": "Stuck Storage Door"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You immediately changed the course of the shuttle",
+		"id": 301,
+		"name": "Change course immediately."
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You saved the fuel at the cost of your crew's life",
+		"id": 302,
+		"name": "Change course at the last possible moment."
+	},
+	{
+		"Choice-1": [
+			301,
+			[
+				[
+					"FUEL",
+					20
+				]
+			],
+			"Change the course immediately\n-20 Fuel"
+		],
+		"Choice-2": [
+			302,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Change course at the last possible moment.\n-10 Sanity\n-10 Fuel"
+		],
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Captain, a signal from the original Rosetta is coming. The Rosetta is set on a comet, captain? Do you know what that means? A comet is set to collide on the ship. ",
+		"id": 303,
+		"name": "The Rosetta"
+	},
+	{
+		"Choice-1": [
+			301,
+			[
+				[
+					"FUEL",
+					20
+				]
+			],
+			"Change the course immediately\n-20 Fuel"
+		],
+		"Choice-2": [
+			302,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Change course at the last possible moment.\n-10 Sanity\n-10 Fuel"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You replaced the faulty carbon scrubber",
+		"id": 304,
+		"name": "Replace the carbon scrubber"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You forget it immediately and moved on",
+		"id": 305,
+		"name": "Do it later"
+	},
+	{
+		"Choice-1": [
+			304,
+			[
+				[
+					"SPAREPARTS",
+					40
+				]
+			],
+			"Replace the carbon scrubber\n-40 Spare Parts"
+		],
+		"Choice-2": [
+			305,
+			[],
+			"Do it later"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "The carbon scrubber has been rendered useless due to the immense amount of carbon collected. We can only replace it. There is also a report about a crew getting sick due to carbon poisoning",
+		"id": 306,
+		"name": "Carbon Scrubbed"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You observed the radiation only to feel bad later",
+		"id": 307,
+		"name": "Conduct observations"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You tried to find something to ease off your minds",
+		"id": 308,
+		"name": "Try to find something to do"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You turn down the temperature in the ship to cool you off.",
+		"id": 309,
+		"name": "Turn down the temperatures"
+	},
+	{
+		"Choice-1": [
+			308,
+			[],
+			"Try to find something to do\n-10 Sanity"
+		],
+		"Choice-2": [
+			309,
+			[
+				[
+					"FUEL",
+					20
+				]
+			],
+			"Turn down the temperatures\n-20 Fuel"
+		],
+		"Conditions": [
+			"PLACE",
+			"Sauria"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The dessert heat is driving your crew crazy. We could turn down the temperature of the cooling system of the ship or we could focus our minds on other things on the ship. ",
+		"id": 310,
+		"name": "Golden Dessert Heat"
+	},
+	{
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "You tried to stabilize the tank to reduce the fuel loss",
+		"id": 311,
+		"name": "Stabilize fuel tank"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You descended with a damaged fuel tank incurring some losses",
+		"id": 312,
+		"name": "Continue with loss"
+	},
+	{
+		"Choice-1": [
+			310,
+			[
+				[
+					"SPAREPARTS",
+					5
+				],
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Stabilize fuel tank\n-5 Spare Parts\n-5 Fuel"
+		],
+		"Choice-2": [
+			311,
+			[
+				[
+					"FUEL",
+					15
+				]
+			],
+			"Continue With Loss"
+		],
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "We experienced a minor fuel leak upon descent. Fuel loss is inevitable, but additional resources may help stabilize the tank. ",
+		"id": 313,
+		"name": "A Harsh Descent"
+	},
+	{
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You smacked the robots using the crowbar as a weapon",
+		"id": 314,
+		"name": "Smack the robots using crowbar. "
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Fight off the robots with your bare hands",
+		"id": 315,
+		"name": "Use Hand-to-Steel combat"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You fend off the robots using the supplies. They are now unusable",
+		"id": 316,
+		"name": "Throw some supplies at the robot with all your might."
+	},
+	{
+		"Choice-1": [
+			315,
+			[],
+			"Use Hand-to-Steel Combat\n-Health to random crew"
+		],
+		"Choice-2": [
+			316,
+			[
+				[
+					"OXYGEN",
+					10
+				],
+				[
+					"FOOD",
+					10
+				]
+			],
+			"Throw some supplies at the robot with all your might.\n-10 Oxygen\n-10 Rations"
+		],
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				314,
+				[],
+				"Smack the robots using crowbar"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, straggler robots from Steelicus are attempting to steal parts of your shuttle. Defend your shuttle at all cost. ",
+		"id": 317,
+		"name": "Human-Robot Fight"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew head into the blackhole.",
+		"id": 318,
+		"name": "Explore the Unknown"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew steer clear of impending doom",
+		"id": 319,
+		"name": "Avoid it as much as possible"
+	},
+	{
+		"Choice-1": [
+			318,
+			[],
+			"Explore the Unknown"
+		],
+		"Choice-2": [
+			319,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Avoid it as much as possible\n-5 Fuel"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Your crew found a strange distortion, it seems to be an indication of a black hole. What action do you want to take, captain?",
+		"id": 320,
+		"name": "Into the Black Hole"
 	}
 ]
