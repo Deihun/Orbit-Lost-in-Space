@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://j4yjk3u6cn81"]
+
+[ext_resource type="Shader" path="res://Scenes/Ingame/pause_menu.gdshader" id="1_7g0xs"]
+[ext_resource type="Script" path="res://Scenes/crew_death.gd" id="2_bhq3o"]
+[ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="3_5b3x0"]
+[ext_resource type="Texture2D" uid="uid://38x6cgjs5xno" path="res://Scenes/UI/!.png" id="4_pdxfg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4xu7o"]
+shader = ExtResource("1_7g0xs")
+shader_parameter/amount = 3.5
+
+[node name="CrewDeath" type="ColorRect"]
+material = SubResource("ShaderMaterial_4xu7o")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -73.0
+offset_right = 128.0
+offset_bottom = 69.0
+pivot_offset = Vector2(1052, 569)
+script = ExtResource("2_bhq3o")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(0.270222, 0.270222, 0.270222, 1)
+layout_mode = 0
+offset_left = 357.0
+offset_top = 228.0
+offset_right = 1684.0
+offset_bottom = 924.0
+texture = ExtResource("3_5b3x0")
+patch_margin_left = 110
+patch_margin_top = 110
+patch_margin_right = 110
+patch_margin_bottom = 110
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 104.0
+offset_right = 1209.0
+offset_bottom = 612.0
+theme_override_font_sizes/font_size = 46
+text = "This is a sample text"
+autowrap_mode = 2
+
+[node name="!" type="Sprite2D" parent="NinePatchRect"]
+position = Vector2(200, 320)
+scale = Vector2(2.04, 2.11)
+texture = ExtResource("4_pdxfg")
+
+[node name="Back" type="Button" parent="NinePatchRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -264.0
+offset_top = -162.0
+offset_right = 1687.0
+offset_bottom = 916.0
+pivot_offset = Vector2(932, 495)
+
+[connection signal="button_up" from="NinePatchRect/Back" to="." method="_on_back_button_up"]

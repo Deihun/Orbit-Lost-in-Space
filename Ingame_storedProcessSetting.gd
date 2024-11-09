@@ -15,6 +15,7 @@ var selectedCrew = "Jerry"
 var speed = 0
 var inventory = 4
 var BonusMultiplyer = 1
+var deathMessage = ""
 
 func newGame():
 	Cycle = 1
@@ -153,6 +154,7 @@ func reset():
 		"Nashir" : 0.5,
 		"Fumiko" : 0.5
 	}
+	deathMessage = ""
 
 
 
