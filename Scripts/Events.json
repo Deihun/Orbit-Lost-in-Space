@@ -2077,5 +2077,515 @@
 		"description": "One of the bots on the planet is searching for parts to fix its broken plating. It offered to trade you some of its fuel cans in exchange for some of your scrap parts. Should we accept their offer? ",
 		"id": 162,
 		"name": "The Broken Robot"
+	},
+	{
+		"Command": [],
+		"Probability": [
+			[
+				0,
+				[
+					"@ADD_MATERIALSFOOD 10"
+				]
+			],
+			[
+				0,
+				[
+					"@ADD_MATERIALSMEDKIT 1"
+				]
+			],
+			[
+				0,
+				[
+					"@ADD_MATERIALSDUCTAPE 1"
+				]
+			]
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew rest your body. After waking up, you found a supply next to you. Strange.",
+		"id": 163,
+		"name": "Rest your body"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You stayed up, you didn't feel tired.",
+		"id": 164,
+		"name": "Stay up"
+	},
+	{
+		"Choice-1": [
+			163,
+			[],
+			"Rest your body"
+		],
+		"Choice-2": [
+			164,
+			[],
+			"Stay Up"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Study suggests that a human body needs rest, captain. Leave the navigation to me and rest with your crew. Although, it may consume more fuel than usual. ",
+		"id": 165,
+		"name": "Rest is also Important"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You collected the materials in spite of the rocks and dust",
+		"id": 166,
+		"name": "Collect Biogenic Materials"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You can't risk damaging the ship just for the materials",
+		"id": 167,
+		"name": "Take on other paths"
+	},
+	{
+		"Choice-1": [
+			166,
+			[],
+			"Collect Biogenetic Materials\n+ 20 Biogene"
+		],
+		"Choice-2": [
+			167,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Take on other paths"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Alert: Passing through a nebula, dust turbulence is imminent. Captain, traces of biogenetic rich materials detected in the dust. Taking other paths is suggested. ",
+		"id": 168,
+		"name": "The Dusty Trail"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You managed to fix all of the damages that your shuttle sustained",
+		"id": 169,
+		"name": "Fix all damages"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Due to the minimal effort, the plating of the shuttle flew off causing a fuel valve to be hit.",
+		"id": 170,
+		"name": "Fix with minimal effort."
+	},
+	{
+		"Choice-1": [
+			169,
+			[
+				[
+					"SPAREPARTS",
+					30
+				],
+				[
+					"DUCTAPE",
+					1
+				]
+			],
+			"Fix all damages\n-30 Spare Parts\n-1 Duct Tape"
+		],
+		"Choice-2": [
+			0,
+			[
+				[
+					"SPAREPARTS",
+					10
+				],
+				[
+					"FUEL",
+					20
+				]
+			],
+			"Fix with minimal effort."
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"The Dusty Trail"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "After passing through the Nebula, your shuttle has been damaged causing your hull to be ridden with holes. Immediate Fix is recommended. ",
+		"id": 171,
+		"name": "Done and Dusted"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You used the system's built-in Anti-virus",
+		"id": 172,
+		"name": "Open Anti-virus protocol to close the Adware"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You bought the enticing promo seen in the Ad and you were disappointed",
+		"id": 173,
+		"name": "Buy the Promo"
+	},
+	{
+		"Choice-1": [
+			172,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Open Anti-virus protocol to close the Adware"
+		],
+		"Choice-2": [
+			173,
+			[
+				[
+					"BIOGENE",
+					20
+				]
+			],
+			"Buy the Promo"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Error: AI System Compromised. BUY! BUY! BUY! Limited Supply! 100 Rations for 20 Biogene! Sales last until supplies are diminished! ",
+		"id": 174,
+		"name": "Error: Huge Sale"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You run the diagnostics of the shuttle only to find nothing.",
+		"id": 175,
+		"name": "Run Diagnostics"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ignored the anomaly and continued on with your life",
+		"id": 176,
+		"name": "Ignore the anomaly"
+	},
+	{
+		"Choice-1": [
+			175,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Run Diagnostics"
+		],
+		"Choice-2": [
+			176,
+			[],
+			"Ignore the anomaly"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, an anomaly has been detected on our engine. System diagnostic is recommended.  ",
+		"id": 177,
+		"name": "An Unknown Anomaly"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You conducted the study on Microgravity ",
+		"id": 178,
+		"name": "Conduct study"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You saved the rations from being sent out in space.",
+		"id": 179,
+		"name": "Save the Ration"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You saved the Biogene from being sent out in space",
+		"id": 180,
+		"name": "Save the Biogene "
+	},
+	{
+		"Choice-1": [
+			179,
+			[
+				[
+					"BIOGENE",
+					15
+				]
+			],
+			"Save the Ration"
+		],
+		"Choice-2": [
+			180,
+			[
+				[
+					"FOOD",
+					15
+				]
+			],
+			"Save the Biogene"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, we have an Apollo 13 protocol at bay. An oxygen tank suddenly exploded, we might need to choose what to save between the some of the ration or the biogene.",
+		"id": 181,
+		"name": "Apollo 13 Protocol"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You think that it is redundant to study gravity any further.",
+		"id": 182,
+		"name": "Skip the study"
+	},
+	{
+		"Choice-1": [
+			178,
+			[],
+			"Conduct Study"
+		],
+		"Choice-2": [
+			182,
+			[],
+			"Skip the Study"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "This section of our mission offers an ideal chance to study microgravity effects on crew health and equipment. It’s purely observational but could provide future insights. ",
+		"id": 183,
+		"name": "Gravitating Studies"
+	},
+	{
+		"Choice-1": [
+			178,
+			[],
+			"Conduct Study"
+		],
+		"Choice-2": [
+			182,
+			[],
+			"Skip the Study"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Regina, your biologist created a solution for the toxic gas using the biogene",
+		"id": 184,
+		"name": "Create a solution to neutralize the toxic gas"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The gas is removed quickly, but the crew suffers due to sudden loss of oxygen. ",
+		"id": 185,
+		"name": "Vent the entire room immediately"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Controlled venting reduces gas exposure and sudden loss of oxygen but allows some toxin to linger contaminating food rations. ",
+		"id": 186,
+		"name": "Vent the room slowly"
+	},
+	{
+		"Choice-1": [
+			185,
+			[
+				[
+					"OXYGEN",
+					10
+				]
+			],
+			"Vent the entire room immediately\n-10 Oxygen"
+		],
+		"Choice-2": [
+			186,
+			[
+				[
+					"FOOD",
+					20
+				]
+			],
+			"Vent the room slowly\n-20 Rations"
+		],
+		"HiddenChoice": [
+			[
+				"CREW",
+				[
+					"Regina",
+					null
+				]
+			],
+			[
+				184,
+				[
+					[
+						"BIOGENE",
+						10
+					]
+				],
+				"Create a solution to neutralize the toxic gas\n-10 Biogene"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Alert: Toxic gas leak detected in the medical bay. Immediate venting is required, or additional resources may help neutralize it safely. Venting the room would reduce the oxygen for you and your crew. ",
+		"id": 187,
+		"name": "Toxic Gas Leak?"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The circuitry is fully repaired, reducing the chance of future issues but requiring more resources. ",
+		"id": 188,
+		"name": "Use more resources to ensure that it won’t be faulty again."
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The repair is less thorough, thus leading to some minor electrical shocks leaving the system vulnerable to future faults. ",
+		"id": 189,
+		"name": "Try to save some resources."
+	},
+	{
+		"Choice-1": [
+			188,
+			[
+				[
+					"SPAREPARTS",
+					25
+				]
+			],
+			"Use more resources to ensure that it won’t be faulty again.\n-25 Spare Parts"
+		],
+		"Choice-2": [
+			189,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Try to save some resources.\n-5 Spare Parts\n-10 Health to Crew"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I’m detecting an electrical fault in the ship’s circuitry. Ignoring it may compromise essential functions of the shuttle. Immediate repairs are strongly recommended.",
+		"id": 190,
+		"name": "Faulty Circuitry"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The fire is put out immediately, but repairs cost us some resources. ",
+		"id": 191,
+		"name": "Extinguish and fix the damage caused by the fire"
+	},
+	{
+		"Command": [],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": " The fire eventually died down, but the engine is significantly damage and crew was expose to smoke for too long ",
+		"id": 192,
+		"name": "Let the fire die down before fixing the engine."
+	},
+	{
+		"Choice-1": [
+			191,
+			[
+				[
+					"SPAREPARTS",
+					25
+				]
+			],
+			"Extinguish and fix the damage caused by the fire\n-25 Spare Parts"
+		],
+		"Choice-2": [
+			192,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Let the fire die down before fixing the engine.\n-20 Spare Parts"
+		],
+		"Command": [],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, A fire has broken out in the engine room. Please extinguish it quickly to prevent further damage.",
+		"id": 193,
+		"name": "A Fiery Engine"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The panels are patched securely, restoring powder reserves, valuable spare parts are used.",
+		"id": 194,
+		"name": "Patch it with spare parts "
+	},
+	{
+		"Probability": [
+			[
+				0,
+				[
+					"@DO_DAMAGEMaxim 0.10",
+					"@DO_DAMAGERegina 0.10",
+					"@DO_DAMAGENashir 0.10",
+					"@DO_DAMAGEFumiko 0.10"
+				]
+			]
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Duct Tape temporarily holds the panels together, but repair did not last leading to insufficient power for life support systems. ",
+		"id": 195,
+		"name": "Patch it with duct tape"
+	},
+	{
+		"Choice-1": [
+			194,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Patch it with spare parts\n-10 Spare Parts"
+		],
+		"Choice-2": [
+			195,
+			[
+				[
+					"DUCTAPE",
+					1
+				]
+			],
+			"Patch it with duct tape\n-1 Duct Tape"
+		],
+		"Command": [
+			"@FACTSfact75"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Alert! A sudden minor comet shower has damaged the solar panels. Power reserves are dwindling, so repairs are necessary to restore efficiency.",
+		"id": 196,
+		"name": "Broken Solar Panels"
 	}
 ]
