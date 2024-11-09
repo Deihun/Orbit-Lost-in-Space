@@ -470,7 +470,6 @@ pivot_offset = Vector2(736, 356)
 
 [node name="SaveUI" parent="." instance=ExtResource("5_qnku8")]
 visible = false
-z_index = 1
 layout_mode = 1
 offset_left = 337.0
 offset_top = 168.0

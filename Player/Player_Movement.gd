@@ -34,6 +34,7 @@ var game_win : Callable
 
 #VOID METHODS
 func _ready():	#OnStart, 
+	$AllUIParents/PauseMenu/ColorRect/SaveUI.hidenodeMain()
 	if GlobalResources.uniqueItems.has("A.C.E.S"):
 		$"..".limitTimeDuration += 20
 		$_GameTimerLimit.countdown_start += 20

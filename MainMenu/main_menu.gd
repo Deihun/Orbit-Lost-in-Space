@@ -17,6 +17,7 @@ extends Control
 
 func _ready() -> void:
 	$AnimationPlayer.play("Start_up")
+	save_ui.hidenodeMain()
 
 func _on_new_game_button_pressed() -> void:
 	if SettingsDataContainer.tutorialScene or SettingsDataContainer.tutorialScene == null:

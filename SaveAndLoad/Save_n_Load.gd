@@ -62,7 +62,7 @@ func savedata():
 		"_reginaRelationship" : stored._reginaRelationship.duplicate(),
 		"_MaximRelationship" : stored._MaximRelationship.duplicate(),
 		"_NashirRelationship"  : stored._NashirRelationship.duplicate(),
-		"_FumikoRelationship" : stored._reginaRelationship.duplicate(),
+		"_FumikoRelationship" : stored._FumikoRelationship.duplicate(),
 		
 		"delayInFaction" : stored.delayInFaction,
 		"current_Factions" : stored.current_Factions,
