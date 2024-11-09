@@ -8,6 +8,7 @@ extends Control
 @onready var warning: Panel = $Panel/Warning
 @onready var warning_insufficient: Panel = $Panel/WarningInsufficient
 @onready var now_crafting: Panel = $Panel/NowCrafting
+@onready var warning_already_exist: Panel = $Panel/WarningAlreadyExist
 @onready var item_picture: Sprite2D = $Panel/Item_Picture/ItemPicture
 @onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
 @onready var buttons: AudioStreamPlayer = $Buttons
@@ -19,28 +20,34 @@ func _on_craft_button_pressed() -> void:
 	if (ongoingCraft == false):
 		match crafting_tab.craftingItems:
 			"A.C.E.S":
-				if GlobalResources.spareparts >= 300 && GlobalResources.oxygen >= 100 && GlobalResources.fuel >= 10:
-					GlobalResources.spareparts -= 300
-					GlobalResources.oxygen -= 100
-					GlobalResources.fuel -= 10
-					currentlycrafting = crafting_tab.craftingItems
-					ongoingCraft = true
-					print(currentlycrafting)
-					NowCraftingShow()
-					crafting_tab.closeScreen()
+				if !GlobalResources.uniqueItems.has("A.C.E.S"):
+					if GlobalResources.spareparts >= 300 && GlobalResources.oxygen >= 100 && GlobalResources.fuel >= 10:
+						GlobalResources.spareparts -= 300
+						GlobalResources.oxygen -= 100
+						GlobalResources.fuel -= 10
+						currentlycrafting = crafting_tab.craftingItems
+						ongoingCraft = true
+						print(currentlycrafting)
+						NowCraftingShow()
+						crafting_tab.closeScreen()
+					else:
+						warning_insufficientShow()
 				else:
-					warning_insufficientShow()
+					alreadycraftShow()
 			
 			"LeadSuitUp":
-				if GlobalResources.spareparts >= 400 && GlobalResources.fuel >= 10:
-					GlobalResources.spareparts -= 400
-					GlobalResources.fuel -= 10
-					currentlycrafting = crafting_tab.craftingItems
-					ongoingCraft = true
-					NowCraftingShow()
-					crafting_tab.closeScreen()
+				if !GlobalResources.uniqueItems.has("LeadSuitUp"):
+					if GlobalResources.spareparts >= 400 && GlobalResources.fuel >= 10:
+						GlobalResources.spareparts -= 400
+						GlobalResources.fuel -= 10
+						currentlycrafting = crafting_tab.craftingItems
+						ongoingCraft = true
+						NowCraftingShow()
+						crafting_tab.closeScreen()
+					else:
+						warning_insufficientShow()
 				else:
-					warning_insufficientShow()
+					alreadycraftShow()
 			
 			"Crowbar":
 				if GlobalResources.spareparts >= 100 && GlobalResources.fuel >= 10:
@@ -105,6 +112,11 @@ func ISCraftingShow():
 	warning.show()
 	var crafting_timer: Timer = $Panel/Warning/CraftingTimer
 	crafting_timer.start()
+	
+func alreadycraftShow():
+	warning_already_exist.show()
+	var alreadytimer: Timer = $Panel/WarningAlreadyExist/alreadytimer
+	alreadytimer.start()
 
 func _on_warningtimer_timeout() -> void:
 	warning_insufficient.hide()
@@ -114,3 +126,6 @@ func _on_now_craftingtimer_timeout() -> void:
 	
 func _on_crafting_timer_timeout() -> void:
 	warning.hide()
+
+func _on_alreadytimer_timeout() -> void:
+	warning_already_exist.hide()
