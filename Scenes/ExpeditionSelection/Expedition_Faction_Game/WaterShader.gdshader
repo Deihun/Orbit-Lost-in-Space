@@ -21,4 +21,3 @@ void fragment(){
 	COLOR = screen_col * tone_color + top_light;
 	COLOR.a = 1.0;
 }
-	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc0h431h7nqe6"]
+[gd_scene load_steps=23 format=3 uid="uid://cc0h431h7nqe6"]
 
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/abandon_satelite.gd" id="1_styhv"]
 [ext_resource type="Texture2D" uid="uid://b1yewkdhl72xc" path="res://Scenes/SceneAssets/LavenderWallColorSet/Space.png" id="2_462ea"]
@@ -8,7 +8,10 @@
 [ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/satelite_2.gd" id="4_vxoaw"]
 [ext_resource type="Texture2D" uid="uid://c8en36ge4eq1u" path="res://Scenes/SceneAssets/KeyCard.png" id="5_d2hjc"]
 [ext_resource type="PackedScene" uid="uid://cdqsa2sowbeeo" path="res://Interaction/interaction area/InteractionArea.tscn" id="5_naert"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/satelite_3.gd" id="7_c2wx2"]
+[ext_resource type="Texture2D" uid="uid://spm38dvimiay" path="res://Scenes/Tutorial/KeyCard.png" id="8_wcd6b"]
 [ext_resource type="PackedScene" uid="uid://do3agr6u61b4u" path="res://DropBox/DropBox.tscn" id="9_0esv2"]
+[ext_resource type="Script" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/satelite_4.gd" id="9_33my5"]
 [ext_resource type="PackedScene" uid="uid://bo23icrofd40r" path="res://SpawnerManager/node_resource_spawner.tscn" id="10_iioux"]
 [ext_resource type="AudioStream" uid="uid://dhwgl5m7ecxrm" path="res://Sounds/Music/Lonely_Platform.mp3" id="11_uqr8d"]
 
@@ -36,6 +39,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yurs"]
 size = Vector2(259.268, 244.194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2pmx"]
+size = Vector2(352.5, 368.671)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkvyr"]
+size = Vector2(283.302, 328.081)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0bs0"]
 size = Vector2(259.398, 242.058)
@@ -109,6 +118,7 @@ z_index = -1
 position = Vector2(2812, 8607)
 scale = Vector2(1.4618, 1.421)
 texture = ExtResource("3_drt7d")
+script = ExtResource("7_c2wx2")
 metadata/_edit_lock_ = true
 
 [node name="player_position" type="Node2D" parent="Satelite_3"]
@@ -127,12 +137,37 @@ build_mode = 1
 polygon = PackedVector2Array(-1476.26, -1441.94, -1217.68, -1434.2, -1063.07, -1444.05, -1040.5, -1510.2, -833.22, -1511.61, -836.64, -1320.2, -831.851, -1209.01, -783.281, -1146.38, -692.982, -1137.93, -688.193, -995.074, -597.893, -992.259, -584.896, -1187.19, -573.266, -1401.83, -240.799, -1816.33, 201.122, -1812.1, 199.754, -1857.85, 650.568, -1860.66, 988.508, -1533.43, 986.456, -729.768, 680.668, -731.879, 674.511, -629.134, 999.453, -627.023, 996.717, 686.84, 326.994, 698.804, 324.258, -109.782, 722.397, -111.189, 729.922, -194.229, 62.2521, -197.748, 67.0407, -88.67, 226.433, -87.2625, 224.381, 667.839, -1468.05, 645.32, -1480.37, -96.411, -333.835, -87.9662, -333.151, -196.341, -1478.31, -202.674, -1486.52, -659.395, 443.289, -661.506, 438.501, -726.249, -1486.52, -736.805)
 metadata/_edit_lock_ = true
 
+[node name="KeyCard" type="Sprite2D" parent="Satelite_3"]
+position = Vector2(326.31, -551.196)
+scale = Vector2(0.273635, 0.271636)
+texture = ExtResource("8_wcd6b")
+
+[node name="InteractionArea" parent="Satelite_3/KeyCard" instance=ExtResource("5_naert")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Satelite_3/KeyCard/InteractionArea"]
+position = Vector2(-2.50002, -7.12436)
+shape = SubResource("RectangleShape2D_v2pmx")
+
 [node name="Satelite_4" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(11661, 8627)
 scale = Vector2(1.4618, 1.421)
 texture = ExtResource("3_drt7d")
+script = ExtResource("9_33my5")
 metadata/_edit_lock_ = true
+
+[node name="KeyCard" type="Sprite2D" parent="Satelite_4"]
+position = Vector2(-900.26, -1279.38)
+scale = Vector2(0.279358, 0.28691)
+texture = ExtResource("8_wcd6b")
+
+[node name="InteractionArea" parent="Satelite_4/KeyCard" instance=ExtResource("5_naert")]
+position = Vector2(-2.00002, -62)
+scale = Vector2(1.71499, 1.421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Satelite_4/KeyCard/InteractionArea"]
+position = Vector2(-3.11825, 36.7271)
+shape = SubResource("RectangleShape2D_pkvyr")
 
 [node name="player_position" type="Node2D" parent="Satelite_4"]
 position = Vector2(425.503, -1515.83)
