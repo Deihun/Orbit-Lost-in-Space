@@ -4351,5 +4351,16 @@
 		"description": "The carbon scrubber has been rendered useless due to the immense amount of carbon collected. We can only replace it. There is also a report about a crew getting sick due to carbon poisoning",
 		"id": 500,
 		"name": "Carbon Scrubbed"
+	},
+	{
+		"Conditions": [
+			"CYCLE",
+			"2"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Testing",
+		"id": 501,
+		"name": "Testing"
 	}
 ]
