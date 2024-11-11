@@ -78,6 +78,12 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 	var numbers_of_event =  int(1 + (randf() * (Cycle.getCycle()*0.08)))
 	GlobalResources.currentActiveQueue = numbers_of_event
 	
+	for event in rawEvent:
+		if event.has("Conditions"):
+			if event["Conditions"][0] == "CYCLE":
+				if int(event["Conditions"][1][0]) == IngameStoredProcessSetting.Cycle:
+					GlobalResources.eventID.append(event["id"])
+
 	#_CRITICAL EVENT
 	while(GlobalResources.Critical_Event.size() > 0):
 		var Critical_key = GlobalResources.Critical_Event.pop_front()
@@ -86,6 +92,7 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 				if eachEvent["Conditions"][0] == "CRITICAL" and Critical_key in eachEvent["Conditions"][1]:
 					GlobalResources.eventID.append(eachEvent["id"])
 
+	
 	#PRIORITIZE EVENTS THAT WITHIN PRIORITY ARRAY
 	while(GlobalResources.Priority_Event.size() > 0 && numbers_of_event > 0): 
 		var priority_key = GlobalResources.Priority_Event.pop_front()
@@ -157,10 +164,6 @@ func _conditions(eachEvent) -> bool:
 		#HAS UNIQUE ITEMS
 		elif eachEvent["Conditions"][0] == "HAS_UNIQUE_ITEM":
 			if GlobalResources.uniqueItems.has(data):
-				GlobalResources.eventID.append(eachEvent["id"])
-				return condition
-		elif eachEvent["Conditions"][0] == "CYCLE":
-			if IngameStoredProcessSetting.Cycle == data:
 				GlobalResources.eventID.append(eachEvent["id"])
 				return condition
 	return false

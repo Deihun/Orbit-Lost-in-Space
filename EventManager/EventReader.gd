@@ -93,7 +93,7 @@ func HiddenChoice(Event):
 		var conditionArray = inner_array[0]
 		var condition = Event["HiddenChoice"][0][0]
 
-		
+
 		match(condition):
 			"HAS":
 				if globalResources.hasItem(Event["HiddenChoice"][0][1][0],Event["HiddenChoice"][0][1][1]):
