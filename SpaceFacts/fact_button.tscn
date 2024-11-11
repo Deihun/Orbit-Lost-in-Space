@@ -6,6 +6,7 @@
 bg_color = Color(0.20942, 0.127688, 0.0336939, 1)
 
 [node name="FactButton" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
