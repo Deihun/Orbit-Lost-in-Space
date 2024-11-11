@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://biebc6r1spt82"]
+[gd_scene load_steps=9 format=3 uid="uid://biebc6r1spt82"]
 
 [ext_resource type="Script" path="res://Scripts/event_manager_not_ingame.gd" id="1_vywad"]
-[ext_resource type="PackedScene" path="res://Scripts/_command_module.tscn" id="2_5gxj8"]
+[ext_resource type="PackedScene" uid="uid://cyhm0oobhtnbi" path="res://Scripts/_command_module.tscn" id="2_5gxj8"]
 [ext_resource type="PackedScene" path="res://Scripts/_probability_module.tscn" id="3_q1j43"]
+[ext_resource type="Script" path="res://Scripts/conditions_components.gd" id="3_r1le8"]
+[ext_resource type="Script" path="res://Scripts/viewing.gd" id="5_ppsfg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdps8"]
 bg_color = Color(0.442911, 0.442911, 0.442911, 1)
@@ -36,7 +38,7 @@ layout_mode = 0
 offset_left = 40.0
 offset_top = 96.0
 offset_right = 889.0
-offset_bottom = 496.0
+offset_bottom = 1018.0
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
@@ -47,6 +49,7 @@ offset_bottom = 29.0
 text = "Back"
 
 [node name="ScrollContainer_CodePreview" type="ScrollContainer" parent="."]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 37.0
@@ -288,6 +291,7 @@ layout_mode = 2
 [node name="Conditions_Components" type="Control" parent="OtherSubComponents/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(800, 275)
 layout_mode = 2
+script = ExtResource("3_r1le8")
 
 [node name="Panel" type="Panel" parent="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components"]
 layout_mode = 1
@@ -363,8 +367,26 @@ text = "USE CONDITION"
 [node name="_Probability_Module" parent="OtherSubComponents/ScrollContainer/VBoxContainer" instance=ExtResource("3_q1j43")]
 layout_mode = 2
 
+[node name="Viewing" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 107.0
+offset_right = 886.0
+offset_bottom = 716.0
+script = ExtResource("5_ppsfg")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Viewing"]
+layout_mode = 0
+offset_right = 858.0
+offset_bottom = 916.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Viewing/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Button_AddEvent" to="." method="add_new_event"]
 [connection signal="button_up" from="Button_Clear" to="." method="_on_button_clear_button_up"]
 [connection signal="button_up" from="Create_ChoiceButton/Button_AddChoiceButton" to="." method="_on_button_add_choice_button_button_up"]
 [connection signal="button_up" from="Create_ChoiceButton/Button_AddChoiceButton2" to="." method="_on_button_add_choice_button_2_button_up"]
+[connection signal="toggled" from="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel/_UseCondition_CheckButton" to="OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components" method="_on__use_condition_check_button_toggled"]

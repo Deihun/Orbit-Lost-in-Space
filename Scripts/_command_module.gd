@@ -5,7 +5,7 @@ func get_value():
 	var array = []
 	for child in $Panel/Command_CollectionPanel/ScrollContainer/VBoxContainer.get_children():
 		array.append(child.get_value())
-	return array
+	return array.duplicate()
 
 func _on_command_collection_panel_add_button_up() -> void:
 	var a = preload("res://Scripts/commands_index.tscn").instantiate()

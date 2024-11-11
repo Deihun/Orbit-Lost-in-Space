@@ -1,0 +1,316 @@
+[gd_scene load_steps=7 format=3 uid="uid://c05vtd1a4qtoh"]
+
+[ext_resource type="Script" path="res://Scripts/events.gd" id="1_ybv41"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep611"]
+bg_color = Color(0.544923, 0.612955, 0.647656, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py4gg"]
+bg_color = Color(0.809053, 0.515708, 0.404792, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4pe"]
+bg_color = Color(0.420824, 0.116919, 0.0843298, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6fju"]
+bg_color = Color(0.472773, 0.98714, 0.297475, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yslx1"]
+bg_color = Color(0.475934, 0.022107, 0, 1)
+
+[node name="Events" type="Control"]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ybv41")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ep611")
+metadata/_edit_lock_ = true
+
+[node name="Seperator_7" type="Panel" parent="Panel"]
+offset_left = 716.0
+offset_top = 6.0
+offset_right = 718.0
+offset_bottom = 296.0
+
+[node name="Seperator_6" type="Panel" parent="Panel"]
+offset_left = 610.0
+offset_top = 23.0
+offset_right = 612.0
+offset_bottom = 151.0
+
+[node name="Seperator_1" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 796.0
+offset_bottom = 24.0
+metadata/_edit_lock_ = true
+
+[node name="Seperator_2" type="Panel" parent="Panel"]
+offset_left = 1.0
+offset_top = 151.0
+offset_right = 331.0
+offset_bottom = 153.0
+metadata/_edit_lock_ = true
+
+[node name="Seperator_3" type="Panel" parent="Panel"]
+offset_left = 331.0
+offset_top = 3.0
+offset_right = 333.0
+offset_bottom = 293.0
+metadata/_edit_lock_ = true
+
+[node name="Seperator_4" type="Panel" parent="Panel"]
+offset_left = 716.0
+offset_top = 3.0
+offset_right = 718.0
+offset_bottom = 22.0
+metadata/_edit_lock_ = true
+
+[node name="Seperator_5" type="Panel" parent="Panel"]
+offset_left = 333.0
+offset_top = 151.0
+offset_right = 800.0
+offset_bottom = 153.0
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_top = 292.0
+offset_right = 800.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_py4gg")
+metadata/_edit_lock_ = true
+
+[node name="id" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 715.0
+offset_right = 799.0
+offset_bottom = 23.0
+text = "ID: 999"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 336.0
+offset_bottom = 23.0
+text = "<Title>"
+metadata/_edit_lock_ = true
+
+[node name="Description" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 23.0
+offset_right = 334.0
+offset_bottom = 152.0
+text = "Description
+"
+metadata/_edit_lock_ = true
+
+[node name="HasNoCommandPanel" type="Panel" parent="Panel"]
+visible = false
+custom_minimum_size = Vector2(19.02, 0)
+layout_mode = 2
+offset_top = 152.0
+offset_right = 331.0
+offset_bottom = 293.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
+metadata/_edit_lock_ = true
+
+[node name="HasNoConditions" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(19.02, 0)
+offset_left = 333.0
+offset_top = -1.0
+offset_right = 716.0
+offset_bottom = 22.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
+metadata/_edit_lock_ = true
+
+[node name="Command_Guide" type="Label" parent="Panel"]
+layout_mode = 2
+offset_top = 153.0
+offset_right = 80.0
+offset_bottom = 176.0
+text = "Command"
+metadata/_edit_lock_ = true
+
+[node name="Condition_Guide" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 332.0
+offset_right = 717.0
+offset_bottom = 23.0
+text = "Has No Condition"
+metadata/_edit_lock_ = true
+
+[node name="CommandContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_top = 173.0
+offset_right = 330.0
+offset_bottom = 295.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CommandContainer"]
+layout_mode = 2
+
+[node name="HasNoChoiceButton_Panel" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(19.02, 0)
+offset_left = 333.0
+offset_top = 24.0
+offset_right = 610.0
+offset_bottom = 152.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
+metadata/_edit_lock_ = true
+
+[node name="HasNoChoiceButtonGuide" type="Label" parent="Panel/HasNoChoiceButton_Panel"]
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 277.0
+offset_bottom = 20.0
+text = "Has No Choice Button
+"
+
+[node name="CanBeActive_Green" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 24.0
+offset_right = 800.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6fju")
+metadata/_edit_lock_ = true
+
+[node name="_Active" type="Label" parent="Panel/CanBeActive_Green"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0.427451, 0, 1)
+text = "ACTIVE"
+
+[node name="CanBeActive_RED" type="Panel" parent="Panel/CanBeActive_Green"]
+offset_right = 83.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yslx1")
+
+[node name="Inactive" type="Label" parent="Panel/CanBeActive_Green/CanBeActive_RED"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 77.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+text = "INACTIVE"
+
+[node name="CanBeRandom_Green" type="Panel" parent="Panel"]
+offset_left = 717.0
+offset_top = 67.0
+offset_right = 800.0
+offset_bottom = 106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6fju")
+metadata/_edit_lock_ = true
+
+[node name="_Repeatable" type="Label" parent="Panel/CanBeRandom_Green"]
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 89.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0.427451, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Repeatable"
+
+[node name="CanBeActive_RED" type="Panel" parent="Panel/CanBeRandom_Green"]
+offset_right = 83.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yslx1")
+
+[node name="Inactive" type="Label" parent="Panel/CanBeRandom_Green/CanBeActive_RED"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 80.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_font_sizes/font_size = 13
+text = "REPEATABLE
+OFF"
+horizontal_alignment = 1
+
+[node name="HasNoProbability" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(19.02, 0)
+offset_left = 333.0
+offset_top = 153.0
+offset_right = 716.0
+offset_bottom = 292.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
+
+[node name="HasNoProbabilityGuide" type="Label" parent="Panel/HasNoProbability"]
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 277.0
+offset_bottom = 20.0
+text = "Has No Probability
+"
+
+[node name="Choice_ContainerView" type="ScrollContainer" parent="."]
+offset_left = 333.0
+offset_top = 25.0
+offset_right = 610.0
+offset_bottom = 151.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choice_ContainerView"]
+layout_mode = 2
+
+[node name="canHiddenChoice" type="Panel" parent="."]
+offset_left = 612.0
+offset_top = 24.0
+offset_right = 715.0
+offset_bottom = 151.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yslx1")
+
+[node name="Label" type="Label" parent="canHiddenChoice"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 101.0
+offset_bottom = 94.0
+text = "No 
+Hidden
+Choice
+"
+horizontal_alignment = 1
+
+[node name="HiddenChoiceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 612.0
+offset_top = 24.0
+offset_right = 715.0
+offset_bottom = 151.0
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 24.0
+offset_right = 715.0
+offset_bottom = 150.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="ProbabilityList" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 174.0
+offset_right = 715.0
+offset_bottom = 292.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ProbabilityList"]
+layout_mode = 2

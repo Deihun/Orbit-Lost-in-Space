@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0k5tm11apvue"]
+
+[ext_resource type="Script" path="res://Scripts/choice_button_preview_panel.gd" id="1_0siox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsd0o"]
+bg_color = Color(0.293138, 0.442706, 0.456806, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4pe"]
+bg_color = Color(0.420824, 0.116919, 0.0843298, 1)
+
+[node name="Choice_ButtonPreviewPanel" type="Panel"]
+custom_minimum_size = Vector2(275, 100)
+offset_left = 333.0
+offset_top = 25.0
+offset_right = 333.0
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsd0o")
+script = ExtResource("1_0siox")
+
+[node name="HasNoRequirements" type="Panel" parent="."]
+custom_minimum_size = Vector2(19.02, 0)
+layout_mode = 0
+offset_left = 181.0
+offset_top = 17.0
+offset_right = 275.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
+
+[node name="Label" type="Label" parent="HasNoRequirements"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 84.0
+text = "<WARNING>
+Has no Requireme-"
+autowrap_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 184.0
+offset_bottom = 98.0
+
+[node name="Requirements" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 17.0
+offset_right = 275.0
+offset_bottom = 99.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Requirements"]
+layout_mode = 2
+
+[node name="ID_" type="Label" parent="."]
+layout_mode = 0
+offset_left = 181.0
+offset_top = -3.0
+offset_right = 264.0
+offset_bottom = 20.0
+text = "ID: 999"
+horizontal_alignment = 2

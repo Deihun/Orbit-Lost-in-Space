@@ -83,6 +83,7 @@ func get_next_event_id() -> int:
 	pass
 
 func update_UI():
+	$Viewing.updateViewer(event_data)
 	var json_string = JSON.stringify(event_data)
 	var formatted_string = json_string.replace("},", "},\n").replace("[", "[\n").replace("]", "\n]").replace("Repeatable", "\nRepeatable").replace("description","\ndescription").replace("id","\nid")
 	var label = $ScrollContainer_CodePreview/VScrollBar_CodePreview/Label

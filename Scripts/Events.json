@@ -1191,7 +1191,9 @@
 		"name": "Canning company trade event"
 	},
 	{
-		"Command": ["@ADD_MATERIALS FUEL 20"],
+		"Command": [
+			"@ADD_MATERIALS FUEL 20"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You examined the odd technology",
@@ -1266,7 +1268,9 @@
 		"name": "F.E.L.A.S. Betrayal"
 	},
 	{
-		"Command": ["@ADD_MATERIALS FUEL 20"],
+		"Command": [
+			"@ADD_MATERIALS FUEL 20"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You dismantled the tracker.",
@@ -1445,7 +1449,12 @@
 		"name": "A Rare Sight"
 	},
 	{
-		"Command": ["@SANITY_INCREASEMAXIM 0.1","@SANITY_INCREASENASHIR 0.1","@SANITY_INCREASEFUMIKO 0.1","@SANITY_INCREASEREGINA 0.1"],
+		"Command": [
+			"@SANITY_INCREASEMAXIM 0.1",
+			"@SANITY_INCREASENASHIR 0.1",
+			"@SANITY_INCREASEFUMIKO 0.1",
+			"@SANITY_INCREASEREGINA 0.1"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You watched the beautiful comet shower.",
@@ -1556,11 +1565,11 @@
 		"name": "Give some Fuel"
 	},
 	{
+		"Command": [],
 		"Conditions": [
 			"PLACE",
 			"Radonti"
 		],
-		"Command": [],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You gave some Biogene to the rodents",
@@ -1693,7 +1702,9 @@
 			[],
 			"Dismantle it\n+30 Spare Parts"
 		],
-		"Command": ["@ANOTHER_EVENT141"],
+		"Command": [
+			"@ANOTHER_EVENT141"
+		],
 		"RandomTrue": true,
 		"Repeatable": false,
 		"description": "Captain, Cassini has found a part of the telescope of the Mariner 10 outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
@@ -1728,7 +1739,12 @@
 			"Dismantle the Galileo Spacecraft\n+30 Spare Parts"
 		],
 		"Command": [],
-		"Conditions" : ["FOLLOW-UP",["A Drone Named Cassini"]],
+		"Conditions": [
+			"FOLLOW-UP",
+			[
+				"A Drone Named Cassini"
+			]
+		],
 		"RandomTrue": true,
 		"Repeatable": false,
 		"description": "Captain, Cassini has found a part of the Galileo Spacecraft outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
@@ -3646,7 +3662,9 @@
 		"name": "Correct course"
 	},
 	{
-		"Command": ["@FACTSfact3"],
+		"Command": [
+			"@FACTSfact3"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You and your crew try to get pass the debris ",
@@ -4059,7 +4077,9 @@
 		"name": "Replace the carbon scrubber"
 	},
 	{
-		"Command" : ["@CRITICALFix the Carbon Scrubber later"],
+		"Command": [
+			"@CRITICALFix the Carbon Scrubber later"
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "You forget it immediately and moved on",
@@ -4082,8 +4102,13 @@
 			[],
 			"Do it later"
 		],
-		"Condition" : ["@CRITICAL",["Fix the Carbon Scrubber later"]],
 		"Command": [],
+		"Condition": [
+			"@CRITICAL",
+			[
+				"Fix the Carbon Scrubber later"
+			]
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
 		"description": "The carbon scrubber has been rendered useless due to the immense amount of carbon collected. We can only replace it. There is also a report about a crew getting sick due to carbon poisoning",
@@ -4314,12 +4339,17 @@
 			[],
 			"Do it later"
 		],
-		"Condition" : ["@CRITICAL",["Fix the Carbon Scrubber later"]],
 		"Command": [],
+		"Condition": [
+			"@CRITICAL",
+			[
+				"Fix the Carbon Scrubber later"
+			]
+		],
 		"RandomTrue": false,
 		"Repeatable": false,
 		"description": "The carbon scrubber has been rendered useless due to the immense amount of carbon collected. We can only replace it. There is also a report about a crew getting sick due to carbon poisoning",
 		"id": 500,
 		"name": "Carbon Scrubbed"
-	},
+	}
 ]
