@@ -5,7 +5,7 @@ extends Control
 @onready var delete: Button = $HBoxContainer/Delete
 @onready var saveGame = SaveNLoad
 @onready var save_ui: Control = $".."
-@onready var message_delay: Timer = $"../NinePatchRect/Panel/MessageDelay"
+@onready var message_delay = get_parent().get_node("NinePatchRect/Panel/MessageDelaySave")
 @onready var panel: Panel = $"../NinePatchRect/Panel"
 
 var filename
@@ -22,6 +22,8 @@ func save_file():
 	else: 
 		panel.visible = true
 		message_delay.start()
+		save_ui.start_custom_timer()
+		print("delay")
 
 func _on_save_pressed() -> void:
 	set_file_name()

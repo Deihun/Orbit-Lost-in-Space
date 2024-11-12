@@ -68,8 +68,9 @@ offset_bottom = 462.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MessageDelay" type="Timer" parent="NinePatchRect/Panel"]
-wait_time = 3.0
+[node name="MessageDelaySave" type="Timer" parent="NinePatchRect/Panel"]
+process_mode = 3
+wait_time = 1.5
 one_shot = true
 
 [node name="Label" type="Label" parent="NinePatchRect/Panel"]
@@ -99,5 +100,5 @@ offset_bottom = 720.0
 text = "Back
 "
 
-[connection signal="timeout" from="NinePatchRect/Panel/MessageDelay" to="." method="_on_message_delay_timeout"]
+[connection signal="timeout" from="NinePatchRect/Panel/MessageDelaySave" to="." method="_on_message_delay_timeout"]
 [connection signal="button_up" from="Back" to="." method="_on_back_button_up"]

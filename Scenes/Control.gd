@@ -12,6 +12,7 @@ extends Control
 @onready var item_ui: Control = NodeFinder.find_node_by_name(get_tree().current_scene, "Item_UI")
 @onready var setanimation = NodeFinder.find_node_by_name(get_tree().current_scene, "Craft")
 
+
 #VARIABLES
 var resources 
 var events
@@ -91,8 +92,12 @@ func _on_next_day_button_pressed():
 		CycleSetting.endCycle()
 		#print(IngameStoredProcessSetting._current_hunger,"\n",IngameStoredProcessSetting._health, "\n",IngameStoredProcessSetting.crew_in_ship,IngameStoredProcessSetting.crew_in_ship.size())
 		_is_MainFaction()
+		#Autosave
+		SaveGame.save()
+		var saveui = NodeFinder.find_node_by_name(get_tree().current_scene, "SaveUI")
+		if saveui : saveui.update_all()
 		#crafting
-		if item_ui.ongoingCraft == true:
+		if item_ui.ongoingCraft == true: 
 			item_ui.ongoingCraft = false
 			if item_ui.currentlycrafting == "MedkitCharge" or item_ui.currentlycrafting == "FreDriSpaceFood" or item_ui.currentlycrafting == "DehySpaceFood":
 				match item_ui.currentlycrafting:
