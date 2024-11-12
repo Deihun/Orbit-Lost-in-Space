@@ -90,13 +90,16 @@ func update_UI():
 	$Label_id.text = str("ID: ", get_next_event_id())
 	label.text = str(formatted_string)
 	label.autowrap_mode = true
-
-
-
-
 	var font_size = label.get_theme_font_size("font_size")  # Get the font size from the theme
 	var line_count = label.get_line_count()  # Get the number of lines
 	#label.custom_minimum_size = Vector2(0, font_size * line_count)
+
+func remove_data_by_id(id_to_remove):
+	event_data = event_data.filter(func(item):
+		return !(item.has("id") && item["id"] == id_to_remove)
+	)
+	save_json_file()
+	update_UI()
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #BUTTON GENERATION UI
@@ -145,7 +148,7 @@ func on_finalize_choice_button():
 			current_choice_id += 1
 
 		child.queue_free()
-	update_UI()
+
 
 func _Hidden_Choice_Toggle() -> void:
 	if !$Panel_ButtonGeneration/CheckButton_Hidden.is_pressed():
@@ -165,7 +168,7 @@ func _RESET_TemporaryITEM() -> void:
 	current_choice_id = 0
 	TemporaryChoices.clear()
 	update_UI()
-	pass # Replace with function body.
+
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 #						COMMAND TAB
