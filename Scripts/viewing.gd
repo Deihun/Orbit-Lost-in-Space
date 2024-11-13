@@ -2,6 +2,9 @@ extends Control
 
 
 func updateViewer(wholeEvent):
+	for child in $ScrollContainer/VBoxContainer.get_children():
+		child.queue_free()
+	
 	for event in wholeEvent:
 		var child = preload("res://Scripts/events.tscn").instantiate()
 		child.addTitleAndDescription(event["name"],event["description"], event["id"])

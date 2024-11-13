@@ -1,5 +1,5 @@
 extends Control
-
+var _id : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +15,7 @@ func _checkIfItHasEvent():
 
 func addTitleAndDescription(title: String, Description: String, id):
 	$Panel/id.text = str("ID: ", id)
+	_id = int(id)
 	$Panel/Title.text = title
 	$Panel/Description.text = Description
 
@@ -54,3 +55,13 @@ func probability(_probability):
 	for command in _probability[0][1]:
 		a.add_view_command(str(command))
 	$ProbabilityList/VBoxContainer.add_child(a)
+
+
+func _on_delete_button_button_up() -> void:
+	var main = NodeFinder.find_node_by_name(get_tree().current_scene,"EventManagerNotIngame")
+	if !main: return
+	if main.has_node("confirmationBox"): return
+	var confirm = preload("res://Scripts/confirmation.tscn").instantiate()
+	confirm.set_id(_id)
+	confirm.name = "confirmationBox"
+	main.add_child(confirm)

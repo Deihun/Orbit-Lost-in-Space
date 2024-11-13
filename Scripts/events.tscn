@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c05vtd1a4qtoh"]
+[gd_scene load_steps=8 format=3 uid="uid://c05vtd1a4qtoh"]
 
 [ext_resource type="Script" path="res://Scripts/events.gd" id="1_ybv41"]
 
@@ -16,6 +16,9 @@ bg_color = Color(0.472773, 0.98714, 0.297475, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yslx1"]
 bg_color = Color(0.475934, 0.022107, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7su73"]
+bg_color = Color(0.359612, 0.114924, 2.40654e-08, 1)
 
 [node name="Events" type="Control"]
 custom_minimum_size = Vector2(800, 300)
@@ -36,12 +39,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ep611")
 metadata/_edit_lock_ = true
 
 [node name="Seperator_7" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 716.0
 offset_top = 6.0
 offset_right = 718.0
 offset_bottom = 296.0
 
 [node name="Seperator_6" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 610.0
 offset_top = 23.0
 offset_right = 612.0
@@ -55,6 +60,7 @@ offset_bottom = 24.0
 metadata/_edit_lock_ = true
 
 [node name="Seperator_2" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 151.0
 offset_right = 331.0
@@ -62,6 +68,7 @@ offset_bottom = 153.0
 metadata/_edit_lock_ = true
 
 [node name="Seperator_3" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 331.0
 offset_top = 3.0
 offset_right = 333.0
@@ -69,6 +76,7 @@ offset_bottom = 293.0
 metadata/_edit_lock_ = true
 
 [node name="Seperator_4" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 716.0
 offset_top = 3.0
 offset_right = 718.0
@@ -76,6 +84,7 @@ offset_bottom = 22.0
 metadata/_edit_lock_ = true
 
 [node name="Seperator_5" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 333.0
 offset_top = 151.0
 offset_right = 800.0
@@ -128,6 +137,7 @@ metadata/_edit_lock_ = true
 
 [node name="HasNoConditions" type="Panel" parent="Panel"]
 custom_minimum_size = Vector2(19.02, 0)
+layout_mode = 0
 offset_left = 333.0
 offset_top = -1.0
 offset_right = 716.0
@@ -163,6 +173,7 @@ layout_mode = 2
 
 [node name="HasNoChoiceButton_Panel" type="Panel" parent="Panel"]
 custom_minimum_size = Vector2(19.02, 0)
+layout_mode = 0
 offset_left = 333.0
 offset_top = 24.0
 offset_right = 610.0
@@ -171,6 +182,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
 metadata/_edit_lock_ = true
 
 [node name="HasNoChoiceButtonGuide" type="Label" parent="Panel/HasNoChoiceButton_Panel"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = -3.0
 offset_right = 277.0
@@ -197,6 +209,7 @@ theme_override_colors/font_color = Color(0, 0.427451, 0, 1)
 text = "ACTIVE"
 
 [node name="CanBeActive_RED" type="Panel" parent="Panel/CanBeActive_Green"]
+layout_mode = 0
 offset_right = 83.0
 offset_bottom = 39.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yslx1")
@@ -211,6 +224,7 @@ theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
 text = "INACTIVE"
 
 [node name="CanBeRandom_Green" type="Panel" parent="Panel"]
+layout_mode = 0
 offset_left = 717.0
 offset_top = 67.0
 offset_right = 800.0
@@ -219,6 +233,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_h6fju")
 metadata/_edit_lock_ = true
 
 [node name="_Repeatable" type="Label" parent="Panel/CanBeRandom_Green"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 6.0
 offset_right = 89.0
@@ -228,6 +243,7 @@ theme_override_font_sizes/font_size = 15
 text = "Repeatable"
 
 [node name="CanBeActive_RED" type="Panel" parent="Panel/CanBeRandom_Green"]
+layout_mode = 0
 offset_right = 83.0
 offset_bottom = 39.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yslx1")
@@ -245,6 +261,7 @@ horizontal_alignment = 1
 
 [node name="HasNoProbability" type="Panel" parent="Panel"]
 custom_minimum_size = Vector2(19.02, 0)
+layout_mode = 0
 offset_left = 333.0
 offset_top = 153.0
 offset_right = 716.0
@@ -252,6 +269,7 @@ offset_bottom = 292.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rp4pe")
 
 [node name="HasNoProbabilityGuide" type="Label" parent="Panel/HasNoProbability"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = -3.0
 offset_right = 277.0
@@ -260,6 +278,7 @@ text = "Has No Probability
 "
 
 [node name="Choice_ContainerView" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 333.0
 offset_top = 25.0
 offset_right = 610.0
@@ -270,6 +289,7 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 
 [node name="canHiddenChoice" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 612.0
 offset_top = 24.0
 offset_right = 715.0
@@ -314,3 +334,14 @@ offset_bottom = 292.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ProbabilityList"]
 layout_mode = 2
+
+[node name="Delete_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 721.0
+offset_top = 267.0
+offset_right = 798.0
+offset_bottom = 292.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7su73")
+text = "Remove"
+
+[connection signal="button_up" from="Delete_Button" to="." method="_on_delete_button_button_up"]
