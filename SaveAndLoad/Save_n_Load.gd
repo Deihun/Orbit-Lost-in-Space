@@ -20,12 +20,10 @@ func _process(delta: float) -> void:
 func LoadSave(SaveName : String) -> void:
 	SavePath = "Saves/" + SaveName +".json"
 	loadsave()
-	print(SavePath)
 
 func SaveGame(SaveName : String):
 	SavePath = "Saves/" + SaveName +".json"
 	save()
-	print(SavePath)
 
 func savedata():
 	if !events :
@@ -77,14 +75,12 @@ func savedata():
 	return save_dict
 
 func save():
-	print("saved")
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
-	print(json_string)
+	file.store_line(json_string)
 	
 func loadsave():
 	if not FileAccess.file_exists(SavePath):
-		print("file exsit")
 		return
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.READ, "Orbit")
 		

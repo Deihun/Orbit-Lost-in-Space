@@ -3,12 +3,12 @@ extends Control
 @onready var load_game = load("res://Scenes/TestingInteriorScene.tscn") as PackedScene
 @onready var label: Label = $ColorRect/HBoxContainer/Label as Label
 @onready var SaveGame = SaveNLoad
-@onready var save_ui: Control = $"."
-
+@onready var save_ui
 var FileName : String = "hello"
 var SaveName
 
 func _ready() -> void:
+	save_ui = NodeFinder.find_node_by_name(get_tree().current_scene, "SaveUI")
 	set_action_name()
 	
 func set_action_name() -> void:
@@ -30,8 +30,7 @@ func _on_delete_pressed() -> void:
 		if dir:
 			var error = dir.remove(PathName)
 			if error == OK:
-				print("File deleted successfully.")
-				get_tree().reload_current_scene()
+				save_ui.update_all()
 			else:
 				print("Failed to delete the file.")
 		else:
