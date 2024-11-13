@@ -90,6 +90,39 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "ERROR: Name shouldn't be blank"
 
+[node name="NoSamevalue" type="Panel" parent="NinePatchRect"]
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(500, 100)
+offset_left = 378.0
+offset_top = 362.5
+offset_right = 578.0
+offset_bottom = 462.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageDelaySave" type="Timer" parent="NinePatchRect/NoSamevalue"]
+process_mode = 3
+wait_time = 1.5
+one_shot = true
+
+[node name="Label" type="Label" parent="NinePatchRect/NoSamevalue"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "ERROR: Name shouldn't be blank"
+
 [node name="Back" type="Button" parent="."]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 0
@@ -101,4 +134,5 @@ text = "Back
 "
 
 [connection signal="timeout" from="NinePatchRect/Panel/MessageDelaySave" to="." method="_on_message_delay_timeout"]
+[connection signal="timeout" from="NinePatchRect/NoSamevalue/MessageDelaySave" to="." method="_on_message_delay_timeout"]
 [connection signal="button_up" from="Back" to="." method="_on_back_button_up"]

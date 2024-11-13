@@ -30,7 +30,6 @@ func _on_delete_pressed() -> void:
 		if dir:
 			var error = dir.remove(PathName)
 			if error == OK:
-				print("File deleted successfully.")
 				save_ui.update_all()
 			else:
 				print("Failed to delete the file.")

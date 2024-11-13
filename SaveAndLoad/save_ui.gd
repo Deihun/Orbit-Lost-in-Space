@@ -60,11 +60,12 @@ func set_node() -> void:
 func update_all():
 	for child in v_box_container.get_children():
 		child.queue_free()
+	Files = []
+	numFiles = 0
 	get_files()
 	set_node()
 		
 func get_files() -> void:
-	Files.clear()
 	var dir = DirAccess.open("res://Saves/")
 	if dir:
 		dir.list_dir_begin()

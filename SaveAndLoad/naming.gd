@@ -15,6 +15,7 @@ func set_file_name():
 	filename = text_edit.text
 
 func save_file():
+	#if save_ui.Files.has(text_edit.text):
 	if not text_edit.text == "":
 		saveGame.SaveGame(filename)
 		saveGame.save()
@@ -23,7 +24,7 @@ func save_file():
 		panel.visible = true
 		message_delay.start()
 		save_ui.start_custom_timer()
-		print("delay")
+	#else:
 
 func _on_save_pressed() -> void:
 	set_file_name()

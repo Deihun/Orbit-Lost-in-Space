@@ -75,7 +75,6 @@ func savedata():
 	return save_dict
 
 func save():
-	print("saved")
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
