@@ -253,5 +253,108 @@
 		"description": "You decided to leave Steelicus",
 		"id": 15,
 		"name": "Saying no to Steelicus"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Lowering shuttle power for this cycle ",
+		"id": 16,
+		"name": "Rest your Body"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Continuing navigation, setting shuttle power settings to default. ",
+		"id": 17,
+		"name": "Continue Navigation"
+	},
+	{
+		"Choice-1": [
+			16,
+			[],
+			"Rest your Body"
+		],
+		"Choice-2": [
+			17,
+			[],
+			"Continue Navigation"
+		],
+		"Command": [
+			"@FACTSfact1"
+		],
+		"Conditions": [
+			"CYCLE",
+			"1"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Hello captain, I am your assistant, N.O.V.A (Neural Operations and Vitality Assistant). Earth has been destroyed; you got out safely. Congratulations. You and your crew grow very tired after what just happened. I suggest resting this cycle for you and your crew, or we could continue our navigation of this space shuttle.",
+		"id": 18,
+		"name": "Welcome to Orbits"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew carefully mined the asteroid and found fuel. ",
+		"id": 19,
+		"name": "Mine Carefully"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew aggressively mined the asteroid and found fuel ",
+		"id": 20,
+		"name": "Mine Aggressively "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You left the asteroid untouched",
+		"id": 21,
+		"name": "Leave the asteroid be"
+	},
+	{
+		"Choice-1": [
+			19,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Mine Carefully"
+		],
+		"Choice-2": [
+			20,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Mine Aggressively"
+		],
+		"Choice-3": [
+			21,
+			[],
+			"Leave the Asteroid be"
+		],
+		"Command": [
+			"@FACTSfact2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
+		"id": 22,
+		"name": "Asteroid Mining"
 	}
 ]
