@@ -138,6 +138,7 @@ func clear_item_UI():
 	pass
 
 func on_finalize_choice_button():
+	TemporaryChoices.clear()
 	for child in $Create_ChoiceButton/ButtonScroll_Container/VBoxContainer_CreateButtonModule.get_children():
 		var choice_data = child.get_value().duplicate() # Duplicate the choice data
 
