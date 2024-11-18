@@ -12,6 +12,7 @@ func updateViewer(wholeEvent):
 		command(event,child)
 		_choice(event, child)
 		_hiddenChoice(event, child)
+		_condition(event, child)
 		probability(event,child)
 		$ScrollContainer/VBoxContainer.add_child(child)
 
