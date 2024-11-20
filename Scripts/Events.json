@@ -253,5 +253,197 @@
 		"description": "You decided to leave Steelicus",
 		"id": 15,
 		"name": "Saying no to Steelicus"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Lowering shuttle power for this cycle ",
+		"id": 16,
+		"name": "Rest your Body"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Continuing navigation, setting shuttle power settings to default. ",
+		"id": 17,
+		"name": "Continue Navigation"
+	},
+	{
+		"Choice-1": [
+			16,
+			[],
+			"Rest your Body"
+		],
+		"Choice-2": [
+			17,
+			[],
+			"Continue Navigation"
+		],
+		"Command": [
+			"@FACTSfact1"
+		],
+		"Conditions": [
+			"CYCLE",
+			"1"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Hello captain, I am your assistant, N.O.V.A (Neural Operations and Vitality Assistant). Earth has been destroyed; you got out safely. Congratulations. You and your crew grow very tired after what just happened. I suggest resting this cycle for you and your crew, or we could continue our navigation of this space shuttle.",
+		"id": 18,
+		"name": "Welcome to Orbits"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew carefully mined the asteroid and found fuel. ",
+		"id": 19,
+		"name": "Mine Carefully"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew aggressively mined the asteroid and found fuel ",
+		"id": 20,
+		"name": "Mine Aggressively "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You left the asteroid untouched",
+		"id": 21,
+		"name": "Leave the asteroid be"
+	},
+	{
+		"Choice-1": [
+			19,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Mine Carefully"
+		],
+		"Choice-2": [
+			20,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Mine Aggressively"
+		],
+		"Choice-3": [
+			21,
+			[],
+			"Leave the Asteroid be"
+		],
+		"Command": [
+			"@FACTSfact2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
+		"id": 22,
+		"name": "Asteroid Mining"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSBIOGENE 10",
+			"@FACTSfact6"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The material seems to be the ones used for Biogene!",
+		"id": 23,
+		"name": "Gather the unidentified material.  "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You steer clear of the cluster",
+		"id": 24,
+		"name": "Stay safe and leave the cluster"
+	},
+	{
+		"Choice-1": [
+			23,
+			[],
+			"Gather the unidentified material"
+		],
+		"Choice-2": [
+			24,
+			[],
+			"Stay safe and leave the cluster"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I detected a cluster of asteroids near your vicinity. After a scan, I discovered an unidentified material inside of the asteroid. ",
+		"id": 25,
+		"name": "Unidentified Cluster"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 5",
+			"@ADD_MATERIALSOXYGEN 5",
+			"@ADD_MATERIALSFOOD 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted their help, and they gave you some supplies in return. ",
+		"id": 26,
+		"name": "Trade fuel"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 5",
+			"@ADD_MATERIALSDUCTAPE 5",
+			"@ADD_MATERIALSOXYGEN 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted their help, and they gave you some supplies in return. ",
+		"id": 27,
+		"name": "Trade spare parts "
+	},
+	{
+		"Choice-1": [
+			26,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Choice 1"
+		],
+		"Choice-2": [
+			27,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Choice 2"
+		],
+		"Command": [
+			"@FACTSfact3"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A starship seems to be approaching the shuttle. They identify themselves as the F.E.L.A.S (Federation of Extraterrestrial Lifeform Assistance and Supplies). They are offering some help after what happened to your planet for 2 choices. Choice 1 exchange some materials for some fuel or Choice 2 exchange some materials for some spare parts. Should we try and accept their help?",
+		"id": 28,
+		"name": "All my FELAS"
 	}
 ]
