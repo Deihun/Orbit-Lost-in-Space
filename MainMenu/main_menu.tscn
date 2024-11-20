@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dgkr0ab5k81fq" path="res://MainMenu/Ship_mainmenu.png" id="4_lojns"]
 [ext_resource type="PackedScene" uid="uid://cmavgmmgqtmb0" path="res://SaveAndLoad/save_ui.tscn" id="5_qnku8"]
 [ext_resource type="Texture2D" uid="uid://i1w5u7jc4x6g" path="res://Scenes/Ingame/UI_Testing.png" id="6_qrx2q"]
-[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="9_ysiqj"]
+[ext_resource type="PackedScene" path="res://button_sounds.tscn" id="9_ysiqj"]
 [ext_resource type="AudioStream" uid="uid://wgfmqjiy4fj0" path="res://Sounds/Music/Deep_Sine_Song.mp3" id="10_1cymq"]
 
 [sub_resource type="Animation" id="Animation_0mu7w"]
