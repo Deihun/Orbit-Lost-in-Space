@@ -26,12 +26,14 @@ func endCycle():
 		if GlobalResources.deduct_fuel(): gameOver()
 	_recent_events_adjust()
 	Cycle += 1
+	
 	move_space()
 	doDisease()
 	doHealthChecker()
 	doHunger()
 	doOxygen()
 	resetPerDay()
+	Factions_Probability["Earth2.0"] = 100.0 if Cycle > 74 else 0.0
 
 
 
@@ -176,7 +178,7 @@ var Factions_Probability = {
 	"Sauria" : 0.20,
 	"Steelicus" : 0.2,
 	"Enthuli" : 0.0,
-	"Earth2.0" : 0.2
+	"Earth2.0" : 0.0
 }
 var SubFactions_Probability = {
 	"Asteroid" : 0.01,
