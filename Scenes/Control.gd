@@ -70,6 +70,8 @@ func _loadGameStart()-> void:
 		a.z_index = 1000
 		a.position += Vector2(-1000,-500)
 		$cam2d.add_child(a)
+	EventHandler.startAddNextEvent()
+	EventHandler.ActivateEvent()
 	updateUI()
 	updateCockpit()
 
