@@ -94,6 +94,7 @@ text = "ERROR: Name shouldn't be blank"
 visible = false
 z_index = 3
 custom_minimum_size = Vector2(500, 100)
+layout_mode = 0
 offset_left = 378.0
 offset_top = 362.5
 offset_right = 578.0
