@@ -234,7 +234,7 @@ func ActivateEvent(newCycle : bool = true): #ACTIVATE QUEUE EVENT
 	eventReader.processNextEvent()
 	$EventReader/Container.hide()
 	$EventReader/ForInput.hide()
-	$EventReader/FirstPreview_Button/FirstPreview/VBoxContainer.show()
+	$EventReader/FirstPreview_Button/FirstPreview.show()
 	$EventReader/VolumeSwitch.hide()
 	var description = ""
 	for event in rawEvent:
@@ -271,7 +271,7 @@ func _on_volume_switch_button_up() -> void:
 
 func _on_first_preview_button_button_up() -> void:
 	if !cooldown_timer_lock: return
-	$EventReader/FirstPreview_Button/FirstPreview/VBoxContainer.hide()
+	$EventReader/FirstPreview_Button/FirstPreview.hide()
 	$EventReader/FirstPreview_Button/CanClickIcon.hide()
 	$EventReader/ForInput.show()
 	$EventReader/Container.show()

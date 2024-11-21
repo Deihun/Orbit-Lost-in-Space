@@ -72,46 +72,6 @@ mouse_filter = 1
 position = Vector2(52, 48)
 texture = ExtResource("5_j31ji")
 
-[node name="ForInput" type="ScrollContainer" parent="EventReader"]
-visible = false
-offset_left = 208.0
-offset_top = 156.0
-offset_right = 1078.0
-offset_bottom = 917.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EventReader/ForInput"]
-clip_contents = true
-layout_mode = 2
-
-[node name="Title" type="Label" parent="EventReader/ForInput/VBoxContainer"]
-z_index = 20
-custom_minimum_size = Vector2(850, 100)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-text = "title"
-autowrap_mode = 3
-justification_flags = 171
-
-[node name="Description" type="Label" parent="EventReader/ForInput/VBoxContainer"]
-z_index = 20
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 45
-text = "description
-description
-description
-description
-description
-description
-description
-description
-description
-descriptiondescription"
-autowrap_mode = 3
-justification_flags = 171
-
 [node name="FirstPreview_Button" type="Button" parent="EventReader"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 187.0
@@ -154,6 +114,48 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Description sadadadsadddddddddddddddddddddddddddddddddd"
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="ForInput" type="ScrollContainer" parent="EventReader"]
+visible = false
+offset_left = 208.0
+offset_top = 156.0
+offset_right = 1078.0
+offset_bottom = 917.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventReader/ForInput"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Title" type="Label" parent="EventReader/ForInput/VBoxContainer"]
+z_index = 20
+custom_minimum_size = Vector2(850, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "title"
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="Description" type="Label" parent="EventReader/ForInput/VBoxContainer"]
+z_index = 20
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "description
+description
+description
+description
+description
+description
+description
+description
+description
+descriptiondescription
+descriptiondescription
+descriptiondescription"
 autowrap_mode = 3
 justification_flags = 171
 
