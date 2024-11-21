@@ -51,7 +51,7 @@ func add_new_event():
 	for choice_id in TemporaryChoices.keys():
 		new_event[choice_id] = TemporaryChoices[choice_id]
 	if $OtherSubComponents/ScrollContainer/VBoxContainer/_Command_Module.canBeUsed():
-		new_event["Command"] = CommandList
+		new_event["Command"] = CommandList.duplicate()
 	if $OtherSubComponents/ScrollContainer/VBoxContainer/Conditions_Components/Panel/_UseCondition_CheckButton.is_pressed():
 		new_event["Conditions"] = _Condition_ValueGroup.duplicate(true)
 	event_data.append(new_event)
@@ -138,6 +138,7 @@ func clear_item_UI():
 	pass
 
 func on_finalize_choice_button():
+	TemporaryChoices.clear()
 	for child in $Create_ChoiceButton/ButtonScroll_Container/VBoxContainer_CreateButtonModule.get_children():
 		var choice_data = child.get_value().duplicate() # Duplicate the choice data
 

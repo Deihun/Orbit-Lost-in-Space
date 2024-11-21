@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
 [ext_resource type="AudioStream" uid="uid://yrr1kbqjok3m" path="res://Sounds/SFX/425999__solarphasing__scifi-industrial-atmosphere-1.wav" id="41_xlg34"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
-[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
+[ext_resource type="PackedScene" path="res://button_sounds.tscn" id="47_evqmn"]
 [ext_resource type="AudioStream" uid="uid://bci2331ggbm16" path="res://Sounds/Music/lofi .mp3" id="49_apm6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
@@ -1095,30 +1095,43 @@ offset_left = 16.1257
 offset_top = 23.3849
 offset_right = 187.125
 offset_bottom = 84.3851
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0223963, 0.0936111, 0.0604077, 1)
+theme_override_font_sizes/font_size = 25
 text = "Requirements:
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="Crew_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000151778
+anchor_top = -0.00631425
+anchor_right = -0.000151774
+anchor_bottom = 0.0231336
 offset_left = 17.0683
 offset_top = 125.38
 offset_right = 139.068
 offset_bottom = 174.38
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
 text = "<Name>
 
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="Description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000406888
+anchor_top = 0.00759755
+anchor_right = -0.000406698
+anchor_bottom = 0.0677202
 offset_left = 15.1831
 offset_top = 177.808
 offset_right = 425.183
 offset_bottom = 322.808
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "<Description>
 
 "
@@ -1128,22 +1141,32 @@ clip_text = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Planet_name_label" type="Label" parent="ExpeditionSelection/Details_Container"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0713456
+anchor_bottom = 0.0713456
 offset_left = 20.8385
 offset_top = 333.183
 offset_right = 139.839
 offset_bottom = 356.183
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "<planet_name>"
 metadata/_edit_use_anchors_ = true
 
 [node name="Planet_description_label" type="Label" parent="ExpeditionSelection/Details_Container"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00370267
+anchor_top = 0.0719521
+anchor_right = -0.00370219
+anchor_bottom = 0.160296
 offset_left = 23.6662
 offset_top = 370.359
 offset_right = 443.666
 offset_bottom = 516.359
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "<planetdesc>
 "
 autowrap_mode = 2
@@ -1475,6 +1498,7 @@ tutorialTitle = Array[String](["Inside the Shuttle"])
 tutorialDescription = Array[String](["Welcome to the Shuttle. Navigate the shuttle by using each arrow at the bottom corners."])
 textureLink = Array[String](["res://Player/Pause_Button.png"])
 tutorialPanel_ID = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TutorialPanel3" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
 visible = false

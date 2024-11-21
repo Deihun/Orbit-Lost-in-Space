@@ -3,12 +3,14 @@ extends Node2D
 @onready var eventReader = $EventReader
 @onready var Cycle = $"/root/IngameStoredProcessSetting"
 @onready var OpeningAnimation = $EventUIAnimation
+@onready var cooldownTimer = $ClickCooldown_event
 
 var rawEvent = []
 var isEventVisible = false
 var onlyOnceTrigger : bool = true
 var onceTutorial : bool = false
 var isTextToSpeechOn : bool = false
+var cooldown_timer_lock : bool = false
 var recentAnimation = ""
 var voices = DisplayServer.tts_get_voices()
 var initialDescription = ""
@@ -16,6 +18,7 @@ var initialDescription = ""
 					#NON RETURNING METHODS
 #SETUP ZONES
 func _ready():
+	$EventReader/FirstPreview_Button/CanClickIcon_Icon.play("Pulsating")
 	var file_path = "res://Scripts/Events.json"
 	if(FileAccess.file_exists(file_path)):
 		var file = FileAccess.open(file_path,FileAccess.READ)
@@ -23,6 +26,7 @@ func _ready():
 		rawEvent = parse_json(json_text)
 	else: 
 		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
+
 
 
 func parse_json(json_text):
@@ -54,12 +58,18 @@ func switchIt(value : bool = true):
 
 func _on_opening_ui_scene_animation_finished() -> void:
 	if recentAnimation == "OpeningAnimation":
+		$EventReader/Container.hide()
+		$EventReader/ForInput.hide()
+		$ClickCooldown_event.start()
+		$EventReader/FirstPreview_Button/CanClickIcon.hide()
+		$EventReader/VolumeSwitch.hide()
 		OpeningAnimation.show()
 		eventReader.show()
 		_triggerDialogue(initialDescription, isTextToSpeechOn)
 	elif recentAnimation == "ClosingAnimation": 
 		OpeningAnimation.hide()
 		eventReader.hide()
+		cooldown_timer_lock = false
 
 
 
@@ -199,7 +209,7 @@ func _addNextEvent()-> void :
 		GlobalResources.alreadyTriggeredEvent.append(_event["id"])
 
 
-func ActivateEvent(): #ACTIVATE QUEUE EVENT
+func ActivateEvent(newCycle : bool = true): #ACTIVATE QUEUE EVENT
 	if GlobalResources.eventID.front() == null:
 		isEventVisible = false
 		switchIt(false)
@@ -214,10 +224,18 @@ func ActivateEvent(): #ACTIVATE QUEUE EVENT
 				tutorialEnd.visible = true
 
 		return
+	if !newCycle: 
+			cooldownTimer.start()
+			cooldown_timer_lock = false
+			$EventReader/FirstPreview_Button/CanClickIcon.hide()
 	var CurrentEventID = GlobalResources.eventID.pop_front()
 	isEventVisible = true
 	eventReader.setEventID(CurrentEventID)
 	eventReader.processNextEvent()
+	$EventReader/Container.hide()
+	$EventReader/ForInput.hide()
+	$EventReader/FirstPreview_Button/FirstPreview.show()
+	$EventReader/VolumeSwitch.hide()
 	var description = ""
 	for event in rawEvent:
 		if event.has("id") and event["id"] == CurrentEventID:
@@ -249,3 +267,18 @@ func _on_volume_switch_button_up() -> void:
 	if isTextToSpeechOn: $EventReader/VolumeSwitch/Volume.texture = load("res://Scenes/Ingame/VolumeOn_EventUI.png")
 	else: $EventReader/VolumeSwitch/Volume.texture = load("res://Scenes/Ingame/VolumeOff_EventUI.png")
 	pass # Replace with function body.
+
+
+func _on_first_preview_button_button_up() -> void:
+	if !cooldown_timer_lock: return
+	$EventReader/FirstPreview_Button/FirstPreview.hide()
+	$EventReader/FirstPreview_Button/CanClickIcon.hide()
+	$EventReader/ForInput.show()
+	$EventReader/Container.show()
+	$EventReader/VolumeSwitch.hide()
+
+
+func _on_click_cooldown_event_timeout() -> void:
+	$EventReader/VolumeSwitch/Volume.show()
+	cooldown_timer_lock = true
+	$EventReader/FirstPreview_Button/CanClickIcon.show()

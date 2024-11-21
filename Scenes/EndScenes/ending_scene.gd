@@ -10,10 +10,10 @@ var canBeClickAgain : bool = true
 var images = []
 
 func _ready() -> void:
+	load_json_file()
 	endTitle = IngameStoredProcessSetting.Ending
 	$img_Ending.texture = getScene(endTitle)
 	DialogueManager.show_dialogue_balloon(Dialogue, endTitle)
-	load_json_file()
 	save_json_file()
 	pass
 
@@ -91,7 +91,7 @@ var json_data = {}
 
 
 func load_json_file():
-	var file = FileAccess.open("res://path/to/your_file.json", FileAccess.ModeFlags.READ)
+	var file = FileAccess.open("res://Gallery/gallery.json", FileAccess.ModeFlags.READ)
 	if file:
 		var json_text = file.get_as_text()
 		
@@ -109,6 +109,7 @@ func load_json_file():
 		print("Failed to load file")
 
 func unlock_image(image_id: int):
+	print(json_data)
 	if image_id >= 0 and image_id < json_data["images"].size():
 		json_data["images"][image_id]["unlocked"] = true
 	else:
@@ -116,7 +117,7 @@ func unlock_image(image_id: int):
 	save_json_file()
 
 func save_json_file():
-	var file = FileAccess.open("res://path/to/your_file.json", FileAccess.ModeFlags.WRITE)
+	var file = FileAccess.open("res://Gallery/gallery.json", FileAccess.ModeFlags.WRITE)
 	if file:
 		var json_text = JSON.stringify(json_data)
 		file.store_string(json_text)

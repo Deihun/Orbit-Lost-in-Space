@@ -255,10 +255,607 @@
 		"name": "Saying no to Steelicus"
 	},
 	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Lowering shuttle power for this cycle ",
+		"id": 16,
+		"name": "Rest your Body"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Continuing navigation, setting shuttle power settings to default. ",
+		"id": 17,
+		"name": "Continue Navigation"
+	},
+	{
+		"Choice-1": [
+			16,
+			[],
+			"Rest your Body"
+		],
+		"Choice-2": [
+			17,
+			[],
+			"Continue Navigation"
+		],
+		"Command": [
+			"@FACTSfact1"
+		],
+		"Conditions": [
+			"CYCLE",
+			"1"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Hello captain, I am your assistant, N.O.V.A (Neural Operations and Vitality Assistant). Earth has been destroyed; you got out safely. Congratulations. You and your crew grow very tired after what just happened. I suggest resting this cycle for you and your crew, or we could continue our navigation of this space shuttle.",
+		"id": 18,
+		"name": "Welcome to Orbits"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew carefully mined the asteroid and found fuel. ",
+		"id": 19,
+		"name": "Mine Carefully"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew aggressively mined the asteroid and found fuel ",
+		"id": 20,
+		"name": "Mine Aggressively "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You left the asteroid untouched",
+		"id": 21,
+		"name": "Leave the asteroid be"
+	},
+	{
+		"Choice-1": [
+			19,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Mine Carefully"
+		],
+		"Choice-2": [
+			20,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Mine Aggressively"
+		],
+		"Choice-3": [
+			21,
+			[],
+			"Leave the Asteroid be"
+		],
+		"Command": [
+			"@FACTSfact2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, I detect a mineral rich asteroid approaching. We could mine it for Hydro carbic resources if we have your permission",
+		"id": 22,
+		"name": "Asteroid Mining"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSBIOGENE 10",
+			"@FACTSfact6"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The material seems to be the ones used for Biogene!",
+		"id": 23,
+		"name": "Gather the unidentified material.  "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You steer clear of the cluster",
+		"id": 24,
+		"name": "Stay safe and leave the cluster"
+	},
+	{
+		"Choice-1": [
+			23,
+			[],
+			"Gather the unidentified material"
+		],
+		"Choice-2": [
+			24,
+			[],
+			"Stay safe and leave the cluster"
+		],
 		"RandomTrue": true,
 		"Repeatable": true,
-		"description": "add",
-		"id": 16,
-		"name": "Test"
+		"description": "Captain, I detected a cluster of asteroids near your vicinity. After a scan, I discovered an unidentified material inside of the asteroid. ",
+		"id": 25,
+		"name": "Unidentified Cluster"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 5",
+			"@ADD_MATERIALSOXYGEN 5",
+			"@ADD_MATERIALSFOOD 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted their help, and they gave you some supplies in return. ",
+		"id": 26,
+		"name": "Trade fuel"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 5",
+			"@ADD_MATERIALSDUCTAPE 5",
+			"@ADD_MATERIALSOXYGEN 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted their help, and they gave you some supplies in return. ",
+		"id": 27,
+		"name": "Trade spare parts "
+	},
+	{
+		"Choice-1": [
+			26,
+			[
+				[
+					"FUEL",
+					10
+				]
+			],
+			"Choice 1"
+		],
+		"Choice-2": [
+			27,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Choice 2"
+		],
+		"Command": [
+			"@FACTSfact3"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A starship seems to be approaching the shuttle. They identify themselves as the F.E.L.A.S (Federation of Extraterrestrial Lifeform Assistance and Supplies). They are offering some help after what happened to your planet for 2 choices. Choice 1 exchange some materials for some fuel or Choice 2 exchange some materials for some spare parts. Should we try and accept their help?",
+		"id": 28,
+		"name": "All my FELAS"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You turned the energy into extra fuel",
+		"id": 29,
+		"name": "Convert it to power the ship immediately "
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.05",
+			"@SANITY_INCREASERegina 0.05",
+			"@SANITY_INCREASENashir 0.05",
+			"@SANITY_INCREASEFumiko 0.05"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The ship was cool and the crew felt relaxed",
+		"id": 30,
+		"name": "Use the energy to cool the ship"
+	},
+	{
+		"Choice-1": [
+			29,
+			[],
+			"Choice 1"
+		],
+		"Choice-2": [
+			30,
+			[],
+			"Choice 2"
+		],
+		"Command": [
+			"@FACTSfact4"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, as we passed a nearby star, your solar panels have accumulated some extra energy. You have 2 choices.\n1. Do you want to use it immediately for our fuel supply \nor \n2. Do you want to use it to cool the ship?",
+		"id": 31,
+		"name": "Extra Solar Power"
+	},
+	{
+		"Command": [
+			"@DO_RANDOMDAMAGE"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You found a dying rat inside the crate. It immediately lunges on one crew before lying flat on the floor. ",
+		"id": 32,
+		"name": "Green Crate"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSOXYGEN 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You found a plant inside the crate, although it might not live for long due to the environment, it can still supply us with oxygen. ",
+		"id": 33,
+		"name": "Black Crate "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You found a pile of... Nothing inside the crate.",
+		"id": 34,
+		"name": "Brown Crate "
+	},
+	{
+		"Command": [
+			"@FACTSfact9",
+			"@SANITY_INCREASEMaxim -0.1",
+			"@SANITY_INCREASERegina -0.1",
+			"@SANITY_INCREASENashir -0.1",
+			"@SANITY_INCREASEFumiko -0.1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You found a burnt image of Valentina Tereshkova. It feels like it’s staring back at your crew.",
+		"id": 35,
+		"name": "Blue Crate "
+	},
+	{
+		"Choice-1": [
+			32,
+			[],
+			"Green Crate"
+		],
+		"Choice-2": [
+			33,
+			[],
+			"Black Crate"
+		],
+		"Choice-3": [
+			34,
+			[],
+			"Brown Crate"
+		],
+		"Choice-4": [
+			35,
+			[],
+			"Blue Crate"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I discovered a nearby crate full sealed organisms. The organisms are unknown, which crate should we take?",
+		"id": 36,
+		"name": "Mystery Crates"
+	},
+	{
+		"Command": [
+			"@FACTSfact22",
+			"@ADD_MATERIALSOXYGEN 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "It seems to be frozen cans of oxygen. It still has some oxygen left. ",
+		"id": 37,
+		"name": "Take the ice that hit your shuttle "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The shuttle steered clear before getting hit with more ice.",
+		"id": 38,
+		"name": "Steer clear "
+	},
+	{
+		"Choice-1": [
+			37,
+			[],
+			"Take the ice that hit your shuttle"
+		],
+		"Choice-2": [
+			38,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Steer Clear of the Ice"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Frozen cans start to hit your shuttle, do you want to take the ice or steer clear of them? \n",
+		"id": 39,
+		"name": "Frozen Hitter"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSMEDKIT 1",
+			"@DO_DAMAGEMaxim 0.1",
+			"@DO_DAMAGERegina 0.1",
+			"@DO_DAMAGENashir 0.1",
+			"@DO_DAMAGEFumiko 0.1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The vast amount of crystals was hauled inside the ship",
+		"id": 40,
+		"name": "Take the Crystals immediately"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSBIOGENE 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Some crystals were shaved off after the dust settled. ",
+		"id": 41,
+		"name": "Wait until the dust settles "
+	},
+	{
+		"Choice-1": [
+			40,
+			[],
+			"Take the Crystals immediately"
+		],
+		"Choice-2": [
+			41,
+			[],
+			"Wait until the dust settles"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, crystal minerals have been building outside of the shuttle due to the immense dust. The data suggests that it is the same composition as medicine. It might be risky though, due to the dust outside. What’s your call?",
+		"id": 42,
+		"name": "Medical Crystals"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew gathered some fuel for your ship while traversing the route. ",
+		"id": 43,
+		"name": "Take the asteroid field route "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew found old crates full of spare parts floating while traversing the route. ",
+		"id": 44,
+		"name": "Take the old trade route "
+	},
+	{
+		"Choice-1": [
+			43,
+			[],
+			"Take the asteroid field route "
+		],
+		"Choice-2": [
+			44,
+			[],
+			"Take the old trade route "
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, based on my database, I have uncovered a star chart ahead of our location. We can take two routes from here. One is a fuel rich asteroid field, and the other is an old route for trade.",
+		"id": 45,
+		"name": "Across 2 Paths"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew received FELAS’s help. ",
+		"id": 46,
+		"name": "Accept it gratefully "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "FELAS offered you ration instead of fuel. ",
+		"id": 47,
+		"name": "Refuse their pity "
+	},
+	{
+		"Choice-1": [
+			46,
+			[],
+			"Choice 1"
+		],
+		"Choice-2": [
+			47,
+			[],
+			"Choice 2"
+		],
+		"Command": [
+			"@FACTSfact8"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A vessel of F.E.L.A.S (Federation of Extraterrestrial Lifeform Assistance and Supplies) they are offering you 2 choices.\n1. Fuel \n2. Food \nThe leader that wants to hand the supplies identifies as Yuri Gagarin.",
+		"id": 48,
+		"name": "The FELAS are Back"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The rodents gave you food as a warm welcome to you and your crew",
+		"id": 49,
+		"name": "Humbly introduce yourself"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The rodent was hesitant to welcome you. They gave you some rations as a welcome to you and your crew to their planet.",
+		"id": 50,
+		"name": "Display your magnificence"
+	},
+	{
+		"Choice-1": [
+			49,
+			[],
+			"Humbly Introduce Yourself"
+		],
+		"Choice-2": [
+			50,
+			[],
+			"Display your Magnificence"
+		],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, data shows that this planet is deemed to be safe for human respiration. Earlier, a creature approached our shuttle with a similar composition to earth’s rodents. It seems they want to make peace with your crew. ",
+		"id": 51,
+		"name": "Welcome to the Rodent Community"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You offered some of your fuel to the rodents",
+		"id": 52,
+		"name": "Give some Fuel"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You offered some of your biogene to the rodents",
+		"id": 53,
+		"name": "Give some Biogene"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You turned down their offer.",
+		"id": 54,
+		"name": "Refuse their Offer"
+	},
+	{
+		"Choice-1": [
+			52,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Give Some Fuel"
+		],
+		"Choice-2": [
+			53,
+			[
+				[
+					"BIOGENE",
+					5
+				]
+			],
+			"Give some Biogene"
+		],
+		"Choice-3": [
+			54,
+			[],
+			"Refuse their Offer"
+		],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "One of the Rodents is offering you a bundle of tiny crops in exchange for a foreign substance that they have not encountered yet. It seems that they want to further their research using substances in our civilization.",
+		"id": 55,
+		"name": "Chemical into Food"
+	},
+	{
+		"Command": [
+			"@GAMEOVERRadonti"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You stayed to lead the Rodents.",
+		"id": 56,
+		"name": "Be the leader that they need"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You prepared yourself to say your farewells to the rodent when the time come.",
+		"id": 57,
+		"name": "Say your farewells to the rodent "
+	},
+	{
+		"Choice-1": [
+			56,
+			[],
+			"Be the leader that they need"
+		],
+		"Choice-2": [
+			57,
+			[],
+			"Say your farewells to the rodent "
+		],
+		"Conditions": [
+			"PLACE",
+			"Radonti"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, after staying for a few days on the planet, I have determined the rodents direly needed a proper leader to further develop their society. Recently they have been offering you a position as their leader here in this planet. Should you choose to stay, you and your crew will have to lead the rodents or otherwise say your farewell to them.",
+		"id": 58,
+		"name": "To Lead or not To Lead"
+
 	}
 ]
