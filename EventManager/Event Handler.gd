@@ -62,6 +62,7 @@ func _on_opening_ui_scene_animation_finished() -> void:
 		$EventReader/ForInput.hide()
 		$ClickCooldown_event.start()
 		$EventReader/FirstPreview_Button/CanClickIcon.hide()
+		$EventReader/VolumeSwitch.hide()
 		OpeningAnimation.show()
 		eventReader.show()
 		_triggerDialogue(initialDescription, isTextToSpeechOn)
@@ -234,6 +235,7 @@ func ActivateEvent(newCycle : bool = true): #ACTIVATE QUEUE EVENT
 	$EventReader/Container.hide()
 	$EventReader/ForInput.hide()
 	$EventReader/FirstPreview_Button/FirstPreview/VBoxContainer.show()
+	$EventReader/VolumeSwitch.hide()
 	var description = ""
 	for event in rawEvent:
 		if event.has("id") and event["id"] == CurrentEventID:
@@ -273,8 +275,10 @@ func _on_first_preview_button_button_up() -> void:
 	$EventReader/FirstPreview_Button/CanClickIcon.hide()
 	$EventReader/ForInput.show()
 	$EventReader/Container.show()
+	$EventReader/VolumeSwitch.hide()
 
 
 func _on_click_cooldown_event_timeout() -> void:
+	$EventReader/VolumeSwitch/Volume.show()
 	cooldown_timer_lock = true
 	$EventReader/FirstPreview_Button/CanClickIcon.show()
