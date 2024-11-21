@@ -8,16 +8,25 @@ func _ready() -> void:
 	
 func create_button(data):
 	var button = Button.new()
+	var style_normal = preload("res://SpaceFacts/FactButton_Normal.tres")
+	var style_hover = preload("res://SpaceFacts/FactButton_Hover.tres")
+	var black_color = Color(0, 0, 0)
+	
 	$Panel/ScrollContainer/VBoxContainer.add_child(button)
 	button.text = data["title"]
-	var button_width = 200 
-	var button_height = 50
+	var button_width = 600
+	var button_height = 100
 	button.custom_minimum_size = Vector2(button_width, button_height)
+	button.add_theme_stylebox_override("normal", style_normal)
+	button.add_theme_stylebox_override("hover", style_hover)
+	button.add_theme_color_override("font_color", black_color)
+	button.add_theme_font_size_override("font_size", 35)
 	button.connect("pressed",Callable (self,"buttonPress").bind(data))
 	
 func buttonPress(data):
 	$Panel/FactTitle.text = data["title"]
 	$Panel/FactDesc.text = data["text"]
+
 func LoopChecker():
 	for child in $Panel/ScrollContainer/VBoxContainer.get_children():
 		child.queue_free()
