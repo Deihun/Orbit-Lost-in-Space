@@ -22,18 +22,14 @@ func _on_button_pressed() -> void:
 
 func _on_delete_pressed() -> void:
 	var deleteName = label.text
-	var Path = "Saves/" + deleteName +".json"
-	var PathName = deleteName +".json"
+	var SaveFileName = deleteName +".json"
+	var dir = DirAccess.open("user://Saves/")
 	
-	if FileAccess.file_exists(Path):
-		var dir = DirAccess.open("res://Saves/")
-		if dir:
-			var error = dir.remove(PathName)
-			if error == OK:
-				save_ui.update_all()
-			else:
-				print("Failed to delete the file.")
+	if dir:
+		var error = dir.remove(SaveFileName)
+		if error == OK:
+			save_ui.update_all()
 		else:
-			print("File does not exist.")
+			print("Failed to delete the file.")
 	else:
-		print("Failed to access directory.")
+		print("File does not exist.")

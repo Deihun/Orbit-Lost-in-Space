@@ -1466,6 +1466,7 @@ z_index = 500
 script = ExtResource("2_0dkme")
 
 [node name="TutorialPanel" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
+visible = false
 offset_left = -503.0
 offset_top = -392.0
 offset_right = 370.0
