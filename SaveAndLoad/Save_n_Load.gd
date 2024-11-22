@@ -81,6 +81,7 @@ func save():
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
+	SavePath = "user://Saves/Autosave.json"
 	
 func loadsave():
 	if not FileAccess.file_exists(SavePath):
@@ -135,3 +136,4 @@ func loadsave():
 		stored.Factions_Probability = node_data["Factions_Probability"].duplicate()
 		stored.SubFactions_Probability = node_data["SubFactions_Probability"].duplicate()
 		stored.canExpedition = node_data["canExpedition"]
+	SavePath = "user://Saves/Autosave.json"
