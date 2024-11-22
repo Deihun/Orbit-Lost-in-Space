@@ -856,5 +856,1148 @@
 		"description": "Captain, after staying for a few days on the planet, I have determined the rodents direly needed a proper leader to further develop their society. Recently they have been offering you a position as their leader here in this planet. Should you choose to stay, you and your crew will have to lead the rodents or otherwise say your farewell to them.",
 		"id": 58,
 		"name": "To Lead or not To Lead"
+	},
+	{
+		"Command": [
+			"@DO_DAMAGEMaxim 0.1",
+			"@DO_DAMAGERegina 0.1",
+			"@DO_DAMAGENashir 0.1",
+			"@DO_DAMAGEFumiko 0.1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew manages a quick fix, stabilizing the airlock but using extra resources in the rush.",
+		"id": 59,
+		"name": "Fix the airlock immediately"
+	},
+	{
+		"Command": [
+			"@DO_DAMAGEMaxim 0.15",
+			"@DO_DAMAGERegina 0.15",
+			"@DO_DAMAGENashir 0.15",
+			"@DO_DAMAGEFumiko 0.15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The airlock is patched but not fully secured, leaving the oxygen levels slightly lower than optimal. ",
+		"id": 60,
+		"name": "Partially fix the airlock"
+	},
+	{
+		"Choice-1": [
+			59,
+			[
+				[
+					"SPAREPARTS",
+					10
+				],
+				[
+					"OXYGEN",
+					5
+				]
+			],
+			"Fix the airlock immediately"
+		],
+		"Choice-2": [
+			60,
+			[
+				[
+					"SPAREPARTS",
+					5
+				],
+				[
+					"OXYGEN",
+					10
+				]
+			],
+			"Partially fix the airlock"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A malfunction has compromised the integrity of the airlock. Oxygen is rapidly depleting, immediate repairs are required. We can partially repair it for lesser spareparts or we can repair it immediately repair the whole damage. ",
+		"id": 61,
+		"name": "Airlock Unlocked"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew gathered the debris of what is assumed the ISS carefully. ",
+		"id": 62,
+		"name": "Gather the materials carefully "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 20",
+			"@DO_DAMAGEMaxim 0.10",
+			"@DO_DAMAGERegina 0.10",
+			"@DO_DAMAGENashir 0.10",
+			"@DO_DAMAGEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew tried to gather as much materials as you can before they float away ",
+		"id": 63,
+		"name": "Gather as much materials as possible "
+	},
+	{
+		"Choice-1": [
+			62,
+			[],
+			"Gather the materials carefully"
+		],
+		"Choice-2": [
+			63,
+			[],
+			"Gather as much materials as possible"
+		],
+		"Command": [
+			"@FACTSfact15"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "There is debris with the ISS logo on it outside the ship. We can gather those debris for materials. We can gather most of the material carefully or we can all go and take as much as possible. What approach do we do?",
+		"id": 64,
+		"name": "The ISS Debris(?)"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.10",
+			"@SANITY_INCREASEFumiko 0.10",
+			"@SANITY_INCREASERegina 0.10",
+			"@SANITY_INCREASENashir 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your friend made a tribute for the space dog.",
+		"id": 65,
+		"name": "Offer a tribute to Laika"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew continue navigating space without batting an eye.",
+		"id": 66,
+		"name": "Continue navigating "
+	},
+	{
+		"Choice-1": [
+			65,
+			[],
+			"Offer a tribute to Laika"
+		],
+		"Choice-2": [
+			66,
+			[],
+			"Continue Navigating"
+		],
+		"Command": [
+			"@FACTSfact14"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "We are near the orbital path of Sputnik, where Laika, the first animal in space, once orbited. We could honor her with a brief tribute.",
+		"id": 67,
+		"name": "The Space Dog"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The canning company gave you Rations.",
+		"id": 68,
+		"name": "Trade spare parts for foods"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew left the event.",
+		"id": 69,
+		"name": "Leave the Event"
+	},
+	{
+		"Choice-1": [
+			68,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Trade spare parts for food."
+		],
+		"Choice-2": [
+			69,
+			[],
+			"Leave the event"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "A shipment of a canning company has been seen hosting a trade event for foods in exchange for scraps. Should we take part in the event, Captain? ",
+		"id": 70,
+		"name": "The Canning Company"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSBIOGENE 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The alien technology produced biogenetic materials that we can use!",
+		"id": 71,
+		"name": "Examine the alien technology"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You received a bunch of spare parts from the alien technology.",
+		"id": 72,
+		"name": "Dismantle the technology"
+	},
+	{
+		"Choice-1": [
+			71,
+			[],
+			"Examine the Alien Technology"
+		],
+		"Choice-2": [
+			72,
+			[],
+			"Dismantle the Technology"
+		],
+		"Command": [
+			"@FACTSfact75"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I have retrieved an old alien technology near our vicinity. We could examine it for its usage, or we could scrap it for spare parts. What is your action?",
+		"id": 73,
+		"name": "Alien Technology?!"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You accepted the gift from FELAS",
+		"id": 74,
+		"name": "Accept the gift"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You refused their gift",
+		"id": 75,
+		"name": "Refuse the gift"
+	},
+	{
+		"Choice-1": [
+			74,
+			[],
+			"Accept the gift"
+		],
+		"Choice-2": [
+			75,
+			[],
+			"Refuse the gift"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"All my FELAS"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Another vessel from F.E.L.A.S has been detected, captain. Their leader has been thinking fondly of you and your crew and has given you a gift. Should we accept their gift? ",
+		"id": 76,
+		"name": "The FELAS' Gift"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You found a box of Rations behind the oxygen container!",
+		"id": 77,
+		"name": "Check the corners of the room"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ignored the unknown presence.",
+		"id": 78,
+		"name": "Leave it be"
+	},
+	{
+		"Choice-1": [
+			77,
+			[],
+			"Check the corners of the room"
+		],
+		"Choice-2": [
+			78,
+			[],
+			"Leave it be"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I have detected an unknown presence on the storage room. I suggest immediate investigation of the room. ",
+		"id": 79,
+		"name": "An Unknown Presence?"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.10",
+			"@SANITY_INCREASERegina 0.10",
+			"@SANITY_INCREASENashir 0.10",
+			"@SANITY_INCREASEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The amazing view of the nebula is shown in front of your crew's eyes.",
+		"id": 80,
+		"name": "Bask in the beauty of the nebula"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You ignored the nebula and proceeded to navigate space",
+		"id": 81,
+		"name": "Continue travels"
+	},
+	{
+		"Choice-1": [
+			81,
+			[],
+			"Bask in the beauty of the nebula"
+		],
+		"Choice-2": [
+			82,
+			[],
+			"Continue travels"
+		],
+		"Command": [
+			"@FACTSfact77"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "We are now approaching a charted nebula. If you look outside, you can immediately see it. I suggest staying for a while to see this once in a lifetime scenery.  ",
+		"id": 82,
+		"name": "A Nebulae Experience"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.10",
+			"@SANITY_INCREASERegina 0.10",
+			"@SANITY_INCREASENashir 0.10",
+			"@SANITY_INCREASEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The beauty of the comet shower astounded your crew",
+		"id": 83,
+		"name": "Watch the comet with your crew"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You navigated space without batting an eye",
+		"id": 84,
+		"name": "Continue travels "
+	},
+	{
+		"Choice-1": [
+			83,
+			[],
+			"Watch the comet with your crew"
+		],
+		"Choice-2": [
+			84,
+			[],
+			"Continue travels "
+		],
+		"Command": [
+			"@FACTSfact78"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, an extremely rare comet shower is occurring outside the shuttle. I suggest you take a rest and go see the event with the rest of your crew.  ",
+		"id": 85,
+		"name": "A Comet Shower"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.10",
+			"@SANITY_INCREASERegina 0.10",
+			"@SANITY_INCREASENashir 0.10",
+			"@SANITY_INCREASEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You fostered the resilience of the crew of Apollo 13's past",
+		"id": 86,
+		"name": "Foster resilience"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew produced extra spare parts from scraps",
+		"id": 87,
+		"name": "Use morale boost to improve productivity"
+	},
+	{
+		"Choice-1": [
+			86,
+			[],
+			"Foster resilience"
+		],
+		"Choice-2": [
+			87,
+			[],
+			"Use morale boost to improve productivity"
+		],
+		"Command": [
+			"@FACTSfact79"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "The story of Apollo 13’s safe return after disaster is boosting crew confidence, inspiring adaptability in critical situations ",
+		"id": 88,
+		"name": "Apollo 13 Resilience"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.10",
+			"@SANITY_INCREASERegina 0.10",
+			"@SANITY_INCREASENashir 0.10",
+			"@SANITY_INCREASEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew set up a memorial for the Icons of the past",
+		"id": 89,
+		"name": "Set up a memorial"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew skipped the celebration and continued navigating space",
+		"id": 90,
+		"name": "Skip the celebration"
+	},
+	{
+		"Choice-1": [
+			89,
+			[],
+			"Set up a memorial"
+		],
+		"Choice-2": [
+			90,
+			[],
+			"Skip the celebration"
+		],
+		"Command": [
+			"@FACTSfact10",
+			"@FACTSfact20"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "We are near the Apollo 11 mission's historic path. Would you like to log a memorial entry in honor of Neil Armstrong and Buzz Aldrin?",
+		"id": 91,
+		"name": "The Apollo 11"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 40"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The contents were untouched and intact",
+		"id": 92,
+		"name": " Open it using a crowbar"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crate toppled down, shattering some of the contents",
+		"id": 93,
+		"name": "Forcefully Open it"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The contents of the crate was shattered and turned to dust. What do you expect?",
+		"id": 94,
+		"name": "Throw the crate"
+	},
+	{
+		"Choice-1": [
+			93,
+			[],
+			"Forcefully open it"
+		],
+		"Choice-2": [
+			94,
+			[],
+			"Thrown the crate"
+		],
+		"Command": [
+			"@FACTSfact17"
+		],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				92,
+				[],
+				"Open it using a crowbar"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "One of the debris of SpaceX is currently locked in a crate, if we can open it, we could use the debris as a spare part. It is very fragile though, so we might need equipment to open it.",
+		"id": 95,
+		"name": "SpaceX Spacecraft Space Debris"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 20"
+		],
+		"Conditions": [
+			"PLACE",
+			"Sauria"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The fruit was succulent and filling! You set some aside for later consumption",
+		"id": 96,
+		"name": "Consume the purple cactus fruit"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You discarded the fruit",
+		"id": 97,
+		"name": "Discard it"
+	},
+	{
+		"Choice-1": [
+			96,
+			[],
+			"Consume the purple cactus fruit"
+		],
+		"Choice-2": [
+			97,
+			[],
+			"Discard it"
+		],
+		"Conditions": [
+			"PLACE",
+			"Sauria"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "During your stay on the sands, you found a peculiar fruit growing on a purple cactus. I have scanned it to be edible, but the side effects of consumption are unknown. Should we try and forage the fruit? ",
+		"id": 98,
+		"name": "The Weird Fruit"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The robot gratefully gave you some of its fuel container",
+		"id": 99,
+		"name": "Exchange with the robot"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The robot looked down while slowly accepting its fate. ",
+		"id": 100,
+		"name": "Ignore its plea "
+	},
+	{
+		"Choice-1": [
+			99,
+			[
+				[
+					"SPAREPARTS",
+					10
+				]
+			],
+			"Exchange with the robot"
+		],
+		"Choice-2": [
+			100,
+			[],
+			"Ignore its plea"
+		],
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "One of the bots on the planet is searching for parts to fix its broken plating. It offered to trade you some of its fuel cans in exchange for some of your scrap parts. Should we accept their offer? ",
+		"id": 101,
+		"name": "The robot's plea"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 30"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The refugees gave you some of their spare scraps. They think it would be useful for your crew",
+		"id": 102,
+		"name": "Exchange with the refugees"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The refugees said they understand and walked away.",
+		"id": 103,
+		"name": "Refuse their offer"
+	},
+	{
+		"Choice-1": [
+			102,
+			[
+				[
+					"FOOD",
+					10
+				]
+			],
+			"Exchange with the Refugees"
+		],
+		"Choice-2": [
+			103,
+			[],
+			"Refuse their offer"
+		],
+		"Conditions": [
+			"PLACE",
+			"Earth2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "You finally found people from earth that escaped the impact of the meteor. They offer your crew some spare parts from their travels in exchange for food. What action should we take, captain?",
+		"id": 104,
+		"name": "In need for Food"
+	},
+	{
+		"Command": [
+			"@GAMEOVEREarth2"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You finally found the rest of the humanity that left earth. You stayed with them to rebuild what was lost in your home planet.",
+		"id": 105,
+		"name": "Stay with the rest of the Human"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You decided to leave and explore the space once the time is right. ",
+		"id": 106,
+		"name": "Travel space once more"
+	},
+	{
+		"Choice-1": [
+			105,
+			[],
+			"Stay with the rest of the Human"
+		],
+		"Choice-2": [
+			106,
+			[],
+			"Travel space once more"
+		],
+		"Conditions": [
+			"PLACE",
+			"Earth2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "After trying to survive for months, you and your crew finally met humans from earth. You can stay with them, try and build the community back, or you can leave Earth 2 and travel through space with your crew once again. Whatever your choice is, your crewmate is with you, captain.",
+		"id": 107,
+		"name": "To be with Humanity once again."
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSBIOGENE 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The mold grew from the rations. After a while you removed it. ",
+		"id": 108,
+		"name": "Let the mold grow a bit more. "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You got rid of the mold; you didn’t have enough to create biogene. ",
+		"id": 109,
+		"name": "Get rid of it immediately."
+	},
+	{
+		"Choice-1": [
+			108,
+			[
+				[
+					"FOOD",
+					10
+				]
+			],
+			"Let the mold grow a bit more"
+		],
+		"Choice-2": [
+			109,
+			[],
+			"Get rid of it immediately"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, there was a report of mold growing inside the storage, but this variant might be cultivated for biogene. Should we let it grow for a little bit more time? ",
+		"id": 110,
+		"name": "Biogenetic Mold"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 20",
+			"@DO_DAMAGEMaxim 0.05",
+			"@DO_DAMAGERegina 0.05",
+			"@DO_DAMAGENashir 0.05",
+			"@DO_DAMAGEFumiko 0.05"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": " The crew salvages parts but risks encountering hostiles.",
+		"id": 111,
+		"name": "Head to the destroyed shuttle."
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew Maintains a safe distance, avoiding risk. ",
+		"id": 112,
+		"name": "It might be an ambush"
+	},
+	{
+		"Choice-1": [
+			111,
+			[],
+			"Head to the destroyed shuttle"
+		],
+		"Choice-2": [
+			112,
+			[],
+			"It might be an ambush"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, I suggest replacing our radio wave transmitter and receiver. I just happened to scan a nearby destroyed shuttle with the same model as ours.",
+		"id": 113,
+		"name": "Transmitting Replacement"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The tape works effectively on fixing the shutters.",
+		"id": 114,
+		"name": "Fix the shutters using the duct tape"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew uses spare parts as an alternative for duct tape.",
+		"id": 115,
+		"name": "Fix the shutters using spare parts"
+	},
+	{
+		"Command": [
+			"@DO_RANDOMDAMAGE",
+			"@DO_RANDOMDAMAGE"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew suffers minor damage from the solar flare but conserves resources.",
+		"id": 116,
+		"name": "Brace for Impact"
+	},
+	{
+		"Choice-4": [
+			114,
+			[
+				[
+					"DUCTAPE",
+					1
+				]
+			],
+			" Fix the shutters using duct tape"
+		],
+		"Choice-5": [
+			115,
+			[
+				[
+					"SPAREPARTS",
+					15
+				]
+			],
+			"(Description)"
+		],
+		"Choice-6": [
+			116,
+			[],
+			"Brace for Impact"
+		],
+		"Command": [
+			"@FACTSfact7"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, I detected an eminent solar flare. One of the shutters seems to be ripping off. We could use duct tape to fix the shutters or use spare parts as an alternative.",
+		"id": 117,
+		"name": "Upcoming Solar Flare"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The damage after you pass the magnetic field is fixed",
+		"id": 118,
+		"name": "Proceed and fix the damages later"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew took a route that is further than the original.",
+		"id": 119,
+		"name": "Find and go to an alternate route"
+	},
+	{
+		"Choice-1": [
+			118,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Proceed and fix the\ndamages later"
+		],
+		"Choice-2": [
+			119,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Find and go to an\nalternate route"
+		],
+		"Command": [
+			"@FACTSfact80"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, the navigation has detected a magnetic field ahead. Should we proceed or find an alternate path. If you choose to proceed, we will need to fix the damage that we will sustain. ",
+		"id": 120,
+		"name": "Magnetic Dynamo"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The Orbiter glided through the low gravity field",
+		"id": 121,
+		"name": "Glide through the field"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew were skeptical of the effect of low gravity.",
+		"id": 122,
+		"name": "Try to find an alternative path"
+	},
+	{
+		"Choice-1": [
+			121,
+			[],
+			"Glide through the field"
+		],
+		"Choice-2": [
+			122,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Try to find an alternative path"
+		],
+		"Command": [
+			"@FACTSfact26"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, sensors indicate a nearby low-gravity field. I recommend drifting through to conserve fuel. However, mapping this anomaly could also be beneficial for us.",
+		"id": 123,
+		"name": "Low-grav Pathway"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSMEDKIT 1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The unusual material has medicinal properties!",
+		"id": 124,
+		"name": "Study it further "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew avoid any potential risk from the unknown phenomenon",
+		"id": 125,
+		"name": "Keep our distance"
+	},
+	{
+		"Choice-1": [
+			124,
+			[],
+			"Study it further"
+		],
+		"Choice-2": [
+			125,
+			[],
+			"Keep our distance"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, the crew reports a peculiar signal from a nearby coordinate with unknown materials. Scans reveal energy patterns that match no known phenomenon. Shall we study it further or keep our distance? ",
+		"id": 126,
+		"name": "A Peculiar Area"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The engine is optimized, increasing operational stability ",
+		"id": 127,
+		"name": "Invest in Maintenance"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The engine suffers from wear, impacting operational efficiency",
+		"id": 128,
+		"name": "Ignore Maintenance"
+	},
+	{
+		"Choice-1": [
+			127,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Invest in Maintenance"
+		],
+		"Choice-2": [
+			128,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Ignore Maintenance"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, engine maintenance is due. Ignoring it could reduce fuel efficiency. A small investment in resources now may save us in the long run. ",
+		"id": 129,
+		"name": "Engineous Maintenance"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The pirates accepted the bribe and left your shuttle.",
+		"id": 130,
+		"name": "Give them what they want"
+	},
+	{
+		"Command": [
+			"@DO_DAMAGEMaxim 0.5",
+			"@DO_DAMAGERegina 0.5",
+			"@DO_DAMAGENashir 0.5",
+			"@DO_DAMAGEFumiko 0.5"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The shuttle was damaged but the escape was successful",
+		"id": 131,
+		"name": "Attempt to Escape"
+	},
+	{
+		"Choice-1": [
+			130,
+			[
+				[
+					"FOOD",
+					10
+				],
+				[
+					"FUEL",
+					10
+				],
+				[
+					"OXYGEN",
+					10
+				]
+			],
+			"Offer bribe"
+		],
+		"Choice-2": [
+			131,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Attempt to Escape"
+		],
+		"Choice-3": [
+			0,
+			[],
+			"(Description)"
+		],
+		"Choice-4": [
+			0,
+			[],
+			"(Description)"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A hostile vessel detected on our scanners, Captain. It’s displaying pirate insignia. Shall we offer a bribe to avoid conflict, or attempt an escape? ",
+		"id": 132,
+		"name": "Ahoy!"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew repairs the communication system",
+		"id": 133,
+		"name": "Investigate further"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Communication seems to have resumed after a delay.",
+		"id": 134,
+		"name": "Wait until the signal resumes"
+	},
+	{
+		"Choice-1": [
+			133,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Investigate further"
+		],
+		"Choice-2": [
+			134,
+			[],
+			"Wait until the signal resumes"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "All external communications are down. I’m attempting to trace the issue. We can either investigate further or wait until the signal resumes ",
+		"id": 135,
+		"name": "Communication Excommunication"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The light revealed to be harmless probe that left after a brief communication",
+		"id": 136,
+		"name": "Attempt Communication"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew prepares for conflict using shields made from spare parts, but the light leaves after a few minutes. ",
+		"id": 137,
+		"name": "Prepare for defense"
+	},
+	{
+		"Choice-3": [
+			136,
+			[],
+			"Attempt Communication"
+		],
+		"Choice-4": [
+			137,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Prepare for defense"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, a strange light is following our shuttle, I can’t detect whether they are hostile or not. What actions do you suggest? ",
+		"id": 138,
+		"name": "A Strange Light"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Regina neutralizes the gas, preventing it from spreading but using resources. ",
+		"id": 139,
+		"name": "Create a solution to neutralize the toxic gas"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The gas is removed quickly, but the crew suffers due to sudden loss of oxygen. ",
+		"id": 140,
+		"name": "Vent the entire room immediately"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Controlled venting reduces gas exposure and sudden loss of oxygen but allows some toxin to linger contaminating food rations. ",
+		"id": 141,
+		"name": "Vent the room slowly"
 	}
 ]

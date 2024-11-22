@@ -455,6 +455,30 @@
 			"id": "fact76",
 			"text": "Tardigrades are microorganisms that can survive the vacuum of space. In one experiment, tardigrades were left in a Russian capsule in low-Earth orbit for about ten days and were still viable after exposure.",
 			"title": "The Tardigrades"
+		},
+		{
+			"encountered": false,
+			"id": "fact77",
+			"text": "A nebula is an enormous cloud of dust and gas occupying the space between stars and acting as a nursery for new stars. ",
+			"title": "Nebulas"
+		},
+		{
+			"encountered": false,
+			"id": "fact78",
+			"text": "A comet shower is a meteor shower that occurs when Earth or a Space Vessel passes through the debris left behind by an asteroid",
+			"title": "Comet and Meteor Shower"
+		},
+		{
+			"encountered": false,
+			"id": "fact79",
+			"text": "The Apollo 13 mission is a famous example of resilience, ingenuity, and perseverance in the face of adversity. The crew's ability to adapt to unexpected challenges and work together to overcome them is a valuable lesson for organizations seeking to improve their crisis management capabilities",
+			"title": "Apollo 13 Resilience"
+		},
+		{
+			"encountered": false,
+			"id": "fact80",
+			"text": "Space magnetic fields are regions of space where a magnetic force acts on charged particles, electric currents, or other magnets. They are created by celestial bodies with an active interior dynamo.",
+			"title": "Magnetic Fields in Space"
 		}
 	]
 }
