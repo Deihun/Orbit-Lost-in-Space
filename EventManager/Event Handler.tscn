@@ -1,10 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmojd3msv3ms0"]
+[gd_scene load_steps=9 format=3 uid="uid://dmojd3msv3ms0"]
 
 [ext_resource type="Script" path="res://EventManager/Event Handler.gd" id="1_jnq3i"]
 [ext_resource type="Script" path="res://EventManager/EventReader.gd" id="2_nkt3i"]
-[ext_resource type="Texture2D" uid="uid://f4stsxkea1gm" path="res://EventManager/temporary_eventUI.png" id="2_qyjc8"]
 [ext_resource type="SpriteFrames" uid="uid://py3fqsiy6vfj" path="res://EventManager/OpeningEventUI.tres" id="4_coms2"]
+[ext_resource type="Texture2D" uid="uid://cbg8b8dqnhcsf" path="res://EventManager/Event_Indicator.png" id="5_1t0x5"]
 [ext_resource type="Texture2D" uid="uid://dtygae3pm110g" path="res://Scenes/Ingame/VolumeOff_EventUI.png" id="5_j31ji"]
+
+[sub_resource type="Animation" id="Animation_tvew5"]
+resource_name = "Pulsating"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanClickIcon:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.584314)]
+}
+
+[sub_resource type="Animation" id="Animation_gg5py"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanClickIcon:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0fqa"]
+_data = {
+"Pulsating": SubResource("Animation_tvew5"),
+"RESET": SubResource("Animation_gg5py")
+}
 
 [node name="EventHandler" type="Node2D"]
 script = ExtResource("1_jnq3i")
@@ -21,57 +59,123 @@ frame_progress = 1.0
 visible = false
 script = ExtResource("2_nkt3i")
 
-[node name="Sprite2D" type="Sprite2D" parent="EventReader"]
-visible = false
-position = Vector2(968, 549)
-texture = ExtResource("2_qyjc8")
-
 [node name="VolumeSwitch" type="Button" parent="EventReader"]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 213.0
 offset_top = 817.0
 offset_right = 304.0
 offset_bottom = 907.0
+mouse_filter = 1
 
 [node name="Volume" type="Sprite2D" parent="EventReader/VolumeSwitch"]
 position = Vector2(52, 48)
 texture = ExtResource("5_j31ji")
 
-[node name="Title" type="Label" parent="EventReader"]
-z_index = 20
-offset_left = 231.0
-offset_top = 167.0
-offset_right = 874.0
-offset_bottom = 269.0
+[node name="FirstPreview_Button" type="Button" parent="EventReader"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 187.0
+offset_top = 161.0
+offset_right = 1776.0
+offset_bottom = 919.0
+
+[node name="CanClickIcon_Icon" type="AnimationPlayer" parent="EventReader/FirstPreview_Button"]
+libraries = {
+"": SubResource("AnimationLibrary_s0fqa")
+}
+
+[node name="CanClickIcon" type="Sprite2D" parent="EventReader/FirstPreview_Button"]
+position = Vector2(1548, 724)
+scale = Vector2(0.274, 0.256)
+texture = ExtResource("5_1t0x5")
+
+[node name="FirstPreview" type="ScrollContainer" parent="EventReader/FirstPreview_Button"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 54.0
+offset_right = 1541.0
+offset_bottom = 683.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventReader/FirstPreview_Button/FirstPreview"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="EventReader/FirstPreview_Button/FirstPreview/VBoxContainer"]
+custom_minimum_size = Vector2(1350, 0)
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 66
+theme_override_font_sizes/font_size = 85
+text = "test"
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="Description" type="Label" parent="EventReader/FirstPreview_Button/FirstPreview/VBoxContainer"]
+custom_minimum_size = Vector2(1350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Description sadadadsadddddddddddddddddddddddddddddddddd"
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="ForInput" type="ScrollContainer" parent="EventReader"]
+visible = false
+offset_left = 208.0
+offset_top = 156.0
+offset_right = 1078.0
+offset_bottom = 917.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EventReader/ForInput"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Title" type="Label" parent="EventReader/ForInput/VBoxContainer"]
+z_index = 20
+custom_minimum_size = Vector2(850, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
 text = "title"
 autowrap_mode = 3
-justification_flags = 227
-text_overrun_behavior = 1
+justification_flags = 171
 
-[node name="Description" type="Label" parent="EventReader"]
+[node name="Description" type="Label" parent="EventReader/ForInput/VBoxContainer"]
 z_index = 20
-offset_left = 246.0
-offset_top = 285.0
-offset_right = 1018.0
-offset_bottom = 822.0
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 text = "description
-"
+description
+description
+description
+description
+description
+description
+description
+description
+descriptiondescription
+descriptiondescription
+descriptiondescription"
 autowrap_mode = 3
+justification_flags = 171
 
 [node name="Container" type="ScrollContainer" parent="EventReader"]
 z_index = 5
-offset_left = 1070.0
+offset_left = 1232.0
 offset_top = 176.0
 offset_right = 1745.0
-offset_bottom = 908.0
+offset_bottom = 855.0
 
 [node name="Container_EventButton" type="VBoxContainer" parent="EventReader/Container"]
+custom_minimum_size = Vector2(-0.045, 0)
 layout_mode = 2
 theme_override_constants/separation = 5
 
+[node name="ClickCooldown_event" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="animation_finished" from="EventUIAnimation" to="." method="_on_opening_ui_scene_animation_finished"]
 [connection signal="button_up" from="EventReader/VolumeSwitch" to="." method="_on_volume_switch_button_up"]
+[connection signal="button_up" from="EventReader/FirstPreview_Button" to="." method="_on_first_preview_button_button_up"]
+[connection signal="timeout" from="ClickCooldown_event" to="." method="_on_click_cooldown_event_timeout"]

@@ -18,6 +18,34 @@ extends Control
 func _ready() -> void:
 	$AnimationPlayer.play("Start_up")
 	save_ui.hidenodeMain()
+	if !FileAccess.file_exists("user://gallery.json"):
+		Create_gallery_data()
+
+var json_data = {}
+
+func load_json_file():
+	var file = FileAccess.open("res://Gallery/gallery.json", FileAccess.READ)
+	if file:
+		var json_text = file.get_as_text()
+		var json = JSON.new()
+		var parse_result = json.parse(json_text)
+		if parse_result == OK:
+			json_data = json.data  # Use `json.data` to get the parsed result
+		else:
+			print("Failed to parse JSON")
+		file.close()
+	else:
+		print("Failed to load file")
+
+func Create_gallery_data():
+	load_json_file()
+	var file = FileAccess.open("user://gallery.json", FileAccess.WRITE)
+	if file:
+		var json_text = JSON.stringify(json_data)
+		file.store_string(json_text)
+		file.close()
+	else:
+		print("Failed to save file")
 
 func _on_new_game_button_pressed() -> void:
 	if SettingsDataContainer.tutorialScene or SettingsDataContainer.tutorialScene == null:

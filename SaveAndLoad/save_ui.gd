@@ -66,7 +66,7 @@ func update_all():
 	set_node()
 		
 func get_files() -> void:
-	var dir = DirAccess.open("res://Saves/")
+	var dir = DirAccess.open("user://Saves/")
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()

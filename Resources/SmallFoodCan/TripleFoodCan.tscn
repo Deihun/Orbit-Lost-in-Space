@@ -6,14 +6,18 @@
 [ext_resource type="AudioStream" uid="uid://bxopsdl3l80u8" path="res://Sounds/SFX/Metal_can.mp3" id="4_w7e3x"]
 
 [node name="TripleFoodCan" type="Node2D"]
+y_sort_enabled = true
 
 [node name="SmallCanVariety2" parent="." instance=ExtResource("1_kctqc")]
+y_sort_enabled = true
 position = Vector2(-15, 2)
 
 [node name="SmallCanVariety1" parent="." instance=ExtResource("2_44uu2")]
+y_sort_enabled = true
 position = Vector2(21, 1)
 
 [node name="SmallCanVariety3" parent="." instance=ExtResource("3_882to")]
+y_sort_enabled = true
 position = Vector2(2, -35)
 
 [node name="Can_kicked" type="AudioStreamPlayer2D" parent="."]

@@ -57,6 +57,7 @@ func _ready():	#init array, get all child spawn into array.
 
 	for child in get_children():
 		if child is Node2D:
+			child.name = "node_position_spawner_"
 			positions.append(child.position)
 
 	number_of_resources = min(number_of_resources, positions.size())
@@ -67,11 +68,11 @@ func _ready():	#init array, get all child spawn into array.
 		crew["nashir"] = true
 		crew["fumiko"] = true
 
-	for resource in guaranteed_resources:
-		for i in range(3):
-			resources_to_spawn.append(resource)
-	number_of_resources = min(number_of_resources,positions.size())
-	positions.shuffle()
+#	for resource in guaranteed_resources:
+#		for i in range(3):
+#			resources_to_spawn.append(resource)
+#	number_of_resources = min(number_of_resources,positions.size())
+#	positions.shuffle()
 
 
 	for i in range(number_of_resources -1):
@@ -81,23 +82,27 @@ func _ready():	#init array, get all child spawn into array.
 			resource_instance = Regina.instantiate()
 			crew["regina"] = true
 			resource_instance.position = positions[i]
+			resource_instance.name = "Regina_"
 			add_child(resource_instance)
 			continue
 		elif crew["maxim"] == false:
 			resource_instance = Maxim.instantiate()
 			crew["maxim"] = true
+			resource_instance.name = "Maxim_"
 			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
 		elif crew["nashir"] == false:
 			resource_instance = Nashir.instantiate()
 			crew["nashir"] = true
+			resource_instance.name = "Nashir_"
 			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
 		elif crew["fumiko"] == false:
 			resource_instance = Fumiko.instantiate()
 			crew["fumiko"] = true
+			resource_instance.name = "Fumiko_"
 			resource_instance.position = positions[i]
 			add_child(resource_instance)
 			continue
@@ -159,22 +164,28 @@ func initiateItem(item_name : String):
 	match item_name:
 		"Food":
 			resource_instance = getSmallCanVariety()
+			resource_instance.name = "food_pickup" + str(rng.randi())
 			pass
 		"Biogene":
 			resource_instance = biogene.instantiate()
+			resource_instance.name = "biogene_pickup" + str(rng.randi())
 			pass 
 		"SpareParts": 
 			match int(randf()*2):
 				0:
 					resource_instance = spareparts.instantiate()
+					resource_instance.name = "sparepart_pickup" + str(rng.randi())
 				1:
 					resource_instance = spareparts_variety1.instantiate()
+					resource_instance.name = "sparepart_pickup" + str(rng.randi())
 			pass
 		"Medicine":
 			resource_instance = medicinepack.instantiate()
+			resource_instance.name = "medicine_pickup" + str(rng.randi())
 			pass 
 		"Oxygen":
 			resource_instance = SmallGasTank.instantiate()
+			resource_instance.name = "oxygen_pickup" + str(rng.randi())
 			pass 
 		"Fuel": 
 			resource_instance = fuel.instantiate()
@@ -183,6 +194,7 @@ func initiateItem(item_name : String):
 			pass
 		"DuctTape":
 			resource_instance = ductapes.instantiate()
+			resource_instance.name = "ductape_pickup" + str(rng.randi())
 			pass 
 	return resource_instance
 
@@ -190,18 +202,17 @@ func initiateItem(item_name : String):
 
 
 func getSmallCanVariety():
+	var resource_instance
 	if randf() * 1.0 < 0.05:
-		return StackedCan.instantiate()
-	var random = int(randf() * 3)
-	match random:
-		0:
-			return SmallCanVariety1.instantiate()
-		1: 
-			return SmallCanVariety2.instantiate()
-		2: 
-			return SmallCanVariety3.instantiate()
-		3:
-			return SmallCanVariety1.instantiate()
+		resource_instance = StackedCan.instantiate()
+	else:
+		var random = int(randf() * 3)
+		match random:
+			0: resource_instance = SmallCanVariety1.instantiate()
+			1: resource_instance = SmallCanVariety2.instantiate()
+			2: resource_instance = SmallCanVariety3.instantiate()
+	resource_instance.name = "food_pickup" + str(rng.randi())
+	return resource_instance
 
 
 func _on_timer_timeout() -> void:

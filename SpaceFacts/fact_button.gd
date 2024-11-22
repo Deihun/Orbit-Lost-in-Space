@@ -1,23 +1,36 @@
 extends Control
 var rawFacts = []
 var is_modified = false
+var file_path = "user://space_facts.json"
 
 func _ready() -> void:
+	if !FileAccess.file_exists(file_path):
+		factDefaultStart()
+		save_facts_to_json()
 	load_facts()
 	LoopChecker()
 	
 func create_button(data):
 	var button = Button.new()
+	var style_normal = preload("res://SpaceFacts/FactButton_Normal.tres")
+	var style_hover = preload("res://SpaceFacts/FactButton_Hover.tres")
+	var black_color = Color(0, 0, 0)
+	
 	$Panel/ScrollContainer/VBoxContainer.add_child(button)
 	button.text = data["title"]
-	var button_width = 200 
-	var button_height = 50
+	var button_width = 600
+	var button_height = 100
 	button.custom_minimum_size = Vector2(button_width, button_height)
+	button.add_theme_stylebox_override("normal", style_normal)
+	button.add_theme_stylebox_override("hover", style_hover)
+	button.add_theme_color_override("font_color", black_color)
+	button.add_theme_font_size_override("font_size", 35)
 	button.connect("pressed",Callable (self,"buttonPress").bind(data))
 	
 func buttonPress(data):
 	$Panel/FactTitle.text = data["title"]
 	$Panel/FactDesc.text = data["text"]
+
 func LoopChecker():
 	for child in $Panel/ScrollContainer/VBoxContainer.get_children():
 		child.queue_free()
@@ -25,13 +38,23 @@ func LoopChecker():
 	for facts in rawFacts:
 		if facts["encountered"]:
 			create_button(facts)
-		#print("Fact encountered:" + facts["id"]) # print("data")
 	
+func factDefaultStart():
+	var def_path = "res://SpaceFacts/space_facts.json"
+	if FileAccess.file_exists(def_path):
+		var file = FileAccess.open(def_path, FileAccess.READ)
+		var json_text = file.get_as_text()
+		var parsed_data = parse_json(json_text)
+		if "facts" in parsed_data:
+			rawFacts = parsed_data["facts"]
+		else:
+			print("EVENT-HANDLER-SCRIPT://  'load_facts' : 'No key `facts` in parsed data'")
+	else: 
+		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
 	
 func load_facts():
-	var file_path = "res://SpaceFacts/space_facts.json"
 	if FileAccess.file_exists(file_path):
-		var file = FileAccess.open(file_path, FileAccess.READ)
+		var file = FileAccess.open_encrypted_with_pass(file_path, FileAccess.READ, "Orbit")
 		var json_text = file.get_as_text()
 		var parsed_data = parse_json(json_text)
 		if "facts" in parsed_data:
@@ -70,8 +93,7 @@ func save_if_modified():
 		is_modified = false # Reset after saving			
 
 func save_facts_to_json():
-	var file_path = "res://SpaceFacts/space_facts.json"
-	var file = FileAccess.open(file_path, FileAccess.WRITE)
+	var file = FileAccess.open_encrypted_with_pass(file_path, FileAccess.WRITE, "Orbit")
 	if file:
 		var data_to_save = {"facts": rawFacts}
 		file.store_string(JSON.stringify(data_to_save, "\t"))

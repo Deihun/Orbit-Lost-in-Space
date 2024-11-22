@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cleem5f6dxwl4" path="res://Resources/SmallFoodCan/SmallCan_Variety1.tscn" id="6_mx32n"]
 [ext_resource type="Texture2D" uid="uid://da82u7r2mgtix" path="res://Player/LightEffect.png" id="10_ljiwb"]
 [ext_resource type="PackedScene" uid="uid://l3oth153v8dv" path="res://AmbiencePurposes/Boxes/SmallBox.tscn" id="14_dh8q3"]
-[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="18_esivl"]
+[ext_resource type="PackedScene" path="res://button_sounds.tscn" id="18_esivl"]
 [ext_resource type="AudioStream" uid="uid://lpt726b1semu" path="res://Sounds/SFX/Alarm.mp3" id="19_8l2fq"]
 [ext_resource type="AudioStream" uid="uid://bj5brc14dnei3" path="res://Sounds/Music/strum.mp3" id="20_r2veb"]
 

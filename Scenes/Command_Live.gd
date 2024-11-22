@@ -81,7 +81,16 @@ func command(_command : String):
 	elif _command.begins_with("@ADD_PROBABILITY_FACTIONS"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		_command = _command.substr("@ADD_PROBABILITY_FACTIONS".length(), _command.length() - "@ADD_PROBABILITY_FACTIONS".length())
 		_command.strip_edges()
-		#IngameStoredProcessSetting.Factions_Probability
+	elif _command.begins_with("@CYCLE"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@CYCLE".length(), _command.length() - "@CYCLE".length())
+		_command.strip_edges()
+		IngameStoredProcessSetting.Cycle = int(_command)
+		$"../..".updateUI()
+	elif _command.begins_with("@PROBABILITY_FACTION"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@PROBABILITY_FACTION".length(), _command.length() - "@PROBABILITY_FACTION".length())
+		_command.strip_edges()
+		IngameStoredProcessSetting.TotalProbabilityForFactionsToFound = float(_command)
+		$"../..".updateUI()
 	elif _command.begins_with("@TRIGGER_EVENT"): 
 		var a : int
 		_command = _command.substr("@TRIGGER_EVENT".length(), _command.length() - "@TRIGGER_EVENT".length())

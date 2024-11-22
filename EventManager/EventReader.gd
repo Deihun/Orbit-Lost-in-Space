@@ -7,9 +7,11 @@ var temp_choice_data = []
 var description = ""
 
 
-@onready var title = $Title
-@onready var desc = $Description
+@onready var title = $ForInput/VBoxContainer/Title
+@onready var desc = $ForInput/VBoxContainer/Description
 @onready var button_container = $Container/Container_EventButton
+@onready var first_title = $FirstPreview_Button/FirstPreview/VBoxContainer/Title
+@onready var first_description = $FirstPreview_Button/FirstPreview/VBoxContainer/Description
 
 
 func _ready():
@@ -47,7 +49,9 @@ func processNextEvent():			#PLAY NEXT EVENT
 	var parent = get_parent()
 	
 	title.text = currentEvent["name"] 
+	first_title.text = currentEvent["name"]
 	desc.text = currentEvent["description"] 
+	first_description.text = currentEvent["description"] 
 	description = currentEvent["description"]
 
 	if currentEvent.has("FollowUp"):
@@ -292,7 +296,7 @@ func _on_choice_button_pressed(choice_data):
 	if choice_data[2] == "Okay":
 		GlobalResources.currentActiveQueue -= 1
 		clear_container(button_container)
-		parent.ActivateEvent()
+		parent.ActivateEvent(false)
 		return
 	
 	if _can_satisfy_choice(choice_data):

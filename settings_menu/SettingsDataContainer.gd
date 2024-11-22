@@ -9,11 +9,11 @@ var master_volume : float = 0.0
 var music_volume : float = 0.0
 var sfx_volume : float = 0.0
 var tutorial_set : bool = true
-var tutorialScene: bool 
-var tutorialPanel_1 : bool
-var tutorialPanel_2 : bool 
-var tutorialPanel_3 : bool 
-var tutorialPanel_4 : bool 
+var tutorialScene: bool = true
+var tutorialPanel_1 : bool = true
+var tutorialPanel_2 : bool = true
+var tutorialPanel_3 : bool = true
+var tutorialPanel_4 : bool = true
 var loaded_data : Dictionary = {}
 
 func _ready() -> void:

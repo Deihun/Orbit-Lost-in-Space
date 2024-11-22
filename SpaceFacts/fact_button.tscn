@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://SpaceFacts/fact_button.gd" id="1_6411q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8iw6"]
-bg_color = Color(0.20942, 0.127688, 0.0336939, 1)
+bg_color = Color(0.0752067, 0.15559, 0.22284, 1)
 
 [node name="FactButton" type="Control"]
 visible = false
@@ -16,43 +16,10 @@ grow_vertical = 2
 script = ExtResource("1_6411q")
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color(0.568973, 0.568973, 0.568973, 1)
 layout_mode = 0
 offset_right = 1918.0
 offset_bottom = 1079.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_v8iw6")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
-layout_mode = 0
-offset_right = 650.0
-offset_bottom = 1075.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="FactTitle" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -300.0
-offset_top = 44.0
-offset_right = 935.0
-offset_bottom = 135.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 66
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FactDesc" type="Label" parent="Panel"]
-layout_mode = 1
-offset_left = 661.0
-offset_top = 145.0
-offset_right = 1897.0
-offset_bottom = 946.0
-theme_override_font_sizes/font_size = 51
-autowrap_mode = 3
 
 [node name="Back_Button_FactButton" type="Button" parent="Panel"]
 layout_mode = 0
@@ -63,10 +30,42 @@ offset_bottom = 1058.0
 theme_override_font_sizes/font_size = 41
 text = "BACK"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 955.0
-offset_bottom = 787.0
+offset_left = 52.0
+offset_top = 47.0
+offset_right = 766.0
+offset_bottom = 1038.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="FactTitle" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 44.0
+offset_right = 935.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 66
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FactDesc" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 742.0
+offset_top = 145.0
+offset_right = 1897.0
+offset_bottom = 946.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 51
+autowrap_mode = 3
+justification_flags = 171
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="Panel/Back_Button_FactButton" to="." method="_on_back_button_fact_button_button_up"]

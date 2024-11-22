@@ -69,7 +69,7 @@ offset_left = 10.0001
 offset_top = 10.0
 offset_right = 969.0
 offset_bottom = 484.0
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "ITEM DESCRIPTION"
 visible_characters_behavior = 1
@@ -88,7 +88,7 @@ offset_left = 11.0
 offset_top = 13.0
 offset_right = 489.0
 offset_bottom = 363.0
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 40
 text = "ITEM EFFECT DESCRIPTION"
 
 [node name="Item_Requirements" type="Panel" parent="Panel"]
@@ -105,7 +105,7 @@ offset_left = 11.0
 offset_top = 13.0
 offset_right = 966.0
 offset_bottom = 143.0
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 40
 text = "ITEM MATERIAL REQUIREMENTS"
 
 [node name="Craft_Button" type="Button" parent="Panel"]
@@ -114,6 +114,7 @@ offset_left = 1203.0
 offset_top = 793.0
 offset_right = 1485.0
 offset_bottom = 916.0
+theme_override_font_sizes/font_size = 40
 text = "Craft"
 
 [node name="Cancel_Button" type="Button" parent="Panel"]
@@ -122,6 +123,7 @@ offset_left = 902.0
 offset_top = 793.0
 offset_right = 1184.0
 offset_bottom = 916.0
+theme_override_font_sizes/font_size = 40
 text = "Cancel"
 
 [node name="Warning" type="Panel" parent="Panel"]

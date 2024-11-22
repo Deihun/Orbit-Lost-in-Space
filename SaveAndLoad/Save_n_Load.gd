@@ -3,7 +3,7 @@ extends Node
 @onready var resources = GlobalResources
 @onready var stored = IngameStoredProcessSetting
 @onready var events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
-var SavePath = "Saves/Autosave.json"
+var SavePath = "user://Saves/Autosave.json"
 var isLoadGame : bool
 
 var event_dictionary = {}
@@ -18,11 +18,12 @@ func _process(delta: float) -> void:
 		events = NodeFinder.find_node_by_name(get_tree().current_scene,"EventHandler")
 
 func LoadSave(SaveName : String) -> void:
-	SavePath = "Saves/" + SaveName +".json"
+	SavePath = "user://Saves/" + SaveName +".json"
 	loadsave()
 
 func SaveGame(SaveName : String):
-	SavePath = "Saves/" + SaveName +".json"
+	var dir = DirAccess.make_dir_recursive_absolute("user://Saves/")
+	SavePath = "user://Saves/" + SaveName +".json"
 	save()
 
 func savedata():
@@ -75,6 +76,7 @@ func savedata():
 	return save_dict
 
 func save():
+	var dir = DirAccess.make_dir_recursive_absolute("user://Saves/")
 	var file = FileAccess.open_encrypted_with_pass(SavePath, FileAccess.WRITE, "Orbit")
 	var json_string = JSON.stringify(savedata())
 	file.store_line(json_string)
