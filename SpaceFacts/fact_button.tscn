@@ -6,7 +6,6 @@
 bg_color = Color(0.0752067, 0.15559, 0.22284, 1)
 
 [node name="FactButton" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +35,8 @@ offset_left = 52.0
 offset_top = 47.0
 offset_right = 766.0
 offset_bottom = 1038.0
+mouse_filter = 0
+follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
 layout_mode = 2

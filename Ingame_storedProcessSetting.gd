@@ -572,6 +572,7 @@ func doHealthChecker():
 				recent_events.append("DEATH")
 
 func doRandomDamage(value : float = 0.1):
+	if crew_in_ship.size() <= 0: return
 	var CrewName = ""
 	var randomCrew = int(randf() * crew_in_ship.size())
 	CrewName = crew_in_ship[randomCrew]

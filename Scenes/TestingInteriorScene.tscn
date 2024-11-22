@@ -696,6 +696,11 @@ grow_vertical = 2
 script = ExtResource("1_m612p")
 metadata/_edit_lock_ = true
 
+[node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
+z_index = 1
+position = Vector2(1931, -556)
+scale = Vector2(1, 1.05)
+
 [node name="cam2d" type="Camera2D" parent="."]
 z_index = 500
 script = ExtResource("2_uajib")
@@ -842,16 +847,11 @@ position = Vector2(46, 43.42)
 texture = ExtResource("12_oquuw")
 
 [node name="FactButton" parent="cam2d" instance=ExtResource("44_sdcy4")]
-z_index = 170
+z_index = 200
 offset_left = -959.0
 offset_top = -539.58
 offset_right = -959.0
 offset_bottom = -539.58
-
-[node name="EventHandler" parent="." instance=ExtResource("8_mmcy4")]
-z_index = 1
-position = Vector2(1931, -556)
-scale = Vector2(1, 1.05)
 
 [node name="WholeInteriorScene" type="Sprite2D" parent="."]
 z_index = -11

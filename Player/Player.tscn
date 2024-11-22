@@ -2706,6 +2706,7 @@ scale = Vector2(0.179059, 0.273465)
 texture = ExtResource("18_3ook1")
 
 [node name="Label_Spareparts" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 148.441
 offset_top = 35.1695
 offset_right = 204.441
@@ -2721,6 +2722,7 @@ scale = Vector2(0.116117, 0.14243)
 texture = ExtResource("19_l56kc")
 
 [node name="Label_Food" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 43.3559
 offset_top = 63.0145
 offset_right = 63.3559
@@ -2735,6 +2737,7 @@ scale = Vector2(0.099025, 0.151925)
 texture = ExtResource("20_463v2")
 
 [node name="Label_Biogene" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 159.346
 offset_top = 4.45279
 offset_right = 214.346
@@ -2750,6 +2753,7 @@ scale = Vector2(0.119915, 0.170916)
 texture = ExtResource("21_fbi1t")
 
 [node name="Label_Oxygen" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 3.0
 offset_right = 112.0
@@ -2764,6 +2768,7 @@ scale = Vector2(0.179059, 0.273465)
 texture = ExtResource("22_dr10c")
 
 [node name="Label_Fuel" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 47.9913
 offset_top = 34.201
 offset_right = 67.9913
@@ -2778,6 +2783,7 @@ scale = Vector2(0.140804, 0.214594)
 texture = ExtResource("23_2rt1n")
 
 [node name="Label_Ductape" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 275.698
 offset_top = 3.45037
 offset_right = 313.698
@@ -2792,6 +2798,7 @@ scale = Vector2(0.13592, 0.186108)
 texture = ExtResource("24_gqkrm")
 
 [node name="Label_Medicine" type="Label" parent="player/AllUIParents/ResourceUI_InRun/Amount_in_Area"]
+layout_mode = 0
 offset_left = 270.648
 offset_top = 33.4746
 offset_right = 308.648
@@ -2814,6 +2821,7 @@ scale = Vector2(0.179059, 0.273465)
 texture = ExtResource("18_3ook1")
 
 [node name="Label_Spareparts" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 131.007
 offset_top = 33.2324
 offset_right = 151.007
@@ -2829,6 +2837,7 @@ scale = Vector2(0.116117, 0.14243)
 texture = ExtResource("19_l56kc")
 
 [node name="Label_Food" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 43.3559
 offset_top = 63.0145
 offset_right = 63.3559
@@ -2843,6 +2852,7 @@ scale = Vector2(0.099025, 0.151925)
 texture = ExtResource("20_463v2")
 
 [node name="Label_Biogene" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 136.818
 offset_top = 2.72397
 offset_right = 156.818
@@ -2858,6 +2868,7 @@ scale = Vector2(0.119915, 0.170916)
 texture = ExtResource("21_fbi1t")
 
 [node name="Label_Oxygen" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 53.8489
 offset_top = 3.15739
 offset_right = 73.8489
@@ -2872,6 +2883,7 @@ scale = Vector2(0.179059, 0.273465)
 texture = ExtResource("22_dr10c")
 
 [node name="Label_Fuel" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 47.9913
 offset_top = 34.201
 offset_right = 67.9913
@@ -2886,6 +2898,7 @@ scale = Vector2(0.140804, 0.214594)
 texture = ExtResource("23_2rt1n")
 
 [node name="Label_Ductape" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 239.966
 offset_top = 5.14528
 offset_right = 259.966
@@ -2900,6 +2913,7 @@ scale = Vector2(0.13592, 0.186108)
 texture = ExtResource("24_gqkrm")
 
 [node name="Label_Medicine" type="Label" parent="player/AllUIParents/ResourceUI_InRun/AmountPreview"]
+layout_mode = 0
 offset_left = 234.916
 offset_top = 35.1695
 offset_right = 254.916
