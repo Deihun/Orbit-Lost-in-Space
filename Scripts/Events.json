@@ -1999,5 +1999,142 @@
 		"description": "Controlled venting reduces gas exposure and sudden loss of oxygen but allows some toxin to linger contaminating food rations. ",
 		"id": 141,
 		"name": "Vent the room slowly"
+	},
+	{
+		"Choice-1": [
+			140,
+			[
+				[
+					"OXYGEN",
+					20
+				]
+			],
+			"Vent the entire room immediately"
+		],
+		"Choice-2": [
+			141,
+			[
+				[
+					"FOOD",
+					20
+				]
+			],
+			"Vent the room slowly"
+		],
+		"HiddenChoice": [
+			[
+				"CREW",
+				[
+					"Regina",
+					null
+				]
+			],
+			[
+				139,
+				[
+					[
+						"BIOGENE",
+						10
+					]
+				],
+				"Create a solution to neutralize the toxic gas"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Alert: Toxic gas leak detected in the medical bay. Immediate venting is required, or additional resources may help neutralize it safely. Venting the room would reduce the oxygen for you and your crew. ",
+		"id": 142,
+		"name": "Toxic Gas Leak"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The circuitry is fully repaired, reducing the chance of future issues but requiring more resources. ",
+		"id": 143,
+		"name": "Use more resources to ensure that it won’t be faulty again."
+	},
+	{
+		"Command": [
+			"@DO_DAMAGEMaxim 0.10",
+			"@DO_DAMAGERegina 0.10",
+			"@DO_DAMAGENashir 0.10",
+			"@DO_DAMAGEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The repair is less thorough, thus leading to some minor electrical shocks leaving the system vulnerable to future faults. ",
+		"id": 144,
+		"name": "Try to save some resources."
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The rations was saved but the biogene was left behind.",
+		"id": 146,
+		"name": "Save the Ration "
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The Biogene was saved but the rations was left behind",
+		"id": 147,
+		"name": "Save the Biogene "
+	},
+	{
+		"Choice-1": [
+			146,
+			[
+				[
+					"BIOGENE",
+					20
+				]
+			],
+			"Save the Ration"
+		],
+		"Choice-2": [
+			147,
+			[
+				[
+					"FOOD",
+					20
+				]
+			],
+			"Save the Biogene "
+		],
+		"Command": [
+			"@FACTSfact11"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, we have an Apollo 13 protocol at bay. An oxygen tank suddenly exploded, we might need to choose what to save between the some of the ration or the biogene.",
+		"id": 148,
+		"name": "Apollo 13 Protocol"
+	},
+	{
+		"Choice-1": [
+			143,
+			[
+				[
+					"SPAREPARTS",
+					25
+				]
+			],
+			"Use more resourcec to ensure that it won't be faulty again"
+		],
+		"Choice-2": [
+			144,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Try to save some resources."
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, I’m detecting an electrical fault in the ship’s circuitry. Ignoring it may compromise essential functions of the shuttle. Immediate repairs are strongly recommended. ",
+		"id": 149,
+		"name": "Faulty Electricity"
 	}
 ]
