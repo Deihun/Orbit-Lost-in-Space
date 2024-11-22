@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://tbhpfech36e8"]
+[gd_scene load_steps=140 format=3 uid="uid://tbhpfech36e8"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scenes/cycle_report_scroll_container.gd" id="14_u3w1g"]
 [ext_resource type="Texture2D" uid="uid://cd21p2lrg3shh" path="res://Scenes/CraftingUI/HoveringMouse_AICrafting.png" id="15_4vfma"]
 [ext_resource type="PackedScene" uid="uid://dcb5l6014oa70" path="res://Scenes/Cycle_Report/CycleReport_Bar.tscn" id="15_640qk"]
+[ext_resource type="Texture2D" uid="uid://e7umoyg3bh4a" path="res://InteriorScene/WindowClose.png" id="15_2720a"]
 [ext_resource type="PackedScene" uid="uid://b6n7qothsjasc" path="res://Scenes/tutorial_panel.tscn" id="15_mu6oi"]
 [ext_resource type="Texture2D" uid="uid://dw6ae7xyyamkp" path="res://Scenes/Cycle_Report/ExpeditionReportBG.png" id="17_8py32"]
 [ext_resource type="Texture2D" uid="uid://c5wxf42th7rbc" path="res://Scenes/Between Wall.png" id="17_raxb3"]
@@ -47,7 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
 [ext_resource type="AudioStream" uid="uid://yrr1kbqjok3m" path="res://Sounds/SFX/425999__solarphasing__scifi-industrial-atmosphere-1.wav" id="41_xlg34"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
-[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
+[ext_resource type="PackedScene" path="res://button_sounds.tscn" id="47_evqmn"]
 [ext_resource type="AudioStream" uid="uid://bci2331ggbm16" path="res://Sounds/Music/lofi .mp3" id="49_apm6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
@@ -863,6 +864,12 @@ metadata/_edit_lock_ = true
 position = Vector2(-65, -3)
 texture = ExtResource("12_nbaaq")
 metadata/_edit_lock_ = true
+
+[node name="WindowClose" type="Sprite2D" parent="WholeInteriorScene"]
+visible = false
+position = Vector2(-74.25, -6.58002)
+scale = Vector2(1.00877, 1.01)
+texture = ExtResource("15_2720a")
 
 [node name="Craft" type="Sprite2D" parent="WholeInteriorScene"]
 position = Vector2(-3065, 1)

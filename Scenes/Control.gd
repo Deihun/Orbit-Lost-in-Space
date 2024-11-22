@@ -139,14 +139,27 @@ func updateUI():
 func updateCockpit():
 	var a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	match IngameStoredProcessSetting.current_Factions:
-		"SPACE":a    = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-		"None":a     = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-		"Radonti":a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
-		"Steelicus":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusCockpit.png")
-		"Earth2.0":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
-		"Sauria":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
+		"SPACE":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"None":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"Radonti":
+			a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+			$WholeInteriorScene/WindowClose.visible = true
+		"Steelicus":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusCockpit.png")
+			$WholeInteriorScene/WindowClose.visible = true
+		"Earth2.0":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
+			$WholeInteriorScene/WindowClose.visible = true
+		"Sauria":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
+			$WholeInteriorScene/WindowClose.visible = true
 		"Enthuli": pass
-		"AbandonShip":pass
+		"AbandonShip":
+			$WholeInteriorScene/WindowClose.visible = false
 		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
 
