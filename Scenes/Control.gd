@@ -140,10 +140,28 @@ func updateCockpit():
 	var a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	match IngameStoredProcessSetting.current_Factions:
 		"SPACE":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+			match randi_range(1,9):
+				1: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+				2: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space1.png")
+				3: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space2.png")
+				4: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space3.png")
+				5: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space4.png")
+				6: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space5.png")
+				7: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space6.png")
+				8: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space7.png")
+				9: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space8.png")
 			$WholeInteriorScene/WindowClose.visible = false
 		"None":
-			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+			match randi_range(1,9):
+				1: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+				2: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space1.png")
+				3: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space2.png")
+				4: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space3.png")
+				5: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space4.png")
+				6: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space5.png")
+				7: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space6.png")
+				8: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space7.png")
+				9: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space8.png")
 			$WholeInteriorScene/WindowClose.visible = false
 		"Radonti":
 			a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
@@ -158,8 +176,15 @@ func updateCockpit():
 			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
 			$WholeInteriorScene/WindowClose.visible = true
 		"Enthuli": pass
+		"Blackhole":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/BlackHole.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"Asteroid" : 
+			load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Asteroid.png")
+			$WholeInteriorScene/WindowClose.visible = false
 		"AbandonShip":
 			$WholeInteriorScene/WindowClose.visible = false
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonSatelite.png")
 		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
 

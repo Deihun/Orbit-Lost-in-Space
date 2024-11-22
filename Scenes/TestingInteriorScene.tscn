@@ -1211,7 +1211,7 @@ script = ExtResource("14_dtqtq")
 polygon = PackedVector2Array(887.785, 381.231, 575.808, 381.614, 548.847, 550.847, 968.668, 539.019, 971.556, 382.523)
 
 [node name="ArrowNavigation" type="Sprite2D" parent="StorageScene/ClickOnLeft"]
-position = Vector2(800.162, 463.501)
+position = Vector2(771.275, 445.304)
 scale = Vector2(-2.61016, 1.57332)
 texture = ExtResource("11_0iy23")
 
