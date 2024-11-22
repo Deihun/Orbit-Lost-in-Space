@@ -41,6 +41,7 @@ func getCycle():
 	return Cycle
 
 func reset():
+	selectedCrew = "Jerry"
 	crew_in_ship = []
 	Cycle = 1
 	delayInFaction = 0

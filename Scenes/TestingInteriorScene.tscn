@@ -1749,7 +1749,7 @@ metadata/_edit_lock_ = true
 [node name="PauseMenu" parent="." instance=ExtResource("3_h4mnh")]
 visible = false
 top_level = true
-z_index = 700
+z_index = 1000
 offset_left = 1584.0
 offset_top = 231.0
 offset_right = 1584.0

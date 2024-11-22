@@ -122,7 +122,6 @@ func ChangeLocaton(smoothMovement:bool):
 				await get_tree().create_timer(1.5).timeout
 				if($"../TutorialPanel_Folder/TutorialPanel2"):
 					$"../TutorialPanel_Folder/TutorialPanel2".visible = true
-				pass
 			if GlobalResources.currentActiveQueue > 0:
 				EndButton.disable()
 				await get_tree().create_timer(0.5).timeout
