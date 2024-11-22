@@ -17,7 +17,9 @@ func onCall():
 		var Info = IngameStoredProcessSetting.Cycle_ReportList.pop_front()
 		var instance = ReportTab.instantiate()
 		#instance.position = Vector2(instance.position.x , instance.position.y - (distance * rangeDistance))
-		instance.set_data(str(Info[0], " (",Info[1],")"))
+		var string_data = str(Info[0], " (",Info[1],")")
+		if string_data.contains("(0)"): continue
+		instance.set_data(string_data)
 		container.add_child(instance)
 		var timer = get_tree().create_timer(_Delay)
 		await timer.timeout

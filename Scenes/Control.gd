@@ -75,6 +75,7 @@ func _loadGameStart()-> void:
 	print("Events ",GlobalResources.eventID)
 	if GlobalResources.eventID.size() > 0: EventHandler.ActivateThroughLoad()
 	GlobalResources.currentActiveQueue = 0 if GlobalResources.eventID.size() <= 0 else GlobalResources.currentActiveQueue
+	$cam2d/Button_navigation_node_parent/MeteorCyce/Cycle_number.text = str(IngameStoredProcessSetting.Cycle)
 	updateUI()
 	updateCockpit()
 
