@@ -2617,7 +2617,6 @@ position = Vector2(327, 875)
 scale = Vector2(2.065, 2.065)
 
 [node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
-visible = false
 z_index = 200
 script = ExtResource("2_7naq2")
 

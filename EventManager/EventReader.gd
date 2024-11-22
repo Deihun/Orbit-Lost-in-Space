@@ -294,6 +294,7 @@ func _on_choice_button_pressed(choice_data):
 	var parent = get_parent()
 	
 	if choice_data[2] == "Okay":
+		removeSaveIDIfProcess()
 		GlobalResources.currentActiveQueue -= 1
 		clear_container(button_container)
 		parent.ActivateEvent(false)
@@ -301,6 +302,7 @@ func _on_choice_button_pressed(choice_data):
 	
 	if _can_satisfy_choice(choice_data):
 		if !str(choice_data[1]).contains("<null>"):
+			removeSaveIDIfProcess()
 			for item in choice_data[1]:
 				Global_resources.subtractItem(true,item[0],item[1])
 				pass
@@ -309,13 +311,20 @@ func _on_choice_button_pressed(choice_data):
 			processNextEvent()
 			
 		else:
+			removeSaveIDIfProcess()
 			setEventID(choice_data[0])
 			processNextEvent()
 		$".."._triggerDialogue(description, $"..".isTextToSpeechOn)
+		
 	else:
 		print("DEBUG: CONDITIONS NOT SATISFIED")
-	pass
 
+
+func removeSaveIDIfProcess():
+	print("DEBUG ON REMOVE SAVE ID: ", EventID, " = ", GlobalResources.save_events, " / ",EventID in GlobalResources.save_events)
+	if EventID in GlobalResources.save_events:
+		GlobalResources.save_events.erase(EventID)
+		print("Removed EventID. Updated save_events: ", GlobalResources.save_events)
 
 func _can_satisfy_choice(choice_data):
 	var condition = true

@@ -70,8 +70,10 @@ func _loadGameStart()-> void:
 		a.z_index = 1000
 		a.position += Vector2(-1000,-500)
 		$cam2d.add_child(a)
-	EventHandler.startAddNextEvent()
-	EventHandler.ActivateEvent()
+	GlobalResources.eventID = GlobalResources.save_events.duplicate()
+	GlobalResources.save_events = []
+	print("Events ",GlobalResources.eventID)
+	EventHandler.ActivateThroughLoad()
 	updateUI()
 	updateCockpit()
 
@@ -180,7 +182,7 @@ func updateCockpit():
 			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/BlackHole.png")
 			$WholeInteriorScene/WindowClose.visible = false
 		"Asteroid" : 
-			load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Asteroid.png")
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Asteroid.png")
 			$WholeInteriorScene/WindowClose.visible = false
 		"AbandonShip":
 			$WholeInteriorScene/WindowClose.visible = false
@@ -236,10 +238,17 @@ func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_i
 
 func _updateUIExpeditionScreen():
 	var expScreen = $WholeInteriorScene/Cockpit/ExpeditionScreen
-	if "AbandonShip":
-		expScreen.play("abandonship")
-	else :
-		expScreen.play("Space")
+	match IngameStoredProcessSetting.current_Factions:
+		"AbandonShip": expScreen.play("abandonship")
+		"Radonti":  expScreen.play("Radonti")
+		"Sauria":  expScreen.play("Sauria")
+		"Earth2.0":  expScreen.play("Planet2")
+		"Enthuli":  expScreen.play("Enthuli")
+		"Steelicus":  expScreen.play("Steelicus")
+		"Asteroid": expScreen.play("Asteroid")
+		"Blackhole": expScreen.play("Blackhole")
+		_: expScreen.play("Space")
+		
 
 
 func _on_cancel_button_button_up() -> void:

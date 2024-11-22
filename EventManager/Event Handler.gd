@@ -93,6 +93,7 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 			if event["Conditions"][0] == "CYCLE":
 				if int(event["Conditions"][1][0]) == IngameStoredProcessSetting.Cycle:
 					GlobalResources.eventID.append(event["id"])
+					GlobalResources.save_events.append(int(event["id"]))
 
 	#_CRITICAL EVENT
 	while(GlobalResources.Critical_Event.size() > 0):
@@ -101,6 +102,7 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 			if eachEvent.has("Conditions"):
 				if eachEvent["Conditions"][0] == "CRITICAL" and Critical_key in eachEvent["Conditions"][1]:
 					GlobalResources.eventID.append(eachEvent["id"])
+					GlobalResources.save_events.append(int(eachEvent["id"]))
 
 	
 	#PRIORITIZE EVENTS THAT WITHIN PRIORITY ARRAY
@@ -110,6 +112,7 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 			if eachEvent.has("Conditions"):
 				if eachEvent["Conditions"][0] == "FOLLOW-UP" && eachEvent["Conditions"][1].has(priority_key):
 					GlobalResources.eventID.append(eachEvent["id"])
+					GlobalResources.save_events.append(int(eachEvent["id"]))
 					numbers_of_event -= 1
 	
 	#ADD EVENTS BASE ON LIMIT PER CYCLE
@@ -126,55 +129,67 @@ func _conditions(eachEvent) -> bool:
 		if eachEvent["Conditions"][0] == "HAS":
 			if GlobalResources.hasItem(eachEvent["Conditions"][1],1):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		#RELATIONSHIP CONDITION
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_MAX_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data, 1.0):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_HIGH_75%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data, 0.75):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_LOWER_25%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data,0.25,false):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		elif eachEvent["Conditions"][0] == "RELATIONSHIP_LOWER_0%_WITH_ME":
 			if IngameStoredProcessSetting.isRelationship(data,0.0,false):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		#SANITY
 		elif eachEvent["Conditions"][0] == "SANITY_100%":
 			if IngameStoredProcessSetting.isSanity(data,1.0):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		elif eachEvent["Conditions"][0] == "SANITY_75%":
 			if IngameStoredProcessSetting.isSanity(data,0.75):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		elif eachEvent["Conditions"][0] == "SANITY_25%":
 			if IngameStoredProcessSetting.isSanity(data, 0.25,false):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		elif eachEvent["Conditions"][0] == "SANITY_0%":
 			if IngameStoredProcessSetting.isSanity(data,0.0, false):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		#PLACE
 		elif eachEvent["Conditions"][0] == "PLACE":
 			if IngameStoredProcessSetting.current_Factions == str(data):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		#HAS INGAME EFFECTS
 		elif eachEvent["Conditions"][0] == "HAS_INGAME_EFFECTS":
 			if GlobalResources.GameEffects.has(data):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 		#HAS UNIQUE ITEMS
 		elif eachEvent["Conditions"][0] == "HAS_UNIQUE_ITEM":
 			if GlobalResources.uniqueItems.has(data):
 				GlobalResources.eventID.append(eachEvent["id"])
+				GlobalResources.save_events.append(int(eachEvent["id"]))
 				return condition
 	return false
 
@@ -205,11 +220,13 @@ func _addNextEvent()-> void :
 				else:
 					break  # Exit loop if there are no conditions
 	GlobalResources.eventID.append(_event["id"])
+	GlobalResources.save_events.append(int(_event["id"]))
 	if _event["Repeatable"] == false:
 		GlobalResources.alreadyTriggeredEvent.append(_event["id"])
 
 
 func ActivateEvent(newCycle : bool = true): #ACTIVATE QUEUE EVENT
+	print("THIS IS THE EVENT IN SAVE: ", GlobalResources.save_events)
 	if GlobalResources.eventID.front() == null:
 		isEventVisible = false
 		switchIt(false)
@@ -242,7 +259,21 @@ func ActivateEvent(newCycle : bool = true): #ACTIVATE QUEUE EVENT
 			description = event.get("description","no description found")
 	initialDescription = description
 
-
+func ActivateThroughLoad():
+	if GlobalResources.save_events == null: return
+	var CurrentEventID = GlobalResources.eventID.pop_front()
+	isEventVisible = true
+	eventReader.setEventID(CurrentEventID)
+	eventReader.processNextEvent()
+	$EventReader/Container.hide()
+	$EventReader/ForInput.hide()
+	$EventReader/FirstPreview_Button/FirstPreview.show()
+	$EventReader/VolumeSwitch.hide()
+	var description = ""
+	for event in rawEvent:
+		if event.has("id") and event["id"] == CurrentEventID:
+			description = event.get("description","no description found")
+	initialDescription = description
 
 func _removeAllEvent(): #CLEAR ALL EVENT
 	GlobalResources.eventID.clear()

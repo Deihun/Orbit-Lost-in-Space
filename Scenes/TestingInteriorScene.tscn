@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://tbhpfech36e8"]
+[gd_scene load_steps=180 format=3 uid="uid://tbhpfech36e8"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -33,10 +33,16 @@
 [ext_resource type="Texture2D" uid="uid://hj48j1tcj24y" path="res://Scenes/ExpeditionSelection/Expedition.png" id="19_hgekd"]
 [ext_resource type="Texture2D" uid="uid://cc1k8exi08mao" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/NormalSpace.png" id="19_veuuq"]
 [ext_resource type="Texture2D" uid="uid://bos6vw3go366u" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonShipAnimation.png" id="20_8oew0"]
+[ext_resource type="Texture2D" uid="uid://m58ilbc6skyb" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AsteroidUI_Spritesheet.png" id="21_g6pby"]
 [ext_resource type="Script" path="res://Scenes/expedition_selection.gd" id="21_iriww"]
 [ext_resource type="Texture2D" uid="uid://dffbds8bcqtst" path="res://Scenes/ExpeditionSelection/CrewInformationBackground.png" id="22_fdhp7"]
+[ext_resource type="Texture2D" uid="uid://bs63sn8l0s7jn" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/BlackholeUI_Spritesheet.png" id="22_tpub2"]
+[ext_resource type="Texture2D" uid="uid://dwlvmpi8541sm" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Planet2.0UI_spritesheet.png" id="23_tnlub"]
 [ext_resource type="Texture2D" uid="uid://3qtbe8hnsp4x" path="res://Scenes/EndScenes/Gallery_Endings/Expedition.png" id="24_atqdh"]
+[ext_resource type="Texture2D" uid="uid://c37p5llf47lcy" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/RadontiUI_Spritesheet.png" id="24_buh3s"]
 [ext_resource type="Texture2D" uid="uid://b5ckukkx151t5" path="res://Scenes/ExpeditionSelection/SelectedCrew_Expedition.png" id="25_vreag"]
+[ext_resource type="Texture2D" uid="uid://28cmrssvv50o" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaUI_Spritesheet.png" id="25_ypjjn"]
+[ext_resource type="Texture2D" uid="uid://dqc8is25qo0s" path="res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusUI_Spritesheet.png" id="27_cy1kr"]
 [ext_resource type="PackedScene" uid="uid://cr3kesbj8wcvp" path="res://Crafting_UI/crafted_items_inventory.tscn" id="28_b2c70"]
 [ext_resource type="Texture2D" uid="uid://blm13ibe5hs8x" path="res://Scenes/UI/StorageUI.png" id="30_3t5wv"]
 [ext_resource type="Texture2D" uid="uid://bf3ux2qjmr8qs" path="res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png" id="31_2medx"]
@@ -553,6 +559,118 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_53wsu"]
+atlas = ExtResource("21_g6pby")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbxr6"]
+atlas = ExtResource("21_g6pby")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrbqa"]
+atlas = ExtResource("21_g6pby")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g4ek"]
+atlas = ExtResource("21_g6pby")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muanu"]
+atlas = ExtResource("21_g6pby")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycfwg"]
+atlas = ExtResource("21_g6pby")
+region = Rect2(404, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_naypm"]
+atlas = ExtResource("22_tpub2")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgeis"]
+atlas = ExtResource("22_tpub2")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m544l"]
+atlas = ExtResource("22_tpub2")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvlf3"]
+atlas = ExtResource("22_tpub2")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0jxb"]
+atlas = ExtResource("22_tpub2")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hscio"]
+atlas = ExtResource("22_tpub2")
+region = Rect2(404, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc12m"]
+atlas = ExtResource("23_tnlub")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43lod"]
+atlas = ExtResource("23_tnlub")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6dey"]
+atlas = ExtResource("23_tnlub")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gvq3"]
+atlas = ExtResource("23_tnlub")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gttuh"]
+atlas = ExtResource("23_tnlub")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4goc2"]
+atlas = ExtResource("23_tnlub")
+region = Rect2(404, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7kxw"]
+atlas = ExtResource("24_buh3s")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5diwe"]
+atlas = ExtResource("24_buh3s")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5cr"]
+atlas = ExtResource("24_buh3s")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wetug"]
+atlas = ExtResource("24_buh3s")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh26j"]
+atlas = ExtResource("24_buh3s")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etha7"]
+atlas = ExtResource("25_ypjjn")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy1at"]
+atlas = ExtResource("25_ypjjn")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc6wv"]
+atlas = ExtResource("25_ypjjn")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jayuw"]
+atlas = ExtResource("25_ypjjn")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8hkk"]
+atlas = ExtResource("25_ypjjn")
+region = Rect2(404, 0, 202, 202)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2reso"]
 atlas = ExtResource("19_veuuq")
 region = Rect2(0, 0, 202, 202)
@@ -601,6 +719,30 @@ region = Rect2(606, 202, 202, 202)
 atlas = ExtResource("19_veuuq")
 region = Rect2(606, 404, 202, 202)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_afmyx"]
+atlas = ExtResource("27_cy1kr")
+region = Rect2(0, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrw8h"]
+atlas = ExtResource("27_cy1kr")
+region = Rect2(202, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p3kg"]
+atlas = ExtResource("27_cy1kr")
+region = Rect2(0, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyse6"]
+atlas = ExtResource("27_cy1kr")
+region = Rect2(202, 202, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uola"]
+atlas = ExtResource("27_cy1kr")
+region = Rect2(404, 0, 202, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jsk8"]
+atlas = ExtResource("27_cy1kr")
+region = Rect2(404, 202, 202, 202)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vwb4"]
 atlas = ExtResource("20_8oew0")
 region = Rect2(0, 0, 202, 202)
@@ -615,6 +757,115 @@ region = Rect2(0, 202, 202, 202)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_km7gi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53wsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbxr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrbqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g4ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muanu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycfwg")
+}],
+"loop": true,
+"name": &"Asteroid",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_naypm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgeis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m544l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvlf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0jxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hscio")
+}],
+"loop": true,
+"name": &"Blackhole",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc12m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6dey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gvq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gttuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4goc2")
+}],
+"loop": true,
+"name": &"Planet2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7kxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5diwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs5cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wetug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh26j")
+}],
+"loop": true,
+"name": &"Radonti",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etha7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy1at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc6wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jayuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8hkk")
+}],
+"loop": true,
+"name": &"Sauria",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2reso")
@@ -654,6 +905,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"Space",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afmyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrw8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p3kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyse6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uola")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jsk8")
+}],
+"loop": true,
+"name": &"Steelicus",
 "speed": 3.0
 }, {
 "frames": [{
@@ -950,7 +1224,7 @@ texture = ExtResource("2_66wyx")
 position = Vector2(-204.5, 145)
 scale = Vector2(1.25248, 0.732673)
 sprite_frames = SubResource("SpriteFrames_km7gi")
-animation = &"Space"
+animation = &"Asteroid"
 
 [node name="FactionLabel_willBeRemove" type="Label" parent="WholeInteriorScene"]
 visible = false
@@ -1535,9 +1809,9 @@ offset_left = 2322.0
 offset_top = -397.0
 offset_right = 3195.0
 offset_bottom = 344.0
-tutorialTitle = Array[String](["Ending Cycles"])
-tutorialDescription = Array[String](["After finishing the event, you can end the cycle. After ending the cycle, a set amount of resource is consumed and random events may happen to you and your crew."])
-textureLink = Array[String](["res://TutorialUI/EndCycle.png"])
+tutorialTitle = Array[String](["Ending Cycles", "Main Objective"])
+tutorialDescription = Array[String](["After finishing the event, you may end the cycle by clicking the \"EndCycle\" Button at the top left of your screen. After ending the cycle, a set amount of resource is consumed and random events may happen to you and your crew.", "Your main goal is to reach 75 cycles to arrive at your new home with the rest of the survivors."])
+textureLink = Array[String](["res://TutorialUI/EndCycle.png", "res://TutorialUI/Tutorial.png"])
 tutorialPanel_ID = 4
 
 [node name="ButtonSounds" parent="." instance=ExtResource("47_evqmn")]
