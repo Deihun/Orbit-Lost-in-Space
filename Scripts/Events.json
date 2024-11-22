@@ -2136,5 +2136,929 @@
 		"description": "Captain, I’m detecting an electrical fault in the ship’s circuitry. Ignoring it may compromise essential functions of the shuttle. Immediate repairs are strongly recommended. ",
 		"id": 149,
 		"name": "Faulty Electricity"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.10",
+			"@SANITY_INCREASERegina 0.10",
+			"@SANITY_INCREASENashir 0.10",
+			"@SANITY_INCREASEFumiko 0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crew's body and mind is well rested",
+		"id": 150,
+		"name": "Rest your body"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You stayed up and continued on with your own businesses",
+		"id": 151,
+		"name": "Stay up"
+	},
+	{
+		"Choice-1": [
+			150,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Rest your body"
+		],
+		"Choice-2": [
+			151,
+			[],
+			"Stay up"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Study suggests that a human body needs rest, captain. Leave the navigation to me and rest with your crew. Although, it may consume more fuel than usual. ",
+		"id": 152,
+		"name": "Rest is also Important!"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSBIOGENE 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You received biogenetic materials amidst the dust.",
+		"id": 153,
+		"name": "Collect Biogenetic Materials"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew avoided the massive clump of dust.",
+		"id": 154,
+		"name": "Take on another path"
+	},
+	{
+		"Choice-3": [
+			153,
+			[],
+			"Collect Biogenetic Materials"
+		],
+		"Choice-4": [
+			154,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Take on another path"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Alert: Passing through a nebula, dust turbulence is imminent. Captain, traces of biogenetic rich materials detected in the dust. Taking other paths is suggested. ",
+		"id": 155,
+		"name": "Biogenetic Nebula"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The virus was purged from NOVA AI's system",
+		"id": 156,
+		"name": "Open Anti-virus protocol to close the Ad"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The promo was a scam and you only got a portion of what was said on the Ad.",
+		"id": 157,
+		"name": "Buy the Promo"
+	},
+	{
+		"Choice-1": [
+			156,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Open Anti-virus protocol to close the Ad"
+		],
+		"Choice-2": [
+			157,
+			[
+				[
+					"SPAREPARTS",
+					20
+				]
+			],
+			"Buy the Promo"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Error: AI System Compromised. BUY! BUY! BUY! Limited Supply! 100 Rations for 20 Biogene! Sales last until supplies are diminished! ",
+		"id": 158,
+		"name": "An Enticing Ad(ware)"
+	},
+	{
+		"Command": [
+			"@FOLLOW_UP_EVENTKeepSputnik"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Sputnik 1 was kept in the back.",
+		"id": 159,
+		"name": "Keep Sputnik 1"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You dismantled the old satellite.",
+		"id": 160,
+		"name": "Dismantle it"
+	},
+	{
+		"Choice-1": [
+			159,
+			[],
+			"Choice 1"
+		],
+		"Choice-2": [
+			160,
+			[],
+			"Choice 2"
+		],
+		"Command": [
+			"@FACTSfact19"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A vintage-looking satellite is flying near our vicinity. The scan shows it is like the satellite Sputnik 1. \nChoice 1: We can retrieve and keep it \nor \nChoice 2: dismantle it.",
+		"id": 161,
+		"name": "A Vintage History Trove"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The crewmate was treated immediately.",
+		"id": 162,
+		"name": "Treat the crewmate immediately"
+	},
+	{
+		"Command": [
+			"@RANDOM_SICK"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The sick member of your crew rested in their quarter.",
+		"id": 163,
+		"name": "Tell them to rest at their quarters"
+	},
+	{
+		"Choice-1": [
+			162,
+			[
+				[
+					"MEDKIT",
+					1
+				]
+			],
+			"Treat the crewmate immediately"
+		],
+		"Choice-2": [
+			163,
+			[],
+			"Tell them to rest at their quarters"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, one of your crew suddenly vomited due to an unknown reason. Treatment and Quarantine is recommended for them.",
+		"id": 164,
+		"name": "A Sudden Sickness"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The Diagnostics found nothing wrong in the system",
+		"id": 165,
+		"name": "Run Diagnostics"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Nothing happened, it may just be a false report",
+		"id": 166,
+		"name": "Ignore the anomaly"
+	},
+	{
+		"Choice-1": [
+			165,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Run Diagnostics"
+		],
+		"Choice-2": [
+			166,
+			[],
+			"Ignore the Anomaly"
+		],
+		"RandomTrue": true,
+		"Repeatable": true,
+		"description": "Captain, an anomaly has been detected on our engine. System diagnostic is recommended.  ",
+		"id": 167,
+		"name": "A Sudden Anomaly"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 50",
+			"@ADD_MATERIALSOXYGEN 50"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The merchant is happy with your decision.",
+		"id": 168,
+		"name": "Accept the Merchant's offer"
+	},
+	{
+		"Command": [
+			"@FOLLOW_UP_EVENTKeepSputnikAgain"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The old satellite stayed in the corner of the room...",
+		"id": 169,
+		"name": "Keep the old Satellite"
+	},
+	{
+		"Choice-1": [
+			168,
+			[],
+			"Accept the Merchant's Offer"
+		],
+		"Choice-2": [
+			169,
+			[],
+			"Keep the old Satellite"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"KeepSputnik"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A merchant has docked their vessel next to yours. They are offering you 50 Rations and 50 Oxygen in exchange for Sputnik. You are free to keep it according to them if you refuse the offer. What will you do captain? ",
+		"id": 170,
+		"name": "The Merchant's Offer"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFOOD 150",
+			"@ADD_MATERIALSFUEL 150"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The Merchant's smile was ear to ear",
+		"id": 171,
+		"name": "Accept the offer"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The merchant was sad about your response. The satellite stayed in the corner, dusty and unused.",
+		"id": 172,
+		"name": "Decline the Offer"
+	},
+	{
+		"Choice-1": [
+			171,
+			[],
+			"Accept the Offer"
+		],
+		"Choice-2": [
+			172,
+			[],
+			"Decline the Offer"
+		],
+		"Command": [
+			"@FACTSfact21"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"KeepSputnikAgain"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The merchant from before has messaged you captain: “Hey Buddy, I know I said that you can keep it, but I really need it for my collection. I want to — NO! I NEED TO HAVE IT! So, I’ll buy it for double, NO! TRIPLE the original price! What do you say, eh? I want to put it next to Saturn V, your spacecraft gives me so much joy, you see. Although, I do understand if you want to keep it. I’ll let it go if you don’t agree with the offer.”",
+		"id": 173,
+		"name": "A Connoisseur's Offer"
+	},
+	{
+		"Command": [
+			"@FACTSCassiniRetrieval"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Cassini was retrieved successfully!",
+		"id": 174,
+		"name": "Retrieve the drone"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Cassini was left floating in space.",
+		"id": 175,
+		"name": "Leave the drone"
+	},
+	{
+		"Choice-1": [
+			174,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Retrieve the drone"
+		],
+		"Choice-2": [
+			175,
+			[],
+			"Leave the drone"
+		],
+		"Command": [
+			"@FACTSfact29"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, one of our drones, named Cassini, has been hit by unknown debris. Do we try to retrieve it, or do we leave it captain?",
+		"id": 176,
+		"name": "Oh Cassini!"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The Nameplate of Juno gave you spare parts!",
+		"id": 177,
+		"name": "Dismantle the Nameplate"
+	},
+	{
+		"Command": [
+			"@FOLLOW_UP_EVENTJunoNameplate"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The nameplate was stored in your shuttle",
+		"id": 178,
+		"name": "Keep the nameplate"
+	},
+	{
+		"Choice-1": [
+			177,
+			[],
+			"Dismantle the Nameplate"
+		],
+		"Choice-2": [
+			178,
+			[],
+			"Keep the Nameplate"
+		],
+		"Command": [
+			"@FACTSfact34"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"CassiniRetrieval"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Cassini retrieval successful. It seems to be clutching on a crate. After a scan, the crate contains a nameplate of the spacecraft called Juno. It seems valuable, Captain. What action will you take.",
+		"id": 179,
+		"name": "The Nameplate of Juno"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSMEDKIT 1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "They gave you medicine in exchange for the nameplate",
+		"id": 180,
+		"name": "Take the Medicine"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.3",
+			"@SANITY_INCREASERegina 0.3",
+			"@SANITY_INCREASENashir 0.3",
+			"@SANITY_INCREASEFumiko 0.3"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "They gave you a mind Relaxant in exchange for the nameplate",
+		"id": 181,
+		"name": "Take the Relaxant"
+	},
+	{
+		"Choice-1": [
+			180,
+			[],
+			"Choice 1"
+		],
+		"Choice-2": [
+			181,
+			[],
+			"Choice 2"
+		],
+		"Command": [
+			"@FOLLOW_UP_EVENTTreasureHunter"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"JunoNameplate"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "An unknown vessel is approaching our shuttle. They introduced themselves as treasure hunters that collect old spacecraft parts. We currently have a nameplate that they are searching for. They are offering you 2 choices; \n1 is for medicine \nor \n2 is for mind relaxants in exchange for Juno’s nameplate. \nThey also give you their contact information when you find another. ",
+		"id": 182,
+		"name": "The Treasure Hunters"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim 0.3",
+			"@SANITY_INCREASERegina 0.3",
+			"@SANITY_INCREASENashir 0.3",
+			"@SANITY_INCREASEFumiko 0.3"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The treasure hunters gave you Mind Relaxants!",
+		"id": 183,
+		"name": "Contact the treasure hunters"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Dismantling the Mariner 10 gave you some spare parts",
+		"id": 184,
+		"name": "Dismantle the Mariner 10"
+	},
+	{
+		"Choice-1": [
+			183,
+			[],
+			"Contact the treasure hunters"
+		],
+		"Choice-2": [
+			184,
+			[],
+			"Dismantle the Mariner 10"
+		],
+		"Command": [
+			"@FACTSfact26"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"TreasureHunter"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, Cassini has found a part of the telescope of the Mariner 10 outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
+		"id": 185,
+		"name": "Discovering Mariner 10"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSMEDKIT 1"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The treasure hunters gave you some medicine!",
+		"id": 186,
+		"name": "Contact the Treasure Hunters "
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSSPAREPARTS 30"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Galileo was dismantled for 30 spare parts",
+		"id": 187,
+		"name": "Dismantle the spacecraft"
+	},
+	{
+		"Choice-1": [
+			186,
+			[],
+			"Contact the Treasure Hunters"
+		],
+		"Choice-2": [
+			187,
+			[],
+			"Dismantle the Spacecraft"
+		],
+		"Command": [
+			"@FACTSfact23"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"TreasureHunter"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, Cassini has found a part of the Galileo Spacecraft outside our shuttle. Should we contact the treasure hunters or should we dismantle it.",
+		"id": 188,
+		"name": "The Galileo Spacecraft"
+	},
+	{
+		"Command": [
+			"@FOLLOW_UP_EVENTMicrogravity"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Microgravity Study was initialized. ",
+		"id": 189,
+		"name": "Conduct Microgravity Study"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The study was deemed unnecessary.",
+		"id": 190,
+		"name": "Skip the study"
+	},
+	{
+		"Choice-1": [
+			189,
+			[
+				[
+					"SPAREPARTS",
+					5
+				]
+			],
+			"Conduct Microgravity Study"
+		],
+		"Choice-2": [
+			190,
+			[],
+			"Skip the Study"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "This section of our mission offers an ideal chance to study microgravity effects on crew health and equipment. It’s purely observational but could provide future insights. ",
+		"id": 191,
+		"name": "The Microgravitating Study"
+	},
+	{
+		"Command": [
+			"@ADD_MATERIALSFUEL 15"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The orbiter smoothly rode through the microgravity field",
+		"id": 192,
+		"name": "Utilize microgravity"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You are still skeptical about the possible side effects of it.",
+		"id": 193,
+		"name": "Continue navigating normal course"
+	},
+	{
+		"Choice-1": [
+			192,
+			[],
+			"Utilize Microgravity Field"
+		],
+		"Choice-2": [
+			193,
+			[
+				[
+					"FUEL",
+					5
+				]
+			],
+			"Continue navigating normal course"
+		],
+		"Command": [
+			"@FACTSfact40"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Microgravity"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Microgravity has been shown to reduce fuel consumption when traversing some area where the shuttle can ride along, should we use it as an advantage?",
+		"id": 194,
+		"name": "Microgravitational Ride"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "They drop their tools and run. You can use this to fix the ship",
+		"id": 195,
+		"name": "Defend yourself using the crowbar"
+	},
+	{
+		"Command": [
+			"@GAMEOVERSauria"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The pirates took your crew and ship. You were never heard from again.",
+		"id": 196,
+		"name": "Ask them for help to fix the ship"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "They took some parts of your ship and left. They might return, so we need to hurry up and fix the ship",
+		"id": 197,
+		"name": "Wait until they leave and fix the ship"
+	},
+	{
+		"Choice-3": [
+			196,
+			[],
+			"Ask them for help to fix the ship"
+		],
+		"Choice-4": [
+			197,
+			[
+				[
+					"SPAREPARTS",
+					30
+				]
+			],
+			"Wait until they leave and fix the shipWait until they leave and fix the ship"
+		],
+		"Conditions": [
+			"PLACE",
+			"Sauria"
+		],
+		"HiddenChoice": [
+			[
+				"HAS_UNIQUE_ITEM",
+				[
+					"Crowbar",
+					null
+				]
+			],
+			[
+				195,
+				[
+					[
+						"SPAREPARTS",
+						10
+					]
+				],
+				"Defend yourself using the crowbar"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, space pirates have been detected. They seem to be attempting to probe the ship. Our presence has not been detected. ",
+		"id": 198,
+		"name": "Desert's Danger"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim -0.10",
+			"@SANITY_INCREASERegina -0.10",
+			"@SANITY_INCREASENashir -0.10",
+			"@SANITY_INCREASEFumiko -0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You and your crew fought against the words",
+		"id": 199,
+		"name": "Reassure your crew"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim -0.20",
+			"@SANITY_INCREASERegina -0.20",
+			"@SANITY_INCREASENashir -0.20",
+			"@SANITY_INCREASEFumiko -0.20"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The panic sets in on your crew",
+		"id": 200,
+		"name": "Panic"
+	},
+	{
+		"Choice-1": [
+			199,
+			[],
+			"Reassure your crew"
+		],
+		"Choice-2": [
+			200,
+			[],
+			"Panic"
+		],
+		"Command": [
+			"@FOLLOW_UP_EVENTCthullu1"
+		],
+		"Conditions": [
+			"CYCLE",
+			"40"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A whisper is heard throughout your crew's head, filling it with messages that you know that you should not hear. Your brain writhes in pain. After a while, the whispers faded. ",
+		"id": 201,
+		"name": "Whispers of the Outside"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim -0.10",
+			"@SANITY_INCREASERegina -0.10",
+			"@SANITY_INCREASENashir -0.10",
+			"@SANITY_INCREASEFumiko -0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The whispers were strong but your crew is stronger.",
+		"id": 202,
+		"name": "Fight back the whispers"
+	},
+	{
+		"Command": [
+			"@GAMEOVERCthulluEnding"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The words of the old one allures the whole crew into an unknown domain.",
+		"id": 203,
+		"name": "Let the words flow through your mind"
+	},
+	{
+		"Choice-1": [
+			202,
+			[],
+			"Fight back the whispers"
+		],
+		"Choice-2": [
+			203,
+			[],
+			"Let the words flow through your mind"
+		],
+		"Command": [
+			"@FOLLOW_UP_EVENTCthullu2"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Cthullu1"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "The whispers are back again. This time, it's louder. You see a man in space, is it a hallucination? It feels so real. He chanted unknown scriptures. ",
+		"id": 204,
+		"name": "The Ode of the Old God"
+	},
+	{
+		"Command": [
+			"@SANITY_INCREASEMaxim -0.10",
+			"@SANITY_INCREASERegina -0.10",
+			"@SANITY_INCREASENashir -0.10",
+			"@SANITY_INCREASEFumiko -0.10"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You refuse to let the words in your mind.",
+		"id": 205,
+		"name": "Refuse their words"
+	},
+	{
+		"Command": [
+			"@GAMEOVERCthulluEnding"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You join the cult of the old god",
+		"id": 206,
+		"name": "Follow the Doctrine"
+	},
+	{
+		"Choice-1": [
+			205,
+			[],
+			"Refuse their words"
+		],
+		"Choice-2": [
+			206,
+			[],
+			"Follow the doctrine"
+		],
+		"Conditions": [
+			"FOLLOW-UP",
+			"Cthullu2"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Your world distorts, your instincts tell you it's them. They want to get you; they want to integrate you. They are the cult. They are one. They serve him. They serve a god long gone. ",
+		"id": 207,
+		"name": "Forceful Indoctrination"
+	},
+	{
+		"Command": [
+			"@GAMEOVERBlackHole"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your crew dove into the distortion that you see. You realized too late.",
+		"id": 208,
+		"name": "Dive into the Distortion"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "Your hunch was right, it was a phenomenon called a black hole.",
+		"id": 209,
+		"name": "Avoid the distortion"
+	},
+	{
+		"Choice-1": [
+			208,
+			[],
+			"Dive into the distortion"
+		],
+		"Choice-2": [
+			209,
+			[],
+			"Avoid the distortion"
+		],
+		"Conditions": [
+			"CYCLE",
+			"69"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Captain, we have encountered a weird distortion and it seem to be drawing closer as the time goes on. What should we do",
+		"id": 210,
+		"name": "A Weird Distortion. "
+	},
+	{
+		"Command": [
+			"@GAMEOVERSteelicus"
+		],
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "The group of drones outnumber your crew and you were caught by them",
+		"id": 211,
+		"name": "Instigate a fight"
+	},
+	{
+		"RandomTrue": false,
+		"Repeatable": false,
+		"description": "You received the right to stay on Steelicus.",
+		"id": 212,
+		"name": "Pay the drones"
+	},
+	{
+		"Choice-1": [
+			211,
+			[],
+			"Instigate a Fight"
+		],
+		"Choice-2": [
+			212,
+			[
+				[
+					"SPAREPARTS",
+					50
+				]
+			],
+			"(Description)"
+		],
+		"Conditions": [
+			"PLACE",
+			"Steelicus"
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "A group of drones of the steel emperor are asking for payment in exchange for a right to stay on their planet. Captain, do we comply with the robots, or do we instigate a fight? ",
+		"id": 213,
+		"name": "The Right to Stay"
 	}
 ]

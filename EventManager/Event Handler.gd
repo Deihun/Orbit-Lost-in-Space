@@ -262,6 +262,7 @@ func ActivateEvent(newCycle : bool = true): #ACTIVATE QUEUE EVENT
 func ActivateThroughLoad():
 	if GlobalResources.save_events == null: return
 	var CurrentEventID = GlobalResources.eventID.pop_front()
+	if CurrentEventID == null: return
 	isEventVisible = true
 	eventReader.setEventID(CurrentEventID)
 	eventReader.processNextEvent()
