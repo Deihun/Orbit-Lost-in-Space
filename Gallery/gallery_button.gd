@@ -31,8 +31,6 @@ func set_image(id : int) -> void:
 	$Button.text = "Unlocked"
 
 
-
-
 func check_if_locked() -> void:
 	if !getbool:
 		$Button.text = "Locked"
