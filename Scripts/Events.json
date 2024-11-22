@@ -1999,5 +1999,51 @@
 		"description": "Controlled venting reduces gas exposure and sudden loss of oxygen but allows some toxin to linger contaminating food rations. ",
 		"id": 141,
 		"name": "Vent the room slowly"
+	},
+	{
+		"Choice-1": [
+			140,
+			[
+				[
+					"OXYGEN",
+					20
+				]
+			],
+			"Vent the entire room immediately"
+		],
+		"Choice-2": [
+			141,
+			[
+				[
+					"FOOD",
+					20
+				]
+			],
+			"Vent the room slowly"
+		],
+		"HiddenChoice": [
+			[
+				"CREW",
+				[
+					"Regina",
+					null
+				]
+			],
+			[
+				139,
+				[
+					[
+						"BIOGENE",
+						10
+					]
+				],
+				"Create a solution to neutralize the toxic gas"
+			]
+		],
+		"RandomTrue": true,
+		"Repeatable": false,
+		"description": "Alert: Toxic gas leak detected in the medical bay. Immediate venting is required, or additional resources may help neutralize it safely. Venting the room would reduce the oxygen for you and your crew. ",
+		"id": 142,
+		"name": "Toxic Gas Leak"
 	}
 ]
