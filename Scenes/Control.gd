@@ -70,8 +70,10 @@ func _loadGameStart()-> void:
 		a.z_index = 1000
 		a.position += Vector2(-1000,-500)
 		$cam2d.add_child(a)
-	EventHandler.startAddNextEvent()
-	EventHandler.ActivateEvent()
+	GlobalResources.eventID = GlobalResources.save_events.duplicate()
+	GlobalResources.save_events = []
+	print("Events ",GlobalResources.eventID)
+	EventHandler.ActivateThroughLoad()
 	updateUI()
 	updateCockpit()
 
@@ -139,14 +141,52 @@ func updateUI():
 func updateCockpit():
 	var a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	match IngameStoredProcessSetting.current_Factions:
-		"SPACE":a    = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-		"None":a     = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
-		"Radonti":a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
-		"Steelicus":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusCockpit.png")
-		"Earth2.0":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
-		"Sauria":a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
+		"SPACE":
+			match randi_range(1,9):
+				1: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+				2: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space1.png")
+				3: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space2.png")
+				4: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space3.png")
+				5: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space4.png")
+				6: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space5.png")
+				7: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space6.png")
+				8: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space7.png")
+				9: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space8.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"None":
+			match randi_range(1,9):
+				1: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
+				2: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space1.png")
+				3: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space2.png")
+				4: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space3.png")
+				5: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space4.png")
+				6: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space5.png")
+				7: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space6.png")
+				8: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space7.png")
+				9: a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space8.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"Radonti":
+			a  = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Radonti.png")
+			$WholeInteriorScene/WindowClose.visible = true
+		"Steelicus":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SteelicusCockpit.png")
+			$WholeInteriorScene/WindowClose.visible = true
+		"Earth2.0":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Earth2.0Cockpit.png")
+			$WholeInteriorScene/WindowClose.visible = true
+		"Sauria":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/SauriaCockpit.png")
+			$WholeInteriorScene/WindowClose.visible = true
 		"Enthuli": pass
-		"AbandonShip":pass
+		"Blackhole":
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/BlackHole.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"Asteroid" : 
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Asteroid.png")
+			$WholeInteriorScene/WindowClose.visible = false
+		"AbandonShip":
+			$WholeInteriorScene/WindowClose.visible = false
+			a = load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/AbandonSatelite.png")
 		_: a=load("res://Scenes/ExpeditionSelection/Expedition_Faction_Game/Space.png")
 	$WholeInteriorScene/Cockpit.texture = a
 
@@ -198,10 +238,17 @@ func _on_crafted_items_ui_input_event(viewport: Node, event: InputEvent, shape_i
 
 func _updateUIExpeditionScreen():
 	var expScreen = $WholeInteriorScene/Cockpit/ExpeditionScreen
-	if "AbandonShip":
-		expScreen.play("abandonship")
-	else :
-		expScreen.play("Space")
+	match IngameStoredProcessSetting.current_Factions:
+		"AbandonShip": expScreen.play("abandonship")
+		"Radonti":  expScreen.play("Radonti")
+		"Sauria":  expScreen.play("Sauria")
+		"Earth2.0":  expScreen.play("Planet2")
+		"Enthuli":  expScreen.play("Enthuli")
+		"Steelicus":  expScreen.play("Steelicus")
+		"Asteroid": expScreen.play("Asteroid")
+		"Blackhole": expScreen.play("Blackhole")
+		_: expScreen.play("Space")
+		
 
 
 func _on_cancel_button_button_up() -> void:

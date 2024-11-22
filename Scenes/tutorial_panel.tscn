@@ -63,27 +63,24 @@ text = "Dont show again"
 z_index = 2
 position = Vector2(441, 203)
 
-[node name="Label_Description_Tutorial" type="Label" parent="."]
+[node name="Label_Description_Tutorial" type="RichTextLabel" parent="."]
 z_index = 2
 layout_mode = 0
 offset_left = 64.0
-offset_top = 400.0
+offset_top = 406.0
 offset_right = 650.0
-offset_bottom = 577.0
+offset_bottom = 583.0
 scale = Vector2(1.295, 1.295)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
 text = "<Description>"
-autowrap_mode = 3
-clip_text = true
 
 [node name="Label_Title" type="Label" parent="."]
 z_index = 2
 layout_mode = 0
 offset_left = 28.0
-offset_top = 321.0
+offset_top = 343.0
 offset_right = 844.0
-offset_bottom = 376.0
+offset_bottom = 398.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "<TITLE>"

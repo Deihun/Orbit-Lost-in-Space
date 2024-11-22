@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjd2s6hyedjij"]
+[gd_scene load_steps=4 format=3 uid="uid://dr13bby528sjx"]
 
 [ext_resource type="Script" path="res://Scripts/commands_index.gd" id="1_ghkju"]
 
@@ -39,7 +39,7 @@ offset_top = 22.0
 offset_right = 330.0
 offset_bottom = 54.0
 selected = 0
-item_count = 14
+item_count = 16
 popup/item_0/text = "@ADD_EFFECTS"
 popup/item_1/text = "@ADD_MATERIALS"
 popup/item_1/id = 1
@@ -67,6 +67,10 @@ popup/item_12/text = "@FACTS"
 popup/item_12/id = 12
 popup/item_13/text = "@SANITY_INCREASE"
 popup/item_13/id = 13
+popup/item_14/text = "@FOLLOW_UP_EVENT"
+popup/item_14/id = 14
+popup/item_15/text = "@RANDOM_SICK"
+popup/item_15/id = 15
 
 [node name="Value_OptionButton" type="OptionButton" parent="Panel"]
 layout_mode = 0

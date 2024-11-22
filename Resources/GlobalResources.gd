@@ -14,6 +14,7 @@ var emergencyFuel :int = 100
 
 #EVENT VARIABLES
 var Critical_Event = []
+var save_events = []
 var alreadyTriggeredEvent = []
 var Priority_Event = []
 var eventID = []
@@ -38,6 +39,7 @@ func _reset():
 	emergencyOxy = 100
 	emergencyFuel = 100
 	#EVENT VARIABLES
+	save_events = []
 	Critical_Event = []
 	alreadyTriggeredEvent = []
 	Priority_Event = []
