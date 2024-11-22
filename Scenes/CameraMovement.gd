@@ -73,7 +73,7 @@ func ChangeLocaton(smoothMovement:bool):
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			EndButton.disable()
-			await get_tree().create_timer(2.0).timeout 
+			await get_tree().create_timer(2.5).timeout 
 			ArrowButton[0].visible = false
 			ArrowButton[1].visible = true
 			$FactButton_Button/FactButton_Button_Icon.show()
@@ -98,7 +98,7 @@ func ChangeLocaton(smoothMovement:bool):
 			if(GlobalResources.currentActiveQueue > 0):
 				$Button_navigation_node_parent/EventSprite_NotifyerUI.visible = true
 			EndButton.disable()
-			await get_tree().create_timer(2.0).timeout 
+			await get_tree().create_timer(2.5).timeout 
 			EndButton.enable()
 			ArrowButton[0].visible = true
 			ArrowButton[1].visible = true
@@ -119,7 +119,7 @@ func ChangeLocaton(smoothMovement:bool):
 			ArrowButton[1].visible = false
 			$FactButton_Button/FactButton_Button_Icon.show()
 			if TimerFilter:
-				await get_tree().create_timer(1.5).timeout
+				await get_tree().create_timer(2.5).timeout
 				if($"../TutorialPanel_Folder/TutorialPanel2"):
 					$"../TutorialPanel_Folder/TutorialPanel2".visible = true
 			if GlobalResources.currentActiveQueue > 0:
@@ -127,7 +127,9 @@ func ChangeLocaton(smoothMovement:bool):
 				await get_tree().create_timer(0.5).timeout
 				$"../EventHandler".isEventVisible = true
 				$"../EventHandler".switchIt()
-			else: EndButton.enable()
+			else: 
+				$"..".EndCycle_Can_Be_Click_ = true
+				EndButton.enable()
 
 
 
