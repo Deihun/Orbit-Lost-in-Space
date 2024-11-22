@@ -1,4 +1,4 @@
-[gd_scene load_steps=362 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=363 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Script" path="res://Player/player_Default.gd" id="1_mhmxe"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dqocsp5dtmdv0" path="res://Player/Globe.png" id="10_cjn85"]
 [ext_resource type="Texture2D" uid="uid://48fa0ct25py2" path="res://Player/Meteor_Spritesheet.png" id="11_lrphj"]
 [ext_resource type="Texture2D" uid="uid://cpoeki66yyjkf" path="res://Scenes/StartText.png" id="15_up6st"]
+[ext_resource type="Texture2D" uid="uid://p2k4wddl6e8t" path="res://TutorialUI/Buttons.png" id="17_avith"]
 [ext_resource type="Texture2D" uid="uid://camu6c2ttmc7" path="res://Player/PlayerCAS/spritesheet (19).png" id="17_b7037"]
 [ext_resource type="Texture2D" uid="uid://bf3ux2qjmr8qs" path="res://Resources/Resource_Images/SmallSpareparts_Unpickup_variety1.png" id="18_3ook1"]
 [ext_resource type="Texture2D" uid="uid://d1s43trmoohi7" path="res://Resources/SmallFoodCan/SmallFood_PickUp.png" id="19_l56kc"]
@@ -2621,69 +2622,210 @@ z_index = 200
 script = ExtResource("2_7naq2")
 
 [node name="MoveControl1" type="Sprite2D" parent="player/AllUIParents/TutorialAssets"]
+visible = false
 position = Vector2(300, 463)
 scale = Vector2(1.8098, 1.88431)
 texture = ExtResource("3_n65bk")
 
 [node name="Interact" type="Sprite2D" parent="player/AllUIParents/TutorialAssets"]
+visible = false
 position = Vector2(1612, 430)
 scale = Vector2(1.8098, 1.88431)
 texture = ExtResource("4_t2mgb")
 
-[node name="INTERACT" type="Label" parent="player/AllUIParents/TutorialAssets"]
-z_index = 2
-offset_left = 1592.0
-offset_top = 507.0
-offset_right = 1612.0
-offset_bottom = 529.0
-scale = Vector2(2.62, 2.62)
-theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
-theme_override_fonts/font = ExtResource("3_ay1c7")
-text = "e"
+[node name="Move_ControlPanel" type="Panel" parent="player/AllUIParents/TutorialAssets"]
+offset_left = 78.0
+offset_top = 156.0
+offset_right = 572.0
+offset_bottom = 710.0
 
-[node name="DOWN" type="Label" parent="player/AllUIParents/TutorialAssets"]
+[node name="MoveControl_Preivew" type="Label" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 18.0
+offset_right = 530.0
+offset_bottom = 105.0
+scale = Vector2(1, 1.33249)
+theme_override_font_sizes/font_size = 60
+text = "MOVE CONTROL"
+
+[node name="DOWN" type="Label" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
 z_index = 1
-offset_left = 272.0
-offset_top = 498.0
-offset_right = 292.0
-offset_bottom = 520.0
+offset_left = 226.0
+offset_top = 349.0
+offset_right = 246.0
+offset_bottom = 371.0
 scale = Vector2(2.62, 2.62)
 theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
 theme_override_fonts/font = ExtResource("3_ay1c7")
 text = "S"
 
-[node name="LEFT" type="Label" parent="player/AllUIParents/TutorialAssets"]
+[node name="Down_NinePatchRect" type="NinePatchRect" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 197.0
+offset_top = 336.0
+offset_right = 297.0
+offset_bottom = 436.0
+pivot_offset = Vector2(66.295, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_avith")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="LEFT" type="Label" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
 z_index = 1
-offset_left = 163.0
-offset_top = 498.0
-offset_right = 183.0
-offset_bottom = 520.0
+offset_left = 71.0
+offset_top = 344.0
+offset_right = 91.0
+offset_bottom = 366.0
 scale = Vector2(2.62, 2.62)
 theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
 theme_override_fonts/font = ExtResource("3_ay1c7")
 text = "A"
 
-[node name="RIGHT" type="Label" parent="player/AllUIParents/TutorialAssets"]
+[node name="Left_NinePatchRect2" type="NinePatchRect" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 47.0
+offset_top = 337.0
+offset_right = 147.0
+offset_bottom = 437.0
+pivot_offset = Vector2(66.295, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_avith")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="RIGHT" type="Label" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
 z_index = 1
-offset_left = 371.0
-offset_top = 497.0
-offset_right = 391.0
-offset_bottom = 519.0
+offset_left = 382.0
+offset_top = 346.0
+offset_right = 402.0
+offset_bottom = 368.0
 scale = Vector2(2.62, 2.62)
 theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
 theme_override_fonts/font = ExtResource("3_ay1c7")
 text = "D"
 
-[node name="UP" type="Label" parent="player/AllUIParents/TutorialAssets"]
+[node name="Right_NinePatchRect3" type="NinePatchRect" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 352.0
+offset_top = 338.0
+offset_right = 452.0
+offset_bottom = 438.0
+pivot_offset = Vector2(66.295, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_avith")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="UP" type="Label" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
 z_index = 1
-offset_left = 271.0
-offset_top = 406.0
-offset_right = 291.0
-offset_bottom = 428.0
+offset_left = 226.0
+offset_top = 223.0
+offset_right = 246.0
+offset_bottom = 245.0
 scale = Vector2(2.62, 2.62)
 theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
 theme_override_fonts/font = ExtResource("3_ay1c7")
 text = "W"
+
+[node name="Up_NinePatchRect4" type="NinePatchRect" parent="player/AllUIParents/TutorialAssets/Move_ControlPanel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 197.0
+offset_top = 215.0
+offset_right = 297.0
+offset_bottom = 315.0
+pivot_offset = Vector2(66.295, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_avith")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Interact_Panel" type="Panel" parent="player/AllUIParents/TutorialAssets"]
+offset_left = 1363.0
+offset_top = 196.0
+offset_right = 1845.0
+offset_bottom = 677.0
+
+[node name="Interact_Preview" type="Label" parent="player/AllUIParents/TutorialAssets/Interact_Panel"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 4.0
+offset_right = 412.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "INTERACT"
+
+[node name="Interact_Preview2" type="Label" parent="player/AllUIParents/TutorialAssets/Interact_Panel"]
+offset_left = 31.0
+offset_top = 112.0
+offset_right = 475.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Gather as much materials while also being near the vicinity of the dropbox before the time runs out"
+autowrap_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="player/AllUIParents/TutorialAssets/Interact_Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = 294.0
+offset_right = 299.0
+offset_bottom = 429.0
+pivot_offset = Vector2(66.295, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_avith")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="INTERACT" type="Label" parent="player/AllUIParents/TutorialAssets/Interact_Panel"]
+z_index = 2
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+anchor_top = 0.089
+anchor_right = 1.0
+anchor_bottom = 0.927
+offset_left = 168.0
+offset_top = 256.191
+offset_right = -264.0
+offset_bottom = -111.887
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.62, 2.62)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_fonts/font = ExtResource("3_ay1c7")
+text = "e"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ResourceUI_InRun" type="Node2D" parent="player/AllUIParents"]
 visible = false

@@ -5,16 +5,34 @@
 
 ~ lackofresources
 *The shuttle has ran out of resources required for your survival*
-*Manage your resources nextime*
+*Manage your resources next-time*
 => END
 
 ~ Radonti
 * The rodents were thankful for your help. They deemed you no harm and asked for your help for the community's development. After assisting them on different projects. They agreed to make you into their monarch, a leader that they have long needed.*
+=> END
 
 ~ Earth2
-* * 
+*You reunited with the survivors of the disaster. The feeling of relief washed over the body of your crew as you reached your destination. You finally found home.*
+=> END
+
+~ BlackHole
+*The distortion inched closer into your ship until everything around you turned into a halt. Darkness engulfed your shuttle as you enter the event horizon until everything finally stop. The black hole has consumed another.*
+=> END!
 
 ~ JerryDeath
-* Jerry didnt make it to the ship during expedition alone*
-* Enter the dropbox before your time ends nexttime*
+* Jerry didn't make it to the ship during expedition alone*
+* Enter the dropbox before your time ends next-time*
+=> END
+
+~ CthulluEnding
+*The words of the old god were inscribed in your brain. You became a part of their plan, to spread the words... Of Cthullu.*
+=> END
+
+~ Steelicus
+*The members of the Shuttle was detained for going against the Steel Emperor. They now live in the cold and metal room for the rest of their life.*
+=> END
+
+~ Sauria
+*The pirates took the members of your shuttle. You and your shuttle were never heard from again in the golden sands. The nameplate of your shuttle was found sold at the black market.*
 => END

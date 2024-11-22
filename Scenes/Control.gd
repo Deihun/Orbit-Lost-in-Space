@@ -73,7 +73,8 @@ func _loadGameStart()-> void:
 	GlobalResources.eventID = GlobalResources.save_events.duplicate()
 	GlobalResources.save_events = []
 	print("Events ",GlobalResources.eventID)
-	EventHandler.ActivateThroughLoad()
+	if GlobalResources.eventID.size() > 0: EventHandler.ActivateThroughLoad()
+	GlobalResources.currentActiveQueue = 0 if GlobalResources.eventID.size() <= 0 else GlobalResources.currentActiveQueue
 	updateUI()
 	updateCockpit()
 
@@ -87,6 +88,7 @@ func _on_next_day_button_pressed():
 	if !EndCycle_Can_Be_Click_: return
 	var EventHandler = $EventHandler
 	EndCycle_Can_Be_Click_ = false
+	$cam2d/Button_navigation_node_parent/EndCycleTimer.start()
 
 	if GlobalResources.currentActiveQueue <= 0:
 		#Handle Mini Event (PRIORITY 1)
@@ -126,6 +128,11 @@ func _on_next_day_button_pressed():
 		camera.ChangeSpecificScene(4)
 		if gameOver: GameOver(gameEndReason)
 	else:
+		if camera.position == camera.SpecificLocation[2]: 
+			$cam2d/Button_navigation_node_parent/MeteorCyce.show()
+			$cam2d/Button_navigation_node_parent/LeftButton_UI.show()
+			print("Catching Error")
+			return
 		camera.ChangeSpecificScene(2)
 
 
@@ -269,3 +276,7 @@ func checkIfKickoutEnough() -> bool:
 
 func _on_fact_button_button_button_up() -> void:
 	$cam2d/FactButton.show()
+
+
+func _on_end_cycle_timer_timeout() -> void:
+	EndCycle_Can_Be_Click_ = true

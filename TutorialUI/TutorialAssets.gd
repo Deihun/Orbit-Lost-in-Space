@@ -1,9 +1,9 @@
 extends Node2D
-@onready var up = $UP
-@onready var down = $DOWN
-@onready var left = $LEFT
-@onready var right = $RIGHT
-@onready var interacting = $INTERACT
+@onready var up = $Move_ControlPanel/UP
+@onready var down = $Move_ControlPanel/DOWN
+@onready var left = $Move_ControlPanel/LEFT
+@onready var right = $Move_ControlPanel/RIGHT
+@onready var interacting : Label = $Interact_Panel/INTERACT
 var fade_duration = 2.0 # Duration for the fade-out in seconds
 var start_alpha = 1.0
 var end_alpha = 0.0
@@ -19,6 +19,12 @@ func _ready() -> void:
 	left.text = cutAKey("ui_left")
 	right.text = cutAKey("ui_right")
 	interacting.text = cutAKey("Interact")
+	interacting.position.x += interacting.text.length() * 2
+	#$Interact_Panel/NinePatchRect.custom_minimum_size = interacting.custom_minimum_size + Vector2(150,50)
+	$Interact_Panel/NinePatchRect.offset_left -= interacting.text.length() *4
+	$Interact_Panel/NinePatchRect.offset_right += interacting.text.length() *4
+	$Interact_Panel/NinePatchRect.position = Vector2(168,294)
+	
 
 
 func cutAKey(ui_map : String):

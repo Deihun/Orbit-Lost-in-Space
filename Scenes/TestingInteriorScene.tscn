@@ -1043,11 +1043,11 @@ scale = Vector2(1.002, 1)
 texture = ExtResource("5_00itk")
 
 [node name="ClickCooldown" type="Timer" parent="cam2d/Button_navigation_node_parent"]
-wait_time = 2.2
+wait_time = 2.5
 one_shot = true
 
 [node name="EndCycleTimer" type="Timer" parent="cam2d/Button_navigation_node_parent"]
-wait_time = 2.0
+wait_time = 2.5
 one_shot = true
 
 [node name="LeftButton_UI" type="Button" parent="cam2d/Button_navigation_node_parent"]
@@ -1749,7 +1749,7 @@ metadata/_edit_lock_ = true
 [node name="PauseMenu" parent="." instance=ExtResource("3_h4mnh")]
 visible = false
 top_level = true
-z_index = 700
+z_index = 1000
 offset_left = 1584.0
 offset_top = 231.0
 offset_right = 1584.0
@@ -1829,7 +1829,7 @@ parameters/looping = false
 [connection signal="mouse_exited" from="cam2d/Button_navigation_node_parent/EndCycle" to="cam2d/Button_navigation_node_parent/EndCycle" method="_on_mouse_exited"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="." method="_on_click_cooldown_timeout"]
 [connection signal="timeout" from="cam2d/Button_navigation_node_parent/ClickCooldown" to="cam2d" method="_on_click_cooldown_timeout"]
-[connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="cam2d" method="_on_end_cycle_timer_timeout"]
+[connection signal="timeout" from="cam2d/Button_navigation_node_parent/EndCycleTimer" to="." method="_on_end_cycle_timer_timeout"]
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/LeftButton_UI" to="cam2d" method="ChangeLocationToLeft"]
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]

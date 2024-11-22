@@ -48,7 +48,7 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -236.0
+offset_left = -172.0
 offset_top = 44.0
 offset_right = 935.0
 offset_bottom = 135.0
@@ -60,7 +60,7 @@ vertical_alignment = 1
 
 [node name="FactDesc" type="Label" parent="Panel"]
 layout_mode = 1
-offset_left = 742.0
+offset_left = 801.0
 offset_top = 145.0
 offset_right = 1897.0
 offset_bottom = 946.0
