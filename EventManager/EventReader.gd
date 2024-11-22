@@ -213,7 +213,7 @@ func RunKeyWord(Command):
 	elif _command.begins_with("@RANDOM_SICK"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
 		_command = _command.substr("@RANDOM_SICK".length(), _command.length() - "@RANDOM_SICK".length())
 		_command.strip_edges()
-		GlobalResources.addDisease_to_random_crew()
+		IngameStoredProcessSetting.addDisease_to_random_crew()
 	elif _command.begins_with("@DO_DAMAGE"):
 		_command = _command.substr("@DO_DAMAGE".length(), _command.length() - "@DO_DAMAGE".length())
 		_command.strip_edges()
