@@ -206,6 +206,14 @@ func RunKeyWord(Command):
 		_command = _command.substr("@DO_RANDOMDAMAGE".length(), _command.length() - "@DO_RANDOMDAMAGE".length())
 		_command.strip_edges()
 		IngameStoredProcessSetting.doRandomDamage(float(_command))
+	elif _command.begins_with("@FOLLOW_UP_EVENT"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@FOLLOW_UP_EVENT".length(), _command.length() - "@FOLLOW_UP_EVENT".length())
+		_command.strip_edges()
+		GlobalResources.Priority_Event.append(_command)
+	elif _command.begins_with("@RANDOM_SICK"): #INCOMPLETE - NEED TO UPDATE WHEN FACTIONS(DOCUMENT) COMPLETE
+		_command = _command.substr("@RANDOM_SICK".length(), _command.length() - "@RANDOM_SICK".length())
+		_command.strip_edges()
+		GlobalResources.addDisease_to_random_crew()
 	elif _command.begins_with("@DO_DAMAGE"):
 		_command = _command.substr("@DO_DAMAGE".length(), _command.length() - "@DO_DAMAGE".length())
 		_command.strip_edges()
