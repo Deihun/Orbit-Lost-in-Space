@@ -21,6 +21,15 @@ if !already_talk["Maxim"]
 			else
 				Jerry: I dont have any medicine to offer.
 				set already_talk["Maxim"] = false
+		- How are you feeling?
+			if _current_hunger["Maxim"] < 0.5
+				Maxim : [["Maxim feels a bit hungry" | "Stomach hurt a bit" | "I could eat something"]]
+			elif _disease["Maxim"] >= 0.75
+				Maxim : [["I feel sick..."| "I think I need to rest a bit..."]]
+			elif _health["Maxim"] < 0.6
+				Maxim : [["Maxims muscle hurt a bit, but this is nothing to Maxim."| "Muscle hurt but this is still fine"]]
+			else
+				Maxim : [["Maxims good"|"Maxims fine"|"Maxims doing alright"]]
 		- Order
 			- Feed Everyone
 				if crew_in_ship.size() > 1
@@ -65,6 +74,15 @@ if !already_talk["Maxim"]
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Maxim"] = false
 			=> END
+		- How are you feeling?
+			if _current_hunger["Maxim"] < 0.5
+				Maxim : [["Maxim feels a bit hungry" | "Stomach hurt a bit" | "I could eat something"]]
+			elif _disease["Maxim"] >= 0.75
+				Maxim : [["I feel sick..."| "I think I need to rest a bit..."]]
+			elif _health["Maxim"] < 0.6
+				Maxim : [["Maxims muscle hurt a bit, but this is nothing to Maxim."| "Muscle hurt but this is still fine"]]
+			else
+				Maxim : [["Maxims good"|"Maxims fine"|"Maxims doing alright"]]
 else
 	Jerry: I already talk with him...
 => END
@@ -94,6 +112,15 @@ if !already_talk["Regina"]
 			else
 				Regina: I dont have any medicine to offer.
 				set already_talk["Regina"] = false
+		- How are you feeling?
+			if _current_hunger["Regina"] < 0.5
+				Regina : [["I feel peckish, maybe there something that I could eat?" | "Im fine... Or maybe little bit hungry." | "I feel hungry, is it not time for food yet?"]]
+			elif _disease["Regina"] >= 0.75
+				Regina : [["I have disease... I knew it! I need a medicine or this disease will spread"| "I need to rest but I also need medicine too..."]]
+			elif _health["Regina"] < 0.6
+				Regina : [["My muscles are bit fatigue but other than that everythings fine..."| "I feel tired"]]
+			else
+				Regina : [["Im fine Captain!"|"Doing good as always"|"You worry about me? I appreciate it thankyou and Im fine."]]
 		- Order
 			- Feed Everyone
 				if crew_in_ship.size() > 1
@@ -142,6 +169,15 @@ if !already_talk["Regina"]
 			else
 				Jerry: I dont have any medicine to offer.
 				set already_talk["Regina"] = false
+		- How are you feeling?
+			if _current_hunger["Regina"] < 0.5
+				Regina : [["I feel peckish, maybe there something that I could eat?" | "Im fine... Or maybe little bit hungry." | "I feel hungry, is it not time for food yet?"]]
+			elif _disease["Regina"] >= 0.75
+				Regina : [["I have disease... I knew it! I need a medicine or this disease will spread"| "I need to rest but I also need medicine too..."]]
+			elif _health["Regina"] < 0.6
+				Regina : [["My muscles are bit fatigue but other than that everythings fine..."| "I feel tired"]]
+			else
+				Regina : [["Im fine Captain!"|"Doing good as always"|"You worry about me? I appreciate it thankyou and Im fine."]]
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Regina"] = false
 			=> END
@@ -178,6 +214,15 @@ if !already_talk["Fumiko"]
 			else
 				Jerry: I dont have any medicine to offer.
 				set already_talk["Fumiko"] = false
+		- How are you feeling?
+			if _current_hunger["Fumiko"] < 0.5
+				Fumiko : [["I know that my diet is strict but I could need a bit of food too." | "A bit starving here captain" | "Im fine, just a little bit hungry and tired but hey I can still move!"]]
+			elif _disease["Fumiko"] >= 0.75
+				Fumiko : [["There something wrong with my body... I feel tired"|"I don't feel so good today" | "My body feels heavy"]]
+			elif _health["Fumiko"] < 0.6
+				Fumiko : [["I really don't feel good right now captain"| "I think I could use a rest for now..."]]
+			else
+				Fumiko : [["Having a blast right now how about you?"|"I feel great so far"|"That's so sweet of you captain. Im fine thankyou!"]]
 		- Order
 			- Feed Everyone
 				if crew_in_ship.size() > 1
@@ -219,6 +264,15 @@ if !already_talk["Fumiko"]
 			else
 				Jerry: I dont have any medicine to offer.
 				set already_talk["Fumiko"] = false
+		- How are you feeling?
+			if _current_hunger["Fumiko"] < 0.5
+				Fumiko : [["I know that my diet is strict but I could need a bit of food too." | "A bit starving here captain" | "Im fine, just a little bit hungry and tired but hey I can still move!"]]
+			elif _disease["Fumiko"] >= 0.75
+				Fumiko : [["There something wrong with my body... I feel tired"|"I don't feel so good today" | "My body feels heavy"]]
+			elif _health["Fumiko"] < 0.6
+				Fumiko : [["I really don't feel good right now captain"| "I think I could use a rest for now..."]]
+			else
+				Fumiko : [["Having a blast right now how about you?"|"I feel great so far"|"That's so sweet of you captain. Im fine thankyou!"]]
 		- [[Nevermind|Talk to you later|See you around]]
 			set already_talk["Fumiko"] = false
 			=> END
@@ -244,6 +298,15 @@ if !already_talk["Nashir"]
 			else
 				Nashir: Theres no food!
 				set already_talk["Nashir"] = false
+		- How are you feeling?
+			if _current_hunger["Nashir"] < 0.5
+				Nashir : [["My weight seems going down... Does my complexion bad?" | "I need to eat more... Im looking pale as white" | "I need food, it is important for my body to not get hurt."]]
+			elif _disease["Nashir"] >= 0.75
+				Nashir : [["*Looks at the mirror* Am I Blushing!?? Oh... Well I think I have a fever"|"My body feels heavier than usual... So unusual" | "My body is hot... I mean literally"]]
+			elif _health["Nashir"] < 0.6
+				Nashir : [["So much pain..."| "I feel like fiddle sticks..."]]
+			else
+				Nashir : [["Did my beauty caught your attention? Much appreciated but Im doing fine"|"I'm fine thanks"|"My complexions are great so thats my answer."]]
 		- Give medicine
 			if medicine >= 1
 				Nashir: Thankyou very much!
@@ -288,6 +351,15 @@ if !already_talk["Nashir"]
 			else
 				Nashir: Theres no food!
 				set already_talk["Nashir"] = false
+		- How are you feeling?
+			if _current_hunger["Nashir"] < 0.5
+				Nashir : [["My weight seems going down... Does my complexion bad?" | "I need to eat more... Im looking pale as white" | "I need food, it is important for my body to not get hurt."]]
+			elif _disease["Nashir"] >= 0.75
+				Nashir : [["*Looks at the mirror* Am I Blushing!?? Oh... Well I think I have a fever"|"My body feels heavier than usual... So unusual" | "My body is hot... I mean literally"]]
+			elif _health["Nashir"] < 0.6
+				Nashir : [["So much pain..."| "I feel like fiddle sticks..."]]
+			else
+				Nashir : [["Did my beauty caught your attention? Much appreciated but Im doing fine"|"I'm fine thanks"|"My complexions are great so thats my answer."]]
 		- Give medicine
 			if medicine >= 1
 				Nashir: Thankyou very much!
@@ -299,5 +371,5 @@ if !already_talk["Nashir"]
 			set already_talk["Nashir"] = false
 			=> END
 else
-	Jerry: I already talk with her...
+	Jerry: I already talk with him...
 => END

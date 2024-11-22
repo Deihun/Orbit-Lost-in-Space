@@ -46,6 +46,7 @@ func savedata():
 		"alreadyTriggeredEvent" : resources.alreadyTriggeredEvent,
 		"Priority_Event" : resources.Priority_Event,
 		"eventID" : resources.eventID,
+		"save_events" : resources.save_events,
 		
 		"cycle" : stored.Cycle,
 		"_relationship" : stored._relationship.duplicate(),
@@ -100,13 +101,14 @@ func loadsave():
 		resources.ductape = node_data["ductape"]
 		resources.emergencyOxy = node_data["emergencyOxy"]
 		resources.emergencyFuel = node_data["emergencyFuel"]
-		resources.GameEffects = node_data["GameEffects"]
-		resources.uniqueItems = node_data["uniqueItems"]
+		resources.GameEffects = node_data["GameEffects"].duplicate()
+		resources.uniqueItems = node_data["uniqueItems"].duplicate()
 		resources.Location = node_data["Location"]
-		resources.Critical_Event = node_data["Critical_Event"]
-		resources.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"]
-		resources.Priority_Event = node_data["Priority_Event"]
-		resources.eventID = node_data["eventID"]
+		resources.Critical_Event = node_data["Critical_Event"].duplicate()
+		resources.alreadyTriggeredEvent = node_data["alreadyTriggeredEvent"].duplicate()
+		resources.Priority_Event = node_data["Priority_Event"].duplicate()
+		resources.eventID = node_data["eventID"].duplicate()
+		resources.save_events = node_data["save_events"].duplicate()
 		
 		stored.Cycle = node_data["cycle"]
 		stored._relationship = node_data["_relationship"].duplicate()

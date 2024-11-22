@@ -30,6 +30,7 @@ offset_right = 1918.0
 offset_bottom = 1075.0
 
 [node name="TutorialPanel" parent="." instance=ExtResource("4_2qidk")]
+visible = false
 offset_left = 500.0
 offset_top = 90.0
 offset_right = 1373.0

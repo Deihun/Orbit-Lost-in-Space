@@ -410,6 +410,13 @@ var _FumikoRelationship = { #SAVE
 func addDisease(crew_name : String):
 	_disease[crew_name] += 0.001
 
+func addDisease_to_random_crew():
+	if crew_in_ship.size() <= 0: return
+	var CrewName = ""
+	var randomCrew = int(randf() * crew_in_ship.size())
+	CrewName = crew_in_ship[randomCrew]
+	addDisease(CrewName)
+
 func isRelationship(name: String, value : float, isGreaterThan : bool = true) -> bool:
 	var conditionState = false
 	if isGreaterThan:
@@ -572,6 +579,7 @@ func doHealthChecker():
 				recent_events.append("DEATH")
 
 func doRandomDamage(value : float = 0.1):
+	if crew_in_ship.size() <= 0: return
 	var CrewName = ""
 	var randomCrew = int(randf() * crew_in_ship.size())
 	CrewName = crew_in_ship[randomCrew]

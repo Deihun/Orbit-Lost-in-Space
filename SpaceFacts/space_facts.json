@@ -1,13 +1,13 @@
 {
 	"facts": [
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact1",
 			"text": "The Space Shuttle was the first reusable spacecraft in history, The Shuttle launches like a rocket, maneuvers in Earth orbit like a spacecraft and lands like an airplane.",
 			"title": "The Space Shuttle"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact2",
 			"text": "Hydro carbons and fossil-fuel like substance can be found on asteroids and comets.",
 			"title": "Hydro Carbons"
@@ -31,7 +31,7 @@
 			"title": "The International Space Station Designed"
 		},
 		{
-			"encountered": false,
+			"encountered": true,
 			"id": "fact6",
 			"text": "Biogenic materials are materials that are created by organisms using proteins to assemble inorganic structures such as marine animals shell.",
 			"title": "Biogenic"
