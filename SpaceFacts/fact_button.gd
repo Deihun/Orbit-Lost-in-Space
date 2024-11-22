@@ -1,8 +1,12 @@
 extends Control
 var rawFacts = []
 var is_modified = false
+var file_path = "user://space_facts.json"
 
 func _ready() -> void:
+	if !FileAccess.file_exists(file_path):
+		factDefaultStart()
+		save_facts_to_json()
 	load_facts()
 	LoopChecker()
 	
@@ -34,13 +38,23 @@ func LoopChecker():
 	for facts in rawFacts:
 		if facts["encountered"]:
 			create_button(facts)
-		#print("Fact encountered:" + facts["id"]) # print("data")
 	
+func factDefaultStart():
+	var def_path = "res://SpaceFacts/space_facts.json"
+	if FileAccess.file_exists(def_path):
+		var file = FileAccess.open(def_path, FileAccess.READ)
+		var json_text = file.get_as_text()
+		var parsed_data = parse_json(json_text)
+		if "facts" in parsed_data:
+			rawFacts = parsed_data["facts"]
+		else:
+			print("EVENT-HANDLER-SCRIPT://  'load_facts' : 'No key `facts` in parsed data'")
+	else: 
+		print("EVENT-HANDLER-SCRIPT://  'func _ready()' : 'Failed to locate'")
 	
 func load_facts():
-	var file_path = "res://SpaceFacts/space_facts.json"
 	if FileAccess.file_exists(file_path):
-		var file = FileAccess.open(file_path, FileAccess.READ)
+		var file = FileAccess.open_encrypted_with_pass(file_path, FileAccess.READ, "Orbit")
 		var json_text = file.get_as_text()
 		var parsed_data = parse_json(json_text)
 		if "facts" in parsed_data:
@@ -79,8 +93,7 @@ func save_if_modified():
 		is_modified = false # Reset after saving			
 
 func save_facts_to_json():
-	var file_path = "res://SpaceFacts/space_facts.json"
-	var file = FileAccess.open(file_path, FileAccess.WRITE)
+	var file = FileAccess.open_encrypted_with_pass(file_path, FileAccess.WRITE, "Orbit")
 	if file:
 		var data_to_save = {"facts": rawFacts}
 		file.store_string(JSON.stringify(data_to_save, "\t"))

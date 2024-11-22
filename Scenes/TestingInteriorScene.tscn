@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cgh5xy3dp8lcp" path="res://Resources/SmallOxygenGas/OxygenPickup.png" id="37_5ufok"]
 [ext_resource type="AudioStream" uid="uid://yrr1kbqjok3m" path="res://Sounds/SFX/425999__solarphasing__scifi-industrial-atmosphere-1.wav" id="41_xlg34"]
 [ext_resource type="PackedScene" uid="uid://baond8hhrlmdf" path="res://SpaceFacts/fact_button.tscn" id="44_sdcy4"]
-[ext_resource type="PackedScene" path="res://button_sounds.tscn" id="47_evqmn"]
+[ext_resource type="PackedScene" uid="uid://dqtknp51trwy3" path="res://button_sounds.tscn" id="47_evqmn"]
 [ext_resource type="AudioStream" uid="uid://bci2331ggbm16" path="res://Sounds/Music/lofi .mp3" id="49_apm6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rh8"]
@@ -1489,13 +1489,14 @@ z_index = 500
 script = ExtResource("2_0dkme")
 
 [node name="TutorialPanel" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
+visible = false
 offset_left = -503.0
 offset_top = -392.0
 offset_right = 370.0
 offset_bottom = 349.0
 tutorialTitle = Array[String](["Inside the Shuttle"])
 tutorialDescription = Array[String](["Welcome to the Shuttle. Navigate the shuttle by using each arrow at the bottom corners."])
-textureLink = Array[String](["res://Player/Pause_Button.png"])
+textureLink = Array[String](["res://TutorialUI/lobby.png"])
 tutorialPanel_ID = 1
 metadata/_edit_use_anchors_ = true
 
@@ -1507,7 +1508,7 @@ offset_right = -2636.0
 offset_bottom = 383.0
 tutorialTitle = Array[String](["Crafting Resources"])
 tutorialDescription = Array[String](["Welcome to the Crafting room. You can craft different kinds of resources using fuel and other materials. It takes 1 cycle to finish the crafting process."])
-textureLink = Array[String](["res://TutorialUI/test.png"])
+textureLink = Array[String](["res://TutorialUI/Crafting.png"])
 tutorialPanel_ID = 3
 
 [node name="TutorialPanel2" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
@@ -1518,7 +1519,7 @@ offset_right = 3373.0
 offset_bottom = 314.0
 tutorialTitle = Array[String](["Encountering Events"])
 tutorialDescription = Array[String](["Welcome to the cockpit. The screen will display events that happens to your ship and crew. You will be presented with different choices that either consumes or gives resources."])
-textureLink = Array[String](["res://TutorialUI/test.png"])
+textureLink = Array[String](["res://TutorialUI/Events.png"])
 tutorialPanel_ID = 2
 
 [node name="TutorialPanel4" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
@@ -1529,7 +1530,7 @@ offset_right = 3195.0
 offset_bottom = 344.0
 tutorialTitle = Array[String](["Ending Cycles"])
 tutorialDescription = Array[String](["After finishing the event, you can end the cycle. After ending the cycle, a set amount of resource is consumed and random events may happen to you and your crew."])
-textureLink = Array[String](["res://TutorialUI/test.png"])
+textureLink = Array[String](["res://TutorialUI/EndCycle.png"])
 tutorialPanel_ID = 4
 
 [node name="ButtonSounds" parent="." instance=ExtResource("47_evqmn")]

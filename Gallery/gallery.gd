@@ -11,7 +11,7 @@ func _ready() -> void:
 	instace_button_to_grid()
 	
 func get_data_gallery() -> void:
-	var file = FileAccess.open(gallery_path, FileAccess.READ) 
+	var file = FileAccess.open("user://gallery.json", FileAccess.READ) 
 	var json_data = file.get_as_text() 
 	var json = JSON.new()
 	var parse_result = json.parse(json_data)
@@ -22,15 +22,6 @@ func get_data_gallery() -> void:
 		pass
 		if i["unlocked"]:
 			pass
-
-func set_data_gallery() -> void:
-	pass
-
-func set_gallery_unlocked() -> void:
-	pass
-	
-func get_boolcheck() -> void:
-	pass
 	
 func instace_button_to_grid() -> void:
 	for i in images:
@@ -39,7 +30,6 @@ func instace_button_to_grid() -> void:
 		print(i["unlocked"])
 		if i["unlocked"]: 
 			Gnode.set_image(i["id"])
-
 
 func _on_button_button_up() -> void:
 	queue_free()
