@@ -110,8 +110,13 @@ func command(_command : String):
 		@ADD_MATERIALS - Add resources materials \n
 		@ADD_UNIQUE_MATERIALS - add 1 unique material \n
 		@RELATIONSHIP_INCREASE - Increase relationship of a specific character in range of 0.0 - 1.0\n
-		@ADD_ANOTHER_EVENT - Add event on queue\n
+		@ANOTHER_EVENT - Add event on queue\n
+		@PROBABILITY_FACTION\n
 		@RESET - set the specified materials into zero\n
+		@ADD_CREW\n
+		@CYCLE\n
+		@DELETE_CREW\n
+		@SET_FACTION\n
 		@GAMEOVER - trigger an game over and trigger an end scene base on selected game over
 		"
 		addHistory(help)

@@ -108,12 +108,14 @@ func startAddNextEvent(): #ADD EVENT ON QUEUE
 	#PRIORITIZE EVENTS THAT WITHIN PRIORITY ARRAY
 	while(GlobalResources.Priority_Event.size() > 0 && numbers_of_event > 0): 
 		var priority_key = GlobalResources.Priority_Event.pop_front()
+		print(priority_key)
 		for eachEvent in rawEvent:
 			if eachEvent.has("Conditions"):
-				if eachEvent["Conditions"][0] == "FOLLOW-UP" && eachEvent["Conditions"][1].has(priority_key):
-					GlobalResources.eventID.append(eachEvent["id"])
-					GlobalResources.save_events.append(int(eachEvent["id"]))
-					numbers_of_event -= 1
+				if eachEvent["Conditions"][0] == "FOLLOW-UP":
+					if eachEvent["Conditions"][1] == (priority_key):
+						GlobalResources.eventID.append(eachEvent["id"])
+						GlobalResources.save_events.append(int(eachEvent["id"]))
+						numbers_of_event -= 1
 	
 	#ADD EVENTS BASE ON LIMIT PER CYCLE
 	for i in numbers_of_event:
