@@ -41,6 +41,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfgj2"]
 radius = 32.6267
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s58e"]
+size = Vector2(400, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72tgf"]
+size = Vector2(1000, 1000)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_50fry"]
 shader = ExtResource("4_ov5gh")
 shader_parameter/amount = 1.0
@@ -2511,12 +2517,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsf36"]
 radius = 29.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s58e"]
-size = Vector2(400, 400)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_72tgf"]
-size = Vector2(1000, 1000)
-
 [node name="Player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
@@ -2554,6 +2554,40 @@ position = Vector2(8, -39)
 shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
+
+[node name="Touch_UP" type="TouchScreenButton" parent="player/AllUIParents"]
+position = Vector2(471, 552)
+shape = SubResource("RectangleShape2D_0s58e")
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="Touch_DOWN" type="TouchScreenButton" parent="player/AllUIParents"]
+position = Vector2(471, 953)
+shape = SubResource("RectangleShape2D_0s58e")
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="Touch_left" type="TouchScreenButton" parent="player/AllUIParents"]
+position = Vector2(70, 731)
+shape = SubResource("RectangleShape2D_0s58e")
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="Touch_RIGHT" type="TouchScreenButton" parent="player/AllUIParents"]
+position = Vector2(868, 754)
+shape = SubResource("RectangleShape2D_0s58e")
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="Touch_Interact" type="TouchScreenButton" parent="player/AllUIParents"]
+position = Vector2(1569, 647)
+shape = SubResource("RectangleShape2D_72tgf")
+action = "Interact"
+visibility_mode = 1
 
 [node name="Transition" parent="player/AllUIParents" instance=ExtResource("4_5e847")]
 metadata/_edit_lock_ = true
@@ -3272,40 +3306,6 @@ bus = &"Sfx"
 [node name="pickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_efosq")
 bus = &"Sfx"
-
-[node name="Touch_UP" type="TouchScreenButton" parent="."]
-position = Vector2(473, 552)
-shape = SubResource("RectangleShape2D_0s58e")
-shape_visible = false
-passby_press = true
-action = "ui_up"
-
-[node name="Touch_DOWN" type="TouchScreenButton" parent="."]
-position = Vector2(473, 953)
-shape = SubResource("RectangleShape2D_0s58e")
-shape_visible = false
-passby_press = true
-action = "ui_down"
-
-[node name="Touch_left" type="TouchScreenButton" parent="."]
-position = Vector2(72, 731)
-shape = SubResource("RectangleShape2D_0s58e")
-shape_visible = false
-passby_press = true
-action = "ui_left"
-
-[node name="Touch_RIGHT" type="TouchScreenButton" parent="."]
-position = Vector2(870, 754)
-shape = SubResource("RectangleShape2D_0s58e")
-shape_visible = false
-passby_press = true
-action = "ui_right"
-
-[node name="Touch_Interact" type="TouchScreenButton" parent="."]
-position = Vector2(1571, 647)
-shape = SubResource("RectangleShape2D_72tgf")
-shape_visible = false
-action = "Interact"
 
 [connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]
