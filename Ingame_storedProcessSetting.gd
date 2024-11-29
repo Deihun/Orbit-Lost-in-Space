@@ -17,6 +17,8 @@ var inventory = 4
 var BonusMultiplyer = 1
 var deathMessage = ""
 
+var _stored_guide = []
+
 func newGame():
 	Cycle = 1
 

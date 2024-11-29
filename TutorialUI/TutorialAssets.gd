@@ -35,23 +35,18 @@ func cutAKey(ui_map : String):
 	var key_name = event_string.substr(start_index, end_index - start_index)
 	return key_name
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Show_Tutorial"):
+		Turn_In()
+
+
+func Turn_In():
+	$".".modulate.a = 1.0
+
 
 func fadeOut():
-	
-	if !alreadyCalledStart:
-		alreadyCalledStart = true
-	set_process(true)
-	pass
-
-
-func _process(delta):
-	elapsed_time += delta
-	var new_alpha = lerp(start_alpha, end_alpha, elapsed_time / fade_duration)
-	modulate.a = new_alpha
-	if elapsed_time >= fade_duration:
-		modulate.a = end_alpha
-		set_process(false)  # Stop processing when fade is complete
-		queue_free()  # Optionally remove the node when done
+	if modulate.a != 1.0: return
+	$tutorialAssets_Player.play("Fadeout")
 
 
 func _on_fadeout_effect_timeout() -> void:

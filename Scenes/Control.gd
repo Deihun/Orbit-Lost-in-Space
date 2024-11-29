@@ -281,3 +281,16 @@ func _on_fact_button_button_button_up() -> void:
 
 func _on_end_cycle_timer_timeout() -> void:
 	EndCycle_Can_Be_Click_ = true
+
+
+func _on_guide_button_up() -> void:
+	var guide = preload("res://Scenes/guide.tscn").instantiate()
+	guide.z_index = 1001
+	guide.position = Vector2(-960,-539.58)
+	guide.content = IngameStoredProcessSetting._stored_guide.duplicate()
+	guide.initialize_me()
+	$cam2d.add_child(guide)
+
+
+func _on_fact_button_button_visibility_changed() -> void:
+	$cam2d/Guide.visible = $cam2d/FactButton_Button.visible

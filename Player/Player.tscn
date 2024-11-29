@@ -1,4 +1,4 @@
-[gd_scene load_steps=363 format=3 uid="uid://8i0ockufywye"]
+[gd_scene load_steps=368 format=3 uid="uid://8i0ockufywye"]
 
 [ext_resource type="Script" path="res://Player/Player_Movement.gd" id="1_5ung8"]
 [ext_resource type="Script" path="res://Player/player_Default.gd" id="1_mhmxe"]
@@ -752,6 +752,43 @@ animations = [{
 "name": &"default",
 "speed": 24.0
 }]
+
+[sub_resource type="Animation" id="Animation_2hfuu"]
+resource_name = "Fadeout"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nsk70"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eogab"]
+_data = {
+"Fadeout": SubResource("Animation_2hfuu"),
+"RESET": SubResource("Animation_nsk70")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d5vm"]
 bg_color = Color(0.451355, 0.66959, 0.365709, 1)
@@ -2474,6 +2511,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsf36"]
 radius = 29.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s58e"]
+size = Vector2(400, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72tgf"]
+size = Vector2(1000, 1000)
+
 [node name="Player" type="Node2D" groups=["player"]]
 y_sort_enabled = true
 position = Vector2(-2, 0)
@@ -2620,6 +2663,11 @@ scale = Vector2(2.065, 2.065)
 [node name="TutorialAssets" type="Node2D" parent="player/AllUIParents"]
 z_index = 200
 script = ExtResource("2_7naq2")
+
+[node name="tutorialAssets_Player" type="AnimationPlayer" parent="player/AllUIParents/TutorialAssets"]
+libraries = {
+"": SubResource("AnimationLibrary_eogab")
+}
 
 [node name="MoveControl1" type="Sprite2D" parent="player/AllUIParents/TutorialAssets"]
 visible = false
@@ -3224,6 +3272,40 @@ bus = &"Sfx"
 [node name="pickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_efosq")
 bus = &"Sfx"
+
+[node name="Touch_UP" type="TouchScreenButton" parent="."]
+position = Vector2(473, 552)
+shape = SubResource("RectangleShape2D_0s58e")
+shape_visible = false
+passby_press = true
+action = "ui_up"
+
+[node name="Touch_DOWN" type="TouchScreenButton" parent="."]
+position = Vector2(473, 953)
+shape = SubResource("RectangleShape2D_0s58e")
+shape_visible = false
+passby_press = true
+action = "ui_down"
+
+[node name="Touch_left" type="TouchScreenButton" parent="."]
+position = Vector2(72, 731)
+shape = SubResource("RectangleShape2D_0s58e")
+shape_visible = false
+passby_press = true
+action = "ui_left"
+
+[node name="Touch_RIGHT" type="TouchScreenButton" parent="."]
+position = Vector2(870, 754)
+shape = SubResource("RectangleShape2D_0s58e")
+shape_visible = false
+passby_press = true
+action = "ui_right"
+
+[node name="Touch_Interact" type="TouchScreenButton" parent="."]
+position = Vector2(1571, 647)
+shape = SubResource("RectangleShape2D_72tgf")
+shape_visible = false
+action = "Interact"
 
 [connection signal="timeout" from="player/_GameTimerLimit" to="player/_GameTimerLimit" method="_on_timeout"]
 [connection signal="body_entered" from="player/CheckingFor_OnHitEffect" to="player" method="_on_checking_for_on_hit_effect_body_entered"]

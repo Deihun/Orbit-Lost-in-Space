@@ -1,0 +1,5 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://wp2tr3s4we68"]
+
+[resource]
+bg_color = Color(0.351898, 0.331309, 0.0113636, 1)
+corner_radius_bottom_right = 540

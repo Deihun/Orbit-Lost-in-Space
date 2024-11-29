@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://l2ma7kklvi0i"]
+
+[ext_resource type="Script" path="res://Scenes/guide.gd" id="1_dojls"]
+[ext_resource type="Texture2D" uid="uid://bxqodpsbq0w3k" path="res://TutorialUI/Crafting.png" id="2_3wkb4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp448"]
+bg_color = Color(0.725689, 0.666817, 0.260063, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58dcw"]
+bg_color = Color(0.40137, 0.479004, 0.0660042, 1)
+skew = Vector2(0.865, 0)
+corner_radius_top_right = 35
+
+[node name="Guide" type="Node2D"]
+z_index = 1001
+script = ExtResource("1_dojls")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp448")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+visible = false
+position = Vector2(1314, 202)
+scale = Vector2(0.589369, 0.399444)
+texture = ExtResource("2_3wkb4")
+
+[node name="Label" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 19.0
+offset_right = 1894.0
+offset_bottom = 487.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Testing Description"
+fit_content = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 544.0
+offset_bottom = 1006.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Button_Back" type="Button" parent="Panel"]
+offset_left = 1581.0
+offset_top = 965.0
+offset_right = 1839.0
+offset_bottom = 1045.0
+theme_override_font_sizes/font_size = 41
+theme_override_styles/hover = SubResource("StyleBoxFlat_58dcw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_58dcw")
+text = "BACK"
+
+[connection signal="button_up" from="Panel/Button_Back" to="." method="_on_button_back_button_up"]

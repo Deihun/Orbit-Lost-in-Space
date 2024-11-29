@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://tbhpfech36e8"]
+[gd_scene load_steps=181 format=3 uid="uid://tbhpfech36e8"]
 
 [ext_resource type="Script" path="res://Scenes/Control.gd" id="1_m612p"]
 [ext_resource type="Script" path="res://Scenes/TutorialPanel_NoneInteractable.gd" id="2_0dkme"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dmojd3msv3ms0" path="res://EventManager/Event Handler.tscn" id="8_mmcy4"]
 [ext_resource type="Texture2D" uid="uid://c85bfajvi5bhr" path="res://icon.svg" id="10_7sn4k"]
 [ext_resource type="Texture2D" uid="uid://b0uu8qtxo3joe" path="res://Scenes/SceneAssets/ArrowNavigation.png" id="11_0iy23"]
+[ext_resource type="Texture2D" uid="uid://c1rh5gf0u8tqm" path="res://Scenes/Tutorial/Guide.png" id="12_gv84i"]
 [ext_resource type="Texture2D" uid="uid://irge65po27jl" path="res://Scenes/craft.png" id="12_krim2"]
 [ext_resource type="Texture2D" uid="uid://cnb6mk0kko7a" path="res://Lobby.png" id="12_nbaaq"]
 [ext_resource type="Texture2D" uid="uid://dgyqid6upini8" path="res://Scenes/Ingame/FactButton_withoutnotif.png" id="12_oquuw"]
@@ -1121,6 +1122,18 @@ offset_bottom = -270.58
 position = Vector2(46, 43.42)
 texture = ExtResource("12_oquuw")
 
+[node name="Guide" type="Button" parent="cam2d"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 644.0
+offset_top = -503.58
+offset_right = 738.0
+offset_bottom = -411.58
+
+[node name="Guide2" type="Sprite2D" parent="cam2d/Guide"]
+position = Vector2(45.9999, 46)
+scale = Vector2(0.459999, 0.44)
+texture = ExtResource("12_gv84i")
+
 [node name="FactButton" parent="cam2d" instance=ExtResource("44_sdcy4")]
 z_index = 200
 offset_left = -959.0
@@ -1770,7 +1783,6 @@ z_index = 500
 script = ExtResource("2_0dkme")
 
 [node name="TutorialPanel" parent="TutorialPanel_Folder" instance=ExtResource("15_mu6oi")]
-visible = false
 offset_left = -503.0
 offset_top = -392.0
 offset_right = 370.0
@@ -1834,6 +1846,8 @@ parameters/looping = false
 [connection signal="button_up" from="cam2d/Button_navigation_node_parent/RightButton_UI" to="cam2d" method="_on_right_button_ui_pressed"]
 [connection signal="timeout" from="cam2d/Command/CommandCooldown" to="cam2d/Command" method="_on_command_cooldown_timeout"]
 [connection signal="button_up" from="cam2d/FactButton_Button" to="." method="_on_fact_button_button_button_up"]
+[connection signal="visibility_changed" from="cam2d/FactButton_Button" to="." method="_on_fact_button_button_visibility_changed"]
+[connection signal="button_up" from="cam2d/Guide" to="." method="_on_guide_button_up"]
 [connection signal="input_event" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_input_event"]
 [connection signal="mouse_entered" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_entered"]
 [connection signal="mouse_exited" from="WholeInteriorScene/Craft/Mouse_to_CraftingInteraction" to="WholeInteriorScene/Craft" method="_on_mouse_to_crafting_interaction_mouse_exited"]
@@ -1866,4 +1880,5 @@ parameters/looping = false
 [connection signal="mouse_entered" from="StorageScene/CheckingOxygen" to="StorageScene" method="_on_checking_oxygen_mouse_entered"]
 [connection signal="mouse_exited" from="StorageScene/CheckingOxygen" to="StorageScene" method="_on_checking_oxygen_mouse_exited"]
 [connection signal="input_event" from="CycleReport/ClickAnywhereButton" to="cam2d" method="_on_click_anywhere_button_input_event"]
+[connection signal="child_exiting_tree" from="TutorialPanel_Folder" to="TutorialPanel_Folder" method="_on_child_exiting_tree"]
 [connection signal="tree_exited" from="TutorialPanel_Folder/TutorialPanel" to="TutorialPanel_Folder" method="_on_tutorial_panel_tree_exited"]

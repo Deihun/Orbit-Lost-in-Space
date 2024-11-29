@@ -71,7 +71,7 @@ func savedata():
 		"TotalProbabilityForFactionsToFound" : stored.TotalProbabilityForFactionsToFound,
 		"Factions_Probability" : stored.Factions_Probability.duplicate(),
 		"SubFactions_Probability" : stored.SubFactions_Probability.duplicate(),
-		
+		"_stored_guide" : stored._stored_guide.duplicate(),
 		"canExpedition" : stored.canExpedition
 	}
 	return save_dict
@@ -116,6 +116,7 @@ func loadsave():
 		stored._current_hunger = node_data["_currentHunger"].duplicate()
 		stored.already_eaten= node_data["already_eaten"].duplicate()
 		stored.crew_in_ship = node_data["crew_in_ship"].duplicate()
+		stored._stored_guide = node_data["_stored_guide"].duplicate()
 		
 		stored.jerry_ate_countdown = node_data["jerry_ate_countdown"]
 		stored.already_medicine = node_data["already_medicine"].duplicate()
