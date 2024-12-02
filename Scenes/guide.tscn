@@ -47,6 +47,7 @@ offset_bottom = 1006.0
 layout_mode = 2
 
 [node name="Button_Back" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 1581.0
 offset_top = 965.0
 offset_right = 1839.0

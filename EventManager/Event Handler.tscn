@@ -60,7 +60,6 @@ visible = false
 script = ExtResource("2_nkt3i")
 
 [node name="VolumeSwitch" type="Button" parent="EventReader"]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 213.0
 offset_top = 817.0
@@ -84,8 +83,8 @@ libraries = {
 }
 
 [node name="CanClickIcon" type="Sprite2D" parent="EventReader/FirstPreview_Button"]
-position = Vector2(1548, 724)
-scale = Vector2(0.274, 0.256)
+position = Vector2(1513.13, 690)
+scale = Vector2(0.553, 0.528)
 texture = ExtResource("5_1t0x5")
 
 [node name="FirstPreview" type="ScrollContainer" parent="EventReader/FirstPreview_Button"]
@@ -93,7 +92,7 @@ layout_mode = 0
 offset_left = 49.0
 offset_top = 54.0
 offset_right = 1541.0
-offset_bottom = 683.0
+offset_bottom = 605.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EventReader/FirstPreview_Button/FirstPreview"]
 layout_mode = 2
@@ -163,7 +162,7 @@ z_index = 5
 offset_left = 1232.0
 offset_top = 176.0
 offset_right = 1745.0
-offset_bottom = 855.0
+offset_bottom = 774.0
 
 [node name="Container_EventButton" type="VBoxContainer" parent="EventReader/Container"]
 custom_minimum_size = Vector2(-0.045, 0)
