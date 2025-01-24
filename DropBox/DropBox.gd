@@ -35,6 +35,7 @@ func _process(delta):
 			player.gameWin()
 	else:
 		charge_SkipTime -= 0.1 if charge_SkipTime > 0.0 else 0.0
+	$DropboxRadialProgressbar.set_value(charge_SkipTime * 100)
 
 func getIsPlayerInsideCondition() -> bool:
 	return $Player_Final_Count._isPlayerInside

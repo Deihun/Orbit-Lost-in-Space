@@ -42,6 +42,7 @@ func _process(delta): #Repeatedly set a path until a correct path is detected
 
 
 func interaction():
+	print(inventory)
 	if inventory.addItem("Small Food",1):
 		inventory.showItem()
 		interaction_manager.unregister_area(interaction_area)

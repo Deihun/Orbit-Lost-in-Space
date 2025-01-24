@@ -26,6 +26,7 @@ var total_ductape = 0
 var total_medicine = 0
 
 var toggle_collectedUI : bool = false
+var ingame_inventory = []
 
 var crew ={ 
 	"fumiko" = false,
@@ -33,6 +34,8 @@ var crew ={
 	"nashir" = false,
 	"regina" = false
 }
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -100,6 +103,8 @@ func add_item(item_type):#Use to direct add items, used by other objects such as
 		"Fumiko" :
 			if crew["fumiko"] == false:	crew_availability -= 1
 			crew["fumiko"] = true
+	ingame_inventory.append(item_type)
+
 
 
 
@@ -107,6 +112,7 @@ func initializeFindSpawn():
 	var spawners = find_all_nodes_with_name_pattern(self.get_tree().root, "Node Resource Spawner")
 	process_spawner_children(spawners)
 	setTheAmountAvailableUI()
+
 
 func setTheAmountAvailableUI():
 	$AmountPreview/Label_Food.text = str(ration)
@@ -124,11 +130,13 @@ func setTheAmountAvailableUI():
 	$Amount_in_Area/Label_Ductape.text = str(gathered_ductape,"/",total_ductape)
 	$Amount_in_Area/Label_Oxygen.text = str(gathered_gas,"/",total_gas)
 
+
 # Finds all nodes in the scene with the name starting with a specific pattern
 func find_all_nodes_with_name_pattern(root: Node, pattern: String) -> Array:
 	var results = []
 	_find_all_nodes_recursive(root, pattern, results)
 	return results
+
 
 # Helper function for recursive node search
 func _find_all_nodes_recursive(node: Node, pattern: String, results: Array) -> void:
@@ -137,6 +145,7 @@ func _find_all_nodes_recursive(node: Node, pattern: String, results: Array) -> v
 	for child in node.get_children():
 		if child is Node:
 			_find_all_nodes_recursive(child, pattern, results)
+
 
 # Creates variables based on the found spawners
 func create_variables_from_spawners(spawners: Array) -> void:
@@ -149,6 +158,7 @@ func create_variables_from_spawners(spawners: Array) -> void:
 			count += 1
 		self.set(var_name, spawner)
 
+
 func process_spawner_children(spawners: Array) -> void:
 	for spawner in spawners:
 		print("Processing spawner:", spawner.name)
@@ -157,6 +167,7 @@ func process_spawner_children(spawners: Array) -> void:
 				print("Found child:", child.name)
 				# You can handle the child here, e.g., store references or call methods on them
 				handle_child(child)
+
 
 # Example function to handle a single child node
 func handle_child(child: Node) -> void:
@@ -168,6 +179,7 @@ func handle_child(child: Node) -> void:
 	elif child.name.begins_with("medicine_pickup"): total_medicine +=1
 	elif child.name.begins_with("oxygen_pickup"): total_gas +=1
 
+
 func halfIt():
 	gas = int(gas/2)
 	ration = int(ration/2)
@@ -176,6 +188,7 @@ func halfIt():
 	biogene = int(biogene/2)
 	ductape = int(ductape/2)
 	medicine = int(medicine/2)
+
 
 func updateGlobalResource():
 	var r = GlobalResources
@@ -188,9 +201,30 @@ func updateGlobalResource():
 	r.ductape += ductape
 	r.medicine += medicine
 
-
 	if crew["regina"] == true and !b.crew_in_ship.has("Regina"): b.crew_in_ship.append("Regina")
 	if crew["maxim"] == true and !b.crew_in_ship.has("Maxim"): b.crew_in_ship.append("Maxim")
 	if crew["fumiko"] == true and !b.crew_in_ship.has("Fumiko"): b.crew_in_ship.append("Fumiko")
 	if crew["nashir"] == true and !b.crew_in_ship.has("Nashir"): b.crew_in_ship.append("Nashir")
-	pass
+	
+	
+	#THIS WILL BE THE REPLACEMENT FOR VALUE GAMEPLAY
+	for item in ingame_inventory:
+		match item:
+			"Small Food":
+				Inventory.add_food("canned",35, true, 30,0)
+			"Small Fuel":
+				Inventory.add_fuel("small_fuel", 3)
+			"Small Spareparts":
+				Inventory.add_spare_item("spareparts_temporary",1) #RE-ADJUST THIS LATER
+			"Small Biogene":
+				Inventory.add_spare_item("biogene", 1)
+			"Medicine Pack":
+				Inventory.add_spare_item("medicine", 1)
+			"Ductape":
+				Inventory.add_spare_item("ductape", 1)
+			"Small Gastank":
+				Inventory.add_spare_item("gasTank", 1) #RE-ADJUST THIS LATER
+#			"Regina":
+#			"Maxim" : 
+#			"Nashir" :
+#			"Fumiko" :

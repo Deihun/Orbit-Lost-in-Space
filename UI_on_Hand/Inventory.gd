@@ -31,6 +31,7 @@ var _fumiko_icon = load("res://Resources/CREW/Fumiko PickUp.png")
 var _nashir_icon = load("res://Resources/CREW/Nashir_pickup.png")
 
 var inventory = []  
+var true_inventory = []
 
 
 func _ready():
@@ -77,6 +78,50 @@ func updateUICount():
 			$Hand_9.show()
 			$Hand_10.show()
 
+
+func _input(event: InputEvent) -> void: #DROP ITEM
+	var player_group = $"../../.."
+	if event.is_action("ui_drop_item"):
+		for items in true_inventory:
+			var sf
+			match(items):
+				"Small Fuel":
+					sf = preload("res://Resources/Small_Fuel/Small Fuel.tscn").instantiate()
+
+				"Small Spareparts":
+					sf = preload("res://Resources/small_spareparts.tscn").instantiate()
+
+				"Small Food":
+					sf = preload("res://Resources/SmallFood.tscn").instantiate()
+
+				"Ductape":
+					sf = preload("res://Resources/Ductape.tscn").instantiate()
+
+				"Medicine Pack":
+					sf = preload("res://Resources/FirstAidKit/MedicinePack.tscn").instantiate()
+
+				"Small Biogene":
+					sf = preload("res://Resources/Small_Biogene/Small Biogene.tscn").instantiate()
+				"Small Gastank":
+					sf = preload("res://Resources/SmallOxygenGas/Small_OxygenTank.tscn").instantiate()
+				"TeddyBear":
+					sf = preload("res://Scenes/Tutorial/teddy_bear.tscn").instantiate()
+				"Regina":
+					sf = preload("res://Resources/CREW/Regina.tscn").instantiate()
+				"Maxim":
+					sf = preload("res://Resources/CREW/Maxim.tscn").instantiate()
+				"Nashir":
+					sf = preload("res://Resources/CREW/Nashir.tscn").instantiate()
+				"Fumiko":
+					sf = preload("res://Resources/CREW/Fumiko.tscn").instantiate()
+			player_group.add_child(sf)
+			sf.inventory = self
+			sf.global_position = $"../../Player".global_position
+		insertAllItems()
+		showItem()
+
+
+
 func set_max_slots(new_max_slots: int):
 	new_max_slots = clamp(new_max_slots, 1, 10)
 	
@@ -118,6 +163,7 @@ func _insert_all_items(): #Declaration of inventory size
 		for item in inventory[i]:
 			var r = NodeFinder.find_node_by_name(get_tree().current_scene, "ResourceUI_InRun")
 			r.add_item(item)    #CHANGE THIS
+	true_inventory.clear()
 	insertAllItems()
 	showItem()
 
@@ -184,6 +230,7 @@ func addItem(itemType, slotsNeeded):
 	if startIndex == -1:
 		return false
 		
+	true_inventory.append(itemType)
 	for i in range(slotsNeeded):
 		inventory[startIndex + i].append(itemType)
 	return true
@@ -202,6 +249,7 @@ func findAvailableSlots(slotsNeeded):
 func insertAllItems():
 	for i in range(MAX_SLOTS):
 		inventory[i].clear()
+	true_inventory.clear()
 
 
 #NONE VOID METHODS

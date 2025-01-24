@@ -43,6 +43,7 @@ func getCycle():
 	return Cycle
 
 func reset():
+	Inventory.inventory.clear()
 	selectedCrew = "Jerry"
 	crew_in_ship = []
 	Cycle = 1

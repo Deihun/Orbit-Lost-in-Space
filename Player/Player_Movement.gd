@@ -302,6 +302,7 @@ func _game_over():
 func gameWin():
 	canMove = false
 	if game_win:
+		$_GameTimerLimit.countdown_live = -100
 		game_win.call()
 
 func retry():

@@ -2555,35 +2555,37 @@ shape = SubResource("CircleShape2D_yfgj2")
 
 [node name="AllUIParents" type="CanvasLayer" parent="player"]
 
-[node name="Touch_UP" type="TouchScreenButton" parent="player/AllUIParents"]
+[node name="ForMobile_Only_Control" type="Node2D" parent="player/AllUIParents"]
+
+[node name="Touch_UP" type="TouchScreenButton" parent="player/AllUIParents/ForMobile_Only_Control"]
 position = Vector2(471, 552)
 shape = SubResource("RectangleShape2D_0s58e")
 passby_press = true
 action = "ui_up"
 visibility_mode = 1
 
-[node name="Touch_DOWN" type="TouchScreenButton" parent="player/AllUIParents"]
+[node name="Touch_DOWN" type="TouchScreenButton" parent="player/AllUIParents/ForMobile_Only_Control"]
 position = Vector2(471, 953)
 shape = SubResource("RectangleShape2D_0s58e")
 passby_press = true
 action = "ui_down"
 visibility_mode = 1
 
-[node name="Touch_left" type="TouchScreenButton" parent="player/AllUIParents"]
+[node name="Touch_left" type="TouchScreenButton" parent="player/AllUIParents/ForMobile_Only_Control"]
 position = Vector2(70, 731)
 shape = SubResource("RectangleShape2D_0s58e")
 passby_press = true
 action = "ui_left"
 visibility_mode = 1
 
-[node name="Touch_RIGHT" type="TouchScreenButton" parent="player/AllUIParents"]
+[node name="Touch_RIGHT" type="TouchScreenButton" parent="player/AllUIParents/ForMobile_Only_Control"]
 position = Vector2(868, 754)
 shape = SubResource("RectangleShape2D_0s58e")
 passby_press = true
 action = "ui_right"
 visibility_mode = 1
 
-[node name="Touch_Interact" type="TouchScreenButton" parent="player/AllUIParents"]
+[node name="Touch_Interact" type="TouchScreenButton" parent="player/AllUIParents/ForMobile_Only_Control"]
 position = Vector2(1569, 647)
 shape = SubResource("RectangleShape2D_72tgf")
 action = "Interact"
