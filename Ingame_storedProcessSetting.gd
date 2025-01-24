@@ -639,3 +639,12 @@ func resetPerDay():
 
 ####DIALOGUE DATA
 var AlreadyTriggeredDialogueEvent = []
+
+#### SHIP-STATUS - REWORKING HOW SHIP WORKS
+var ship_health : float = 1.0
+var carbon_skimmer : float = 1.0
+var power_health : float = 1.0
+
+#### FUEL SYSTEM
+var fuel_attach_slot = []
+var fuel_max_slot = 1

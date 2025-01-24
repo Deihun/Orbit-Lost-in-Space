@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmmvopbjefocc"]
+
+[ext_resource type="Texture2D" uid="uid://xh6li6nur8wl" path="res://Scenes/fuel_management/fuel_management_behind.png" id="1_d7516"]
+[ext_resource type="Texture2D" uid="uid://b5vmrpc1aoy4d" path="res://Scenes/fuel_management/fuel_management_progress.png" id="2_fdgyf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icwdm"]
+bg_color = Color(0.214722, 0.213642, 0.195595, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.182585, 0.144374, 0.0934748, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="FuelManagement" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 93.0
+offset_right = 1778.0
+offset_bottom = 1011.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_icwdm")
+
+[node name="Plug-in_Battery_percentage" type="TextureProgressBar" parent="panel"]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 20.0
+offset_right = 694.0
+offset_bottom = 220.0
+scale = Vector2(1.86273, 3.96835)
+value = 69.0
+fill_mode = 3
+texture_under = ExtResource("1_d7516")
+texture_progress = ExtResource("2_fdgyf")
+tint_under = Color(0.28485, 0.28485, 0.28485, 1)
+tint_over = Color(0.869013, 0.918059, 0.735209, 1)
+tint_progress = Color(0.870588, 0.917647, 0.733333, 1)
+
+[node name="Emergency-Fuel_percentage" type="TextureProgressBar" parent="panel"]
+offset_left = 632.0
+offset_top = 21.0
+offset_right = 832.0
+offset_bottom = 221.0
+scale = Vector2(1.86273, 3.96835)
+value = 69.0
+fill_mode = 3
+texture_under = ExtResource("1_d7516")
+texture_progress = ExtResource("2_fdgyf")
+tint_under = Color(0.28485, 0.28485, 0.28485, 1)
+tint_over = Color(0.869013, 0.918059, 0.735209, 1)
+tint_progress = Color(0.82977, 0.53197, 0.235252, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel"]
+layout_mode = 0
+offset_left = 957.0
+offset_top = 45.0
+offset_right = 1540.0
+offset_bottom = 777.0
